@@ -66,7 +66,7 @@ var DESTINATIONS = [
         reviews: 980,
         latitude: 23.3819,
         longitude: 92.2938,
-        image: u("GBYWXNWO81A", 1200),
+        image: u("photo-1470071459604-3b5ec3a7fe05", 1200),
         imageLg: u("GBYWXNWO81A", 1800),
         gallery: [
             u("GBYWXNWO81A", 1200),
@@ -104,7 +104,7 @@ var DESTINATIONS = [
         reviews: 860,
         latitude: 22.1953,
         longitude: 92.2189,
-        image: u("wdwLVUPU_Bw", 1200),
+        image: u("photo-1469474968028-56623f02e42e", 1200),
         imageLg: u("wdwLVUPU_Bw", 1800),
         gallery: [
             u("wdwLVUPU_Bw", 1200),
@@ -142,7 +142,7 @@ var DESTINATIONS = [
         reviews: 720,
         latitude: 22.6470,
         longitude: 92.1520,
-        image: u("Gusfeboth4A", 1200),
+        image: u("photo-1506744038136-46273834b3fb", 1200),
         imageLg: u("Gusfeboth4A", 1800),
         gallery: [
             u("Gusfeboth4A", 1200),
@@ -180,7 +180,7 @@ var DESTINATIONS = [
         reviews: 830,
         latitude: 24.8949,
         longitude: 91.8687,
-        image: u("zzUTACsJZ80", 1200),
+        image: u("photo-1472214103451-9374bd1c798e", 1200),
         imageLg: u("zzUTACsJZ80", 1800),
         gallery: [
             u("zzUTACsJZ80", 1200),
@@ -218,7 +218,7 @@ var DESTINATIONS = [
         reviews: 690,
         latitude: 24.3065,
         longitude: 91.7296,
-        image: u("zzUTACsJZ80", 1200),
+        image: u("photo-1500530855697-b586d89ba3ee", 1200),
         imageLg: u("zzUTACsJZ80", 1800),
         gallery: [
             u("zzUTACsJZ80", 1200),
@@ -256,7 +256,7 @@ var DESTINATIONS = [
         reviews: 1010,
         latitude: 21.9497,
         longitude: 89.1833,
-        image: u("2m1t5yzAf5k", 1200),
+        image: u("photo-1505118380757-91f5f5632de0", 1200),
         imageLg: u("2m1t5yzAf5k", 1800),
         gallery: [
             u("2m1t5yzAf5k", 1200),
@@ -294,7 +294,7 @@ var DESTINATIONS = [
         reviews: 870,
         latitude: 20.6107,
         longitude: 92.3280,
-        image: u("Fz-jPKN9mmI", 1200),
+        image: u("photo-1519046904884-53103b34b206", 1200),
         imageLg: u("Fz-jPKN9mmI", 1800),
         gallery: [
             u("Fz-jPKN9mmI", 1200),
@@ -370,7 +370,7 @@ var DESTINATIONS = [
         reviews: 540,
         latitude: 25.1581,
         longitude: 92.0459,
-        image: u("9UqzeQYkCgg", 1200),
+        image: u("photo-1432405972618-c60b0225b8f9", 1200),
         imageLg: u("9UqzeQYkCgg", 1800),
         gallery: [
             u("9UqzeQYkCgg", 1200),
@@ -408,7 +408,7 @@ var DESTINATIONS = [
         reviews: 470,
         latitude: 24.9705,
         longitude: 91.9878,
-        image: u("SfBZbmyG79c", 1200),
+        image: u("photo-1448375240586-882707db888b", 1200),
         imageLg: u("SfBZbmyG79c", 1800),
         gallery: [
             u("SfBZbmyG79c", 1200),
@@ -522,7 +522,7 @@ var DESTINATIONS = [
         reviews: 520,
         latitude: 23.6482,
         longitude: 90.6085,
-        image: u("fi1cYqgfkmo", 1200),
+        image: u("photo-1548013146-72479768bada", 1200),
         imageLg: u("fi1cYqgfkmo", 1800),
         gallery: [
             u("fi1cYqgfkmo", 1200),
@@ -560,7 +560,7 @@ var DESTINATIONS = [
         reviews: 350,
         latitude: 25.0308,
         longitude: 88.9772,
-        image: u("photo-1474181487882-5abf3f0ba6c2", 1200),
+        image: u("photo-1432405972618-c60b0225b8f9", 1200),
         imageLg: u("photo-1474181487882-5abf3f0ba6c2", 1800),
         gallery: [
             u("photo-1474181487882-5abf3f0ba6c2", 1200),
@@ -788,7 +788,7 @@ var DESTINATIONS = [
         reviews: 360,
         latitude: 24.6125,
         longitude: 92.1649,
-        image: u("photo-1432405972618-c60b0225b8f9", 1200),
+        image: u("photo-1476514525535-07fb3b4ae5f1", 1200),
         imageLg: u("photo-1432405972618-c60b0225b8f9", 1800),
         gallery: [
             u("photo-1432405972618-c60b0225b8f9", 1200),
@@ -2004,7 +2004,7 @@ image: u("SfBZbmyG79c", 1200),
         reviews: 480,
         latitude: 22.7100,
         longitude: 92.2100,
-        image: u("bhJRm6K3YFo", 1200),
+        image: u("photo-1474181487882-5abf3f0ba6c2", 1200),
         imageLg: u("bhJRm6K3YFo", 1800),
         gallery: [
             u("bhJRm6K3YFo", 1200),
@@ -2194,7 +2194,7 @@ image: u("SfBZbmyG79c", 1200),
         reviews: 520,
         latitude: 21.2320,
         longitude: 92.0470,
-        image: u("BJ_Bz2MFWmY", 1200),
+        image: u("photo-1524492412937-b28074a5d7da", 1200),
         imageLg: u("BJ_Bz2MFWmY", 1800),
         gallery: [
             u("BJ_Bz2MFWmY", 1200),
