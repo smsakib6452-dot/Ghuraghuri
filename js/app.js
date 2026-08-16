@@ -17,6 +17,18 @@
     var sortSelect = document.getElementById("sortSelect");
     var resultCount = document.getElementById("resultCount");
     var emptyState = document.getElementById("emptyState");
+    var statDestCount = document.getElementById("statDestCount");
+    var statDivCount = document.getElementById("statDivCount");
+    var statRatingAvg = document.getElementById("statRatingAvg");
+    var marqueeTrack = document.getElementById("marqueeTrack");
+
+    /* Curated slugs for the hero marquee (only destinations that exist in the DB). */
+    var MARQUEE_SLUGS = [
+        "coxs-bazar", "sajek-valley", "sylhet", "sundarbans", "bandarban",
+        "rangamati", "saint-martins-island", "srimangal", "kuakata",
+        "tanguar-haor", "jaflong", "sonargaon", "paharpur",
+        "ratargul-swamp-forest", "inani-beach", "kaptai-lake", "madhabkunda"
+    ];
 
     /* Build the list of unique categories from the data. */
     function buildFilters() {
@@ -106,6 +118,37 @@
         document.getElementById("popularGrid").innerHTML = popular.map(cardHTML).join("");
     }
 
+    /* Update hero stats from live destination data. */
+    function updateStats() {
+        if (!statDestCount || !statDivCount || !statRatingAvg) return;
+        var total = DESTINATIONS.length;
+        var divisions = new Set(DESTINATIONS.map(function (d) { return d.division; })).size;
+        var avgRating = (DESTINATIONS.reduce(function (sum, d) { return sum + d.rating; }, 0) / total).toFixed(1);
+        statDestCount.textContent = total;
+        statDivCount.textContent = divisions;
+        statRatingAvg.textContent = avgRating;
+    }
+
+    /* Render the hero destination marquee from existing destination data. */
+    function renderMarquee() {
+        if (!marqueeTrack) return;
+        var items = MARQUEE_SLUGS.map(function (slug) {
+            var d = null;
+            DESTINATIONS.forEach(function (x) { if (x.slug === slug) d = x; });
+            return d;
+        }).filter(Boolean);
+        if (!items.length) return;
+
+        function itemHTML(d) {
+            return '<a class="marquee-item" href="destination.html?slug=' + d.slug + '">' +
+                d.name + '<span class="marquee-dot" aria-hidden="true">•</span></a>';
+        }
+
+        var set = items.map(itemHTML).join("");
+        /* Duplicate the set so the loop is seamless (translateX -50%). */
+        marqueeTrack.innerHTML = set + set;
+    }
+
     function render() {
         var filtered = DESTINATIONS.filter(matches);
         var sorted = sortDestinations(filtered);
@@ -124,6 +167,8 @@
     function init() {
         buildFilters();
         renderPopular();
+        updateStats();
+        renderMarquee();
 
         /* Render weather once for the top-rated destinations. Clicking a
            weather card jumps to that destination's guide. */

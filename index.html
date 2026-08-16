@@ -24,7 +24,6 @@
                 <li><a href="#destinations" data-i18n="nav.destinations">Destinations</a></li>
                 <li><a href="#map" data-i18n="nav.map">Map</a></li>
                 <li><a href="weather.html" data-i18n="nav.weather">Weather</a></li>
-                <li><a href="admin.html" data-i18n="nav.admin">Admin</a></li>
             </ul>
             <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
             <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -36,18 +35,21 @@
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content container">
-            <p class="hero-eyebrow" data-i18n="hero.eyebrow">Explore 104 hand-picked destinations</p>
-            <h1 data-i18n="hero.title">Discover the Beauty of Bangladesh</h1>
-            <p class="hero-sub" data-i18n="hero.sub">From the longest sea beach to the misty hill valleys, plan your perfect journey with maps, weather and insider travel tips.</p>
+            <p class="hero-eyebrow" data-i18n="hero.eyebrow">EXPLORE 104 HAND-PICKED DESTINATIONS</p>
+            <h1 data-i18n="hero.title">Your Next Adventure Starts Here</h1>
+            <p class="hero-sub" data-i18n="hero.sub">Discover the best beaches, mountains, forests, and cultural experiences Bangladesh has to offer.</p>
             <div class="hero-search">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="search" id="searchInput" data-i18n-placeholder="hero.search" placeholder="Search beaches, mountains, tea gardens, islands…" autocomplete="off" />
+                <input type="search" id="searchInput" data-i18n-placeholder="hero.search" placeholder="Search destinations — Cox's Bazar, Sajek, Sylhet..." autocomplete="off" />
             </div>
             <div class="hero-stats">
-                <div class="stat"><strong>104</strong><span data-i18n="stat.destinations">Destinations</span></div>
-                <div class="stat"><strong>8</strong><span data-i18n="stat.divisions">Divisions</span></div>
-                <div class="stat"><strong>4.4</strong><span data-i18n="stat.rating">Avg. rating</span></div>
+                <div class="stat"><strong id="statDestCount">104</strong><span data-i18n="stat.destinations">Destinations</span></div>
+                <div class="stat"><strong id="statDivCount">8</strong><span data-i18n="stat.divisions">Divisions</span></div>
+                <div class="stat"><strong id="statRatingAvg">4.4</strong><span data-i18n="stat.rating">Avg. Rating</span></div>
             </div>
+        </div>
+        <div class="hero-marquee" aria-hidden="true">
+            <div class="marquee-track" id="marqueeTrack"></div>
         </div>
     </section>
 
@@ -137,5 +139,17 @@
     <script src="js/map.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/app.js"></script>
+    <script>
+        /* Conditionally show Admin navbar item only for authenticated admins */
+        (function () {
+            var adminLink = document.querySelector('nav.nav-links li a[href="admin.html"]');
+            if (!adminLink) return;
+            var isLoggedIn = (localStorage.getItem("ghuraghuri_admin_auth") === "1");
+            var isAdmin = (localStorage.getItem("ghuraghuri_admin_role") === (window.CONFIG ? window.CONFIG.ADMIN_ROLE : "admin"));
+            if (!isLoggedIn || !isAdmin) {
+                adminLink.closest("li").hidden = true;
+            }
+        })();
+    </script>
 </body>
 </html>

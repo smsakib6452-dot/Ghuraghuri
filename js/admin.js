@@ -71,6 +71,10 @@
         try { return window.localStorage.getItem(AUTH_KEY) === "1"; } catch (e) { return false; }
     }
 
+    function isAdminRole() {
+        try { return window.localStorage.getItem("ghuraghuri_admin_role") === CONFIG.ADMIN_ROLE; } catch (e) { return false; }
+    }
+
     function initAuth() {
         if (CONFIG.ADMIN_ENABLED === false) {
             views.login.innerHTML =
@@ -79,7 +83,7 @@
             views.login.hidden = false;
             return;
         }
-        if (isAuthed()) { show("dashboard"); return; }
+        if (isAuthed() && isAdminRole()) { show("dashboard"); return; }
         show("login");
     }
 
@@ -312,6 +316,19 @@
         }
     }
 
+    /* ---------- Route guard ---------- */
+
+    function requireAdmin() {
+        if (!isAuthed() || !isAdminRole()) {
+            /* Remove auth token and role so login view reappears */
+            try {
+                window.localStorage.removeItem(AUTH_KEY);
+                window.localStorage.removeItem("ghuraghuri_admin_role");
+            } catch (e) {}
+            show("login");
+        }
+    }
+
     /* ---------- Wire up ---------- */
 
     function wire() {
@@ -319,7 +336,10 @@
             e.preventDefault();
             var err = document.getElementById("loginError");
             if (getVal("adminPassword") === CONFIG.ADMIN_PASSWORD) {
-                try { window.localStorage.setItem(AUTH_KEY, "1"); } catch (x) {}
+                try {
+                    window.localStorage.setItem(AUTH_KEY, "1");
+                    window.localStorage.setItem("ghuraghuri_admin_role", CONFIG.ADMIN_ROLE);
+                } catch (x) {}
                 err.hidden = true;
                 show("dashboard");
             } else {
@@ -356,6 +376,10 @@
         document.getElementById("f-photo").addEventListener("input", updatePreview);
 
         document.getElementById("adminReset").addEventListener("click", function () {
+            if (!isAdminRole()) {
+                alert(I18N.t("admin.disabled.note"));
+                return;
+            }
             if (confirm("Remove ALL admin changes (added, edited and hidden destinations)? This cannot be undone.")) {
                 ADMIN_STORE.reset();
                 store = ADMIN_STORE.get();
@@ -366,6 +390,10 @@
         document.getElementById("adminTableBody").addEventListener("click", function (e) {
             var btn = e.target.closest("[data-act]");
             if (!btn) return;
+            if (!isAdminRole()) {
+                alert(I18N.t("admin.disabled.note"));
+                return;
+            }
             var slug = btn.dataset.slug;
             var act = btn.dataset.act;
             var all = ADMIN_STORE.build();
@@ -391,5 +419,6 @@
     document.addEventListener("DOMContentLoaded", function () {
         wire();
         initAuth();
+        requireAdmin();
     });
 })(window, document);

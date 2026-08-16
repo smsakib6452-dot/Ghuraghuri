@@ -22,11 +22,11 @@
         "nav.weather": "আবহাওয়া",
         "nav.admin": "অ্যাডমিন",
 
-        "hero.eyebrow": "হাতে-বাছাই করা %nটি গন্তব্যস্থান ঘুরে দেখুন",
-        "hero.title": "বাংলাদেশের সৌন্দর্য আবিষ্কার করুন",
-        "hero.sub": "বিশ্বের দীর্ঘতম সমুদ্র সৈকত থেকে কুয়াশা-ঢাকা পাহাড়ি উপত্যকা পর্যন্ত — মানচিত্র, আবহাওয়া ও ভ্রমণ টিপসসহ আপনার নিখুঁত ভ্রমণের পরিকল্পনা করুন।",
-        "hero.search": "সৈকত, পাহাড়, চা-বাগান, দ্বীপ… খুঁজুন",
-        "stat.destinations": "গন্তব্যস্থান",
+        "hero.eyebrow": "%nটি নির্বাচিত গন্তব্য আবিষ্কার করুন",
+        "hero.title": "আপনার পরবর্তী গন্তব্য, বাংলাদেশেই",
+        "hero.sub": "সমুদ্র, পাহাড়, বন আর সংস্কৃতির সেরা জায়গাগুলো খুঁজে নিন এবং আপনার পরবর্তী ভ্রমণের পরিকল্পনা করুন।",
+        "hero.search": "গন্তব্য খুঁজুন — কক্সবাজার, সাজেক, সিলেট...",
+        "stat.destinations": "গন্তব্য",
         "stat.divisions": "বিভাগ",
         "stat.rating": "গড় রেটিং",
 
@@ -202,13 +202,13 @@
         "nav.map": "Map",
         "nav.weather": "Weather",
         "nav.admin": "Admin",
-        "hero.eyebrow": "Explore %n hand-picked destinations",
-        "hero.title": "Discover the Beauty of Bangladesh",
-        "hero.sub": "From the longest sea beach to the misty hill valleys, plan your perfect journey with maps, weather and insider travel tips.",
-        "hero.search": "Search beaches, mountains, tea gardens, islands…",
+        "hero.eyebrow": "EXPLORE %n HAND-PICKED DESTINATIONS",
+        "hero.title": "Your Next Adventure Starts Here",
+        "hero.sub": "Discover the best beaches, mountains, forests, and cultural experiences Bangladesh has to offer.",
+        "hero.search": "Search destinations — Cox's Bazar, Sajek, Sylhet...",
         "stat.destinations": "Destinations",
         "stat.divisions": "Divisions",
-        "stat.rating": "Avg. rating",
+        "stat.rating": "Avg. Rating",
         "popular.eyebrow": "Most Visited",
         "popular.title": "Popular Right Now",
         "popular.link": "View all %n destinations →",
@@ -589,6 +589,12 @@
         DESTINATIONS = DESTINATIONS.map(localizeDest);
     }
 
+    /* Bangla numerals helper */
+    var BN_DIGITS = "০১২৩৪৫৬৭৮৯";
+    function toBnDigits(str) {
+        return String(str).replace(/[0-9]/g, function (d) { return BN_DIGITS[d]; });
+    }
+
     /* Apply translations to static [data-i18n] elements. */
     function applyUI() {
         document.documentElement.setAttribute("lang", isBn() ? "bn" : "en");
@@ -607,7 +613,7 @@
             var key = el.getAttribute("data-i18n");
             var text = t(key);
             if (!text) return;
-            text = text.replace(/%n/g, String(count));
+            text = text.replace(/%n/g, toBnDigits(count));
             el.innerHTML = text;
         });
         document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
@@ -643,5 +649,8 @@
         var btn = document.getElementById("langToggle");
         if (btn) btn.addEventListener("click", toggle);
         applyUI();
+        /* Smooth language transition: fade content in after i18n applies. */
+        var f = setTimeout(function () { document.body.classList.add("loaded"); }, 50);
+        if (f) clearTimeout(f);
     });
 })(window, document);

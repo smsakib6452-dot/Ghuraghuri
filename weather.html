@@ -71,5 +71,17 @@
     <script src="config.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/weather-page.js"></script>
+    <script>
+        /* Conditionally show Admin navbar item only for authenticated admins */
+        (function () {
+            var adminLink = document.querySelector('nav.nav-links li a[href="admin.html"]');
+            if (!adminLink) return;
+            var isLoggedIn = (localStorage.getItem("ghuraghuri_admin_auth") === "1");
+            var isAdmin = (localStorage.getItem("ghuraghuri_admin_role") === (window.CONFIG ? window.CONFIG.ADMIN_ROLE : "admin"));
+            if (!isLoggedIn || !isAdmin) {
+                adminLink.closest("li").hidden = true;
+            }
+        })();
+    </script>
 </body>
 </html>

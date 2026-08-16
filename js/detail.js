@@ -22,6 +22,7 @@
     }
 
     function render() {
+        dest = I18N.localizeDest(dest);
         document.getElementById("crumbName").textContent = dest.name;
         document.title = dest.name + " — " + (I18N.isBn() ? "বাংলাদেশ ট্রাভেল এক্সপ্লোরার" : "Bangladesh Travel Explorer");
 
