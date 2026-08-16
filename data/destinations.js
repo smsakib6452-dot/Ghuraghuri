@@ -66,10 +66,10 @@ var DESTINATIONS = [
         reviews: 980,
         latitude: 23.3819,
         longitude: 92.2938,
-        image: u("photo-1470071459604-3b5ec3a7fe05", 1200),
-        imageLg: u("photo-1470071459604-3b5ec3a7fe05", 1800),
+        image: u("GBYWXNWO81A", 1200),
+        imageLg: u("GBYWXNWO81A", 1800),
         gallery: [
-            u("photo-1470071459604-3b5ec3a7fe05", 1200),
+            u("GBYWXNWO81A", 1200),
             u("photo-1509266272358-7701da638078", 1200),
             u("photo-1469474968028-56623f02e42e", 1200)
         ],
@@ -104,10 +104,10 @@ var DESTINATIONS = [
         reviews: 860,
         latitude: 22.1953,
         longitude: 92.2189,
-        image: u("photo-1469474968028-56623f02e42e", 1200),
-        imageLg: u("photo-1469474968028-56623f02e42e", 1800),
+        image: u("wdwLVUPU_Bw", 1200),
+        imageLg: u("wdwLVUPU_Bw", 1800),
         gallery: [
-            u("photo-1469474968028-56623f02e42e", 1200),
+            u("wdwLVUPU_Bw", 1200),
             u("photo-1470071459604-3b5ec3a7fe05", 1200),
             u("photo-1432405972618-c60b0225b8f9", 1200)
         ],
@@ -142,10 +142,10 @@ var DESTINATIONS = [
         reviews: 720,
         latitude: 22.6470,
         longitude: 92.1520,
-        image: u("photo-1506744038136-46273834b3fb", 1200),
-        imageLg: u("photo-1506744038136-46273834b3fb", 1800),
+        image: u("Gusfeboth4A", 1200),
+        imageLg: u("Gusfeboth4A", 1800),
         gallery: [
-            u("photo-1506744038136-46273834b3fb", 1200),
+            u("Gusfeboth4A", 1200),
             u("photo-1476514525535-07fb3b4ae5f1", 1200),
             u("photo-1501785888041-af3ef285b470", 1200)
         ],
@@ -180,10 +180,10 @@ var DESTINATIONS = [
         reviews: 830,
         latitude: 24.8949,
         longitude: 91.8687,
-        image: u("photo-1472214103451-9374bd1c798e", 1200),
-        imageLg: u("photo-1472214103451-9374bd1c798e", 1800),
+        image: u("zzUTACsJZ80", 1200),
+        imageLg: u("zzUTACsJZ80", 1800),
         gallery: [
-            u("photo-1472214103451-9374bd1c798e", 1200),
+            u("zzUTACsJZ80", 1200),
             u("photo-1500530855697-b586d89ba3ee", 1200),
             u("photo-1439066615861-d1af74d74000", 1200)
         ],
@@ -218,10 +218,10 @@ var DESTINATIONS = [
         reviews: 690,
         latitude: 24.3065,
         longitude: 91.7296,
-        image: u("photo-1500530855697-b586d89ba3ee", 1200),
-        imageLg: u("photo-1500530855697-b586d89ba3ee", 1800),
+        image: u("zzUTACsJZ80", 1200),
+        imageLg: u("zzUTACsJZ80", 1800),
         gallery: [
-            u("photo-1500530855697-b586d89ba3ee", 1200),
+            u("zzUTACsJZ80", 1200),
             u("photo-1448375240586-882707db888b", 1200),
             u("photo-1473448912268-2022ce9509d8", 1200)
         ],
@@ -256,10 +256,10 @@ var DESTINATIONS = [
         reviews: 1010,
         latitude: 21.9497,
         longitude: 89.1833,
-        image: u("photo-1505118380757-91f5f5632de0", 1200),
-        imageLg: u("photo-1505118380757-91f5f5632de0", 1800),
+        image: u("2m1t5yzAf5k", 1200),
+        imageLg: u("2m1t5yzAf5k", 1800),
         gallery: [
-            u("photo-1505118380757-91f5f5632de0", 1200),
+            u("2m1t5yzAf5k", 1200),
             u("photo-1448375240586-882707db888b", 1200),
             u("photo-1470252649378-9c29740c9fa8", 1200)
         ],
@@ -294,10 +294,10 @@ var DESTINATIONS = [
         reviews: 870,
         latitude: 20.6107,
         longitude: 92.3280,
-        image: u("photo-1519046904884-53103b34b206", 1200),
-        imageLg: u("photo-1519046904884-53103b34b206", 1800),
+        image: u("Fz-jPKN9mmI", 1200),
+        imageLg: u("Fz-jPKN9mmI", 1800),
         gallery: [
-            u("photo-1519046904884-53103b34b206", 1200),
+            u("Fz-jPKN9mmI", 1200),
             u("photo-1507525428034-b723cf961d3e", 1200),
             u("photo-1470252649378-9c29740c9fa8", 1200)
         ],
@@ -332,12 +332,12 @@ var DESTINATIONS = [
         reviews: 610,
         latitude: 21.8294,
         longitude: 90.1238,
-        image: u("photo-1504851149312-7a075b496cc7", 1200),
-        imageLg: u("photo-1504851149312-7a075b496cc7", 1800),
+        image: u("photo-1507525428034-b723cf961d3e", 1200),
+        imageLg: u("photo-1507525428034-b723cf961d3e", 1800),
         gallery: [
-            u("photo-1504851149312-7a075b496cc7", 1200),
+            u("photo-1507525428034-b723cf961d3e", 1200),
             u("photo-1470252649378-9c29740c9fa8", 1200),
-            u("photo-1507525428034-b723cf961d3e", 1200)
+            u("photo-1519046904884-53103b34b206", 1200)
         ],
         shortDesc: "The rare beach where you can watch both sunrise and sunset over the Bay of Bengal.",
         description: "Kuakata offers one of the world's rare views of both sunrise and sunset from the same beach, across 18 km of untouched golden sand. Framed by coconut palms and the deep green Gangamati forest, it is quieter and calmer than Cox's Bazar. Local Rakhine culture, fisher-village life and the sacred Fatrar Char turtle sanctuary add character.",
@@ -370,10 +370,10 @@ var DESTINATIONS = [
         reviews: 540,
         latitude: 25.1581,
         longitude: 92.0459,
-        image: u("photo-1432405972618-c60b0225b8f9", 1200),
-        imageLg: u("photo-1432405972618-c60b0225b8f9", 1800),
+        image: u("9UqzeQYkCgg", 1200),
+        imageLg: u("9UqzeQYkCgg", 1800),
         gallery: [
-            u("photo-1432405972618-c60b0225b8f9", 1200),
+            u("9UqzeQYkCgg", 1200),
             u("photo-1473448912268-2022ce9509d8", 1200),
             u("photo-1448375240586-882707db888b", 1200)
         ],
@@ -408,10 +408,10 @@ var DESTINATIONS = [
         reviews: 470,
         latitude: 24.9705,
         longitude: 91.9878,
-        image: u("photo-1448375240586-882707db888b", 1200),
-        imageLg: u("photo-1448375240586-882707db888b", 1800),
+        image: u("SfBZbmyG79c", 1200),
+        imageLg: u("SfBZbmyG79c", 1800),
         gallery: [
-            u("photo-1448375240586-882707db888b", 1200),
+            u("SfBZbmyG79c", 1200),
             u("photo-1441974231531-c6227db76b6e", 1200),
             u("photo-1476514525535-07fb3b4ae5f1", 1200)
         ],
@@ -522,10 +522,10 @@ var DESTINATIONS = [
         reviews: 520,
         latitude: 23.6482,
         longitude: 90.6085,
-        image: u("photo-1548013146-72479768bada", 1200),
-        imageLg: u("photo-1548013146-72479768bada", 1800),
+        image: u("fi1cYqgfkmo", 1200),
+        imageLg: u("fi1cYqgfkmo", 1800),
         gallery: [
-            u("photo-1548013146-72479768bada", 1200),
+            u("fi1cYqgfkmo", 1200),
             u("photo-1474181487882-5abf3f0ba6c2", 1200),
             u("photo-1524492412937-b28074a5d7da", 1200)
         ],
@@ -1320,12 +1320,12 @@ var DESTINATIONS = [
         reviews: 430,
         latitude: 24.3188,
         longitude: 91.7854,
-        image: u("photo-1448375240586-882707db888b", 1200),
-        imageLg: u("photo-1448375240586-882707db888b", 1800),
+image: u("SfBZbmyG79c", 1200),
+        imageLg: u("SfBZbmyG79c", 1800),
         gallery: [
-            u("photo-1448375240586-882707db888b", 1200),
+            u("SfBZbmyG79c", 1200),
             u("photo-1441974231531-c6227db76b6e", 1200),
-            u("photo-1470071459604-3b5ec3a7fe05", 1200)
+            u("photo-1476514525535-07fb3b4ae5f1", 1200)
         ],
         shortDesc: "A protected lowland rainforest alive with gibbons, macaques and towering old-growth trees.",
         description: "Lawachara National Park is one of the few surviving lowland tropical forests of Bangladesh, a cathedral of tall trees, lianas and rare wildlife near Srimangal. Walk the shaded trails and you may hear the haunting call of the hoolock gibbon or spot capped langurs, macaques and more than 200 bird species. A canopy walk at the adjacent eco-park gives a bird's-eye view of the treetops.",
@@ -1396,12 +1396,12 @@ var DESTINATIONS = [
         reviews: 220,
         latitude: 24.6408,
         longitude: 90.0701,
-        image: u("photo-1448375240586-882707db888b", 1200),
-        imageLg: u("photo-1448375240586-882707db888b", 1800),
+image: u("SfBZbmyG79c", 1200),
+        imageLg: u("SfBZbmyG79c", 1800),
         gallery: [
-            u("photo-1448375240586-882707db888b", 1200),
+            u("SfBZbmyG79c", 1200),
             u("photo-1441974231531-c6227db76b6e", 1200),
-            u("photo-1473448912268-2022ce9509d8", 1200)
+            u("photo-1476514525535-07fb3b4ae5f1", 1200)
         ],
         shortDesc: "Ancient sal forest and meandering rivers — a tranquil wilderness in the heart of the country.",
         description: "Madhupur National Park protects one of the last large stands of sal forest on the elevated Madhupur tract in Tangail. Dense, dappled woodland gives way to clearings, pineapple orchards and small rivers that weave through the reserve. It is quieter and wilder than Bhawal, a peaceful retreat for walkers, birders and anyone craving deep forest silence.",
@@ -2004,10 +2004,10 @@ var DESTINATIONS = [
         reviews: 480,
         latitude: 22.7100,
         longitude: 92.2100,
-        image: u("photo-1501785888041-af3ef285b470", 1200),
-        imageLg: u("photo-1501785888041-af3ef285b470", 1800),
+        image: u("bhJRm6K3YFo", 1200),
+        imageLg: u("bhJRm6K3YFo", 1800),
         gallery: [
-            u("photo-1501785888041-af3ef285b470", 1200),
+            u("bhJRm6K3YFo", 1200),
             u("photo-1469474968028-56623f02e42e", 1200),
             u("photo-1470071459604-3b5ec3a7fe05", 1200)
         ],
@@ -2194,10 +2194,10 @@ var DESTINATIONS = [
         reviews: 520,
         latitude: 21.2320,
         longitude: 92.0470,
-        image: u("photo-1504851149312-7a075b496cc7", 1200),
-        imageLg: u("photo-1504851149312-7a075b496cc7", 1800),
+        image: u("BJ_Bz2MFWmY", 1200),
+        imageLg: u("BJ_Bz2MFWmY", 1800),
         gallery: [
-            u("photo-1504851149312-7a075b496cc7", 1200),
+            u("BJ_Bz2MFWmY", 1200),
             u("photo-1507525428034-b723cf961d3e", 1200),
             u("photo-1470252649378-9c29740c9fa8", 1200)
         ],
@@ -2650,11 +2650,11 @@ var DESTINATIONS = [
         reviews: 140,
         latitude: 24.3160,
         longitude: 91.8280,
-        image: u("photo-1432405972618-c60b0225b8f9", 1200),
-        imageLg: u("photo-1432405972618-c60b0225b8f9", 1800),
+image: u("9UqzeQYkCgg", 1200),
+        imageLg: u("9UqzeQYkCgg", 1800),
         gallery: [
-            u("photo-1432405972618-c60b0225b8f9", 1200),
-            u("photo-1441974231531-c6227db76b6e", 1200),
+            u("9UqzeQYkCgg", 1200),
+            u("photo-1473448912268-2022ce9509d8", 1200),
             u("photo-1448375240586-882707db888b", 1200)
         ],
         shortDesc: "A hidden twin waterfall tumbling through forest near Kamalganj — the 'weeping' falls.",
