@@ -23,7 +23,7 @@
 
     function render() {
         document.getElementById("crumbName").textContent = dest.name;
-        document.title = dest.name + " — Bangladesh Travel Explorer";
+        document.title = dest.name + " — " + (I18N.isBn() ? "বাংলাদেশ ট্রাভেল এক্সপ্লোরার" : "Bangladesh Travel Explorer");
 
         document.getElementById("detailImage").src = dest.imageLg;
         document.getElementById("detailImage").alt = dest.name;
@@ -33,7 +33,7 @@
         document.getElementById("detailTags").innerHTML = chipList(dest.categories);
         document.getElementById("detailStars").textContent = starsHTML(dest.rating);
         document.getElementById("detailRatingText").textContent =
-            dest.rating + " · " + dest.reviews.toLocaleString() + " reviews";
+            dest.rating + " · " + I18N.fmt("detail.reviews", { r: dest.reviews.toLocaleString() });
         document.getElementById("detailShort").textContent = dest.shortDesc;
         document.getElementById("detailDesc").textContent = dest.description;
 
@@ -58,15 +58,15 @@
 
         var ti = dest.travelInfo;
         document.getElementById("detailTravel").innerHTML =
-            '<div class="ti-row"><span class="ti-label">From</span><span>' + ti.from + "</span></div>" +
-            '<div class="ti-row"><span class="ti-label">Distance</span><span>' + ti.distanceKm + " km</span></div>" +
-            '<div class="ti-row"><span class="ti-label">Duration</span><span>' + ti.duration + "</span></div>" +
-            '<div class="ti-row"><span class="ti-label">Route</span><span>' + ti.route + "</span></div>" +
-            '<div class="ti-row"><span class="ti-label">Transport</span>' +
+            '<div class="ti-row"><span class="ti-label">' + I18N.t("ti.from") + '</span><span>' + ti.from + "</span></div>" +
+            '<div class="ti-row"><span class="ti-label">' + I18N.t("ti.distance") + '</span><span>' + ti.distanceKm + " km</span></div>" +
+            '<div class="ti-row"><span class="ti-label">' + I18N.t("ti.duration") + '</span><span>' + ti.duration + "</span></div>" +
+            '<div class="ti-row"><span class="ti-label">' + I18N.t("ti.route") + '</span><span>' + ti.route + "</span></div>" +
+            '<div class="ti-row"><span class="ti-label">' + I18N.t("ti.transport") + '</span>' +
                 '<div class="ti-transport">' + ti.transport.map(function (t) {
                     return "<span>" + t + "</span>";
                 }).join("") + "</div></div>" +
-            (ti.flight ? '<div class="ti-row"><span class="ti-label">Flight</span><span>' + ti.flight + "</span></div>" : "");
+            (ti.flight ? '<div class="ti-row"><span class="ti-label">' + I18N.t("ti.flight") + '</span><span>' + ti.flight + "</span></div>" : "");
 
         document.getElementById("factDivision").textContent = dest.division;
         document.getElementById("factDistrict").textContent = dest.district;

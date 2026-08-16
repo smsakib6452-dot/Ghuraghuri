@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bangladesh Travel Explorer — Discover the Beauty of Bangladesh</title>
+    <title data-i18n="page.title.index">Bangladesh Travel Explorer — Discover the Beauty of Bangladesh</title>
     <meta name="description" content="Explore the best travel destinations in Bangladesh — beaches, mountains, forests, islands and historic sites with maps, weather and travel guides." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,11 +21,12 @@
                 <span class="brand-text">Ghuraghuri</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#map">Map</a></li>
-                <li><a href="weather.html">Weather</a></li>
-                <li><a href="admin.html">Admin</a></li>
+                <li><a href="#destinations" data-i18n="nav.destinations">Destinations</a></li>
+                <li><a href="#map" data-i18n="nav.map">Map</a></li>
+                <li><a href="weather.html" data-i18n="nav.weather">Weather</a></li>
+                <li><a href="admin.html" data-i18n="nav.admin">Admin</a></li>
             </ul>
+            <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
             <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -35,17 +36,17 @@
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content container">
-            <p class="hero-eyebrow">Explore 104 hand-picked destinations</p>
-            <h1>Discover the Beauty of Bangladesh</h1>
-            <p class="hero-sub">From the longest sea beach to the misty hill valleys, plan your perfect journey with maps, weather and insider travel tips.</p>
+            <p class="hero-eyebrow" data-i18n="hero.eyebrow">Explore 104 hand-picked destinations</p>
+            <h1 data-i18n="hero.title">Discover the Beauty of Bangladesh</h1>
+            <p class="hero-sub" data-i18n="hero.sub">From the longest sea beach to the misty hill valleys, plan your perfect journey with maps, weather and insider travel tips.</p>
             <div class="hero-search">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="search" id="searchInput" placeholder="Search beaches, mountains, tea gardens, islands…" autocomplete="off" />
+                <input type="search" id="searchInput" data-i18n-placeholder="hero.search" placeholder="Search beaches, mountains, tea gardens, islands…" autocomplete="off" />
             </div>
             <div class="hero-stats">
-                <div class="stat"><strong>104</strong><span>Destinations</span></div>
-                <div class="stat"><strong>8</strong><span>Divisions</span></div>
-                <div class="stat"><strong>4.4</strong><span>Avg. rating</span></div>
+                <div class="stat"><strong>104</strong><span data-i18n="stat.destinations">Destinations</span></div>
+                <div class="stat"><strong>8</strong><span data-i18n="stat.divisions">Divisions</span></div>
+                <div class="stat"><strong>4.4</strong><span data-i18n="stat.rating">Avg. rating</span></div>
             </div>
         </div>
     </section>
@@ -54,10 +55,10 @@
         <section id="popular" class="section">
             <div class="section-head">
                 <div>
-                    <p class="section-eyebrow">Most Visited</p>
-                    <h2>Popular Right Now</h2>
+                    <p class="section-eyebrow" data-i18n="popular.eyebrow">Most Visited</p>
+                    <h2 data-i18n="popular.title">Popular Right Now</h2>
                 </div>
-                <a class="section-link" href="#destinations">View all 104 destinations →</a>
+                <a class="section-link" href="#destinations" data-i18n="popular.link">View all 104 destinations →</a>
             </div>
             <div class="dest-grid" id="popularGrid"></div>
         </section>
@@ -65,40 +66,40 @@
         <section id="destinations" class="section">
             <div class="section-head">
                 <div>
-                    <p class="section-eyebrow">Travel Guide</p>
-                    <h2>Pick Your Next Adventure</h2>
+                    <p class="section-eyebrow" data-i18n="section.destinations.eyebrow">Travel Guide</p>
+                    <h2 data-i18n="section.destinations.title">Pick Your Next Adventure</h2>
                 </div>
                 <p class="section-count" id="resultCount"></p>
             </div>
 
             <div class="filters" id="filterBar">
-                <button class="filter-chip active" data-category="All">All</button>
+                <button class="filter-chip active" data-category="All" data-i18n="filter.all">All</button>
             </div>
 
             <div class="sort-row">
-                <label for="sortSelect">Sort by</label>
+                <label for="sortSelect" data-i18n="sort.label">Sort by</label>
                 <select id="sortSelect">
-                    <option value="featured">Featured</option>
-                    <option value="rating">Highest rated</option>
-                    <option value="reviews">Most reviewed</option>
-                    <option value="name">Name A–Z</option>
+                    <option value="featured" data-i18n="sort.featured">Featured</option>
+                    <option value="rating" data-i18n="sort.rating">Highest rated</option>
+                    <option value="reviews" data-i18n="sort.reviews">Most reviewed</option>
+                    <option value="name" data-i18n="sort.name">Name A–Z</option>
                 </select>
             </div>
 
             <div class="dest-grid" id="destGrid"></div>
 
             <div class="empty-state" id="emptyState" hidden>
-                <h3>No destinations found</h3>
-                <p>Try a different search term or category.</p>
-                <button class="btn" id="resetFilters">Reset filters</button>
+                <h3 data-i18n="empty.title">No destinations found</h3>
+                <p data-i18n="empty.text">Try a different search term or category.</p>
+                <button class="btn" id="resetFilters" data-i18n="empty.reset">Reset filters</button>
             </div>
         </section>
 
         <section id="map" class="section">
             <div class="section-head">
                 <div>
-                    <p class="section-eyebrow">Explore by Map</p>
-                    <h2>Where in Bangladesh?</h2>
+                    <p class="section-eyebrow" data-i18n="map.eyebrow">Explore by Map</p>
+                    <h2 data-i18n="map.title">Where in Bangladesh?</h2>
                 </div>
             </div>
             <div id="mapContainer" class="map-container"></div>
@@ -107,13 +108,13 @@
         <section id="weather" class="section">
             <div class="section-head">
                 <div>
-                    <p class="section-eyebrow">Plan Around the Weather</p>
-                    <h2>Current Weather</h2>
+                    <p class="section-eyebrow" data-i18n="weather.eyebrow">Plan Around the Weather</p>
+                    <h2 data-i18n="weather.title">Current Weather</h2>
                 </div>
             </div>
             <div class="weather-wrap" id="weatherWrap">
                 <div class="weather-card">
-                    <p class="weather-note">Select a destination to see its current weather.</p>
+                    <p class="weather-note" data-i18n="weather.select">Select a destination to see its current weather.</p>
                 </div>
             </div>
         </section>
@@ -121,13 +122,15 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p><strong>Bangladesh Travel Explorer</strong> — a demo travel guide built with Open Data, Leaflet and Open-Meteo.</p>
-            <p class="footer-meta">Weather data: Open-Meteo · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
+            <p data-i18n="footer.title"><strong>Bangladesh Travel Explorer</strong> — a demo travel guide built with Open Data, Leaflet and Open-Meteo.</p>
+            <p class="footer-meta" data-i18n="footer.meta">Weather data: Open-Meteo · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
         </div>
     </footer>
 
     <script src="data/destinations.js"></script>
     <script src="js/store.js"></script>
+    <script src="data/translations.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/config-defaults.js"></script>
     <script src="config.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

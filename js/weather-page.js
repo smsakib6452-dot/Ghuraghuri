@@ -22,7 +22,10 @@
 
     function render() {
         var list = filtered();
-        count.textContent = list.length + " of " + DESTINATIONS.length + " destinations";
+        count.textContent = I18N.fmt("weather.count", {
+            a: list.length,
+            t: DESTINATIONS.length
+        });
         WEATHER.renderWeatherAll("weatherAll", list, {
             onSelect: function (dest) {
                 window.location.href = "destination.html?slug=" + dest.slug;

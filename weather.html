@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Live Weather — Bangladesh Travel Explorer</title>
+    <title data-i18n="page.title.weather">Live Weather — Bangladesh Travel Explorer</title>
     <meta name="description" content="Live weather for every destination in Bangladesh — current temperature, conditions, humidity and wind across all 104 hand-picked places." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,11 +20,12 @@
                 <span class="brand-text">Ghuraghuri</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#destinations">Destinations</a></li>
-                <li><a href="index.html#map">Map</a></li>
-                <li><a href="weather.html" class="active">Weather</a></li>
-                <li><a href="admin.html">Admin</a></li>
+                <li><a href="index.html#destinations" data-i18n="nav.destinations">Destinations</a></li>
+                <li><a href="index.html#map" data-i18n="nav.map">Map</a></li>
+                <li><a href="weather.html" class="active" data-i18n="nav.weather">Weather</a></li>
+                <li><a href="admin.html" data-i18n="nav.admin">Admin</a></li>
             </ul>
+            <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
             <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -35,8 +36,8 @@
         <section class="section">
             <div class="section-head">
                 <div>
-                    <p class="section-eyebrow">Live Forecasts</p>
-                    <h2>Weather Across Bangladesh</h2>
+                    <p class="section-eyebrow" data-i18n="weather.page.eyebrow">Live Forecasts</p>
+                    <h2 data-i18n="weather.page.title">Weather Across Bangladesh</h2>
                 </div>
                 <p class="section-count" id="weatherCount"></p>
             </div>
@@ -44,26 +45,28 @@
             <div class="weather-tools">
                 <div class="search-field">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                    <input type="search" id="weatherSearch" placeholder="Filter by destination, division or district…" autocomplete="off" />
+                    <input type="search" id="weatherSearch" data-i18n-placeholder="weather.search" placeholder="Filter by destination, division or district…" autocomplete="off" />
                 </div>
-                <button class="btn" id="weatherRefresh">↻ Refresh now</button>
+                <button class="btn" id="weatherRefresh" data-i18n="weather.refresh">↻ Refresh now</button>
             </div>
 
             <div class="weather-wrap" id="weatherAll">
-                <p class="weather-note">Loading weather…</p>
+                <p class="weather-note" data-i18n="weather.loading">Loading weather…</p>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p><strong>Bangladesh Travel Explorer</strong> — a demo travel guide built with Open Data, Leaflet and Open-Meteo.</p>
-            <p class="footer-meta">Weather data: Open-Meteo · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
+            <p data-i18n="footer.title"><strong>Bangladesh Travel Explorer</strong> — a demo travel guide built with Open Data, Leaflet and Open-Meteo.</p>
+            <p class="footer-meta" data-i18n="footer.meta">Weather data: Open-Meteo · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
         </div>
     </footer>
 
     <script src="data/destinations.js"></script>
     <script src="js/store.js"></script>
+    <script src="data/translations.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/config-defaults.js"></script>
     <script src="config.js"></script>
     <script src="js/weather.js"></script>

@@ -92,7 +92,7 @@
         document.getElementById("statCustom").textContent = store.custom.length;
         document.getElementById("statHidden").textContent = store.hidden.length;
         document.getElementById("adminCount").textContent =
-            ADMIN_STORE.build().length + " destinations · changes saved in this browser";
+            I18N.fmt("admin.count", { n: ADMIN_STORE.build().length });
     }
 
     function renderTable() {
@@ -108,25 +108,26 @@
         });
 
         if (!rows.length) {
-            body.innerHTML = '<tr><td colspan="7" class="admin-note" style="text-align:center;padding:30px;">No destinations match.</td></tr>';
+            body.innerHTML = '<tr><td colspan="7" class="admin-note" style="text-align:center;padding:30px;">' +
+                I18N.t("admin.empty") + "</td></tr>";
             return;
         }
 
         body.innerHTML = rows.map(function (d) {
             var st = statusOf(d);
             var badge = st === "custom"
-                ? '<span class="badge badge-custom">Custom</span>'
+                ? '<span class="badge badge-custom">' + I18N.t("admin.badge.custom") + "</span>"
                 : st === "hidden"
-                    ? '<span class="badge badge-hidden">Hidden</span>'
-                    : '<span class="badge badge-builtin">Built-in</span>';
+                    ? '<span class="badge badge-hidden">' + I18N.t("admin.badge.hidden") + "</span>"
+                    : '<span class="badge badge-builtin">' + I18N.t("admin.badge.builtin") + "</span>";
 
             var actions =
-                '<a class="btn" href="destination.html?slug=' + d.slug + '" target="_blank" rel="noopener">View</a>' +
-                '<button class="btn" data-act="edit" data-slug="' + d.slug + '">Edit</button>' +
+                '<a class="btn" href="destination.html?slug=' + d.slug + '" target="_blank" rel="noopener">' + I18N.t("admin.view") + "</a>" +
+                '<button class="btn" data-act="edit" data-slug="' + d.slug + '">' + I18N.t("admin.edit") + "</button>" +
                 '<button class="btn" data-act="toggle" data-slug="' + d.slug + '">' +
-                    (st === "hidden" ? "Show" : "Hide") + "</button>" +
+                    (st === "hidden" ? I18N.t("admin.show") : I18N.t("admin.hide")) + "</button>" +
                 (st === "custom"
-                    ? '<button class="btn btn-danger" data-act="delete" data-slug="' + d.slug + '">Delete</button>'
+                    ? '<button class="btn btn-danger" data-act="delete" data-slug="' + d.slug + '">' + I18N.t("admin.delete") + "</button>"
                     : "");
 
             return '<tr class="' + (st === "hidden" ? "row-hidden" : "") + '">' +
@@ -153,9 +154,9 @@
     function openEditor(mode, dest) {
         editing = { mode: mode, slug: dest ? dest.slug : null };
         document.getElementById("editorEyebrow").textContent =
-            mode === "new" ? "Add Destination" : "Edit Destination";
+            mode === "new" ? I18N.t("admin.editor.add") : I18N.t("admin.editor.edit");
         document.getElementById("editorTitle").textContent =
-            mode === "new" ? "New Destination" : dest.name;
+            mode === "new" ? I18N.t("admin.editor.add") : dest.name;
 
         var f = dest || {
             name: "", slug: "", division: "Dhaka", district: "", category: "",

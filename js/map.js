@@ -20,7 +20,7 @@
 
     function popupHTML(d) {
         var img = '<img class="lp-img" src="' + d.image + '" alt="" />';
-        var link = '<a class="lp-link" href="destination.html?slug=' + d.slug + '">View guide →</a>';
+        var link = '<a class="lp-link" href="destination.html?slug=' + d.slug + '">' + I18N.t("map.viewGuide") + '</a>';
         return '<div>' + img +
             '<div class="lp-name">' + d.name + '</div>' +
             '<div class="lp-meta">' + d.category + ' · ' + d.district + '</div>' +

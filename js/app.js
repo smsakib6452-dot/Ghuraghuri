@@ -34,7 +34,7 @@
             var btn = document.createElement("button");
             btn.className = "filter-chip" + (c === "All" ? " active" : "");
             btn.dataset.category = c;
-            btn.textContent = c;
+            btn.textContent = (c === "All") ? I18N.t("filter.all") : c;
             btn.addEventListener("click", function () {
                 state.category = c;
                 var all = bar.querySelectorAll(".filter-chip");
@@ -91,8 +91,8 @@
                 '<div class="card-loc">📍 ' + d.division + " · " + d.district + "</div>" +
                 '<p class="card-desc">' + d.shortDesc + "</p>" +
                 '<div class="card-footer">' +
-                    '<a class="card-link" href="destination.html?slug=' + d.slug + '">View guide →</a>' +
-                    '<span class="card-loc">' + d.reviews.toLocaleString() + " reviews</span>" +
+                    '<a class="card-link" href="destination.html?slug=' + d.slug + '">' + I18N.t("card.viewGuide") + "</a>" +
+                    '<span class="card-loc">' + I18N.fmt("card.reviews", { r: d.reviews.toLocaleString() }) + "</span>" +
                 "</div>" +
             "</div>" +
         "</article>";
@@ -112,9 +112,8 @@
         grid.innerHTML = sorted.map(cardHTML).join("");
 
         var total = DESTINATIONS.length;
-        resultCount.textContent = sorted.length + " of " + total +
-            " destination" + (total === 1 ? "" : "s") +
-            (state.query ? ' for "' + state.query + '"' : "");
+        resultCount.textContent = I18N.fmt("resultCount", { a: sorted.length, t: total }) +
+            (state.query ? I18N.fmt("resultCount.query", { q: state.query }) : "");
 
         emptyState.hidden = sorted.length > 0;
 

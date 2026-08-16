@@ -159,7 +159,7 @@
             : "";
         return '<div class="w-head">' +
             '<div><div class="w-name">' + dest.name + "</div>" +
-            '<div class="w-cond">' + w.label + "</div></div>" +
+            '<div class="w-cond">' + I18N.weatherLabel(w.label) + "</div></div>" +
             '<div class="w-icon">' + w.icon + "</div>" +
             "</div>" +
             '<div class="w-temp">' + w.temp + " " + w.unit + "</div>" +
@@ -174,7 +174,7 @@
        `onSelect(dest, w)` is called when a card is clicked. */
     function renderWeather(el, destinations, onSelect) {
         var wrap = document.getElementById(el);
-        wrap.innerHTML = '<div class="weather-note">Loading weather…</div>';
+        wrap.innerHTML = '<div class="weather-note">' + I18N.t("weather.loading") + "</div>";
 
         Promise.all(destinations.map(function (d) {
             return getWeather(d).then(function (w) {
@@ -199,7 +199,7 @@
                 wrap.appendChild(card);
             });
         }).catch(function (err) {
-            wrap.innerHTML = '<div class="weather-note">Weather unavailable right now. ' +
+            wrap.innerHTML = '<div class="weather-note">' + I18N.t("weather.unavailable") + " " +
                 (err && err.message ? "(" + err.message + ")" : "") + "</div>";
         });
     }
@@ -207,12 +207,12 @@
     /* Render a single weather card for the detail page sidebar. */
     function renderSingleWeather(el, dest) {
         var node = document.getElementById(el);
-        node.innerHTML = '<p class="weather-note">Loading weather…</p>';
+        node.innerHTML = '<p class="weather-note">' + I18N.t("weather.loading") + "</p>";
 
         getWeather(dest).then(function (w) {
             node.innerHTML = cardHTML(dest, w);
         }).catch(function (err) {
-            node.innerHTML = '<p class="weather-note">Weather unavailable right now. ' +
+            node.innerHTML = '<p class="weather-note">' + I18N.t("weather.unavailable") + " " +
                 (err && err.message ? "(" + err.message + ")" : "") + "</p>";
         });
     }
@@ -237,11 +237,20 @@
 
         function updateStatus() {
             if (done >= destinations.length) {
-                status.textContent = "Live conditions for " + destinations.length +
-                    " destinations · updated " + new Date().toLocaleTimeString() +
-                    (failed ? " · " + failed + " unavailable" : "");
+                var timeStr = new Date().toLocaleTimeString();
+                var allText = I18N.fmt("weather.status.all", {
+                    n: destinations.length,
+                    t: timeStr
+                });
+                if (failed) {
+                    allText += " · " + I18N.fmt("weather.status.failed", { f: failed });
+                }
+                status.textContent = allText;
             } else {
-                status.textContent = "Loading weather… " + done + " of " + destinations.length;
+                status.textContent = I18N.fmt("weather.status.loading", {
+                    a: done,
+                    t: destinations.length
+                });
             }
         }
 

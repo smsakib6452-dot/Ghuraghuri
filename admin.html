@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel — Bangladesh Travel Explorer</title>
+    <title data-i18n="page.title.admin">Admin Panel — Bangladesh Travel Explorer</title>
     <meta name="description" content="Admin panel to add, edit and hide destinations on the Bangladesh travel explorer." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,27 +21,28 @@
                 <span class="brand-text">Ghuraghuri</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#destinations">Destinations</a></li>
-                <li><a href="index.html#map">Map</a></li>
-                <li><a href="weather.html">Weather</a></li>
-                <li><a href="admin.html" class="active">Admin</a></li>
+                <li><a href="index.html#destinations" data-i18n="nav.destinations">Destinations</a></li>
+                <li><a href="index.html#map" data-i18n="nav.map">Map</a></li>
+                <li><a href="weather.html" data-i18n="nav.weather">Weather</a></li>
+                <li><a href="admin.html" class="active" data-i18n="nav.admin">Admin</a></li>
             </ul>
+            <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
         </nav>
     </header>
 
     <main class="container">
-        <nav class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> Admin</nav>
+        <nav class="breadcrumb"><a href="index.html" data-i18n="crumb.home">Home</a> <span class="sep">/</span> <span data-i18n="nav.admin">Admin</span></nav>
 
         <!-- Login view -->
         <section id="adminLogin" class="admin-panel" hidden>
             <div class="admin-login">
-                <h1>Admin Login</h1>
-                <p class="admin-login-note">Enter the admin password to manage destinations.</p>
+                <h1 data-i18n="admin.login.title">Admin Login</h1>
+                <p class="admin-login-note" data-i18n="admin.login.note">Enter the admin password to manage destinations.</p>
                 <form id="loginForm">
-                    <input type="password" id="adminPassword" placeholder="Password" autocomplete="current-password" />
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <input type="password" id="adminPassword" data-i18n-placeholder="admin.login.placeholder" placeholder="Password" autocomplete="current-password" />
+                    <button type="submit" class="btn btn-primary" data-i18n="admin.login.btn">Sign in</button>
                 </form>
-                <p id="loginError" class="admin-error" hidden>Incorrect password.</p>
+                <p id="loginError" class="admin-error" data-i18n="admin.login.error" hidden>Incorrect password.</p>
             </div>
         </section>
 
@@ -49,32 +50,32 @@
         <section id="adminDashboard" class="admin-panel" hidden>
             <div class="admin-head">
                 <div>
-                    <h1>Destinations</h1>
+                    <h1 data-i18n="admin.title">Destinations</h1>
                     <p class="section-count" id="adminCount"></p>
                 </div>
                 <div class="admin-actions">
-                    <button class="btn" id="adminReset">Reset all changes</button>
-                    <button class="btn btn-primary" id="adminAdd">+ Add destination</button>
+                    <button class="btn" id="adminReset" data-i18n="admin.reset">Reset all changes</button>
+                    <button class="btn btn-primary" id="adminAdd" data-i18n="admin.add">+ Add destination</button>
                 </div>
             </div>
 
             <div class="admin-stats">
-                <div class="admin-stat"><strong id="statTotal">0</strong><span>Total live</span></div>
-                <div class="admin-stat"><strong id="statBuiltin">0</strong><span>Built-in</span></div>
-                <div class="admin-stat"><strong id="statCustom">0</strong><span>Custom</span></div>
-                <div class="admin-stat"><strong id="statHidden">0</strong><span>Hidden</span></div>
+                <div class="admin-stat"><strong id="statTotal">0</strong><span data-i18n="admin.stat.live">Total live</span></div>
+                <div class="admin-stat"><strong id="statBuiltin">0</strong><span data-i18n="admin.stat.builtin">Built-in</span></div>
+                <div class="admin-stat"><strong id="statCustom">0</strong><span data-i18n="admin.stat.custom">Custom</span></div>
+                <div class="admin-stat"><strong id="statHidden">0</strong><span data-i18n="admin.stat.hidden">Hidden</span></div>
             </div>
 
             <div class="admin-tools">
                 <div class="search-field">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                    <input type="search" id="adminSearch" placeholder="Search name, division, district…" autocomplete="off" />
+                    <input type="search" id="adminSearch" data-i18n-placeholder="admin.search" placeholder="Search name, division, district…" autocomplete="off" />
                 </div>
                 <select id="adminStatusFilter" class="admin-select">
-                    <option value="all">All statuses</option>
-                    <option value="builtin">Built-in</option>
-                    <option value="custom">Custom</option>
-                    <option value="hidden">Hidden</option>
+                    <option value="all" data-i18n="admin.filter.all">All statuses</option>
+                    <option value="builtin" data-i18n="admin.filter.builtin">Built-in</option>
+                    <option value="custom" data-i18n="admin.filter.custom">Custom</option>
+                    <option value="hidden" data-i18n="admin.filter.hidden">Hidden</option>
                 </select>
             </div>
 
@@ -82,19 +83,19 @@
                 <table class="admin-table" id="adminTable">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Division · District</th>
-                            <th>Category</th>
-                            <th>Rating</th>
-                            <th>Reviews</th>
-                            <th>Status</th>
-                            <th>Actions</th>
+                            <th data-i18n="admin.th.name">Name</th>
+                            <th data-i18n="admin.th.division">Division · District</th>
+                            <th data-i18n="admin.th.category">Category</th>
+                            <th data-i18n="admin.th.rating">Rating</th>
+                            <th data-i18n="admin.th.reviews">Reviews</th>
+                            <th data-i18n="admin.th.status">Status</th>
+                            <th data-i18n="admin.th.actions">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="adminTableBody"></tbody>
                 </table>
             </div>
-            <p class="admin-note">Changes are saved in this browser (localStorage) and applied to the live site immediately. Use <em>Reset all changes</em> to restore the original 104 destinations.</p>
+            <p class="admin-note" data-i18n="admin.note">Changes are saved in this browser (localStorage) and applied to the live site immediately. Use <em>Reset all changes</em> to restore the original 104 destinations.</p>
         </section>
 
         <!-- Editor -->
@@ -104,48 +105,48 @@
                     <p class="section-eyebrow" id="editorEyebrow">Edit Destination</p>
                     <h1 id="editorTitle">Destination</h1>
                 </div>
-                <button class="btn" id="editorBack">← Back to list</button>
+                <button class="btn" id="editorBack" data-i18n="admin.editor.back">← Back to list</button>
             </div>
 
             <form id="editorForm" class="editor-form">
                 <div class="editor-grid">
                     <div class="editor-col">
-                        <h3>Basics</h3>
-                        <label>Name<input type="text" id="f-name" required /></label>
-                        <label>Slug (auto if blank)<input type="text" id="f-slug" /></label>
-                        <label>Division
+                        <h3 data-i18n="admin.editor.basics">Basics</h3>
+                        <label><span data-i18n="admin.editor.name">Name</span><input type="text" id="f-name" required /></label>
+                        <label><span data-i18n="admin.editor.slug">Slug (auto if blank)</span><input type="text" id="f-slug" /></label>
+                        <label><span data-i18n="admin.editor.division">Division</span>
                             <select id="f-division">
                                 <option>Chattogram</option><option>Sylhet</option><option>Khulna</option>
                                 <option>Barishal</option><option>Dhaka</option><option>Rajshahi</option>
                                 <option>Mymensingh</option><option>Rangpur</option>
                             </select>
                         </label>
-                        <label>District<input type="text" id="f-district" /></label>
-                        <label>Primary category<input type="text" id="f-category" list="catList" /></label>
+                        <label><span data-i18n="admin.editor.district">District</span><input type="text" id="f-district" /></label>
+                        <label><span data-i18n="admin.editor.category">Primary category</span><input type="text" id="f-category" list="catList" /></label>
                         <datalist id="catList">
                             <option>Adventure</option><option>Beach</option><option>Cultural</option>
                             <option>Family</option><option>Forest</option><option>Historical</option>
                             <option>Island</option><option>Mountain</option><option>Nature</option><option>Waterfall</option>
                         </datalist>
-                        <label>All categories (comma separated)<input type="text" id="f-categories" /></label>
+                        <label><span data-i18n="admin.editor.categories">All categories (comma separated)</span><input type="text" id="f-categories" /></label>
 
-                        <h3>Ratings</h3>
+                        <h3 data-i18n="admin.editor.ratings">Ratings</h3>
                         <div class="editor-row">
-                            <label>Rating (0–5)<input type="number" id="f-rating" step="0.1" min="0" max="5" /></label>
-                            <label>Reviews<input type="number" id="f-reviews" min="0" /></label>
+                            <label><span data-i18n="admin.editor.rating">Rating (0–5)</span><input type="number" id="f-rating" step="0.1" min="0" max="5" /></label>
+                            <label><span data-i18n="admin.editor.reviews">Reviews</span><input type="number" id="f-reviews" min="0" /></label>
                         </div>
 
-                        <h3>Location</h3>
+                        <h3 data-i18n="admin.editor.location">Location</h3>
                         <div class="editor-row">
-                            <label>Latitude<input type="number" id="f-latitude" step="any" /></label>
-                            <label>Longitude<input type="number" id="f-longitude" step="any" /></label>
+                            <label><span data-i18n="admin.editor.lat">Latitude</span><input type="number" id="f-latitude" step="any" /></label>
+                            <label><span data-i18n="admin.editor.lng">Longitude</span><input type="number" id="f-longitude" step="any" /></label>
                         </div>
 
-                        <h3>Images</h3>
-                        <label>Unsplash photo id
+                        <h3 data-i18n="admin.editor.images">Images</h3>
+                        <label><span data-i18n="admin.editor.photo">Unsplash photo id</span>
                             <input type="text" id="f-photo" placeholder="photo-1507525428034-b723cf961d3e" />
                         </label>
-                        <label>Gallery photo ids (comma separated, optional)
+                        <label><span data-i18n="admin.editor.gallery">Gallery photo ids (comma separated, optional)</span>
                             <input type="text" id="f-gallery" />
                         </label>
                         <div class="editor-preview" id="editorPreview">
@@ -155,41 +156,41 @@
                     </div>
 
                     <div class="editor-col">
-                        <h3>Copy</h3>
-                        <label>Short description<textarea id="f-shortDesc" rows="2"></textarea></label>
-                        <label>Description<textarea id="f-description" rows="6"></textarea></label>
+                        <h3 data-i18n="admin.editor.copy">Copy</h3>
+                        <label><span data-i18n="admin.editor.short">Short description</span><textarea id="f-shortDesc" rows="2"></textarea></label>
+                        <label><span data-i18n="admin.editor.desc">Description</span><textarea id="f-description" rows="6"></textarea></label>
 
-                        <h3>Planning</h3>
-                        <label>Best time<input type="text" id="f-bestTime" /></label>
+                        <h3 data-i18n="admin.editor.planning">Planning</h3>
+                        <label><span data-i18n="admin.editor.bestTime">Best time</span><input type="text" id="f-bestTime" /></label>
                         <div class="editor-row">
-                            <label>Recommended days<input type="text" id="f-days" /></label>
-                            <label>Difficulty
+                            <label><span data-i18n="admin.editor.days">Recommended days</span><input type="text" id="f-days" /></label>
+                            <label><span data-i18n="admin.editor.difficulty">Difficulty</span>
                                 <select id="f-difficulty">
                                     <option>Easy</option><option>Moderate</option><option>Challenging</option>
                                 </select>
                             </label>
                         </div>
-                        <label>Budget<input type="text" id="f-budget" /></label>
-                        <label>Travel type<input type="text" id="f-travelType" /></label>
-                        <label>Activities (one per line)<textarea id="f-activities" rows="4"></textarea></label>
-                        <label>Top attractions (one per line)<textarea id="f-attractions" rows="3"></textarea></label>
-                        <label>Tips (one per line)<textarea id="f-tips" rows="3"></textarea></label>
+                        <label><span data-i18n="admin.editor.budget">Budget</span><input type="text" id="f-budget" /></label>
+                        <label><span data-i18n="admin.editor.type">Travel type</span><input type="text" id="f-travelType" /></label>
+                        <label><span data-i18n="admin.editor.activities">Activities (one per line)</span><textarea id="f-activities" rows="4"></textarea></label>
+                        <label><span data-i18n="admin.editor.attractions">Top attractions (one per line)</span><textarea id="f-attractions" rows="3"></textarea></label>
+                        <label><span data-i18n="admin.editor.tips">Tips (one per line)</span><textarea id="f-tips" rows="3"></textarea></label>
 
-                        <h3>Getting there</h3>
-                        <label>From<input type="text" id="f-ti-from" /></label>
+                        <h3 data-i18n="admin.editor.travel">Getting there</h3>
+                        <label><span data-i18n="admin.editor.from">From</span><input type="text" id="f-ti-from" /></label>
                         <div class="editor-row">
-                            <label>Distance (km)<input type="number" id="f-ti-distance" min="0" /></label>
-                            <label>Duration<input type="text" id="f-ti-duration" /></label>
+                            <label><span data-i18n="admin.editor.distance">Distance (km)</span><input type="number" id="f-ti-distance" min="0" /></label>
+                            <label><span data-i18n="admin.editor.duration">Duration</span><input type="text" id="f-ti-duration" /></label>
                         </div>
-                        <label>Route<input type="text" id="f-ti-route" /></label>
-                        <label>Transport (comma separated)<input type="text" id="f-ti-transport" /></label>
-                        <label>Flight (optional)<input type="text" id="f-ti-flight" /></label>
+                        <label><span data-i18n="admin.editor.route">Route</span><input type="text" id="f-ti-route" /></label>
+                        <label><span data-i18n="admin.editor.transport">Transport (comma separated)</span><input type="text" id="f-ti-transport" /></label>
+                        <label><span data-i18n="admin.editor.flight">Flight (optional)</span><input type="text" id="f-ti-flight" /></label>
                     </div>
                 </div>
 
                 <div class="editor-save">
-                    <button type="submit" class="btn btn-primary">Save destination</button>
-                    <button type="button" class="btn" id="editorCancel">Cancel</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="admin.editor.save">Save destination</button>
+                    <button type="button" class="btn" id="editorCancel" data-i18n="admin.editor.cancel">Cancel</button>
                 </div>
             </form>
         </section>
@@ -197,12 +198,14 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p><strong>Bangladesh Travel Explorer</strong> — admin panel. Changes are stored in your browser only.</p>
+            <p data-i18n="footer.admin"><strong>Bangladesh Travel Explorer</strong> — admin panel. Changes are stored in your browser only.</p>
         </div>
     </footer>
 
     <script src="data/destinations.js"></script>
     <script src="js/store.js"></script>
+    <script src="data/translations.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/config-defaults.js"></script>
     <script src="config.js"></script>
     <script src="js/admin.js"></script>
