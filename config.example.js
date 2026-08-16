@@ -42,5 +42,10 @@ const CONFIG = {
 
     /* Base URL used to build "Open in Google Maps" links */
     GOOGLE_MAPS_SEARCH: "https://www.google.com/maps/search/?api=1&query=",
-    GOOGLE_MAPS_DIR: "https://www.google.com/maps/dir/?api=1&origin="
+    GOOGLE_MAPS_DIR: "https://www.google.com/maps/dir/?api=1&origin=",
+
+    /* Admin panel. Client-side only gate (demo security) — change this
+     * password before publishing. Set ADMIN_ENABLED=false to disable. */
+    ADMIN_ENABLED: true,
+    ADMIN_PASSWORD: "ghuraghuri-admin"
 };

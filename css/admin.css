@@ -1,0 +1,94 @@
+/* ============================================================================
+   BANGLADESH TRAVEL EXPLORER - ADMIN PANEL STYLES
+   ============================================================================ */
+
+.admin-panel { padding: 40px 0 20px; }
+
+/* ---------- Login ---------- */
+.admin-login {
+    max-width: 380px; margin: 40px auto; background: var(--card);
+    border: 1px solid var(--line); border-radius: 20px; padding: 34px;
+    box-shadow: var(--shadow); text-align: center;
+}
+.admin-login h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 6px; }
+.admin-login-note { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+.admin-login form { display: flex; flex-direction: column; gap: 12px; }
+.admin-login input {
+    font: inherit; font-size: 15px; padding: 12px 14px; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--bg); color: var(--ink); outline: none;
+}
+.admin-login input:focus { border-color: var(--green-500); }
+.admin-error { color: #b3261e; font-size: 14px; margin-top: 12px; }
+
+/* ---------- Head & actions ---------- */
+.admin-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.admin-head h1 { font-size: 1.8rem; font-weight: 800; }
+.admin-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ---------- Stats ---------- */
+.admin-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-bottom: 22px; }
+.admin-stat {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 18px; box-shadow: var(--shadow);
+}
+.admin-stat strong { display: block; font-size: 1.7rem; font-weight: 800; color: var(--green-700); }
+.admin-stat span { color: var(--muted); font-size: 13px; }
+
+/* ---------- Tools ---------- */
+.admin-tools { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 18px; }
+.admin-select {
+    font: inherit; font-size: 14px; padding: 11px 14px; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer;
+}
+
+/* ---------- Table ---------- */
+.admin-table-wrap { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
+.admin-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.admin-table th {
+    text-align: left; padding: 14px 16px; background: var(--bg); color: var(--muted);
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--line);
+}
+.admin-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.admin-table tbody tr:hover { background: #fbfdfc; }
+.admin-table tbody tr:last-child td { border-bottom: 0; }
+.admin-table .name-cell { font-weight: 700; color: var(--ink); }
+.admin-table .name-cell small { display: block; font-weight: 500; color: var(--muted); }
+.admin-table .row-hidden td { opacity: 0.55; }
+
+.badge {
+    display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 10px;
+    border-radius: 999px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.badge-builtin { background: #eaf4ef; color: var(--green-700); }
+.badge-custom { background: #fdf1e1; color: var(--accent-dark); }
+.badge-hidden { background: #f2e2e1; color: #b3261e; }
+
+.row-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.row-actions .btn { padding: 6px 12px; font-size: 12.5px; border-radius: 9px; }
+.btn-danger { color: #b3261e; }
+.btn-danger:hover { border-color: #b3261e; color: #b3261e; }
+
+.admin-note { color: var(--muted); font-size: 13px; margin-top: 14px; }
+
+/* ---------- Editor ---------- */
+.editor-form .editor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.editor-col { display: flex; flex-direction: column; gap: 12px; }
+.editor-col h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--green-600); margin: 10px 0 2px; }
+.editor-form label { display: flex; flex-direction: column; gap: 5px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.editor-form input, .editor-form select, .editor-form textarea {
+    font: inherit; font-size: 14px; padding: 10px 12px; border-radius: 10px;
+    border: 1px solid var(--line); background: var(--card); color: var(--ink); outline: none;
+}
+.editor-form textarea { resize: vertical; }
+.editor-form input:focus, .editor-form select:focus, .editor-form textarea:focus { border-color: var(--green-500); }
+.editor-row { display: flex; gap: 12px; }
+.editor-row label { flex: 1; }
+.editor-preview { margin-top: 6px; border: 1px dashed var(--line); border-radius: 12px; padding: 10px; min-height: 150px; display: flex; align-items: center; justify-content: center; background: var(--bg); overflow: hidden; }
+.editor-preview img { max-height: 140px; border-radius: 8px; object-fit: cover; }
+.preview-placeholder { color: var(--muted); font-size: 13px; }
+.editor-save { display: flex; gap: 12px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+
+@media (max-width: 860px) {
+    .editor-form .editor-grid { grid-template-columns: 1fr; }
+    .admin-table-wrap { overflow-x: auto; }
+}

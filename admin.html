@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel — Bangladesh Travel Explorer</title>
+    <meta name="description" content="Admin panel to add, edit and hide destinations on the Bangladesh travel explorer." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="css/logo.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="index.html" class="brand">
+                <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                <span class="brand-text">Ghuraghuri</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#destinations">Destinations</a></li>
+                <li><a href="index.html#map">Map</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="admin.html" class="active">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> Admin</nav>
+
+        <!-- Login view -->
+        <section id="adminLogin" class="admin-panel" hidden>
+            <div class="admin-login">
+                <h1>Admin Login</h1>
+                <p class="admin-login-note">Enter the admin password to manage destinations.</p>
+                <form id="loginForm">
+                    <input type="password" id="adminPassword" placeholder="Password" autocomplete="current-password" />
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </form>
+                <p id="loginError" class="admin-error" hidden>Incorrect password.</p>
+            </div>
+        </section>
+
+        <!-- Dashboard -->
+        <section id="adminDashboard" class="admin-panel" hidden>
+            <div class="admin-head">
+                <div>
+                    <h1>Destinations</h1>
+                    <p class="section-count" id="adminCount"></p>
+                </div>
+                <div class="admin-actions">
+                    <button class="btn" id="adminReset">Reset all changes</button>
+                    <button class="btn btn-primary" id="adminAdd">+ Add destination</button>
+                </div>
+            </div>
+
+            <div class="admin-stats">
+                <div class="admin-stat"><strong id="statTotal">0</strong><span>Total live</span></div>
+                <div class="admin-stat"><strong id="statBuiltin">0</strong><span>Built-in</span></div>
+                <div class="admin-stat"><strong id="statCustom">0</strong><span>Custom</span></div>
+                <div class="admin-stat"><strong id="statHidden">0</strong><span>Hidden</span></div>
+            </div>
+
+            <div class="admin-tools">
+                <div class="search-field">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="search" id="adminSearch" placeholder="Search name, division, district…" autocomplete="off" />
+                </div>
+                <select id="adminStatusFilter" class="admin-select">
+                    <option value="all">All statuses</option>
+                    <option value="builtin">Built-in</option>
+                    <option value="custom">Custom</option>
+                    <option value="hidden">Hidden</option>
+                </select>
+            </div>
+
+            <div class="admin-table-wrap">
+                <table class="admin-table" id="adminTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Division · District</th>
+                            <th>Category</th>
+                            <th>Rating</th>
+                            <th>Reviews</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminTableBody"></tbody>
+                </table>
+            </div>
+            <p class="admin-note">Changes are saved in this browser (localStorage) and applied to the live site immediately. Use <em>Reset all changes</em> to restore the original 104 destinations.</p>
+        </section>
+
+        <!-- Editor -->
+        <section id="adminEditor" class="admin-panel" hidden>
+            <div class="admin-head">
+                <div>
+                    <p class="section-eyebrow" id="editorEyebrow">Edit Destination</p>
+                    <h1 id="editorTitle">Destination</h1>
+                </div>
+                <button class="btn" id="editorBack">← Back to list</button>
+            </div>
+
+            <form id="editorForm" class="editor-form">
+                <div class="editor-grid">
+                    <div class="editor-col">
+                        <h3>Basics</h3>
+                        <label>Name<input type="text" id="f-name" required /></label>
+                        <label>Slug (auto if blank)<input type="text" id="f-slug" /></label>
+                        <label>Division
+                            <select id="f-division">
+                                <option>Chattogram</option><option>Sylhet</option><option>Khulna</option>
+                                <option>Barishal</option><option>Dhaka</option><option>Rajshahi</option>
+                                <option>Mymensingh</option><option>Rangpur</option>
+                            </select>
+                        </label>
+                        <label>District<input type="text" id="f-district" /></label>
+                        <label>Primary category<input type="text" id="f-category" list="catList" /></label>
+                        <datalist id="catList">
+                            <option>Adventure</option><option>Beach</option><option>Cultural</option>
+                            <option>Family</option><option>Forest</option><option>Historical</option>
+                            <option>Island</option><option>Mountain</option><option>Nature</option><option>Waterfall</option>
+                        </datalist>
+                        <label>All categories (comma separated)<input type="text" id="f-categories" /></label>
+
+                        <h3>Ratings</h3>
+                        <div class="editor-row">
+                            <label>Rating (0–5)<input type="number" id="f-rating" step="0.1" min="0" max="5" /></label>
+                            <label>Reviews<input type="number" id="f-reviews" min="0" /></label>
+                        </div>
+
+                        <h3>Location</h3>
+                        <div class="editor-row">
+                            <label>Latitude<input type="number" id="f-latitude" step="any" /></label>
+                            <label>Longitude<input type="number" id="f-longitude" step="any" /></label>
+                        </div>
+
+                        <h3>Images</h3>
+                        <label>Unsplash photo id
+                            <input type="text" id="f-photo" placeholder="photo-1507525428034-b723cf961d3e" />
+                        </label>
+                        <label>Gallery photo ids (comma separated, optional)
+                            <input type="text" id="f-gallery" />
+                        </label>
+                        <div class="editor-preview" id="editorPreview">
+                            <img id="previewImg" alt="Image preview" />
+                            <span class="preview-placeholder">Enter a photo id to preview</span>
+                        </div>
+                    </div>
+
+                    <div class="editor-col">
+                        <h3>Copy</h3>
+                        <label>Short description<textarea id="f-shortDesc" rows="2"></textarea></label>
+                        <label>Description<textarea id="f-description" rows="6"></textarea></label>
+
+                        <h3>Planning</h3>
+                        <label>Best time<input type="text" id="f-bestTime" /></label>
+                        <div class="editor-row">
+                            <label>Recommended days<input type="text" id="f-days" /></label>
+                            <label>Difficulty
+                                <select id="f-difficulty">
+                                    <option>Easy</option><option>Moderate</option><option>Challenging</option>
+                                </select>
+                            </label>
+                        </div>
+                        <label>Budget<input type="text" id="f-budget" /></label>
+                        <label>Travel type<input type="text" id="f-travelType" /></label>
+                        <label>Activities (one per line)<textarea id="f-activities" rows="4"></textarea></label>
+                        <label>Top attractions (one per line)<textarea id="f-attractions" rows="3"></textarea></label>
+                        <label>Tips (one per line)<textarea id="f-tips" rows="3"></textarea></label>
+
+                        <h3>Getting there</h3>
+                        <label>From<input type="text" id="f-ti-from" /></label>
+                        <div class="editor-row">
+                            <label>Distance (km)<input type="number" id="f-ti-distance" min="0" /></label>
+                            <label>Duration<input type="text" id="f-ti-duration" /></label>
+                        </div>
+                        <label>Route<input type="text" id="f-ti-route" /></label>
+                        <label>Transport (comma separated)<input type="text" id="f-ti-transport" /></label>
+                        <label>Flight (optional)<input type="text" id="f-ti-flight" /></label>
+                    </div>
+                </div>
+
+                <div class="editor-save">
+                    <button type="submit" class="btn btn-primary">Save destination</button>
+                    <button type="button" class="btn" id="editorCancel">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p><strong>Bangladesh Travel Explorer</strong> — admin panel. Changes are stored in your browser only.</p>
+        </div>
+    </footer>
+
+    <script src="data/destinations.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/config-defaults.js"></script>
+    <script src="config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

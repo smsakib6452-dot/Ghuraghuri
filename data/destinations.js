@@ -15,7 +15,7 @@ const u = function (id, w) {
     return "https://images.unsplash.com/" + id + "?auto=format&fit=crop&w=" + w + "&q=70";
 };
 
-const DESTINATIONS = [
+var DESTINATIONS = [
     {
         id: 1,
         name: "Cox's Bazar",
