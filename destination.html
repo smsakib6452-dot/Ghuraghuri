@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination — Bangladesh Travel Explorer</title>
+    <meta name="description" content="Detailed travel guide for this destination in Bangladesh." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="icon" type="image/svg+xml" href="css/logo.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="index.html" class="brand">
+                <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                <span class="brand-text">Ghuraghuri</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#destinations">Destinations</a></li>
+                <li><a href="index.html#map">Map</a></li>
+                <li><a href="weather.html">Weather</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> <span id="crumbName">Destination</span></nav>
+
+        <section class="detail-hero" id="detailHero" hidden>
+            <div class="detail-hero-img"><img id="detailImage" src="" alt="" /></div>
+            <div class="detail-hero-body">
+                <div class="detail-tags" id="detailTags"></div>
+                <h1 id="detailName"></h1>
+                <p class="detail-loc" id="detailLocation"></p>
+                <div class="detail-rating">
+                    <span class="stars" id="detailStars"></span>
+                    <span id="detailRatingText"></span>
+                </div>
+                <p class="detail-short" id="detailShort"></p>
+                <div class="detail-actions">
+                    <a class="btn btn-primary" id="gmapsLink" target="_blank" rel="noopener">Open in Google Maps</a>
+                    <a class="btn" id="weatherLink" href="#weatherCard">Check Weather</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-grid" id="detailBody" hidden>
+            <div class="detail-main">
+                <article class="panel">
+                    <h2>About</h2>
+                    <p id="detailDesc"></p>
+                </article>
+
+                <article class="panel">
+                    <h2>Gallery</h2>
+                    <div class="gallery" id="detailGallery"></div>
+                </article>
+
+                <article class="panel">
+                    <h2>Best Things to Do</h2>
+                    <ul class="check-list" id="detailActivities"></ul>
+                </article>
+
+                <article class="panel">
+                    <h2>Top Attractions</h2>
+                    <ul class="check-list" id="detailAttractions"></ul>
+                </article>
+
+                <article class="panel">
+                    <h2>Travel Tips</h2>
+                    <ul class="tip-list" id="detailTips"></ul>
+                </article>
+
+                <article class="panel">
+                    <h2>Getting There</h2>
+                    <div class="travel-info" id="detailTravel"></div>
+                </article>
+            </div>
+
+            <aside class="detail-side">
+                <div class="panel facts">
+                    <h2>Quick Facts</h2>
+                    <dl class="fact-list">
+                        <div><dt>Division</dt><dd id="factDivision"></dd></div>
+                        <div><dt>District</dt><dd id="factDistrict"></dd></div>
+                        <div><dt>Best time</dt><dd id="factBestTime"></dd></div>
+                        <div><dt>Recommended</dt><dd id="factDays"></dd></div>
+                        <div><dt>Difficulty</dt><dd id="factDifficulty"></dd></div>
+                        <div><dt>Budget</dt><dd id="factBudget"></dd></div>
+                        <div><dt>Travel type</dt><dd id="factType"></dd></div>
+                    </dl>
+                </div>
+
+                <div class="panel">
+                    <h2>Live Weather</h2>
+                    <div id="weatherCard" class="detail-weather">
+                        <p class="weather-note">Loading weather…</p>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2>Location</h2>
+                    <div id="detailMap" class="map-container map-small"></div>
+                    <p class="coord-text" id="detailCoords"></p>
+                </div>
+            </aside>
+        </section>
+
+        <div class="empty-state" id="detailMissing" hidden>
+            <h3>Destination not found</h3>
+            <p>The destination you are looking for does not exist.</p>
+            <a class="btn" href="index.html">Back to all destinations</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p><strong>Bangladesh Travel Explorer</strong> — a demo travel guide built with Open Data, Leaflet and Open-Meteo.</p>
+            <p class="footer-meta">Weather data: Open-Meteo · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
+        </div>
+    </footer>
+
+    <script src="data/destinations.js"></script>
+    <script src="config.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/detail.js"></script>
+</body>
+</html>

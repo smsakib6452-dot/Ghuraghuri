@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bangladesh Travel Explorer — Discover the Beauty of Bangladesh</title>
+    <meta name="description" content="Explore the best travel destinations in Bangladesh — beaches, mountains, forests, islands and historic sites with maps, weather and travel guides." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="icon" type="image/svg+xml" href="css/logo.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="index.html" class="brand">
+                <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                <span class="brand-text">Ghuraghuri</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="weather.html">Weather</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <p class="hero-eyebrow">Explore 104 hand-picked destinations</p>
+            <h1>Discover the Beauty of Bangladesh</h1>
+            <p class="hero-sub">From the longest sea beach to the misty hill valleys, plan your perfect journey with maps, weather and insider travel tips.</p>
+            <div class="hero-search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="search" id="searchInput" placeholder="Search beaches, mountains, tea gardens, islands…" autocomplete="off" />
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><strong>104</strong><span>Destinations</span></div>
+                <div class="stat"><strong>8</strong><span>Divisions</span></div>
+                <div class="stat"><strong>4.4</strong><span>Avg. rating</span></div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="popular" class="section">
+            <div class="section-head">
+                <div>
+                    <p class="section-eyebrow">Most Visited</p>
+                    <h2>Popular Right Now</h2>
+                </div>
+                <a class="section-link" href="#destinations">View all 104 destinations →</a>
+            </div>
+            <div class="dest-grid" id="popularGrid"></div>
+        </section>
+
+        <section id="destinations" class="section">
+            <div class="section-head">
+                <div>
+                    <p class="section-eyebrow">Travel Guide</p>
+                    <h2>Pick Your Next Adventure</h2>
+                </div>
+                <p class="section-count" id="resultCount"></p>
+            </div>
+
+            <div class="filters" id="filterBar">
+                <button class="filter-chip active" data-category="All">All</button>
+            </div>
+
+            <div class="sort-row">
+                <label for="sortSelect">Sort by</label>
+                <select id="sortSelect">
+                    <option value="featured">Featured</option>
+                    <option value="rating">Highest rated</option>
+                    <option value="reviews">Most reviewed</option>
+                    <option value="name">Name A–Z</option>
+                </select>
+            </div>
+
+            <div class="dest-grid" id="destGrid"></div>
+
+            <div class="empty-state" id="emptyState" hidden>
+                <h3>No destinations found</h3>
+                <p>Try a different search term or category.</p>
+                <button class="btn" id="resetFilters">Reset filters</button>
+            </div>
+        </section>
+
+        <section id="map" class="section">
+            <div class="section-head">
+                <div>
+                    <p class="section-eyebrow">Explore by Map</p>
+                    <h2>Where in Bangladesh?</h2>
+                </div>
+            </div>
+            <div id="mapContainer" class="map-container"></div>
+        </section>
+
+        <section id="weather" class="section">
+            <div class="section-head">
+                <div>
+                    <p class="section-eyebrow">Plan Around the Weather</p>
+                    <h2>Current Weather</h2>
+                </div>
+            </div>
+            <div class="weather-wrap" id="weatherWrap">
+                <div class="weather-card">
+                    <p class="weather-note">Select a destination to see its current weather.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p><strong>Bangladesh Travel Explorer</strong> — a demo travel guide built with Open Data, Leaflet and Open-Meteo.</p>
+            <p class="footer-meta">Weather data: Open-Meteo · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
+        </div>
+    </footer>
+
+    <script src="data/destinations.js"></script>
+    <script src="config.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Weather — Bangladesh Travel Explorer</title>
+    <meta name="description" content="Live weather for every destination in Bangladesh — current temperature, conditions, humidity and wind across all 104 hand-picked places." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="css/logo.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="index.html" class="brand">
+                <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                <span class="brand-text">Ghuraghuri</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#destinations">Destinations</a></li>
+                <li><a href="index.html#map">Map</a></li>
+                <li><a href="weather.html" class="active">Weather</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <div class="section-head">
+                <div>
+                    <p class="section-eyebrow">Live Forecasts</p>
+                    <h2>Weather Across Bangladesh</h2>
+                </div>
+                <p class="section-count" id="weatherCount"></p>
+            </div>
+
+            <div class="weather-tools">
+                <div class="search-field">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="search" id="weatherSearch" placeholder="Filter by destination, division or district…" autocomplete="off" />
+                </div>
+                <button class="btn" id="weatherRefresh">↻ Refresh now</button>
+            </div>
+
+            <div class="weather-wrap" id="weatherAll">
+                <p class="weather-note">Loading weather…</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p><strong>Bangladesh Travel Explorer</strong> — a demo travel guide built with Open Data, Leaflet and Open-Meteo.</p>
+            <p class="footer-meta">Weather data: Open-Meteo · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
+        </div>
+    </footer>
+
+    <script src="data/destinations.js"></script>
+    <script src="config.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/weather-page.js"></script>
+</body>
+</html>

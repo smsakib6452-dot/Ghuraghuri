@@ -1,0 +1,12 @@
+# Never expose secrets / API keys on GitHub
+config.js
+.env
+.env.*
+*.local
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+*.swp
+.idea/
+.vscode/
