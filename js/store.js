@@ -67,6 +67,16 @@
         DESTINATIONS = build();
     }
 
+    /* Global helper used by detail.js to resolve a destination by slug from
+       the (merged) live list. */
+    window.getDestinationBySlug = function (slug) {
+        if (typeof DESTINATIONS === "undefined") return null;
+        for (var i = 0; i < DESTINATIONS.length; i++) {
+            if (DESTINATIONS[i].slug === slug) return DESTINATIONS[i];
+        }
+        return null;
+    };
+
     function isCustom(slug) {
         return store.custom.some(function (c) { return c.slug === slug; });
     }

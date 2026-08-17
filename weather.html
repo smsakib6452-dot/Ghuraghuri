@@ -3,34 +3,68 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="page.title.weather">Live Weather — Bangladesh Travel Explorer</title>
-    <meta name="description" content="Live weather for every destination in Bangladesh — current temperature, conditions, humidity and wind across all 104 hand-picked places." />
+    <title data-i18n="page.title.weather">Live Weather � Bangladesh Travel Explorer</title>
+    <meta name="description" content="Live weather for every destination in Bangladesh � current temperature, conditions, humidity and wind across all 104 hand-picked places." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="css/logo.svg" />
     <link rel="stylesheet" href="css/style.css" />
+    <noscript><style>.reveal{opacity:1!important;transform:none!important}body.lang-fading{opacity:1!important}</style></noscript>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="nav container">
+    <header class="site-header" id="siteHeader">
+        <nav class="nav container" aria-label="Primary navigation">
             <a href="index.html" class="brand">
                 <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
-                <span class="brand-text">Ghuraghuri</span>
+                <span class="brand-text">Ghura<em>ghuri</em></span>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html#destinations" data-i18n="nav.destinations">Destinations</a></li>
-                <li><a href="index.html#map" data-i18n="nav.map">Map</a></li>
-                <li><a href="weather.html" class="active" data-i18n="nav.weather">Weather</a></li>
-                <li><a href="admin.html" data-i18n="nav.admin">Admin</a></li>
-            </ul>
-            <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
-            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="destinations.html" data-i18n="nav.destinations">Destinations</a></li>
+                    <li><a href="hotels.html" data-i18n="nav.hotels">Hotels</a></li>
+                    <li><a href="restaurants.html" data-i18n="nav.restaurants">Restaurants</a></li>
+                    <li><a href="transport.html" data-i18n="nav.transport">Transport</a></li>
+                    <li><a href="index.html#map" data-i18n="nav.map">Map</a></li>
+                    <li><a href="weather.html" class="active" data-i18n="nav.weather">Weather</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
+                <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </nav>
     </header>
+
+    <!-- Mobile drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile menu" aria-hidden="true">
+        <div class="drawer-head">
+            <a href="index.html" class="brand">
+                <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                <span class="brand-text">Ghura<em>ghuri</em></span>
+            </a>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+        </div>
+        <ul class="drawer-links" id="drawerLinks">
+            <li><a href="destinations.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="nav.destinations">Destinations</span></a></li>
+            <li><a href="hotels.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg><span data-i18n="nav.hotels">Hotels</span></a></li>
+            <li><a href="restaurants.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21v-7M5 10V4M9 21V10M9 4v4a2 2 0 0 1-2 2M19 21V9a4 4 0 0 0-4-4"/></svg><span data-i18n="nav.restaurants">Restaurants</span></a></li>
+            <li><a href="transport.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21h10M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h6M9 11h6M9 15h6"/></svg><span data-i18n="nav.transport">Transport</span></a></li>
+            <li><a href="travel.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span data-i18n="nav.travel">Plan Trip</span></a></li>
+            <li><a href="index.html#map"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-6 2V6l6-2 6 2 6-2v16l-6 2-6-2z"/><path d="M9 4v16"/><path d="M15 6v16"/></svg><span data-i18n="nav.map">Map</span></a></li>
+            <li><a href="weather.html" class="active"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-1.2-8.8A6 6 0 1 0 6 17.5"/><path d="M7 7l1-1M17 7l-1-1M12 2v2"/></svg><span data-i18n="nav.weather">Weather</span></a></li>
+            <li id="drawerAdminLink" hidden><a href="admin.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span data-i18n="nav.admin">Admin</span></a></li>
+        </ul>
+        <div class="drawer-footer">
+            <button class="lang-switch" id="langToggleMobile" type="button" aria-label="Change language">?????</button>
+        </div>
+    </aside>
 
     <main class="container">
         <section class="section">
@@ -45,42 +79,41 @@
             <div class="weather-tools">
                 <div class="search-field">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                    <input type="search" id="weatherSearch" data-i18n-placeholder="weather.search" placeholder="Filter by destination, division or district…" autocomplete="off" />
+                    <input type="search" id="weatherSearch" data-i18n-placeholder="weather.search" placeholder="Filter by destination, division or district�" autocomplete="off" />
                 </div>
-                <button class="btn" id="weatherRefresh" data-i18n="weather.refresh">↻ Refresh now</button>
+                <button class="btn" id="weatherRefresh" data-i18n="weather.refresh">? Refresh now</button>
             </div>
 
             <div class="weather-wrap" id="weatherAll">
-                <p class="weather-note" data-i18n="weather.loading">Loading weather…</p>
+                <p class="weather-note" data-i18n="weather.loading">Loading weather�</p>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p data-i18n="footer.title"><strong>Bangladesh Travel Explorer</strong> — a demo travel guide built with Open Data, Leaflet and Open-Meteo.</p>
-            <p class="footer-meta" data-i18n="footer.meta">Weather data: Open-Meteo · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
+            <p data-i18n="footer.title"><strong>Bangladesh Travel Explorer</strong> � a demo travel guide built with Open Data, Leaflet and Open-Meteo.</p>
+            <p class="footer-meta" data-i18n="footer.meta">Weather data: Open-Meteo � Maps: � OpenStreetMap contributors � Photos: Unsplash</p>
         </div>
     </footer>
 
     <script src="data/destinations.js"></script>
+    <script src="data/taxonomy.js"></script>
     <script src="js/store.js"></script>
     <script src="data/translations.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/config-defaults.js"></script>
     <script src="config.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/weather-page.js"></script>
     <script>
-        /* Conditionally show Admin navbar item only for authenticated admins */
         (function () {
-            var adminLink = document.querySelector('nav.nav-links li a[href="admin.html"]');
-            if (!adminLink) return;
+            var link = document.getElementById("drawerAdminLink");
+            if (!link) return;
             var isLoggedIn = (localStorage.getItem("ghuraghuri_admin_auth") === "1");
             var isAdmin = (localStorage.getItem("ghuraghuri_admin_role") === (window.CONFIG ? window.CONFIG.ADMIN_ROLE : "admin"));
-            if (!isLoggedIn || !isAdmin) {
-                adminLink.closest("li").hidden = true;
-            }
+            if (isLoggedIn && isAdmin) link.hidden = false;
         })();
     </script>
 </body>

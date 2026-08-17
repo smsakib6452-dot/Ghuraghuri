@@ -19,6 +19,13 @@ window.CONFIG = {
     GOOGLE_MAPS_SEARCH: "https://www.google.com/maps/search/?api=1&query=",
     GOOGLE_MAPS_DIR: "https://www.google.com/maps/dir/?api=1&origin=",
 
+    /* Travel-services API (Hotels / Restaurants / Transport / Routes).
+       Served by the PHP backend under api/. Empty means the frontend
+       auto-detects the "api" folder next to the current page; on a
+       static-only host without the PHP backend the travel pages show the
+       "unavailable" state instead of errors. */
+    API_BASE_URL: "",
+
     /* Admin panel. Client-side only gate (demo security) — change the
        password before publishing. Set ADMIN_ENABLED=false to disable. */
     ADMIN_ENABLED: true,

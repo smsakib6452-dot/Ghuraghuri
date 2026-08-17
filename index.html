@@ -1,135 +1,310 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="page.title.index">Bangladesh Travel Explorer — Discover the Beauty of Bangladesh</title>
-    <meta name="description" content="Explore the best travel destinations in Bangladesh — beaches, mountains, forests, islands and historic sites with maps, weather and travel guides." />
+    <title data-i18n="page.title.index">Ghuraghuri — One Country, Endless Stories</title>
+    <meta name="description" content="Ghuraghuri helps you discover Bangladesh — beaches, mountains, forests, rivers, heritage sites and unforgettable experiences, with maps, weather and travel guides." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="icon" type="image/svg+xml" href="css/logo.svg" />
     <link rel="stylesheet" href="css/style.css" />
+    <noscript><style>.reveal{opacity:1!important;transform:none!important}body.lang-fading{opacity:1!important}</style></noscript>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="nav container">
+    <header class="site-header" id="siteHeader">
+        <nav class="nav container" aria-label="Primary navigation">
             <a href="index.html" class="brand">
                 <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
-                <span class="brand-text">Ghuraghuri</span>
+                <span class="brand-text">Ghura<em>ghuri</em></span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#destinations" data-i18n="nav.destinations">Destinations</a></li>
-                <li><a href="#map" data-i18n="nav.map">Map</a></li>
-                <li><a href="weather.html" data-i18n="nav.weather">Weather</a></li>
-            </ul>
-            <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
-            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="destinations.html" class="active" data-i18n="nav.destinations">Destinations</a></li>
+                    <li><a href="hotels.html" data-i18n="nav.hotels">Hotels</a></li>
+                    <li><a href="restaurants.html" data-i18n="nav.restaurants">Restaurants</a></li>
+                    <li><a href="transport.html" data-i18n="nav.transport">Transport</a></li>
+                    <li><a href="#map" data-i18n="nav.map">Map</a></li>
+                    <li><a href="weather.html" data-i18n="nav.weather">Weather</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
+                <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </nav>
     </header>
 
+    <!-- Mobile drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile menu" aria-hidden="true">
+        <div class="drawer-head">
+            <a href="index.html" class="brand">
+                <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                <span class="brand-text">Ghura<em>ghuri</em></span>
+            </a>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+        </div>
+        <ul class="drawer-links" id="drawerLinks">
+            <li><a href="destinations.html" class="active"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="nav.destinations">Destinations</span></a></li>
+            <li><a href="hotels.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg><span data-i18n="nav.hotels">Hotels</span></a></li>
+            <li><a href="restaurants.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21v-7M5 10V4M9 21V10M9 4v4a2 2 0 0 1-2 2M19 21V9a4 4 0 0 0-4-4"/></svg><span data-i18n="nav.restaurants">Restaurants</span></a></li>
+            <li><a href="transport.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21h10M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h6M9 11h6M9 15h6"/></svg><span data-i18n="nav.transport">Transport</span></a></li>
+            <li><a href="travel.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span data-i18n="nav.travel">Plan Trip</span></a></li>
+            <li><a href="#map"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-6 2V6l6-2 6 2 6-2v16l-6 2-6-2z"/><path d="M9 4v16"/><path d="M15 6v16"/></svg><span data-i18n="nav.map">Map</span></a></li>
+            <li><a href="weather.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-1.2-8.8A6 6 0 1 0 6 17.5"/><path d="M7 7l1-1M17 7l-1-1M12 2v2"/></svg><span data-i18n="nav.weather">Weather</span></a></li>
+        </ul>
+        <div class="drawer-footer">
+            <button class="lang-switch" id="langToggleMobile" type="button" aria-label="Change language">বাংলা</button>
+        </div>
+    </aside>
+
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content container">
-            <p class="hero-eyebrow" data-i18n="hero.eyebrow">EXPLORE 104 HAND-PICKED DESTINATIONS</p>
-            <h1 data-i18n="hero.title">Your Next Adventure Starts Here</h1>
-            <p class="hero-sub" data-i18n="hero.sub">Discover the best beaches, mountains, forests, and cultural experiences Bangladesh has to offer.</p>
-            <div class="hero-search">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="search" id="searchInput" data-i18n-placeholder="hero.search" placeholder="Search destinations — Cox's Bazar, Sajek, Sylhet..." autocomplete="off" />
+            <p class="hero-eyebrow" data-i18n="hero.eyebrow">EXPLORE BANGLADESH</p>
+            <h1><span data-i18n="hero.title.line1">One Country,</span><br /><span class="accent-word" data-i18n="hero.title.line2">Endless Stories.</span></h1>
+            <p class="hero-sub" data-i18n="hero.sub">From beaches to hills, rivers to forests—<br />discover the stories that make Bangladesh unforgettable.</p>
+
+            <div class="hero-search-wrap">
+                <div class="hero-search" role="search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <label for="searchInput" class="visually-hidden" data-i18n="hero.searchLabel">Search destinations</label>
+                    <input type="search" id="searchInput" data-i18n-placeholder="hero.search" placeholder="Search destinations — Cox's Bazar, Sajek, Sylhet..." autocomplete="off" />
+                    <button class="search-go" type="button" id="searchGo" data-i18n="hero.searchGo">Search</button>
+                </div>
+                <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
             </div>
+
+            <div class="popular-links" id="popularLinks">
+                <span class="pl-label" data-i18n="hero.popular">Popular:</span>
+            </div>
+
             <div class="hero-stats">
-                <div class="stat"><strong id="statDestCount">104</strong><span data-i18n="stat.destinations">Destinations</span></div>
-                <div class="stat"><strong id="statDivCount">8</strong><span data-i18n="stat.divisions">Divisions</span></div>
-                <div class="stat"><strong id="statRatingAvg">4.4</strong><span data-i18n="stat.rating">Avg. Rating</span></div>
+                <a class="stat" href="destinations.html" title="Browse all destinations">
+                    <svg class="stat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <strong><span id="statDestCount">231</span>+</strong>
+                    <span data-i18n="stat.destinations">Places to Explore</span>
+                </a>
+                <a class="stat" href="destinations.html" title="Browse by division">
+                    <svg class="stat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <strong id="statDivCount">8</strong>
+                    <span data-i18n="stat.divisions">Divisions</span>
+                </a>
+                <a class="stat" href="destinations.html" title="Browse by district">
+                    <svg class="stat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    <strong id="statDistrictCount">64</strong>
+                    <span data-i18n="stat.districts">Districts</span>
+                </a>
             </div>
         </div>
-        <div class="hero-marquee" aria-hidden="true">
-            <div class="marquee-track" id="marqueeTrack"></div>
+
+        <div class="hero-ticker" aria-label="Popular destinations">
+            <div class="ticker-viewport">
+                <div class="ticker-track" id="tickerTrack"></div>
+            </div>
         </div>
     </section>
 
-    <main class="container">
-        <section id="popular" class="section">
-            <div class="section-head">
-                <div>
-                    <p class="section-eyebrow" data-i18n="popular.eyebrow">Most Visited</p>
-                    <h2 data-i18n="popular.title">Popular Right Now</h2>
+    <!-- HIDDEN legacy marquee (kept for app.js compatibility, not displayed) -->
+    <div class="hero-marquee" style="display:none" aria-hidden="true">
+        <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+
+    <main>
+        <!-- FEATURED DESTINATIONS -->
+        <section id="explore" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="featured.eyebrow">Travel Picks</p>
+                        <h2 data-i18n="featured.title">Where will you go next?</h2>
+                        <p class="section-sub" data-i18n="featured.sub">Hand-picked favourites to start your journey.</p>
+                    </div>
+                    <a class="btn btn-primary" href="destinations.html">
+                        <span data-i18n="featured.link">Explore All Destinations</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
-                <a class="section-link" href="#destinations" data-i18n="popular.link">View all 104 destinations →</a>
-            </div>
-            <div class="dest-grid" id="popularGrid"></div>
-        </section>
-
-        <section id="destinations" class="section">
-            <div class="section-head">
-                <div>
-                    <p class="section-eyebrow" data-i18n="section.destinations.eyebrow">Travel Guide</p>
-                    <h2 data-i18n="section.destinations.title">Pick Your Next Adventure</h2>
-                </div>
-                <p class="section-count" id="resultCount"></p>
-            </div>
-
-            <div class="filters" id="filterBar">
-                <button class="filter-chip active" data-category="All" data-i18n="filter.all">All</button>
-            </div>
-
-            <div class="sort-row">
-                <label for="sortSelect" data-i18n="sort.label">Sort by</label>
-                <select id="sortSelect">
-                    <option value="featured" data-i18n="sort.featured">Featured</option>
-                    <option value="rating" data-i18n="sort.rating">Highest rated</option>
-                    <option value="reviews" data-i18n="sort.reviews">Most reviewed</option>
-                    <option value="name" data-i18n="sort.name">Name A–Z</option>
-                </select>
-            </div>
-
-            <div class="dest-grid" id="destGrid"></div>
-
-            <div class="empty-state" id="emptyState" hidden>
-                <h3 data-i18n="empty.title">No destinations found</h3>
-                <p data-i18n="empty.text">Try a different search term or category.</p>
-                <button class="btn" id="resetFilters" data-i18n="empty.reset">Reset filters</button>
+                <div class="dest-grid reveal" id="featuredGrid"></div>
             </div>
         </section>
 
-        <section id="map" class="section">
-            <div class="section-head">
-                <div>
-                    <p class="section-eyebrow" data-i18n="map.eyebrow">Explore by Map</p>
-                    <h2 data-i18n="map.title">Where in Bangladesh?</h2>
+        <!-- EXPLORE BY EXPERIENCE -->
+        <section id="experience" class="section" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="experience.eyebrow">Explore Your Way</p>
+                        <h2 data-i18n="experience.title">Choose your kind of journey.</h2>
+                        <p class="section-sub" data-i18n="experience.sub">Jump straight to the kind of travel you love.</p>
+                    </div>
                 </div>
+                <div class="exp-grid reveal" id="experienceGrid"></div>
             </div>
-            <div id="mapContainer" class="map-container"></div>
         </section>
 
+        <!-- FEATURED HOTELS -->
+        <section id="stay" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="stay.eyebrow">Stay</p>
+                        <h2 data-i18n="stay.title">Find a place to stay</h2>
+                        <p class="section-sub" data-i18n="stay.sub">Featured stays to help you choose where to sleep.</p>
+                    </div>
+                    <a class="section-link" href="hotels.html"><span data-i18n="stay.link">Explore Hotels</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <div id="featuredHotels" class="reveal"></div>
+            </div>
+        </section>
+
+        <!-- FEATURED RESTAURANTS -->
+        <section id="eat" class="section" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="eat.eyebrow">Eat</p>
+                        <h2 data-i18n="eat.title">Find a place to eat</h2>
+                        <p class="section-sub" data-i18n="eat.sub">Featured restaurants so you always eat well on the road.</p>
+                    </div>
+                    <a class="section-link" href="restaurants.html"><span data-i18n="eat.link">Explore Restaurants</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <div id="featuredRestaurants" class="reveal"></div>
+            </div>
+        </section>
+
+        <!-- TRANSPORT -->
+        <section id="move" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="move.eyebrow">Move</p>
+                        <h2 data-i18n="move.title">Getting around Bangladesh</h2>
+                        <p class="section-sub" data-i18n="move.sub">Plan how to travel between cities — and get there smoothly.</p>
+                    </div>
+                    <a class="section-link" href="transport.html"><span data-i18n="move.link">Explore Transport</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <div class="move-grid reveal" id="transportGrid"></div>
+            </div>
+        </section>
+
+        <!-- WEATHER -->
         <section id="weather" class="section">
-            <div class="section-head">
-                <div>
-                    <p class="section-eyebrow" data-i18n="weather.eyebrow">Plan Around the Weather</p>
-                    <h2 data-i18n="weather.title">Current Weather</h2>
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="weather.eyebrow">Plan Around the Weather</p>
+                        <h2 data-i18n="weather.title2">Check the Weather Before You Go</h2>
+                    </div>
+                    <div class="weather-head-actions">
+                        <a class="section-link" href="weather.html"><span data-i18n="weather.viewAll">View Weather</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="weather-wrap reveal" id="weatherWrap">
+                    <div class="weather-card">
+                        <p class="weather-note" data-i18n="weather.select">Select a destination to see its current weather.</p>
+                    </div>
                 </div>
             </div>
-            <div class="weather-wrap" id="weatherWrap">
-                <div class="weather-card">
-                    <p class="weather-note" data-i18n="weather.select">Select a destination to see its current weather.</p>
+        </section>
+
+        <!-- TRAVEL PLANNER (MAP CTA) -->
+        <section id="map" class="section">
+            <div class="container">
+                <div class="planner reveal">
+                    <div class="planner-copy">
+                        <p class="pl-eyebrow" data-i18n="planner.eyebrow">Travel Planner</p>
+                        <h2 data-i18n="planner.title">Plan Your Journey</h2>
+                        <p data-i18n="planner.sub">Find destinations, check routes, explore nearby places and plan your perfect Bangladesh trip.</p>
+                        <div class="planner-actions">
+                            <a class="btn btn-light btn-lg" href="#map">
+                                <svg class="btn-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-6 2V6l6-2 6 2 6-2v16l-6 2-6-2z"/><path d="M9 4v16"/><path d="M15 6v16"/></svg>
+                                <span data-i18n="planner.map">Explore Map</span>
+                            </a>
+                            <a class="btn btn-primary btn-lg" href="destinations.html" data-i18n="planner.destinations">View Destinations</a>
+                        </div>
+                    </div>
+                    <div class="planner-visual">
+                        <div class="planner-map-preview">
+                            <div id="mapContainer" class="map-container"></div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- TRAVEL INSPIRATION -->
+        <section id="inspiration" class="section" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="inspiration.eyebrow">Travel Inspiration</p>
+                        <h2 data-i18n="inspiration.title">Where should you go this season?</h2>
+                        <p class="section-sub" data-i18n="inspiration.sub">Editorial ideas to spark your next journey.</p>
+                    </div>
+                </div>
+                <div class="insp-grid reveal" id="inspirationGrid"></div>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
-            <p data-i18n="footer.title"><strong>Bangladesh Travel Explorer</strong> — a demo travel guide built with Open Data, Leaflet and Open-Meteo.</p>
-            <p class="footer-meta" data-i18n="footer.meta">Weather data: Open-Meteo · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-brand">
+                        <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                        <span>Ghura<em>ghuri</em></span>
+                    </a>
+                    <p data-i18n="footer.tagline">Explore Bangladesh, one journey at a time. Your gateway to the beaches, mountains, forests and heritage of Bangladesh.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navTitle">Explore</h4>
+                    <ul>
+                        <li><a href="destinations.html" data-i18n="nav.destinations">Destinations</a></li>
+                        <li><a href="#map" data-i18n="nav.map">Map</a></li>
+                        <li><a href="weather.html" data-i18n="nav.weather">Weather</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.popularTitle">Popular Destinations</h4>
+                    <ul>
+                        <li><a href="destination.html?slug=coxs-bazar">Cox's Bazar</a></li>
+                        <li><a href="destination.html?slug=sajek-valley">Sajek Valley</a></li>
+                        <li><a href="destination.html?slug=sylhet">Sylhet</a></li>
+                        <li><a href="destination.html?slug=bandarban">Bandarban</a></li>
+                        <li><a href="destination.html?slug=sundarbans">Sundarbans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.otherTitle">Other</h4>
+                    <ul>
+                        <li><a href="#explore" data-i18n="footer.about">About</a></li>
+                        <li><a href="#explore" data-i18n="footer.contact">Contact</a></li>
+                        <li><a href="#explore" data-i18n="footer.privacy">Privacy</a></li>
+                        <li><a href="#explore" data-i18n="footer.terms">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <p><strong>Ghuraghuri</strong> — <span data-i18n="footer.title">a travel guide built with Open Data, Leaflet and Open-Meteo.</span></p>
+                <p data-i18n="footer.meta">Weather data: Open-Meteo · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
+            </div>
         </div>
     </footer>
 
     <script src="data/destinations.js"></script>
+    <script src="data/taxonomy.js"></script>
     <script src="js/store.js"></script>
     <script src="data/translations.js"></script>
     <script src="js/i18n.js"></script>
@@ -138,18 +313,10 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/map.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/travel-components.js"></script>
+    <script src="js/travel-fallback.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/app.js"></script>
-    <script>
-        /* Conditionally show Admin navbar item only for authenticated admins */
-        (function () {
-            var adminLink = document.querySelector('nav.nav-links li a[href="admin.html"]');
-            if (!adminLink) return;
-            var isLoggedIn = (localStorage.getItem("ghuraghuri_admin_auth") === "1");
-            var isAdmin = (localStorage.getItem("ghuraghuri_admin_role") === (window.CONFIG ? window.CONFIG.ADMIN_ROLE : "admin"));
-            if (!isLoggedIn || !isAdmin) {
-                adminLink.closest("li").hidden = true;
-            }
-        })();
-    </script>
 </body>
 </html>

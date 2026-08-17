@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="discover.title">All Destinations — Ghuraghuri</title>
+    <meta name="description" content="Browse all destinations across the 64 districts of Bangladesh — beaches, hills, forests, heritage and more, with filters by division, district, category and popularity." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="css/logo.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <noscript><style>.reveal{opacity:1!important;transform:none!important}body.lang-fading{opacity:1!important}</style></noscript>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <nav class="nav container" aria-label="Primary navigation">
+            <a href="index.html" class="brand">
+                <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                <span class="brand-text">Ghura<em>ghuri</em></span>
+            </a>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="destinations.html" class="active" data-i18n="nav.destinations">Destinations</a></li>
+                    <li><a href="hotels.html" data-i18n="nav.hotels">Hotels</a></li>
+                    <li><a href="restaurants.html" data-i18n="nav.restaurants">Restaurants</a></li>
+                    <li><a href="transport.html" data-i18n="nav.transport">Transport</a></li>
+                    <li><a href="index.html#map" data-i18n="nav.map">Map</a></li>
+                    <li><a href="weather.html" data-i18n="nav.weather">Weather</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
+                <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile menu" aria-hidden="true">
+        <div class="drawer-head">
+            <a href="index.html" class="brand">
+                <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                <span class="brand-text">Ghura<em>ghuri</em></span>
+            </a>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+        </div>
+        <ul class="drawer-links" id="drawerLinks">
+            <li><a href="destinations.html" class="active"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="nav.destinations">Destinations</span></a></li>
+            <li><a href="hotels.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg><span data-i18n="nav.hotels">Hotels</span></a></li>
+            <li><a href="restaurants.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21v-7M5 10V4M9 21V10M9 4v4a2 2 0 0 1-2 2M19 21V9a4 4 0 0 0-4-4"/></svg><span data-i18n="nav.restaurants">Restaurants</span></a></li>
+            <li><a href="transport.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21h10M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h6M9 11h6M9 15h6"/></svg><span data-i18n="nav.transport">Transport</span></a></li>
+            <li><a href="travel.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span data-i18n="nav.travel">Plan Trip</span></a></li>
+            <li><a href="index.html#map"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-6 2V6l6-2 6 2 6-2v16l-6 2-6-2z"/><path d="M9 4v16"/><path d="M15 6v16"/></svg><span data-i18n="nav.map">Map</span></a></li>
+            <li><a href="weather.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-1.2-8.8A6 6 0 1 0 6 17.5"/><path d="M7 7l1-1M17 7l-1-1M12 2v2"/></svg><span data-i18n="nav.weather">Weather</span></a></li>
+        </ul>
+        <div class="drawer-footer">
+            <button class="lang-switch" id="langToggleMobile" type="button" aria-label="Change language">বাংলা</button>
+        </div>
+    </aside>
+
+    <main class="container">
+        <section class="page-hero">
+            <p class="section-eyebrow" data-i18n="discover.eyebrow">Discover Bangladesh</p>
+            <h1 data-i18n="discover.title">Discover Every Corner of Bangladesh</h1>
+            <p class="page-sub" data-i18n="discover.subtitle">Explore destinations across all 64 districts — from beaches and hills to forests, rivers and historic landmarks.</p>
+
+            <div class="discover-controls">
+                <div class="discover-search" role="search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="search" id="discoverSearch" data-i18n-placeholder="discover.search" placeholder="Search destinations — Cox's Bazar, Cumilla, hills, beaches…" autocomplete="off" />
+                </div>
+                <div class="discover-filters">
+                    <label class="dc-field">
+                        <span data-i18n="filter.division">Division</span>
+                        <select id="dcDivision"><option value="">All</option></select>
+                    </label>
+                    <label class="dc-field">
+                        <span data-i18n="filter.district">District</span>
+                        <select id="dcDistrict"><option value="">All</option></select>
+                    </label>
+                    <label class="dc-field">
+                        <span data-i18n="filter.category">Category</span>
+                        <select id="dcCategory"><option value="">All</option></select>
+                    </label>
+                    <label class="dc-field">
+                        <span data-i18n="filter.popularity">Popularity</span>
+                        <select id="dcPopularity"><option value="">All</option></select>
+                    </label>
+                    <label class="dc-toggle">
+                        <input type="checkbox" id="dcFeatured" />
+                        <span data-i18n="filter.featuredOnly">Featured only</span>
+                    </label>
+                    <label class="dc-field dc-sort">
+                        <span data-i18n="sort.label">Sort by</span>
+                        <select id="dcSort">
+                            <option value="featured" data-i18n="sort.featured">Featured</option>
+                            <option value="popularity" data-i18n="sort.popularity">Popularity</option>
+                            <option value="rating" data-i18n="sort.rating">Highest rated</option>
+                            <option value="reviews" data-i18n="sort.reviews">Most reviewed</option>
+                            <option value="name" data-i18n="sort.name">Name A–Z</option>
+                        </select>
+                    </label>
+                    <button class="btn" id="dcClear" data-i18n="discover.clear">Clear all filters</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="discover-bar">
+            <p class="section-count" id="discoverCount"></p>
+        </div>
+
+        <div class="dest-grid" id="discoverGrid"></div>
+
+        <div class="empty-state" id="discoverEmpty" hidden>
+            <h3 data-i18n="empty.title">No destinations found</h3>
+            <p data-i18n="empty.text">Try a different search term or category.</p>
+            <button class="btn" id="discoverReset" data-i18n="empty.reset">Reset filters</button>
+        </div>
+    </main>
+
+    <!-- EXPLORE BY DIVISION -->
+    <section id="divisions" class="section" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="section-eyebrow" data-i18n="division.eyebrow">Browse</p>
+                    <h2 data-i18n="division.title">Explore by Division</h2>
+                </div>
+                <p class="section-count" id="divisionCount"></p>
+            </div>
+            <div class="division-grid reveal" id="divisionGrid"></div>
+        </div>
+    </section>
+
+    <!-- EXPLORE BY THEME -->
+    <section id="themes" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="section-eyebrow" data-i18n="home.themes.eyebrow">Curated</p>
+                    <h2 data-i18n="home.themes.title">Explore by Theme</h2>
+                </div>
+            </div>
+            <div id="themeStrips" class="cat-strips"></div>
+        </div>
+    </section>
+
+    <!-- EXPLORE BY DISTRICT -->
+    <section id="bydistrict" class="section" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="section-eyebrow" data-i18n="home.section.explore.eyebrow">Full Coverage</p>
+                    <h2 data-i18n="home.section.explore.title">Explore by District</h2>
+                    <p class="section-sub" data-i18n="home.section.explore.sub">All 64 districts are now covered — find destinations in yours.</p>
+                </div>
+                <p class="section-count" id="districtCount"></p>
+            </div>
+            <div class="district-strip reveal" id="districtStrip"></div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-brand">
+                        <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                        <span>Ghura<em>ghuri</em></span>
+                    </a>
+                    <p data-i18n="footer.tagline">Explore Bangladesh, one journey at a time. Your gateway to the beaches, mountains, forests and heritage of Bangladesh.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navTitle">Explore</h4>
+                    <ul>
+                        <li><a href="destinations.html" data-i18n="nav.destinations">Destinations</a></li>
+                        <li><a href="index.html#map" data-i18n="nav.map">Map</a></li>
+                        <li><a href="weather.html" data-i18n="nav.weather">Weather</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.popularTitle">Popular Destinations</h4>
+                    <ul>
+                        <li><a href="destination.html?slug=coxs-bazar">Cox's Bazar</a></li>
+                        <li><a href="destination.html?slug=sajek-valley">Sajek Valley</a></li>
+                        <li><a href="destination.html?slug=sylhet">Sylhet</a></li>
+                        <li><a href="destination.html?slug=bandarban">Bandarban</a></li>
+                        <li><a href="destination.html?slug=sundarbans">Sundarbans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.otherTitle">Other</h4>
+                    <ul>
+                        <li><a href="index.html#explore" data-i18n="footer.about">About</a></li>
+                        <li><a href="index.html#explore" data-i18n="footer.contact">Contact</a></li>
+                        <li><a href="index.html#explore" data-i18n="footer.privacy">Privacy</a></li>
+                        <li><a href="index.html#explore" data-i18n="footer.terms">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <p><strong>Ghuraghuri</strong> — <span data-i18n="footer.title">a travel guide built with Open Data, Leaflet and Open-Meteo.</span></p>
+                <p data-i18n="footer.meta">Weather data: Open-Meteo · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data/destinations.js"></script>
+    <script src="data/taxonomy.js"></script>
+    <script src="js/store.js"></script>
+    <script src="data/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/config-defaults.js"></script>
+    <script src="config.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/discover.js"></script>
+</body>
+</html>

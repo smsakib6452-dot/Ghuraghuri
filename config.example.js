@@ -44,6 +44,13 @@ const CONFIG = {
     GOOGLE_MAPS_SEARCH: "https://www.google.com/maps/search/?api=1&query=",
     GOOGLE_MAPS_DIR: "https://www.google.com/maps/dir/?api=1&origin=",
 
+    /* Travel-services API (Hotels / Restaurants / Transport / Routes).
+       Served by the PHP backend under api/ (see api/.env.example for the
+       server-side keys). Leave "" to auto-detect the "api" folder next to
+       the current page (works under XAMPP, the PHP built-in server, or any
+       folder/port). Set an absolute URL to override. */
+    API_BASE_URL: "",
+
     /* Admin panel. Client-side only gate (demo security) — change this
      * password before publishing. Set ADMIN_ENABLED=false to disable. */
     ADMIN_ENABLED: true,

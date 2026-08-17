@@ -1,0 +1,3571 @@
+{
+ "divisions": [
+  {
+   "name": "Dhaka",
+   "name_bn": "",
+   "lat": 23.7391,
+   "lng": 90.245
+  },
+  {
+   "name": "Chattogram",
+   "name_bn": "",
+   "lat": 22.7143,
+   "lng": 91.5109
+  },
+  {
+   "name": "Rajshahi",
+   "name_bn": "",
+   "lat": 24.5901,
+   "lng": 88.9786
+  },
+  {
+   "name": "Khulna",
+   "name_bn": "",
+   "lat": 23.2302,
+   "lng": 89.2233
+  },
+  {
+   "name": "Barishal",
+   "name_bn": "",
+   "lat": 22.387,
+   "lng": 90.307
+  },
+  {
+   "name": "Sylhet",
+   "name_bn": "",
+   "lat": 24.6473,
+   "lng": 91.713
+  },
+  {
+   "name": "Rangpur",
+   "name_bn": "",
+   "lat": 25.7789,
+   "lng": 89.0526
+  },
+  {
+   "name": "Mymensingh",
+   "name_bn": "",
+   "lat": 24.9809,
+   "lng": 90.2485
+  }
+ ],
+ "districts": [
+  {
+   "name": "Dhaka",
+   "name_bn": "ঢাকা",
+   "division": "Dhaka",
+   "lat": 23.7506,
+   "lng": 90.3852
+  },
+  {
+   "name": "Faridpur",
+   "name_bn": "ফরিদপুর",
+   "division": "Dhaka",
+   "lat": 23.565,
+   "lng": 89.785
+  },
+  {
+   "name": "Gazipur",
+   "name_bn": "গাজীপুর",
+   "division": "Dhaka",
+   "lat": 24.0482,
+   "lng": 90.4086
+  },
+  {
+   "name": "Gopalganj",
+   "name_bn": "গোপালগঞ্জ",
+   "division": "Dhaka",
+   "lat": 23.0575,
+   "lng": 89.7274
+  },
+  {
+   "name": "Kishoreganj",
+   "name_bn": "কিশোরগঞ্জ",
+   "division": "Dhaka",
+   "lat": 24.4538,
+   "lng": 90.9194
+  },
+  {
+   "name": "Madaripur",
+   "name_bn": "মাদারীপুর",
+   "division": "Dhaka",
+   "lat": 23.16,
+   "lng": 90.19
+  },
+  {
+   "name": "Manikganj",
+   "name_bn": "মানিকগঞ্জ",
+   "division": "Dhaka",
+   "lat": 23.8412,
+   "lng": 90.0871
+  },
+  {
+   "name": "Munshiganj",
+   "name_bn": "মুন্সীগঞ্জ",
+   "division": "Dhaka",
+   "lat": 23.5219,
+   "lng": 90.4304
+  },
+  {
+   "name": "Narayanganj",
+   "name_bn": "নারায়ণগঞ্জ",
+   "division": "Dhaka",
+   "lat": 23.647,
+   "lng": 90.6021
+  },
+  {
+   "name": "Narsingdi",
+   "name_bn": "নরসিংদী",
+   "division": "Dhaka",
+   "lat": 24.09,
+   "lng": 90.63
+  },
+  {
+   "name": "Rajbari",
+   "name_bn": "রাজবাড়ী",
+   "division": "Dhaka",
+   "lat": 23.74,
+   "lng": 89.77
+  },
+  {
+   "name": "Shariatpur",
+   "name_bn": "শরীয়তপুর",
+   "division": "Dhaka",
+   "lat": 23.46,
+   "lng": 90.27
+  },
+  {
+   "name": "Tangail",
+   "name_bn": "টাঙ্গাইল",
+   "division": "Dhaka",
+   "lat": 24.2727,
+   "lng": 89.98
+  },
+  {
+   "name": "Chattogram",
+   "name_bn": "চট্টগ্রাম",
+   "division": "Chattogram",
+   "lat": 22.416,
+   "lng": 91.7492
+  },
+  {
+   "name": "Bandarban",
+   "name_bn": "বান্দরবান",
+   "division": "Chattogram",
+   "lat": 21.9879,
+   "lng": 92.3426
+  },
+  {
+   "name": "Brahmanbaria",
+   "name_bn": "ব্রাহ্মণবাড়িয়া",
+   "division": "Chattogram",
+   "lat": 23.82,
+   "lng": 91.085
+  },
+  {
+   "name": "Chandpur",
+   "name_bn": "চাঁদপুর",
+   "division": "Chattogram",
+   "lat": 23.2367,
+   "lng": 90.7267
+  },
+  {
+   "name": "Cumilla",
+   "name_bn": "কুমিল্লা",
+   "division": "Chattogram",
+   "lat": 23.451,
+   "lng": 91.1329
+  },
+  {
+   "name": "Cox's Bazar",
+   "name_bn": "কক্সবাজার",
+   "division": "Chattogram",
+   "lat": 21.2886,
+   "lng": 92.0871
+  },
+  {
+   "name": "Feni",
+   "name_bn": "ফেনী",
+   "division": "Chattogram",
+   "lat": 22.915,
+   "lng": 91.4
+  },
+  {
+   "name": "Khagrachhari",
+   "name_bn": "খাগড়াছড়ি",
+   "division": "Chattogram",
+   "lat": 23.1655,
+   "lng": 91.8975
+  },
+  {
+   "name": "Lakshmipur",
+   "name_bn": "লক্ষ্মীপুর",
+   "division": "Chattogram",
+   "lat": 22.61,
+   "lng": 90.99
+  },
+  {
+   "name": "Noakhali",
+   "name_bn": "নোয়াখালী",
+   "division": "Chattogram",
+   "lat": 22.2567,
+   "lng": 91
+  },
+  {
+   "name": "Rangamati",
+   "name_bn": "রাঙ্গামাটি",
+   "division": "Chattogram",
+   "lat": 22.7099,
+   "lng": 92.2084
+  },
+  {
+   "name": "Bogura",
+   "name_bn": "বগুড়া",
+   "division": "Rajshahi",
+   "lat": 24.9523,
+   "lng": 89.3426
+  },
+  {
+   "name": "Joypurhat",
+   "name_bn": "জয়পুরহাট",
+   "division": "Rajshahi",
+   "lat": 25.02,
+   "lng": 89.01
+  },
+  {
+   "name": "Naogaon",
+   "name_bn": "নওগাঁ",
+   "division": "Rajshahi",
+   "lat": 24.8836,
+   "lng": 88.9191
+  },
+  {
+   "name": "Natore",
+   "name_bn": "নাটোর",
+   "division": "Rajshahi",
+   "lat": 24.416,
+   "lng": 88.995
+  },
+  {
+   "name": "Chapainawabganj",
+   "name_bn": "চাঁপাইনবাবগঞ্জ",
+   "division": "Rajshahi",
+   "lat": 24.7633,
+   "lng": 88.1613
+  },
+  {
+   "name": "Pabna",
+   "name_bn": "পাবনা",
+   "division": "Rajshahi",
+   "lat": 24.07,
+   "lng": 89.03
+  },
+  {
+   "name": "Rajshahi",
+   "name_bn": "রাজশাহী",
+   "division": "Rajshahi",
+   "lat": 24.3378,
+   "lng": 88.7231
+  },
+  {
+   "name": "Sirajganj",
+   "name_bn": "সিরাজগঞ্জ",
+   "division": "Rajshahi",
+   "lat": 24.2775,
+   "lng": 89.6475
+  },
+  {
+   "name": "Bagerhat",
+   "name_bn": "বাগেরহাট",
+   "division": "Khulna",
+   "lat": 22.6687,
+   "lng": 89.7657
+  },
+  {
+   "name": "Chuadanga",
+   "name_bn": "চুয়াডাঙ্গা",
+   "division": "Khulna",
+   "lat": 23.64,
+   "lng": 88.86
+  },
+  {
+   "name": "Jashore",
+   "name_bn": "যশোর",
+   "division": "Khulna",
+   "lat": 23.16,
+   "lng": 89.21
+  },
+  {
+   "name": "Jhenaidah",
+   "name_bn": "ঝিনাইদহ",
+   "division": "Khulna",
+   "lat": 23.7,
+   "lng": 89.08
+  },
+  {
+   "name": "Khulna",
+   "name_bn": "খুলনা",
+   "division": "Khulna",
+   "lat": 22.5924,
+   "lng": 89.4433
+  },
+  {
+   "name": "Kushtia",
+   "name_bn": "কুষ্টিয়া",
+   "division": "Khulna",
+   "lat": 23.9052,
+   "lng": 89.1824
+  },
+  {
+   "name": "Magura",
+   "name_bn": "মাগুরা",
+   "division": "Khulna",
+   "lat": 23.49,
+   "lng": 89.42
+  },
+  {
+   "name": "Meherpur",
+   "name_bn": "মেহেরপুর",
+   "division": "Khulna",
+   "lat": 23.622,
+   "lng": 88.605
+  },
+  {
+   "name": "Narail",
+   "name_bn": "নড়াইল",
+   "division": "Khulna",
+   "lat": 23.17,
+   "lng": 89.5
+  },
+  {
+   "name": "Satkhira",
+   "name_bn": "সাতক্ষীরা",
+   "division": "Khulna",
+   "lat": 22.3533,
+   "lng": 89.1667
+  },
+  {
+   "name": "Jhalokathi",
+   "name_bn": "ঝালকাঠি",
+   "division": "Barishal",
+   "lat": 22.655,
+   "lng": 90.225
+  },
+  {
+   "name": "Barguna",
+   "name_bn": "বরগুনা",
+   "division": "Barishal",
+   "lat": 22.12,
+   "lng": 90.125
+  },
+  {
+   "name": "Barishal",
+   "name_bn": "বরিশাল",
+   "division": "Barishal",
+   "lat": 22.7548,
+   "lng": 90.3186
+  },
+  {
+   "name": "Bhola",
+   "name_bn": "ভোলা",
+   "division": "Barishal",
+   "lat": 22.19,
+   "lng": 90.7767
+  },
+  {
+   "name": "Patuakhali",
+   "name_bn": "পটুয়াখালী",
+   "division": "Barishal",
+   "lat": 21.8619,
+   "lng": 90.1468
+  },
+  {
+   "name": "Pirojpur",
+   "name_bn": "পিরোজপুর",
+   "division": "Barishal",
+   "lat": 22.74,
+   "lng": 90.25
+  },
+  {
+   "name": "Habiganj",
+   "name_bn": "হবিগঞ্জ",
+   "division": "Sylhet",
+   "lat": 24.1053,
+   "lng": 91.5447
+  },
+  {
+   "name": "Moulvibazar",
+   "name_bn": "মৌলভীবাজার",
+   "division": "Sylhet",
+   "lat": 24.4113,
+   "lng": 91.8583
+  },
+  {
+   "name": "Sunamganj",
+   "name_bn": "সুনামগঞ্জ",
+   "division": "Sylhet",
+   "lat": 25.0755,
+   "lng": 91.5422
+  },
+  {
+   "name": "Sylhet",
+   "name_bn": "সিলেট",
+   "division": "Sylhet",
+   "lat": 24.9971,
+   "lng": 91.9067
+  },
+  {
+   "name": "Dinajpur",
+   "name_bn": "দিনাজপুর",
+   "division": "Rangpur",
+   "lat": 25.6483,
+   "lng": 88.6852
+  },
+  {
+   "name": "Gaibandha",
+   "name_bn": "গাইবান্ধা",
+   "division": "Rangpur",
+   "lat": 25.33,
+   "lng": 89.55
+  },
+  {
+   "name": "Kurigram",
+   "name_bn": "কুড়িগ্রাম",
+   "division": "Rangpur",
+   "lat": 25.28,
+   "lng": 89.7
+  },
+  {
+   "name": "Lalmonirhat",
+   "name_bn": "লালমনিরহাট",
+   "division": "Rangpur",
+   "lat": 25.9371,
+   "lng": 89.513
+  },
+  {
+   "name": "Nilphamari",
+   "name_bn": "নীলফামারী",
+   "division": "Rangpur",
+   "lat": 25.778,
+   "lng": 88.893
+  },
+  {
+   "name": "Panchagarh",
+   "name_bn": "পঞ্চগড়",
+   "division": "Rangpur",
+   "lat": 26.4882,
+   "lng": 88.4499
+  },
+  {
+   "name": "Rangpur",
+   "name_bn": "রংপুর",
+   "division": "Rangpur",
+   "lat": 25.7145,
+   "lng": 89.2245
+  },
+  {
+   "name": "Thakurgaon",
+   "name_bn": "ঠাকুরগাঁও",
+   "division": "Rangpur",
+   "lat": 26.055,
+   "lng": 88.405
+  },
+  {
+   "name": "Jamalpur",
+   "name_bn": "জামালপুর",
+   "division": "Mymensingh",
+   "lat": 25.122,
+   "lng": 89.848
+  },
+  {
+   "name": "Mymensingh",
+   "name_bn": "ময়মনসিংহ",
+   "division": "Mymensingh",
+   "lat": 24.7496,
+   "lng": 90.3692
+  },
+  {
+   "name": "Netrokona",
+   "name_bn": "নেত্রকোনা",
+   "division": "Mymensingh",
+   "lat": 25.0418,
+   "lng": 90.7367
+  },
+  {
+   "name": "Sherpur",
+   "name_bn": "শেরপুর",
+   "division": "Mymensingh",
+   "lat": 25.01,
+   "lng": 90.04
+  }
+ ],
+ "destinations": [
+  {
+   "slug": "coxs-bazar",
+   "name": "Cox's Bazar",
+   "name_bn": "কক্সবাজার",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 21.4272,
+   "lng": 92.0058,
+   "categories": [
+    "Beach"
+   ]
+  },
+  {
+   "slug": "sajek-valley",
+   "name": "Sajek Valley",
+   "name_bn": "সাজেক ভ্যালি",
+   "division": "Chattogram",
+   "district": "Rangamati",
+   "lat": 23.3819,
+   "lng": 92.2938,
+   "categories": [
+    "Mountain",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "bandarban",
+   "name": "Bandarban",
+   "name_bn": "বান্দরবান",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 22.1953,
+   "lng": 92.2189,
+   "categories": [
+    "Mountain",
+    "Adventure",
+    "Waterfall"
+   ]
+  },
+  {
+   "slug": "rangamati",
+   "name": "Rangamati",
+   "name_bn": "রাঙ্গামাটি",
+   "division": "Chattogram",
+   "district": "Rangamati",
+   "lat": 22.647,
+   "lng": 92.152,
+   "categories": [
+    "Nature",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "sylhet",
+   "name": "Sylhet",
+   "name_bn": "সিলেট",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 24.8949,
+   "lng": 91.8687,
+   "categories": [
+    "Nature",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "srimangal",
+   "name": "Srimangal",
+   "name_bn": "শ্রীমঙ্গল",
+   "division": "Sylhet",
+   "district": "Moulvibazar",
+   "lat": 24.3065,
+   "lng": 91.7296,
+   "categories": [
+    "Nature",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "sundarbans",
+   "name": "Sundarbans",
+   "name_bn": "সুন্দরবন",
+   "division": "Khulna",
+   "district": "Khulna",
+   "lat": 21.9497,
+   "lng": 89.1833,
+   "categories": [
+    "Forest",
+    "Adventure",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "saint-martins-island",
+   "name": "Saint Martin's Island",
+   "name_bn": "সেন্ট মার্টিন দ্বীপ",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 20.6107,
+   "lng": 92.328,
+   "categories": [
+    "Island",
+    "Beach"
+   ]
+  },
+  {
+   "slug": "kuakata",
+   "name": "Kuakata",
+   "name_bn": "কুয়াকাটা",
+   "division": "Barishal",
+   "district": "Patuakhali",
+   "lat": 21.8294,
+   "lng": 90.1238,
+   "categories": [
+    "Beach",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "jaflong",
+   "name": "Jaflong",
+   "name_bn": "জাফলং",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 25.1581,
+   "lng": 92.0459,
+   "categories": [
+    "Waterfall",
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "ratargul-swamp-forest",
+   "name": "Ratargul Swamp Forest",
+   "name_bn": "রাতারগুল জলাবন",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 24.9705,
+   "lng": 91.9878,
+   "categories": [
+    "Forest",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "tanguar-haor",
+   "name": "Tanguar Haor",
+   "name_bn": "টাঙ্গুয়ার হাওর",
+   "division": "Sylhet",
+   "district": "Sunamganj",
+   "lat": 25.1274,
+   "lng": 91.0808,
+   "categories": [
+    "Nature",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "nijhum-dwip",
+   "name": "Nijhum Dwip",
+   "name_bn": "নিঝুম দ্বীপ",
+   "division": "Chattogram",
+   "district": "Noakhali",
+   "lat": 22.0634,
+   "lng": 90.9,
+   "categories": [
+    "Island",
+    "Nature",
+    "Beach"
+   ]
+  },
+  {
+   "slug": "sonargaon",
+   "name": "Sonargaon",
+   "name_bn": "সোনারগাঁ",
+   "division": "Dhaka",
+   "district": "Narayanganj",
+   "lat": 23.6482,
+   "lng": 90.6085,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "paharpur",
+   "name": "Paharpur",
+   "name_bn": "পাহাড়পুর",
+   "division": "Rajshahi",
+   "district": "Naogaon",
+   "lat": 25.0308,
+   "lng": 88.9772,
+   "categories": [
+    "Historical"
+   ]
+  },
+  {
+   "slug": "mahasthangarh",
+   "name": "Mahasthangarh",
+   "name_bn": "মহাস্থানগড়",
+   "division": "Rajshahi",
+   "district": "Bogura",
+   "lat": 24.9613,
+   "lng": 89.3431,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "birishiri",
+   "name": "Birishiri",
+   "name_bn": "বিরিশিরি",
+   "division": "Mymensingh",
+   "district": "Netrokona",
+   "lat": 25.0553,
+   "lng": 90.62,
+   "categories": [
+    "Nature",
+    "Cultural",
+    "Hill",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "bagerhat",
+   "name": "Bagerhat",
+   "name_bn": "বাগেরহাট",
+   "division": "Khulna",
+   "district": "Bagerhat",
+   "lat": 22.6747,
+   "lng": 89.7928,
+   "categories": [
+    "Historical",
+    "Cultural",
+    "Mosque",
+    "Archaeological",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "old-dhaka",
+   "name": "Old Dhaka",
+   "name_bn": "পুরান ঢাকা",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.7104,
+   "lng": 90.4074,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "mainamati",
+   "name": "Mainamati",
+   "name_bn": "ময়নামতি",
+   "division": "Chattogram",
+   "district": "Cumilla",
+   "lat": 23.4539,
+   "lng": 91.1214,
+   "categories": [
+    "Historical",
+    "Cultural",
+    "Archaeological",
+    "Religious"
+   ]
+  },
+  {
+   "slug": "madhabkunda",
+   "name": "Madhabkunda",
+   "name_bn": "মাধবকুণ্ড",
+   "division": "Sylhet",
+   "district": "Moulvibazar",
+   "lat": 24.6125,
+   "lng": 92.1649,
+   "categories": [
+    "Waterfall",
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "foys-lake",
+   "name": "Foy's Lake",
+   "name_bn": "ফয়'স লেক",
+   "division": "Chattogram",
+   "district": "Chattogram",
+   "lat": 22.4445,
+   "lng": 91.7899,
+   "categories": [
+    "Nature",
+    "Family"
+   ]
+  },
+  {
+   "slug": "sitakunda",
+   "name": "Sitakunda",
+   "name_bn": "সীতাকুণ্ড",
+   "division": "Chattogram",
+   "district": "Chattogram",
+   "lat": 22.6164,
+   "lng": 91.6826,
+   "categories": [
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "patenga-beach",
+   "name": "Patenga Beach",
+   "name_bn": "পতেঙ্গা সৈকত",
+   "division": "Chattogram",
+   "district": "Chattogram",
+   "lat": 22.2385,
+   "lng": 91.8178,
+   "categories": [
+    "Beach"
+   ]
+  },
+  {
+   "slug": "national-martyrs-memorial",
+   "name": "National Martyrs' Memorial",
+   "name_bn": "জাতীয় স্মৃতিসৌধ",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.9119,
+   "lng": 90.2666,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "varendra-museum",
+   "name": "Varendra Research Museum",
+   "name_bn": "বরেন্দ্র গবেষণা জাদুঘর",
+   "division": "Rajshahi",
+   "district": "Rajshahi",
+   "lat": 24.3745,
+   "lng": 88.6042,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "teesta-barrage",
+   "name": "Teesta Barrage",
+   "name_bn": "তিস্তা ব্যারাজ",
+   "division": "Rangpur",
+   "district": "Lalmonirhat",
+   "lat": 25.9371,
+   "lng": 89.513,
+   "categories": [
+    "Nature",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "tetulia",
+   "name": "Tetulia Tea Garden",
+   "name_bn": "তেঁতুলিয়া চা বাগান",
+   "division": "Rangpur",
+   "district": "Panchagarh",
+   "lat": 26.4846,
+   "lng": 88.4097,
+   "categories": [
+    "Nature"
+   ]
+  },
+  {
+   "slug": "alutila-cave",
+   "name": "Alutila Cave",
+   "name_bn": "আলুটিলা গুহা",
+   "division": "Chattogram",
+   "district": "Khagrachhari",
+   "lat": 23.0383,
+   "lng": 91.8966,
+   "categories": [
+    "Adventure",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "guthia-mosque",
+   "name": "Guthia Mosque",
+   "name_bn": "গুঠিয়া মসজিদ",
+   "division": "Barishal",
+   "district": "Barishal",
+   "lat": 22.9177,
+   "lng": 90.1693,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "kantajew-temple",
+   "name": "Kantajew Temple",
+   "name_bn": "কান্তজিউ মন্দির",
+   "division": "Rangpur",
+   "district": "Dinajpur",
+   "lat": 25.7851,
+   "lng": 88.6678,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "chhoto-sona-masjid",
+   "name": "Chhoto Sona Masjid",
+   "name_bn": "ছোট সোনা মসজিদ",
+   "division": "Rajshahi",
+   "district": "Chapainawabganj",
+   "lat": 24.8167,
+   "lng": 88.1467,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "puthia-temple-complex",
+   "name": "Puthia Temple Complex",
+   "name_bn": "পুঠিয়া মন্দির কমপ্লেক্স",
+   "division": "Rajshahi",
+   "district": "Rajshahi",
+   "lat": 24.3672,
+   "lng": 88.8392,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "shilaidaha-kuthibari",
+   "name": "Shilaidaha Kuthibari",
+   "name_bn": "শিলাইদহ কুঠিবাড়ি",
+   "division": "Khulna",
+   "district": "Kushtia",
+   "lat": 23.9043,
+   "lng": 89.2447,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "lawachara-national-park",
+   "name": "Lawachara National Park",
+   "name_bn": "লাউয়াছড়া জাতীয় উদ্যান",
+   "division": "Sylhet",
+   "district": "Moulvibazar",
+   "lat": 24.3188,
+   "lng": 91.7854,
+   "categories": [
+    "Forest",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "bhawal-national-park",
+   "name": "Bhawal National Park",
+   "name_bn": "ভাওয়াল জাতীয় উদ্যান",
+   "division": "Dhaka",
+   "district": "Gazipur",
+   "lat": 24.0928,
+   "lng": 90.4145,
+   "categories": [
+    "Forest",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "madhupur-national-park",
+   "name": "Madhupur National Park",
+   "name_bn": "মধুপুর জাতীয় উদ্যান",
+   "division": "Dhaka",
+   "district": "Tangail",
+   "lat": 24.6408,
+   "lng": 90.0701,
+   "categories": [
+    "Forest",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "ramsagar",
+   "name": "Ramsagar",
+   "name_bn": "রামসাগর",
+   "division": "Rangpur",
+   "district": "Dinajpur",
+   "lat": 25.548,
+   "lng": 88.793,
+   "categories": [
+    "Nature"
+   ]
+  },
+  {
+   "slug": "buddha-dhatu-jadi",
+   "name": "Buddha Dhatu Jadi",
+   "name_bn": "বুদ্ধ ধাতু জাদি",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 22.1953,
+   "lng": 92.2005,
+   "categories": [
+    "Cultural",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "richhang-waterfall",
+   "name": "Richhang Waterfall",
+   "name_bn": "রিছাং ঝরনা",
+   "division": "Chattogram",
+   "district": "Khagrachhari",
+   "lat": 23.119,
+   "lng": 91.931,
+   "categories": [
+    "Waterfall",
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "central-shaheed-minar",
+   "name": "Central Shaheed Minar",
+   "name_bn": "কেন্দ্রীয় শহীদ মিনার",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.7273,
+   "lng": 90.3961,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "durga-sagar",
+   "name": "Durga Sagar",
+   "name_bn": "দুর্গা সাগর",
+   "division": "Barishal",
+   "district": "Barishal",
+   "lat": 22.7016,
+   "lng": 90.365,
+   "categories": [
+    "Nature"
+   ]
+  },
+  {
+   "slug": "suhrawardy-udyan",
+   "name": "Suhrawardy Udyan",
+   "name_bn": "সোহরাওয়ার্দী উদ্যান",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.7371,
+   "lng": 90.3956,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "national-parliament-house",
+   "name": "National Parliament House",
+   "name_bn": "জাতীয় সংসদ ভবন",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.7616,
+   "lng": 90.3785,
+   "categories": [
+    "Cultural",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "bangladesh-national-museum",
+   "name": "Bangladesh National Museum",
+   "name_bn": "বাংলাদেশ জাতীয় জাদুঘর",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.7377,
+   "lng": 90.395,
+   "categories": [
+    "Cultural",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "dhakeshwari-temple",
+   "name": "Dhakeshwari Temple",
+   "name_bn": "ঢাকেশ্বরী মন্দির",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.72,
+   "lng": 90.396,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "rose-garden-palace",
+   "name": "Rose Garden Palace",
+   "name_bn": "রোজ গার্ডেন প্যালেস",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.706,
+   "lng": 90.409,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "mirkadim-fort",
+   "name": "Mirkadim Fort",
+   "name_bn": "মীরকাদিম দুর্গ",
+   "division": "Dhaka",
+   "district": "Munshiganj",
+   "lat": 23.5455,
+   "lng": 90.533,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "baliati-palace",
+   "name": "Baliati Palace",
+   "name_bn": "বালিয়াটি প্রাসাদ",
+   "division": "Dhaka",
+   "district": "Manikganj",
+   "lat": 23.8223,
+   "lng": 90.0841,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "tungipara",
+   "name": "Tungipara",
+   "name_bn": "টুঙ্গিপাড়া",
+   "division": "Dhaka",
+   "district": "Gopalganj",
+   "lat": 23.1049,
+   "lng": 89.9048,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "pagla-mosque",
+   "name": "Pagla Mosque",
+   "name_bn": "পাগলা মসজিদ",
+   "division": "Dhaka",
+   "district": "Kishoreganj",
+   "lat": 24.433,
+   "lng": 90.7762,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "egarosindur",
+   "name": "Egarosindur",
+   "name_bn": "এগারসিন্দুর",
+   "division": "Dhaka",
+   "district": "Kishoreganj",
+   "lat": 24.67,
+   "lng": 90.61,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "kaptai-lake",
+   "name": "Kaptai Lake",
+   "name_bn": "কাপ্তাই হ্রদ",
+   "division": "Chattogram",
+   "district": "Rangamati",
+   "lat": 22.71,
+   "lng": 92.21,
+   "categories": [
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "meghla",
+   "name": "Meghla",
+   "name_bn": "মেঘলা",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 22.201,
+   "lng": 92.2295,
+   "categories": [
+    "Nature",
+    "Family"
+   ]
+  },
+  {
+   "slug": "nilachal",
+   "name": "Nilachal",
+   "name_bn": "নিলাচল",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 22.1738,
+   "lng": 92.2105,
+   "categories": [
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "dulahazra-safari-park",
+   "name": "Dulahazra Safari Park",
+   "name_bn": "দুলাহাজরা সাফারি পার্ক",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 21.5906,
+   "lng": 92.0713,
+   "categories": [
+    "Family",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "himchari-national-park",
+   "name": "Himchari National Park",
+   "name_bn": "হিমছড়ি জাতীয় উদ্যান",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 21.347,
+   "lng": 92.05,
+   "categories": [
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "inani-beach",
+   "name": "Inani Beach",
+   "name_bn": "ইনানী সৈকত",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 21.232,
+   "lng": 92.047,
+   "categories": [
+    "Beach",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "teknaf",
+   "name": "Teknaf",
+   "name_bn": "টেকনাফ",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 20.868,
+   "lng": 92.3,
+   "categories": [
+    "Nature",
+    "Beach"
+   ]
+  },
+  {
+   "slug": "bayazid-bostami-shrine",
+   "name": "Bayazid Bostami Shrine",
+   "name_bn": "বায়েজিদ বোস্তামী মাজার",
+   "division": "Chattogram",
+   "district": "Chattogram",
+   "lat": 22.3655,
+   "lng": 91.8383,
+   "categories": [
+    "Cultural",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "chandanpura-mosque",
+   "name": "Chandanpura Mosque",
+   "name_bn": "চান্দনপুরা মসজিদ",
+   "division": "Chattogram",
+   "district": "Chattogram",
+   "lat": 22.3328,
+   "lng": 91.8371,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "chattogram-war-cemetery",
+   "name": "Chattogram War Cemetery",
+   "name_bn": "চট্টগ্রাম যুদ্ধ কবরস্থান",
+   "division": "Chattogram",
+   "district": "Chattogram",
+   "lat": 22.3418,
+   "lng": 91.826,
+   "categories": [
+    "Historical"
+   ]
+  },
+  {
+   "slug": "kutubdia-island",
+   "name": "Kutubdia Island",
+   "name_bn": "কুতুবদিয়া দ্বীপ",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 21.83,
+   "lng": 91.853,
+   "categories": [
+    "Island",
+    "Beach"
+   ]
+  },
+  {
+   "slug": "maheshkhali-island",
+   "name": "Maheshkhali Island",
+   "name_bn": "মহেশখালী দ্বীপ",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 21.56,
+   "lng": 91.96,
+   "categories": [
+    "Island",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "sandwip-island",
+   "name": "Sandwip Island",
+   "name_bn": "সন্দ্বীপ দ্বীপ",
+   "division": "Chattogram",
+   "district": "Chattogram",
+   "lat": 22.46,
+   "lng": 91.42,
+   "categories": [
+    "Island",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "lalakhal",
+   "name": "Lalakhal",
+   "name_bn": "লালাখাল",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 25.097,
+   "lng": 91.905,
+   "categories": [
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "bichanakandi",
+   "name": "Bichanakandi",
+   "name_bn": "বিছানাকান্দি",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 25.124,
+   "lng": 91.985,
+   "categories": [
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "malnicherra-tea-estate",
+   "name": "Malnicherra Tea Estate",
+   "name_bn": "মালনীছড়া চা বাগান",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 24.889,
+   "lng": 91.878,
+   "categories": [
+    "Nature",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "lakkatura-tea-estate",
+   "name": "Lakkatura Tea Estate",
+   "name_bn": "লাক্কাতুরা চা বাগান",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 24.9,
+   "lng": 91.85,
+   "categories": [
+    "Nature",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "ham-ham-waterfall",
+   "name": "Ham Ham Waterfall",
+   "name_bn": "হাম হাম ঝরনা",
+   "division": "Sylhet",
+   "district": "Moulvibazar",
+   "lat": 24.316,
+   "lng": 91.828,
+   "categories": [
+    "Waterfall",
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "baikka-beel",
+   "name": "Baikka Beel",
+   "name_bn": "বাইক্কা বিল",
+   "division": "Sylhet",
+   "district": "Moulvibazar",
+   "lat": 24.285,
+   "lng": 91.72,
+   "categories": [
+    "Nature"
+   ]
+  },
+  {
+   "slug": "madhabpur-lake",
+   "name": "Madhabpur Lake",
+   "name_bn": "মাধবপুর হ্রদ",
+   "division": "Sylhet",
+   "district": "Moulvibazar",
+   "lat": 24.34,
+   "lng": 91.8,
+   "categories": [
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "shashi-lodge",
+   "name": "Shashi Lodge",
+   "name_bn": "শশী লজ",
+   "division": "Mymensingh",
+   "district": "Mymensingh",
+   "lat": 24.749,
+   "lng": 90.4,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "muktagacha-zamindar-bari",
+   "name": "Muktagacha Zamindar Bari",
+   "name_bn": "মুক্তাগাছা জমিদার বাড়ি",
+   "division": "Mymensingh",
+   "district": "Mymensingh",
+   "lat": 24.759,
+   "lng": 90.256,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "baneshwar-temple",
+   "name": "Baneshwar Temple",
+   "name_bn": "বনেশ্বর মন্দির",
+   "division": "Mymensingh",
+   "district": "Jamalpur",
+   "lat": 25.122,
+   "lng": 89.848,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "natore-rajbari",
+   "name": "Natore Rajbari",
+   "name_bn": "নাটোর রাজবাড়ি",
+   "division": "Rajshahi",
+   "district": "Natore",
+   "lat": 24.42,
+   "lng": 88.98,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "uttara-gano-bhaban",
+   "name": "Uttara Gano Bhaban",
+   "name_bn": "উত্তরা গণভবন",
+   "division": "Rajshahi",
+   "district": "Natore",
+   "lat": 24.412,
+   "lng": 89.01,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "tajhat-palace",
+   "name": "Tajhat Palace",
+   "name_bn": "তাজহাট প্রাসাদ",
+   "division": "Rangpur",
+   "district": "Rangpur",
+   "lat": 25.748,
+   "lng": 89.258,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "saidpur",
+   "name": "Saidpur",
+   "name_bn": "সৈয়দপুর",
+   "division": "Rangpur",
+   "district": "Nilphamari",
+   "lat": 25.778,
+   "lng": 88.893,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "char-kukri-mukri",
+   "name": "Char Kukri Mukri",
+   "name_bn": "চর কুকরি মুকরি",
+   "division": "Barishal",
+   "district": "Bhola",
+   "lat": 22.07,
+   "lng": 90.66,
+   "categories": [
+    "Island",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "rangabali-island",
+   "name": "Rangabali Island",
+   "name_bn": "রাঙ্গাবালি দ্বীপ",
+   "division": "Barishal",
+   "district": "Patuakhali",
+   "lat": 21.91,
+   "lng": 90.31,
+   "categories": [
+    "Island",
+    "Beach"
+   ]
+  },
+  {
+   "slug": "lalbagh-fort",
+   "name": "Lalbagh Fort",
+   "name_bn": "লালবাগ দুর্গ",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.7188,
+   "lng": 90.3882,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "ahsan-manzil",
+   "name": "Ahsan Manzil",
+   "name_bn": "আহসান মঞ্জিল",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.7084,
+   "lng": 90.4076,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "star-mosque",
+   "name": "Star Mosque",
+   "name_bn": "তারা মসজিদ",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.7208,
+   "lng": 90.3984,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "shankhari-bazar",
+   "name": "Shankhari Bazar",
+   "name_bn": "শাঁখারীবাজার",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.7125,
+   "lng": 90.404,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "baitul-mukarram",
+   "name": "Baitul Mukarram",
+   "name_bn": "বায়তুল মোকাররম",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.729,
+   "lng": 90.395,
+   "categories": [
+    "Cultural",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "idrakpur-fort",
+   "name": "Idrakpur Fort",
+   "name_bn": "ইদ্রাকপুর দুর্গ",
+   "division": "Dhaka",
+   "district": "Munshiganj",
+   "lat": 23.562,
+   "lng": 90.531,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "mujibnagar",
+   "name": "Mujibnagar",
+   "name_bn": "মুজিবনগর",
+   "division": "Khulna",
+   "district": "Meherpur",
+   "lat": 23.622,
+   "lng": 88.605,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "lalon-shah-shrine",
+   "name": "Lalon Shah Shrine",
+   "name_bn": "লালন শাহ মাজার",
+   "division": "Khulna",
+   "district": "Kushtia",
+   "lat": 23.906,
+   "lng": 89.12,
+   "categories": [
+    "Cultural",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "bagha-mosque",
+   "name": "Bagha Mosque",
+   "name_bn": "বাঘা মসজিদ",
+   "division": "Rajshahi",
+   "district": "Rajshahi",
+   "lat": 24.185,
+   "lng": 88.835,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "hakaluki-haor",
+   "name": "Hakaluki Haor",
+   "name_bn": "হাকালুকি হাওর",
+   "division": "Sylhet",
+   "district": "Moulvibazar",
+   "lat": 24.7,
+   "lng": 91.98,
+   "categories": [
+    "Nature"
+   ]
+  },
+  {
+   "slug": "satchari-national-park",
+   "name": "Satchari National Park",
+   "name_bn": "সাতছড়ি জাতীয় উদ্যান",
+   "division": "Sylhet",
+   "district": "Habiganj",
+   "lat": 24.132,
+   "lng": 91.46,
+   "categories": [
+    "Forest",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "rema-kalenga-wildlife-sanctuary",
+   "name": "Rema-Kalenga Wildlife Sanctuary",
+   "name_bn": "রেমা-কালেঙ্গা বন্যপ্রাণী অভয়ারণ্য",
+   "division": "Sylhet",
+   "district": "Habiganj",
+   "lat": 24.124,
+   "lng": 91.624,
+   "categories": [
+    "Forest",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "panthumai",
+   "name": "Panthumai",
+   "name_bn": "পান্থুমাই",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 25.152,
+   "lng": 92.02,
+   "categories": [
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "dhan-siri-waterfall",
+   "name": "Dhan Siri Waterfall",
+   "name_bn": "ধানশিরি ঝরনা",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 21.78,
+   "lng": 92.2,
+   "categories": [
+    "Waterfall",
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "chimbuk-hill",
+   "name": "Chimbuk Hill",
+   "name_bn": "চিম্বুক পাহাড়",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 22.123,
+   "lng": 92.24,
+   "categories": [
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "ramu",
+   "name": "Ramu",
+   "name_bn": "রামু",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 21.428,
+   "lng": 92.1,
+   "categories": [
+    "Cultural",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "hatiya-island",
+   "name": "Hatiya Island",
+   "name_bn": "হাতিয়া দ্বীপ",
+   "division": "Chattogram",
+   "district": "Noakhali",
+   "lat": 22.45,
+   "lng": 91.1,
+   "categories": [
+    "Island",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "sonadia-island",
+   "name": "Sonadia Island",
+   "name_bn": "সোনাদিয়া দ্বীপ",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 21.5,
+   "lng": 91.98,
+   "categories": [
+    "Island",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "bangladesh-national-zoo",
+   "name": "Bangladesh National Zoo",
+   "name_bn": "বাংলাদেশ জাতীয় চিড়িয়াখানা",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.8063,
+   "lng": 90.344,
+   "categories": [
+    "Family",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "national-botanical-garden",
+   "name": "National Botanical Garden",
+   "name_bn": "জাতীয় উদ্ভিদ উদ্যান",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.8135,
+   "lng": 90.353,
+   "categories": [
+    "Nature"
+   ]
+  },
+  {
+   "slug": "padma-bridge",
+   "name": "Padma Bridge",
+   "name_bn": "পদ্মা সেতু",
+   "division": "Dhaka",
+   "district": "Munshiganj",
+   "lat": 23.482,
+   "lng": 90.258,
+   "categories": [
+    "Cultural",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "bangabandhu-bridge",
+   "name": "Bangabandhu Bridge",
+   "name_bn": "বঙ্গবন্ধু সেতু",
+   "division": "Dhaka",
+   "district": "Sirajganj",
+   "lat": 24.395,
+   "lng": 89.685,
+   "categories": [
+    "Cultural",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "madhabtila-eco-park",
+   "name": "Madhabtila Eco Park",
+   "name_bn": "মাধবটিলা ইকো পার্ক",
+   "division": "Mymensingh",
+   "district": "Sherpur",
+   "lat": 25.01,
+   "lng": 90.04,
+   "categories": [
+    "Nature"
+   ]
+  },
+  {
+   "slug": "marine-drive",
+   "name": "Marine Drive",
+   "name_bn": "মেরিন ড্রাইভ",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 21.2,
+   "lng": 92.05,
+   "categories": [
+    "Beach",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "naf-river",
+   "name": "Naf River",
+   "name_bn": "নাফ নদী",
+   "division": "Chattogram",
+   "district": "Cox's Bazar",
+   "lat": 20.87,
+   "lng": 92.3,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "chandranath-hill",
+   "name": "Chandranath Hill",
+   "name_bn": "চন্দ্রনাথ পাহাড়",
+   "division": "Chattogram",
+   "district": "Chattogram",
+   "lat": 22.61,
+   "lng": 91.69,
+   "categories": [
+    "Hill",
+    "Religious",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "bhatiari-lake",
+   "name": "Bhatiari Lake",
+   "name_bn": "ভাটিয়ারী লেক",
+   "division": "Chattogram",
+   "district": "Chattogram",
+   "lat": 22.41,
+   "lng": 91.76,
+   "categories": [
+    "Lake",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "ethnological-museum-chattogram",
+   "name": "Ethnological Museum",
+   "name_bn": "নৃতাত্ত্বিক জাদুঘর",
+   "division": "Chattogram",
+   "district": "Chattogram",
+   "lat": 22.34,
+   "lng": 91.83,
+   "categories": [
+    "Museum",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "nilgiri",
+   "name": "Nilgiri",
+   "name_bn": "নীলগিরি",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 21.8,
+   "lng": 92.43,
+   "categories": [
+    "Hill",
+    "Mountain",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "boga-lake",
+   "name": "Boga Lake",
+   "name_bn": "বগা লেক",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 21.95,
+   "lng": 92.49,
+   "categories": [
+    "Lake",
+    "Mountain",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "keokradong",
+   "name": "Keokradong",
+   "name_bn": "কেওক্রাডং",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 21.95,
+   "lng": 92.52,
+   "categories": [
+    "Mountain",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "nafakhum",
+   "name": "Nafakhum",
+   "name_bn": "নাফাখুম",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 21.85,
+   "lng": 92.55,
+   "categories": [
+    "Waterfall",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "amiakhum",
+   "name": "Amiakhum",
+   "name_bn": "আমিয়াখুম",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 21.93,
+   "lng": 92.5,
+   "categories": [
+    "Waterfall",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "shoilo-propat",
+   "name": "Shoilo Propat",
+   "name_bn": "শৈলপ্রপাত",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 22.04,
+   "lng": 92.22,
+   "categories": [
+    "Waterfall",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "sangu-river",
+   "name": "Sangu River",
+   "name_bn": "সাঙ্গু নদী",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 22.02,
+   "lng": 92.2,
+   "categories": [
+    "River",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "thanchi",
+   "name": "Thanchi",
+   "name_bn": "থানচি",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 21.78,
+   "lng": 92.43,
+   "categories": [
+    "Village",
+    "Eco Tourism",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "remakri",
+   "name": "Remakri",
+   "name_bn": "রেমাক্রি",
+   "division": "Chattogram",
+   "district": "Bandarban",
+   "lat": 21.83,
+   "lng": 92.5,
+   "categories": [
+    "Village",
+    "Eco Tourism",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "hanging-bridge-rangamati",
+   "name": "Hanging Bridge",
+   "name_bn": "ঝুলন্ত সেতু",
+   "division": "Chattogram",
+   "district": "Rangamati",
+   "lat": 22.65,
+   "lng": 92.2,
+   "categories": [
+    "Historical",
+    "Lake"
+   ]
+  },
+  {
+   "slug": "shuvolong-waterfall",
+   "name": "Shuvolong Waterfall",
+   "name_bn": "শুভলং ঝরনা",
+   "division": "Chattogram",
+   "district": "Rangamati",
+   "lat": 22.57,
+   "lng": 92.2,
+   "categories": [
+    "Waterfall",
+    "Lake"
+   ]
+  },
+  {
+   "slug": "kaptai-national-park",
+   "name": "Kaptai National Park",
+   "name_bn": "কাপ্তাই জাতীয় উদ্যান",
+   "division": "Chattogram",
+   "district": "Rangamati",
+   "lat": 22.62,
+   "lng": 92.17,
+   "categories": [
+    "National Park",
+    "Forest",
+    "Wildlife"
+   ]
+  },
+  {
+   "slug": "rajban-bihar",
+   "name": "Rajban Bihar",
+   "name_bn": "রাজবন বিহার",
+   "division": "Chattogram",
+   "district": "Rangamati",
+   "lat": 22.65,
+   "lng": 92.18,
+   "categories": [
+    "Religious",
+    "Cultural",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "tribal-cultural-institute",
+   "name": "Tribal Cultural Institute",
+   "name_bn": "উপজাতি সাংস্কৃতিক ইনস্টিটিউট",
+   "division": "Chattogram",
+   "district": "Rangamati",
+   "lat": 22.65,
+   "lng": 92.2,
+   "categories": [
+    "Museum",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "dighinala",
+   "name": "Dighinala",
+   "name_bn": "দিঘিনালা",
+   "division": "Chattogram",
+   "district": "Khagrachhari",
+   "lat": 23.27,
+   "lng": 91.94,
+   "categories": [
+    "Hill",
+    "Eco Tourism"
+   ]
+  },
+  {
+   "slug": "panchari",
+   "name": "Panchari",
+   "name_bn": "পানছড়ি",
+   "division": "Chattogram",
+   "district": "Khagrachhari",
+   "lat": 23.27,
+   "lng": 91.89,
+   "categories": [
+    "Village",
+    "Eco Tourism"
+   ]
+  },
+  {
+   "slug": "mainamati-museum",
+   "name": "Mainamati Museum",
+   "name_bn": "ময়নামতি জাদুঘর",
+   "division": "Chattogram",
+   "district": "Cumilla",
+   "lat": 23.46,
+   "lng": 91.11,
+   "categories": [
+    "Museum",
+    "Archaeological"
+   ]
+  },
+  {
+   "slug": "cumilla-war-cemetery",
+   "name": "Cumilla War Cemetery",
+   "name_bn": "কুমিল্লা ওয়ার সেমেট্রি",
+   "division": "Chattogram",
+   "district": "Cumilla",
+   "lat": 23.46,
+   "lng": 91.18,
+   "categories": [
+    "Historical",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "lalmai-hills",
+   "name": "Lalmai Hills",
+   "name_bn": "লালমাই পাহাড়",
+   "division": "Chattogram",
+   "district": "Cumilla",
+   "lat": 23.43,
+   "lng": 91.12,
+   "categories": [
+    "Hill",
+    "Archaeological",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "chandpur-three-rivers",
+   "name": "Padma–Meghna Confluence",
+   "name_bn": "ত্রিমোহনা",
+   "division": "Chattogram",
+   "district": "Chandpur",
+   "lat": 23.23,
+   "lng": 90.66,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "mini-coxs-bazar-chandpur",
+   "name": "Chandpur Sandbar (Mini Cox's Bazar)",
+   "name_bn": "মিনি কক্সবাজার",
+   "division": "Chattogram",
+   "district": "Chandpur",
+   "lat": 23.16,
+   "lng": 90.72,
+   "categories": [
+    "River",
+    "Picnic Spot",
+    "Beach"
+   ]
+  },
+  {
+   "slug": "haimchar",
+   "name": "Haimchar",
+   "name_bn": "হাইমচর",
+   "division": "Chattogram",
+   "district": "Chandpur",
+   "lat": 23.32,
+   "lng": 90.8,
+   "categories": [
+    "River",
+    "Village"
+   ]
+  },
+  {
+   "slug": "haripur-barabari",
+   "name": "Haripur Barabari",
+   "name_bn": "হরিপুর বাড়বাড়ি",
+   "division": "Chattogram",
+   "district": "Brahmanbaria",
+   "lat": 23.99,
+   "lng": 91.14,
+   "categories": [
+    "Historical",
+    "Heritage",
+    "Palace"
+   ]
+  },
+  {
+   "slug": "titas-river-brahmanbaria",
+   "name": "Titas River",
+   "name_bn": "তিতাস নদী",
+   "division": "Chattogram",
+   "district": "Brahmanbaria",
+   "lat": 23.65,
+   "lng": 91.03,
+   "categories": [
+    "River",
+    "Cultural",
+    "Village"
+   ]
+  },
+  {
+   "slug": "muhurir-char",
+   "name": "Muhurir Char",
+   "name_bn": "মুহুরির চর",
+   "division": "Chattogram",
+   "district": "Feni",
+   "lat": 22.98,
+   "lng": 91.4,
+   "categories": [
+    "River",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "sonagazi",
+   "name": "Sonagazi",
+   "name_bn": "সোনাগাজী",
+   "division": "Chattogram",
+   "district": "Feni",
+   "lat": 22.85,
+   "lng": 91.4,
+   "categories": [
+    "River",
+    "Coastal",
+    "Village"
+   ]
+  },
+  {
+   "slug": "ramgati-lakshmipur",
+   "name": "Ramgati",
+   "name_bn": "রামগতি",
+   "division": "Chattogram",
+   "district": "Lakshmipur",
+   "lat": 22.61,
+   "lng": 90.99,
+   "categories": [
+    "River",
+    "Coastal"
+   ]
+  },
+  {
+   "slug": "sada-pathor",
+   "name": "Sada Pathor",
+   "name_bn": "সাদা পাথর",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 25.12,
+   "lng": 91.73,
+   "categories": [
+    "River",
+    "Nature",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "shah-jalal-mazar",
+   "name": "Hazrat Shah Jalal Mazar",
+   "name_bn": "হযরত শাহজালাল মাজার",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 24.89,
+   "lng": 91.87,
+   "categories": [
+    "Shrine",
+    "Religious",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "shah-paran-mazar",
+   "name": "Hazrat Shah Paran Mazar",
+   "name_bn": "হযরত শাহপরান মাজার",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 24.88,
+   "lng": 91.87,
+   "categories": [
+    "Shrine",
+    "Religious",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "osmani-museum-sylhet",
+   "name": "Osmani Museum",
+   "name_bn": "ওসমানী জাদুঘর",
+   "division": "Sylhet",
+   "district": "Sylhet",
+   "lat": 24.89,
+   "lng": 91.87,
+   "categories": [
+    "Museum",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "jadukata-river",
+   "name": "Jadukata River",
+   "name_bn": "জাদুকাটা নদী",
+   "division": "Sylhet",
+   "district": "Sunamganj",
+   "lat": 25.05,
+   "lng": 91.66,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "shimul-bagan",
+   "name": "Shimul Bagan",
+   "name_bn": "শিমুল বাগান",
+   "division": "Sylhet",
+   "district": "Sunamganj",
+   "lat": 25.08,
+   "lng": 91.67,
+   "categories": [
+    "Nature",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "barikka-tila",
+   "name": "Barikka Tila",
+   "name_bn": "বরিক্কা টিলা",
+   "division": "Sylhet",
+   "district": "Sunamganj",
+   "lat": 25.07,
+   "lng": 91.7,
+   "categories": [
+    "Hill",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "niladri-lake-sunamganj",
+   "name": "Niladri Lake",
+   "name_bn": "নীলাদ্রি লেক",
+   "division": "Sylhet",
+   "district": "Sunamganj",
+   "lat": 25.05,
+   "lng": 91.6,
+   "categories": [
+    "Lake",
+    "Eco Tourism"
+   ]
+  },
+  {
+   "slug": "hatirjheel",
+   "name": "Hatirjheel",
+   "name_bn": "হাতিরঝিল",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.77,
+   "lng": 90.4,
+   "categories": [
+    "Lake",
+    "City",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "ramna-park-dhaka",
+   "name": "Ramna Park",
+   "name_bn": "রমনা পার্ক",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.74,
+   "lng": 90.4,
+   "categories": [
+    "City",
+    "Nature",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "liberation-war-museum",
+   "name": "Liberation War Museum",
+   "name_bn": "মুক্তিযুদ্ধ জাদুঘর",
+   "division": "Dhaka",
+   "district": "Dhaka",
+   "lat": 23.78,
+   "lng": 90.4,
+   "categories": [
+    "Museum",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "panam-city",
+   "name": "Panam City",
+   "name_bn": "পানাম নগর",
+   "division": "Dhaka",
+   "district": "Narayanganj",
+   "lat": 23.65,
+   "lng": 90.6,
+   "categories": [
+    "Historical",
+    "Heritage",
+    "City"
+   ]
+  },
+  {
+   "slug": "folk-art-museum",
+   "name": "Bangladesh Folk Art Museum",
+   "name_bn": "লোকশিল্প জাদুঘর",
+   "division": "Dhaka",
+   "district": "Narayanganj",
+   "lat": 23.65,
+   "lng": 90.6,
+   "categories": [
+    "Museum",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "goaldi-mosque",
+   "name": "Goaldi Mosque",
+   "name_bn": "গোয়ালদি মসজিদ",
+   "division": "Dhaka",
+   "district": "Narayanganj",
+   "lat": 23.64,
+   "lng": 90.6,
+   "categories": [
+    "Mosque",
+    "Archaeological",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "mawa-ferry-ghat",
+   "name": "Mawa Ghat & Padma Riverfront",
+   "name_bn": "মাওয়া ঘাট",
+   "division": "Dhaka",
+   "district": "Munshiganj",
+   "lat": 23.47,
+   "lng": 90.31,
+   "categories": [
+    "River",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "bikrampur-munshiganj",
+   "name": "Bikrampur",
+   "name_bn": "বিক্রমপুর",
+   "division": "Dhaka",
+   "district": "Munshiganj",
+   "lat": 23.55,
+   "lng": 90.52,
+   "categories": [
+    "Archaeological",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "bangabandhu-safari-park-gazipur",
+   "name": "Bangabandhu Safari Park",
+   "name_bn": "বঙ্গবন্ধু সাফারি পার্ক",
+   "division": "Dhaka",
+   "district": "Gazipur",
+   "lat": 24.06,
+   "lng": 90.4,
+   "categories": [
+    "Wildlife",
+    "Family",
+    "Forest"
+   ]
+  },
+  {
+   "slug": "nuhash-palli",
+   "name": "Nuhash Palli",
+   "name_bn": "নুহাশ পল্লী",
+   "division": "Dhaka",
+   "district": "Gazipur",
+   "lat": 24.04,
+   "lng": 90.4,
+   "categories": [
+    "Resort Area",
+    "Family",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "bhawal-rajbari-gazipur",
+   "name": "Bhawal Rajbari",
+   "name_bn": "ভাওয়াল রাজবাড়ী",
+   "division": "Dhaka",
+   "district": "Gazipur",
+   "lat": 24,
+   "lng": 90.42,
+   "categories": [
+    "Palace",
+    "Historical",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "teota-zamindar-bari",
+   "name": "Teota Zamindar Bari",
+   "name_bn": "তেওতা জমিদার বাড়ি",
+   "division": "Dhaka",
+   "district": "Manikganj",
+   "lat": 23.86,
+   "lng": 90.09,
+   "categories": [
+    "Palace",
+    "Historical",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "atia-mosque",
+   "name": "Atia Mosque",
+   "name_bn": "আতিয়া মসজিদ",
+   "division": "Dhaka",
+   "district": "Tangail",
+   "lat": 24.16,
+   "lng": 89.94,
+   "categories": [
+    "Mosque",
+    "Archaeological",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "pakutia-zamindar-bari",
+   "name": "Pakutia Zamindar Bari",
+   "name_bn": "পাকুটিয়া জমিদার বাড়ি",
+   "division": "Dhaka",
+   "district": "Tangail",
+   "lat": 24.16,
+   "lng": 89.95,
+   "categories": [
+    "Palace",
+    "Historical",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "nikli-haor",
+   "name": "Nikli Haor",
+   "name_bn": "নিকলি হাওর",
+   "division": "Dhaka",
+   "district": "Kishoreganj",
+   "lat": 24.44,
+   "lng": 90.95,
+   "categories": [
+    "Haor",
+    "Nature",
+    "Eco Tourism"
+   ]
+  },
+  {
+   "slug": "mithamain",
+   "name": "Mithamain Haor",
+   "name_bn": "মিঠামইন",
+   "division": "Dhaka",
+   "district": "Kishoreganj",
+   "lat": 24.42,
+   "lng": 91.06,
+   "categories": [
+    "Haor",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "austagram",
+   "name": "Austagram Haor",
+   "name_bn": "অষ্টগ্রাম",
+   "division": "Dhaka",
+   "district": "Kishoreganj",
+   "lat": 24.28,
+   "lng": 91.12,
+   "categories": [
+    "Haor",
+    "Nature",
+    "Village"
+   ]
+  },
+  {
+   "slug": "faridpur-rajbari",
+   "name": "Faridpur Zamindar Palace",
+   "name_bn": "ফরিদপুর জমিদার বাড়ি",
+   "division": "Dhaka",
+   "district": "Faridpur",
+   "lat": 23.6,
+   "lng": 89.84,
+   "categories": [
+    "Palace",
+    "Historical",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "arial-khan-river-madaripur",
+   "name": "Arial Khan River",
+   "name_bn": "আড়িয়াল খাঁ নদী",
+   "division": "Dhaka",
+   "district": "Madaripur",
+   "lat": 23.16,
+   "lng": 90.19,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "rajbari-goalanda",
+   "name": "Goalanda Ghat",
+   "name_bn": "গোয়ালন্দ ঘাট",
+   "division": "Dhaka",
+   "district": "Rajbari",
+   "lat": 23.74,
+   "lng": 89.77,
+   "categories": [
+    "River",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "zajira-padma",
+   "name": "Zajira Padma Riverfront",
+   "name_bn": "জাজিরা",
+   "division": "Dhaka",
+   "district": "Shariatpur",
+   "lat": 23.46,
+   "lng": 90.27,
+   "categories": [
+    "River",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "wari-bateshwar",
+   "name": "Wari-Bateshwar",
+   "name_bn": "ওয়ারী-বটেশ্বর",
+   "division": "Dhaka",
+   "district": "Narsingdi",
+   "lat": 24.09,
+   "lng": 90.63,
+   "categories": [
+    "Archaeological",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "puthia-rajbari",
+   "name": "Puthia Rajbari",
+   "name_bn": "পুঠিয়া রাজবাড়ী",
+   "division": "Rajshahi",
+   "district": "Rajshahi",
+   "lat": 24.36,
+   "lng": 88.84,
+   "categories": [
+    "Palace",
+    "Historical",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "padma-river-rajshahi",
+   "name": "Padma Riverfront, Rajshahi",
+   "name_bn": "পদ্মা নদী",
+   "division": "Rajshahi",
+   "district": "Rajshahi",
+   "lat": 24.37,
+   "lng": 88.6,
+   "categories": [
+    "River",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "shah-makhdum-mazar",
+   "name": "Hazrat Shah Makhdum Mazar",
+   "name_bn": "শাহ মখদুম মাজার",
+   "division": "Rajshahi",
+   "district": "Rajshahi",
+   "lat": 24.37,
+   "lng": 88.62,
+   "categories": [
+    "Shrine",
+    "Religious",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "darasbari-mosque",
+   "name": "Darasbari Mosque",
+   "name_bn": "দারাসবাড়ি মসজিদ",
+   "division": "Rajshahi",
+   "district": "Chapainawabganj",
+   "lat": 24.82,
+   "lng": 88.15,
+   "categories": [
+    "Mosque",
+    "Archaeological",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "tahkhana-complex",
+   "name": "Tahkhana Complex",
+   "name_bn": "তাহখানা কমপ্লেক্স",
+   "division": "Rajshahi",
+   "district": "Chapainawabganj",
+   "lat": 24.8,
+   "lng": 88.16,
+   "categories": [
+    "Historical",
+    "Fort",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "mahananda-river",
+   "name": "Mahananda River",
+   "name_bn": "মহানন্দা নদী",
+   "division": "Rajshahi",
+   "district": "Chapainawabganj",
+   "lat": 24.7,
+   "lng": 88.2,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "kusumba-mosque",
+   "name": "Kusumba Mosque",
+   "name_bn": "কুসুম্বা মসজিদ",
+   "division": "Rajshahi",
+   "district": "Naogaon",
+   "lat": 24.92,
+   "lng": 88.68,
+   "categories": [
+    "Mosque",
+    "Archaeological",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "patisar-naogaon",
+   "name": "Patisar",
+   "name_bn": "পাতিসর",
+   "division": "Rajshahi",
+   "district": "Naogaon",
+   "lat": 24.7,
+   "lng": 89.1,
+   "categories": [
+    "Historical",
+    "Heritage",
+    "River"
+   ]
+  },
+  {
+   "slug": "gokul-medh",
+   "name": "Gokul Medh",
+   "name_bn": "গোকুল মেধ",
+   "division": "Rajshahi",
+   "district": "Bogura",
+   "lat": 24.96,
+   "lng": 89.34,
+   "categories": [
+    "Archaeological",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "behula-lakshindar-basor-ghor",
+   "name": "Behula Lakshindar Basor Ghor",
+   "name_bn": "বেহুলা-লক্ষীন্দরের বাসর ঘর",
+   "division": "Rajshahi",
+   "district": "Bogura",
+   "lat": 24.96,
+   "lng": 89.35,
+   "categories": [
+    "Archaeological",
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "vasu-bihar",
+   "name": "Vasu Bihar",
+   "name_bn": "বসু বিহার",
+   "division": "Rajshahi",
+   "district": "Bogura",
+   "lat": 24.92,
+   "lng": 89.34,
+   "categories": [
+    "Archaeological",
+    "Historical",
+    "Religious"
+   ]
+  },
+  {
+   "slug": "bogura-heritage-park",
+   "name": "Mahasthangarh Heritage Park",
+   "name_bn": "মহাস্থানগড় হেরিটেজ পার্ক",
+   "division": "Rajshahi",
+   "district": "Bogura",
+   "lat": 24.96,
+   "lng": 89.34,
+   "categories": [
+    "Museum",
+    "Archaeological",
+    "Family"
+   ]
+  },
+  {
+   "slug": "joypurhat-panchbibi",
+   "name": "Panchbibi (Joypurhat)",
+   "name_bn": "পাঁচবিবি",
+   "division": "Rajshahi",
+   "district": "Joypurhat",
+   "lat": 25.02,
+   "lng": 89.01,
+   "categories": [
+    "Historical",
+    "Village"
+   ]
+  },
+  {
+   "slug": "hardinge-bridge",
+   "name": "Hardinge Bridge",
+   "name_bn": "হার্ডিঞ্জ ব্রিজ",
+   "division": "Rajshahi",
+   "district": "Pabna",
+   "lat": 24.07,
+   "lng": 89.03,
+   "categories": [
+    "Historical",
+    "River",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "shahjadpur-kuthibari",
+   "name": "Shahjadpur Kuthibari",
+   "name_bn": "শাহজাদপুর কুঠিবাড়ি",
+   "division": "Rajshahi",
+   "district": "Sirajganj",
+   "lat": 24.16,
+   "lng": 89.61,
+   "categories": [
+    "Historical",
+    "Heritage",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "rupsha-river",
+   "name": "Rupsha River",
+   "name_bn": "রূপসা নদী",
+   "division": "Khulna",
+   "district": "Khulna",
+   "lat": 22.85,
+   "lng": 89.55,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "batiaghata",
+   "name": "Batiaghata",
+   "name_bn": "বটিয়াঘাটা",
+   "division": "Khulna",
+   "district": "Khulna",
+   "lat": 22.73,
+   "lng": 89.52,
+   "categories": [
+    "Village",
+    "River",
+    "Eco Tourism"
+   ]
+  },
+  {
+   "slug": "khan-jahan-ali-mazar",
+   "name": "Khan Jahan Ali's Tomb",
+   "name_bn": "খান জাহান আলীর মাজার",
+   "division": "Khulna",
+   "district": "Bagerhat",
+   "lat": 22.67,
+   "lng": 89.74,
+   "categories": [
+    "Shrine",
+    "Religious",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "nine-dome-mosque",
+   "name": "Nine Dome Mosque",
+   "name_bn": "নয় গম্বুজ মসজিদ",
+   "division": "Khulna",
+   "district": "Bagerhat",
+   "lat": 22.66,
+   "lng": 89.77,
+   "categories": [
+    "Mosque",
+    "Archaeological",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "singair-mosque",
+   "name": "Singair Mosque",
+   "name_bn": "সিঙ্গাইর মসজিদ",
+   "division": "Khulna",
+   "district": "Bagerhat",
+   "lat": 22.67,
+   "lng": 89.76,
+   "categories": [
+    "Mosque",
+    "Archaeological",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "kaliganj-satkhira",
+   "name": "Kaliganj Sundarbans",
+   "name_bn": "কালীগঞ্জ",
+   "division": "Khulna",
+   "district": "Satkhira",
+   "lat": 22.45,
+   "lng": 89.05,
+   "categories": [
+    "Forest",
+    "Eco Tourism",
+    "Wildlife"
+   ]
+  },
+  {
+   "slug": "burigoalini",
+   "name": "Burigoalini",
+   "name_bn": "বুড়িগোয়ালিনী",
+   "division": "Khulna",
+   "district": "Satkhira",
+   "lat": 22.29,
+   "lng": 89.19,
+   "categories": [
+    "Forest",
+    "Eco Tourism"
+   ]
+  },
+  {
+   "slug": "munshiganj-eco-tourism",
+   "name": "Munshiganj Eco Tourism Area",
+   "name_bn": "মুন্সীগঞ্জ ইকো-ট্যুরিজম",
+   "division": "Khulna",
+   "district": "Satkhira",
+   "lat": 22.32,
+   "lng": 89.26,
+   "categories": [
+    "Eco Tourism",
+    "Forest",
+    "Village"
+   ]
+  },
+  {
+   "slug": "mothbari-neelkuthi",
+   "name": "Mothbari Neelkuthi",
+   "name_bn": "মঠবাড়ি নীলকুঠি",
+   "division": "Khulna",
+   "district": "Jashore",
+   "lat": 23.16,
+   "lng": 89.21,
+   "categories": [
+    "Historical",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "naldanga-zamindar-bari",
+   "name": "Naldanga Zamindar Bari",
+   "name_bn": "নলডাঙ্গা জমিদার বাড়ি",
+   "division": "Khulna",
+   "district": "Jhenaidah",
+   "lat": 23.7,
+   "lng": 89.08,
+   "categories": [
+    "Palace",
+    "Historical",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "magura-nabaganga",
+   "name": "Nabaganga River (Magura)",
+   "name_bn": "নবগঙ্গা নদী",
+   "division": "Khulna",
+   "district": "Magura",
+   "lat": 23.49,
+   "lng": 89.42,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "narail-chitra-river",
+   "name": "Chitra River (Narail)",
+   "name_bn": "চিত্রা নদী",
+   "division": "Khulna",
+   "district": "Narail",
+   "lat": 23.17,
+   "lng": 89.5,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "chuadanga-heritage",
+   "name": "Chuadanga Heritage",
+   "name_bn": "চুয়াডাঙ্গা",
+   "division": "Khulna",
+   "district": "Chuadanga",
+   "lat": 23.64,
+   "lng": 88.86,
+   "categories": [
+    "Historical",
+    "Village"
+   ]
+  },
+  {
+   "slug": "oxford-mission-church",
+   "name": "Oxford Mission Church",
+   "name_bn": "অক্সফোর্ড মিশন চার্চ",
+   "division": "Barishal",
+   "district": "Barishal",
+   "lat": 22.7,
+   "lng": 90.37,
+   "categories": [
+    "Heritage",
+    "Religious",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "barishal-bell-park",
+   "name": "Bell's Park",
+   "name_bn": "বেলস পার্ক",
+   "division": "Barishal",
+   "district": "Barishal",
+   "lat": 22.7,
+   "lng": 90.37,
+   "categories": [
+    "City",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "floating-guava-market",
+   "name": "Floating Guava Market",
+   "name_bn": "ভাসমান পেয়ারা বাজার",
+   "division": "Barishal",
+   "district": "Jhalokathi",
+   "lat": 22.68,
+   "lng": 90.25,
+   "categories": [
+    "Cultural",
+    "River",
+    "Village"
+   ]
+  },
+  {
+   "slug": "monpura",
+   "name": "Monpura Island",
+   "name_bn": "মনপুরা দ্বীপ",
+   "division": "Barishal",
+   "district": "Bhola",
+   "lat": 22.28,
+   "lng": 90.89,
+   "categories": [
+    "Island",
+    "Village",
+    "River"
+   ]
+  },
+  {
+   "slug": "dhal-char-bhola",
+   "name": "Dhal Char",
+   "name_bn": "ঢাল চর",
+   "division": "Barishal",
+   "district": "Bhola",
+   "lat": 22.22,
+   "lng": 90.78,
+   "categories": [
+    "Island",
+    "River",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "taltali-barguna",
+   "name": "Taltali",
+   "name_bn": "তালতলী",
+   "division": "Barishal",
+   "district": "Barguna",
+   "lat": 22.06,
+   "lng": 90.12,
+   "categories": [
+    "Coastal",
+    "River",
+    "Village"
+   ]
+  },
+  {
+   "slug": "payra-river-barguna",
+   "name": "Payra River",
+   "name_bn": "পায়রা নদী",
+   "division": "Barishal",
+   "district": "Barguna",
+   "lat": 22.18,
+   "lng": 90.13,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "fatrar-char",
+   "name": "Fatrar Char",
+   "name_bn": "ফাতরার চর",
+   "division": "Barishal",
+   "district": "Patuakhali",
+   "lat": 21.85,
+   "lng": 90.05,
+   "categories": [
+    "Island",
+    "Beach",
+    "Coastal"
+   ]
+  },
+  {
+   "slug": "swarupkathi",
+   "name": "Swarupkathi",
+   "name_bn": "স্বরূপকাঠি",
+   "division": "Barishal",
+   "district": "Pirojpur",
+   "lat": 22.74,
+   "lng": 90.25,
+   "categories": [
+    "River",
+    "Village",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "sugandha-river",
+   "name": "Sugandha River",
+   "name_bn": "সুগন্ধা নদী",
+   "division": "Barishal",
+   "district": "Jhalokathi",
+   "lat": 22.63,
+   "lng": 90.2,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "nayabad-mosque",
+   "name": "Nayabad Mosque",
+   "name_bn": "নয়াবাদ মসজিদ",
+   "division": "Rangpur",
+   "district": "Dinajpur",
+   "lat": 25.63,
+   "lng": 88.64,
+   "categories": [
+    "Mosque",
+    "Historical",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "dinajpur-rajbari",
+   "name": "Dinajpur Rajbari",
+   "name_bn": "দিনাজপুর রাজবাড়ী",
+   "division": "Rangpur",
+   "district": "Dinajpur",
+   "lat": 25.63,
+   "lng": 88.64,
+   "categories": [
+    "Palace",
+    "Historical",
+    "Heritage"
+   ]
+  },
+  {
+   "slug": "pairaband-rangpur",
+   "name": "Pairaband",
+   "name_bn": "পায়রাবন্দ",
+   "division": "Rangpur",
+   "district": "Rangpur",
+   "lat": 25.58,
+   "lng": 89.2,
+   "categories": [
+    "Historical",
+    "Village"
+   ]
+  },
+  {
+   "slug": "keranirhat",
+   "name": "Keranirhat",
+   "name_bn": "কেরানীর হাট",
+   "division": "Rangpur",
+   "district": "Rangpur",
+   "lat": 25.79,
+   "lng": 89.19,
+   "categories": [
+    "Historical",
+    "Heritage",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "tangon-river-thakurgaon",
+   "name": "Tangon River",
+   "name_bn": "টাঙ্গন নদী",
+   "division": "Rangpur",
+   "district": "Thakurgaon",
+   "lat": 26.03,
+   "lng": 88.47,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "haripur-rajbari-thakurgaon",
+   "name": "Haripur Rajbari",
+   "name_bn": "হরিপুর রাজবাড়ী",
+   "division": "Rangpur",
+   "district": "Thakurgaon",
+   "lat": 26.08,
+   "lng": 88.34,
+   "categories": [
+    "Palace",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "gaibandha-jamuna",
+   "name": "Jamuna Charlands (Gaibandha)",
+   "name_bn": "গাইবান্ধা চর",
+   "division": "Rangpur",
+   "district": "Gaibandha",
+   "lat": 25.33,
+   "lng": 89.55,
+   "categories": [
+    "River",
+    "Island",
+    "Village"
+   ]
+  },
+  {
+   "slug": "chilmari-kurigram",
+   "name": "Chilmari",
+   "name_bn": "চিলমারী",
+   "division": "Rangpur",
+   "district": "Kurigram",
+   "lat": 25.28,
+   "lng": 89.7,
+   "categories": [
+    "River",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "banglabandha",
+   "name": "Banglabandha",
+   "name_bn": "বাংলাবান্ধা",
+   "division": "Rangpur",
+   "district": "Panchagarh",
+   "lat": 26.63,
+   "lng": 88.52,
+   "categories": [
+    "Historical",
+    "Village"
+   ]
+  },
+  {
+   "slug": "mahananda-river-panchagarh",
+   "name": "Mahananda River (Panchagarh)",
+   "name_bn": "মহানন্দা নদী",
+   "division": "Rangpur",
+   "district": "Panchagarh",
+   "lat": 26.35,
+   "lng": 88.42,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "zainul-abedin-museum",
+   "name": "Zainul Abedin Museum",
+   "name_bn": "জয়নুল আবেদিন জাদুঘর",
+   "division": "Mymensingh",
+   "district": "Mymensingh",
+   "lat": 24.76,
+   "lng": 90.4,
+   "categories": [
+    "Museum",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "brahmaputra-river-mymensingh",
+   "name": "Brahmaputra River (Mymensingh)",
+   "name_bn": "ব্রহ্মপুত্র নদী",
+   "division": "Mymensingh",
+   "district": "Mymensingh",
+   "lat": 24.75,
+   "lng": 90.4,
+   "categories": [
+    "River",
+    "Nature",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "someshwari-river",
+   "name": "Someshwari River",
+   "name_bn": "সোমেশ্বরী নদী",
+   "division": "Mymensingh",
+   "district": "Netrokona",
+   "lat": 25.02,
+   "lng": 90.81,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "ranikhong",
+   "name": "Ranikhong",
+   "name_bn": "রাণীখং",
+   "division": "Mymensingh",
+   "district": "Netrokona",
+   "lat": 25.05,
+   "lng": 90.78,
+   "categories": [
+    "Village",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "habiganj-tea-gardens",
+   "name": "Habiganj Tea Gardens",
+   "name_bn": "হবিগঞ্জ চা বাগান",
+   "division": "Sylhet",
+   "district": "Habiganj",
+   "lat": 24.06,
+   "lng": 91.55,
+   "categories": [
+    "Tea Garden",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "polwel-park",
+   "name": "Polwel Park",
+   "name_bn": "পলওয়েল পিকনিক স্পট",
+   "division": "Chattogram",
+   "district": "Rangamati",
+   "lat": 22.51,
+   "lng": 92.27,
+   "categories": [
+    "Waterfall",
+    "Nature",
+    "Picnic Spot"
+   ]
+  },
+  {
+   "slug": "alutila-tourist-center",
+   "name": "Alutila Tourist Center",
+   "name_bn": "আলুটিলা পর্যটন কেন্দ্র",
+   "division": "Chattogram",
+   "district": "Khagrachhari",
+   "lat": 23.13,
+   "lng": 91.83,
+   "categories": [
+    "Nature",
+    "Adventure"
+   ]
+  },
+  {
+   "slug": "kansat-mango-market",
+   "name": "Kansat Mango Market",
+   "name_bn": "কানসাট আমের হাট",
+   "division": "Rajshahi",
+   "district": "Chapainawabganj",
+   "lat": 24.68,
+   "lng": 88.15,
+   "categories": [
+    "Cultural",
+    "City"
+   ]
+  },
+  {
+   "slug": "digholia",
+   "name": "Digholia",
+   "name_bn": "দিঘলিয়া",
+   "division": "Khulna",
+   "district": "Khulna",
+   "lat": 22.84,
+   "lng": 89.52,
+   "categories": [
+    "Historical",
+    "Cultural"
+   ]
+  },
+  {
+   "slug": "gangamati-reserved-forest",
+   "name": "Gangamati Reserved Forest",
+   "name_bn": "গাঙ্গামাটি সংরক্ষিত বন",
+   "division": "Barishal",
+   "district": "Patuakhali",
+   "lat": 21.9,
+   "lng": 90.13,
+   "categories": [
+    "Forest",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "rakhine-village",
+   "name": "Rakhine Villages (Kuakata)",
+   "name_bn": "রাখাইন পল্লী (কুয়াকাটা)",
+   "division": "Barishal",
+   "district": "Patuakhali",
+   "lat": 21.82,
+   "lng": 90.12,
+   "categories": [
+    "Cultural",
+    "Village"
+   ]
+  },
+  {
+   "slug": "hemnagar-rajbari",
+   "name": "Hemnagar Rajbari",
+   "name_bn": "হেমনগর রাজবাড়ি",
+   "division": "Dhaka",
+   "district": "Tangail",
+   "lat": 24.13,
+   "lng": 89.96,
+   "categories": [
+    "Heritage",
+    "Historical"
+   ]
+  },
+  {
+   "slug": "carmichael-college",
+   "name": "Carmichael College",
+   "name_bn": "কারমাইকেল কলেজ",
+   "division": "Rangpur",
+   "district": "Rangpur",
+   "lat": 25.74,
+   "lng": 89.25,
+   "categories": [
+    "Historical",
+    "City"
+   ]
+  },
+  {
+   "slug": "bangladesh-agricultural-university",
+   "name": "Bangladesh Agricultural University",
+   "name_bn": "বাংলাদেশ কৃষি বিশ্ববিদ্যালয়",
+   "division": "Mymensingh",
+   "district": "Mymensingh",
+   "lat": 24.73,
+   "lng": 90.39,
+   "categories": [
+    "City",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "madhukhali",
+   "name": "Madhukhali",
+   "name_bn": "মধুখালী",
+   "division": "Dhaka",
+   "district": "Faridpur",
+   "lat": 23.53,
+   "lng": 89.73,
+   "categories": [
+    "River",
+    "Village"
+   ]
+  },
+  {
+   "slug": "madhumati-river",
+   "name": "Madhumati River",
+   "name_bn": "মধুমতি নদী",
+   "division": "Dhaka",
+   "district": "Gopalganj",
+   "lat": 23.01,
+   "lng": 89.55,
+   "categories": [
+    "River",
+    "Nature"
+   ]
+  },
+  {
+   "slug": "itna",
+   "name": "Itna",
+   "name_bn": "ইটনা",
+   "division": "Dhaka",
+   "district": "Kishoreganj",
+   "lat": 24.48,
+   "lng": 91,
+   "categories": [
+    "Village",
+    "Nature",
+    "Haor"
+   ]
+  }
+ ]
+}

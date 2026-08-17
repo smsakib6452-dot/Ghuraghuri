@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="page.title.travel">Plan Your Trip — Ghuraghuri</title>
+    <meta name="description" content="Search hotels, restaurants and transport for any destination in Bangladesh from one place." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="css/logo.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <noscript><style>.reveal{opacity:1!important;transform:none!important}body.lang-fading{opacity:1!important}</style></noscript>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <nav class="nav container" aria-label="Primary navigation">
+            <a href="index.html" class="brand">
+                <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                <span class="brand-text">Ghura<em>ghuri</em></span>
+            </a>
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="destinations.html" data-i18n="nav.destinations">Destinations</a></li>
+                    <li><a href="hotels.html" data-i18n="nav.hotels">Hotels</a></li>
+                    <li><a href="restaurants.html" data-i18n="nav.restaurants">Restaurants</a></li>
+                    <li><a href="transport.html" data-i18n="nav.transport">Transport</a></li>
+                    <li><a href="index.html#map" data-i18n="nav.map">Map</a></li>
+                    <li><a href="weather.html" data-i18n="nav.weather">Weather</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
+                <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile menu" aria-hidden="true">
+        <div class="drawer-head">
+            <a href="index.html" class="brand">
+                <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                <span class="brand-text">Ghura<em>ghuri</em></span>
+            </a>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+        </div>
+        <ul class="drawer-links" id="drawerLinks">
+            <li><a href="destinations.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="nav.destinations">Destinations</span></a></li>
+            <li><a href="hotels.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg><span data-i18n="nav.hotels">Hotels</span></a></li>
+            <li><a href="restaurants.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21v-7M5 10V4M9 21V10M9 4v4a2 2 0 0 1-2 2M19 21V9a4 4 0 0 0-4-4"/></svg><span data-i18n="nav.restaurants">Restaurants</span></a></li>
+            <li><a href="transport.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21h10M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h6M9 11h6M9 15h6"/></svg><span data-i18n="nav.transport">Transport</span></a></li>
+            <li><a href="travel.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span data-i18n="nav.travel">Plan Trip</span></a></li>
+            <li><a href="index.html#map"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-6 2V6l6-2 6 2 6-2v16l-6 2-6-2z"/><path d="M9 4v16"/><path d="M15 6v16"/></svg><span data-i18n="nav.map">Map</span></a></li>
+            <li><a href="weather.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-1.2-8.8A6 6 0 1 0 6 17.5"/></svg><span data-i18n="nav.weather">Weather</span></a></li>
+        </ul>
+        <div class="drawer-footer">
+            <button class="lang-switch" id="langToggleMobile" type="button" aria-label="Change language">বাংলা</button>
+        </div>
+    </aside>
+
+    <main class="container">
+        <nav class="breadcrumb"><a href="index.html" data-i18n="crumb.home">Home</a> <span class="sep">/</span> <span data-i18n="nav.travel">Plan Trip</span></nav>
+
+        <section class="travel-hero">
+            <h1 data-i18n="travel.hero.title">Where are you going?</h1>
+            <p class="page-sub" data-i18n="travel.hero.sub">Search hotels, restaurants and transport for any destination in Bangladesh.</p>
+            <div class="travel-hero-search">
+                <div class="search-field search-field-lg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="search" id="trvDestination" data-i18n-placeholder="travel.destination" placeholder="Destination (e.g. Cox's Bazar, Sylhet)…" autocomplete="off" />
+                </div>
+                <div class="travel-tabbar" id="trvTabs" role="tablist">
+                    <button class="travel-tab active" data-tab="all" role="tab" aria-selected="true" data-i18n="travel.tab.all">All</button>
+                    <button class="travel-tab" data-tab="hotels" role="tab" aria-selected="false" data-i18n="travel.tab.hotels">Hotels</button>
+                    <button class="travel-tab" data-tab="restaurants" role="tab" aria-selected="false" data-i18n="travel.tab.restaurants">Restaurants</button>
+                    <button class="travel-tab" data-tab="transport" role="tab" aria-selected="false" data-i18n="travel.tab.transport">Transport</button>
+                </div>
+                <button class="btn btn-primary btn-lg" id="trvSearch" data-i18n="travel.search">Search</button>
+            </div>
+        </section>
+
+        <div id="trvResult" aria-live="polite"></div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p><strong>Ghuraghuri</strong> — <span data-i18n="footer.title">a travel guide built with Open Data, Leaflet and Open-Meteo.</span></p>
+            <p class="footer-meta" data-i18n="footer.meta">Hotels &amp; restaurants: Ghuraghuri API · Maps: © OpenStreetMap contributors · Photos: Unsplash</p>
+        </div>
+    </footer>
+
+    <script src="data/destinations.js"></script>
+    <script src="data/taxonomy.js"></script>
+    <script src="js/store.js"></script>
+    <script src="data/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/config-defaults.js"></script>
+    <script src="config.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/travel-components.js"></script>
+    <script src="js/travel-fallback.js"></script>
+    <script src="js/travel-hub.js"></script>
+</body>
+</html>

@@ -15,8 +15,11 @@
         var q = query.trim().toLowerCase();
         if (!q) return DESTINATIONS.slice();
         return DESTINATIONS.filter(function (d) {
-            return (d.name + " " + d.division + " " + d.district + " " + d.shortDesc)
-                .toLowerCase().indexOf(q) !== -1;
+            var haystack = (window.I18N && I18N.searchText)
+                ? I18N.searchText(d)
+                : (d.name + " " + d.name_bn + " " + d.division + " " + d.district + " " +
+                    d.category + " " + d.shortDesc).toLowerCase();
+            return haystack.indexOf(q) !== -1;
         });
     }
 

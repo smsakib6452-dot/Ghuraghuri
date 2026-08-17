@@ -2,7 +2,11 @@
 config.js
 .env
 .env.*
+!.env.example
 *.local
+
+# Runtime cache (created by api/)
+cache/
 
 # OS / editor noise
 Thumbs.db

@@ -62,7 +62,36 @@
 
     function show(view) {
         Object.keys(views).forEach(function (k) { views[k].hidden = k !== view; });
-        if (view === "dashboard") renderAll();
+        if (view === "dashboard") {
+            renderAll();
+            loadProviders();
+        }
+    }
+
+    /* ---------- Travel service providers ---------- */
+
+    function loadProviders() {
+        var body = document.getElementById("adminProvidersBody");
+        if (!body) return;
+        if (!window.API || !window.API.configured) {
+            body.innerHTML = '<p class="admin-provider-note">' + I18N.t("admin.providers.notConfigured") + "</p>";
+            return;
+        }
+        body.innerHTML = '<p class="admin-provider-note">' + I18N.t("admin.providers.loading") + "</p>";
+        API.providers().then(function (res) {
+            if (!res.ok) {
+                body.innerHTML = '<p class="admin-provider-note">' + I18N.t("admin.providers.error") + "</p>";
+                return;
+            }
+            var list = (res.data && res.data.providers) || [];
+            body.innerHTML = '<div class="provider-list">' + list.map(function (p) {
+                var on = !!p.configured;
+                var badge = on
+                    ? '<span class="provider-badge on">' + I18N.t("admin.providers.on") + "</span>"
+                    : '<span class="provider-badge">' + I18N.t("admin.providers.off") + "</span>";
+                return '<div class="provider-row"><strong>' + p.provider + "</strong>" + badge + "</div>";
+            }).join("") + "</div>";
+        });
     }
 
     /* ---------- Auth ---------- */
@@ -168,7 +197,10 @@
             photoId: "", gallery: [], shortDesc: "", description: "", bestTime: "",
             recommendedDays: "", difficulty: "Easy", budget: "", travelType: "",
             activities: [], attractions: [], tips: [],
-            travelInfo: { from: "Dhaka", distanceKm: "", duration: "", route: "", transport: [], flight: "" }
+            travelInfo: { from: "Dhaka", distanceKm: "", duration: "", route: "", transport: [], flight: "" },
+            name_bn: "", upazila: "", tags: [], popularity: "medium", status: "active",
+            featured: false, things_to_do: [], what_to_see: [], travel_tips: [],
+            transport_options: [], nearby_destinations: [], nearby_hotels: []
         };
 
         var t = f.travelInfo || {};
@@ -178,6 +210,12 @@
         setVal("f-district", f.district);
         setVal("f-category", f.category);
         setVal("f-categories", (f.categories || []).join(", "));
+        setVal("f-name_bn", f.name_bn || "");
+        setVal("f-upazila", f.upazila || "");
+        setVal("f-tags", (f.tags || []).join(", "));
+        setVal("f-popularity", f.popularity || "medium");
+        setVal("f-status", f.status || "active");
+        setVal("f-featured", f.featured ? "on" : "");
         setVal("f-rating", f.rating);
         setVal("f-reviews", f.reviews);
         setVal("f-latitude", f.latitude);
@@ -200,6 +238,12 @@
         setVal("f-ti-route", t.route);
         setVal("f-ti-transport", (t.transport || []).join(", "));
         setVal("f-ti-flight", t.flight || "");
+        setVal("f-things_to_do", (f.things_to_do || []).join("\n"));
+        setVal("f-what_to_see", (f.what_to_see || []).join("\n"));
+        setVal("f-travel_tips", (f.travel_tips || []).join("\n"));
+        setVal("f-transport_options", (f.transport_options || []).join(", "));
+        setVal("f-nearby_destinations", (f.nearby_destinations || []).join(", "));
+        setVal("f-nearby_hotels", (f.nearby_hotels || []).join(", "));
         updatePreview();
         show("editor");
     }
@@ -245,7 +289,19 @@
                 route: getVal("f-ti-route").trim(),
                 transport: splitCSV(getVal("f-ti-transport")),
                 flight: getVal("f-ti-flight").trim() || null
-            }
+            },
+            name_bn: getVal("f-name_bn").trim(),
+            upazila: getVal("f-upazila").trim(),
+            tags: splitCSV(getVal("f-tags")),
+            popularity: getVal("f-popularity").trim() || "medium",
+            status: getVal("f-status").trim() || "active",
+            featured: getVal("f-featured") === "on",
+            things_to_do: splitLines(getVal("f-things_to_do")),
+            what_to_see: splitLines(getVal("f-what_to_see")),
+            travel_tips: splitLines(getVal("f-travel_tips")),
+            transport_options: splitCSV(getVal("f-transport_options")),
+            nearby_destinations: splitCSV(getVal("f-nearby_destinations")),
+            nearby_hotels: splitCSV(getVal("f-nearby_hotels"))
         };
 
         /* Images: rebuild from a photo id, otherwise keep the existing ones. */
@@ -358,6 +414,35 @@
 
         document.getElementById("adminAdd").addEventListener("click", function () {
             openEditor("new", null);
+        });
+
+        document.getElementById("adminImport").addEventListener("click", function () {
+            document.getElementById("adminImportFile").click();
+        });
+        document.getElementById("adminImportFile").addEventListener("change", function () {
+            var file = this.files && this.files[0];
+            this.value = "";
+            if (!file) return;
+            var reader = new FileReader();
+            reader.onload = function () {
+                try {
+                    var arr = JSON.parse(reader.result);
+                    if (!Array.isArray(arr)) throw new Error("Not an array");
+                    var count = 0;
+                    arr.forEach(function (d) {
+                        if (!d || !d.name || !d.slug) return;
+                        d.featured = !!d.featured;
+                        ADMIN_STORE.upsertCustom(d, d.slug);
+                        count++;
+                    });
+                    store = ADMIN_STORE.get();
+                    renderAll();
+                    alert("Imported " + count + " destinations.");
+                } catch (e) {
+                    alert("Import failed: " + e.message);
+                }
+            };
+            reader.readAsText(file);
         });
 
         document.getElementById("editorBack").addEventListener("click", function () { show("dashboard"); });

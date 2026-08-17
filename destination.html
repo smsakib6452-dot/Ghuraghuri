@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -12,26 +12,60 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="icon" type="image/svg+xml" href="css/logo.svg" />
     <link rel="stylesheet" href="css/style.css" />
+    <noscript><style>.reveal{opacity:1!important;transform:none!important}body.lang-fading{opacity:1!important}</style></noscript>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="nav container">
+    <header class="site-header" id="siteHeader">
+        <nav class="nav container" aria-label="Primary navigation">
             <a href="index.html" class="brand">
                 <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
-                <span class="brand-text">Ghuraghuri</span>
+                <span class="brand-text">Ghura<em>ghuri</em></span>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html#destinations" data-i18n="nav.destinations">Destinations</a></li>
-                <li><a href="index.html#map" data-i18n="nav.map">Map</a></li>
-                <li><a href="weather.html" data-i18n="nav.weather">Weather</a></li>
-                <li><a href="admin.html" data-i18n="nav.admin">Admin</a></li>
-            </ul>
-            <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
-            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="destinations.html" class="active" data-i18n="nav.destinations">Destinations</a></li>
+                    <li><a href="hotels.html" data-i18n="nav.hotels">Hotels</a></li>
+                    <li><a href="restaurants.html" data-i18n="nav.restaurants">Restaurants</a></li>
+                    <li><a href="transport.html" data-i18n="nav.transport">Transport</a></li>
+                    <li><a href="index.html#map" data-i18n="nav.map">Map</a></li>
+                    <li><a href="weather.html" data-i18n="nav.weather">Weather</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <button class="lang-switch" id="langToggle" type="button" aria-label="Change language">বাংলা</button>
+                <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </nav>
     </header>
+
+    <!-- Mobile drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile menu" aria-hidden="true">
+        <div class="drawer-head">
+            <a href="index.html" class="brand">
+                <img class="brand-mark" src="css/logo.svg" alt="Ghuraghuri logo" />
+                <span class="brand-text">Ghura<em>ghuri</em></span>
+            </a>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+        </div>
+        <ul class="drawer-links" id="drawerLinks">
+            <li><a href="destinations.html" class="active"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="nav.destinations">Destinations</span></a></li>
+            <li><a href="hotels.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg><span data-i18n="nav.hotels">Hotels</span></a></li>
+            <li><a href="restaurants.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21v-7M5 10V4M9 21V10M9 4v4a2 2 0 0 1-2 2M19 21V9a4 4 0 0 0-4-4"/></svg><span data-i18n="nav.restaurants">Restaurants</span></a></li>
+            <li><a href="transport.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21h10M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h6M9 11h6M9 15h6"/></svg><span data-i18n="nav.transport">Transport</span></a></li>
+            <li><a href="travel.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span data-i18n="nav.travel">Plan Trip</span></a></li>
+            <li><a href="index.html#map"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-6 2V6l6-2 6 2 6-2v16l-6 2-6-2z"/><path d="M9 4v16"/><path d="M15 6v16"/></svg><span data-i18n="nav.map">Map</span></a></li>
+            <li><a href="weather.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-1.2-8.8A6 6 0 1 0 6 17.5"/><path d="M7 7l1-1M17 7l-1-1M12 2v2"/></svg><span data-i18n="nav.weather">Weather</span></a></li>
+            <li id="drawerAdminLink" hidden><a href="admin.html"><svg class="dl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span data-i18n="nav.admin">Admin</span></a></li>
+        </ul>
+        <div class="drawer-footer">
+            <button class="lang-switch" id="langToggleMobile" type="button" aria-label="Change language">বাংলা</button>
+        </div>
+    </aside>
 
     <main class="container">
         <nav class="breadcrumb"><a href="index.html" data-i18n="crumb.home">Home</a> <span class="sep">/</span> <span id="crumbName">Destination</span></nav>
@@ -47,6 +81,7 @@
                     <span id="detailRatingText"></span>
                 </div>
                 <p class="detail-short" id="detailShort"></p>
+                <div class="detail-nearby" id="detailNearby"></div>
                 <div class="detail-actions">
                     <a class="btn btn-primary" id="gmapsLink" target="_blank" rel="noopener" data-i18n="detail.gmaps">Open in Google Maps</a>
                     <a class="btn" id="weatherLink" href="#weatherCard" data-i18n="detail.weatherLink">Check Weather</a>
@@ -85,6 +120,38 @@
                     <h2 data-i18n="detail.gettingThere">Getting There</h2>
                     <div class="travel-info" id="detailTravel"></div>
                 </article>
+
+                <article class="panel">
+                    <h2 data-i18n="detail.services.title">Travel Services</h2>
+                    <div id="travelServices" class="travel-services">
+                        <div class="ts-section">
+                            <div class="ts-head">
+                                <h3 data-i18n="detail.services.stay">Nearby Hotels</h3>
+                                <a class="ts-link" href="hotels.html" data-i18n="detail.services.seeAll">See all →</a>
+                            </div>
+                            <div id="tsHotels" class="ts-content"></div>
+                        </div>
+                        <div class="ts-section">
+                            <div class="ts-head">
+                                <h3 data-i18n="detail.services.eat">Nearby Restaurants</h3>
+                                <a class="ts-link" href="restaurants.html" data-i18n="detail.services.seeAll">See all →</a>
+                            </div>
+                            <div id="tsRestaurants" class="ts-content"></div>
+                        </div>
+                        <div class="ts-section">
+                            <div class="ts-head">
+                                <h3 data-i18n="detail.services.transport">Getting There</h3>
+                                <a class="ts-link" href="transport.html" data-i18n="detail.services.seeAll">See all →</a>
+                            </div>
+                            <div id="tsTransport" class="ts-content"></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="panel">
+                    <h2 data-i18n="detail.related">You Might Also Like</h2>
+                    <div class="related-grid" id="detailRelated"></div>
+                </article>
             </div>
 
             <aside class="detail-side">
@@ -93,6 +160,7 @@
                     <dl class="fact-list">
                         <div><dt data-i18n="fact.division">Division</dt><dd id="factDivision"></dd></div>
                         <div><dt data-i18n="fact.district">District</dt><dd id="factDistrict"></dd></div>
+                        <div><dt data-i18n="fact.upazila">Upazila</dt><dd id="factUpazila"></dd></div>
                         <div><dt data-i18n="fact.bestTime">Best time</dt><dd id="factBestTime"></dd></div>
                         <div><dt data-i18n="fact.days">Recommended</dt><dd id="factDays"></dd></div>
                         <div><dt data-i18n="fact.difficulty">Difficulty</dt><dd id="factDifficulty"></dd></div>
@@ -131,6 +199,7 @@
     </footer>
 
     <script src="data/destinations.js"></script>
+    <script src="data/taxonomy.js"></script>
     <script src="js/store.js"></script>
     <script src="data/translations.js"></script>
     <script src="js/i18n.js"></script>
@@ -139,6 +208,19 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/map.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/travel-components.js"></script>
+    <script src="js/travel-fallback.js"></script>
     <script src="js/detail.js"></script>
+    <script>
+        (function () {
+            var link = document.getElementById("drawerAdminLink");
+            if (!link) return;
+            var isLoggedIn = (localStorage.getItem("ghuraghuri_admin_auth") === "1");
+            var isAdmin = (localStorage.getItem("ghuraghuri_admin_role") === (window.CONFIG ? window.CONFIG.ADMIN_ROLE : "admin"));
+            if (isLoggedIn && isAdmin) link.hidden = false;
+        })();
+    </script>
 </body>
 </html>
