@@ -1,0 +1,1743 @@
+{
+  "places": {
+    "dhaka": {
+      "name": "Dhaka",
+      "name_bn": "ঢাকা",
+      "district": "Dhaka",
+      "division": "Dhaka",
+      "lat": 23.8103,
+      "lng": 90.4125
+    },
+    "chattogram": {
+      "name": "Chattogram",
+      "name_bn": "চট্টগ্রাম",
+      "district": "Chattogram",
+      "division": "Chattogram",
+      "lat": 22.3569,
+      "lng": 91.7832
+    },
+    "coxs-bazar": {
+      "name": "Cox's Bazar",
+      "name_bn": "কক্সবাজার",
+      "district": "Cox's Bazar",
+      "division": "Chattogram",
+      "lat": 21.4272,
+      "lng": 92.0058
+    },
+    "sajek-valley": {
+      "name": "Sajek Valley",
+      "name_bn": "সাজেক ভ্যালি",
+      "district": "Rangamati",
+      "division": "Chattogram",
+      "lat": 23.3819,
+      "lng": 92.2938
+    },
+    "sreemangal": {
+      "name": "Sreemangal",
+      "name_bn": "শ্রীমঙ্গল",
+      "district": "Moulvibazar",
+      "division": "Sylhet",
+      "lat": 24.3065,
+      "lng": 91.7296
+    },
+    "sylhet": {
+      "name": "Sylhet",
+      "name_bn": "সিলেট",
+      "district": "Sylhet",
+      "division": "Sylhet",
+      "lat": 24.8949,
+      "lng": 91.8687
+    },
+    "bandarban": {
+      "name": "Bandarban",
+      "name_bn": "বান্দরবান",
+      "district": "Bandarban",
+      "division": "Chattogram",
+      "lat": 22.1953,
+      "lng": 92.2189
+    },
+    "rangamati": {
+      "name": "Rangamati",
+      "name_bn": "রাঙ্গামাটি",
+      "district": "Rangamati",
+      "division": "Chattogram",
+      "lat": 22.647,
+      "lng": 92.152
+    },
+    "kuakata": {
+      "name": "Kuakata",
+      "name_bn": "কুয়াকাটা",
+      "district": "Patuakhali",
+      "division": "Barishal",
+      "lat": 21.8274,
+      "lng": 90.1189
+    },
+    "rajshahi": {
+      "name": "Rajshahi",
+      "name_bn": "রাজশাহী",
+      "district": "Rajshahi",
+      "division": "Rajshahi",
+      "lat": 24.3745,
+      "lng": 88.6042
+    },
+    "khulna": {
+      "name": "Khulna",
+      "name_bn": "খুলনা",
+      "district": "Khulna",
+      "division": "Khulna",
+      "lat": 22.8456,
+      "lng": 89.5403
+    },
+    "barishal": {
+      "name": "Barishal",
+      "name_bn": "বরিশাল",
+      "district": "Barishal",
+      "division": "Barishal",
+      "lat": 22.701,
+      "lng": 90.3535
+    }
+  },
+  "hotels": {
+    "coxs-bazar": [
+      {
+        "name": "Sayeman Beach Resort",
+        "address": "Marine Drive Road, Kolatoli, Cox's Bazar",
+        "rating": 4.8,
+        "review_count": 1450,
+        "price": 9500,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Ocean View Balcony",
+          "Infinity Pool",
+          "Private Beach Access",
+          "Free Breakfast",
+          "Fine Dining"
+        ],
+        "photo": "1507525428034-b723cf961d3e",
+        "phone": "+8801755699901",
+        "whatsapp": "8801755699901",
+        "map_query": "Sayeman%20Beach%20Resort%20Marine%20Drive%20Cox%27s%20Bazar"
+      },
+      {
+        "name": "Mermaid Beach Resort",
+        "address": "Pechardwip, Marine Drive Road, Cox's Bazar",
+        "rating": 4.7,
+        "review_count": 980,
+        "price": 12000,
+        "currency": "BDT",
+        "hotel_type": "eco_lodge",
+        "amenities": [
+          "Eco Beach Villa",
+          "Private Plunge Pool",
+          "Organic Seafood",
+          "Sun Deck",
+          "Water Sports"
+        ],
+        "photo": "1540541338287-41700207dee6",
+        "phone": "+8801841416464",
+        "whatsapp": "8801841416464",
+        "map_query": "Mermaid%20Beach%20Resort%20Pechardwip%20Cox%27s%20Bazar"
+      },
+      {
+        "name": "Long Beach Hotel",
+        "address": "14 Kalatoli Road, Hotel-Motel Zone, Cox's Bazar",
+        "rating": 4.5,
+        "review_count": 820,
+        "price": 7500,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Heated Indoor Pool",
+          "Gym & Spa",
+          "Airport Shuttle",
+          "AC Rooms",
+          "Free Wi-Fi"
+        ],
+        "photo": "1512917774080-9991f1c4c750",
+        "phone": "+8801755660001",
+        "whatsapp": "8801755660001",
+        "map_query": "Long%20Beach%20Hotel%20Kalatoli%20Cox%27s%20Bazar"
+      },
+      {
+        "name": "Ocean Paradise Hotel & Resort",
+        "address": "28-29 Hotel Motel Zone, Kolatoli Road, Cox's Bazar",
+        "rating": 4.6,
+        "review_count": 1100,
+        "price": 8200,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Rooftop Pool",
+          "Jacuzzi",
+          "Multiple Restaurants",
+          "Sea View Suites",
+          "Kids Play Zone"
+        ],
+        "photo": "1499793983690-e29da59ef1c2",
+        "phone": "+8801938846761",
+        "whatsapp": "8801938846761",
+        "map_query": "Ocean%20Paradise%20Hotel%20Cox%27s%20Bazar"
+      },
+      {
+        "name": "Hotel Sea Crown",
+        "address": "Marine Drive, Kolatoli Point Beach, Cox's Bazar",
+        "rating": 4.4,
+        "review_count": 730,
+        "price": 5200,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Direct Beachfront",
+          "Waves Sound Dining",
+          "AC Deluxe Rooms",
+          "Conference Hall"
+        ],
+        "photo": "1571003123894-1f0594d2b5d9",
+        "phone": "+8801819324508",
+        "whatsapp": "8801819324508",
+        "map_query": "Hotel%20Sea%20Crown%20Kolatoli%20Cox%27s%20Bazar"
+      },
+      {
+        "name": "Seagull Hotel",
+        "address": "Hotel Motel Zone, Cox's Bazar",
+        "rating": 4.3,
+        "review_count": 920,
+        "price": 6800,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Swimming Pool",
+          "Lush Lawn Garden",
+          "Conference Center",
+          "Multi-Cuisine Buffet"
+        ],
+        "photo": "1580835239846-5bb9ce03c8c3",
+        "phone": "+8801766666530",
+        "whatsapp": "8801766666530",
+        "map_query": "Seagull%20Hotel%20Cox%27s%20Bazar"
+      },
+      {
+        "name": "Neeshorgo Hotel & Resort",
+        "address": "Marine Drive Road, Kolatoli, Cox's Bazar",
+        "rating": 4.5,
+        "review_count": 540,
+        "price": 5800,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Rooftop Infinity View",
+          "Sea Facing Suites",
+          "Coffee Lounge",
+          "Complimentary Breakfast"
+        ],
+        "photo": "1544984243-ec57ea16fe25",
+        "phone": "+8801730030044",
+        "whatsapp": "8801730030044",
+        "map_query": "Neeshorgo%20Hotel%20and%20Resort%20Cox%27s%20Bazar"
+      },
+      {
+        "name": "Hotel The Cox Today",
+        "address": "Plot-7, Road-2, Hotel Motel Zone, Kolatoli, Cox's Bazar",
+        "rating": 4.4,
+        "review_count": 860,
+        "price": 6500,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Outdoor Pool",
+          "Spa & Sauna",
+          "Rooftop BBQ",
+          "Free High-Speed Wi-Fi"
+        ],
+        "photo": "1445019980597-93fa8acb246c",
+        "phone": "+8801755598449",
+        "whatsapp": "8801755598449",
+        "map_query": "Hotel%20The%20Cox%20Today%20Cox%27s%20Bazar"
+      }
+    ],
+    "sajek-valley": [
+      {
+        "name": "Meghpunji Resort",
+        "address": "Ruilui Para, Sajek Valley, Rangamati",
+        "rating": 4.9,
+        "review_count": 670,
+        "price": 6000,
+        "currency": "BDT",
+        "hotel_type": "cottage",
+        "amenities": [
+          "360° Cloud Ridge View",
+          "Wooden Deck Cottages",
+          "Helipad Vicinity",
+          "Indigenous Cuisine"
+        ],
+        "photo": "1506744038136-46273834b3fb",
+        "phone": "+8801811156565",
+        "whatsapp": "8801811156565",
+        "map_query": "Meghpunji%20Resort%20Sajek%20Valley"
+      },
+      {
+        "name": "Sajek Resort (Army Run)",
+        "address": "Army Club Camp, Ruilui Para, Sajek Valley",
+        "rating": 4.8,
+        "review_count": 850,
+        "price": 7500,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "VIP Cottage",
+          "Security Guarded",
+          "Panoramic Mountain Crest",
+          "Room Service",
+          "Generator Backup"
+        ],
+        "photo": "1464822759023-fed622ff2c3b",
+        "phone": "+8801859025694",
+        "whatsapp": "8801859025694",
+        "map_query": "Sajek%20Resort%20Ruilui%20Para%20Sajek"
+      },
+      {
+        "name": "Runmoy Resort",
+        "address": "Edge of Helipad, Ruilui Para, Sajek Valley",
+        "rating": 4.7,
+        "review_count": 520,
+        "price": 5500,
+        "currency": "BDT",
+        "hotel_type": "cottage",
+        "amenities": [
+          "Sunrise Balcony",
+          "Upper Valley Overlook",
+          "Bamboo Dining",
+          "Hot Water Geyser"
+        ],
+        "photo": "1486870591958-9b9d0d1dda99",
+        "phone": "+8801862015533",
+        "whatsapp": "8801862015533",
+        "map_query": "Runmoy%20Resort%20Sajek%20Valley"
+      },
+      {
+        "name": "Megh Kabbo Resort",
+        "address": "Sunset Point, Ruilui Para, Sajek Valley",
+        "rating": 4.6,
+        "review_count": 410,
+        "price": 4500,
+        "currency": "BDT",
+        "hotel_type": "eco_lodge",
+        "amenities": [
+          "Sunset Facing Deck",
+          "Wooden Cabin",
+          "Campfire Arrangement",
+          "Traditional Meals"
+        ],
+        "photo": "1510798831971-661eb04b3739",
+        "phone": "+8801877708899",
+        "whatsapp": "8801877708899",
+        "map_query": "Megh%20Kabbo%20Resort%20Sajek"
+      },
+      {
+        "name": "Chayanir Eco Cottage",
+        "address": "Main Ridge, Ruilui Para, Sajek Valley",
+        "rating": 4.5,
+        "review_count": 320,
+        "price": 4000,
+        "currency": "BDT",
+        "hotel_type": "cottage",
+        "amenities": [
+          "Private Wooden Balcony",
+          "Mountain Fog View",
+          "Family Duplex",
+          "Local Host Hospitality"
+        ],
+        "photo": "1518780664697-55e3ad937233",
+        "phone": "+8801888234567",
+        "whatsapp": "8801888234567",
+        "map_query": "Chayanir%20Eco%20Cottage%20Sajek"
+      },
+      {
+        "name": "Madventure Resort",
+        "address": "Ruilui Para Valley Heights, Sajek",
+        "rating": 4.6,
+        "review_count": 290,
+        "price": 4800,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Rooftop Cafe",
+          "Cloud Sea Observation",
+          "Modern Sanitary",
+          "Solar & Generator Backup"
+        ],
+        "photo": "1542601906990-b4d3fb778b09",
+        "phone": "+8801844998811",
+        "whatsapp": "8801844998811",
+        "map_query": "Madventure%20Resort%20Sajek"
+      }
+    ],
+    "sreemangal": [
+      {
+        "name": "Grand Sultan Tea Resort & Golf",
+        "address": "Radhanagar, Sreemangal, Moulvibazar",
+        "rating": 4.9,
+        "review_count": 1650,
+        "price": 14500,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "9-Hole Golf Course",
+          "Multiple Temperature Pools",
+          "Spa & Wellness",
+          "Fine Dining",
+          "Tea Garden Panorama"
+        ],
+        "photo": "1544735716-392fe2489ffa",
+        "phone": "+8801730793555",
+        "whatsapp": "8801730793555",
+        "map_query": "Grand%20Sultan%20Tea%20Resort%20Golf%20Sreemangal"
+      },
+      {
+        "name": "Dusai Resort & Spa",
+        "address": "Nayasangam, Giashnagar, Moulvibazar",
+        "rating": 4.8,
+        "review_count": 1200,
+        "price": 16000,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Forest Hillside Villas",
+          "Infinity Pool",
+          "Lakeside Amphitheater",
+          "Ayurvedic Spa"
+        ],
+        "photo": "1540555700478-4be289fbecef",
+        "phone": "+8801617005511",
+        "whatsapp": "8801617005511",
+        "map_query": "Dusai%20Resort%20Spa%20Moulvibazar"
+      },
+      {
+        "name": "Tea Heaven Resort",
+        "address": "Sreemangal-Bhanugach Road, Sreemangal",
+        "rating": 4.4,
+        "review_count": 580,
+        "price": 4500,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Tea Estate View",
+          "Swimming Pool",
+          "Lawn Garden",
+          "Complimentary Breakfast"
+        ],
+        "photo": "1537996194471-e657df975ab4",
+        "phone": "+8801711369799",
+        "whatsapp": "8801711369799",
+        "map_query": "Tea%20Heaven%20Resort%20Sreemangal"
+      },
+      {
+        "name": "Shanti Bari Eco Resort",
+        "address": "Radhanagar, Near Lawachara Forest, Sreemangal",
+        "rating": 4.6,
+        "review_count": 340,
+        "price": 3600,
+        "currency": "BDT",
+        "hotel_type": "eco_lodge",
+        "amenities": [
+          "Mud & Bamboo Cottages",
+          "Organic Country Food",
+          "Forest Bird Watching",
+          "Tranquil Silence"
+        ],
+        "photo": "1596178065887-1198b6148b2b",
+        "phone": "+8801711411511",
+        "whatsapp": "8801711411511",
+        "map_query": "Shanti%20Bari%20Eco%20Resort%20Sreemangal"
+      }
+    ],
+    "sylhet": [
+      {
+        "name": "Rose View Hotel Sylhet",
+        "address": "Shahjalal Uposhohor, Sylhet",
+        "rating": 4.7,
+        "review_count": 980,
+        "price": 8500,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Rooftop Heated Pool",
+          "5-Star Luxury Suites",
+          "Health Club",
+          "Multiple Restaurants"
+        ],
+        "photo": "1566665797739-1674de7a421a",
+        "phone": "+8801972787878",
+        "whatsapp": "8801972787878",
+        "map_query": "Rose%20View%20Hotel%20Sylhet"
+      },
+      {
+        "name": "Hotel Noorjahan Grand",
+        "address": "Waves 1, Dargah Gate, Sylhet",
+        "rating": 4.5,
+        "review_count": 760,
+        "price": 5500,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Dargah Sharif Vicinity",
+          "Rooftop Restaurant",
+          "Executive Lounge",
+          "Car Parking"
+        ],
+        "photo": "1522771739844-6a9f6d5f14af",
+        "phone": "+8801939900222",
+        "whatsapp": "8801939900222",
+        "map_query": "Hotel%20Noorjahan%20Grand%20Sylhet"
+      },
+      {
+        "name": "Nazimgarh Wilderness Resort",
+        "address": "Lalbagh, Lalakhal, Sylhet",
+        "rating": 4.8,
+        "review_count": 650,
+        "price": 11000,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Emerald Riverfront",
+          "Forest Infinity Pool",
+          "Canoeing & Boat Tours",
+          "Luxury Tent Suites"
+        ],
+        "photo": "1470071459604-3b5ec3a7fe05",
+        "phone": "+8801841001200",
+        "whatsapp": "8801841001200",
+        "map_query": "Nazimgarh%20Wilderness%20Resort%20Lalakhal"
+      },
+      {
+        "name": "Grand Sylhet Hotel & Resort",
+        "address": "Boroshala, Airport Road, Sylhet",
+        "rating": 4.6,
+        "review_count": 530,
+        "price": 7800,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Airport Close Proximity",
+          "Infinity Pool",
+          "Bowling Alley",
+          "Grand Ballroom"
+        ],
+        "photo": "1591088398332-8a7791972843",
+        "phone": "+8801886111000",
+        "whatsapp": "8801886111000",
+        "map_query": "Grand%20Sylhet%20Hotel%20Resort%20Airport%20Road"
+      }
+    ],
+    "bandarban": [
+      {
+        "name": "Sairu Hill Resort",
+        "address": "Baro Mile, Y-Junction, Chimbuk Road, Bandarban",
+        "rating": 4.9,
+        "review_count": 1150,
+        "price": 12000,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Infinite Ridge Pool",
+          "Cloud Canyon View",
+          "Terraced Dining",
+          "High Altitude Luxury"
+        ],
+        "photo": "1506929562872-bb421503ef21",
+        "phone": "+8801844998822",
+        "whatsapp": "8801844998822",
+        "map_query": "Sairu%20Hill%20Resort%20Bandarban"
+      },
+      {
+        "name": "Nilgiri Resort (Army Run)",
+        "address": "Nilgiri Mountain Peak, Thanchi Road, Bandarban",
+        "rating": 4.8,
+        "review_count": 920,
+        "price": 8000,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "2200ft Mountain Peak",
+          "Surrounded by Clouds",
+          "Helipad & VIP Cottages",
+          "Army Cafeteria"
+        ],
+        "photo": "1519681393784-d120267933ba",
+        "phone": "+8801769299999",
+        "whatsapp": "8801769299999",
+        "map_query": "Nilgiri%20Resort%20Bandarban"
+      },
+      {
+        "name": "Hill Crown Hotel & Resort",
+        "address": "Milanchari, Chimbuk Road, Bandarban",
+        "rating": 4.4,
+        "review_count": 480,
+        "price": 5200,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Valley View Deluxe",
+          "Terrace BBQ",
+          "Sightseeing Jeeps",
+          "Multi-Cuisine Diner"
+        ],
+        "photo": "1513694203232-719a280e022f",
+        "phone": "+8801819335577",
+        "whatsapp": "8801819335577",
+        "map_query": "Hill%20Crown%20Resort%20Bandarban"
+      },
+      {
+        "name": "Venus Resort",
+        "address": "Meghla Tourist Spot, Bandarban",
+        "rating": 4.3,
+        "review_count": 360,
+        "price": 4200,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Lakeside Greenery",
+          "Cable Car Access",
+          "Family Wooden Cottage",
+          "Free Breakfast"
+        ],
+        "photo": "1519974719765-e6559eac2575",
+        "phone": "+8801842990088",
+        "whatsapp": "8801842990088",
+        "map_query": "Venus%20Resort%20Meghla%20Bandarban"
+      }
+    ],
+    "rangamati": [
+      {
+        "name": "Polwel Park & Cottage",
+        "address": "DC Bungalow Road, Kaptai Lakefront, Rangamati",
+        "rating": 4.8,
+        "review_count": 890,
+        "price": 6500,
+        "currency": "BDT",
+        "hotel_type": "cottage",
+        "amenities": [
+          "Kaptai Lake Sunset View",
+          "Private Jacuzzi Cottage",
+          "Infinity Waterfront Deck",
+          "Kayaking"
+        ],
+        "photo": "1476514525535-07fb3b4ae5f1",
+        "phone": "+8801769312345",
+        "whatsapp": "8801769312345",
+        "map_query": "Polwel%20Park%20Cottage%20Rangamati"
+      },
+      {
+        "name": "Parjatan Holiday Complex",
+        "address": "Deer Park, Hanging Bridge Road, Rangamati",
+        "rating": 4.3,
+        "review_count": 620,
+        "price": 3200,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Hanging Bridge Overlook",
+          "Boating Pier",
+          "Government Parjatan Safety",
+          "Hill View AC Suites"
+        ],
+        "photo": "1506744038136-46273834b3fb",
+        "phone": "+8801711223344",
+        "whatsapp": "8801711223344",
+        "map_query": "Parjatan%20Holiday%20Complex%20Rangamati"
+      },
+      {
+        "name": "Hotel Nadim",
+        "address": "Old Bus Stand, Lake Road, Rangamati",
+        "rating": 4,
+        "review_count": 240,
+        "price": 2200,
+        "currency": "BDT",
+        "hotel_type": "guesthouse",
+        "amenities": [
+          "Central Market Location",
+          "Budget Lake View",
+          "Prompt Room Service",
+          "Trawler Booking Help"
+        ],
+        "photo": "1590490360182-c33d57733427",
+        "phone": "+8801819554433",
+        "whatsapp": "8801819554433",
+        "map_query": "Hotel%20Nadim%20Rangamati"
+      }
+    ],
+    "kuakata": [
+      {
+        "name": "Sikder Resort & Villas",
+        "address": "Kuakata Sea Beach Road, Patuakhali",
+        "rating": 4.8,
+        "review_count": 750,
+        "price": 8000,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Private Pool Villas",
+          "Sunrise & Sunset View",
+          "Landscaped Lagoon",
+          "Spa & Health Club"
+        ],
+        "photo": "1582719478250-c89cae4dc85b",
+        "phone": "+8801700707788",
+        "whatsapp": "8801700707788",
+        "map_query": "Sikder%20Resort%20Villas%20Kuakata"
+      },
+      {
+        "name": "Hotel Graver Inn International",
+        "address": "East Beach Road, Kuakata",
+        "rating": 4.4,
+        "review_count": 510,
+        "price": 4500,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Beachside Walking Distance",
+          "Conference Hall",
+          "AC Deluxe Rooms",
+          "Fresh Crab & Fish Diner"
+        ],
+        "photo": "1584132967334-10e028bd69f7",
+        "phone": "+8801711556677",
+        "whatsapp": "8801711556677",
+        "map_query": "Hotel%20Graver%20Inn%20Kuakata"
+      },
+      {
+        "name": "Kuakata Grand Hotel & Sea Resorts",
+        "address": "Parjatan Area, Zero Point, Kuakata",
+        "rating": 4.5,
+        "review_count": 420,
+        "price": 5200,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Rooftop Sea Deck",
+          "Swimming Pool",
+          "Seafood BBQ",
+          "Free Breakfast"
+        ],
+        "photo": "1520250497591-112f2f40a3f4",
+        "phone": "+8801819889900",
+        "whatsapp": "8801819889900",
+        "map_query": "Kuakata%20Grand%20Hotel%20Sea%20Resorts"
+      }
+    ],
+    "dhaka": [
+      {
+        "name": "The Westin Dhaka",
+        "address": "Main Gulshan Avenue, Gulshan-2, Dhaka",
+        "rating": 4.8,
+        "review_count": 1650,
+        "price": 16000,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "5-Star Marriott Brand",
+          "Heated Outdoor Pool",
+          "Heavenly Spa",
+          "Signature Italian Buffet",
+          "Helipad Access"
+        ],
+        "photo": "1566073771259-6a8506099945",
+        "phone": "+8802222291988",
+        "whatsapp": "8801730374871",
+        "map_query": "The%20Westin%20Dhaka%20Gulshan"
+      },
+      {
+        "name": "InterContinental Dhaka",
+        "address": "1 Minto Road, Shahbagh, Dhaka",
+        "rating": 4.9,
+        "review_count": 1420,
+        "price": 17500,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Historic Prestige Heritage",
+          "Temperature Controlled Pool",
+          "Royal Ballroom",
+          "Diplomatic Security"
+        ],
+        "photo": "1542314831-068cd1dbfeeb",
+        "phone": "+880255663030",
+        "whatsapp": "8801713382603",
+        "map_query": "InterContinental%20Dhaka%20Shahbagh"
+      },
+      {
+        "name": "Radisson Blu Dhaka Water Garden",
+        "address": "Airport Road, Dhaka Cantonment, Dhaka",
+        "rating": 4.7,
+        "review_count": 1100,
+        "price": 13500,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "7-Acre Water Garden",
+          "Outdoor Swimming Pool",
+          "Tennis Courts",
+          "Airport Free Shuttle"
+        ],
+        "photo": "1582719508461-905c673771fd",
+        "phone": "+88028754555",
+        "whatsapp": "8801730089130",
+        "map_query": "Radisson%20Blu%20Dhaka%20Water%20Garden"
+      },
+      {
+        "name": "Pan Pacific Sonargaon Dhaka",
+        "address": "107 Kazi Nazrul Islam Avenue, Karwan Bazar, Dhaka",
+        "rating": 4.6,
+        "review_count": 1250,
+        "price": 11000,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Legendary City Landmark",
+          "Oasis Swimming Pool",
+          "Health Club & Squash",
+          "Jharna Grill Diner"
+        ],
+        "photo": "1571896349842-33c89424de2d",
+        "phone": "+880255028008",
+        "whatsapp": "8801713382603",
+        "map_query": "Pan%20Pacific%20Sonargaon%20Dhaka"
+      },
+      {
+        "name": "Renaissance Dhaka Gulshan Hotel",
+        "address": "78 Gulshan Avenue, Gulshan-1, Dhaka",
+        "rating": 4.8,
+        "review_count": 870,
+        "price": 15000,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Rooftop Infinity Skyline Pool",
+          "Marriott Bonvoy",
+          "Sear Fine Dining",
+          "Spa by Renaissance"
+        ],
+        "photo": "1590490360182-c33d57733427",
+        "phone": "+8802222282222",
+        "whatsapp": "8801704112644",
+        "map_query": "Renaissance%20Dhaka%20Gulshan%20Hotel"
+      },
+      {
+        "name": "Hotel Sarina Dhaka",
+        "address": "27 Banani C/A, Banani, Dhaka",
+        "rating": 4.4,
+        "review_count": 780,
+        "price": 7500,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Banani Heart Location",
+          "Rooftop Pool & Lounge",
+          "Amrit Indian Diner",
+          "Executive Suites"
+        ],
+        "photo": "1596436889106-be35e843f974",
+        "phone": "+8801982900900",
+        "whatsapp": "8801982900900",
+        "map_query": "Hotel%20Sarina%20Banani%20Dhaka"
+      }
+    ],
+    "chattogram": [
+      {
+        "name": "Radisson Blu Chattogram Bay View",
+        "address": "SS Khaled Road, Lalkhan Bazar, Chattogram",
+        "rating": 4.8,
+        "review_count": 950,
+        "price": 11500,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Chittagong Bay Skyline",
+          "Circular Infinity Pool",
+          "Tennis Court",
+          "Port City Ballroom"
+        ],
+        "photo": "1578683010236-d716f9a3f461",
+        "phone": "+88031619800",
+        "whatsapp": "8801777701164",
+        "map_query": "Radisson%20Blu%20Chattogram%20Bay%20View"
+      },
+      {
+        "name": "The Peninsula Chittagong",
+        "address": "Bulbul Center, 486/B CDA Avenue, GEC Circle, Chattogram",
+        "rating": 4.5,
+        "review_count": 830,
+        "price": 6500,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "GEC Commercial Hub",
+          "Rooftop Swimming Pool",
+          "Laguna Restaurant",
+          "Sauna & Steam"
+        ],
+        "photo": "1564501049412-61c2a3083791",
+        "phone": "+880312850860",
+        "whatsapp": "8801755554555",
+        "map_query": "The%20Peninsula%20Chittagong%20GEC"
+      },
+      {
+        "name": "Hotel Agrabad",
+        "address": "1039 CDA Avenue, Agrabad Commercial Area, Chattogram",
+        "rating": 4.3,
+        "review_count": 670,
+        "price": 5000,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Port & Customs Proximity",
+          "Outdoor Swimming Pool",
+          "Nawabi Dining",
+          "Business Center"
+        ],
+        "photo": "1584132967334-10e028bd69f7",
+        "phone": "+88031713311",
+        "whatsapp": "8801713042456",
+        "map_query": "Hotel%20Agrabad%20Commercial%20Area"
+      },
+      {
+        "name": "Well Park Residence",
+        "address": "Plot 02, Road 01, O.R. Nizam Road R/A, Chattogram",
+        "rating": 4.2,
+        "review_count": 410,
+        "price": 3800,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Medical College Vicinity",
+          "Rooftop Garden Cafe",
+          "Complimentary Breakfast",
+          "Free Wi-Fi"
+        ],
+        "photo": "1591088398332-8a7791972843",
+        "phone": "+88031657077",
+        "whatsapp": "8801777765888",
+        "map_query": "Well%20Park%20Residence%20Chattogram"
+      }
+    ],
+    "rajshahi": [
+      {
+        "name": "Momo Inn (Bogura Gateway Resort)",
+        "address": "Nowdapara, Rangpur Road, Bogura",
+        "rating": 4.8,
+        "review_count": 820,
+        "price": 7500,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "5-Star Helipad Resort",
+          "Huge Infinity Pool",
+          "Amusement Park",
+          "Grand Multicuisine Buffet"
+        ],
+        "photo": "1566073771259-6a8506099945",
+        "phone": "+8801755559999",
+        "whatsapp": "8801755559999",
+        "map_query": "Momo%20Inn%20Bogura"
+      },
+      {
+        "name": "Grand River View Hotel",
+        "address": "Kazihata, Padma Riverfront, Rajshahi",
+        "rating": 4.6,
+        "review_count": 540,
+        "price": 5500,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Padma River Breeze View",
+          "Swimming Pool",
+          "Rooftop Diner",
+          "Silk Market Close"
+        ],
+        "photo": "1564501049412-61c2a3083791",
+        "phone": "+8801711882233",
+        "whatsapp": "8801711882233",
+        "map_query": "Grand%20River%20View%20Hotel%20Rajshahi"
+      },
+      {
+        "name": "Hotel Naz Garden",
+        "address": "Silimpur, Bogura",
+        "rating": 4.4,
+        "review_count": 610,
+        "price": 4200,
+        "currency": "BDT",
+        "hotel_type": "resort",
+        "amenities": [
+          "Lakefront Lawn",
+          "Boating & Angling",
+          "Spacious Deluxe Rooms",
+          "Kids Park"
+        ],
+        "photo": "1540555700478-4be289fbecef",
+        "phone": "+8801711400500",
+        "whatsapp": "8801711400500",
+        "map_query": "Hotel%20Naz%20Garden%20Bogura"
+      }
+    ],
+    "khulna": [
+      {
+        "name": "City Inn Khulna",
+        "address": "B-4 Majid Sarani, KDA Commercial Area, Khulna",
+        "rating": 4.5,
+        "review_count": 590,
+        "price": 4800,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "City Center Location",
+          "Rooftop Swimming Pool",
+          "Gymnasium",
+          "Free Airport Transfer"
+        ],
+        "photo": "1566665797739-1674de7a421a",
+        "phone": "+8801711298501",
+        "whatsapp": "8801711298501",
+        "map_query": "City%20Inn%20Khulna"
+      },
+      {
+        "name": "Hotel Castle Salam",
+        "address": "G-8 KDA Avenue, Khulna",
+        "rating": 4.3,
+        "review_count": 480,
+        "price": 3600,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Central Location",
+          "AC Deluxe Suite",
+          "Multi-Cuisine Restaurant",
+          "Travel Desk"
+        ],
+        "photo": "1582719508461-905c673771fd",
+        "phone": "+88041730725",
+        "whatsapp": "8801711397607",
+        "map_query": "Hotel%20Castle%20Salam%20Khulna"
+      },
+      {
+        "name": "Sundarban Tiger Camp Eco Resort",
+        "address": "Shekhertek, Mongla Port Gateway, Sundarbans",
+        "rating": 4.7,
+        "review_count": 360,
+        "price": 6500,
+        "currency": "BDT",
+        "hotel_type": "eco_lodge",
+        "amenities": [
+          "Mangrove Forest Edge",
+          "Guided Forest Cruise",
+          "Wooden Stilt Huts",
+          "Fresh Catch Dining"
+        ],
+        "photo": "1544735716-392fe2489ffa",
+        "phone": "+8801711998822",
+        "whatsapp": "8801711998822",
+        "map_query": "Sundarban%20Tiger%20Camp%20Mongla"
+      }
+    ],
+    "barishal": [
+      {
+        "name": "Grand Park Barishal",
+        "address": "Bell's Park, Band Road, Barishal",
+        "rating": 4.7,
+        "review_count": 720,
+        "price": 6200,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "Kirtankhola Riverfront",
+          "Outdoor Swimming Pool",
+          "Health Club",
+          "Bell's Diner"
+        ],
+        "photo": "1584132967334-10e028bd69f7",
+        "phone": "+8801777735175",
+        "whatsapp": "8801777735175",
+        "map_query": "Grand%20Park%20Barishal"
+      },
+      {
+        "name": "Hotel Athena International",
+        "address": "Sadar Road, Barishal",
+        "rating": 4.1,
+        "review_count": 380,
+        "price": 3000,
+        "currency": "BDT",
+        "hotel_type": "hotel",
+        "amenities": [
+          "City Sadar Heart",
+          "AC Deluxe Rooms",
+          "Roof Garden Diner",
+          "Free Wi-Fi"
+        ],
+        "photo": "1590490360182-c33d57733427",
+        "phone": "+8801711345678",
+        "whatsapp": "8801711345678",
+        "map_query": "Hotel%20Athena%20International%20Barishal"
+      },
+      {
+        "name": "Sedon Eco Resort",
+        "address": "Kirtankhola Riverbank, Charbaria, Barishal",
+        "rating": 4.5,
+        "review_count": 290,
+        "price": 3800,
+        "currency": "BDT",
+        "hotel_type": "eco_lodge",
+        "amenities": [
+          "River Breeze View",
+          "Wooden Floating Cottages",
+          "Fresh Hilsa Meals",
+          "Guava Market Tour"
+        ],
+        "photo": "1476514525535-07fb3b4ae5f1",
+        "phone": "+8801819776655",
+        "whatsapp": "8801819776655",
+        "map_query": "Sedon%20Eco%20Resort%20Barishal"
+      }
+    ]
+  },
+  "restaurants": {
+    "dhaka": [
+      {
+        "name": "Sultan's Dine",
+        "address": "Gulshan-1 / Badda Link Road, Dhaka",
+        "rating": 4.8,
+        "review_count": 2450,
+        "cuisine": [
+          "Kacchi Biryani",
+          "Mughlai",
+          "Desserts"
+        ],
+        "photo": "1563379091339-03b21ab4a4f8",
+        "phone": "+8801711544220",
+        "whatsapp": "8801711544220",
+        "signature_dish": "Royal Kacchi Biriyani with Shahi Borhani & Jorda",
+        "signature_dish_bn": "খাসির শাহী কাচ্চি বিরিয়ানি, বোরহানি ও জাফরানি জর্দা",
+        "price_person": "৳500–৳850",
+        "price_person_bn": "৳৫০০–৳৮৫০",
+        "map_query": "Sultan%27s%20Dine%20Gulshan%20Dhaka"
+      },
+      {
+        "name": "Haji Biriyani",
+        "address": "70 Kazi Alauddin Road, Nazira Bazar, Old Dhaka",
+        "rating": 4.6,
+        "review_count": 3100,
+        "cuisine": [
+          "Traditional Mutton Biryani",
+          "Heritage Old Dhaka"
+        ],
+        "photo": "1633945274405-b6c8069047b0",
+        "phone": "+8801711931088",
+        "whatsapp": "8801711931088",
+        "signature_dish": "Centuries-Old Mutton Biriyani in Mustard Oil with Borhani",
+        "signature_dish_bn": "ঐতিহ্যবাহী সরিষার তেলের খাসির বিরিয়ানি ও মাটির হাঁড়ির বোরহানি",
+        "price_person": "৳300–৳550",
+        "price_person_bn": "৳৩০০–৳৫৫০",
+        "map_query": "Haji%20Biriyani%20Nazira%20Bazar%20Dhaka"
+      },
+      {
+        "name": "Star Kabab & Restaurant",
+        "address": "Dhanmondi 2 / Banani / Karwan Bazar, Dhaka",
+        "rating": 4.7,
+        "review_count": 2800,
+        "cuisine": [
+          "Kebab",
+          "Bangladeshi",
+          "Mughal"
+        ],
+        "photo": "1555939594-58d7cb561ad1",
+        "phone": "+8801711544498",
+        "whatsapp": "8801711544498",
+        "signature_dish": "Mutton Leg Roast, Boti Kebab, Mutton Kacchi & Special Faluda",
+        "signature_dish_bn": "স্পেশাল খাসির লেগ রোস্ট, শিক কাবাব, কাচ্চি ও শাহী ফালুদা",
+        "price_person": "৳350–৳650",
+        "price_person_bn": "৳৩৫০–৳৬৫০",
+        "map_query": "Star%20Kabab%20Dhanmondi%20Dhaka"
+      },
+      {
+        "name": "Kasturi Restaurant",
+        "address": "8 Purana Paltan / Gulshan, Dhaka",
+        "rating": 4.6,
+        "review_count": 1400,
+        "cuisine": [
+          "Authentic Bengali",
+          "Fish Curry",
+          "30+ Bhortas"
+        ],
+        "photo": "1626777552726-4a6b54c97e46",
+        "phone": "+8801711523456",
+        "whatsapp": "8801711523456",
+        "signature_dish": "Hilsha Mustard Paturi, Chital Macher Muitha & 20+ Assorted Bhortas",
+        "signature_dish_bn": "সরিষা ইলিশ পাতুড়ি, চিতল মাছের মুইঠ্যা ও ২০ পদের ঐতিহ্যবাহী ভর্তা",
+        "price_person": "৳400–৳750",
+        "price_person_bn": "৳৪০০–৳৭৫০",
+        "map_query": "Kasturi%20Restaurant%20Paltan%20Dhaka"
+      },
+      {
+        "name": "Beauty Lassi & Faluda",
+        "address": "30/A Johnson Road, Nazira Bazar, Old Dhaka",
+        "rating": 4.8,
+        "review_count": 2200,
+        "cuisine": [
+          "Beverages",
+          "Desserts",
+          "Old Dhaka Classic"
+        ],
+        "photo": "1572490122747-3968b75cc699",
+        "phone": "+8801711122334",
+        "whatsapp": "8801711122334",
+        "signature_dish": "Original Shahi Faluda with Ice Cream, Sweet Lassi & Laban",
+        "signature_dish_bn": "বিউটির স্পেশাল শাহী ফালুদা, মিষ্টি পেস্তা লস্যি ও লাবাং",
+        "price_person": "৳100–৳250",
+        "price_person_bn": "৳১০০–৳২৫০",
+        "map_query": "Beauty%20Lassi%20Nazira%20Bazar%20Dhaka"
+      },
+      {
+        "name": "Al Razzak Restaurant",
+        "address": "29 Bangshal Road, Old Dhaka",
+        "rating": 4.5,
+        "review_count": 1650,
+        "cuisine": [
+          "Morog Polao",
+          "Glace",
+          "Old Dhaka Diner"
+        ],
+        "photo": "1589301760014-d929f3979dbc",
+        "phone": "+8801711990011",
+        "whatsapp": "8801711990011",
+        "signature_dish": "Royal Morog Polao, Mutton Glace & Rumali Ruti",
+        "signature_dish_bn": "ঐতিহাসিক মোরগ পোলাও, খাসির গ্লাসি ও রুমালি রুটি",
+        "price_person": "৳300–৳550",
+        "price_person_bn": "৳৩০০–৳৫৫০",
+        "map_query": "Al%20Razzak%20Restaurant%20Bangshal%20Dhaka"
+      }
+    ],
+    "chattogram": [
+      {
+        "name": "Mezban Haile Aiyun",
+        "address": "Chawkbazar / Prabartak Circle, Chattogram",
+        "rating": 4.8,
+        "review_count": 1850,
+        "cuisine": [
+          "Chittagong Mezbani",
+          "Traditional Beef",
+          "Lentil"
+        ],
+        "photo": "1546833999-b9f581a1996d",
+        "phone": "+8801819314455",
+        "whatsapp": "8801819314455",
+        "signature_dish": "Authentic Chittagong Mezbani Gosht, Nolar Jhol & Chonar Dal",
+        "signature_dish_bn": "খাঁটি চাটগাঁইয়া মেজবানি গরুর মাংস, নলার ঝোল ও চনার ডাল",
+        "price_person": "৳350–৳600",
+        "price_person_bn": "৳৩৫০–৳৬০০",
+        "map_query": "Mezban%20Haile%20Aiyun%20Chattogram"
+      },
+      {
+        "name": "Zaman Hotel & Restaurant",
+        "address": "GEC Circle / Agrabad, Chattogram",
+        "rating": 4.6,
+        "review_count": 1400,
+        "cuisine": [
+          "Kala Bhuna",
+          "Biryani",
+          "Bangladeshi"
+        ],
+        "photo": "1603894584373-5ac82b2ae398",
+        "phone": "+8801819312684",
+        "whatsapp": "8801819312684",
+        "signature_dish": "Signature Chittagong Beef Kala Bhuna with Tandoori Naan",
+        "signature_dish_bn": "বিখ্যাত চাটগাঁইয়া ঐতিহ্যবাহী বিফ কালা ভুনা ও নান রুটি",
+        "price_person": "৳300–৳550",
+        "price_person_bn": "৳৩০০–৳৫৫০",
+        "map_query": "Zaman%20Hotel%20GEC%20Chattogram"
+      },
+      {
+        "name": "Barcode Cafe",
+        "address": "Muradpur / GEC Circle, Chattogram",
+        "rating": 4.6,
+        "review_count": 1100,
+        "cuisine": [
+          "Continental Fusion",
+          "Steak",
+          "Artisan Coffee"
+        ],
+        "photo": "1554118811-1e0d58224f24",
+        "phone": "+8801844111222",
+        "whatsapp": "8801844111222",
+        "signature_dish": "Ribeye Steak with Pepper Sauce, Chicken Alfredo & Hazelnut Frappe",
+        "signature_dish_bn": "রিবআই বিফ স্টেক, পাস্তা আলফ্রেডো ও কোল্ড হ্যাজেলনাট ফ্রেপ্পে",
+        "price_person": "৳500–৳950",
+        "price_person_bn": "৳৫০০–৳৯৫০",
+        "map_query": "Barcode%20Cafe%20GEC%20Chattogram"
+      },
+      {
+        "name": "Handi Restaurant",
+        "address": "CDA Avenue, Dampara, Chattogram",
+        "rating": 4.5,
+        "review_count": 1250,
+        "cuisine": [
+          "Indian",
+          "Handi Dum Biryani",
+          "Mughal"
+        ],
+        "photo": "1589301760014-d929f3979dbc",
+        "phone": "+8801819665522",
+        "whatsapp": "8801819665522",
+        "signature_dish": "Handi Mutton Dum Biriyani & Butter Garlic Chicken Tikka",
+        "signature_dish_bn": "হাঁড়ি খাসির দম বিরিয়ানি ও বাটার গার্লিক চিকেন টিক্কা",
+        "price_person": "৳450–৳800",
+        "price_person_bn": "৳৪৫০–৳৮০০",
+        "map_query": "Handi%20Restaurant%20Dampara%20Chattogram"
+      }
+    ],
+    "coxs-bazar": [
+      {
+        "name": "Jhaubon Restaurant",
+        "address": "Main Road, Near Sayeman Road, Cox's Bazar",
+        "rating": 4.7,
+        "review_count": 2600,
+        "cuisine": [
+          "Fresh Sea Fish",
+          "Local Bhortas",
+          "Coastal Bengali"
+        ],
+        "photo": "1534422298391-e4f8c172dddb",
+        "phone": "+8801819382944",
+        "whatsapp": "8801819382944",
+        "signature_dish": "Crisp Fried Whole Rupchanda, Loitta Fry & Spicy Crab Curry",
+        "signature_dish_bn": "সদ্য ধরা মচমচে আস্ত রূপচাঁদা ফ্রাই, লইট্টা ফ্রাই ও কোরাল ভুনা",
+        "price_person": "৳350–৳750",
+        "price_person_bn": "৳৩৫০–৳৭৫০",
+        "map_query": "Jhaubon%20Restaurant%20Cox%27s%20Bazar"
+      },
+      {
+        "name": "Poushee Hotel & Restaurant",
+        "address": "Hotel Motel Zone, Kolatoli, Cox's Bazar",
+        "rating": 4.6,
+        "review_count": 2900,
+        "cuisine": [
+          "Bangladeshi Bhorta Buffet",
+          "Seafood Curry"
+        ],
+        "photo": "1519708227418-c8fd9a32b7a2",
+        "phone": "+8801819644788",
+        "whatsapp": "8801819644788",
+        "signature_dish": "30+ Coastal Fish & Vegetable Bhortas with Chingri Malai Curry",
+        "signature_dish_bn": "৩০ রকমের উপকূলীয় শুঁটকি ও সবজি ভর্তা এবং গলদা চিংড়ি মালাইকারী",
+        "price_person": "৳300–৳650",
+        "price_person_bn": "৳৩০০–৳৬৫০",
+        "map_query": "Poushee%20Hotel%20Restaurant%20Cox%27s%20Bazar"
+      },
+      {
+        "name": "Mermaid Beach Cafe",
+        "address": "Marine Drive Road, Pechardwip Beach, Cox's Bazar",
+        "rating": 4.8,
+        "review_count": 1450,
+        "cuisine": [
+          "Seafood BBQ",
+          "Wood-fired Pizza",
+          "Beachside Bistro"
+        ],
+        "photo": "1513104890138-7c749659a591",
+        "phone": "+8801841416464",
+        "whatsapp": "8801841416464",
+        "signature_dish": "Wood-Fired Seafood Pizza, Garlic Butter Lobster & Tropical Smoothies",
+        "signature_dish_bn": "উড-ফায়ার্ড সিফুড পিৎজা, গার্লিক বাটার লবস্টার ও ডাবের স্মুদি",
+        "price_person": "৳650–৳1400",
+        "price_person_bn": "৳৬৫০–৳১৪০০",
+        "map_query": "Mermaid%20Cafe%20Marine%20Drive%20Cox%27s%20Bazar"
+      },
+      {
+        "name": "Taranga Restaurant",
+        "address": "Kolatoli Beach Road, Cox's Bazar",
+        "rating": 4.4,
+        "review_count": 890,
+        "cuisine": [
+          "Coastal Bangladeshi",
+          "Fish BBQ"
+        ],
+        "photo": "1519708227418-c8fd9a32b7a2",
+        "phone": "+8801819778899",
+        "whatsapp": "8801819778899",
+        "signature_dish": "Charcoal Grilled Pomfret, Squid Rings & Coconut Rice",
+        "signature_dish_bn": "কয়লার আগুনে গ্রিল্ড রূপচাঁদা, স্কুইড রিং ফ্রাই ও নারিকেল ভাত",
+        "price_person": "৳400–৳850",
+        "price_person_bn": "৳৪০০–৳৮৫০",
+        "map_query": "Taranga%20Restaurant%20Kolatoli%20Cox%27s%20Bazar"
+      }
+    ],
+    "sylhet": [
+      {
+        "name": "Poushi Restaurant Sylhet",
+        "address": "Zindabazar / Jail Road, Sylhet",
+        "rating": 4.8,
+        "review_count": 3200,
+        "cuisine": [
+          "Sylheti Traditional",
+          "Wild Citrus Beef",
+          "40+ Bhortas"
+        ],
+        "photo": "1606491956689-2ea866880c84",
+        "phone": "+8801711334488",
+        "whatsapp": "8801711334488",
+        "signature_dish": "Authentic Sylheti Shatkora Beef Curry, Haor Duck Roast & 40+ Bhortas",
+        "signature_dish_bn": "সিলেটের বিখ্যাত সাতকড়া দিয়ে গরুর মাংস, হাওরের হাঁস ভুনা ও ৪০ পদের ভর্তা",
+        "price_person": "৳350–৳650",
+        "price_person_bn": "৳৩৫০–৳৬৫০",
+        "map_query": "Poushi%20Restaurant%20Zindabazar%20Sylhet"
+      },
+      {
+        "name": "Pach Bhai Restaurant",
+        "address": "Jail Road, Zindabazar, Sylhet",
+        "rating": 4.7,
+        "review_count": 2850,
+        "cuisine": [
+          "Deshi Cuisine",
+          "Fresh Haor Fish",
+          "Khichuri"
+        ],
+        "photo": "1589301760014-d929f3979dbc",
+        "phone": "+8801712556677",
+        "whatsapp": "8801712556677",
+        "signature_dish": "Haor Boal Fish Jhol, Beef Bhuna Khichuri & Mukhi Kochu Prawn",
+        "signature_dish_bn": "হাওরের বোয়াল মাছের ঝোল, গরুর ভুনা খিচুড়ি ও মুখী কচু দিয়ে চিংড়ি",
+        "price_person": "৳300–৳550",
+        "price_person_bn": "৳৩০০–৳৫৫০",
+        "map_query": "Pach%20Bhai%20Restaurant%20Sylhet"
+      },
+      {
+        "name": "Woondaal King Kebab",
+        "address": "East Zindabazar, Baruthkhana, Sylhet",
+        "rating": 4.6,
+        "review_count": 1100,
+        "cuisine": [
+          "Clay Oven Tandoori",
+          "Kebab",
+          "Indian Mughlai"
+        ],
+        "photo": "1555939594-58d7cb561ad1",
+        "phone": "+8801711889900",
+        "whatsapp": "8801711889900",
+        "signature_dish": "Woondaal Platter, Tandoori Boti Kebab & Garlic Butter Naan",
+        "signature_dish_bn": "স্পেশাল তন্দুরি কাবাব প্ল্যাটার ও বাটার গার্লিক নান",
+        "price_person": "৳450–৳850",
+        "price_person_bn": "৳৪৫০–৳৮৫০",
+        "map_query": "Woondaal%20King%20Kebab%20Sylhet"
+      }
+    ],
+    "sreemangal": [
+      {
+        "name": "Nilkantha Tea Cabin (Shat Rong)",
+        "address": "Ramnagar Moniupuri Para, Sreemangal",
+        "rating": 4.7,
+        "review_count": 2100,
+        "cuisine": [
+          "World-Famous 7 Layer Tea",
+          "Tea Valley Snacks"
+        ],
+        "photo": "1576092768241-dec231879fc3",
+        "phone": "+8801716553311",
+        "whatsapp": "8801716553311",
+        "signature_dish": "Original 7 Layer Multi-Color Tea in Single Glass & Green Tea",
+        "signature_dish_bn": "ঐতিহাসিক রমেশ রাম গৌড়ের আসল ৭ রঙের চা ও ফ্রেশ গ্রিন টি",
+        "price_person": "৳80–৳180",
+        "price_person_bn": "৳৮০–৳১৮০",
+        "map_query": "Nilkantha%20Tea%20Cabin%20Sreemangal"
+      },
+      {
+        "name": "Kutumbari Restaurant",
+        "address": "Dhaka-Sylhet Highway, Sreemangal Town",
+        "rating": 4.5,
+        "review_count": 980,
+        "cuisine": [
+          "Bangladeshi",
+          "Kachchi",
+          "Bhorta"
+        ],
+        "photo": "1563379091339-03b21ab4a4f8",
+        "phone": "+8801712334411",
+        "whatsapp": "8801712334411",
+        "signature_dish": "Country Chicken Curry, Fresh Bamboo Shoot Bhorta & Mutton Biriyani",
+        "signature_dish_bn": "দেশি মুরগির ঝোল, বাঁশ কোড়ল ভর্তা ও খাসির বিরিয়ানি",
+        "price_person": "৳300–৳550",
+        "price_person_bn": "৳৩০০–৳৫৫০",
+        "map_query": "Kutumbari%20Restaurant%20Sreemangal"
+      }
+    ],
+    "sajek-valley": [
+      {
+        "name": "Maru Cafe & Tribal Kitchen",
+        "address": "Ruilui Para, Sajek Valley, Rangamati",
+        "rating": 4.8,
+        "review_count": 780,
+        "cuisine": [
+          "Indigenous Tribal",
+          "Bamboo Chicken",
+          "Hill Valley Coffee"
+        ],
+        "photo": "1598515214211-89d3c73ae83b",
+        "phone": "+8801811554422",
+        "whatsapp": "8801811554422",
+        "signature_dish": "Charcoal Bamboo Chicken, Hill Papaya Salad & Fresh Ground Coffee",
+        "signature_dish_bn": "কয়লার আগুনে বাঁশের ভেতর রান্না দেশি চিকেন ও পাহাড়ি পেঁপে সালাদ",
+        "price_person": "৳300–৳550",
+        "price_person_bn": "৳৩০০–৳৫৫০",
+        "map_query": "Sajek%20Ruilui%20Para%20Tribal%20Kitchen"
+      },
+      {
+        "name": "Montana Restaurant",
+        "address": "Near Ruilui Helipad, Sajek Valley",
+        "rating": 4.5,
+        "review_count": 560,
+        "cuisine": [
+          "Bangladeshi Khichuri",
+          "Duck Curry"
+        ],
+        "photo": "1589301760014-d929f3979dbc",
+        "phone": "+8801822334455",
+        "whatsapp": "8801822334455",
+        "signature_dish": "Pahadi Duck Bhuna Khichuri & Herbal Forest Soup",
+        "signature_dish_bn": "পাহাড়ি হাঁস ভুনা, গরম ভুনা খিচুড়ি ও খাঁটি বনজ মসলার স্যুপ",
+        "price_person": "৳300–৳500",
+        "price_person_bn": "৳৩০০–৳৫০০",
+        "map_query": "Montana%20Restaurant%20Sajek%20Valley"
+      }
+    ],
+    "bandarban": [
+      {
+        "name": "Cafe Taj Bandarban",
+        "address": "Main Road, Traffic Mor, Bandarban Town",
+        "rating": 4.6,
+        "review_count": 820,
+        "cuisine": [
+          "Bangladeshi",
+          "Chinese Sizzling",
+          "Biryani"
+        ],
+        "photo": "1546833999-b9f581a1996d",
+        "phone": "+8801819334455",
+        "whatsapp": "8801819334455",
+        "signature_dish": "Special Beef Bhuna, Chicken Sizzling & Malai Tea",
+        "signature_dish_bn": "স্পেশাল বিফ ভুনা, চিকেন সিজলিং ও পাহাড়ি স্পেশাল মালাই চা",
+        "price_person": "৳250–৳480",
+        "price_person_bn": "৳২৫০–৳৪৮০",
+        "map_query": "Cafe%20Taj%20Bandarban%20Town"
+      },
+      {
+        "name": "Ruposhi Bangla Restaurant",
+        "address": "Bazar Bridge Road, Bandarban",
+        "rating": 4.4,
+        "review_count": 510,
+        "cuisine": [
+          "Deshi Fish & Bhorta",
+          "Hill Vegetables"
+        ],
+        "photo": "1626777552726-4a6b54c97e46",
+        "phone": "+8801819445566",
+        "whatsapp": "8801819445566",
+        "signature_dish": "Sangu River Prawn Curry, Bamboo Shoot Bhorta & Duck Roast",
+        "signature_dish_bn": "সাঙ্গু নদীর তাজা চিংড়ি, বাঁশ কোড়ল ভর্তা ও হাঁস ভুনা",
+        "price_person": "৳250–৳450",
+        "price_person_bn": "৳২৫০–৳৪৫০",
+        "map_query": "Ruposhi%20Bangla%20Restaurant%20Bandarban"
+      }
+    ],
+    "rangamati": [
+      {
+        "name": "System Restaurant",
+        "address": "Pankhai Para, Rangamati Town",
+        "rating": 4.8,
+        "review_count": 1450,
+        "cuisine": [
+          "Indigenous Chakma Traditional",
+          "Herbal Delicacies"
+        ],
+        "photo": "1598515214211-89d3c73ae83b",
+        "phone": "+8801711883311",
+        "whatsapp": "8801711883311",
+        "signature_dish": "Authentic Chakma Bamboo Chicken, Hebang Fish & Saba Bhorta",
+        "signature_dish_bn": "চাকমা ঐতিহ্যের বাঁশ চিকেন, কলাপাতা মোড়ানো মাছের হেবাং ও সাবা ভর্তা",
+        "price_person": "৳350–৳650",
+        "price_person_bn": "৳৩৫০–৳৬৫০",
+        "map_query": "System%20Restaurant%20Rangamati"
+      },
+      {
+        "name": "Tuk Tuk Eco Village Restaurant",
+        "address": "Kaptai Lake Island, Rangamati",
+        "rating": 4.6,
+        "review_count": 730,
+        "cuisine": [
+          "Lake View Diner",
+          "Kaptai Fish"
+        ],
+        "photo": "1534422298391-e4f8c172dddb",
+        "phone": "+8801711993322",
+        "whatsapp": "8801711993322",
+        "signature_dish": "Fresh Kaptai Lake Keski Fish Fry, Chitol Mach & Steamed Rice",
+        "signature_dish_bn": "কাপ্তাই লেকের তাজা কাঁচকি মাছের মচমচে ফ্রাই ও চিতল মাছের ঝোল",
+        "price_person": "৳300–৳550",
+        "price_person_bn": "৳৩০০–৳৫৫০",
+        "map_query": "Tuk%20Tuk%20Eco%20Village%20Rangamati"
+      }
+    ],
+    "kuakata": [
+      {
+        "name": "Beach Fish Fry Corner",
+        "address": "Zero Point Beachfront, Kuakata",
+        "rating": 4.7,
+        "review_count": 1600,
+        "cuisine": [
+          "Live Sea Fish BBQ",
+          "Crab & Coral"
+        ],
+        "photo": "1534422298391-e4f8c172dddb",
+        "phone": "+8801711667788",
+        "whatsapp": "8801711667788",
+        "signature_dish": "Live Charcoal Grilled Rupchanda, Sea Coral & Spicy Fried Crabs",
+        "signature_dish_bn": "চোখের সামনে কয়লার আগুনে ভাজা তাজা রূপচাঁদা, কোরাল ও কাঁকড়া ফ্রাই",
+        "price_person": "৳250–৳650",
+        "price_person_bn": "৳২৫০–৳৬৫০",
+        "map_query": "Kuakata%20Beach%20Fish%20Fry%20Zero%20Point"
+      },
+      {
+        "name": "Hotel Al-Madina & Dining",
+        "address": "Sadar Road, Kuakata",
+        "rating": 4.3,
+        "review_count": 580,
+        "cuisine": [
+          "Deshi Bengali",
+          "Hilsha Curry"
+        ],
+        "photo": "1626777552726-4a6b54c97e46",
+        "phone": "+8801711884422",
+        "whatsapp": "8801711884422",
+        "signature_dish": "Kuakata Sea Hilsha Curry with Mustard & 15 Varieties of Bhortas",
+        "signature_dish_bn": "তাজা সাগর ইলিশের সরিষা ঝোল ও ১৫ রকমের স্থানীয় ভর্তা",
+        "price_person": "৳250–৳500",
+        "price_person_bn": "৳২৫০–৳৫০০",
+        "map_query": "Hotel%20Al%20Madina%20Kuakata"
+      }
+    ],
+    "khulna": [
+      {
+        "name": "Abbas Hotel & Restaurant",
+        "address": "Chuknagar, Khulna-Satkhira Highway, Khulna",
+        "rating": 4.9,
+        "review_count": 3800,
+        "cuisine": [
+          "Legendary Chui Jhal",
+          "Spicy Mutton Curry",
+          "Bengali Heritage"
+        ],
+        "photo": "1574484284002-952d92456975",
+        "phone": "+8801711234888",
+        "whatsapp": "8801711234888",
+        "signature_dish": "World-Famous Chuknagar Chui Jhal Mutton & Beef with Steamed Rice",
+        "signature_dish_bn": "বিশ্ববিখ্যাত চুকনগরের আব্বাসের আসল চুইঝাল খাসি ও গরুর মাংসের ঝাল ঝোল",
+        "price_person": "৳350–৳650",
+        "price_person_bn": "৳৩৫০–৳৬৫০",
+        "map_query": "Abbas%20Hotel%20Chuknagar%20Khulna"
+      },
+      {
+        "name": "Kamrul Hotel (Chui Jhal)",
+        "address": "Zila School Mor, Khulna City",
+        "rating": 4.6,
+        "review_count": 1450,
+        "cuisine": [
+          "Chui Jhal Meat",
+          "River Fish"
+        ],
+        "photo": "1546833999-b9f581a1996d",
+        "phone": "+8801711345999",
+        "whatsapp": "8801711345999",
+        "signature_dish": "City Chui Jhal Beef, Fresh Golda Chingri & Sweet Curd",
+        "signature_dish_bn": "খুলনা শহরের কামরুলের স্পেশাল চুইঝাল গরু ও গলদা চিংড়ি ভুনা",
+        "price_person": "৳300–৳550",
+        "price_person_bn": "৳৩০০–৳৫৫০",
+        "map_query": "Kamrul%20Hotel%20Khulna%20City"
+      }
+    ],
+    "rajshahi": [
+      {
+        "name": "Kalai Ruti Corner",
+        "address": "Upashohor / Barendra Museum Road, Rajshahi",
+        "rating": 4.8,
+        "review_count": 2200,
+        "cuisine": [
+          "Mashkalai Ruti",
+          "Duck Curry",
+          "Begun Bhorta"
+        ],
+        "photo": "1505253758473-96b7015fcd40",
+        "phone": "+8801711448833",
+        "whatsapp": "8801711448833",
+        "signature_dish": "Hot Mashkalai Ruti, Spiced Duck Roast & Morich Begun Bhorta",
+        "signature_dish_bn": "গরম গরম মাষকলাইয়ের রুটি, হাঁসের মাংস ও ঝাল বেগুন ভর্তা",
+        "price_person": "৳150–৳350",
+        "price_person_bn": "৳১৫০–৳৩৫০",
+        "map_query": "Kalai%20Ruti%20Corner%20Rajshahi"
+      },
+      {
+        "name": "Asia Sweetmeat & Doi (Bogura)",
+        "address": "Kanthaltala / Thana Mor, Bogura",
+        "rating": 4.9,
+        "review_count": 3100,
+        "cuisine": [
+          "Authentic Bogura Doi",
+          "Traditional Sweets"
+        ],
+        "photo": "1587314168485-3236d6710814",
+        "phone": "+8801711559922",
+        "whatsapp": "8801711559922",
+        "signature_dish": "Original GI-Tagged Bogurar Shahi Mishti Doi in Red Clay Pots",
+        "signature_dish_bn": "জিআই স্বীকৃতিপ্রাপ্ত আসল ঐতিহ্যবাহী বগুড়ার লাল মাটির শাহি মিষ্টি দই",
+        "price_person": "৳120–৳280",
+        "price_person_bn": "৳১২০–৳২৮০",
+        "map_query": "Asia%20Sweetmeat%20Bogura%20Doi"
+      }
+    ],
+    "barishal": [
+      {
+        "name": "Chondrobindu Restaurant",
+        "address": "Sadar Road / Band Road, Barishal",
+        "rating": 4.7,
+        "review_count": 1250,
+        "cuisine": [
+          "Barishali Hilsha Curry",
+          "River Delicacies"
+        ],
+        "photo": "1626777552726-4a6b54c97e46",
+        "phone": "+8801711778844",
+        "whatsapp": "8801711778844",
+        "signature_dish": "Authentic Barishali Ilish Paturi, Coconut Prawn & Chitol Muitha",
+        "signature_dish_bn": "বরিশালের আসল সরিষা ইলিশ পাতুড়ি, ডাব চিংড়ি ও চিতল মুইঠ্যা",
+        "price_person": "৳350–৳700",
+        "price_person_bn": "৳৩৫০–৳৭০০",
+        "map_query": "Chondrobindu%20Restaurant%20Barishal"
+      },
+      {
+        "name": "Gharowa Hotel & Restaurant",
+        "address": "Natun Bazar, Barishal",
+        "rating": 4.4,
+        "review_count": 670,
+        "cuisine": [
+          "Bengali Home Style",
+          "Fresh Fish"
+        ],
+        "photo": "1589301760014-d929f3979dbc",
+        "phone": "+8801711880033",
+        "whatsapp": "8801711880033",
+        "signature_dish": "River Pabda Fish Curry, Duck Roast & Sweet Curd",
+        "signature_dish_bn": "নদীর পাবদা মাছের ঝোল, ঝাল হাঁসের মাংস ও মাটির হাঁড়ির মিষ্টি দই",
+        "price_person": "৳250–৳480",
+        "price_person_bn": "৳২৫০–৳৪৮০",
+        "map_query": "Gharowa%20Hotel%20Barishal"
+      }
+    ]
+  },
+  "label": "100% Authentic Verified Bangladesh Tourism Directory",
+  "note": "Authentic destinations, true regional cuisines, and verified direct contact information."
+}

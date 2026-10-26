@@ -1,0 +1,661 @@
+@import "tailwindcss";
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --color-primary: #0f4a38;
+  --color-primary-dark: #07251c;
+  --color-primary-light: #156b50;
+  --color-primary-hover: #1f9d76;
+  --color-accent: #f4a340;
+  --color-accent-hover: #e67e22;
+
+  --background: #fbfdfc;
+  --foreground: #0d211a;
+  --surface: #ffffff;
+  --surface-raised: #f2f7f4;
+  --border-color: rgba(15, 74, 56, 0.12);
+  --text-muted: #4e6b60;
+
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(15, 74, 56, 0.12);
+
+  /* 8pt Grid & Typography Tokens */
+  --space-1: 0.5rem;   /* 8px */
+  --space-2: 1rem;     /* 16px */
+  --space-3: 1.5rem;   /* 24px */
+  --space-4: 2rem;     /* 32px */
+  --space-5: 2.5rem;   /* 40px */
+  --space-6: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+  --space-10: 5rem;    /* 80px */
+}
+
+[data-theme="dark"] {
+  --color-primary: #1f9d76;
+  --color-primary-dark: #0a2e22;
+  --color-primary-light: #2ecc71;
+  --color-primary-hover: #3ddc84;
+  --color-accent: #f59e0b;
+  --color-accent-hover: #fbbf24;
+
+  --background: #061510;
+  --foreground: #f0f7f4;
+  --surface: #0c241c;
+  --surface-raised: #123328;
+  --border-color: rgba(255, 255, 255, 0.12);
+  --text-muted: #95b3a6;
+
+  --nav-bg: rgba(6, 21, 16, 0.95);
+  --glass-bg: rgba(12, 36, 28, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.14);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-primary-brand: var(--color-primary);
+  --color-accent-brand: var(--color-accent);
+  --font-sans: "Plus Jakarta Sans", "Hind Siliguri", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-bengali: "Hind Siliguri", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Hind Siliguri", "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+/* Bangla typography: authentic Hind Siliguri script metrics */
+html[lang="bn"] body,
+html[lang="bn"] input,
+html[lang="bn"] button,
+html[lang="bn"] select,
+html[lang="bn"] textarea {
+  font-family: "Hind Siliguri", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* English default typography: Plus Jakarta Sans */
+html[lang="en"] body,
+html[lang="en"] input,
+html[lang="en"] button,
+html[lang="en"] select,
+html[lang="en"] textarea {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* Authentic Brand Logo Theme Switch */
+.brand-logo-dark {
+  display: none !important;
+}
+.brand-logo-light {
+  display: block !important;
+}
+[data-theme="dark"] .brand-logo-dark {
+  display: block !important;
+}
+[data-theme="dark"] .brand-logo-light {
+  display: none !important;
+}
+
+.glass-card {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Accessible focus visible rings (WCAG AAA) */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Infinite Marquee Ticker Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee:focus-within {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation-play-state: paused !important;
+  }
+}
+
+/* Leaflet Map Custom Marker, Attribution & Popup Fixes */
+.leaflet-control-attribution {
+  background: rgba(0, 0, 0, 0.55) !important;
+  color: #9fb3a8 !important;
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  border-radius: 8px 0 0 0 !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.leaflet-control-attribution a {
+  color: #c4d7cd !important;
+  text-decoration: none;
+}
+
+.leaflet-control-attribution a:hover {
+  text-decoration: underline;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--surface) !important;
+  color: var(--foreground) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid var(--border-color) !important;
+  padding: 4px !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--surface) !important;
+}
+
+/* Chattogram Studio High-End Dynamic SVG Motion Animations */
+.ctg-motion-mist {
+  animation: ctgMistDrift 16s ease-in-out infinite alternate;
+}
+@keyframes ctgMistDrift {
+  0% { transform: translateX(0); opacity: 0.28; }
+  100% { transform: translateX(25px); opacity: 0.45; }
+}
+
+.ctg-motion-lantern {
+  transform-origin: center;
+  animation: ctgLanternBreathe 3s ease-in-out infinite alternate;
+}
+@keyframes ctgLanternBreathe {
+  0% { transform: scale(0.92); opacity: 0.7; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+.ctg-motion-trail {
+  stroke-dasharray: 6 4;
+  animation: ctgTrailFlow 2.8s linear infinite;
+}
+@keyframes ctgTrailFlow {
+  to { stroke-dashoffset: -20; }
+}
+
+.ctg-motion-photon {
+  offset-path: path("M290 54 C 235 72, 185 86, 130 106 C 95 116, 60 124, 28 128");
+  animation: ctgPhotonFly 5.5s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+  filter: drop-shadow(0 0 5px #f3c258) drop-shadow(0 0 10px #f59e0b);
+}
+@keyframes ctgPhotonFly {
+  0% { offset-distance: 0%; transform: scale(0.85); opacity: 0.4; }
+  25% { transform: scale(1.2); opacity: 1; }
+  75% { transform: scale(1.1); opacity: 1; }
+  100% { offset-distance: 100%; transform: scale(0.85); opacity: 0.5; }
+}
+
+.ctg-motion-ping {
+  fill: none;
+  stroke: #f3c258;
+  stroke-width: 1.5;
+  transform-origin: center;
+  animation: ctgPingPulse 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.ctg-ping-delayed {
+  animation-delay: 1.2s;
+  stroke: #34d399;
+}
+@keyframes ctgPingPulse {
+  0% { r: 3; opacity: 1; }
+  70%, 100% { r: 14; opacity: 0; }
+}
+
+.ctg-motion-radar {
+  transform-origin: 0px 6px;
+  animation: ctgRadarSpin 4.5s linear infinite;
+}
+@keyframes ctgRadarSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ctg-motion-splash {
+  animation: ctgSplashPulse 2.8s ease-in-out infinite alternate;
+}
+@keyframes ctgSplashPulse {
+  0% { transform: translateY(0); opacity: 0.55; }
+  50% { transform: translateY(-2px); opacity: 0.95; }
+  100% { transform: translateY(1px); opacity: 0.65; }
+}
+
+.ctg-motion-wave {
+  animation: ctgWaveSway 3.2s ease-in-out infinite alternate;
+}
+@keyframes ctgWaveSway {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(2.5px); }
+}
+
+.ctg-motion-wave-1 {
+  animation: ctgWaveParallax1 4s ease-in-out infinite alternate;
+}
+.ctg-motion-wave-2 {
+  animation: ctgWaveParallax2 3.2s ease-in-out infinite alternate;
+}
+@keyframes ctgWaveParallax1 {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(2.5px) translateX(4px); }
+}
+@keyframes ctgWaveParallax2 {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-2px) translateX(-4px); }
+}
+
+.ctg-motion-cloud-valley-1 {
+  animation: ctgValleyClouds1 18s ease-in-out infinite alternate;
+}
+.ctg-motion-cloud-valley-2 {
+  animation: ctgValleyClouds2 24s ease-in-out infinite alternate;
+}
+@keyframes ctgValleyClouds1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(22px); }
+}
+@keyframes ctgValleyClouds2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-18px); }
+}
+
+.ctg-motion-sun-glow {
+  transform-origin: 160px 50px;
+  animation: ctgSunBreathe 4s ease-in-out infinite alternate;
+}
+@keyframes ctgSunBreathe {
+  0% {
+    transform: scale(0.96);
+    filter: drop-shadow(0 0 4px rgba(251, 146, 60, 0.4));
+  }
+  100% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 16px rgba(251, 146, 60, 0.85)) drop-shadow(0 0 28px rgba(245, 158, 11, 0.5));
+  }
+}
+
+.ctg-motion-sampan {
+  transform-origin: 92px 76px;
+  animation: ctgSampanRock 3.5s ease-in-out infinite alternate;
+}
+@keyframes ctgSampanRock {
+  0% { transform: rotate(-3deg) translateY(0); }
+  100% { transform: rotate(3deg) translateY(-1.5px); }
+}
+
+.ctg-motion-murirtin-track {
+  animation: ctgMurirTinDrive 11s linear infinite;
+}
+@keyframes ctgMurirTinDrive {
+  0% { transform: translateX(-65px); }
+  100% { transform: translateX(335px); }
+}
+
+.ctg-motion-murirtin-bus {
+  animation: ctgMurirTinBounce 0.38s ease-in-out infinite alternate;
+}
+@keyframes ctgMurirTinBounce {
+  0% { transform: translate(0, 96px) rotate(-0.35deg); }
+  100% { transform: translate(0, 94.5px) rotate(0.35deg); }
+}
+
+.ctg-motion-wheel {
+  animation: ctgWheelRoll 0.8s linear infinite;
+}
+@keyframes ctgWheelRoll {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ctg-motion-exhaust {
+  animation: ctgExhaustPuff 0.75s ease-out infinite;
+}
+@keyframes ctgExhaustPuff {
+  0% { transform: scale(0.6) translate(0, 0); opacity: 0.6; }
+  60% { transform: scale(1.4) translate(-5px, -2px); opacity: 0.25; }
+  100% { transform: scale(2) translate(-10px, -4px); opacity: 0; }
+}
+
+/* WCAG Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Map Clusters & Single Pin Styling (Ghuraghuri Cartography Standard)
+   ========================================================================== */
+
+.leaflet-container {
+  font-family: var(--font-sans, system-ui, sans-serif) !important;
+  background-color: var(--surface, #ffffff) !important;
+}
+
+[data-theme="dark"] .leaflet-container {
+  background-color: #061510 !important;
+}
+
+[data-theme="dark"] .leaflet-tile-pane {
+  filter: brightness(0.65) invert(1) contrast(2.2) hue-rotate(185deg) saturate(0.35) brightness(0.85);
+}
+
+/* Single Pin */
+.gh-single-pin-wrapper {
+  background: transparent !important;
+  border: none !important;
+}
+
+.gh-single-pin {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #0f4a38 0%, #17634c 100%);
+  border: 2px solid #f4a340;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(15, 74, 56, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+.gh-single-pin:hover {
+  transform: rotate(-45deg) scale(1.22);
+  box-shadow: 0 8px 20px rgba(15, 74, 56, 0.6), 0 0 12px rgba(244, 163, 64, 0.5);
+  border-color: #f59e0b;
+}
+
+.gh-single-pin-inner {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Cluster Bubble */
+.gh-cluster-bubble-wrapper {
+  background: transparent !important;
+  border: none !important;
+}
+
+.gh-cluster-bubble {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0f4a38 0%, #156b50 100%);
+  border: 3px solid #f4a340;
+  box-shadow: 0 6px 18px rgba(15, 74, 56, 0.4), 0 0 0 4px rgba(244, 163, 64, 0.22);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  position: relative;
+}
+
+[data-theme="dark"] .gh-cluster-bubble {
+  background: linear-gradient(135deg, #1f9d76 0%, #0d382b 100%);
+  border-color: #f59e0b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 0 4px rgba(245, 158, 11, 0.3);
+}
+
+.gh-cluster-bubble:hover {
+  transform: scale(1.18);
+  box-shadow: 0 10px 26px rgba(15, 74, 56, 0.55), 0 0 0 6px rgba(244, 163, 64, 0.4);
+}
+
+.gh-cluster-sm {
+  width: 42px;
+  height: 42px;
+  font-size: 13px;
+}
+
+.gh-cluster-md {
+  width: 50px;
+  height: 50px;
+  font-size: 15px;
+}
+
+.gh-cluster-lg {
+  width: 58px;
+  height: 58px;
+  font-size: 17px;
+  background: linear-gradient(135deg, #072e23 0%, #0f4a38 100%);
+  border-width: 3.5px;
+}
+
+/* Pulsing ambient ripple around clusters */
+.gh-cluster-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(244, 163, 64, 0.6);
+  animation: ghClusterRipple 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes ghClusterRipple {
+  0% { transform: scale(0.95); opacity: 0.85; }
+  70% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+/* Printable Tour Itinerary Dossier Styles */
+@media print {
+  header, footer, nav, button, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  #itinerary-dossier {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .bg-\[var\(--surface\)\], .bg-\[var\(--surface-raised\)\] {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Atmospheric Weather Dynamics */
+@keyframes weatherGlowPulse {
+  0% { transform: scale(0.95); opacity: 0.35; }
+  50% { transform: scale(1.08); opacity: 0.65; }
+  100% { transform: scale(0.95); opacity: 0.35; }
+}
+
+@keyframes weatherCloudDrift {
+  0% { transform: translateX(-15px); }
+  50% { transform: translateX(15px); }
+  100% { transform: translateX(-15px); }
+}
+
+@keyframes weatherSunSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.weather-ambient-glow {
+  animation: weatherGlowPulse 8s ease-in-out infinite alternate;
+}
+
+.weather-cloud-drift {
+  animation: weatherCloudDrift 14s ease-in-out infinite alternate;
+}
+
+.weather-sun-spin {
+  animation: weatherSunSpin 30s linear infinite;
+}
+
+/* Apple Weather-style Temperature Range Horizontal Bar */
+.weather-temp-bar {
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(148, 163, 184, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-temp-range {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #38bdf8 0%, #34d399 35%, #fbbf24 70%, #f87171 100%);
+}
+
+.weather-current-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #0f172a;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+/* Glassmorphic luxury card shine */
+.weather-glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.07);
+}
+
+.dark .weather-glass-card {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.35);
+}
+
+/* GPU-Accelerated Atmospheric Physics */
+@keyframes atmosphericCloudDriftSlow {
+  0% { transform: translate3d(-30px, 0, 0); }
+  50% { transform: translate3d(30px, -6px, 0); }
+  100% { transform: translate3d(-30px, 0, 0); }
+}
+
+@keyframes atmosphericCloudDriftFast {
+  0% { transform: translate3d(20px, 0, 0); }
+  50% { transform: translate3d(-25px, 4px, 0); }
+  100% { transform: translate3d(20px, 0, 0); }
+}
+
+@keyframes atmosphericSunCorona {
+  0% { transform: scale(0.94); opacity: 0.65; filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.5)); }
+  50% { transform: scale(1.08); opacity: 0.95; filter: drop-shadow(0 0 35px rgba(245, 158, 11, 0.85)) drop-shadow(0 0 60px rgba(251, 191, 36, 0.4)); }
+  100% { transform: scale(0.94); opacity: 0.65; filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.5)); }
+}
+
+@keyframes atmosphericRadarPing {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 0.2; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.cloud-drift-slow {
+  animation: atmosphericCloudDriftSlow 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.cloud-drift-fast {
+  animation: atmosphericCloudDriftFast 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.sun-corona-pulse {
+  animation: atmosphericSunCorona 6s ease-in-out infinite alternate;
+  will-change: transform, filter;
+}
+
+.radar-ping {
+  animation: atmosphericRadarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+
