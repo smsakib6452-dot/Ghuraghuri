@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { FeaturedSection } from "@/components/home/FeaturedSection";
 import { ExperienceSection } from "@/components/home/ExperienceSection";
@@ -7,6 +8,12 @@ import { ServicesSection } from "@/components/home/ServicesSection";
 import { TripQuizModal } from "@/components/home/TripQuizModal";
 import destinationsData from "@/data/destinations.json";
 import { Destination } from "@/types/destination";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function HomePage() {
   const destinations = destinationsData as unknown as Destination[];

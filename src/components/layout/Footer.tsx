@@ -4,21 +4,34 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useApp } from "@/context/AppContext";
-import { Heart, ShieldCheck, Mail, Send, CheckCircle2, Sparkles } from "lucide-react";
+import { Heart, ShieldCheck, Mail, Send, CheckCircle2, Sparkles, AlertCircle } from "lucide-react";
 import confetti from "canvas-confetti";
 import { TOTAL_DESTINATIONS } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { formatDigits } from "@/lib/i18n";
+import { FOOTER_CONFIG } from "@/config/footer";
 
 export function Footer() {
   const { language } = useApp();
   const isBn = language === "bn";
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !email.includes("@")) return;
+    setErrorMessage("");
+    const trimmed = email.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!trimmed) {
+      setErrorMessage(isBn ? "অনুগ্রহ করে আপনার ইমেইল প্রদান করুন।" : "Please enter your email address.");
+      return;
+    }
+    if (!emailRegex.test(trimmed)) {
+      setErrorMessage(isBn ? "অনুগ্রহ করে একটি সঠিক ইমেইল প্রদান করুন।" : "Please enter a valid email address.");
+      return;
+    }
 
     confetti({
       particleCount: 80,
@@ -56,9 +69,10 @@ export function Footer() {
             >
               <Image
                 src="/assets/logo-dark.svg"
-                alt="Ghuraghuri - Bangladesh Travel Explorer"
+                alt=""
                 width={160}
                 height={50}
+                loading="lazy"
                 className="h-11 sm:h-12 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-200"
               />
               <span className="sr-only">
@@ -77,6 +91,39 @@ export function Footer() {
                   ? `${formatNumberEnBn(TOTAL_DESTINATIONS, true)}+ ভেরিফাইড পর্যটন স্পট`
                   : `${TOTAL_DESTINATIONS}+ Curated & Authentic Guides`}
               </span>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="pt-2">
+              <span className="sr-only">Social media links</span>
+              <div className="flex items-center gap-3">
+                {FOOTER_CONFIG.socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#f4a340] hover:text-black text-[#a3c4b6] transition-all flex items-center justify-center"
+                    aria-label={social.name}
+                  >
+                    {social.platform === "facebook" && (
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                      </svg>
+                    )}
+                    {social.platform === "instagram" && (
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                      </svg>
+                    )}
+                    {social.platform === "youtube" && (
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                      </svg>
+                    )}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -153,6 +200,13 @@ export function Footer() {
                   {isBn ? "আমাদের সম্পর্কে" : "About Ghuraghuri"}
                 </Link>
               </li>
+              <li className="pt-2 mt-2 border-t border-white/10 flex flex-wrap gap-x-3 gap-y-1 text-xs">
+                {FOOTER_CONFIG.legalLinks.map((item) => (
+                  <Link key={item.href} href={item.href} className="hover:text-[#f4a340] transition-colors">
+                    {isBn ? item.label_bn : item.label}
+                  </Link>
+                ))}
+              </li>
             </ul>
           </div>
 
@@ -168,7 +222,7 @@ export function Footer() {
             </p>
             {subscribed ? (
               <div className="flex items-center gap-2 p-3 bg-[#0f4a38] text-white rounded-xl border border-[#2ecc71]/40 text-sm">
-                <CheckCircle2 className="w-5 h-5 text-[#2ecc71]" />
+                <CheckCircle2 className="w-5 h-5 text-[#2ecc71] shrink-0" />
                 <span>{isBn ? "অভিনন্দন! আপনি যুক্ত হয়েছেন।" : "You are in! Welcome aboard."}</span>
               </div>
             ) : (
@@ -178,12 +232,24 @@ export function Footer() {
                   <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (errorMessage) setErrorMessage("");
+                    }}
                     placeholder={isBn ? "আপনার ইমেইল দিন..." : "Your email address..."}
-                    required
-                    className="w-full min-h-[44px] pl-9 pr-3 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-[#7ea897] text-base sm:text-xs focus:outline-none focus:border-[#f4a340]"
+                    aria-label="Email address"
+                    aria-invalid={!!errorMessage}
+                    className={`w-full min-h-[44px] pl-9 pr-3 py-2.5 rounded-xl bg-white/10 border text-white placeholder-[#7ea897] text-base sm:text-xs focus:outline-none ${
+                      errorMessage ? "border-red-400 focus:border-red-400" : "border-white/20 focus:border-[#f4a340]"
+                    }`}
                   />
                 </div>
+                {errorMessage && (
+                  <p className="text-xs text-red-400 font-medium flex items-center gap-1 mt-1">
+                    <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                    <span>{errorMessage}</span>
+                  </p>
+                )}
                 <button
                   type="submit"
                   className="w-full min-h-[44px] flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#f4a340] hover:bg-[#e67e22] text-black font-bold text-xs sm:text-sm shadow-md transition-all cursor-pointer"
@@ -198,15 +264,31 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7ea897]">
-          <p>
+          <p className="leading-relaxed text-center sm:text-left">
             © {isBn ? formatDigits(new Date().getFullYear(), true) : new Date().getFullYear()}{" "}
             {isBn
-              ? "Ghuraghuri। উন্মুক্ত ডেটা, লিফলেট এবং ওপেন-মেটিও দিয়ে নির্মিত।"
-              : "Ghuraghuri. Built with Open Data, Leaflet & Open-Meteo."}
+              ? "Ghuraghuri। উন্মুক্ত ডেটা, লিফলেট, ওপেন-মেটিও এবং "
+              : "Ghuraghuri. Built with Open Data, Leaflet, Open-Meteo & "}
+            <a
+              href={FOOTER_CONFIG.attribution.osmUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white"
+            >
+              {isBn ? FOOTER_CONFIG.attribution.osmText_bn : FOOTER_CONFIG.attribution.osmText}
+            </a>
+            {" · "}
+            <span className="text-white/80 font-medium">
+              {isBn ? FOOTER_CONFIG.creator.credit_bn : FOOTER_CONFIG.creator.credit}
+            </span>
           </p>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5 shrink-0">
             <span>{isBn ? "বাংলাদেশ ভ্রমণে আগ্রহীদের জন্য পরম" : "Crafted with"}</span>
-            <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 inline" />
+            <Heart
+              className="w-3.5 h-3.5 text-red-500 fill-red-500 inline shrink-0 mx-0.5"
+              role="img"
+              aria-label={isBn ? "ভালোবাসা" : "love"}
+            />
             <span>{isBn ? "ভালোবাসায় তৈরি।" : "for travelers discovering Bangladesh."}</span>
           </div>
         </div>

@@ -21,9 +21,11 @@ export interface Destination {
   shortDesc: string;
   description: string;
   bestTime: string;
+  bestSeason?: string;
   recommendedDays: string;
   difficulty: "Easy" | "Moderate" | "Challenging" | string;
   budget: string;
+  budgetPerDay?: string;
   travelType: string;
   activities: string[];
   attractions: string[];

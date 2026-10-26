@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
+import { TRAVEL_HUB_REMOTE_IMAGES } from "@/data/remote-images";
 
 export function ServicesSection() {
   const { language } = useApp();
@@ -28,8 +29,8 @@ export function ServicesSection() {
         : "Curated stays from tranquil hill-top bamboo cottages to beachfront luxury resorts.",
       icon: Hotel,
       href: "/hotels",
-      badge: isBn ? "যাচাইকৃত মান" : "Verified Stays",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=75",
+      badge: isBn ? "বাছাইকৃত আবাসন" : "Curated Stays",
+      image: TRAVEL_HUB_REMOTE_IMAGES.hotels,
     },
     {
       title: isBn ? "ঐতিহ্যবাহী আঞ্চলিক খাবার" : "Authentic Regional Cuisine",
@@ -39,7 +40,7 @@ export function ServicesSection() {
       icon: UtensilsCrossed,
       href: "/restaurants",
       badge: isBn ? "স্বাদের অভিযান" : "Local Flavors",
-      image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=75",
+      image: TRAVEL_HUB_REMOTE_IMAGES.dining,
     },
     {
       title: isBn ? "যাতায়াত ও সরাসরি রুট" : "Transport & Scenic Routes",
@@ -65,8 +66,8 @@ export function ServicesSection() {
 
   const trustPoints = [
     {
-      title: isBn ? "সরাসরি যোগাযোগ ও বুকিং" : "Direct Verified Booking",
-      desc: isBn ? "কোনো তৃতীয় পক্ষ বা অতিরিক্ত ফি নেই" : "No hidden commission fees",
+      title: isBn ? "নির্ভরযোগ্য লোকাল গাইড" : "Trusted Local Guides",
+      desc: isBn ? "বিনামূল্যে ব্যবহারযোগ্য, কোনো বুকিং ফি নেই" : "Free to use, no booking fees",
     },
     {
       title: isBn ? "ন্যায্য ভাড়ার স্পষ্ট তালিকা" : "Transparent Fair Fares",

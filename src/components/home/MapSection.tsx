@@ -17,8 +17,9 @@ import {
   X,
   Layers,
   Sparkles,
+  Hand,
 } from "lucide-react";
-import { TOTAL_DESTINATIONS } from "@/lib/constants";
+import { TOTAL_DESTINATIONS, DIVISION_COUNTS } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { formatDigits, getDistrictBn, getDivisionBn, CATEGORIES_BN } from "@/lib/i18n";
 import translationsData from "@/data/translations.json";
@@ -74,15 +75,12 @@ export function MapSection() {
     []
   );
 
-  // Compute destination counts per division
-  const divisionCounts = useMemo(() => {
-    const counts: Record<string, number> = { all: allDestinations.length };
-    allDestinations.forEach((d) => {
-      if (d.division) {
-        counts[d.division] = (counts[d.division] || 0) + 1;
-      }
-    });
-    return counts;
+  // Canonical destination counts per division
+  const divisionCounts = useMemo<Record<string, number>>(() => {
+    return {
+      all: TOTAL_DESTINATIONS,
+      ...DIVISION_COUNTS,
+    };
   }, []);
 
   // Filter destinations based on active division
@@ -481,6 +479,13 @@ export function MapSection() {
         {/* Division Filter Tabs: Scroll-safe container with proximity snap and edge padding */}
         <div className="flex items-center gap-2 overflow-x-auto overscroll-contain snap-x snap-proximity px-4 sm:px-0 -mx-4 sm:mx-0 scroll-px-4 pb-4 mb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {divisions.map((d) => {
+            if (
+              d.id !== "all" &&
+              divisionCounts[d.id] === undefined &&
+              process.env.NODE_ENV !== "production"
+            ) {
+              console.warn(`[MapSection] Missing destination count for division key: "${d.id}"`);
+            }
             const count = divisionCounts[d.id] || 0;
             const isSelected = selectedDivision === d.id;
 
@@ -510,20 +515,6 @@ export function MapSection() {
           <div className="w-4 shrink-0 sm:hidden" aria-hidden="true" />
         </div>
 
-        {/* Small Screen Caption Row (<=360px): Keeps status chip outside the map canvas */}
-        <div className="hidden max-[360px]:flex items-center justify-between gap-2 px-3.5 py-2 mb-3 rounded-2xl bg-[rgba(7,26,19,0.88)] border border-white/12 backdrop-blur-[8px] text-xs font-bold text-[#e8f5ee]">
-          <div className="flex items-center gap-2 min-w-0">
-            <Sparkles className="w-3.5 h-3.5 text-[#f4a340] shrink-0" />
-            <span className="truncate">
-              {formatDigits(filteredDestinations.length, isBn)}{" "}
-              {isBn ? "টি গন্তব্য" : "Destinations"}
-            </span>
-          </div>
-          <span className="text-[11px] text-emerald-300/80 font-normal shrink-0">
-            {isBn ? `জুম: ${formatDigits(currentZoom, true)}` : `Zoom: ${currentZoom}`}
-          </span>
-        </div>
-
         {/* Map Container & Overlays */}
         <div className="relative rounded-3xl overflow-hidden border border-[var(--border-color)] shadow-2xl bg-surface group pb-0.5">
           {/* Leaflet DOM Node */}
@@ -542,7 +533,7 @@ export function MapSection() {
             aria-live="polite"
           >
             <div className="px-5 py-3 rounded-2xl bg-black/85 text-white text-xs sm:text-sm font-bold shadow-2xl border border-white/20 flex items-center gap-2.5 animate-in fade-in zoom-in-95 duration-150">
-              <span className="text-base" aria-hidden="true">✌️</span>
+              <Hand className="w-5 h-5 text-white shrink-0" strokeWidth={1.75} aria-hidden="true" />
               <span>
                 {isBn
                   ? "মানচিত্র সরাতে দুটি আঙুল ব্যবহার করুন"
@@ -553,22 +544,23 @@ export function MapSection() {
 
           {/* Single Unified Map Overlay Layer (z-[700] stays strictly above .leaflet-marker-pane at 600) */}
           <div className="absolute inset-x-0 top-0 p-3 z-[700] pointer-events-none flex items-start justify-between gap-2">
-            {/* Status Chip (Top-Left, max-width calc(100% - 84px), hidden on <=360px where caption row is above) */}
-            <div className="pointer-events-auto max-[360px]:hidden max-w-[calc(100%-84px)] truncate">
-              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[rgba(7,26,19,0.88)] border border-white/15 backdrop-blur-[8px] shadow-lg text-xs font-bold text-[#e8f5ee] max-w-full">
-                <Sparkles className="w-3.5 h-3.5 text-[#f4a340] shrink-0" />
-                <span className="truncate">
-                  {formatDigits(filteredDestinations.length, isBn)}{" "}
-                  {isBn ? "টি গন্তব্য প্রদর্শিত" : "Destinations Loaded"}
-                </span>
-                <span className="text-[11px] text-emerald-300/80 font-normal shrink-0">
-                  {isBn ? `(জুম: ${formatDigits(currentZoom, true)})` : `(Zoom: ${currentZoom})`}
-                </span>
+            {/* Status Chip when filter is active (no zoom text) */}
+            {selectedDivision !== "all" ? (
+              <div className="pointer-events-auto max-w-[calc(100%-84px)] truncate">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[rgba(7,26,19,0.88)] border border-white/15 backdrop-blur-[8px] shadow-lg text-xs font-semibold text-[#e8f5ee] max-w-full">
+                  <Sparkles className="w-3.5 h-3.5 text-[#f4a340] shrink-0" />
+                  <span className="truncate">
+                    {isBn
+                      ? `${formatDigits(filteredDestinations.length, true)} টি স্থান প্রদর্শিত`
+                      : `Showing ${filteredDestinations.length} places`}
+                  </span>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div />
+            )}
 
-            {/* Spacer when status chip is moved out on <=360px */}
-            <div className="hidden max-[360px]:block" />
+            {/* Unified Themed Control Stack (Top-Right, 12px inset, column, gap:8px, buttons 44x44px) */}
 
             {/* Unified Themed Control Stack (Top-Right, 12px inset, column, gap:8px, buttons 44x44px) */}
             <div className="pointer-events-auto flex flex-col gap-2 shrink-0">
@@ -628,9 +620,9 @@ export function MapSection() {
                   {/* Spot Details */}
                   <div className="flex-1 min-w-0 space-y-1">
                     <div className="flex items-start justify-between gap-1">
-                      <h4 className="text-base font-black text-foreground truncate">
+                      <h3 className="text-base font-black text-foreground truncate">
                         {isBn ? activeSpot.name_bn || activeSpot.name : activeSpot.name}
-                      </h4>
+                      </h3>
                       <button
                         onClick={() => setActiveSpot(null)}
                         aria-label="Close"

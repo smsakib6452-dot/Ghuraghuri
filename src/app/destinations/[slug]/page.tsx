@@ -5,6 +5,7 @@ import destinationsData from "@/data/destinations.json";
 import { Destination } from "@/types/destination";
 import { JsonLd, getTouristAttractionSchema } from "@/components/seo/JsonLd";
 import { DestinationDetailClient } from "@/components/destinations/DestinationDetailClient";
+import { SITE_URL } from "@/lib/constants";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -32,16 +33,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const desc = destination.shortDesc;
   const imgUrl = destination.image.startsWith("http")
     ? destination.image
-    : `https://ghuraghuri.com/${destination.image.replace(/^\/+/, "")}`;
+    : `${SITE_URL}/${destination.image.replace(/^\/+/, "")}`;
 
   return {
     title,
     description: desc,
+    alternates: {
+      canonical: `/destinations/${destination.slug}`,
+    },
     openGraph: {
       title,
       description: desc,
       images: [{ url: imgUrl, width: 1200, height: 630, alt: destination.name }],
-      url: `https://ghuraghuri.com/destinations/${destination.slug}`,
+      url: `${SITE_URL}/destinations/${destination.slug}`,
     },
     twitter: {
       card: "summary_large_image",

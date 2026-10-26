@@ -148,7 +148,7 @@ export function Header() {
               <div className="relative flex items-center h-10 sm:h-12 w-auto">
                 <Image
                   src="/assets/logo.svg"
-                  alt="Ghuraghuri - Bangladesh Travel Explorer"
+                  alt=""
                   width={160}
                   height={50}
                   className="h-10 sm:h-12 w-auto object-contain brand-logo-light group-hover:scale-105 transition-transform duration-200 drop-shadow-sm"
@@ -156,7 +156,7 @@ export function Header() {
                 />
                 <Image
                   src="/assets/logo-dark.svg"
-                  alt="Ghuraghuri - Bangladesh Travel Explorer"
+                  alt=""
                   width={160}
                   height={50}
                   className="h-10 sm:h-12 w-auto object-contain brand-logo-dark group-hover:scale-105 transition-transform duration-200 drop-shadow-md"
@@ -270,19 +270,19 @@ export function Header() {
               <div className="relative flex items-center h-10 w-auto">
                 <Image
                   src="/assets/logo.svg"
-                  alt="Ghuraghuri - Bangladesh Travel Explorer"
+                  alt=""
                   width={140}
                   height={44}
                   className="h-10 w-auto object-contain brand-logo-light drop-shadow-sm"
-                  priority
+                  loading="lazy"
                 />
                 <Image
                   src="/assets/logo-dark.svg"
-                  alt="Ghuraghuri - Bangladesh Travel Explorer"
+                  alt=""
                   width={140}
                   height={44}
                   className="h-10 w-auto object-contain brand-logo-dark drop-shadow-md"
-                  priority
+                  loading="lazy"
                 />
               </div>
             </Link>

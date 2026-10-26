@@ -3,7 +3,20 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useApp } from "@/context/AppContext";
-import { Sparkles, X, CheckCircle2, ArrowRight } from "lucide-react";
+import {
+  Sparkles,
+  X,
+  CheckCircle2,
+  ArrowRight,
+  Users,
+  Heart,
+  UsersRound,
+  Compass,
+  Mountain,
+  Waves,
+  Trees,
+  Landmark,
+} from "lucide-react";
 import confetti from "canvas-confetti";
 
 export function TripQuizModal() {
@@ -48,7 +61,7 @@ export function TripQuizModal() {
       pick = {
         name: "Sreemangal",
         name_bn: "শ্রীমঙ্গল",
-        slug: "sreemangal",
+        slug: "srimangal",
         tagline: "Rolling tea slopes and pure serenity.",
         tagline_bn: "সবুজ চা বাগান আর নির্মল প্রকৃতি।",
       };
@@ -128,22 +141,27 @@ export function TripQuizModal() {
 
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { id: "friends", label: isBn ? "বন্ধুদের দল" : "Friends", emoji: "🎒" },
-                    { id: "couple", label: isBn ? "দম্পতি / রোমান্টিক" : "Couple", emoji: "💑" },
-                    { id: "family", label: isBn ? "পরিবার সহ" : "Family", emoji: "👨‍👩‍👧‍👦" },
-                    { id: "solo", label: isBn ? "একাকী অভিযাত্রী" : "Solo Traveler", emoji: "🧭" },
-                  ].map((option) => (
-                    <button
-                      key={option.id}
-                      onClick={() => {
-                        setStep(2);
-                      }}
-                      className="flex flex-col items-center justify-center p-5 rounded-xl border border-[var(--glass-border)] bg-[var(--surface-raised)] hover:border-[#0f4a38] dark:hover:border-[#2ecc71] hover:scale-102 transition-all cursor-pointer text-center"
-                    >
-                      <span className="text-3xl mb-2">{option.emoji}</span>
-                      <span className="font-bold text-sm text-foreground">{option.label}</span>
-                    </button>
-                  ))}
+                    { id: "friends", label: isBn ? "বন্ধুদের দল" : "Friends", icon: Users },
+                    { id: "couple", label: isBn ? "দম্পতি / রোমান্টিক" : "Couple", icon: Heart },
+                    { id: "family", label: isBn ? "পরিবার সহ" : "Family", icon: UsersRound },
+                    { id: "solo", label: isBn ? "একাকী অভিযাত্রী" : "Solo Traveler", icon: Compass },
+                  ].map((option) => {
+                    const OptionIcon = option.icon;
+                    return (
+                      <button
+                        key={option.id}
+                        onClick={() => {
+                          setStep(2);
+                        }}
+                        className="group flex flex-col items-center justify-center p-5 rounded-xl border border-[var(--glass-border)] bg-[var(--surface-raised)] hover:border-[#0f4a38] dark:hover:border-[#2ecc71] hover:scale-102 transition-all cursor-pointer text-center"
+                      >
+                        <div className="w-12 h-12 rounded-full bg-[#0f4a38]/10 dark:bg-[#2ecc71]/15 text-[#0f4a38] dark:text-[#2ecc71] flex items-center justify-center mb-2.5 transition-transform group-hover:scale-110">
+                          <OptionIcon className="w-6 h-6" strokeWidth={1.75} aria-hidden="true" />
+                        </div>
+                        <span className="font-bold text-sm text-foreground">{option.label}</span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -162,20 +180,25 @@ export function TripQuizModal() {
 
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { id: "hills", label: isBn ? "পাহাড় ও মেঘ" : "Clouds & Peaks", emoji: "⛰️" },
-                    { id: "beach", label: isBn ? "সমুদ্র সৈকত" : "Waves & Sunset", emoji: "🌊" },
-                    { id: "tea", label: isBn ? "সবুজ চা বাগান" : "Lush Tea Valleys", emoji: "🍃" },
-                    { id: "heritage", label: isBn ? "প্রাচীন ঐতিহ্য" : "Ancient Heritage", emoji: "🏛️" },
-                  ].map((option) => (
-                    <button
-                      key={option.id}
-                      onClick={() => handleFinish(option.id)}
-                      className="flex flex-col items-center justify-center p-5 rounded-xl border border-[var(--glass-border)] bg-[var(--surface-raised)] hover:border-[#0f4a38] dark:hover:border-[#2ecc71] hover:scale-102 transition-all cursor-pointer text-center"
-                    >
-                      <span className="text-3xl mb-2">{option.emoji}</span>
-                      <span className="font-bold text-sm text-foreground">{option.label}</span>
-                    </button>
-                  ))}
+                    { id: "hills", label: isBn ? "পাহাড় ও মেঘ" : "Clouds & Peaks", icon: Mountain },
+                    { id: "beach", label: isBn ? "সমুদ্র সৈকত" : "Waves & Sunset", icon: Waves },
+                    { id: "tea", label: isBn ? "সবুজ চা বাগান" : "Lush Tea Valleys", icon: Trees },
+                    { id: "heritage", label: isBn ? "প্রাচীন ঐতিহ্য" : "Ancient Heritage", icon: Landmark },
+                  ].map((option) => {
+                    const OptionIcon = option.icon;
+                    return (
+                      <button
+                        key={option.id}
+                        onClick={() => handleFinish(option.id)}
+                        className="group flex flex-col items-center justify-center p-5 rounded-xl border border-[var(--glass-border)] bg-[var(--surface-raised)] hover:border-[#0f4a38] dark:hover:border-[#2ecc71] hover:scale-102 transition-all cursor-pointer text-center"
+                      >
+                        <div className="w-12 h-12 rounded-full bg-[#0f4a38]/10 dark:bg-[#2ecc71]/15 text-[#0f4a38] dark:text-[#2ecc71] flex items-center justify-center mb-2.5 transition-transform group-hover:scale-110">
+                          <OptionIcon className="w-6 h-6" strokeWidth={1.75} aria-hidden="true" />
+                        </div>
+                        <span className="font-bold text-sm text-foreground">{option.label}</span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             )}

@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import destinations from "@/data/destinations.json";
+import { SITE_URL } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://ghuraghuri.com";
+  const baseUrl = SITE_URL;
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -31,6 +32,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/transport`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/weather`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/travel`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/chattogram`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,

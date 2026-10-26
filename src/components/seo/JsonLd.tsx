@@ -1,4 +1,5 @@
 import React from "react";
+import { SITE_URL } from "@/lib/constants";
 
 interface JsonLdProps {
   data: Record<string, unknown> | Array<Record<string, unknown>>;
@@ -22,10 +23,10 @@ export function getWebsiteSchema() {
     "@type": "WebSite",
     name: "Ghuraghuri — Bangladesh Travel Explorer",
     alternateName: ["ঘুরাঘুরি", "ঘোরাঘুরি"],
-    url: "https://ghuraghuri.com",
+    url: SITE_URL,
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://ghuraghuri.com/destinations?q={search_term_string}",
+      target: `${SITE_URL}/destinations?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
   };
@@ -37,8 +38,8 @@ export function getOrganizationSchema() {
     "@type": "Organization",
     name: "Ghuraghuri",
     legalName: "Ghuraghuri Travel Technologies",
-    url: "https://ghuraghuri.com",
-    logo: "https://ghuraghuri.com/assets/logo.png",
+    url: SITE_URL,
+    logo: `${SITE_URL}/assets/logo.png`,
     sameAs: [
       "https://facebook.com/ghuraghuri",
       "https://instagram.com/ghuraghuri",
@@ -67,8 +68,10 @@ export function getTouristAttractionSchema(destination: {
     name: destination.name,
     alternateName: destination.name_bn,
     description: destination.description,
-    image: `https://ghuraghuri.com/${destination.image}`,
-    url: `https://ghuraghuri.com/destinations/${destination.slug}`,
+    image: destination.image.startsWith("http")
+      ? destination.image
+      : `${SITE_URL}/${destination.image.replace(/^\/+/, "")}`,
+    url: `${SITE_URL}/destinations/${destination.slug}`,
     geo: {
       "@type": "GeoCoordinates",
       latitude: destination.latitude,

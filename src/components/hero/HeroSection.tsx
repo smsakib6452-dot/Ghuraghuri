@@ -7,9 +7,9 @@ import { useRouter } from "next/navigation";
 import { useApp } from "@/context/AppContext";
 import destinationsData from "@/data/destinations.json";
 import { Destination } from "@/types/destination";
-import { TOTAL_DESTINATIONS } from "@/lib/constants";
+import { TOTAL_DESTINATIONS, TOTAL_DIVISIONS, TOTAL_DISTRICTS } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
-import { CATEGORIES_BN } from "@/lib/i18n";
+import { CATEGORIES_BN, formatDigits } from "@/lib/i18n";
 import {
   Search,
   MapPin,
@@ -17,8 +17,7 @@ import {
   Pause,
   Play,
   Bookmark,
-  Sparkles,
-  ChevronDown,
+  Flame,
 } from "lucide-react";
 
 interface HeroSlide {
@@ -44,14 +43,14 @@ const HERO_SLIDES: HeroSlide[] = [
     slug: "sundarbans",
     title: "Sundarbans",
     title_bn: "সুন্দরবন",
-    location: "Khulna · UNESCO World Heritage",
-    location_bn: "খুলনা · ইউনেস্কো বিশ্ব ঐতিহ্য",
+    location: "Khulna · Mangrove Wilderness",
+    location_bn: "খুলনা · ম্যানগ্রোভ অরণ্য",
     tagline: "The largest mangrove wilderness on earth, home of the majestic Royal Bengal Tiger.",
     tagline_bn: "পৃথিবীর বৃহত্তম ম্যানগ্রোভ অরণ্য এবং রয়েল বেঙ্গল টাইগারের বিশ্বখ্যাত আবাসভূমি।",
     rating: "4.9 · UNESCO Heritage",
     rating_bn: "৪.৯ · ইউনেস্কো বিশ্ব ঐতিহ্য",
-    tags: ["🐅 Royal Bengal Tiger", "🛶 Mangrove Cruise", "🌿 UNESCO Heritage"],
-    tags_bn: ["🐅 রয়েল বেঙ্গল টাইগার", "🛶 ম্যানগ্রোভ ক্রুজ", "🌿 ইউনেস্কো ঐতিহ্য"],
+    tags: ["Royal Bengal Tiger", "Mangrove Cruise", "Bio Reserve"],
+    tags_bn: ["রয়েল বেঙ্গল টাইগার", "ম্যানগ্রোভ ক্রুজ", "বায়োস্ফিয়ার রিজার্ভ"],
   },
   {
     id: 4,
@@ -65,8 +64,8 @@ const HERO_SLIDES: HeroSlide[] = [
     tagline_bn: "মেঘের দেশে মেঘের ভেলায় ভেসে চলা এক স্বর্গীয় অনুভূতি ও কংলাকের চূড়া।",
     rating: "4.9 · Explorer Score",
     rating_bn: "৪.৯ · এক্সপ্লোরার স্কোর",
-    tags: ["☁️ Cloud Sea", "🏕️ Eco Resort", "⛰️ Konglak Peak"],
-    tags_bn: ["☁️ মেঘের সমুদ্র", "🏕️ ইকো রিসোর্ট", "⛰️ কংলাক পাহাড়"],
+    tags: ["Cloud Sea", "Eco Resort", "Konglak Peak"],
+    tags_bn: ["মেঘের সমুদ্র", "ইকো রিসোর্ট", "কংলাক পাহাড়"],
   },
   {
     id: 1,
@@ -80,13 +79,13 @@ const HERO_SLIDES: HeroSlide[] = [
     tagline_bn: "বিশ্বের দীর্ঘতম ১২০ কিমি নিরবচ্ছিন্ন প্রাকৃতিক বালুকাময় সমুদ্র সৈকত ও মেরিন ড্রাইভ।",
     rating: "4.8 · Explorer Score",
     rating_bn: "৪.৮ · এক্সপ্লোরার স্কোর",
-    tags: ["🏖️ Longest Beach", "🌅 Sunset Point", "🚗 Marine Drive"],
-    tags_bn: ["🏖️ দীর্ঘতম সৈকত", "🌅 সূর্যাস্ত পয়েন্ট", "🚗 মেরিন ড্রাইভ"],
+    tags: ["Longest Beach", "Sunset Point", "Marine Drive"],
+    tags_bn: ["দীর্ঘতম সৈকত", "সূর্যাস্ত পয়েন্ট", "মেরিন ড্রাইভ"],
   },
   {
     id: 3,
     image: "/assets/destinations/srimangal.webp",
-    slug: "sreemangal",
+    slug: "srimangal",
     title: "Sreemangal",
     title_bn: "শ্রীমঙ্গল",
     location: "Moulvibazar · Tea Capital",
@@ -95,8 +94,8 @@ const HERO_SLIDES: HeroSlide[] = [
     tagline_bn: "সবুজে ঘেরা চায়ের বাগান, লাউয়াছড়া রেইনফরেস্ট আর স্নিগ্ধ কুয়াশাভেজা সকাল।",
     rating: "4.8 · Explorer Score",
     rating_bn: "৪.৮ · এক্সপ্লোরার স্কোর",
-    tags: ["🍵 Tea Gardens", "🌲 Lawachara Forest", "☕ 7-Color Tea"],
-    tags_bn: ["🍵 চা বাগান", "🌲 লাউয়াছড়া বন", "☕ ৭ রঙের চা"],
+    tags: ["Tea Gardens", "Lawachara Forest", "7-Color Tea"],
+    tags_bn: ["চা বাগান", "লাউয়াছড়া বন", "৭ রঙের চা"],
   },
   {
     id: 2,
@@ -110,24 +109,21 @@ const HERO_SLIDES: HeroSlide[] = [
     tagline_bn: "স্বচ্ছ নীল জলরাশি, প্রবাল প্রাচীর আর নারিকেল বাগানের অপার নিস্তব্ধতা।",
     rating: "4.9 · Explorer Score",
     rating_bn: "৪.৯ · এক্সপ্লোরার স্কোর",
-    tags: ["🏝️ Coral Reefs", "🌊 Blue Waters", "🥥 Coconut Groves"],
-    tags_bn: ["🏝️ প্রবাল প্রাচীর", "🌊 নীল জলরাশি", "🥥 নারিকেল বাগান"],
+    tags: ["Coral Reefs", "Blue Waters", "Coconut Groves"],
+    tags_bn: ["প্রবাল প্রাচীর", "নীল জলরাশি", "নারিকেল বাগান"],
   },
 ];
 
-const TICKER_ITEMS = [
-  { name: "Sundarbans", name_bn: "সুন্দরবন", emoji: "🐅", loc: "Khulna", loc_bn: "খুলনা" },
-  { name: "Sajek Valley", name_bn: "সাজেক ভ্যালি", emoji: "☁️", loc: "Rangamati", loc_bn: "রাঙ্গামাটি" },
-  { name: "Cox's Bazar", name_bn: "কক্সবাজার", emoji: "🏖️", loc: "Bay of Bengal", loc_bn: "বঙ্গোপসাগর" },
-  { name: "Sreemangal", name_bn: "শ্রীমঙ্গল", emoji: "🍵", loc: "Sylhet", loc_bn: "সিলেট" },
-  { name: "Saint Martin's", name_bn: "সেন্ট মার্টিন", emoji: "🏝️", loc: "Coral Island", loc_bn: "প্রবাল দ্বীপ" },
-  { name: "Tanguar Haor", name_bn: "টাঙ্গুয়ার হাওর", emoji: "🛶", loc: "Sunamganj", loc_bn: "সুনামগঞ্জ" },
-  { name: "Nilgiri", name_bn: "নীলগিরি", emoji: "⛰️", loc: "Bandarban", loc_bn: "বান্দরবান" },
-  { name: "Ahsan Manzil", name_bn: "আহসান মঞ্জিল", emoji: "🏛️", loc: "Dhaka", loc_bn: "ঢাকা" },
-  { name: "Kuakata", name_bn: "কুয়াকাটা", emoji: "🌅", loc: "Barishal", loc_bn: "বরিশাল" },
-  { name: "Jaflong", name_bn: "জাফলং", emoji: "💎", loc: "Sylhet", loc_bn: "সিলেট" },
-  { name: "Bichanakandi", name_bn: "বিছনাকান্দি", emoji: "🌊", loc: "Sylhet", loc_bn: "সিলেট" },
-  { name: "Paharpur", name_bn: "পাহাড়পুর", emoji: "🏺", loc: "Naogaon", loc_bn: "নওগাঁ" },
+const HERO_DIVISIONS = [
+  { name: "", label: "All", label_bn: "সব বিভাগ" },
+  { name: "Chattogram", label: "Chattogram", label_bn: "চট্টগ্রাম" },
+  { name: "Sylhet", label: "Sylhet", label_bn: "সিলেট" },
+  { name: "Dhaka", label: "Dhaka", label_bn: "ঢাকা" },
+  { name: "Khulna", label: "Khulna", label_bn: "খুলনা" },
+  { name: "Barishal", label: "Barishal", label_bn: "বরিশাল" },
+  { name: "Rajshahi", label: "Rajshahi", label_bn: "রাজশাহী" },
+  { name: "Rangpur", label: "Rangpur", label_bn: "রংপুর" },
+  { name: "Mymensingh", label: "Mymensingh", label_bn: "ময়মনসিংহ" },
 ];
 
 export function HeroSection() {
@@ -140,10 +136,98 @@ export function HeroSection() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedDivision, setSelectedDivision] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [searchMode, setSearchMode] = useState<"spots" | "hotels" | "food" | "transport">("spots");
+  const [mountedOtherSlides, setMountedOtherSlides] = useState(false);
+
+  // Live Tourism Weather Pulse State (Connected to Open-Meteo)
+  const [liveWeather, setLiveWeather] = useState<{
+    coxsBazar: number | null;
+    sajek: number | null;
+    sreemangal: number | null;
+    khulna: number | null;
+    lastUpdated: Date | null;
+    isLoading: boolean;
+    isError: boolean;
+  }>({
+    coxsBazar: 33,
+    sajek: 32,
+    sreemangal: 33,
+    khulna: 33,
+    lastUpdated: null,
+    isLoading: true,
+    isError: false,
+  });
+
+  // Rotate between at least 3 featured destinations on client mount/reload
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * HERO_SLIDES.length);
+    setActiveSlide(randomIndex);
+  }, []);
+
+  // Fetch real-time weather from Open-Meteo for 4 key hubs
+  useEffect(() => {
+    let isSubscribed = true;
+    const fetchLivePulse = async () => {
+      try {
+        const res = await fetch(
+          "https://api.open-meteo.com/v1/forecast?latitude=21.4272,23.3820,24.3065,22.8456&longitude=92.0058,92.2938,91.7296,89.5403&current=temperature_2m&timezone=Asia%2FDhaka"
+        );
+        if (!res.ok) throw new Error("Weather fetch failed");
+        const data = await res.json();
+        if (Array.isArray(data) && data.length >= 4 && isSubscribed) {
+          setLiveWeather({
+            coxsBazar: Math.round(data[0].current.temperature_2m),
+            sajek: Math.round(data[1].current.temperature_2m),
+            sreemangal: Math.round(data[2].current.temperature_2m),
+            khulna: Math.round(data[3].current.temperature_2m),
+            lastUpdated: new Date(),
+            isLoading: false,
+            isError: false,
+          });
+        }
+      } catch {
+        if (isSubscribed) {
+          setLiveWeather((prev) => ({
+            ...prev,
+            isLoading: false,
+            isError: true,
+            lastUpdated: prev.lastUpdated || new Date(),
+          }));
+        }
+      }
+    };
+
+    fetchLivePulse();
+    const timer = setInterval(fetchLivePulse, 10 * 60 * 1000);
+    return () => {
+      isSubscribed = false;
+      clearInterval(timer);
+    };
+  }, []);
 
   const searchBoxRef = useRef<HTMLDivElement>(null);
   const allDestinations = destinationsData as unknown as Destination[];
+
+  // Idle deferral callback for slides 2-5 after slide 1 loads
+  const handleFirstSlideLoaded = () => {
+    if (typeof window !== "undefined") {
+      if ("requestIdleCallback" in window) {
+        (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback(
+          () => setMountedOtherSlides(true),
+          { timeout: 1500 }
+        );
+      } else {
+        setTimeout(() => setMountedOtherSlides(true), 1500);
+      }
+    }
+  };
+
+  // Fallback timer to guarantee slides 2-5 mount even if onLoad already completed before hydration
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMountedOtherSlides(true);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Slide rotation timer
   useEffect(() => {
@@ -155,7 +239,7 @@ export function HeroSection() {
   }, [isPlaying]);
 
   const suggestions = useMemo(() => {
-    if (!searchQuery.trim() || searchMode !== "spots") return [];
+    if (!searchQuery.trim()) return [];
     const q = searchQuery.toLowerCase();
     return allDestinations
       .filter((d) => {
@@ -165,7 +249,7 @@ export function HeroSection() {
         return nameMatch || nameBnMatch || distMatch;
       })
       .slice(0, 5);
-  }, [searchQuery, searchMode, allDestinations]);
+  }, [searchQuery, allDestinations]);
 
   // Close suggestions on outside click
   useEffect(() => {
@@ -180,18 +264,6 @@ export function HeroSection() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (searchMode === "hotels") {
-      router.push("/hotels");
-      return;
-    }
-    if (searchMode === "food") {
-      router.push("/restaurants");
-      return;
-    }
-    if (searchMode === "transport") {
-      router.push("/transport");
-      return;
-    }
     const params = new URLSearchParams();
     if (searchQuery.trim()) params.set("q", searchQuery.trim());
     if (selectedDivision) params.set("division", selectedDivision);
@@ -203,48 +275,53 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative min-h-[92vh] flex flex-col justify-between overflow-hidden bg-[#061B14]"
+      className="relative flex flex-col justify-between overflow-hidden bg-[#061B14]"
       aria-label="Bangladesh Travel Hero"
     >
-      {/* Background Cinematic Crossfade Slider */}
+      {/* Background Cinematic Crossfade Slider (Slide 1 eager with priority; slides 2-5 deferred until idle) */}
       <div className="absolute inset-0 z-0">
-        {HERO_SLIDES.map((slide, idx) => (
-          <div
-            key={slide.image}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === activeSlide ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
-            }`}
-          >
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              fill
-              sizes="100vw"
-              priority={idx === 0}
-              className="object-cover transition-transform duration-7000 ease-linear scale-105"
-            />
-            {/* Multi-layered directional gradient overlay (strengthened left side for readability, light right side for depth) */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#061B14]/95 via-[#061B14]/65 to-[#061B14]/15" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#061B14]/85 via-transparent to-black/25" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12)_0%,transparent_60%)] pointer-events-none" />
-          </div>
-        ))}
+        {HERO_SLIDES.map((slide, idx) => {
+          if (idx > 0 && !mountedOtherSlides) return null;
+          return (
+            <div
+              key={slide.image}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                idx === activeSlide ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
+              }`}
+            >
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                sizes="100vw"
+                priority={idx === 0}
+                loading={idx === 0 ? "eager" : "lazy"}
+                onLoad={idx === 0 ? handleFirstSlideLoaded : undefined}
+                className="object-cover transition-transform duration-7000 ease-linear scale-105"
+              />
+              {/* Multi-layered directional gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#061B14]/95 via-[#061B14]/65 to-[#061B14]/15" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#061B14]/85 via-transparent to-black/25" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12)_0%,transparent_60%)] pointer-events-none" />
+            </div>
+          );
+        })}
       </div>
 
-      {/* Main 2-Column Hero Content Grid (Streamlined top spacing to fit above the fold on 1080p displays) */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-14 lg:pt-16 pb-6 sm:pb-8 flex-1 flex items-center w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 items-center w-full">
+      {/* Main 2-Column Hero Content Grid (Mobile fold optimized) */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-10 flex-1 flex items-center w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center w-full">
           
-          {/* Left Column: Eyebrow, Classic Title, Subtitle, Search, Stats */}
-          <div className="lg:col-span-7 text-left text-white space-y-6">
+          {/* Left Column: Eyebrow, Title, Subtitle, Search, Division Chips, Trending */}
+          <div className="lg:col-span-7 text-left text-white space-y-4 sm:space-y-5">
             
             {/* Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold tracking-widest text-[#35D07F] uppercase shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold tracking-widest text-[#35D07F] uppercase shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-ping" />
               <span>{isBn ? "বাংলাদেশ আবিষ্কার" : "EXPLORE BANGLADESH"}</span>
             </div>
 
-            {/* Classic Authentic Title: One Country, Endless Stories */}
+            {/* Title: One Country, Endless Stories */}
             <h1
               className="text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[1.12]"
               style={{ textShadow: "0 2px 12px rgba(0,0,0,0.45)" }}
@@ -268,7 +345,7 @@ export function HeroSection() {
 
             {/* Subheading */}
             <p
-              className="max-w-xl text-base sm:text-lg text-[#D1E0D8] font-normal leading-relaxed"
+              className="max-w-xl text-sm sm:text-base text-[#D1E0D8] font-normal leading-relaxed"
               style={{ textShadow: "0 2px 12px rgba(0,0,0,0.45)" }}
             >
               {isBn
@@ -276,62 +353,14 @@ export function HeroSection() {
                 : "From beaches to hills, rivers to mangrove forests — discover the stories that make Bangladesh unforgettable with curated maps, hotels, and travel guides."}
             </p>
 
-            {/* Search Scope Switcher Tabs */}
-            <div className="flex items-center gap-1.5 p-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 w-fit shadow-lg">
-              <button
-                type="button"
-                onClick={() => setSearchMode("spots")}
-                className={`px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  searchMode === "spots"
-                    ? "bg-[#10B981] text-black shadow-md font-extrabold"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                📍 {isBn ? "দর্শনীয় স্থান" : "Destinations"}
-              </button>
-              <button
-                type="button"
-                onClick={() => setSearchMode("hotels")}
-                className={`px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  searchMode === "hotels"
-                    ? "bg-[#10B981] text-black shadow-md font-extrabold"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                🏨 {isBn ? "হোটেল ও রিসোর্ট" : "Hotels"}
-              </button>
-              <button
-                type="button"
-                onClick={() => setSearchMode("food")}
-                className={`px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  searchMode === "food"
-                    ? "bg-[#10B981] text-black shadow-md font-extrabold"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                🍲 {isBn ? "ঐতিহ্যবাহী খাবার" : "Food"}
-              </button>
-              <button
-                type="button"
-                onClick={() => setSearchMode("transport")}
-                className={`px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  searchMode === "transport"
-                    ? "bg-[#10B981] text-black shadow-md font-extrabold"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                🚌 {isBn ? "যাতায়াত" : "Transit"}
-              </button>
-            </div>
-
-            {/* Search Bar with Autocomplete */}
+            {/* Main Search Bar (Dedicated to Destinations) */}
             <div className="relative max-w-xl" ref={searchBoxRef}>
               <form
                 onSubmit={handleSearch}
-                className="p-1.5 sm:p-2 rounded-2xl sm:rounded-full bg-white/95 dark:bg-[#0B2E22]/95 backdrop-blur-xl border border-white/30 shadow-2xl flex flex-col sm:flex-row items-center gap-2 transition-all focus-within:ring-2 focus-within:ring-[#10B981]"
+                className="p-1.5 sm:p-2 rounded-2xl sm:rounded-full bg-white/95 dark:bg-[#0B2E22]/95 backdrop-blur-xl border border-white/30 shadow-2xl flex items-center gap-2 transition-all focus-within:ring-2 focus-within:ring-[#10B981]"
               >
-                {/* Search Text Input (Flex-grow with non-truncated placeholder) */}
-                <div className="flex items-center gap-2.5 w-full sm:flex-1 px-4 py-1.5 text-foreground min-w-0">
+                {/* Search Text Input */}
+                <div className="flex items-center gap-2.5 w-full flex-1 px-4 py-1.5 text-foreground min-w-0">
                   <Search className="w-5 h-5 text-[#10B981] shrink-0" />
                   <input
                     type="text"
@@ -344,67 +373,23 @@ export function HeroSection() {
                       if (suggestions.length > 0) setShowSuggestions(true);
                     }}
                     placeholder={
-                      searchMode === "hotels"
-                        ? isBn ? "হোটেল ও রিসোর্ট খুঁজুন..." : "Search hotels, resorts..."
-                        : searchMode === "food"
-                        ? isBn ? "ঐতিহ্যবাহী খাবার খুঁজুন..." : "Find regional food..."
-                        : searchMode === "transport"
-                        ? isBn ? "বাস-ট্রেন টিকেট খুঁজুন..." : "Search transit routes..."
-                        : isBn ? "স্থান বা হোটেল খুঁজুন..." : "Search places, hotels..."
+                      selectedDivision
+                        ? isBn
+                          ? `${selectedDivision} বিভাগের স্থান খুঁজুন...`
+                          : `Search places in ${selectedDivision}...`
+                        : isBn
+                        ? "স্থান বা গন্তব্য খুঁজুন..."
+                        : "Search places, destinations..."
                     }
                     className="w-full flex-1 min-w-0 bg-transparent text-sm sm:text-base font-medium placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none truncate"
-                    aria-label="Search places, hotels"
+                    aria-label={isBn ? "স্থান বা গন্তব্য খুঁজুন" : "Search places, destinations"}
                   />
                 </div>
-
-                {/* Division Filter with WCAG AA Contrast & Custom Chevron (Active in spots mode) */}
-                {searchMode === "spots" && (
-                  <div className="relative flex items-center gap-1.5 w-full sm:w-auto px-3 py-1.5 border-t sm:border-t-0 sm:border-l border-gray-300 dark:border-white/20">
-                    <MapPin className="w-4 h-4 text-[#F4A340] shrink-0" />
-                    <select
-                      value={selectedDivision}
-                      onChange={(e) => setSelectedDivision(e.target.value)}
-                      className="w-full sm:w-36 bg-transparent text-xs sm:text-sm font-bold text-gray-900 dark:text-white focus:outline-none cursor-pointer py-1 pr-6 appearance-none transition-colors"
-                      aria-label="Filter by division"
-                    >
-                      <option value="" className="bg-white text-gray-900 dark:bg-[#061B14] dark:text-white">
-                        {isBn ? "সব বিভাগ" : "All Divisions"}
-                      </option>
-                      <option value="Chattogram" className="bg-white text-gray-900 dark:bg-[#061B14] dark:text-white">
-                        {isBn ? "চট্টগ্রাম" : "Chattogram"}
-                      </option>
-                      <option value="Sylhet" className="bg-white text-gray-900 dark:bg-[#061B14] dark:text-white">
-                        {isBn ? "সিলেট" : "Sylhet"}
-                      </option>
-                      <option value="Khulna" className="bg-white text-gray-900 dark:bg-[#061B14] dark:text-white">
-                        {isBn ? "খুলনা" : "Khulna"}
-                      </option>
-                      <option value="Barishal" className="bg-white text-gray-900 dark:bg-[#061B14] dark:text-white">
-                        {isBn ? "বরিশাল" : "Barishal"}
-                      </option>
-                      <option value="Dhaka" className="bg-white text-gray-900 dark:bg-[#061B14] dark:text-white">
-                        {isBn ? "ঢাকা" : "Dhaka"}
-                      </option>
-                      <option value="Rajshahi" className="bg-white text-gray-900 dark:bg-[#061B14] dark:text-white">
-                        {isBn ? "রাজশাহী" : "Rajshahi"}
-                      </option>
-                      <option value="Rangpur" className="bg-white text-gray-900 dark:bg-[#061B14] dark:text-white">
-                        {isBn ? "রংপুর" : "Rangpur"}
-                      </option>
-                      <option value="Mymensingh" className="bg-white text-gray-900 dark:bg-[#061B14] dark:text-white">
-                        {isBn ? "ময়মনসিংহ" : "Mymensingh"}
-                      </option>
-                    </select>
-                    <div className="absolute right-2.5 pointer-events-none text-gray-700 dark:text-white/85">
-                      <ChevronDown className="w-3.5 h-3.5" />
-                    </div>
-                  </div>
-                )}
 
                 {/* Submit Search Button */}
                 <button
                   type="submit"
-                  className="w-full sm:w-auto min-h-[42px] px-6 py-2.5 rounded-xl sm:rounded-full bg-gradient-to-r from-[#10B981] to-[#0f4a38] hover:from-[#35D07F] hover:to-[#10B981] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0"
+                  className="min-h-[42px] px-6 py-2.5 rounded-xl sm:rounded-full bg-gradient-to-r from-[#10B981] to-[#0f4a38] hover:from-[#35D07F] hover:to-[#10B981] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0"
                 >
                   <span>{isBn ? "খুঁজুন" : "Search"}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -428,6 +413,7 @@ export function HeroSection() {
                             alt={item.name}
                             fill
                             sizes="40px"
+                            loading="lazy"
                             className="object-cover"
                           />
                         </div>
@@ -449,131 +435,75 @@ export function HeroSection() {
               )}
             </div>
 
-            {/* Trending Quick Chips */}
-            <div className="flex flex-wrap items-center gap-1.5 text-xs text-white/90">
-              <span className="font-bold text-[#F4A340] mr-1 flex items-center gap-1">
-                <span>🔥</span>
+            {/* Division Filter Chips (Directly below search, sets division filter, single-line horizontal scroll with soft fade) */}
+            <div
+              className="relative w-full max-w-xl overflow-hidden py-0.5"
+              style={{
+                maskImage: "linear-gradient(to right, black calc(100% - 28px), transparent 100%)",
+                WebkitMaskImage: "linear-gradient(to right, black calc(100% - 28px), transparent 100%)",
+              }}
+            >
+              <div
+                className="flex items-center gap-1.5 overflow-x-auto whitespace-nowrap py-0.5"
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              >
+                {HERO_DIVISIONS.map((div) => {
+                  const isActive = selectedDivision === div.name;
+                  return (
+                    <button
+                      key={div.name || "all"}
+                      type="button"
+                      onClick={() => {
+                        if (div.name === "") {
+                          setSelectedDivision("");
+                        } else {
+                          setSelectedDivision(selectedDivision === div.name ? "" : div.name);
+                        }
+                      }}
+                      className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer border ${
+                        isActive
+                          ? "bg-[#10B981] text-[#061B14] font-black border-[#10B981] shadow-md"
+                          : "bg-white/10 hover:bg-white/20 text-white/90 border-white/20 hover:border-white/40"
+                      }`}
+                      aria-pressed={isActive}
+                    >
+                      {isBn ? div.label_bn : div.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Trending Quick Chips (Directly below division chips in a single line) */}
+            <div
+              className="flex items-center gap-1.5 text-xs text-white/90 overflow-x-auto whitespace-nowrap py-0.5 max-w-xl"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              <span className="font-bold text-[#F4A340] mr-1 flex items-center gap-1.5 shrink-0">
+                <Flame className="w-3.5 h-3.5 text-[#F4A340] shrink-0" strokeWidth={2} />
                 <span>{isBn ? "ট্রেন্ডিং:" : "Trending:"}</span>
               </span>
               {[
-                { name: "Sajek Valley", name_bn: "☁️ সাজেক", slug: "sajek-valley" },
-                { name: "Cox's Bazar", name_bn: "🏖️ কক্সবাজার", slug: "coxs-bazar" },
-                { name: "Sreemangal", name_bn: "🍵 শ্রীমঙ্গল", slug: "sreemangal" },
-                { name: "Tanguar Haor", name_bn: "🛶 টাঙ্গুয়ার হাওর", slug: "tanguar-haor" },
-                { name: "Sundarbans", name_bn: "🐅 সুন্দরবন", slug: "sundarbans" },
-                { name: "Nilgiri", name_bn: "⛰️ নীলগিরি", slug: "nilgiri" },
+                { name: "Sajek Valley", name_bn: "সাজেক", slug: "sajek-valley" },
+                { name: "Cox's Bazar", name_bn: "কক্সবাজার", slug: "coxs-bazar" },
+                { name: "Sreemangal", name_bn: "শ্রীমঙ্গল", slug: "srimangal" },
+                { name: "Tanguar Haor", name_bn: "টাঙ্গুয়ার হাওর", slug: "tanguar-haor" },
+                { name: "Sundarbans", name_bn: "সুন্দরবন", slug: "sundarbans" },
+                { name: "Nilgiri", name_bn: "নীলগিরি", slug: "nilgiri" },
               ].map((pop) => (
                 <Link
                   key={pop.slug}
                   href={`/destinations/${pop.slug}`}
-                  className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 transition-all font-semibold backdrop-blur-sm"
+                  className="shrink-0 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 transition-all font-semibold backdrop-blur-sm"
                 >
                   {isBn ? pop.name_bn : pop.name}
                 </Link>
               ))}
             </div>
 
-            {/* Verified Counter Stats Cards (Harmonized, tabular-nums, aligned baseline & identical height) */}
-            <div className="grid grid-cols-3 gap-3 pt-2 border-t border-white/15 max-w-lg items-stretch">
-              <Link
-                href="/destinations"
-                className="p-3 rounded-2xl flex flex-col items-center justify-end gap-0.5 text-center group transition-all h-full"
-                style={{
-                  background: "rgba(6,24,18,0.5)",
-                  border: "1px solid rgba(255,255,255,0.16)",
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
-                }}
-              >
-                <div className="text-xl sm:text-2xl font-black text-[#35D07F] group-hover:scale-105 transition-transform tabular-nums">
-                  {isBn ? `${formatNumberEnBn(TOTAL_DESTINATIONS, true)}+` : `${TOTAL_DESTINATIONS}+`}
-                </div>
-                <div className="text-xs font-medium text-[#D1E0D8] min-h-[2.4em] flex items-center justify-center leading-tight">
-                  {isBn ? "দর্শনীয় স্থান" : "Places to Explore"}
-                </div>
-              </Link>
-
-              <Link
-                href="/destinations"
-                className="p-3 rounded-2xl flex flex-col items-center justify-end gap-0.5 text-center group transition-all h-full"
-                style={{
-                  background: "rgba(6,24,18,0.5)",
-                  border: "1px solid rgba(255,255,255,0.16)",
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
-                }}
-              >
-                <div className="text-xl sm:text-2xl font-black text-[#35D07F] group-hover:scale-105 transition-transform tabular-nums">
-                  {isBn ? "৮" : "8"}
-                </div>
-                <div className="text-xs font-medium text-[#D1E0D8] min-h-[2.4em] flex items-center justify-center leading-tight">
-                  {isBn ? "প্রশাসনিক বিভাগ" : "Divisions"}
-                </div>
-              </Link>
-
-              <Link
-                href="/destinations"
-                className="p-3 rounded-2xl flex flex-col items-center justify-end gap-0.5 text-center group transition-all h-full"
-                style={{
-                  background: "rgba(6,24,18,0.5)",
-                  border: "1px solid rgba(255,255,255,0.16)",
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
-                }}
-              >
-                <div className="text-xl sm:text-2xl font-black text-[#35D07F] group-hover:scale-105 transition-transform tabular-nums">
-                  {isBn ? "৬৪" : "64"}
-                </div>
-                <div className="text-xs font-medium text-[#D1E0D8] min-h-[2.4em] flex items-center justify-center leading-tight">
-                  {isBn ? "ঐতিহ্যবাহী জেলা" : "Districts"}
-                </div>
-              </Link>
-            </div>
-
-            {/* Live Tourism Weather Pulse Bar (Marquee Viewport + Non-Transparent CTA) */}
-            <div className="pt-0.5 max-w-lg">
-              <div className="w-full flex items-center justify-between rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md text-xs group overflow-hidden">
-                {/* Marquee Viewport with Edge Masking */}
-                <div
-                  className="flex items-center gap-2 overflow-hidden flex-1 min-w-0 p-2.5 pl-3.5"
-                  style={{
-                    maskImage: "linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 32px), transparent 100%)",
-                    WebkitMaskImage: "linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 32px), transparent 100%)",
-                  }}
-                >
-                  <span className="font-bold text-[#35D07F] flex items-center gap-1.5 shrink-0">
-                    <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-                    <span>{isBn ? "লাইভ পালস:" : "Live Pulse:"}</span>
-                  </span>
-                  <div className="overflow-hidden relative flex-1 min-w-0">
-                    <div className="whitespace-nowrap flex items-center gap-6 text-white/95 text-xs font-medium animate-marquee hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-reduce:[animation-play-state:paused]">
-                      <span>
-                        {isBn
-                          ? "🏖️ কক্সবাজার ২৮°C · ☁️ সাজেক ২২°C · 🍵 শ্রীমঙ্গল ২৪°C · 🐅 খুলনা ২৬°C"
-                          : "🏖️ Cox's Bazar 28°C · ☁️ Sajek 22°C · 🍵 Sreemangal 24°C · 🐅 Khulna 26°C"}
-                      </span>
-                      <span aria-hidden="true">
-                        {isBn
-                          ? "🏖️ কক্সবাজার ২৮°C · ☁️ সাজেক ২২°C · 🍵 শ্রীমঙ্গল ২৪°C · 🐅 খুলনা ২৬°C"
-                          : "🏖️ Cox's Bazar 28°C · ☁️ Sajek 22°C · 🍵 Sreemangal 24°C · 🐅 Khulna 26°C"}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Separate Dedicated Weather Button with Non-Transparent Surface (Text never slides under it) */}
-                <Link
-                  href="/weather"
-                  className="flex items-center gap-1.5 px-3.5 py-3 text-[#35D07F] font-bold shrink-0 bg-[#07251c] hover:bg-[#0c3528] border-l border-white/20 transition-colors z-10 focus:outline-none focus:ring-1 focus:ring-[#35D07F]"
-                >
-                  <span>{isBn ? "আবহাওয়া" : "Weather"}</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
           </div>
 
-          {/* Right Column: The Iconic FEATURED SPOTLIGHT Card */}
+          {/* Right Column: FEATURED SPOTLIGHT Card */}
           <div className="lg:col-span-5 w-full max-w-md mx-auto lg:max-w-none">
             <div className="relative rounded-3xl overflow-hidden bg-[#0B2E22]/90 dark:bg-[#0c241c]/95 backdrop-blur-2xl border border-white/25 shadow-2xl p-4 sm:p-5 text-white transition-all duration-300 hover:shadow-[0_20px_50px_rgba(16,185,129,0.25)]">
               
@@ -581,12 +511,10 @@ export function HeroSection() {
               <div className="flex items-center justify-between mb-3.5 gap-2">
                 <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-[#F4A340]/20 border border-[#F4A340]/40 text-xs font-black text-[#F4A340] whitespace-nowrap shrink-0">
                   <span className="w-2 h-2 rounded-full bg-[#F4A340] animate-pulse shrink-0" />
-                  <span className="sm:hidden">{isBn ? "স্পটলাইট" : "FEATURED"}</span>
-                  <span className="hidden sm:inline">{isBn ? "নির্বাচিত স্পটলাইট" : "FEATURED SPOTLIGHT"}</span>
+                  <span>{isBn ? "নির্বাচিত স্পটলাইট" : "FEATURED SPOTLIGHT"}</span>
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
-                  {/* Real Interactive Bookmark Button */}
                   <button
                     type="button"
                     onClick={() => toggleBookmark(currentSlide.id)}
@@ -604,20 +532,21 @@ export function HeroSection() {
               </div>
 
               {/* Spotlight Image Card */}
-              <div className="relative h-56 sm:h-64 rounded-2xl overflow-hidden mb-4 group">
+              <div className="relative aspect-[16/10] sm:aspect-auto h-52 sm:h-60 rounded-2xl overflow-hidden mb-4 group">
                 <Image
                   src={currentSlide.image}
                   alt={currentSlide.title}
                   fill
                   sizes="(max-width: 1024px) 100vw, 440px"
+                  loading="lazy"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#061B14] via-black/25 to-transparent" />
                 
                 <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <h3 className="text-2xl sm:text-3xl font-black drop-shadow-md">
+                  <h2 className="text-2xl sm:text-3xl font-black drop-shadow-md">
                     {isBn ? currentSlide.title_bn : currentSlide.title}
-                  </h3>
+                  </h2>
                   <p className="text-xs text-[#D1E0D8] font-medium flex items-center gap-1.5 mt-0.5">
                     <MapPin className="w-3.5 h-3.5 text-[#F4A340]" />
                     <span>{isBn ? currentSlide.location_bn : currentSlide.location}</span>
@@ -645,7 +574,7 @@ export function HeroSection() {
                 {/* Explore CTA Button */}
                 <Link
                   href={`/destinations/${currentSlide.slug}`}
-                  className="w-full mt-2 min-h-[44px] py-3 px-4 rounded-xl bg-gradient-to-r from-[#10B981] to-[#0f4a38] hover:from-[#35D07F] hover:to-[#10B981] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer"
+                  className="w-full mt-2 min-h-[42px] py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#10B981] to-[#0f4a38] hover:from-[#35D07F] hover:to-[#10B981] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   <span>{isBn ? "গন্তব্যের বিস্তারিত দেখুন" : "Explore Destination"}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
@@ -656,18 +585,70 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom Floating Control Ribbon & Ticker */}
-      <div className="relative z-10 w-full bg-[#061B14]/90 backdrop-blur-md border-t border-white/15">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs text-[#D1E0D8]">
+      {/* BELOW-HERO STRIP: ONE Slim Unified Strip (Counters + Live Pulse Weather + Slide Controls) */}
+      <div className="relative z-10 w-full bg-[#061B14]/95 backdrop-blur-xl border-t border-white/15 py-2.5 sm:py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-[#D1E0D8]">
           
-          {/* Location Indicator & Pause/Play Control */}
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 font-bold text-white">
-              <MapPin className="w-3.5 h-3.5 text-[#F4A340]" />
-              <span>{isBn ? currentSlide.location_bn : currentSlide.location}</span>
-            </div>
+          {/* 1. Verified Counter Stats */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6 shrink-0">
+            <Link href="/destinations" className="flex items-center gap-1.5 group hover:opacity-90 transition-opacity">
+              <span className="text-sm sm:text-base font-black text-[#35D07F] tabular-nums">
+                {isBn ? `${formatNumberEnBn(TOTAL_DESTINATIONS, true)}+` : `${TOTAL_DESTINATIONS}+`}
+              </span>
+              <span className="text-xs text-[#D1E0D8] font-medium">
+                {isBn ? "দর্শনীয় স্থান" : "Places"}
+              </span>
+            </Link>
+            <span className="text-white/20">•</span>
+            <Link href="/destinations" className="flex items-center gap-1.5 group hover:opacity-90 transition-opacity">
+              <span className="text-sm sm:text-base font-black text-[#35D07F] tabular-nums">
+                {formatNumberEnBn(TOTAL_DIVISIONS, isBn)}
+              </span>
+              <span className="text-xs text-[#D1E0D8] font-medium">
+                {isBn ? "বিভাগ" : "Divisions"}
+              </span>
+            </Link>
+            <span className="text-white/20">•</span>
+            <Link href="/destinations" className="flex items-center gap-1.5 group hover:opacity-90 transition-opacity">
+              <span className="text-sm sm:text-base font-black text-[#35D07F] tabular-nums">
+                {formatNumberEnBn(TOTAL_DISTRICTS, isBn)}
+              </span>
+              <span className="text-xs text-[#D1E0D8] font-medium">
+                {isBn ? "জেলা" : "Districts"}
+              </span>
+            </Link>
+          </div>
 
-            {/* Slider Dots */}
+          {/* 2. Live Tourism Weather Pulse Bar (Connected to Open-Meteo API) */}
+          <div className="flex items-center gap-2 w-full md:w-auto md:flex-1 md:max-w-xl md:mx-4 overflow-hidden rounded-full bg-white/5 border border-white/10 px-3 py-1.5">
+            <span className="font-bold text-[#35D07F] flex items-center gap-1.5 shrink-0 text-xs">
+              <span className={`w-2 h-2 rounded-full ${liveWeather.isLoading ? "bg-amber-400" : liveWeather.isError ? "bg-amber-400" : "bg-[#10B981]"} animate-pulse`} />
+              <span>{isBn ? "লাইভ পালস:" : "Live Pulse:"}</span>
+            </span>
+            <div className="overflow-hidden relative flex-1 min-w-0">
+              <div className="whitespace-nowrap flex items-center gap-6 text-white/95 text-xs font-medium animate-marquee hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-reduce:[animation-play-state:paused]">
+                <span>
+                  {`${isBn ? "🏖️ কক্সবাজার" : "🏖️ Cox's Bazar"} ${liveWeather.coxsBazar !== null ? formatDigits(liveWeather.coxsBazar, isBn) : "২৮"}°C · ${isBn ? "☁️ সাজেক" : "☁️ Sajek"} ${liveWeather.sajek !== null ? formatDigits(liveWeather.sajek, isBn) : "২২"}°C · ${isBn ? "🍵 শ্রীমঙ্গল" : "🍵 Sreemangal"} ${liveWeather.sreemangal !== null ? formatDigits(liveWeather.sreemangal, isBn) : "২৪"}°C · ${isBn ? "🐅 খুলনা" : "🐅 Khulna"} ${liveWeather.khulna !== null ? formatDigits(liveWeather.khulna, isBn) : "২৬"}°C`}
+                </span>
+                <span aria-hidden="true">
+                  {`${isBn ? "🏖️ কক্সবাজার" : "🏖️ Cox's Bazar"} ${liveWeather.coxsBazar !== null ? formatDigits(liveWeather.coxsBazar, isBn) : "২৮"}°C · ${isBn ? "☁️ সাজেক" : "☁️ Sajek"} ${liveWeather.sajek !== null ? formatDigits(liveWeather.sajek, isBn) : "২২"}°C · ${isBn ? "🍵 শ্রীমঙ্গল" : "🍵 Sreemangal"} ${liveWeather.sreemangal !== null ? formatDigits(liveWeather.sreemangal, isBn) : "২৪"}°C · ${isBn ? "🐅 খুলনা" : "🐅 Khulna"} ${liveWeather.khulna !== null ? formatDigits(liveWeather.khulna, isBn) : "২৬"}°C`}
+                </span>
+              </div>
+            </div>
+            <span className="text-[10px] text-white/50 shrink-0 font-normal hidden lg:inline">
+              {liveWeather.isLoading ? (isBn ? "লোড হচ্ছে..." : "Syncing...") : liveWeather.isError ? (isBn ? "ক্যাশড" : "Cached") : (isBn ? "সরাসরি" : "Live")}
+            </span>
+            <Link
+              href="/weather"
+              className="flex items-center gap-1 text-xs text-[#35D07F] font-bold shrink-0 hover:underline pl-2 border-l border-white/15"
+            >
+              <span>{isBn ? "আবহাওয়া" : "Weather"}</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+          </div>
+
+          {/* 3. Slider Controls (Dots + Play/Pause) */}
+          <div className="flex items-center gap-3 shrink-0">
             <div className="flex items-center gap-1.5">
               {HERO_SLIDES.map((_, i) => (
                 <button
@@ -680,11 +661,9 @@ export function HeroSection() {
                 />
               ))}
             </div>
-
-            {/* Pause / Play Toggle for Accessibility */}
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="min-w-[34px] min-h-[34px] p-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer text-white flex items-center justify-center"
+              className="min-w-[30px] min-h-[30px] p-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer text-white flex items-center justify-center shrink-0"
               title={isPlaying ? "Pause background animation" : "Resume background animation"}
               aria-label={isPlaying ? "Pause background animation" : "Resume background animation"}
               aria-pressed={!isPlaying}
@@ -693,41 +672,8 @@ export function HeroSection() {
             </button>
           </div>
 
-          {/* Quick Categories Navigation */}
-          <div className="hidden md:flex items-center gap-2">
-            {[
-              { name: "Beaches", name_bn: "সৈকত", href: "/destinations?category=Beach" },
-              { name: "Hills", name_bn: "পাহাড়", href: "/destinations?category=Hill" },
-              { name: "Forests", name_bn: "বনানী", href: "/destinations?category=Forest" },
-              { name: "Islands", name_bn: "দ্বীপ", href: "/destinations?category=Island" },
-              { name: "Heritage", name_bn: "ঐতিহ্য", href: "/destinations?category=Heritage" },
-            ].map((cat) => (
-              <Link
-                key={cat.name}
-                href={cat.href}
-                className="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-semibold text-white transition-colors"
-              >
-                {isBn ? cat.name_bn : cat.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Infinite Scrolling Ticker Track (High-contrast 13px division/district labels) */}
-        <div className="w-full overflow-hidden border-t border-white/10 py-2 bg-[#04120D]">
-          <div className="flex gap-8 whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
-            {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, idx) => (
-              <span key={idx} className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D1E0D8]">
-                <span>{item.emoji}</span>
-                <span className="text-white font-bold">{isBn ? item.name_bn : item.name}</span>
-                <span className="text-[13px] text-[#A7F3D0] font-medium">({isBn ? item.loc_bn : item.loc})</span>
-                <span className="text-white/20 ml-4">•</span>
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>
   );
 }
-

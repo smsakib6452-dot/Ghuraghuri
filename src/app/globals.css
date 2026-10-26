@@ -178,8 +178,41 @@ html[lang="en"] textarea {
 
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee {
-    animation-play-state: paused !important;
+    animation: none !important;
+    transform: none !important;
   }
+  .animate-marquee > [aria-hidden="true"] {
+    display: none !important;
+  }
+}
+
+/* Universal Accessible Keyboard Focus Indicators */
+:focus-visible {
+  outline: 2px solid #10b981 !important;
+  outline-offset: 2px !important;
+}
+
+[data-theme="dark"] :focus-visible {
+  outline: 2px solid #34d399 !important;
+  outline-offset: 2px !important;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #10b981 !important;
+  outline-offset: 2px !important;
+}
+
+[data-theme="dark"] a:focus-visible,
+[data-theme="dark"] button:focus-visible,
+[data-theme="dark"] input:focus-visible,
+[data-theme="dark"] select:focus-visible,
+[data-theme="dark"] textarea:focus-visible {
+  outline: 2px solid #34d399 !important;
+  outline-offset: 2px !important;
 }
 
 /* Leaflet Map Custom Marker, Attribution & Popup Fixes */

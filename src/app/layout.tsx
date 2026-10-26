@@ -6,7 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/common/BackToTop";
 import { JsonLd, getWebsiteSchema, getOrganizationSchema } from "@/components/seo/JsonLd";
-import { TOTAL_DESTINATIONS } from "@/lib/constants";
+import { TOTAL_DESTINATIONS, SITE_URL } from "@/lib/constants";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -38,35 +38,24 @@ export const metadata: Metadata = {
   },
   description:
     `Explore ${TOTAL_DESTINATIONS}+ authentic destinations across 8 divisions of Bangladesh. Discover authentic local photography, cultural heritage, hill tracks, mangroves, and complete travel guides.`,
-  keywords: [
-    "Bangladesh travel",
-    "Ghuraghuri",
-    "ঘুরাঘুরি",
-    "Bangladesh tourist places",
-    "Cox's Bazar",
-    "Sajek Valley",
-    "Sundarbans",
-    "Sylhet travel",
-    "Chattogram travel",
-    "travel guide Bangladesh",
-  ],
   authors: [{ name: "Ghuraghuri Travel Technologies" }],
   creator: "Ghuraghuri",
-  metadataBase: new URL("https://ghuraghuri.com"),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
     locale: "bn_BD",
     alternateLocale: "en_US",
-    url: "https://ghuraghuri.com",
+    url: SITE_URL,
     siteName: "Ghuraghuri",
     title: "Ghuraghuri — Bangladesh Travel Explorer",
     description: `Discover ${TOTAL_DESTINATIONS}+ authentic tourist spots, pristine beaches, hills, and heritage sites of Bangladesh.`,
     images: [
       {
-        url: "/assets/destinations/sajek-valley.webp",
+        url: `${SITE_URL}/og-default.jpg`,
         width: 1200,
         height: 630,
-        alt: "Sajek Valley — Ghuraghuri",
+        type: "image/jpeg",
+        alt: "Sajek Valley — Ghuraghuri Bangladesh Travel Explorer",
       },
     ],
   },
@@ -74,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ghuraghuri — Bangladesh Travel Explorer",
     description: `Discover ${TOTAL_DESTINATIONS}+ authentic tourist spots across Bangladesh.`,
-    images: ["/assets/destinations/sajek-valley.webp"],
+    images: [`${SITE_URL}/og-default.jpg`],
   },
   icons: {
     icon: "/favicon.svg",
@@ -106,12 +95,6 @@ export default function RootLayout({
   } catch(e) {}
 })();`,
           }}
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
         />
       </head>
       <body

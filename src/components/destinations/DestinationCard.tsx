@@ -44,8 +44,9 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
           src={imageSrc}
           alt={destination.name}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           priority={priority}
+          loading={priority ? undefined : "lazy"}
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-110 [filter:saturate(1.1)_contrast(1.05)]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/15 pointer-events-none" />
@@ -57,15 +58,15 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
           </span>
         </div>
 
-        {/* Live Weather Quick Link Pill */}
+        {/* Live Weather Quick Icon Button */}
         <Link
           href={`/weather?spot=${destination.slug}`}
           onClick={(e) => e.stopPropagation()}
-          className="absolute bottom-3.5 right-3.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md text-white text-xs font-bold border border-white/20 transition-all shadow-md group/weather z-10 hover:scale-105"
+          className="absolute bottom-3.5 right-3.5 w-8 h-8 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md text-[#f4a340] border border-white/20 transition-all shadow-md flex items-center justify-center hover:scale-110 z-10"
           title={isBn ? "লাইভ আবহাওয়া দেখুন" : "View Live Weather"}
+          aria-label={isBn ? `${title}-এর লাইভ আবহাওয়া দেখুন` : `View live weather for ${title}`}
         >
-          <CloudSun className="w-3.5 h-3.5 text-[#f4a340]" />
-          <span>{isBn ? "আবহাওয়া" : "Weather"}</span>
+          <CloudSun className="w-4 h-4" />
         </Link>
 
         {/* Bookmark Button (Thumb-Friendly Touch Target) */}
@@ -100,9 +101,31 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
           </Link>
         </h3>
 
-        <p className="text-[13.5px] text-[var(--text-muted)] line-clamp-2 leading-relaxed mb-3.5 flex-1">
+        <p className="text-[13.5px] text-[var(--text-muted)] line-clamp-2 leading-relaxed mb-3 flex-1">
           {descriptionText}
         </p>
+
+        {/* Optional Season & Budget Meta */}
+        {((destination.bestSeason || destination.bestTime) || (destination.budgetPerDay || destination.budget)) && (
+          <div className="grid grid-cols-2 gap-2 py-2 mb-3 border-y border-[var(--glass-border)] text-[11px] text-[var(--text-muted)]">
+            {(destination.bestSeason || destination.bestTime) ? (
+              <div className="truncate">
+                <span className="font-bold text-foreground block">{isBn ? "সেরা সময়:" : "Best season:"}</span>
+                <span className="truncate block font-medium" title={destination.bestSeason || destination.bestTime}>
+                  {destination.bestSeason || destination.bestTime}
+                </span>
+              </div>
+            ) : <div />}
+            {(destination.budgetPerDay || destination.budget) ? (
+              <div className="truncate text-right">
+                <span className="font-bold text-foreground block">{isBn ? "বাজেট/দিন:" : "Budget/day:"}</span>
+                <span className="truncate block font-medium" title={destination.budgetPerDay || destination.budget}>
+                  {destination.budgetPerDay || destination.budget}
+                </span>
+              </div>
+            ) : <div />}
+          </div>
+        )}
 
         {/* Footer Meta: Recommended Days & Details CTA */}
         <div className="pt-3 border-t border-[var(--glass-border)] flex items-center justify-between text-xs">

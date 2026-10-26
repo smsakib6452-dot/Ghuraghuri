@@ -5,7 +5,19 @@ import Link from "next/link";
 import { useApp } from "@/context/AppContext";
 import destinationsData from "@/data/destinations.json";
 import { Destination } from "@/types/destination";
-import { Compass, ArrowRight, Sparkles } from "lucide-react";
+import {
+  Compass,
+  ArrowRight,
+  Mountain,
+  Sun,
+  Trees,
+  Landmark,
+  Waves,
+  Palmtree,
+  Sailboat,
+  Sparkles,
+  type LucideIcon,
+} from "lucide-react";
 import { TOTAL_DESTINATIONS } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { formatDigits } from "@/lib/i18n";
@@ -13,7 +25,7 @@ import { formatDigits } from "@/lib/i18n";
 interface ExperienceItem {
   key: string;
   category: string;
-  emoji: string;
+  icon: LucideIcon;
   name_en: string;
   name_bn: string;
   desc_en: string;
@@ -25,7 +37,7 @@ const EXPERIENCES: ExperienceItem[] = [
   {
     key: "hills",
     category: "Hill",
-    emoji: "⛰️",
+    icon: Mountain,
     name_en: "Hills & Peaks",
     name_bn: "পাহাড় ও মেঘের রাজ্য",
     desc_en: "Highland peaks, floating clouds, and breathtaking viewpoints in Sajek & Bandarban.",
@@ -35,7 +47,7 @@ const EXPERIENCES: ExperienceItem[] = [
   {
     key: "beaches",
     category: "Beach",
-    emoji: "🏖️",
+    icon: Sun,
     name_en: "Beaches & Coast",
     name_bn: "সমুদ্র ও সোনালী সৈকত",
     desc_en: "World's longest unbroken sands, sunset points, and ocean surf from Cox's Bazar to Kuakata.",
@@ -45,7 +57,7 @@ const EXPERIENCES: ExperienceItem[] = [
   {
     key: "forests",
     category: "Forest",
-    emoji: "🌲",
+    icon: Trees,
     name_en: "Forests",
     name_bn: "বন ও গভীর ম্যানগ্রোভ",
     desc_en: "Sundarbans UNESCO World Heritage, Lawachara rainforest, and wildlife biodiversity.",
@@ -55,7 +67,7 @@ const EXPERIENCES: ExperienceItem[] = [
   {
     key: "heritage",
     category: "Heritage",
-    emoji: "🏛️",
+    icon: Landmark,
     name_en: "Heritage",
     name_bn: "ঐতিহ্য ও প্রত্নতত্ত্ব",
     desc_en: "Centuries-old zamindar palaces, terracotta temples, and Buddhist viharas.",
@@ -65,7 +77,7 @@ const EXPERIENCES: ExperienceItem[] = [
   {
     key: "waterfalls",
     category: "Waterfall",
-    emoji: "🌊",
+    icon: Waves,
     name_en: "Waterfalls",
     name_bn: "ঝরনা ও পাথুরে ক্যাসকেড",
     desc_en: "Hidden mountain springs, crystal streams, and thrilling hidden cascades.",
@@ -75,7 +87,7 @@ const EXPERIENCES: ExperienceItem[] = [
   {
     key: "islands",
     category: "Island",
-    emoji: "🏝️",
+    icon: Palmtree,
     name_en: "Islands & Reefs",
     name_bn: "দ্বীপ ও প্রবাল সৈকত",
     desc_en: "Turquoise lagoons, coconut groves, and tranquil horizons at Saint Martin and Manpura.",
@@ -85,7 +97,7 @@ const EXPERIENCES: ExperienceItem[] = [
   {
     key: "wetlands",
     category: "Haor",
-    emoji: "🛶",
+    icon: Sailboat,
     name_en: "Wetlands & Rivers",
     name_bn: "হাওর ও শান্ত জলাভূমি",
     desc_en: "Vast inland freshwater seas, luxury houseboats, and migratory birds in Tanguar Haor.",
@@ -95,7 +107,7 @@ const EXPERIENCES: ExperienceItem[] = [
   {
     key: "spiritual",
     category: "Religious",
-    emoji: "🕌",
+    icon: Sparkles,
     name_en: "Spiritual Sites",
     name_bn: "আধ্যাত্মিক ও পবিত্র মাজার",
     desc_en: "Sufi shrines of Shah Jalal, historic mosques of Bagerhat, and sacred pilgrimage sites.",
@@ -140,6 +152,7 @@ export function ExperienceSection() {
         <div className="grid grid-cols-1 min-[361px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 items-stretch">
           {EXPERIENCES.map((exp) => {
             const count = getCount(exp.category);
+            const Icon = exp.icon;
             return (
               <Link
                 key={exp.key}
@@ -153,9 +166,9 @@ export function ExperienceSection() {
 
                 <div className="relative z-10 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-2.5 sm:mb-4">
-                    <span className="text-2xl sm:text-3xl p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-[var(--surface)] border border-[var(--glass-border)] group-hover:scale-110 transition-transform">
-                      {exp.emoji}
-                    </span>
+                    <div className="p-2 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[var(--surface)] border border-[var(--glass-border)] group-hover:scale-110 transition-transform flex items-center justify-center text-[#047857] dark:text-[#2ecc71]">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.75} />
+                    </div>
                     <span className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-[#047857]/10 text-[#047857] dark:bg-[#1f9d76]/20 dark:text-[#2ecc71]">
                       {formatDigits(count, isBn)} {isBn ? "টি স্থান" : "places"}
                     </span>

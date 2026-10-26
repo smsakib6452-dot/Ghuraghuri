@@ -93,9 +93,9 @@ export function FeaturedSection({ destinations }: FeaturedSectionProps) {
         {/* Destination Cards: Horizontal swipe row on mobile (<640px), 8pt grid on tablet/desktop */}
         <div className="relative">
           <div className="flex overflow-x-auto overscroll-contain snap-x snap-proximity px-4 sm:px-0 -mx-4 sm:mx-0 scroll-px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 sm:overflow-visible">
-            {topDestinations.map((dest, idx) => (
+            {topDestinations.map((dest) => (
               <div key={dest.id} className="flex-none w-[80vw] max-w-[320px] snap-start sm:w-auto sm:max-w-none">
-                <DestinationCard destination={dest} priority={idx < 4} />
+                <DestinationCard destination={dest} />
               </div>
             ))}
             <div className="w-4 shrink-0 sm:hidden" aria-hidden="true" />
