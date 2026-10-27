@@ -7,10 +7,12 @@ import { useApp } from "@/context/AppContext";
 import { Destination } from "@/types/destination";
 import { MapPin, Bookmark, Clock, ArrowUpRight, CloudSun } from "lucide-react";
 import { getDivisionBn, getDistrictBn, localizeDuration } from "@/lib/i18n";
-import translationsData from "@/data/translations.json";
 
 interface DestinationCardProps {
-  destination: Destination;
+  destination: Destination & {
+    shortDesc_bn?: string;
+    recommendedDays_bn?: string;
+  };
   priority?: boolean;
 }
 
@@ -19,17 +21,18 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
   const isBn = language === "bn";
   const bookmarked = isBookmarked(destination.id);
 
-  const tr = (translationsData as Record<string, { shortDesc?: string; recommendedDays?: string }>)[destination.slug];
   const title = isBn && destination.name_bn ? destination.name_bn : destination.name;
   const divisionText = isBn ? getDivisionBn(destination.division) : destination.division;
   const locationText = isBn
     ? `${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)}`
     : `${destination.district}, ${destination.division}`;
   const descriptionText = isBn
-    ? (tr?.shortDesc || destination.shortDesc)
+    ? (destination.shortDesc_bn || destination.shortDesc)
     : destination.shortDesc;
   const durationText = isBn
-    ? (tr?.recommendedDays ? localizeDuration(tr.recommendedDays, true) : localizeDuration(destination.recommendedDays || "1 – 2 days", true))
+    ? (destination.recommendedDays_bn
+        ? localizeDuration(destination.recommendedDays_bn, true)
+        : localizeDuration(destination.recommendedDays || "1 – 2 days", true))
     : (destination.recommendedDays || "1 – 2 days");
 
   const imageSrc = destination.image.startsWith("http")
@@ -44,8 +47,9 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
           src={imageSrc}
           alt={destination.name}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 300px"
           priority={priority}
+          fetchPriority={priority ? "high" : "auto"}
           loading={priority ? undefined : "lazy"}
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-110 [filter:saturate(1.1)_contrast(1.05)]"
         />

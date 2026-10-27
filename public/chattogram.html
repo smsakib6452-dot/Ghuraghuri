@@ -4,37 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <base href="/" />
-    <link rel="canonical" href="https://ghuraghuri.com/chattogram.html" />
-    <link rel="alternate" hreflang="bn" href="https://ghuraghuri.com/chattogram.html" />
-    <link rel="alternate" hreflang="x-default" href="https://ghuraghuri.com/chattogram.html" />
+    <link rel="canonical" href="https://ghuraghuri.vercel.app/chattogram" />
+    <link rel="alternate" hreflang="bn" href="https://ghuraghuri.vercel.app/chattogram" />
+    <link rel="alternate" hreflang="x-default" href="https://ghuraghuri.vercel.app/chattogram" />
 
     <meta name="theme-color" content="#061a13" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Ghuraghuri" />
-    <meta property="og:url" content="https://ghuraghuri.com/chattogram.html" />
+    <meta property="og:url" content="https://ghuraghuri.vercel.app/chattogram" />
     <meta property="og:title" content="My Chattogram — চট্টগ্রামকে আপনি কতটা চেনেন?" />
     <meta property="og:description" content="নিজের চট্টগ্রামটা মানচিত্রে তৈরি করুন এবং ডাউনলোড করুন আপনার ব্যক্তিগত চাটগাঁ স্মৃতি পোস্টার।" />
-    <meta property="og:image" content="https://ghuraghuri.com/assets/destinations/sajek-valley.webp" />
+    <meta property="og:image" content="https://ghuraghuri.vercel.app/og-chattogram.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="bn_BD" />
 
     <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://ghuraghuri.com/chattogram.html" />
+    <meta name="twitter:url" content="https://ghuraghuri.vercel.app/chattogram" />
     <meta name="twitter:title" content="My Chattogram — চট্টগ্রামকে আপনি কতটা চেনেন?" />
     <meta name="twitter:description" content="নিজের চট্টগ্রামটা মানচিত্রে তৈরি করুন এবং ডাউনলোড করুন আপনার ব্যক্তিগত চাটগাঁ স্মৃতি পোস্টার।" />
-    <meta name="twitter:image" content="https://ghuraghuri.com/assets/destinations/sajek-valley.webp" />
+    <meta name="twitter:image" content="https://ghuraghuri.vercel.app/og-chattogram.jpg" />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "@id": "https://ghuraghuri.com/chattogram.html#app",
-      "url": "https://ghuraghuri.com/chattogram.html",
+      "@id": "https://ghuraghuri.vercel.app/chattogram#app",
+      "url": "https://ghuraghuri.vercel.app/chattogram",
       "name": "My Chattogram — Interactive Travel Map & Poster Studio",
       "applicationCategory": "TravelApplication",
       "operatingSystem": "All",
@@ -46,13 +46,13 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://ghuraghuri.com/"
+            "item": "https://ghuraghuri.vercel.app/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "My Chattogram",
-            "item": "https://ghuraghuri.com/chattogram.html"
+            "item": "https://ghuraghuri.vercel.app/chattogram"
           }
         ]
       }
@@ -76,10 +76,10 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
     <!-- Dedicated Scoped Stylesheet -->
-    <link rel="stylesheet" href="css/chattogram.css?v=3.0" />
+    <link rel="stylesheet" href="css/chattogram.css?v=3.1" />
 
-    <!-- jsPDF Library for lossless print-ready PDF export -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- jsPDF Library for lossless print-ready PDF export (Deferred) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body class="ctg-body">
     <!-- Accessibility Skip Link -->
@@ -101,6 +101,14 @@
                     <span class="ctg-feature-sep" aria-hidden="true">·</span>
                     <strong class="ctg-feature-title" id="ctgNavSubTitle">My Chattogram</strong>
                 </div>
+
+                <nav class="ctg-nav-main-links" aria-label="মূল সাইট লিঙ্ক">
+                    <a href="/destinations" class="ctg-nav-sublink">Destinations</a>
+                    <span class="ctg-nav-sublink-dot" aria-hidden="true">·</span>
+                    <a href="/transport" class="ctg-nav-sublink">Map</a>
+                    <span class="ctg-nav-sublink-dot" aria-hidden="true">·</span>
+                    <a href="/hotels" class="ctg-nav-sublink">Hotels</a>
+                </nav>
 
                 <button type="button" class="ctg-btn-nav-lang" id="btnCityLangToggle" title="প্রমিত ও সহজ বাংলায় দেখুন">
                     <span class="ctg-lang-text-desktop">🗣️ চট্টগ্রামের ভাষা বুঝতে অসুবিধা? সহজ বাংলায় দেখুন</span>
@@ -290,7 +298,7 @@
                             </div>
                             <div class="ctg-exp-body">
                                 <div class="ctg-exp-meta">
-                                    <h4 class="ctg-exp-en-title">MY CHATTOGRAM DIVISION</h4>
+                                    <p class="ctg-exp-en-title">MY CHATTOGRAM DIVISION</p>
                                 </div>
                                 <h3>চট্টগ্রাম বিভাগের কতটা ঘুরেছেন?</h3>
                                 <p>চট্টগ্রাম বিভাগের জেলাগুলোর মধ্যে আপনি কয়টি ঘুরেছেন, নিজের মানচিত্রে তুলে ধরুন।</p>
@@ -480,7 +488,7 @@
                             </div>
                             <div class="ctg-exp-body">
                                 <div class="ctg-exp-meta">
-                                    <h4 class="ctg-exp-en-title">MY CHATTOGRAM</h4>
+                                    <p class="ctg-exp-en-title">MY CHATTOGRAM</p>
                                 </div>
                                 <h3>চট্টগ্রাম জেলাকে কতটা চেনেন?</h3>
                                 <p>চট্টগ্রাম জেলার উপজেলাগুলোর মধ্যে আপনার ঘুরে দেখা অংশগুলো নির্বাচন করুন।</p>
@@ -618,7 +626,7 @@
                             </div>
                             <div class="ctg-exp-body">
                                 <div class="ctg-exp-meta">
-                                    <h4 class="ctg-exp-en-title">MY CHATTOGRAM CITY</h4>
+                                    <p class="ctg-exp-en-title">MY CHATTOGRAM CITY</p>
                                 </div>
                                 <h3>কালুরঘাটত্তুন পতেঙ্গা—আঁর চাটগাঁ শহর</h3>
                                 <p>কালুরঘাট থেকে পতেঙ্গা—ঐতিহাসিক "মুড়ির টিন" বাস, গান, চাটগাঁইয়া বুলি ও ছবি নিয়ে তৈরি করুন ব্যক্তিগত স্মৃতি মানচিত্র।</p>
@@ -800,7 +808,7 @@
                             </div>
                             <div class="ctg-exp-body">
                                 <div class="ctg-exp-meta">
-                                    <h4 class="ctg-exp-en-title">PLACES I'VE EXPLORED</h4>
+                                    <p class="ctg-exp-en-title">PLACES I'VE EXPLORED</p>
                                 </div>
                                 <h3>চট্টগ্রাম বিভাগের কোথায় কোথায় গিয়েছেন?</h3>
                                 <p>সমুদ্র, পাহাড়, ঝর্ণা, ঐতিহ্য কিংবা শহর—আপনার ঘুরে দেখা জায়গাগুলো একসাথে তুলে ধরুন।</p>
@@ -1996,6 +2004,13 @@
                     <span class="ctg-ft-creator">SAKIB'S CREATION</span>
                     <p class="ctg-ft-tagline">Creative Technology &amp; Interactive Design Studio</p>
                     <p class="ctg-ft-text">“চট্টগ্রামকে আপনি কতটা চেনেন?” — A Flagship Interactive Production by Sakib's Creation</p>
+                    <nav class="ctg-footer-nav" aria-label="Explore Ghuraghuri">
+                        <a href="/destinations" class="ctg-ft-link">Destinations (গন্তব্য)</a>
+                        <span class="ctg-ft-dot" aria-hidden="true">·</span>
+                        <a href="/transport" class="ctg-ft-link">Map (ম্যাপ ও যাতায়াত)</a>
+                        <span class="ctg-ft-dot" aria-hidden="true">·</span>
+                        <a href="/hotels" class="ctg-ft-link">Hotels (হোটেল ও রিসোর্ট)</a>
+                    </nav>
                 </div>
             </div>
             <div class="ctg-footer-bottom">
@@ -2004,16 +2019,35 @@
         </div>
     </footer>
 
+    <!-- Post Download / Share Modal -->
+    <div id="ctgPostActionModal" class="ctg-post-modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="ctgPostModalTitle">
+        <div class="ctg-post-modal-backdrop" id="ctgPostModalBackdrop"></div>
+        <div class="ctg-post-modal-card">
+            <button type="button" class="ctg-post-modal-close" id="btnPostModalClose" aria-label="বন্ধ করুন">✕</button>
+            <div class="ctg-post-modal-icon">🎉</div>
+            <h3 id="ctgPostModalTitle" class="ctg-post-modal-title">পোস্টার প্রস্তুত ও সংরক্ষিত!</h3>
+            <p class="ctg-post-modal-text">চট্টগ্রাম এক্সপ্লোর করা শেষ? এবার বাংলাদেশের অন্যান্য আকর্ষণীয় গন্তব্য আবিষ্কার করুন।</p>
+            <div class="ctg-post-modal-actions">
+                <a href="/destinations" class="ctg-btn-explore-bd" id="btnExploreDestinations">
+                    Explore the rest of Bangladesh →
+                </a>
+                <button type="button" class="ctg-btn-try-another" id="btnTryAnotherExp">
+                    অন্য অভিজ্ঞতা ট্রাই করুন
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Headless YouTube Audio Stream Container (Pure Audio - Zero Video Frame) -->
     <div id="cityBgMusicPlayerContainer" class="ctg-headless-audio-stream" style="position:fixed;bottom:10px;right:10px;width:200px;height:120px;opacity:0.001;pointer-events:none;z-index:1;" aria-hidden="true">
         <div id="cityBgMusicPlayer"></div>
     </div>
 
     <!-- Data & Scripts -->
-    <script src="https://www.youtube.com/iframe_api"></script>
+    <script defer src="https://www.youtube.com/iframe_api"></script>
     <script src="js/safe.js"></script>
-    <script src="data/destinations.js?v=2.4"></script>
     <script src="data/chattogram-city.js?v=2.4"></script>
+    <script src="data/destinations.js?v=2.4"></script>
     <script src="js/chattogram.js?v=2.4"></script>
     <script src="js/division.js?v=2.4"></script>
     <script src="js/places.js?v=2.4"></script>

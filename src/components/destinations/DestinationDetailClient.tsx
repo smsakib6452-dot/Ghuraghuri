@@ -29,22 +29,23 @@ import {
   formatDigits,
   localizeDuration,
 } from "@/lib/i18n";
-import translationsData from "@/data/translations.json";
 
 interface DestinationDetailClientProps {
   destination: Destination;
   related: Destination[];
+  translation?: any;
 }
 
 export function DestinationDetailClient({
   destination,
   related,
+  translation,
 }: DestinationDetailClientProps) {
   const { language } = useApp();
   const isBn = language === "bn";
   const t = isBn ? DESTINATION_DETAIL_I18N.bn : DESTINATION_DETAIL_I18N.en;
 
-  const tr = (translationsData as Record<string, any>)[destination.slug];
+  const tr = translation || null;
 
   // Title & subtitles
   const title = isBn
@@ -162,14 +163,15 @@ export function DestinationDetailClient({
         </nav>
       </div>
 
-      {/* Hero Visual Section */}
-      <div className="relative h-[55vh] min-h-[420px] max-h-[600px] w-full overflow-hidden">
+      {/* Hero Visual Section - Fixed Aspect Ratio to prevent CLS */}
+      <div className="relative aspect-[16/10] sm:aspect-[21/9] h-auto min-h-[380px] sm:min-h-[440px] max-h-[600px] w-full overflow-hidden bg-[#061B14]">
         <Image
           src={imageSrc}
           alt={destination.name}
           fill
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
           priority
+          fetchPriority="high"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
@@ -344,8 +346,8 @@ export function DestinationDetailClient({
 
           {/* Sidebar (1 Column) */}
           <div className="space-y-6">
-            {/* Quick Trip Snapshot Card */}
-            <div className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm space-y-4">
+            {/* Quick Trip Snapshot Card - Fixed min-height to prevent layout shifts */}
+            <div className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm space-y-4 min-h-[290px]">
               <h3 className="text-lg font-bold text-foreground pb-3 border-b border-[var(--glass-border)]">
                 {t.tripSnapshot}
               </h3>
@@ -436,10 +438,7 @@ export function DestinationDetailClient({
                 </h3>
                 <div className="space-y-3">
                   {related.map((rel) => {
-                    const relTr = (translationsData as Record<string, any>)[rel.slug];
-                    const relTitle = isBn && (relTr?.name || rel.name_bn)
-                      ? (relTr?.name || rel.name_bn)
-                      : rel.name;
+                    const relTitle = isBn && rel.name_bn ? rel.name_bn : rel.name;
                     const relDistrict = isBn
                       ? getDistrictBn(rel.district)
                       : rel.district;

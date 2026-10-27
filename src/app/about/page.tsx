@@ -33,7 +33,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
           {[
             {
-              label: isBn ? "যাচাইকৃত স্পট" : "Curated Spots",
+              label: isBn ? "বাছাইকৃত স্পট" : "Curated Spots",
               value: isBn ? `${formatDigits(TOTAL_DESTINATIONS, true)}+` : `${TOTAL_DESTINATIONS}+`,
             },
             {
@@ -45,8 +45,8 @@ export default function AboutPage() {
               value: isBn ? "৮" : "8",
             },
             {
-              label: isBn ? "ব্যবহারকারী রেটিং" : "Satisfaction",
-              value: isBn ? "৪.৮★" : "4.8★",
+              label: isBn ? "প্ল্যাটফর্ম অ্যাক্সেস" : "Access",
+              value: isBn ? "উন্মুক্ত" : "Free & Open",
             },
           ].map((stat, i) => (
             <div
@@ -71,14 +71,55 @@ export default function AboutPage() {
           <div className="space-y-4 text-sm sm:text-base text-foreground/85 leading-relaxed">
             <p>
               {isBn
-                ? "বাংলাদেশ প্রকৃতির অপরূপ সৌন্দর্যে ভরপুর। কিন্তু সঠিক তথ্যের অভাব, বিভ্রান্তিকর রুট ও ভাড়ার তথ্যের কারণে ভ্রমণপিপাসুরা প্রায়ই দ্বিধায় পড়েন। ঘুরাঘুরি এই সমস্যার আধুনিক ও নির্ভরযোগ্য সমাধান।"
-                : "Bangladesh holds astonishing natural diversity — from the rolling clouds of Sajek to the untouched mangrove waterways of the Sundarbans. Ghuraghuri was created to deliver authentic, unbiased, and high-speed travel intelligence."}
+                ? "বাংলাদেশ প্রকৃতির অপরূপ সৌন্দর্যে ভরপুর। কিন্তু সঠিক তথ্যের অভাব, বিভ্রান্তিকর রুট ও ভাড়ার তথ্যের কারণে ভ্রমণপিপাসুরা প্রায়ই দ্বিধায় পড়েন। ঘুরাঘুরি এই সমস্যার সহজ ও বাস্তবসম্মত সমাধান।"
+                : "Bangladesh holds astonishing natural diversity — from the rolling clouds of Sajek to the untouched mangrove waterways of the Sundarbans. Ghuraghuri was created to deliver authentic, unbiased, and accessible travel information."}
             </p>
             <p>
               {isBn
-                ? "আমাদের প্ল্যাটফর্মে রয়েছে ৮টি বিভাগের ৬৪টি জেলার ২৭১টি প্রমাণিত পর্যটন গন্তব্য, হোটেল গাইড, আঞ্চলিক খাবারের ঐতিহ্য এবং সুস্পষ্ট যাতায়াত রুট।"
-                : "Built with cutting-edge web architecture (Next.js App Router, Tailwind CSS, and Supabase), Ghuraghuri guarantees ultra-fast load times, WCAG AAA accessibility, and flawless mobile experience."}
+                ? "আমাদের প্ল্যাটফর্মে রয়েছে ৮টি বিভাগের ৬৪টি জেলার ২৭১টি বাছাইকৃত পর্যটন গন্তব্য, হোটেল ও খাবারের তথ্য এবং প্রাথমিক যাতায়াত রুট নির্দেশিকা।"
+                : "Our platform catalogs over 270 curated destinations across all 64 districts in Bangladesh, providing travel itineraries, transit schedules, and regional culinary traditions."}
             </p>
+          </div>
+        </div>
+
+        {/* Creator & Data Sources Section */}
+        <div className="p-8 sm:p-10 rounded-2xl bg-[var(--surface-raised)] border border-[var(--glass-border)] shadow-sm space-y-6">
+          <h2 className="text-2xl font-bold text-foreground">
+            {isBn ? "কারা বানিয়েছেন এবং তথ্যের উৎস" : "Who Made This & Where the Data Comes From"}
+          </h2>
+          <div className="space-y-4 text-sm sm:text-base text-foreground/85 leading-relaxed">
+            <p>
+              {isBn
+                ? "ঘুরাঘুরি তৈরি করেছেন সাকিব (Created by Sakib)। এটি একটি ব্যক্তিগত ও স্বাধীন উদ্যোগ, যা বাংলাদেশের পর্যটনকে সহজে খুঁজে পেতে তৈরি করা হয়েছে।"
+                : "Ghuraghuri was created by Sakib as an independent passion project to make travel discovery in Bangladesh open, straightforward, and reliable."}
+            </p>
+            <div className="pt-2">
+              <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-2">
+                {isBn ? "তথ্যের প্রধান উৎসসমূহ:" : "Primary Data Sources:"}
+              </h3>
+              <ul className="list-disc list-inside space-y-1.5 text-xs sm:text-sm text-[var(--text-muted)]">
+                <li>
+                  <strong className="text-foreground">OpenStreetMap (OSM) & OSRM:</strong>{" "}
+                  {isBn ? "ভৌগোলিক স্থানাঙ্ক ও হাইওয়ে রুট হিসাব।" : "Geographic coordinates and highway routing calculations."}
+                </li>
+                <li>
+                  <strong className="text-foreground">Open-Meteo:</strong>{" "}
+                  {isBn ? "লাইভ তাপমাত্রা ও আবহাওয়ার পূর্বাভাস।" : "Live temperatures and weather forecasts."}
+                </li>
+                <li>
+                  <strong className="text-foreground">Bangladesh Railway & Transit Operators:</strong>{" "}
+                  {isBn ? "প্রকাশিত ইন্টারসিটি ট্রেনের সময়সূচি ও বাস কাউন্টার তালিকা।" : "Published intercity railway timetables and transit operator helplines."}
+                </li>
+                <li>
+                  <strong className="text-foreground">Community & Direct Research:</strong>{" "}
+                  {isBn ? "স্থানীয় চালক সমিতির প্রচলিত ভাড়ার আনুমানিক রেট এবং পর্যটকদের অভিজ্ঞতা।" : "Typical fare ranges from local driver associations and verified field research."}
+                </li>
+              </ul>
+            </div>
+            <div className="pt-4 border-t border-[var(--glass-border)] flex items-center justify-between text-xs text-[var(--text-muted)]">
+              <span>{isBn ? "সর্বশেষ তথ্য হালনাগাদ: অক্টোবর ২০২৬" : "Last updated: October 2026"}</span>
+              <span>{isBn ? "যোগাযোগ: ghura-ghuri.vercel.app" : "Contact: ghura-ghuri.vercel.app"}</span>
+            </div>
           </div>
         </div>
 
@@ -89,12 +130,12 @@ export default function AboutPage() {
               <ShieldCheck className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold text-foreground">
-              {isBn ? "১০০% যাচাইকৃত তথ্য" : "100% Curated Truth"}
+              {isBn ? "বাছাইকৃত তথ্য" : "Curated & Grounded"}
             </h3>
             <p className="text-xs text-[var(--text-muted)] leading-relaxed">
               {isBn
-                ? "কোনো ফেক বা বিভ্রান্তিকর তথ্য নেই — বাস্তব অবস্থান ও অভিজ্ঞতার সমন্বয়।"
-                : "Every coordinate, timing, and rate is grounded in verified traveler experiences."}
+                ? "বাস্তব অবস্থান, জেলা ও ভ্রমণের সুবিধার ভিত্তিতে তথ্য যাচাই করে উপস্থাপন করা হয়।"
+                : "Coordinates, estimated travel times, and tips are checked against real traveler experience."}
             </p>
           </div>
 
@@ -108,7 +149,7 @@ export default function AboutPage() {
             <p className="text-xs text-[var(--text-muted)] leading-relaxed">
               {isBn
                 ? "বাংলা ও ইংরেজি উভয় ভাষায় নিরবচ্ছিন্ন ভ্রমণ অভিজ্ঞতা।"
-                : "Seamless translation between English and Bangla with screen-reader readiness."}
+                : "Seamless translation between English and Bangla across all destinations and routes."}
             </p>
           </div>
 

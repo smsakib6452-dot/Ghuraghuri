@@ -1,20 +1,18 @@
-import destinationsData from "@/data/destinations.json";
-import taxonomyData from "@/data/taxonomy.json";
-
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "https://ghuraghuri.vercel.app";
 
-export const TOTAL_DESTINATIONS = destinationsData.length;
-export const TOTAL_DIVISIONS = taxonomyData.DIVISIONS.length;
-export const TOTAL_DISTRICTS = taxonomyData.DISTRICTS.length;
+export const TOTAL_DESTINATIONS = 271;
+export const TOTAL_DIVISIONS = 8;
+export const TOTAL_DISTRICTS = 64;
 
-// Compute canonical destination counts per division from the single destinations data source
-export const DIVISION_COUNTS: Record<string, number> = (() => {
-  const counts: Record<string, number> = {};
-  destinationsData.forEach((d) => {
-    if (d.division) {
-      counts[d.division] = (counts[d.division] || 0) + 1;
-    }
-  });
-  return counts;
-})();
+// Canonical destination counts per division
+export const DIVISION_COUNTS: Record<string, number> = {
+  Chattogram: 105,
+  Dhaka: 52,
+  Sylhet: 27,
+  Rajshahi: 24,
+  Khulna: 19,
+  Barishal: 17,
+  Rangpur: 17,
+  Mymensingh: 10,
+};

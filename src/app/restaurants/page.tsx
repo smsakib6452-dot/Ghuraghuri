@@ -67,6 +67,7 @@ export default function RestaurantsPage() {
     signatureDish: string;
     pricePerson: string;
     mapQuery: string;
+    ratingSource?: string;
   }> = [];
 
   for (const hub of hubs) {
@@ -81,7 +82,8 @@ export default function RestaurantsPage() {
         rating: item.rating,
         reviews: item.review_count,
         cuisine: item.cuisine.join(", ") || "Authentic Local",
-        image: `https://images.unsplash.com/photo-${item.photo}?auto=format&fit=crop&w=700&q=70`,
+        image: item.photo.startsWith("/assets/") ? item.photo : "",
+        ratingSource: (item as any).ratingSource,
         phone: item.phone || "+8801711000000",
         whatsapp: item.whatsapp || "8801711000000",
         signatureDish: isBn
@@ -117,7 +119,7 @@ export default function RestaurantsPage() {
           <p className="text-sm sm:text-base text-[var(--text-muted)] mt-2">
             {isBn
               ? "মেজবানি, কাচ্চি, সাতকড়া, রূপচাঁদা, পাহাড়ি বাঁশ মুরগি ও নদীর তাজা মাছ — সিগনেচার ডিশ ও সরাসরি যোগাযোগের তালিকা।"
-              : "Discover legendary food traditions, iconic eateries, verified signature dishes, and direct contact counters across Bangladesh."}
+              : "Discover legendary food traditions, iconic eateries, curated signature dishes, and direct contact counters across Bangladesh."}
           </p>
         </div>
 
@@ -160,25 +162,33 @@ export default function RestaurantsPage() {
               className="group flex flex-col rounded-2xl overflow-hidden bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5"
             >
               {/* Photo & Overlays */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-amber-950/40 via-orange-950/30 to-stone-900/40 flex flex-col items-center justify-center p-4 text-center">
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <>
+                    <UtensilsCrossed className="w-12 h-12 text-amber-400/60 mb-2" />
+                    <span className="text-xs font-semibold text-amber-200/80">{item.cuisine || "Authentic Local Dining"}</span>
+                  </>
+                )}
                 <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-bold bg-black/60 text-white backdrop-blur-md">
                   {item.hubName}
                 </span>
                 <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-bold bg-[#0f4a38]/80 text-white backdrop-blur-md border border-white/20">
                   {isBn ? `${item.pricePerson} / জন` : `${item.pricePerson} / person`}
                 </span>
-                <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold">
-                  <Star className="w-3.5 h-3.5 text-[#f4a340] fill-[#f4a340]" />
-                  <span>{item.rating}</span>
-                  <span className="text-white/80 text-xs font-semibold">· Explorer Score</span>
-                </div>
+                {(item as any).ratingSource && (
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold">
+                    <Star className="w-3.5 h-3.5 text-[#f4a340] fill-[#f4a340]" />
+                    <span>{item.rating}</span>
+                  </div>
+                )}
               </div>
 
               {/* Card Body */}

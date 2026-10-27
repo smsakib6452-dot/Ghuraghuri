@@ -2679,12 +2679,31 @@
         ctx.font = '500 16px "Plus Jakarta Sans", sans-serif';
         ctx.fillText('#MYCHATTOGRAM · #CHATTOGRAMCITY', 70, H - 70);
 
-        ctx.textAlign = 'right';
-        ctx.fillStyle = theme.accent;
-        ctx.font = '700 16px "Plus Jakarta Sans", sans-serif';
-        if ('letterSpacing' in ctx) ctx.letterSpacing = '2.5px';
-        ctx.fillText("● SAKIB'S CREATION", W - 70, H - 70);
-        if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+        // QR Code & Attribution
+        if (ctgStaticQrImg && ctgStaticQrImg.complete && ctgStaticQrImg.naturalWidth) {
+            ctx.drawImage(ctgStaticQrImg, W - 70 - 44, H - 90, 44, 44);
+            ctx.textAlign = 'right';
+            ctx.fillStyle = theme.accent;
+            ctx.font = '700 16px "Plus Jakarta Sans", sans-serif';
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '2px';
+            ctx.fillText("● SAKIB'S CREATION", W - 70 - 54, H - 74);
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+
+            ctx.fillStyle = theme.textSecondary || "#94a3b8";
+            ctx.font = '600 12px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText("ghuraghuri.vercel.app/chattogram", W - 70 - 54, H - 54);
+        } else {
+            ctx.textAlign = 'right';
+            ctx.fillStyle = theme.accent;
+            ctx.font = '700 16px "Plus Jakarta Sans", sans-serif';
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '2.5px';
+            ctx.fillText("● SAKIB'S CREATION", W - 70, H - 75);
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+
+            ctx.fillStyle = theme.textSecondary || "#94a3b8";
+            ctx.font = '600 12px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText("ghuraghuri.vercel.app/chattogram", W - 70, H - 55);
+        }
     }
 
     function roundRect(ctx, x, y, w, h, r) {
@@ -2977,8 +2996,8 @@
                 const count = state.visited.size;
                 const total = window.ctgCityData.places.length;
                 const caption = state.lang === 'chatgaya' 
-                    ? `কালুরঘাটত্তুন পতেঙ্গা—চাটগাঁ শহরের ${toBengaliDigits(total)}খান জাগার মইধ্যে আঁই ${toBengaliDigits(count)}খান জাগা ঘুরিয়্যি! তোঁয়ার শহর কদ্দুর চিনা? নিজের চাটগাঁর পোস্টার বানাই লন: #MyChattogram #আঁরচাটগাঁশহর`
-                    : `কালুরঘাট থেকে পতেঙ্গা—চট্টগ্রাম সিটি কর্পোরেশনের ${toBengaliDigits(total)}টি প্রধান দর্শনীয় স্থানের মধ্যে আমি ${toBengaliDigits(count)}টি স্থান ঘুরে দেখেছি! নিজের চট্টগ্রাম শহর ভ্রমণ মানচিত্র তৈরি করুন: #MyChattogram #Ghuraghuri`;
+                    ? `কালুরঘাটত্তুন পতেঙ্গা—চাটগাঁ শহরের ${toBengaliDigits(total)}খান জাগার মইধ্যে আঁই ${toBengaliDigits(count)}খান জাগা ঘুরিয়্যি! তোঁয়ার শহর কদ্দুর চিনা? নিজের চাটগাঁর পোস্টার বানাই লন: https://ghuraghuri.vercel.app/chattogram#city #MyChattogram #আঁরচাটগাঁশহর`
+                    : `কালুরঘাট থেকে পতেঙ্গা—চট্টগ্রাম সিটি কর্পোরেশনের ${toBengaliDigits(total)}টি প্রধান দর্শনীয় স্থানের মধ্যে আমি ${toBengaliDigits(count)}টি স্থান ঘুরে দেখেছি! নিজের চট্টগ্রাম শহর ভ্রমণ মানচিত্র তৈরি করুন: https://ghuraghuri.vercel.app/chattogram#city #MyChattogram #Ghuraghuri`;
 
                 navigator.clipboard.writeText(caption).then(() => {
                     showToast(dict.captionCopied);
@@ -2997,8 +3016,8 @@
                 const count = state.visited.size;
                 const total = window.ctgCityData.places.length;
                 const caption = state.lang === 'chatgaya' 
-                    ? `কালুরঘাটত্তুন পতেঙ্গা—চাটগাঁ শহরের ${toBengaliDigits(total)}খান জাগার মইধ্যে আঁই ${toBengaliDigits(count)}খান জাগা ঘুরিয়্যি! তোঁয়ার শহর কদ্দুর চিনা? নিজের চাটগাঁর পোস্টার বানাই লন: #MyChattogram #আঁরচাটগাঁশহর`
-                    : `কালুরঘাট থেকে পতেঙ্গা—চট্টগ্রাম সিটি কর্পোরেশনের ${toBengaliDigits(total)}টি প্রধান দর্শনীয় স্থানের মধ্যে আমি ${toBengaliDigits(count)}টি স্থান ঘুরে দেখেছি! নিজের চট্টগ্রাম শহর ভ্রমণ মানচিত্র তৈরি করুন: #MyChattogram #Ghuraghuri`;
+                    ? `কালুরঘাটত্তুন পতেঙ্গা—চাটগাঁ শহরের ${toBengaliDigits(total)}খান জাগার মইধ্যে আঁই ${toBengaliDigits(count)}খান জাগা ঘুরিয়্যি! তোঁয়ার শহর কদ্দুর চিনা? নিজের চাটগাঁর পোস্টার বানাই লন: https://ghuraghuri.vercel.app/chattogram#city #MyChattogram #আঁরচাটগাঁশহর`
+                    : `কালুরঘাট থেকে পতেঙ্গা—চট্টগ্রাম সিটি কর্পোরেশনের ${toBengaliDigits(total)}টি প্রধান দর্শনীয় স্থানের মধ্যে আমি ${toBengaliDigits(count)}টি স্থান ঘুরে দেখেছি! নিজের চট্টগ্রাম শহর ভ্রমণ মানচিত্র তৈরি করুন: https://ghuraghuri.vercel.app/chattogram#city #MyChattogram #Ghuraghuri`;
 
                 if (canvas && canvas.toBlob && navigator.canShare) {
                     canvas.toBlob((blob) => {

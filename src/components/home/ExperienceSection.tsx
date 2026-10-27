@@ -3,8 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { useApp } from "@/context/AppContext";
-import destinationsData from "@/data/destinations.json";
-import { Destination } from "@/types/destination";
 import {
   Compass,
   ArrowRight,
@@ -21,6 +19,17 @@ import {
 import { TOTAL_DESTINATIONS } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { formatDigits } from "@/lib/i18n";
+
+const EXPERIENCE_COUNTS: Record<string, number> = {
+  Hill: 8,
+  Beach: 13,
+  Waterfall: 15,
+  Forest: 13,
+  Haor: 4,
+  Historical: 104,
+  Island: 15,
+  Religious: 16,
+};
 
 interface ExperienceItem {
   key: string;
@@ -119,14 +128,9 @@ const EXPERIENCES: ExperienceItem[] = [
 export function ExperienceSection() {
   const { language } = useApp();
   const isBn = language === "bn";
-  const destinations = destinationsData as unknown as Destination[];
 
   const getCount = (cat: string) => {
-    return destinations.filter(
-      (d) =>
-        d.category.toLowerCase().includes(cat.toLowerCase()) ||
-        (d.categories && d.categories.some((c) => c.toLowerCase().includes(cat.toLowerCase())))
-    ).length;
+    return EXPERIENCE_COUNTS[cat] || 0;
   };
 
   return (

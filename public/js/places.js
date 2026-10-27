@@ -7,6 +7,8 @@
  */
 
 (function () {
+    const ctgStaticQrImg = new Image();
+    ctgStaticQrImg.src = "qr-chattogram.png";
     "use strict";
 
     const STORAGE_KEY = "ghuraghuri_ctg_places_progress";
@@ -282,7 +284,12 @@
 
     // Load GeoJSON and render map
     async function initMap() {
-        if (isInitialized) return;
+        if (ctgPlaces.length === 0) initData();
+        if (isInitialized) {
+            renderPlacesList();
+            updateUI();
+            return;
+        }
         try {
             const resp = await fetch("data/chattogram-division-districts.geojson");
             geojsonData = await resp.json();
@@ -902,8 +909,8 @@
         const moreTxt = count > 5 ? ` এবং আরও ${toBanglaDigits(count - 5, 0)}টি স্থান` : '';
 
         const captionText = count === 0
-            ? `চট্টগ্রাম বিভাগের ${totalBn}টি ঐতিহাসিক ও প্রাকৃতিক দর্শনীয় স্থান নিয়ে তৈরি করুন নিজের ট্রাভেল বাকেটলিস্ট পোস্টার!\n\nনিজের ট্রাভেল ম্যাপ তৈরি করুন: ${window.location.origin}${window.location.pathname}?exp=4\n\n#MyChattogram #PlacesIveExplored #SakibsCreation #Ghuraghuri`
-            : `সাগর থেকে সাজেক, পাহাড় থেকে ঝর্ণা—চট্টগ্রাম বিভাগের ${totalBn}টি বাকেটলিস্টের মধ্যে আমি ${countBn}টি স্থান চষে ফেলেছি! 🌊⛰️\n\n🏆 ট্রাভেল স্ট্যাটাস: ${rank}\n📍 ঘুরে আসা কয়েকটি স্পট: ${sampleNames}${moreTxt}\n\nআপনি কয়টি ঘুরেছেন? নিজের ট্রাভেল পোস্টার তৈরি করুন:\n${window.location.origin}${window.location.pathname}?exp=4\n\n#MyChattogram #PlacesIveExplored #SakibsCreation #Ghuraghuri #TravelBangladesh`;
+            ? `চট্টগ্রাম বিভাগের ${totalBn}টি ঐতিহাসিক ও প্রাকৃতিক দর্শনীয় স্থান নিয়ে তৈরি করুন নিজের ট্রাভেল বাকেটলিস্ট পোস্টার!\n\nনিজের ট্রাভেল ম্যাপ তৈরি করুন: https://ghuraghuri.vercel.app/chattogram#places\n\n#MyChattogram #PlacesIveExplored #SakibsCreation #Ghuraghuri`
+            : `সাগর থেকে সাজেক, পাহাড় থেকে ঝর্ণা—চট্টগ্রাম বিভাগের ${totalBn}টি বাকেটলিস্টের মধ্যে আমি ${countBn}টি স্থান চষে ফেলেছি! 🌊⛰️\n\n🏆 ট্রাভেল স্ট্যাটাস: ${rank}\n📍 ঘুরে আসা কয়েকটি স্পট: ${sampleNames}${moreTxt}\n\nআপনি কয়টি ঘুরেছেন? নিজের ট্রাভেল পোস্টার তৈরি করুন:\nhttps://ghuraghuri.vercel.app/chattogram#places\n\n#MyChattogram #PlacesIveExplored #SakibsCreation #Ghuraghuri #TravelBangladesh`;
 
         const captionArea = document.getElementById('captionPlacesTextArea');
         if (captionArea) {
@@ -1616,12 +1623,31 @@
         ctx.fillText('#MYCHATTOGRAM', 90, footerY);
         if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
 
-        ctx.fillStyle = th.accent;
-        ctx.font = 'bold 16px "Plus Jakarta Sans", sans-serif';
-        if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
-        ctx.textAlign = 'right';
-        ctx.fillText("● SAKIB'S CREATION", W - 90, footerY);
-        if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+        // QR Code & Attribution
+        if (ctgStaticQrImg && ctgStaticQrImg.complete && ctgStaticQrImg.naturalWidth) {
+            ctx.drawImage(ctgStaticQrImg, W - 90 - 44, footerY - 20, 44, 44);
+            ctx.fillStyle = th.accent;
+            ctx.font = 'bold 16px "Plus Jakarta Sans", sans-serif';
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '2px';
+            ctx.textAlign = 'right';
+            ctx.fillText("● SAKIB'S CREATION", W - 90 - 54, footerY - 4);
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+
+            ctx.fillStyle = th.textDim || "#94a3b8";
+            ctx.font = '600 12px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText("ghuraghuri.vercel.app/chattogram", W - 90 - 54, footerY + 16);
+        } else {
+            ctx.fillStyle = th.accent;
+            ctx.font = 'bold 16px "Plus Jakarta Sans", sans-serif';
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
+            ctx.textAlign = 'right';
+            ctx.fillText("● SAKIB'S CREATION", W - 90, footerY - 6);
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+
+            ctx.fillStyle = th.textDim || "#94a3b8";
+            ctx.font = '600 12px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText("ghuraghuri.vercel.app/chattogram", W - 90, footerY + 16);
+        }
     }
 
     // Bind event listeners for Experience 03
@@ -1890,6 +1916,9 @@
             } else if (format === 'pdf') {
                 generateAndDownloadPlacesPdf(canvas, `${baseFileName}.pdf`);
             }
+            setTimeout(() => {
+                if (window.showCtgPostActionModal) window.showCtgPostActionModal();
+            }, 1200);
         }
 
         const setupPlacesDownloadBtn = (id, format) => {
@@ -2095,6 +2124,18 @@
     window.renderPlacesPoster = renderPoster;
     window.updatePlacesStats = updateUI;
     window.initPlacesMap = initMap;
+    window.ctgPlacesEngine = {
+        init: function() {
+            if (ctgPlaces.length === 0) initData();
+            if (!isInitialized) {
+                initMap();
+            } else {
+                renderPlacesList();
+                updateUI();
+                renderPoster();
+            }
+        }
+    };
 
 })();
 

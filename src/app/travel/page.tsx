@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useApp } from "@/context/AppContext";
 import travelData from "@/data/travel-services.json";
-import destinationsData from "@/data/destinations.json";
-import { Destination } from "@/types/destination";
 import BookingEngine from "@/components/travel/BookingEngine";
 import {
   CURATED_ITINERARIES,
@@ -140,6 +138,34 @@ export default function TravelPlannerPage() {
     setCheckedItems((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
+  const [sharingLocation, setSharingLocation] = useState<boolean>(false);
+
+  const handleShareLocation = () => {
+    setSharingLocation(true);
+    if (typeof window !== "undefined" && "geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setSharingLocation(false);
+          const url = generateSosWhatsAppUrl(destNameEn, {
+            lat: pos.coords.latitude,
+            lng: pos.coords.longitude,
+          });
+          window.open(url, "_blank", "noopener,noreferrer");
+        },
+        () => {
+          setSharingLocation(false);
+          const url = generateSosWhatsAppUrl(destNameEn);
+          window.open(url, "_blank", "noopener,noreferrer");
+        },
+        { timeout: 7000 }
+      );
+    } else {
+      setSharingLocation(false);
+      const url = generateSosWhatsAppUrl(destNameEn);
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+  };
+
   const completedCount = useMemo(() => {
     return Object.values(checkedItems).filter(Boolean).length;
   }, [checkedItems]);
@@ -148,7 +174,6 @@ export default function TravelPlannerPage() {
 
   // Data Lookup
   const { hotels: allHotelsMap, restaurants: allRestsMap, places } = travelData as unknown as TravelServicesData;
-  const destinations = destinationsData as unknown as Destination[];
 
   // Retrieve Active Curated Itinerary
   const activeItinerary = useMemo<DestinationItinerary | null>(() => {
@@ -303,7 +328,7 @@ export default function TravelPlannerPage() {
             <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
               {isBn
                 ? "গন্তব্য ও দিন নির্বাচন করুন—তাত্ক্ষণিক পেয়ে যান বাস্তব ভ্রমণসূচি, বিখ্যাত খাবার, হোটেল, যাতায়াত এবং প্রিন্ট/হোয়াটসঅ্যাপে শেয়ার করার সুবিধা।"
-                : "Select destination and duration to instantly generate a verified day-by-day travel itinerary with meals, direct contacts, and one-click WhatsApp sharing."}
+                : "Select destination and duration to instantly generate a curated day-by-day travel itinerary with meals, direct contacts, and one-click WhatsApp sharing."}
             </p>
           </div>
 
@@ -430,7 +455,7 @@ export default function TravelPlannerPage() {
                 <span>
                   {isBn
                     ? `${currentDestDisplay} — ${selectedDuration} দিনের পূর্ণাঙ্গ সূচি`
-                    : `Verified ${selectedDuration}-Day Itinerary for ${destNameEn}`}
+                    : `Curated ${selectedDuration}-Day Itinerary for ${destNameEn}`}
                 </span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground">
@@ -668,7 +693,7 @@ export default function TravelPlannerPage() {
                   label_en: "Hotel / Lodging",
                   label_bn: "আবাসন ও হোটেল কটেজ",
                   val: budgetResult.breakdown.hotel,
-                  desc_en: "Clean verified rooms matching party size",
+                  desc_en: "Clean curated rooms matching party size",
                   desc_bn: "মানসম্মত হোটেল বা পাহাড়ি কটেজ রুম",
                   icon: Hotel,
                   color: "text-[#2ecc71]",
@@ -809,10 +834,10 @@ export default function TravelPlannerPage() {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0f4a38]/10 text-[#0f4a38] dark:bg-[#1f9d76]/20 dark:text-[#2ecc71] text-xs font-bold mb-2">
                 <Hotel className="w-3.5 h-3.5" />
-                <span>{isBn ? "ভেরিফায়েড সেবা ও হেল্পলাইন" : "Verified Local Services"}</span>
+                <span>{isBn ? "বাছাইকৃত সেবা ও হেল্পলাইন" : "Curated Local Services"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground">
-                {isBn ? `${currentDestDisplay}-এর বিশ্বস্ত হোটেল ও রেস্তোরাঁ` : `Verified Hotels & Dining in ${destNameEn}`}
+                {isBn ? `${currentDestDisplay}-এর বাছাইকৃত হোটেল ও রেস্তোরাঁ` : `Curated Hotels & Dining in ${destNameEn}`}
               </h2>
               <p className="text-sm text-[var(--text-muted)] mt-1">
                 {isBn
@@ -853,14 +878,21 @@ export default function TravelPlannerPage() {
                   className="group rounded-2xl overflow-hidden bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm hover:shadow-lg transition-all flex flex-col justify-between"
                 >
                   <div>
-                    <div className="relative aspect-[16/10] w-full overflow-hidden">
-                      <Image
-                        src={`https://images.unsplash.com/photo-${h.photo}?auto=format&fit=crop&w=600&q=70`}
-                        alt={h.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[var(--surface-raised)]">
+                      {h.photo && h.photo.startsWith("/assets/") ? (
+                        <Image
+                          src={h.photo}
+                          alt={h.name}
+                          fill
+                          sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 360px"
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-emerald-950/40 via-teal-900/30 to-slate-900/40 flex flex-col items-center justify-center p-4 text-center">
+                          <Hotel className="w-10 h-10 text-emerald-400/60 mb-1" />
+                          <span className="text-[11px] font-medium text-emerald-200/80">{h.type || "Hotel"}</span>
+                        </div>
+                      )}
                       <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-bold bg-[#0f4a38] text-white">
                         {h.type}
                       </span>
@@ -871,10 +903,12 @@ export default function TravelPlannerPage() {
                         <span className="text-xs font-semibold text-[#0f4a38] dark:text-[#2ecc71]">
                           {h.hubName}
                         </span>
-                        <div className="flex items-center gap-1 text-xs font-bold text-[#f4a340]">
-                          <Star className="w-3.5 h-3.5 fill-[#f4a340]" />
-                          <span>{h.rating}</span>
-                        </div>
+                        {(h as any).ratingSource && (
+                          <div className="flex items-center gap-1 text-xs font-bold text-[#f4a340]">
+                            <Star className="w-3.5 h-3.5 fill-[#f4a340]" />
+                            <span>{h.rating}</span>
+                          </div>
+                        )}
                       </div>
 
                       <h3 className="text-base font-bold text-foreground mb-1 truncate">{h.name}</h3>
@@ -931,14 +965,21 @@ export default function TravelPlannerPage() {
                   className="group rounded-2xl overflow-hidden bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm hover:shadow-lg transition-all flex flex-col justify-between"
                 >
                   <div>
-                    <div className="relative aspect-[16/10] w-full overflow-hidden">
-                      <Image
-                        src={`https://images.unsplash.com/photo-${r.photo}?auto=format&fit=crop&w=600&q=70`}
-                        alt={r.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[var(--surface-raised)]">
+                      {r.photo && r.photo.startsWith("/assets/") ? (
+                        <Image
+                          src={r.photo}
+                          alt={r.name}
+                          fill
+                          sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 360px"
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-amber-950/40 via-orange-950/30 to-stone-900/40 flex flex-col items-center justify-center p-4 text-center">
+                          <UtensilsCrossed className="w-10 h-10 text-amber-400/60 mb-1" />
+                          <span className="text-[11px] font-medium text-amber-200/80">{r.cuisine || "Dining"}</span>
+                        </div>
+                      )}
                       <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-bold bg-[#f4a340] text-black">
                         {r.cuisine}
                       </span>
@@ -952,10 +993,12 @@ export default function TravelPlannerPage() {
                         <span className="text-xs font-semibold text-[#0f4a38] dark:text-[#2ecc71]">
                           {r.hubName}
                         </span>
-                        <div className="flex items-center gap-1 text-xs font-bold text-[#f4a340]">
-                          <Star className="w-3.5 h-3.5 fill-[#f4a340]" />
-                          <span>{r.rating}</span>
-                        </div>
+                        {(r as any).ratingSource && (
+                          <div className="flex items-center gap-1 text-xs font-bold text-[#f4a340]">
+                            <Star className="w-3.5 h-3.5 fill-[#f4a340]" />
+                            <span>{r.rating}</span>
+                          </div>
+                        )}
                       </div>
 
                       <h3 className="text-base font-bold text-foreground mb-1 truncate">{r.name}</h3>
@@ -1020,20 +1063,20 @@ export default function TravelPlannerPage() {
           />
         </section>
 
-        {/* 7. VERIFIED LOCAL TRANSPORT FAIR FARE GUIDE */}
+        {/* 7. TYPICAL LOCAL TRANSPORT FARE GUIDE */}
         <section className="p-6 sm:p-10 rounded-3xl bg-[var(--surface)] border border-[var(--glass-border)] shadow-xl">
           <div className="mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#38bdf8]/15 text-[#0284c7] dark:text-[#38bdf8] text-xs font-bold mb-2">
               <Bus className="w-3.5 h-3.5" />
-              <span>{isBn ? "ন্যায্য ভাড়ার গাইড" : "Verified Fair Local Fares"}</span>
+              <span>{isBn ? "প্রচলিত ভাড়ার গাইড" : "Typical Local Fares"}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground">
-              {isBn ? "চান্দের গাড়ি, বোট ও লোকাল ট্রানজিটের সঠিক ভাড়া" : "Authorized Fares for 4x4s, Boats & Local Transit"}
+              {isBn ? "প্রচলিত লোকাল ভাড়া (আনুমানিক: ওঠার আগে নিশ্চিত করুন)" : "Typical Local Fares (approximate: confirm before you pay)"}
             </h2>
             <p className="text-sm text-[var(--text-muted)] mt-1">
               {isBn
-                ? "অতিরিক্ত ভাড়া আদায় বা প্রতারণা এড়াতে প্রশাসন ও স্থানীয় সমিতি কর্তৃক নির্ধারিত রেট।"
-                : "Official and fair market rates verified to prevent tourist overcharging."}
+                ? "চান্দের গাড়ি, বোট ও লোকাল ট্রানজিটের সাধারণ ভাড়ার ধারণা যাতে অতিরিক্ত খরচ এড়ানো যায়।"
+                : "Estimated market rates for 4x4s, boats, and local transit to help you negotiate."}
             </p>
           </div>
 
@@ -1045,21 +1088,28 @@ export default function TravelPlannerPage() {
               >
                 <div>
                   <div className="flex items-center justify-between text-xs font-bold text-[#0f4a38] dark:text-[#2ecc71] mb-2">
-                    <span>{fare.region}</span>
+                    <span className="uppercase">{fare.category || "Transit"}</span>
                     <span className="px-2 py-0.5 rounded-full bg-[var(--surface)] border border-[var(--glass-border)]">
                       {fare.vehicle}
                     </span>
                   </div>
                   <h4 className="text-base font-black text-foreground mb-1">{fare.route}</h4>
-                  <p className="text-xs text-[var(--text-muted)] leading-relaxed mb-4">{fare.notes}</p>
+                  <p className="text-xs text-[var(--text-muted)] leading-relaxed mb-4">{fare.note}</p>
                 </div>
-                <div className="pt-3 border-t border-[var(--glass-border)] flex items-center justify-between">
-                  <span className="text-xs font-bold text-[var(--text-muted)]">
-                    {isBn ? "অনুমোদিত ভাড়া:" : "Approved Fare:"}
-                  </span>
-                  <span className="text-base font-extrabold text-[#0f4a38] dark:text-[#2ecc71]">
-                    {fare.fare_bdt}
-                  </span>
+                <div className="pt-3 border-t border-[var(--glass-border)] flex flex-col gap-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-[var(--text-muted)]">
+                      {isBn ? "প্রচলিত ভাড়া:" : "Typical Fare:"}
+                    </span>
+                    <span className="text-base font-extrabold text-[#0f4a38] dark:text-[#2ecc71]">
+                      {fare.fare}
+                    </span>
+                  </div>
+                  {fare.lastChecked && (
+                    <span className="text-[10px] text-[var(--text-muted)] text-right">
+                      Last checked: {fare.lastChecked}
+                    </span>
+                  )}
                 </div>
               </div>
             ))}
@@ -1079,44 +1129,60 @@ export default function TravelPlannerPage() {
               </h2>
               <p className="text-sm text-white/80 mt-1 max-w-xl">
                 {isBn
-                  ? "ট্যুরিস্ট পুলিশ সদর দপ্তর এবং আঞ্চলিক ক্যাম্পের জরুরি হটলাইন। যেকোনো প্রয়োজনে সরাসরি কল করুন।"
-                  : "Direct official emergency lines across all major tourist districts in Bangladesh."}
+                  ? "জরুরি প্রয়োজনে জাতীয় হেল্পলাইন ৯৯৯ ডায়াল করুন অথবা অফিশিয়াল ট্যুরিস্ট পুলিশ পোর্টালে যোগাযোগ করুন।"
+                  : "For urgent assistance, dial 999 or visit the official Tourist Police portal."}
               </p>
             </div>
 
             {/* Direct WhatsApp SOS Trigger */}
-            <a
-              href={generateSosWhatsAppUrl(destNameEn)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#2ecc71] hover:bg-[#27ae60] text-black font-extrabold text-sm shadow-xl transition-all hover:scale-105 shrink-0"
+            <button
+              type="button"
+              onClick={handleShareLocation}
+              disabled={sharingLocation}
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#2ecc71] hover:bg-[#27ae60] text-black font-extrabold text-sm shadow-xl transition-all hover:scale-105 shrink-0 cursor-pointer disabled:opacity-60"
             >
               <PhoneCall className="w-4 h-4" />
-              <span>{isBn ? "WhatsApp জিপিএস SOS পাঠান" : "Send WhatsApp GPS SOS"}</span>
-            </a>
+              <span>
+                {sharingLocation
+                  ? (isBn ? "লোকেশন নেওয়া হচ্ছে..." : "Locating...")
+                  : (isBn ? "হোয়াটসঅ্যাপে আমার লোকেশন শেয়ার করুন" : "Share my location on WhatsApp")}
+              </span>
+            </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {getEmergencyContacts(destNameEn).map((contact, i) => (
-              <a
-                key={i}
-                href={`tel:${contact.phone.replace(/[^0-9]/g, "")}`}
-                className="p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex flex-col justify-between group cursor-pointer"
-              >
-                <div>
-                  <span className="text-xs font-semibold text-[#2ecc71]">{contact.note}</span>
-                  <h4 className="text-sm font-bold text-white group-hover:text-[#2ecc71] transition-colors mt-0.5">
-                    {contact.name}
-                  </h4>
-                </div>
-                <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-[#f4a340]">
-                  <span>{contact.phone}</span>
-                  <span className="text-white/60 group-hover:translate-x-1 transition-transform">
-                    {isBn ? "📞 কল করুন" : "📞 Call"}
-                  </span>
-                </div>
-              </a>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {getEmergencyContacts(destNameEn).map((contact, i) => {
+              const hasPhone = Boolean(contact.phone);
+              const href = contact.telLink || (hasPhone
+                ? (contact.phone === "999" ? "tel:999" : `tel:+88${contact.phone!.replace(/[^0-9]/g, "")}`)
+                : (contact.officialUrl || "https://touristpolice.gov.bd"));
+              const isExternal = !hasPhone;
+
+              return (
+                <a
+                  key={i}
+                  href={href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  className="p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex flex-col justify-between group cursor-pointer"
+                >
+                  <div>
+                    <span className="text-xs font-semibold text-[#2ecc71]">{contact.note}</span>
+                    <h4 className="text-sm font-bold text-white group-hover:text-[#2ecc71] transition-colors mt-0.5">
+                      {contact.name}
+                    </h4>
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-[#f4a340]">
+                    <span>{contact.phone || "touristpolice.gov.bd"}</span>
+                    <span className="text-white/60 group-hover:translate-x-1 transition-transform">
+                      {hasPhone
+                        ? (isBn ? "📞 কল করুন" : "📞 Call")
+                        : (isBn ? "🌐 অফিসিয়াল পোর্টাল" : "🌐 Official Tourist Police portal")}
+                    </span>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </section>
 
@@ -1128,12 +1194,12 @@ export default function TravelPlannerPage() {
               <span>{isBn ? "অফিশিয়াল টিকিট ও বুকিং গেটওয়ে" : "Official Ticket & Booking Services"}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground">
-              {isBn ? "সরাসরি সরকারি ও ভেরিফায়েড বুকিং সার্ভিস" : "Direct Ticket & Travel Booking Services"}
+              {isBn ? "সরাসরি সরকারি ও বিশ্বস্ত বুকিং সার্ভিস" : "Direct Ticket & Travel Booking Services"}
             </h2>
             <p className="text-sm text-[var(--text-muted)] mt-1">
               {isBn
                 ? "বাংলাদেশ রেলওয়ে ই-টিকিট, দূরপাল্লার আন্তঃনগর বাস ও নির্ভরযোগ্য পোর্টাল।"
-                : "Access verified Bangladesh Railway e-ticketing and luxury intercity express buses."}
+                : "Access official Bangladesh Railway e-ticketing and reliable express buses."}
             </p>
           </div>
 
@@ -1182,7 +1248,7 @@ export default function TravelPlannerPage() {
                 <p className="text-xs text-[var(--text-muted)] leading-relaxed mb-6">
                   {isBn
                     ? "গ্রিন লাইন, হানিফ, সোহাগ, শ্যামলী, সেন্টমার্টিন হুন্দাই সহ সকল প্রিমিয়াম বাস।"
-                    : "Verified tickets for Green Line, Hanif, Shohag, Shyamoli, and luxury AC coaches."}
+                    : "Direct tickets for Green Line, Hanif, Shohag, Shyamoli, and luxury AC coaches."}
                 </p>
               </div>
               <div className="flex gap-2">

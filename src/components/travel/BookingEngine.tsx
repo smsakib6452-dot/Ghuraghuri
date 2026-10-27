@@ -24,6 +24,8 @@ import {
   MessageCircle,
 } from "lucide-react";
 
+export const ENABLE_BOOKING_DEMO = false;
+
 export const OPERATOR_CONTACTS: Record<string, { phone: string; whatsapp?: string; portalUrl: string }> = {
   "Green Line Paribahan": { phone: "01730-060000", whatsapp: "8801730060000", portalUrl: "https://greenlinebd.com" },
   "Hanif Enterprise": { phone: "01713-402673", whatsapp: "8801713402673", portalUrl: "https://shohoz.com" },
@@ -212,17 +214,15 @@ export default function BookingEngine({
 
   // Confirmed Voucher & Storage
   const [currentVoucher, setCurrentVoucher] = useState<BookingVoucher | null>(null);
-  const [savedBookings, setSavedBookings] = useState<BookingVoucher[]>([]);
-
-  // Load from local storage
-  useEffect(() => {
+  const [savedBookings, setSavedBookings] = useState<BookingVoucher[]>(() => {
+    if (typeof window === "undefined") return [];
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) setSavedBookings(JSON.parse(raw));
+      return raw ? JSON.parse(raw) : [];
     } catch {
-      // ignore
+      return [];
     }
-  }, []);
+  });
 
   // Listen for external trigger (e.g. user clicked "Book" on a hotel card in page.tsx)
   useEffect(() => {
@@ -404,15 +404,15 @@ export default function BookingEngine({
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0f4a38]/10 text-[#0f4a38] dark:bg-[#1f9d76]/20 dark:text-[#2ecc71] text-xs font-bold mb-2">
               <Compass className="w-3.5 h-3.5" />
-              <span>{isBn ? "লাইভ টিকিট ও শিডিউল ইঞ্জিন" : "Live Timetable & Seat Booking"}</span>
+              <span>{isBn ? "প্রচলিত আন্তঃনগর শিডিউল" : "Typical Intercity Schedules (confirm with the operator)"}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground">
               {isBn ? "আন্তঃনগর বাস, ট্রেন ও লঞ্চ শিডিউল" : "Intercity Transit Timetables"}
             </h2>
             <p className="text-sm text-[var(--text-muted)] mt-1">
               {isBn
-                ? "সরাসরি সিট সিলেক্ট করে টিকিট ভাউচার সংগ্রহ করুন অথবা অফিশিয়াল সরকারি পোর্টালে যান।"
-                : "Select preferred seats directly with instant voucher generation, or link to official portals."}
+                ? "কাউন্টারে সরাসরি ফোন বা মেসেজ পাঠিয়ে সময় ও আসন নিশ্চিত করুন অথবা অফিশিয়াল পোর্টালে যান।"
+                : "Confirm departure times and seat availability directly with the operator or via official portals."}
             </p>
           </div>
 
@@ -424,7 +424,7 @@ export default function BookingEngine({
               onChange={(e) => setActiveCorridor(e.target.value)}
               className="px-4 py-2.5 rounded-xl bg-[var(--surface-raised)] border border-[var(--glass-border)] text-xs sm:text-sm font-bold text-foreground focus:outline-none focus:ring-2 focus:ring-[#0f4a38]"
             >
-              <option value="dhaka-coxs-bazar">ঢাকা ⇄ কক্সবাজার (Cox's Bazar)</option>
+              <option value="dhaka-coxs-bazar">ঢাকা ⇄ কক্সবাজার (Cox&apos;s Bazar)</option>
               <option value="dhaka-chattogram">ঢাকা ⇄ চট্টগ্রাম (Chattogram)</option>
               <option value="dhaka-sylhet">ঢাকা ⇄ সিলেট (Sylhet)</option>
               <option value="dhaka-sajek">ঢাকা ⇄ সাজেক (Khagrachhari/Sajek)</option>
@@ -481,10 +481,14 @@ export default function BookingEngine({
                       <Clock className="w-3.5 h-3.5 text-[#0f4a38] dark:text-[#2ecc71]" />
                       {item.depart} → {item.arrive}
                     </span>
-                    <span>•</span>
-                    <span className="text-emerald-600 dark:text-emerald-400 font-bold">
-                      {item.seatsLeft} {isBn ? "সিট বাকি" : "seats left"}
-                    </span>
+                    {ENABLE_BOOKING_DEMO && (
+                      <>
+                        <span>•</span>
+                        <span className="text-emerald-600 dark:text-emerald-400 font-bold">
+                          {item.seatsLeft} {isBn ? "সিট বাকি" : "seats left"}
+                        </span>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -527,15 +531,17 @@ export default function BookingEngine({
                     </a>
                   )}
 
-                  {/* Seat Selection Button */}
-                  <button
-                    type="button"
-                    onClick={() => openTransportBooking(item)}
-                    className="min-h-[40px] px-4 py-2 rounded-xl bg-[#0f4a38] hover:bg-[#156b50] text-white text-xs font-bold shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer"
-                  >
-                    <span>{isBn ? "সিট বাছুন" : "Select Seats"}</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
+                  {/* Seat Selection Button (Demo) */}
+                  {ENABLE_BOOKING_DEMO && (
+                    <button
+                      type="button"
+                      onClick={() => openTransportBooking(item)}
+                      className="min-h-[40px] px-4 py-2 rounded-xl bg-[#0f4a38] hover:bg-[#156b50] text-white text-xs font-bold shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <span>{isBn ? "সিট বাছুন" : "Select Seats"}</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -544,24 +550,26 @@ export default function BookingEngine({
       </div>
 
       {/* Floating Action Pill Bar */}
-      <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2">
-        <button
-          type="button"
-          onClick={() => setActiveModal("myBookings")}
-          className="px-5 py-3 rounded-full bg-gradient-to-r from-[#0f4a38] to-[#15803d] text-white font-bold text-xs sm:text-sm shadow-2xl border border-white/20 flex items-center gap-2 hover:scale-105 transition-all"
-        >
-          <Ticket className="w-4 h-4" />
-          <span>{isBn ? "আমার বুকিং" : "My Bookings"}</span>
-          <span className="px-2 py-0.5 rounded-full bg-[#f4a340] text-black font-extrabold text-xs">
-            {savedBookings.length}
-          </span>
-        </button>
-      </div>
+      {ENABLE_BOOKING_DEMO && (
+        <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setActiveModal("myBookings")}
+            className="px-5 py-3 rounded-full bg-gradient-to-r from-[#0f4a38] to-[#15803d] text-white font-bold text-xs sm:text-sm shadow-2xl border border-white/20 flex items-center gap-2 hover:scale-105 transition-all"
+          >
+            <Ticket className="w-4 h-4" />
+            <span>{isBn ? "আমার বুকিং" : "My Bookings"}</span>
+            <span className="px-2 py-0.5 rounded-full bg-[#f4a340] text-black font-extrabold text-xs">
+              {savedBookings.length}
+            </span>
+          </button>
+        </div>
+      )}
 
       {/* =========================================================================
           MODAL 1: INTERACTIVE SEAT PICKER & TRANSPORT BOOKING
           ========================================================================= */}
-      {activeModal === "transport" && selectedSchedule && (
+      {ENABLE_BOOKING_DEMO && activeModal === "transport" && selectedSchedule && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
           <div className="relative w-full max-w-2xl bg-[var(--surface)] border border-[var(--glass-border)] rounded-3xl p-6 sm:p-8 shadow-2xl my-8 animate-in fade-in zoom-in-95 duration-200">
             <button
@@ -661,7 +669,7 @@ export default function BookingEngine({
                         key={c.key}
                         type="button"
                         onClick={() => {
-                          setSelectedClass(c.key as any);
+                          setSelectedClass(c.key as "snigdha" | "shovon" | "berth");
                           setSelectedSeats([]);
                         }}
                         className={`p-2.5 rounded-xl text-left border transition-all ${
@@ -929,7 +937,7 @@ export default function BookingEngine({
       {/* =========================================================================
           MODAL 2: HOTEL ROOM BOOKING
           ========================================================================= */}
-      {activeModal === "hotel" && hotelItem && (
+      {ENABLE_BOOKING_DEMO && activeModal === "hotel" && hotelItem && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
           <div className="relative w-full max-w-xl bg-[var(--surface)] border border-[var(--glass-border)] rounded-3xl p-6 sm:p-8 shadow-2xl my-8">
             <button
@@ -1088,7 +1096,7 @@ export default function BookingEngine({
       {/* =========================================================================
           MODAL 3: RESTAURANT TABLE RESERVATION
           ========================================================================= */}
-      {activeModal === "restaurant" && restItem && (
+      {ENABLE_BOOKING_DEMO && activeModal === "restaurant" && restItem && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
           <div className="relative w-full max-w-xl bg-[var(--surface)] border border-[var(--glass-border)] rounded-3xl p-6 sm:p-8 shadow-2xl my-8">
             <button
@@ -1220,7 +1228,7 @@ export default function BookingEngine({
       {/* =========================================================================
           MODAL 4: CONFIRMED VOUCHER SLIP
           ========================================================================= */}
-      {activeModal === "confirmation" && currentVoucher && (
+      {ENABLE_BOOKING_DEMO && activeModal === "confirmation" && currentVoucher && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
           <div className="relative w-full max-w-lg bg-[var(--surface)] border border-[var(--glass-border)] rounded-3xl p-6 sm:p-8 shadow-2xl my-8">
             <button
@@ -1351,7 +1359,7 @@ export default function BookingEngine({
       {/* =========================================================================
           MODAL 5: "MY BOOKINGS" DRAWER
           ========================================================================= */}
-      {activeModal === "myBookings" && (
+      {ENABLE_BOOKING_DEMO && activeModal === "myBookings" && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
           <div className="relative w-full max-w-2xl bg-[var(--surface)] border border-[var(--glass-border)] rounded-3xl p-6 sm:p-8 shadow-2xl my-8">
             <button

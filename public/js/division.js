@@ -18,6 +18,9 @@
 (function () {
     "use strict";
 
+    const ctgStaticQrImg = new Image();
+    ctgStaticQrImg.src = 'qr-chattogram.png';
+
     // 1. Data mapping for Chattogram Division (11 districts) with manual anchor offsets
     const DISTRICT_MAP = {
         'Bandarban': { id: 'bandarban', name_bn: 'বান্দরবান', name_en: 'Bandarban', offset: { x: 0, y: 12 } },
@@ -1272,8 +1275,8 @@
         const photoNote = photoCount > 0 ? ` (${convertToBanglaNum(photoCount)}টি স্মৃতি ছবি সংযুক্ত)` : '';
 
         const text = count === 0
-            ? `আমি এখনো চট্টগ্রাম বিভাগের সব জেলা ঘুরে দেখিনি। আপনি কয়টি ঘুরেছেন?\n\nনিজের চট্টগ্রাম ম্যাপ তৈরি করুন: ${window.location.origin}${window.location.pathname}#exp1\n\n#MyChattogram #SakibsCreation #Ghuraghuri`
-            : `চট্টগ্রাম বিভাগের ১১টি জেলার মধ্যে আমি ${countBn}টি জেলা ঘুরে দেখেছি! (${rank.title})${photoNote}\n\nঘুরে আসা জেলাগুলো: ${selectedNames || 'সবগুলো'}\n\nআপনি কয়টি জেলা ঘুরেছেন? নিজের মানচিত্র তৈরি করুন: ${window.location.origin}${window.location.pathname}#exp1\n\n#MyChattogram #ChattogramDivision #TravelBangladesh #SakibsCreation`;
+            ? `আমি এখনো চট্টগ্রাম বিভাগের সব জেলা ঘুরে দেখিনি। আপনি কয়টি ঘুরেছেন?\n\nনিজের চট্টগ্রাম ম্যাপ তৈরি করুন: ${window.location.origin}${window.location.pathname}https://ghuraghuri.vercel.app/chattogram#division\n\n#MyChattogram #SakibsCreation #Ghuraghuri`
+            : `চট্টগ্রাম বিভাগের ১১টি জেলার মধ্যে আমি ${countBn}টি জেলা ঘুরে দেখেছি! (${rank.title})${photoNote}\n\nঘুরে আসা জেলাগুলো: ${selectedNames || 'সবগুলো'}\n\nআপনি কয়টি জেলা ঘুরেছেন? নিজের মানচিত্র তৈরি করুন: ${window.location.origin}${window.location.pathname}https://ghuraghuri.vercel.app/chattogram#division\n\n#MyChattogram #ChattogramDivision #TravelBangladesh #SakibsCreation`;
 
         captionArea.value = text;
     }
@@ -1545,12 +1548,31 @@
         ctx.fillText('#MYCHATTOGRAM', 80, H - 55);
         if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
 
-        ctx.fillStyle = t.accent;
-        ctx.font = 'bold 15px "Plus Jakarta Sans", sans-serif';
-        if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
-        ctx.textAlign = 'right';
-        ctx.fillText("● SAKIB'S CREATION", W - 80, H - 55);
-        if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+        // QR Code & Attribution
+        if (ctgStaticQrImg && ctgStaticQrImg.complete && ctgStaticQrImg.naturalWidth) {
+            ctx.drawImage(ctgStaticQrImg, W - 80 - 44, H - 75, 44, 44);
+            ctx.fillStyle = t.accent;
+            ctx.font = 'bold 15px "Plus Jakarta Sans", sans-serif';
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '2px';
+            ctx.textAlign = 'right';
+            ctx.fillText("● SAKIB'S CREATION", W - 80 - 54, H - 60);
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+
+            ctx.fillStyle = t.textDim || "#94a3b8";
+            ctx.font = '600 12px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText("ghuraghuri.vercel.app/chattogram", W - 80 - 54, H - 42);
+        } else {
+            ctx.fillStyle = t.accent;
+            ctx.font = 'bold 15px "Plus Jakarta Sans", sans-serif';
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
+            ctx.textAlign = 'right';
+            ctx.fillText("● SAKIB'S CREATION", W - 80, H - 60);
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+
+            ctx.fillStyle = t.textDim || "#94a3b8";
+            ctx.font = '600 12px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText("ghuraghuri.vercel.app/chattogram", W - 80, H - 42);
+        }
     }
 
     // 9. Event Binding
@@ -1784,6 +1806,9 @@
         } else if (format === 'pdf') {
             generateAndDownloadPdf(canvas, `${baseFileName}.pdf`);
         }
+        setTimeout(() => {
+            if (window.showCtgPostActionModal) window.showCtgPostActionModal();
+        }, 1200);
     }
 
     function triggerDownload(url, filename) {

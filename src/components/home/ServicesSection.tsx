@@ -16,6 +16,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { TRAVEL_HUB_REMOTE_IMAGES } from "@/data/remote-images";
+import { EMERGENCY_CONFIG } from "@/lib/emergency";
 
 export function ServicesSection() {
   const { language } = useApp();
@@ -70,12 +71,14 @@ export function ServicesSection() {
       desc: isBn ? "বিনামূল্যে ব্যবহারযোগ্য, কোনো বুকিং ফি নেই" : "Free to use, no booking fees",
     },
     {
-      title: isBn ? "ন্যায্য ভাড়ার স্পষ্ট তালিকা" : "Transparent Fair Fares",
-      desc: isBn ? "লোকাল ট্র্যাপ মুক্ত সঠিক খরচের হিসাব" : "Official rates for 4x4 & buses",
+      title: isBn ? "ন্যায্য ভাড়ার স্পষ্ট তালিকা" : "Typical Local Fares Guide",
+      desc: isBn ? "ভ্রমণে অতিরিক্ত খরচ এড়াতে সঠিক খরচের হিসাব" : "Estimated rates for 4x4 & buses",
     },
     {
-      title: isBn ? "ট্যুরিস্ট পুলিশ জরুরি হটলাইন" : "Tourist Police Helpline",
-      desc: isBn ? "জরুরিতে ডায়াল করুন: ০১৩২০-১৬৯৫৯৮" : "Direct SOS: 01320-169598 / 999",
+      title: isBn ? "জরুরি নিরাপত্তা সেবা" : "Emergency Safety Helpline",
+      desc: isBn
+        ? `ট্যুরিস্ট পুলিশ: ${EMERGENCY_CONFIG.touristPolice.displayBn} / ${EMERGENCY_CONFIG.nationalEmergency.displayBn}`
+        : `Tourist Police: ${EMERGENCY_CONFIG.touristPolice.display} / ${EMERGENCY_CONFIG.nationalEmergency.display}`,
     },
     {
       title: isBn ? "দায়িত্বশীল ইকো-ট্যুরিজম" : "Responsible Eco-Tourism",
@@ -116,7 +119,7 @@ export function ServicesSection() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 280px"
                     loading="lazy"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -165,11 +168,15 @@ export function ServicesSection() {
             </div>
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 shrink-0">
               <a
-                href="tel:999"
+                href={EMERGENCY_CONFIG.touristPolice.telLink}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-rose-600 hover:bg-rose-700 text-white shadow-md transition-colors shrink-0"
               >
                 <PhoneCall className="w-3.5 h-3.5 animate-pulse" />
-                <span>{isBn ? "ট্যুরিস্ট পুলিশ (৯৯৯)" : "Tourist Police 999"}</span>
+                <span>
+                  {isBn
+                    ? `ট্যুরিস্ট পুলিশ: ${EMERGENCY_CONFIG.touristPolice.displayBn} / ${EMERGENCY_CONFIG.nationalEmergency.displayBn}`
+                    : `Tourist Police: ${EMERGENCY_CONFIG.touristPolice.display} / ${EMERGENCY_CONFIG.nationalEmergency.display}`}
+                </span>
               </a>
               <Link
                 href="/weather"

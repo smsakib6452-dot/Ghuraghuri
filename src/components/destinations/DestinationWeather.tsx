@@ -92,7 +92,18 @@ export default function DestinationWeather({ latitude, longitude, locationName }
       }
     }
 
-    fetchWeather();
+    const scheduleFetch = () => {
+      if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+        (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback(
+          fetchWeather,
+          { timeout: 2000 }
+        );
+      } else {
+        setTimeout(fetchWeather, 250);
+      }
+    };
+
+    scheduleFetch();
     return () => {
       active = false;
     };
@@ -100,11 +111,21 @@ export default function DestinationWeather({ latitude, longitude, locationName }
 
   if (loading) {
     return (
-      <div className="p-5 rounded-2xl bg-[var(--surface-raised)] border border-[var(--glass-border)] animate-pulse flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl bg-gray-300 dark:bg-gray-700" />
-        <div className="space-y-1.5 flex-1">
-          <div className="h-3 w-24 bg-gray-300 dark:bg-gray-700 rounded" />
+      <div className="p-5 rounded-2xl bg-[var(--surface-raised)] border border-[var(--glass-border)] animate-pulse min-h-[160px] flex flex-col justify-between">
+        <div className="flex items-center justify-between pb-3 border-b border-[var(--glass-border)]">
+          <div className="flex items-center gap-2">
+            <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700" />
+            <div className="h-4 w-24 bg-gray-300 dark:bg-gray-700 rounded" />
+          </div>
+          <div className="h-3 w-16 bg-gray-300 dark:bg-gray-700 rounded" />
+        </div>
+        <div className="flex items-baseline justify-between py-2">
+          <div className="h-8 w-20 bg-gray-300 dark:bg-gray-700 rounded" />
           <div className="h-4 w-16 bg-gray-300 dark:bg-gray-700 rounded" />
+        </div>
+        <div className="grid grid-cols-2 gap-2 pt-2 border-t border-[var(--glass-border)]">
+          <div className="h-3.5 w-20 bg-gray-300 dark:bg-gray-700 rounded" />
+          <div className="h-3.5 w-20 bg-gray-300 dark:bg-gray-700 rounded" />
         </div>
       </div>
     );
@@ -113,7 +134,7 @@ export default function DestinationWeather({ latitude, longitude, locationName }
   if (!weather) return null;
 
   return (
-    <div className="p-5 rounded-2xl bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm">
+    <div className="p-5 rounded-2xl bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm min-h-[160px] flex flex-col justify-between">
       <div className="flex items-center justify-between pb-3 border-b border-[var(--glass-border)] mb-3">
         <div className="flex items-center gap-2">
           {weather.iconType === "sun" && <Sun className="w-5 h-5 text-[#f4a340]" />}

@@ -97,6 +97,7 @@ function HotelsContent() {
     phone: string;
     whatsapp: string;
     mapQuery: string;
+    ratingSource?: string;
   }> = [];
 
   for (const hub of hubs) {
@@ -112,7 +113,8 @@ function HotelsContent() {
         reviews: item.review_count,
         priceBDT: item.price,
         type: item.hotel_type,
-        image: `https://images.unsplash.com/photo-${item.photo}?auto=format&fit=crop&w=700&q=70`,
+        image: item.photo.startsWith("/assets/") ? item.photo : "",
+        ratingSource: (item as any).ratingSource,
         phone: item.phone || "+8801700000000",
         whatsapp: item.whatsapp || "8801700000000",
         mapQuery: item.map_query || encodeURIComponent(`${item.name} ${item.address}`),
@@ -139,7 +141,7 @@ function HotelsContent() {
           <p className="text-sm sm:text-base text-[var(--text-muted)] mt-2">
             {isBn
               ? "কক্সবাজার, সাজেক, সিলেট, ঢাকা এবং প্রধান প্রধান পর্যটন এলাকার যাচাইকৃত হোটেল।"
-              : "Hand-picked comfort and luxury stays across top destinations with verified rates."}
+              : "Hand-picked comfort and luxury stays across top destinations with curated rates."}
           </p>
         </div>
 
@@ -181,22 +183,30 @@ function HotelsContent() {
               key={idx}
               className="group flex flex-col rounded-2xl overflow-hidden bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5"
             >
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-emerald-950/40 via-teal-900/30 to-slate-900/40 flex flex-col items-center justify-center p-4 text-center">
+                {hotel.image ? (
+                  <Image
+                    src={hotel.image}
+                    alt={hotel.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <>
+                    <Hotel className="w-12 h-12 text-emerald-400/60 mb-2" />
+                    <span className="text-xs font-semibold text-emerald-200/80">{hotel.type || "Hotel & Resort"}</span>
+                  </>
+                )}
                 <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-bold bg-black/60 text-white backdrop-blur-md">
                   {hotel.hubName}
                 </span>
-                <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold">
-                  <Star className="w-3.5 h-3.5 text-[#f4a340] fill-[#f4a340]" />
-                  <span>{hotel.rating}</span>
-                  <span className="text-white/80 text-xs font-semibold">· Explorer Score</span>
-                </div>
+                {(hotel as any).ratingSource && (
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold">
+                    <Star className="w-3.5 h-3.5 text-[#f4a340] fill-[#f4a340]" />
+                    <span>{hotel.rating}</span>
+                  </div>
+                )}
               </div>
 
               <div className="flex flex-col flex-1 p-6">

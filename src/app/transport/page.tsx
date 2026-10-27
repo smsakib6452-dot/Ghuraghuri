@@ -36,6 +36,7 @@ import {
   EMERGENCY_CONTACTS,
   generateSosWhatsAppUrl,
 } from "@/lib/free-api-service";
+import { EMERGENCY_CONFIG } from "@/lib/emergency";
 import { getTransportTranslation } from "@/lib/i18n";
 
 type TransportTab = "intercity" | "router" | "local" | "budget" | "police";
@@ -350,15 +351,15 @@ export default function TransportPage() {
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0f4a38]/10 text-[#0f4a38] dark:bg-[#1f9d76]/20 dark:text-[#2ecc71] text-xs font-bold mb-3">
             <Bus className="w-3.5 h-3.5" />
-            <span>{isBn ? "ভেরিফাইড পরিবহন ও রুট নির্দেশিকা" : "Verified Transport & Transit Portal"}</span>
+            <span>{isBn ? "বাছাইকৃত পরিবহন ও রুট নির্দেশিকা" : "Curated Transport & Transit Portal"}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight">
             {isBn ? "যাতায়াত ব্যবস্থা, লাইভ রুট ও লোকাল ভাড়া" : "Highway Routing & Fair Fare Portal"}
           </h1>
           <p className="text-sm sm:text-base text-[var(--text-muted)] mt-3 leading-relaxed">
             {isBn
-              ? "আন্তঃজেলা বাস-ট্রেন টিকেট, ওএসআরএম লাইভ হাইওয়ে রুট ফাইন্ডার, চাঁন্দের গাড়ি ও ট্রলারের সরকারি ভেরিফাইড ভাড়া এবং ২৪/৭ ট্যুরিস্ট পুলিশ জরুরি হটলাইন।"
-              : "Intercity express routes, live road distance calculator, government-notified jeep & boat fares, and 24/7 Tourist Police safety helpline."}
+              ? "আন্তঃজেলা বাস-ট্রেন টিকেট, ওএসআরএম লাইভ হাইওয়ে রুট ফাইন্ডার, চাঁন্দের গাড়ি ও ট্রলারের আনুমানিক ভাড়া এবং ২৪/৭ ট্যুরিস্ট পুলিশ জরুরি হটলাইন।"
+              : "Intercity express routes, live road distance calculator, estimated jeep & boat fares, and 24/7 Tourist Police safety helpline."}
           </p>
         </div>
 
@@ -633,7 +634,7 @@ export default function TransportPage() {
                 <p className="text-xs sm:text-sm text-[var(--text-muted)] mt-1">
                   {isBn
                     ? "সরাসরি বাসের টিকিট বুকিং ও আসন নিশ্চিতে কাউন্টারের ফোন নম্বরে কল করুন।"
-                    : "Verified phone numbers for central counters across Dhaka, Chattogram, and tourist destinations."}
+                    : "Curated phone numbers for central counters across Dhaka, Chattogram, and tourist destinations."}
                 </p>
               </div>
 
@@ -649,7 +650,7 @@ export default function TransportPage() {
                           {isBn ? op.name_bn : op.name}
                         </h4>
                         <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 shrink-0">
-                          {isBn ? "ভেরিফায়েড" : "Verified"}
+                          {isBn ? "বাছাইকৃত" : "Curated"}
                         </span>
                       </div>
                       <span className="text-[11px] text-[var(--text-muted)] block font-medium">
@@ -850,12 +851,12 @@ export default function TransportPage() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[var(--glass-border)]">
               <div>
                 <h2 className="text-2xl sm:text-3xl font-black text-foreground">
-                  {isBn ? "চাঁন্দের গাড়ি, ট্রলার ও লোকাল বাহনের ভেরিফাইড ভাড়া" : "Verified Fair Local Transport Rates"}
+                  {isBn ? "চাঁন্দের গাড়ি, ট্রলার ও লোকাল বাহনের আনুমানিক ভাড়া" : "Typical Local Transport Rates"}
                 </h2>
                 <p className="text-xs sm:text-sm text-[var(--text-muted)] mt-1">
                   {isBn
-                    ? "সাজেক, বান্দরবান ও কক্সবাজারের রেজিস্টার্ড চালক সমিতির সরকারি তালিকাভুক্ত ন্যায্য ভাড়া।"
-                    : "Government and driver association verified rates to protect travelers from local overcharging."}
+                    ? "সাজেক, বান্দরবান ও কক্সবাজারের চালক সমিতির প্রচলিত আনুমানিক ন্যায্য ভাড়া।"
+                    : "Estimated driver association and local market rates to help you negotiate and avoid overcharging."}
                 </p>
               </div>
 
@@ -907,12 +908,17 @@ export default function TransportPage() {
                   <div className="mt-4 pt-3 border-t border-[var(--glass-border)]">
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-[var(--text-muted)] font-medium">
-                        {isBn ? "ভেরিফাইড ভাড়া:" : "Standard Fare:"}
+                        {isBn ? "প্রচলিত ভাড়া:" : "Typical Fare:"}
                       </span>
                       <span className="text-base font-black text-[#0f4a38] dark:text-[#2ecc71]">
                         {fare.fare}
                       </span>
                     </div>
+                    {fare.lastChecked && (
+                      <span className="text-[10px] text-[var(--text-muted)] block text-right mt-0.5">
+                        Last checked: {fare.lastChecked}
+                      </span>
+                    )}
                     <p className="text-[11px] text-[var(--text-muted)] mt-1.5 italic">
                       💡 {fare.note}
                     </p>
@@ -1093,114 +1099,126 @@ export default function TransportPage() {
                   className="px-6 py-3.5 rounded-2xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm flex items-center gap-2.5 shadow-lg shadow-red-600/25 transition-all cursor-pointer"
                 >
                   <ShieldAlert className="w-4 h-4" />
-                  <span>{isBn ? "🚨 লাইভ GPS WhatsApp SOS পাঠান" : "🚨 Send GPS WhatsApp SOS"}</span>
+                  <span>{isBn ? "হোয়াটসঅ্যাপে আমার লোকেশন শেয়ার করুন" : "Share my location on WhatsApp"}</span>
                 </button>
                 {sosStatus && <span className="text-xs text-red-500 font-semibold block mt-1.5">{sosStatus}</span>}
               </div>
             </div>
 
-            {/* Central Helplines */}
+            {/* Central Helplines - 3 Verified Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {/* 1. National Emergency */}
               <div className="p-6 rounded-2xl bg-red-500/10 border border-red-500/25 flex flex-col justify-between">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400">
                     {isBn ? "জাতীয় জরুরি সেবা (টোল ফ্রি)" : "National Emergency (Toll Free)"}
                   </span>
-                  <h4 className="text-3xl font-black text-foreground mt-1">999</h4>
+                  <h4 className="text-3xl font-black text-foreground mt-1">
+                    {isBn ? EMERGENCY_CONFIG.nationalEmergency.displayBn : EMERGENCY_CONFIG.nationalEmergency.display}
+                  </h4>
                   <p className="text-xs text-[var(--text-muted)] mt-1">
-                    {isBn ? "পুলিশ, ফায়ার সার্ভিস ও অ্যাম্বুলেন্স ২৪/৭" : "Police, Fire & Ambulance 24/7"}
+                    {isBn ? EMERGENCY_CONFIG.nationalEmergency.note_bn : EMERGENCY_CONFIG.nationalEmergency.note}
                   </p>
                 </div>
                 <a
-                  href="tel:999"
+                  href={EMERGENCY_CONFIG.nationalEmergency.telLink}
                   className="mt-5 px-4 py-2.5 rounded-xl bg-red-600 text-white text-xs font-bold text-center hover:bg-red-700 transition-all flex items-center justify-center gap-1.5"
                 >
                   <PhoneCall className="w-3.5 h-3.5" />
-                  <span>{isBn ? "সরাসরি কল (999)" : "Direct Call (999)"}</span>
+                  <span>{isBn ? "সরাসরি কল (৯৯৯)" : "Direct Call (999)"}</span>
                 </a>
               </div>
 
+              {/* 2. Bangladesh Tourist Police 24/7 Helpline */}
               <div className="p-6 rounded-2xl bg-[var(--surface-raised)] border border-[var(--glass-border)] flex flex-col justify-between">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#0f4a38] dark:text-[#2ecc71]">
-                    {isBn ? "ট্যুরিস্ট পুলিশ সদর দপ্তর" : "Tourist Police HQ"}
+                    {isBn ? EMERGENCY_CONFIG.touristPolice.name_bn : EMERGENCY_CONFIG.touristPolice.name}
                   </span>
-                  <h4 className="text-2xl font-black text-foreground mt-1">01320-163599</h4>
+                  <h4 className="text-2xl font-black text-foreground mt-1">
+                    {isBn ? EMERGENCY_CONFIG.touristPolice.displayBn : EMERGENCY_CONFIG.touristPolice.display}
+                  </h4>
                   <p className="text-xs text-[var(--text-muted)] mt-1">
-                    {isBn ? "২৪/৭ কেন্দ্রীয় ট্যুরিস্ট কন্ট্রোল রুম" : "Central 24/7 Incident Control Room"}
+                    {isBn ? EMERGENCY_CONFIG.touristPolice.note_bn : EMERGENCY_CONFIG.touristPolice.note}
                   </p>
                 </div>
                 <a
-                  href="tel:01320163599"
+                  href={EMERGENCY_CONFIG.touristPolice.telLink}
                   className="mt-5 px-4 py-2.5 rounded-xl bg-[#0f4a38] text-white text-xs font-bold text-center hover:bg-[#156b50] transition-all flex items-center justify-center gap-1.5"
                 >
                   <PhoneCall className="w-3.5 h-3.5" />
-                  <span>{isBn ? "কল করুন" : "Direct Call"}</span>
+                  <span>
+                    {isBn
+                      ? `সরাসরি কল (${EMERGENCY_CONFIG.touristPolice.displayBn})`
+                      : `Direct Call (${EMERGENCY_CONFIG.touristPolice.display})`}
+                  </span>
                 </a>
               </div>
 
+              {/* 3. Official Tourist Police Portal Link */}
               <div className="p-6 rounded-2xl bg-[var(--surface-raised)] border border-[var(--glass-border)] flex flex-col justify-between">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-amber-500">
-                    {isBn ? "ট্যুরিস্ট পুলিশ অপারেশন্স রুম" : "Operations Room"}
+                  <span className="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
+                    {isBn ? EMERGENCY_CONFIG.officialPortalTitleBn : EMERGENCY_CONFIG.officialPortalTitle}
                   </span>
-                  <h4 className="text-2xl font-black text-foreground mt-1">01320-163598</h4>
+                  <h4 className="text-xl font-black text-foreground mt-1 break-all">
+                    touristpolice.gov.bd
+                  </h4>
                   <p className="text-xs text-[var(--text-muted)] mt-1">
-                    {isBn ? "জরুরি অভিযান ও তাৎক্ষণিক পুলিশ ফোর্স সহায়তা" : "Immediate Incident & Field Response"}
+                    {isBn
+                      ? "বাংলাদেশ পুলিশ সার্বক্ষণিক পর্যটন নিরাপত্তা নির্দেশিকা ও ক্যাম্প তালিকা"
+                      : "Official Bangladesh Police tourism safety guidelines & contacts"}
                   </p>
                 </div>
                 <a
-                  href="tel:01320163598"
+                  href={EMERGENCY_CONFIG.touristPoliceOfficialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-5 px-4 py-2.5 rounded-xl bg-[var(--surface)] border border-[var(--glass-border)] text-foreground text-xs font-bold text-center hover:border-[#0f4a38] transition-all flex items-center justify-center gap-1.5"
                 >
-                  <PhoneCall className="w-3.5 h-3.5" />
-                  <span>{isBn ? "কল করুন" : "Direct Call"}</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>{isBn ? "অফিসিয়াল পোর্টাল দেখুন" : "Official Tourist Police portal"}</span>
                 </a>
               </div>
             </div>
 
             {/* Regional Outposts */}
             <div className="pt-6 border-t border-[var(--glass-border)]">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-3">
-                {isBn ? "আঞ্চলিক ট্যুরিস্ট পুলিশ ক্যাম্প ও হটলাইন" : "Regional Outposts & Hotlines"}
-              </h4>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
+                  {isBn ? "আঞ্চলিক ট্যুরিস্ট পুলিশ ক্যাম্প ও যোগাযোগ" : "Regional Outposts & Official Contacts"}
+                </h4>
+                <a
+                  href={EMERGENCY_CONFIG.touristPoliceOfficialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline"
+                >
+                  <span>{isBn ? "সকল ক্যাম্পের তথ্য touristpolice.gov.bd-এ দেখুন" : "View all official outposts at touristpolice.gov.bd"}</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-xs">
-                <div className="p-3.5 rounded-xl bg-[var(--surface-raised)] border border-[var(--glass-border)]">
-                  <span className="font-bold text-foreground block">কক্সবাজার বিচ</span>
-                  <a href="tel:01320163610" className="text-sky-600 dark:text-sky-400 font-semibold block mt-1">
-                    01320-163610
-                  </a>
-                </div>
-                <div className="p-3.5 rounded-xl bg-[var(--surface-raised)] border border-[var(--glass-border)]">
-                  <span className="font-bold text-foreground block">বান্দরবান জোন</span>
-                  <a href="tel:01320163622" className="text-sky-600 dark:text-sky-400 font-semibold block mt-1">
-                    01320-163622
-                  </a>
-                </div>
-                <div className="p-3.5 rounded-xl bg-[var(--surface-raised)] border border-[var(--glass-border)]">
-                  <span className="font-bold text-foreground block">রাঙ্গামাটি কাপ্তাই</span>
-                  <a href="tel:01320163620" className="text-sky-600 dark:text-sky-400 font-semibold block mt-1">
-                    01320-163620
-                  </a>
-                </div>
-                <div className="p-3.5 rounded-xl bg-[var(--surface-raised)] border border-[var(--glass-border)]">
-                  <span className="font-bold text-foreground block">সিলেট ও জাফলং</span>
-                  <a href="tel:01320163625" className="text-sky-600 dark:text-sky-400 font-semibold block mt-1">
-                    01320-163625
-                  </a>
-                </div>
-                <div className="p-3.5 rounded-xl bg-[var(--surface-raised)] border border-[var(--glass-border)]">
-                  <span className="font-bold text-foreground block">কুয়াকাটা বিচ</span>
-                  <a href="tel:01320163630" className="text-sky-600 dark:text-sky-400 font-semibold block mt-1">
-                    01320-163630
-                  </a>
-                </div>
-                <div className="p-3.5 rounded-xl bg-[var(--surface-raised)] border border-[var(--glass-border)]">
-                  <span className="font-bold text-foreground block">সুন্দরবন মোংলা</span>
-                  <a href="tel:01320163635" className="text-sky-600 dark:text-sky-400 font-semibold block mt-1">
-                    01320-163635
-                  </a>
-                </div>
+                {[
+                  { name: "কক্সবাজার বিচ", zone: "coxs-bazar" },
+                  { name: "বান্দরবান জোন", zone: "bandarban" },
+                  { name: "রাঙ্গামাটি কাপ্তাই", zone: "rangamati" },
+                  { name: "সিলেট ও জাফলং", zone: "sylhet" },
+                  { name: "কুয়াকাটা বিচ", zone: "kuakata" },
+                  { name: "সুন্দরবন মোংলা", zone: "sundarbans" },
+                ].map((camp, idx) => (
+                  <div key={idx} className="p-3.5 rounded-xl bg-[var(--surface-raised)] border border-[var(--glass-border)] flex flex-col justify-between">
+                    <span className="font-bold text-foreground block">{camp.name}</span>
+                    <a
+                      href={EMERGENCY_CONFIG.touristPoliceOfficialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium hover:underline block mt-1"
+                    >
+                      {isBn ? "অফিসিয়াল যোগাযোগ" : "Official portal"} ↗
+                    </a>
+                  </div>
+                ))}
               </div>
             </div>
 

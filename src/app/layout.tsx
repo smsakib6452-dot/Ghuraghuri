@@ -5,20 +5,21 @@ import { AppProvider } from "@/context/AppContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/common/BackToTop";
-import { JsonLd, getWebsiteSchema, getOrganizationSchema } from "@/components/seo/JsonLd";
 import { TOTAL_DESTINATIONS, SITE_URL } from "@/lib/constants";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700", "800"],
   display: "swap",
+  preload: true,
   variable: "--font-sans",
 });
 
 const hindSiliguri = Hind_Siliguri({
   subsets: ["bengali"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   display: "swap",
+  preload: false,
   variable: "--font-bengali",
 });
 
@@ -101,7 +102,6 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${plusJakartaSans.variable} ${hindSiliguri.variable} font-sans min-h-screen flex flex-col bg-[#fbfdfc] dark:bg-[#061510] text-[#0d211a] dark:text-[#f0f7f4] antialiased selection:bg-[#0f4a38] selection:text-white`}
       >
-        <JsonLd data={[getWebsiteSchema(), getOrganizationSchema()]} id="jsonld-root-schema" />
         <AppProvider>
           <Header />
           <main id="main-content" className="flex-1 w-full" tabIndex={-1}>

@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/context/AppContext";
-import destinationsData from "@/data/destinations.json";
-import { Destination } from "@/types/destination";
+import searchIndexData from "@/data/search-index.json";
 import { TOTAL_DESTINATIONS, TOTAL_DIVISIONS, TOTAL_DISTRICTS } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { CATEGORIES_BN, formatDigits } from "@/lib/i18n";
@@ -205,7 +204,7 @@ export function HeroSection() {
   }, []);
 
   const searchBoxRef = useRef<HTMLDivElement>(null);
-  const allDestinations = destinationsData as unknown as Destination[];
+  const allDestinations = searchIndexData;
 
   // Idle deferral callback for slides 2-5 after slide 1 loads
   const handleFirstSlideLoaded = () => {
@@ -213,10 +212,10 @@ export function HeroSection() {
       if ("requestIdleCallback" in window) {
         (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback(
           () => setMountedOtherSlides(true),
-          { timeout: 1500 }
+          { timeout: 3500 }
         );
       } else {
-        setTimeout(() => setMountedOtherSlides(true), 1500);
+        setTimeout(() => setMountedOtherSlides(true), 3500);
       }
     }
   };
@@ -225,7 +224,7 @@ export function HeroSection() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setMountedOtherSlides(true);
-    }, 2500);
+    }, 4500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -295,6 +294,7 @@ export function HeroSection() {
                 fill
                 sizes="100vw"
                 priority={idx === 0}
+                fetchPriority={idx === 0 ? "high" : "auto"}
                 loading={idx === 0 ? "eager" : "lazy"}
                 onLoad={idx === 0 ? handleFirstSlideLoaded : undefined}
                 className="object-cover transition-transform duration-7000 ease-linear scale-105"
@@ -537,7 +537,7 @@ export function HeroSection() {
                   src={currentSlide.image}
                   alt={currentSlide.title}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 440px"
+                  sizes="(max-width: 1024px) 92vw, 440px"
                   loading="lazy"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />

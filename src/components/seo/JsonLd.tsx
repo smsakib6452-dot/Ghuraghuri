@@ -1,5 +1,6 @@
 import React from "react";
 import { SITE_URL } from "@/lib/constants";
+import { SOCIAL_LINKS } from "@/config/footer";
 
 interface JsonLdProps {
   data: Record<string, unknown> | Array<Record<string, unknown>>;
@@ -37,14 +38,24 @@ export function getOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Ghuraghuri",
-    legalName: "Ghuraghuri Travel Technologies",
     url: SITE_URL,
     logo: `${SITE_URL}/assets/logo.png`,
-    sameAs: [
-      "https://facebook.com/ghuraghuri",
-      "https://instagram.com/ghuraghuri",
-      "https://twitter.com/ghuraghuri",
-    ],
+    sameAs: SOCIAL_LINKS,
+  };
+}
+
+export function getBreadcrumbListSchema(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url.startsWith("http")
+        ? item.url
+        : `${SITE_URL}${item.url.startsWith("/") ? "" : "/"}${item.url}`,
+    })),
   };
 }
 

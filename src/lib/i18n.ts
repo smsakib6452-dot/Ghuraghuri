@@ -233,8 +233,10 @@ export const TRANSPORT_TRANSLATIONS_BN: Record<string, string> = {
   "Padma Bridge South Express": "পদ্মা সেতু দক্ষিণ এক্সপ্রেস",
 
   // Badges & Common Labels
-  "Verified": "ভেরিফায়েড",
-  "VERIFIED": "ভেরিফায়েড",
+  "Verified": "বাছাইকৃত",
+  "VERIFIED": "বাছাইকৃত",
+  "Curated": "বাছাইকৃত",
+  "CURATED": "বাছাইকৃত",
 
   // Distances
   "395 km": "৩৯৫ কিমি",

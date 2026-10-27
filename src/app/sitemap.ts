@@ -8,66 +8,70 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
       changeFrequency: "daily",
       priority: 1.0,
     },
     {
       url: `${baseUrl}/destinations`,
-      lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/hotels`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/restaurants`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/transport`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/weather`,
-      lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/travel`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/chattogram`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/contact`,
       changeFrequency: "monthly",
       priority: 0.5,
     },
   ];
 
-  const destinationRoutes: MetadataRoute.Sitemap = destinations.map((dest) => ({
-    url: `${baseUrl}/destinations/${dest.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly",
-    priority: dest.rating >= 4.5 ? 0.8 : 0.6,
-  }));
+  const destinationRoutes: MetadataRoute.Sitemap = destinations.map((dest: any) => {
+    const entry: MetadataRoute.Sitemap[number] = {
+      url: `${baseUrl}/destinations/${dest.slug}`,
+      changeFrequency: "weekly",
+      priority: (dest.rating || 0) >= 4.5 ? 0.8 : 0.6,
+    };
+
+    // Use a real per-destination date if the data has one, otherwise omit lastModified
+    if (dest.updatedAt || dest.lastModified || dest.date) {
+      entry.lastModified = new Date(dest.updatedAt || dest.lastModified || dest.date);
+    }
+
+    return entry;
+  });
 
   return [...staticRoutes, ...destinationRoutes];
 }

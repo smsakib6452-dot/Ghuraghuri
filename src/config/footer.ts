@@ -40,7 +40,7 @@ export const FOOTER_CONFIG = {
     },
   ] as FooterLegalLink[],
 
-  // Social Media Links
+  // Social Media Links (Single Source of Truth for Footer & JSON-LD Organization.sameAs)
   socialLinks: [
     {
       name: "Facebook",
@@ -66,3 +66,6 @@ export const FOOTER_CONFIG = {
     osmUrl: "https://www.openstreetmap.org/copyright",
   },
 };
+
+export const SOCIAL_LINKS: string[] = FOOTER_CONFIG.socialLinks.map((s) => s.href);
+

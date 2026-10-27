@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import "leaflet/dist/leaflet.css";
 
 interface DestinationMapProps {
   name: string;
@@ -10,21 +9,47 @@ interface DestinationMapProps {
 }
 
 export default function DestinationMap({ name, latitude, longitude }: DestinationMapProps) {
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapInstanceRef = useRef<any>(null);
-  const [mounted, setMounted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMapReady, setIsMapReady] = useState(false);
 
+  // IntersectionObserver: trigger only when map container nears viewport (300px)
   useEffect(() => {
-    setMounted(true);
+    const el = wrapperRef.current;
+    if (!el) return;
+
+    if (!("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    if (!mounted || !mapContainerRef.current) return;
+    if (!isVisible || !mapContainerRef.current) return;
 
     let isCancelled = false;
 
-    // Dynamically import Leaflet client-side
-    import("leaflet").then((L) => {
+    // Dynamically import Leaflet JS & CSS only after entering viewport proximity
+    Promise.all([
+      import("leaflet"),
+      import("leaflet/dist/leaflet.css"),
+    ]).then(([leafletModule]) => {
+      const L = (leafletModule.default || leafletModule) as typeof import("leaflet");
       if (isCancelled || !mapContainerRef.current) return;
 
       // Clean existing instance
@@ -85,6 +110,9 @@ export default function DestinationMap({ name, latitude, longitude }: Destinatio
       }
 
       mapInstanceRef.current = map;
+      setIsMapReady(true);
+    }).catch(() => {
+      // Graceful fallback if offline
     });
 
     return () => {
@@ -97,19 +125,21 @@ export default function DestinationMap({ name, latitude, longitude }: Destinatio
         (mapContainerRef.current as any)._leaflet_id = null;
       }
     };
-  }, [mounted, latitude, longitude, name]);
-
-  if (!mounted) {
-    return (
-      <div className="w-full h-56 rounded-2xl bg-[var(--surface-raised)] border border-[var(--glass-border)] animate-pulse flex items-center justify-center text-xs text-[var(--text-muted)] font-medium">
-        Loading Map...
-      </div>
-    );
-  }
+  }, [isVisible, latitude, longitude, name]);
 
   return (
-    <div className="w-full h-56 rounded-2xl overflow-hidden border border-[var(--glass-border)] shadow-sm relative z-0">
-      <div ref={mapContainerRef} className="w-full h-full" />
+    <div
+      ref={wrapperRef}
+      className="w-full h-56 rounded-2xl overflow-hidden border border-[var(--glass-border)] shadow-sm relative z-0 bg-[var(--surface-raised)]"
+    >
+      <div ref={mapContainerRef} className="w-full h-full">
+        {!isMapReady && (
+          <div className="w-full h-full flex flex-col items-center justify-center text-xs text-[var(--text-muted)] font-medium gap-1.5 animate-pulse">
+            <span className="text-xl">📍</span>
+            <span>Interactive Map</span>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

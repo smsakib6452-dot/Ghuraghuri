@@ -88,7 +88,7 @@ export function Footer() {
               <ShieldCheck className="w-4 h-4 text-[#2ecc71]" />
               <span>
                 {isBn
-                  ? `${formatNumberEnBn(TOTAL_DESTINATIONS, true)}+ ভেরিফাইড পর্যটন স্পট`
+                  ? `${formatNumberEnBn(TOTAL_DESTINATIONS, true)}+ বাছাইকৃত পর্যটন স্পট`
                   : `${TOTAL_DESTINATIONS}+ Curated & Authentic Guides`}
               </span>
             </div>

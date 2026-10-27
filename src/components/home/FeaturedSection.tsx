@@ -52,7 +52,7 @@ export function FeaturedSection({ destinations }: FeaturedSectionProps) {
             <p className="text-sm sm:text-base text-[var(--text-muted)] mt-2 max-w-xl">
               {isBn
                 ? "ভ্রমণপিপাসুদের জন্য নির্বাচিত সেরা দর্শনীয় স্থান ও খাঁটি ভ্রমণ নির্দেশিকা।"
-                : "Handcrafted collection of iconic travel spots across Bangladesh with verified routes and guides."}
+                : "Handcrafted collection of iconic travel spots across Bangladesh with curated routes and guides."}
             </p>
           </div>
 

@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    deviceSizes: [384, 480, 640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
     remotePatterns: [
       {
         protocol: "https",
@@ -25,6 +25,63 @@ const nextConfig: NextConfig = {
         source: "/destinations/sreemangal",
         destination: "/destinations/srimangal",
         permanent: true,
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/chattogram",
+        destination: "/chattogram.html",
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: "/chattogram",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/chattogram.html",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/css/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/js/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/data/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
       },
     ];
   },

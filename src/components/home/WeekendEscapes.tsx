@@ -107,7 +107,7 @@ export function WeekendEscapes() {
             <p className="text-sm sm:text-base text-[var(--text-muted)] mt-2 max-w-xl">
               {isBn
                 ? "ছুটিতে কোথায় যাবেন ভাবছেন? সময়কাল, সম্ভাব্য বাজেট ও সাজানো রুটসহ ভ্রমণের সেরা পরিকল্পনা।"
-                : "Handcrafted weekend plans with verified travel routes, realistic expense estimates, and lodging."}
+                : "Handcrafted weekend plans with curated travel routes, realistic expense estimates, and lodging."}
             </p>
           </div>
 
@@ -133,7 +133,7 @@ export function WeekendEscapes() {
                   src={trip.image}
                   alt={trip.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 380px"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
@@ -186,7 +186,7 @@ export function WeekendEscapes() {
                 {/* Action Link */}
                 <div className="mt-auto pt-4 border-t border-[var(--glass-border)] flex items-center justify-between">
                   <span className="text-xs text-[var(--text-muted)] font-medium">
-                    {isBn ? "যাচাইকৃত গাইডলাইন" : "Verified Itinerary"}
+                    {isBn ? "বাছাইকৃত গাইডলাইন" : "Curated Itinerary"}
                   </span>
                   <Link
                     href={trip.link}

@@ -2,8 +2,9 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import destinationsData from "@/data/destinations.json";
+import translationsData from "@/data/translations.json";
 import { Destination } from "@/types/destination";
-import { JsonLd, getTouristAttractionSchema } from "@/components/seo/JsonLd";
+import { JsonLd, getTouristAttractionSchema, getBreadcrumbListSchema } from "@/components/seo/JsonLd";
 import { DestinationDetailClient } from "@/components/destinations/DestinationDetailClient";
 import { SITE_URL } from "@/lib/constants";
 
@@ -80,15 +81,28 @@ export default async function DestinationDetailPage({ params }: Props) {
     slug: destination.slug,
   });
 
+  const breadcrumbSchema = getBreadcrumbListSchema([
+    { name: "Home", url: "/" },
+    { name: "Destinations", url: "/destinations" },
+    { name: destination.division, url: `/destinations?division=${encodeURIComponent(destination.division)}` },
+    { name: destination.name, url: `/destinations/${destination.slug}` },
+  ]);
+
   // Nearby or related destinations
   const related = destinations
     .filter((d) => d.division === destination.division && d.id !== destination.id)
     .slice(0, 3);
 
+  const destinationTranslation = (translationsData as Record<string, any>)[destination.slug] || null;
+
   return (
     <>
-      <JsonLd data={schema} id={`jsonld-tourist-${destination.slug}`} />
-      <DestinationDetailClient destination={destination} related={related} />
+      <JsonLd data={[schema, breadcrumbSchema]} id={`jsonld-tourist-${destination.slug}`} />
+      <DestinationDetailClient
+        destination={destination}
+        related={related}
+        translation={destinationTranslation}
+      />
     </>
   );
 }

@@ -111,7 +111,7 @@ export function DivisionsSection() {
                   src={division.image}
                   alt={division.name}
                   fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 280px"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* WCAG AA Compliant High-Contrast Scrim Overlay */}

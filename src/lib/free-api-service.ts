@@ -9,6 +9,8 @@
  * 6. Verified Fair Local Transport Fare Guide (Chander Gari, Boats, CNG)
  */
 
+import { EMERGENCY_CONFIG } from "@/lib/emergency";
+
 export interface LatLng {
   lat: number;
   lng: number;
@@ -72,8 +74,11 @@ export interface OsmRestaurant {
 
 export interface EmergencyContact {
   name: string;
-  phone: string;
+  phone: string | null;
+  telLink?: string;
   note: string;
+  officialUrl?: string;
+  isPortalLink?: boolean;
 }
 
 export interface BudgetBreakdown {
@@ -98,6 +103,7 @@ export interface LocalFareItem {
   vehicle: string;
   fare: string;
   note: string;
+  lastChecked?: string;
 }
 
 // Bangladesh District Centroids for OSRM Route Navigation
@@ -419,50 +425,56 @@ export async function getNearbyRestaurants(
 /* ------------------------------------------------------------------ */
 export const EMERGENCY_CONTACTS = {
   national: [
-    { name: "National Emergency Helpline", phone: "999", note: "Police, Fire, Ambulance (Toll Free 24/7)" },
-    { name: "Bangladesh Tourist Police HQ Control", phone: "01320-163599", note: "Central 24/7 Tourist Assistance" },
-    { name: "Tourist Police Operations Room", phone: "01320-163598", note: "Immediate Incident Response" },
+    {
+      name: EMERGENCY_CONFIG.nationalEmergency.name,
+      phone: EMERGENCY_CONFIG.nationalEmergency.display,
+      telLink: EMERGENCY_CONFIG.nationalEmergency.telLink,
+      note: EMERGENCY_CONFIG.nationalEmergency.note,
+      officialUrl: EMERGENCY_CONFIG.nationalEmergency.officialUrl,
+    },
+    {
+      name: EMERGENCY_CONFIG.touristPolice.name,
+      phone: EMERGENCY_CONFIG.touristPolice.display,
+      telLink: EMERGENCY_CONFIG.touristPolice.telLink,
+      note: EMERGENCY_CONFIG.touristPolice.note,
+      officialUrl: EMERGENCY_CONFIG.touristPolice.officialUrl,
+    },
+    {
+      name: EMERGENCY_CONFIG.officialPortalTitle,
+      phone: null,
+      telLink: EMERGENCY_CONFIG.touristPoliceOfficialUrl,
+      note: "Official Government Safety Portal",
+      officialUrl: EMERGENCY_CONFIG.touristPoliceOfficialUrl,
+      isPortalLink: true,
+    },
   ] as EmergencyContact[],
-  zones: {
-    "coxs-bazar": [
-      { name: "Cox's Bazar Tourist Police Zone", phone: "01320-163610", note: "Laboni, Sugandha & Kolatali Beach" },
-      { name: "Inani & Himchhari Police Camp", phone: "01320-163611", note: "Marine Drive Assistance" },
-    ],
-    chattogram: [
-      { name: "Chattogram Tourist Police Zone", phone: "01320-163615", note: "Patenga & Chattogram Region" },
-      { name: "Rangamati Tourist Police", phone: "01320-163620", note: "Kaptai Lake & Hill Tracts" },
-      { name: "Bandarban Tourist Police", phone: "01320-163622", note: "Nilgiri, Thanchi & Bogalake" },
-    ],
-    sylhet: [
-      { name: "Sylhet Tourist Police Zone", phone: "01320-163625", note: "Jaflong, Ratargul & Bholaganj" },
-      { name: "Moulvibazar / Sreemangal Camp", phone: "01320-163627", note: "Tea Gardens & Lawachara" },
-    ],
-    barishal: [
-      { name: "Kuakata Tourist Police Outpost", phone: "01320-163630", note: "Kuakata Sea Beach & Sunset Point" },
-    ],
-    khulna: [
-      { name: "Sundarbans Tourist Police Zone", phone: "01320-163635", note: "Mongla & Forest Gateway" },
-    ],
-  } as Record<string, EmergencyContact[]>,
 };
 
-export function getEmergencyContacts(regionKey?: string): EmergencyContact[] {
-  const base = [...EMERGENCY_CONTACTS.national];
-  const key = (regionKey || "").toLowerCase();
-  for (const k in EMERGENCY_CONTACTS.zones) {
-    if (key.includes(k) || k.includes(key)) {
-      return base.concat(EMERGENCY_CONTACTS.zones[k]);
-    }
-  }
-  return base;
+export function getEmergencyContacts(_regionKey?: string): EmergencyContact[] {
+  return [...EMERGENCY_CONTACTS.national];
 }
 
-export function generateSosWhatsAppUrl(placeName: string, lat?: number, lon?: number): string {
+export function generateSosWhatsAppUrl(
+  placeName: string,
+  latOrCoords?: number | { lat: number; lng?: number; lon?: number } | null,
+  lon?: number
+): string {
   let text = `EMERGENCY: Need urgent assistance! I am traveling in Bangladesh at ${placeName || "current location"}.`;
-  if (lat && lon) {
-    text += ` My live GPS coordinates: https://maps.google.com/?q=${lat},${lon}`;
+  let finalLat: number | undefined;
+  let finalLon: number | undefined;
+
+  if (typeof latOrCoords === "object" && latOrCoords !== null) {
+    finalLat = latOrCoords.lat;
+    finalLon = latOrCoords.lng ?? latOrCoords.lon;
+  } else if (typeof latOrCoords === "number") {
+    finalLat = latOrCoords;
+    finalLon = lon;
   }
-  text += " Please notify Tourist Police Helpline: 01320-163599 or 999.";
+
+  if (finalLat && finalLon) {
+    text += ` My live GPS location: https://maps.google.com/?q=${finalLat},${finalLon}`;
+  }
+  text += ` Please notify Tourist Police: ${EMERGENCY_CONFIG.touristPolice.display} or National Emergency: ${EMERGENCY_CONFIG.nationalEmergency.display}.`;
   return `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
 }
 

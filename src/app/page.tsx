@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { FeaturedSection } from "@/components/home/FeaturedSection";
 import { ExperienceSection } from "@/components/home/ExperienceSection";
-import { MapSection } from "@/components/home/MapSection";
+import { MapSectionLazy } from "@/components/home/MapSectionLazy";
 import { DivisionsSection } from "@/components/home/DivisionsSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { TripQuizModal } from "@/components/home/TripQuizModal";
 import destinationsData from "@/data/destinations.json";
+import translationsData from "@/data/translations.json";
 import { Destination } from "@/types/destination";
+import { JsonLd, getWebsiteSchema, getOrganizationSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   alternates: {
@@ -16,21 +18,54 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const destinations = destinationsData as unknown as Destination[];
+  const trData = translationsData as Record<string, any>;
+  const curatedDestinations = (destinationsData as unknown as Destination[])
+    .filter(
+      (d) =>
+        d.featured ||
+        d.popularity === "high" ||
+        ["Beach", "Island", "Hill", "Mountain", "Waterfall", "Historical", "Archaeological", "Heritage"].includes(d.category)
+    )
+    .slice(0, 40)
+    .map((d) => {
+      const tr = trData[d.slug];
+      return {
+        id: d.id,
+        slug: d.slug,
+        name: d.name,
+        name_bn: d.name_bn,
+        division: d.division,
+        district: d.district,
+        category: d.category,
+        categories: d.categories || [],
+        rating: d.rating,
+        reviews: d.reviews,
+        image: d.image,
+        recommendedDays: d.recommendedDays,
+        shortDesc: d.shortDesc,
+        shortDesc_bn: tr?.shortDesc,
+        recommendedDays_bn: tr?.recommendedDays,
+        featured: d.featured,
+        popularity: d.popularity,
+      };
+    }) as unknown as Destination[];
 
   return (
     <>
+      {/* Search Engine Structured Data - WebSite + Organization strictly on Homepage */}
+      <JsonLd data={[getWebsiteSchema(), getOrganizationSchema()]} id="jsonld-home-schema" />
+
       {/* 1. Iconic 2-Column Hero Section with Featured Spotlight & Marquee */}
       <HeroSection />
 
       {/* 2. Top Curated & Featured Destinations */}
-      <FeaturedSection destinations={destinations} />
+      <FeaturedSection destinations={curatedDestinations} />
 
       {/* 3. Explore by Experience (Hills, Beaches, Forests, Heritage, etc.) */}
       <ExperienceSection />
 
-      {/* 4. Interactive Leaflet Map of Bangladesh */}
-      <MapSection />
+      {/* 4. Interactive Leaflet Map of Bangladesh (Loaded on viewport proximity) */}
+      <MapSectionLazy />
 
       {/* 5. 8 Divisions Cultural & Scenic Explorer */}
       <DivisionsSection />
@@ -43,4 +78,3 @@ export default function HomePage() {
     </>
   );
 }
-
