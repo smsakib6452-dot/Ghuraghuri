@@ -10,13 +10,13 @@ import { Compass, ChevronLeft, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Explore All Destinations in Bangladesh | Ghuraghuri",
-  description: "Browse 271+ authentic travel destinations across all 8 divisions of Bangladesh. Find beaches, hills, waterfalls, tea gardens, and historic monuments.",
+  description: "Browse 295+ authentic travel destinations across all 8 divisions of Bangladesh. Find beaches, hills, waterfalls, tea gardens, and historic monuments.",
   alternates: {
     canonical: "/destinations",
   },
   openGraph: {
     title: "Explore All Destinations in Bangladesh | Ghuraghuri",
-    description: "Browse 271+ authentic travel destinations across all 8 divisions of Bangladesh.",
+    description: "Browse 295+ authentic travel destinations across all 8 divisions of Bangladesh.",
     url: "https://ghuraghuri.vercel.app/destinations",
   },
 };
@@ -86,8 +86,19 @@ export default async function DestinationsPage(props: PageProps) {
         return false;
       }
 
-      if (category && item.category !== category && !item.categories?.includes(category)) {
-        return false;
+      if (category) {
+        if (category === "Heritage" || category === "Historical") {
+          const isHistoricalOrArch =
+            item.category === "Historical" ||
+            item.category === "Archaeological" ||
+            item.category === "Heritage" ||
+            item.categories?.includes("Historical") ||
+            item.categories?.includes("Archaeological") ||
+            item.categories?.includes("Heritage");
+          if (!isHistoricalOrArch) return false;
+        } else if (item.category !== category && !item.categories?.includes(category)) {
+          return false;
+        }
       }
 
       return true;

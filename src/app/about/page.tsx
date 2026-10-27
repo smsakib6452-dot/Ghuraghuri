@@ -112,13 +112,13 @@ export default function AboutPage() {
                 </li>
                 <li>
                   <strong className="text-foreground">Community & Direct Research:</strong>{" "}
-                  {isBn ? "স্থানীয় চালক সমিতির প্রচলিত ভাড়ার আনুমানিক রেট এবং পর্যটকদের অভিজ্ঞতা।" : "Typical fare ranges from local driver associations and verified field research."}
+                  {isBn ? "স্থানীয় চালক সমিতির প্রচলিত ভাড়ার আনুমানিক রেট এবং পর্যটকদের অভিজ্ঞতা।" : "Typical fare ranges from local driver associations and curated field research."}
                 </li>
               </ul>
             </div>
             <div className="pt-4 border-t border-[var(--glass-border)] flex items-center justify-between text-xs text-[var(--text-muted)]">
               <span>{isBn ? "সর্বশেষ তথ্য হালনাগাদ: অক্টোবর ২০২৬" : "Last updated: October 2026"}</span>
-              <span>{isBn ? "যোগাযোগ: ghura-ghuri.vercel.app" : "Contact: ghura-ghuri.vercel.app"}</span>
+              <span>{isBn ? "যোগাযোগ: ghuraghuri.vercel.app" : "Contact: ghuraghuri.vercel.app"}</span>
             </div>
           </div>
         </div>

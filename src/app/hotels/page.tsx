@@ -240,7 +240,7 @@ function HotelsContent() {
                 {/* Triple Action Bar: Direct Call, WhatsApp, Google Maps */}
                 <div className="grid grid-cols-3 gap-2">
                   <a
-                    href={`tel:${hotel.phone}`}
+                    href={`tel:${hotel.phone.startsWith("+") ? hotel.phone : `+88${hotel.phone.replace(/[^0-9]/g, "")}`}`}
                     className="min-h-[42px] px-2 py-2 rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] text-[#0f4a38] hover:text-white dark:bg-[#1f9d76]/20 dark:text-[#2ecc71] dark:hover:bg-[#1f9d76] dark:hover:text-white text-xs font-bold transition-all flex flex-col sm:flex-row items-center justify-center gap-1.5 text-center cursor-pointer shadow-sm"
                     title={isBn ? "হোটেলের রিসেপশনে সরাসরি কল করুন" : "Call Hotel Reception"}
                   >

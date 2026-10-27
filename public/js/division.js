@@ -1821,47 +1821,54 @@
     }
 
     function generateAndDownloadPdf(canvas, filename) {
-        try {
-            if (window.jspdf && window.jspdf.jsPDF) {
-                const { jsPDF } = window.jspdf;
-                // 4:5 Aspect Ratio Document in mm (210 x 262.5 mm)
-                const pdf = new jsPDF({
-                    orientation: 'portrait',
-                    unit: 'mm',
-                    format: [210, 262.5]
-                });
-                const imgData = canvas.toDataURL('image/jpeg', 1.0);
-                pdf.addImage(imgData, 'JPEG', 0, 0, 210, 262.5);
-                pdf.save(filename);
-                showToast('✓ PDF পোস্টার তৈরি সম্পন্ন (প্রিন্ট রেডি)');
-                return;
+        const doPdfExport = () => {
+            try {
+                if (window.jspdf && window.jspdf.jsPDF) {
+                    const { jsPDF } = window.jspdf;
+                    // 4:5 Aspect Ratio Document in mm (210 x 262.5 mm)
+                    const pdf = new jsPDF({
+                        orientation: 'portrait',
+                        unit: 'mm',
+                        format: [210, 262.5]
+                    });
+                    const imgData = canvas.toDataURL('image/jpeg', 1.0);
+                    pdf.addImage(imgData, 'JPEG', 0, 0, 210, 262.5);
+                    pdf.save(filename);
+                    showToast('✓ PDF পোস্টার তৈরি সম্পন্ন (প্রিন্ট রেডি)');
+                    return;
+                }
+            } catch(err) {
+                console.warn('Direct jsPDF generation failed, using print fallback', err);
             }
-        } catch(err) {
-            console.warn('Direct jsPDF generation failed, using print fallback', err);
-        }
 
-        // Print-ready fallback
-        const printWindow = window.open('', '_blank');
-        if (printWindow) {
-            const imgData = canvas.toDataURL('image/jpeg', 1.0);
-            printWindow.document.write(`
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <title>${filename}</title>
-                    <style>
-                        @page { size: 210mm 262.5mm; margin: 0; }
-                        body { margin: 0; background: #000; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-                        img { width: 100%; max-width: 210mm; height: auto; display: block; }
-                    </style>
-                </head>
-                <body>
-                    <img src="${imgData}" onload="window.print();" />
-                </body>
-                </html>
-            `);
-            printWindow.document.close();
-            showToast('✓ PDF প্রিন্ট উইন্ডো ওপেন হয়েছে');
+            // Print-ready fallback
+            const printWindow = window.open('', '_blank');
+            if (printWindow) {
+                const imgData = canvas.toDataURL('image/jpeg', 1.0);
+                printWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>${filename}</title>
+                        <style>
+                            @page { size: 210mm 262.5mm; margin: 0; }
+                            body { margin: 0; background: #000; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+                            img { width: 100%; max-width: 210mm; height: auto; display: block; }
+                        </style>
+                    </head>
+                    <body>
+                        <img src="${imgData}" onload="window.print();window.close();" />
+                    </body>
+                    </html>
+                `);
+                printWindow.document.close();
+            }
+        };
+
+        if (window.loadJsPdfOnDemand && (!window.jspdf || !window.jspdf.jsPDF)) {
+            window.loadJsPdfOnDemand(doPdfExport);
+        } else {
+            doPdfExport();
         }
     }
 

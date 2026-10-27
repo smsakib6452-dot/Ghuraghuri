@@ -1875,23 +1875,31 @@
         }
 
         function generateAndDownloadPlacesPdf(canvas, filename) {
-            try {
-                if (window.jspdf && window.jspdf.jsPDF) {
-                    const { jsPDF } = window.jspdf;
-                    const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [210, 262.5] });
-                    const imgData = canvas.toDataURL('image/jpeg', 0.98);
-                    pdf.addImage(imgData, 'JPEG', 0, 0, 210, 262.5);
-                    pdf.save(filename);
-                    showPlacesToast('✓ PDF প্রিন্ট-রেডি ফাইল ডাউনলোড হয়েছে');
-                } else {
+            const doPdf = () => {
+                try {
+                    if (window.jspdf && window.jspdf.jsPDF) {
+                        const { jsPDF } = window.jspdf;
+                        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [210, 262.5] });
+                        const imgData = canvas.toDataURL('image/jpeg', 0.98);
+                        pdf.addImage(imgData, 'JPEG', 0, 0, 210, 262.5);
+                        pdf.save(filename);
+                        showPlacesToast('✓ PDF প্রিন্ট-রেডি ফাইল ডাউনলোড হয়েছে');
+                    } else {
+                        const dataUrl = canvas.toDataURL('image/png');
+                        triggerPlacesDownload(dataUrl, filename.replace('.pdf', '.png'));
+                        showPlacesToast('✓ PNG ডাউনলোড সম্পন্ন (PDF লাইব্রেরি লোড না হওয়ায়)');
+                    }
+                } catch (e) {
+                    console.error('PDF generation failed:', e);
                     const dataUrl = canvas.toDataURL('image/png');
                     triggerPlacesDownload(dataUrl, filename.replace('.pdf', '.png'));
-                    showPlacesToast('✓ PNG ডাউনলোড সম্পন্ন (PDF লাইব্রেরি লোড না হওয়ায়)');
                 }
-            } catch (e) {
-                console.error('PDF generation failed:', e);
-                const dataUrl = canvas.toDataURL('image/png');
-                triggerPlacesDownload(dataUrl, filename.replace('.pdf', '.png'));
+            };
+
+            if (window.loadJsPdfOnDemand && (!window.jspdf || !window.jspdf.jsPDF)) {
+                window.loadJsPdfOnDemand(doPdf);
+            } else {
+                doPdf();
             }
         }
 

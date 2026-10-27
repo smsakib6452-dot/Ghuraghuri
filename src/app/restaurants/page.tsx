@@ -229,7 +229,7 @@ export default function RestaurantsPage() {
                   {/* Triple Action Bar (Call, WhatsApp, Maps) */}
                   <div className="grid grid-cols-3 gap-2">
                     <a
-                      href={`tel:${item.phone}`}
+                      href={`tel:${item.phone.startsWith("+") ? item.phone : `+88${item.phone.replace(/[^0-9]/g, "")}`}`}
                       className="flex items-center justify-center gap-1.5 min-h-[38px] px-2 rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] hover:text-white dark:bg-[#1f9d76]/20 dark:hover:bg-[#1f9d76] text-xs font-bold transition-all text-[#0f4a38] dark:text-[#2ecc71] cursor-pointer"
                       title={isBn ? "সরাসরি কল করুন" : "Call Directly"}
                     >

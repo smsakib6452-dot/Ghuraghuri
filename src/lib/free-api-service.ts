@@ -6,10 +6,11 @@
  * 3. Nominatim OpenStreetMap - Live Real Restaurants & Traditional Diners
  * 4. Tourist Police Helplines & WhatsApp GPS Emergency SOS
  * 5. Smart Travel Budget Calculator & Expense Splitter
- * 6. Verified Fair Local Transport Fare Guide (Chander Gari, Boats, CNG)
+ * 6. Curated Typical Local Transport Fare Guide (Chander Gari, Boats, CNG)
  */
 
 import { EMERGENCY_CONFIG } from "@/lib/emergency";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 export interface LatLng {
   lat: number;
@@ -124,10 +125,39 @@ export const BANGLADESH_HUBS: Record<string, { name: string; name_bn: string; la
   bogura: { name: "Bogura (Satmatha)", name_bn: "বগুড়া (সাতমাথা)", lat: 24.8465, lng: 89.3777 },
 };
 
-// Memory caches
+// In-Memory caches
 const routeCache: Record<string, HighwayRouteResult> = {};
 const hotelCache: Record<string, OsmHotel[]> = {};
 const restaurantCache: Record<string, OsmRestaurant[]> = {};
+
+// Safe sessionStorage helpers with expiration check (24h default TTL)
+function getSessionStorageItem<T>(key: string): T | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.sessionStorage.getItem(key);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (parsed && typeof parsed.expiry === "number" && Date.now() < parsed.expiry) {
+      return parsed.data as T;
+    }
+    window.sessionStorage.removeItem(key);
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function setSessionStorageItem<T>(key: string, data: T, ttlMs = 86400000): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.sessionStorage.setItem(
+      key,
+      JSON.stringify({ data, expiry: Date.now() + ttlMs })
+    );
+  } catch {
+    // Storage quota or disabled, ignore
+  }
+}
 
 function haversineDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
   const R = 6371; // km
@@ -168,9 +198,14 @@ export async function getLiveHighwayRoute(
     };
   }
 
-  const cacheKey = `${lat1.toFixed(3)},${lng1.toFixed(3)},${lat2.toFixed(3)},${lng2.toFixed(3)}`;
+  const cacheKey = `ghura_osrm_${lat1.toFixed(3)},${lng1.toFixed(3)},${lat2.toFixed(3)},${lng2.toFixed(3)}`;
   if (routeCache[cacheKey]) {
     return routeCache[cacheKey];
+  }
+  const sessionCached = getSessionStorageItem<HighwayRouteResult>(cacheKey);
+  if (sessionCached) {
+    routeCache[cacheKey] = sessionCached;
+    return sessionCached;
   }
 
   const url = `https://router.project-osrm.org/route/v1/driving/${lng1},${lat1};${lng2},${lat2}?overview=full&geometries=geojson&steps=true`;
@@ -224,6 +259,7 @@ export async function getLiveHighwayRoute(
         steps: steps,
       };
       routeCache[cacheKey] = result;
+      setSessionStorageItem(cacheKey, result);
       return result;
     }
 
@@ -235,9 +271,9 @@ export async function getLiveHighwayRoute(
       durationMinutes: Math.round((haversineDistance(lat1, lng1, lat2, lng2) / 50) * 60),
       durationHours: +(haversineDistance(lat1, lng1, lat2, lng2) / 50).toFixed(1),
       steps: [],
-      error: "No road route found",
+      error: "Route info is temporarily unavailable",
     };
-  } catch (err: any) {
+  } catch {
     const fallbackDist = haversineDistance(lat1, lng1, lat2, lng2);
     return {
       ok: false,
@@ -253,7 +289,7 @@ export async function getLiveHighwayRoute(
           instruction: `Approximate aerial corridor ${origin.name || "Origin"} ⇄ ${dest.name || "Destination"} (${fallbackDist} km)`,
         },
       ],
-      error: err?.message || "OSRM request timed out",
+      error: "Route info is temporarily unavailable",
     };
   }
 }
@@ -266,9 +302,14 @@ export async function getNearbyHotels(
   coords?: { lat: number; lng: number },
   limit = 8
 ): Promise<OsmHotel[]> {
-  const key = (placeName || "").toLowerCase().trim();
+  const key = `ghura_osm_hotel_${(placeName || "").toLowerCase().trim()}`;
   if (hotelCache[key]) {
     return hotelCache[key];
+  }
+  const sessionCached = getSessionStorageItem<OsmHotel[]>(key);
+  if (sessionCached) {
+    hotelCache[key] = sessionCached;
+    return sessionCached;
   }
 
   const searchQ = `hotel in ${encodeURIComponent(placeName)} Bangladesh`;
@@ -280,7 +321,7 @@ export async function getNearbyHotels(
 
     const res = await fetch(url, {
       signal: controller.signal,
-      headers: { "User-Agent": "GhuraghuriNext/1.0 (info@ghuraghuri.com; Bangladesh Travel)" },
+      headers: { "User-Agent": `GhuraghuriNext/1.0 (${CONTACT_EMAIL}; Bangladesh Travel)` },
     });
     clearTimeout(timer);
     const list = await res.json();
@@ -326,6 +367,7 @@ export async function getNearbyHotels(
       });
 
       hotelCache[key] = items;
+      setSessionStorageItem(key, items);
       return items;
     }
   } catch {
@@ -343,9 +385,14 @@ export async function getNearbyRestaurants(
   coords?: { lat: number; lng: number },
   limit = 8
 ): Promise<OsmRestaurant[]> {
-  const key = (placeName || "").toLowerCase().trim();
+  const key = `ghura_osm_rest_${(placeName || "").toLowerCase().trim()}`;
   if (restaurantCache[key]) {
     return restaurantCache[key];
+  }
+  const sessionCached = getSessionStorageItem<OsmRestaurant[]>(key);
+  if (sessionCached) {
+    restaurantCache[key] = sessionCached;
+    return sessionCached;
   }
 
   const searchQ = `restaurant in ${encodeURIComponent(placeName)} Bangladesh`;
@@ -357,7 +404,7 @@ export async function getNearbyRestaurants(
 
     const res = await fetch(url, {
       signal: controller.signal,
-      headers: { "User-Agent": "GhuraghuriNext/1.0 (info@ghuraghuri.com; Bangladesh Travel)" },
+      headers: { "User-Agent": `GhuraghuriNext/1.0 (${CONTACT_EMAIL}; Bangladesh Travel)` },
     });
     clearTimeout(timer);
     const list = await res.json();
@@ -411,6 +458,7 @@ export async function getNearbyRestaurants(
       });
 
       restaurantCache[key] = items;
+      setSessionStorageItem(key, items);
       return items;
     }
   } catch {
@@ -531,7 +579,7 @@ export function calculateTripBudget(
 }
 
 /* ------------------------------------------------------------------ */
-/* 6. VERIFIED FAIR LOCAL TRANSPORT FARE GUIDE                         */
+/* 6. CURATED TYPICAL LOCAL TRANSPORT FARE GUIDE                      */
 /* ------------------------------------------------------------------ */
 export const LOCAL_FARES: LocalFareItem[] = [
   // Hill Tracks

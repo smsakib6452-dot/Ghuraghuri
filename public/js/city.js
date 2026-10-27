@@ -293,22 +293,32 @@
         }
     }
 
-    // Global YouTube API hook - pre-warm the headless player in background early
+    // Click-to-load YouTube facade: do NOT load scripts or pre-warm until user clicks play
     window.__ytIframeApiReady = false;
-    const prevYtHook = window.onYouTubeIframeAPIReady;
-    window.onYouTubeIframeAPIReady = function() {
-        console.log('[CityEngine] onYouTubeIframeAPIReady fired - pre-warming audio in background');
-        window.__ytIframeApiReady = true;
-        if (typeof prevYtHook === 'function') {
-            try { prevYtHook(); } catch (e) {}
+    let ytScriptLoading = false;
+
+    function loadYtScriptAndInit(onReadyCb) {
+        if (window.YT && window.YT.Player) {
+            initYtPlayer(onReadyCb, false);
+            return;
         }
-        initYtPlayer(null, true);
-    };
+        if (ytScriptLoading) return;
+        ytScriptLoading = true;
+
+        window.onYouTubeIframeAPIReady = function() {
+            window.__ytIframeApiReady = true;
+            ytScriptLoading = false;
+            initYtPlayer(onReadyCb, false);
+        };
+
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        tag.async = true;
+        document.head.appendChild(tag);
+    }
 
     function setupAudio() {
-        if (window.YT && window.YT.Player) {
-            initYtPlayer(null, true);
-        }
+        // Dormant by default: no background pre-warming to save initial network & memory
     }
 
     let folkAudioCtx = null;
@@ -372,7 +382,7 @@
                 console.warn('[CityEngine] ytPlayer.playVideo note:', err);
             }
         } else {
-            initYtPlayer((player) => {
+            loadYtScriptAndInit((player) => {
                 if (!state.isUserPaused && isExp3Active() && window.__currentCtgExp === 'exp3') {
                     try {
                         enforceSongStartTime(player);
@@ -2751,27 +2761,35 @@
                     triggerDownload(dataUrl, `${filename}.jpg`);
                     showToast(state.lang === 'chatgaya' ? '100% Quality JPG নামি গিয়্যি!' : '100% কোয়ালিটি JPG ডাউনলোড সম্পন্ন!');
                 } else if (format === 'pdf') {
-                    if (window.jspdf && window.jspdf.jsPDF) {
-                        try {
-                            const { jsPDF } = window.jspdf;
-                            const pdf = new jsPDF({
-                                orientation: 'portrait',
-                                unit: 'mm',
-                                format: 'a4'
-                            });
-                            const imgData = canvas.toDataURL('image/jpeg', 0.98);
-                            const pdfW = pdf.internal.pageSize.getWidth();
-                            const pdfH = pdf.internal.pageSize.getHeight();
-                            pdf.addImage(imgData, 'JPEG', 0, 0, pdfW, pdfH);
-                            pdf.save(`${filename}.pdf`);
-                            showToast(state.lang === 'chatgaya' ? 'প্রিন্ট রেডি PDF নামি গিয়্যি!' : 'প্রিন্ট রেডি PDF ডাউনলোড সম্পন্ন!');
-                        } catch (err) {
-                            console.error('[CityEngine] PDF generation error:', err);
+                    const runPdfExport = () => {
+                        if (window.jspdf && window.jspdf.jsPDF) {
+                            try {
+                                const { jsPDF } = window.jspdf;
+                                const pdf = new jsPDF({
+                                    orientation: 'portrait',
+                                    unit: 'mm',
+                                    format: 'a4'
+                                });
+                                const imgData = canvas.toDataURL('image/jpeg', 0.98);
+                                const pdfW = pdf.internal.pageSize.getWidth();
+                                const pdfH = pdf.internal.pageSize.getHeight();
+                                pdf.addImage(imgData, 'JPEG', 0, 0, pdfW, pdfH);
+                                pdf.save(`${filename}.pdf`);
+                                showToast(state.lang === 'chatgaya' ? 'প্রিন্ট রেডি PDF নামি গিয়্যি!' : 'প্রিন্ট রেডি PDF ডাউনলোড সম্পন্ন!');
+                            } catch (err) {
+                                console.error('[CityEngine] PDF generation error:', err);
+                                triggerDownload(canvas.toDataURL('image/png'), `${filename}.png`);
+                            }
+                        } else {
+                            console.warn('[CityEngine] jsPDF not loaded, falling back to PNG');
                             triggerDownload(canvas.toDataURL('image/png'), `${filename}.png`);
                         }
+                    };
+
+                    if (window.loadJsPdfOnDemand && (!window.jspdf || !window.jspdf.jsPDF)) {
+                        window.loadJsPdfOnDemand(runPdfExport);
                     } else {
-                        console.warn('[CityEngine] jsPDF not loaded, falling back to PNG');
-                        triggerDownload(canvas.toDataURL('image/png'), `${filename}.png`);
+                        runPdfExport();
                     }
                 }
             } finally {

@@ -19,7 +19,6 @@ import {
   X,
   Bookmark,
   Map as MapIcon,
-  ShieldCheck,
   CalendarDays,
 } from "lucide-react";
 
@@ -29,21 +28,11 @@ export function Header() {
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
-  // Admin authentication state check (hidden for public visitors)
-  const [isAdmin, setIsAdmin] = useState(false);
   const triggerButtonRef = React.useRef<HTMLButtonElement | null>(null);
   const closeButtonRef = React.useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     setMounted(true);
-    try {
-      const session =
-        sessionStorage.getItem("ghuraghuri_admin_session") ||
-        localStorage.getItem("ghuraghuri_admin_session");
-      if (session) {
-        setIsAdmin(true);
-      }
-    } catch {}
   }, []);
 
   // Lock body scroll and manage focus when mobile menu is open
@@ -116,15 +105,7 @@ export function Header() {
       icon: Sparkles,
       highlight: true,
     },
-    {
-      href: "/admin",
-      label: isBn ? "অ্যাডমিন" : "Admin",
-      icon: ShieldCheck,
-    },
   ];
-
-  // Public visitors strictly do not see the Admin link
-  const publicNavLinks = navLinks.filter((link) => link.href !== "/admin" || isAdmin);
 
   return (
     <>
@@ -168,9 +149,9 @@ export function Header() {
               </span>
             </Link>
 
-            {/* Desktop Navigation Links (Admin hidden for public visitors) */}
+            {/* Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1" aria-label="Main Navigation">
-              {publicNavLinks.map((link) => {
+              {navLinks.map((link) => {
                 const Icon = link.icon;
                 const isActive = pathname === link.href;
                 const isDirect = link.href === "/chattogram";
@@ -299,7 +280,7 @@ export function Header() {
 
           {/* Navigation Links List (≥ 44px tap targets) */}
           <nav className="flex-1 px-4 sm:px-6 py-6 space-y-2 overflow-y-auto" aria-label="Mobile Navigation">
-            {publicNavLinks.map((link) => {
+            {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = pathname === link.href;
               const isDirect = link.href === "/chattogram";

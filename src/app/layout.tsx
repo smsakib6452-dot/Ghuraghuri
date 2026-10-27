@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   description:
     `Explore ${TOTAL_DESTINATIONS}+ authentic destinations across 8 divisions of Bangladesh. Discover authentic local photography, cultural heritage, hill tracks, mangroves, and complete travel guides.`,
-  authors: [{ name: "Ghuraghuri Travel Technologies" }],
-  creator: "Ghuraghuri",
+  authors: [{ name: "Sakib" }],
+  creator: "Sakib",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",

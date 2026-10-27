@@ -27,6 +27,7 @@ const EXPERIENCE_COUNTS: Record<string, number> = {
   Forest: 13,
   Haor: 4,
   Historical: 104,
+  Heritage: 104,
   Island: 15,
   Religious: 16,
 };
@@ -75,7 +76,7 @@ const EXPERIENCES: ExperienceItem[] = [
   },
   {
     key: "heritage",
-    category: "Heritage",
+    category: "Historical",
     icon: Landmark,
     name_en: "Heritage",
     name_bn: "ঐতিহ্য ও প্রত্নতত্ত্ব",

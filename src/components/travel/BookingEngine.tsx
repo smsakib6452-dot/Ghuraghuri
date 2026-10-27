@@ -505,7 +505,11 @@ export default function BookingEngine({
                 <div className="flex items-center gap-2">
                   {/* Direct Counter Phone */}
                   <a
-                    href={`tel:${(OPERATOR_CONTACTS[item.operator]?.phone || "131").replace(/[^0-9+]/g, "")}`}
+                    href={`tel:${(() => {
+                      const raw = (OPERATOR_CONTACTS[item.operator]?.phone || "131").replace(/[^0-9+]/g, "");
+                      if (raw.length <= 5) return raw;
+                      return raw.startsWith("+") ? raw : `+88${raw}`;
+                    })()}`}
                     className="min-h-[40px] px-3 py-2 rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] text-[#0f4a38] hover:text-white dark:bg-[#1f9d76]/20 dark:text-[#2ecc71] dark:hover:bg-[#1f9d76] dark:hover:text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
                     title={isBn ? "কাউন্টারে সরাসরি ফোন করুন" : "Direct Call Counter"}
                   >
@@ -606,7 +610,10 @@ export default function BookingEngine({
               <div className="flex items-center gap-2 shrink-0">
                 {OPERATOR_CONTACTS[selectedSchedule.operator]?.phone && (
                   <a
-                    href={`tel:${OPERATOR_CONTACTS[selectedSchedule.operator].phone.replace(/[^0-9+]/g, '')}`}
+                    href={`tel:${(() => {
+                      const raw = (OPERATOR_CONTACTS[selectedSchedule.operator]?.phone || "131").replace(/[^0-9+]/g, "");
+                      return raw.length <= 5 ? raw : (raw.startsWith("+") ? raw : `+88${raw}`);
+                    })()}`}
                     className="px-3 py-1.5 rounded-xl bg-[#0f4a38] text-white hover:bg-[#156b50] font-bold text-xs inline-flex items-center gap-1.5 shadow-sm"
                   >
                     <PhoneCall className="w-3 h-3" />

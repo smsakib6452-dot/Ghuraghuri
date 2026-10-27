@@ -3,17 +3,32 @@ import Link from "next/link";
 import { Mail, PhoneCall, ShieldAlert, Globe, MessageSquare, MapPin } from "lucide-react";
 import { EMERGENCY_CONFIG } from "@/lib/emergency";
 import { FOOTER_CONFIG } from "@/config/footer";
+import { CONTACT_EMAIL, SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Ghuraghuri Bangladesh",
+  title: "Contact Us",
   description: "Get in touch with the Ghuraghuri travel team, tourist emergency helplines, or submit destination feedback.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
-    title: "Contact Us | Ghuraghuri Bangladesh",
-    description: "Connect with the Ghuraghuri team and access 24/7 tourist safety helplines.",
-    url: "https://ghuraghuri.vercel.app/contact",
+    title: "Contact Us | Ghuraghuri",
+    description: "Get in touch with the Ghuraghuri travel team, tourist emergency helplines, or submit destination feedback.",
+    url: `${SITE_URL}/contact`,
+    images: [
+      {
+        url: `${SITE_URL}/og-default.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Contact Ghuraghuri",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Ghuraghuri",
+    description: "Get in touch with the Ghuraghuri travel team, tourist emergency helplines, or submit destination feedback.",
+    images: [`${SITE_URL}/og-default.jpg`],
   },
 };
 
@@ -97,9 +112,13 @@ export default function ContactPage() {
             <p className="text-xs text-[var(--text-muted)] leading-relaxed">
               Have suggestions or corrections for destinations? Send us your travel stories and updates.
             </p>
-            <p className="text-xs font-bold text-foreground pt-2">
-              contact@ghuraghuri.com.bd
-            </p>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              aria-label={`Send email to Ghuraghuri helpdesk at ${CONTACT_EMAIL}`}
+              className="text-xs font-bold text-foreground hover:text-[#0f4a38] dark:hover:text-[#2ecc71] underline underline-offset-4 pt-2 inline-block transition-colors"
+            >
+              {CONTACT_EMAIL}
+            </a>
           </div>
 
           <div className="p-6 rounded-3xl bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm space-y-3">
@@ -108,7 +127,7 @@ export default function ContactPage() {
             </div>
             <h3 className="text-lg font-bold text-foreground">Community & Social</h3>
             <p className="text-xs text-[var(--text-muted)] leading-relaxed">
-              Follow our verified channels for fresh photography, weather updates, and itinerary tips.
+              Follow our official channels for fresh photography, weather updates, and itinerary tips.
             </p>
             <div className="flex items-center gap-3 pt-2">
               {FOOTER_CONFIG.socialLinks.map((s) => (

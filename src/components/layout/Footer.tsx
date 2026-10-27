@@ -17,10 +17,20 @@ export function Footer() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [botField, setBotField] = useState("");
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const newsletterEndpoint = process.env.NEXT_PUBLIC_NEWSLETTER_ENDPOINT;
+
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage("");
+
+    // Honeypot check
+    if (botField) {
+      return;
+    }
+
     const trimmed = email.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -33,14 +43,45 @@ export function Footer() {
       return;
     }
 
-    confetti({
-      particleCount: 80,
-      spread: 60,
-      origin: { y: 0.8 },
-      colors: ["#0f4a38", "#1f9d76", "#f4a340", "#2ecc71"],
-    });
+    if (!newsletterEndpoint) {
+      return;
+    }
 
-    setSubscribed(true);
+    setIsSubmitting(true);
+    try {
+      const res = await fetch(newsletterEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ email: trimmed }),
+      });
+
+      if (res.ok) {
+        confetti({
+          particleCount: 80,
+          spread: 60,
+          origin: { y: 0.8 },
+          colors: ["#0f4a38", "#1f9d76", "#f4a340", "#2ecc71"],
+        });
+        setSubscribed(true);
+      } else {
+        setErrorMessage(
+          isBn
+            ? "সাবস্ক্রিপশন সম্পন্ন করা যায়নি। অনুগ্রহ করে পরে চেষ্টা করুন।"
+            : "Subscription failed. Please try again later."
+        );
+      }
+    } catch {
+      setErrorMessage(
+        isBn
+          ? "নেটওয়ার্ক সমস্যা। পুনরায় চেষ্টা করুন।"
+          : "Network error. Please try again later."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const divisions = [
@@ -210,28 +251,65 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Newsletter */}
+          {/* Col 4: Community Updates & Newsletter */}
           <div>
             <h3 className="text-base font-bold text-white mb-4 tracking-wide">
-              {isBn ? "ভ্রমণ আপডেট ও অফার" : "Travel Insights"}
+              {isBn ? "ভ্রমণ আপডেট ও যোগাযোগ" : "Follow Us & Travel Updates"}
             </h3>
-            <p className="text-xs text-[#a3c4b6] mb-4">
-              {isBn
-                ? "নতুন নতুন গোপন স্পট এবং ট্রাভেল গাইডের আপডেট পেতে ইমেইল সাবস্ক্রাইব করুন।"
-                : "Receive hidden gems, seasonal itineraries, and local tips directly in your inbox."}
-            </p>
-            {subscribed ? (
+
+            {!newsletterEndpoint ? (
+              <div>
+                <p className="text-xs text-[#a3c4b6] mb-4 leading-relaxed">
+                  {isBn
+                    ? "নতুন নতুন গোপন স্পট এবং বিশ্বস্ত ট্রাভেল গাইডের আপডেটের জন্য আমাদের অফিশিয়াল চ্যানেলে যুক্ত থাকুন।"
+                    : "Follow our official channels for fresh photography, seasonal itineraries, and verified travel tips."}
+                </p>
+                <div className="flex flex-wrap items-center gap-2.5 pt-1">
+                  {FOOTER_CONFIG.socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-[#f4a340] hover:text-black text-white text-xs font-bold transition-all inline-flex items-center gap-2"
+                      aria-label={`Follow Ghuraghuri on ${social.name}`}
+                    >
+                      <span>{social.name}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : subscribed ? (
               <div className="flex items-center gap-2 p-3 bg-[#0f4a38] text-white rounded-xl border border-[#2ecc71]/40 text-sm">
                 <CheckCircle2 className="w-5 h-5 text-[#2ecc71] shrink-0" />
                 <span>{isBn ? "অভিনন্দন! আপনি যুক্ত হয়েছেন।" : "You are in! Welcome aboard."}</span>
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="space-y-2">
+                <p className="text-xs text-[#a3c4b6] mb-3">
+                  {isBn
+                    ? "নতুন নতুন গোপন স্পট এবং ট্রাভেল গাইডের আপডেট পেতে ইমেইল দিন।"
+                    : "Receive hidden gems, seasonal itineraries, and local tips in your inbox."}
+                </p>
+
+                {/* Honeypot anti-spam field */}
+                <input
+                  type="text"
+                  name="botcheck"
+                  value={botField}
+                  onChange={(e) => setBotField(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                />
+
                 <div className="relative">
                   <Mail className="absolute left-3 top-3 w-4 h-4 text-[#7ea897]" />
                   <input
                     type="email"
                     value={email}
+                    disabled={isSubmitting}
                     onChange={(e) => {
                       setEmail(e.target.value);
                       if (errorMessage) setErrorMessage("");
@@ -252,11 +330,29 @@ export function Footer() {
                 )}
                 <button
                   type="submit"
-                  className="w-full min-h-[44px] flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#f4a340] hover:bg-[#e67e22] text-black font-bold text-xs sm:text-sm shadow-md transition-all cursor-pointer"
+                  disabled={isSubmitting}
+                  className="w-full min-h-[44px] flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#f4a340] hover:bg-[#e67e22] disabled:opacity-50 text-black font-bold text-xs sm:text-sm shadow-md transition-all cursor-pointer"
                 >
                   <Send className="w-3.5 h-3.5" />
-                  <span>{isBn ? "সাবস্ক্রাইব করুন" : "Join Free Community"}</span>
+                  <span>
+                    {isSubmitting
+                      ? isBn
+                        ? "যুক্ত করা হচ্ছে..."
+                        : "Subscribing..."
+                      : isBn
+                      ? "সাবস্ক্রাইব করুন"
+                      : "Join Free Community"}
+                  </span>
                 </button>
+                <p className="text-[11px] text-[#7ea897] pt-1.5 leading-relaxed">
+                  {isBn
+                    ? "আমরা কোনো স্প্যাম পাঠাই না। যেকোনো সময় আনসাবস্ক্রাইব করতে পারেন। বিস্তারিত: "
+                    : "We only send travel tips. Unsubscribe anytime. See our "}
+                  <Link href="/privacy" className="underline hover:text-white">
+                    {isBn ? "গোপনীয়তা নীতি" : "Privacy Policy"}
+                  </Link>
+                  .
+                </p>
               </form>
             )}
           </div>

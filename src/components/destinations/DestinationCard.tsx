@@ -45,9 +45,9 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
         <Image
           src={imageSrc}
-          alt={destination.name}
+          alt={title}
           fill
-          sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 300px"
+          sizes="(max-width: 640px) 94vw, (max-width: 1024px) 47vw, (max-width: 1280px) 31vw, 360px"
           priority={priority}
           fetchPriority={priority ? "high" : "auto"}
           loading={priority ? undefined : "lazy"}

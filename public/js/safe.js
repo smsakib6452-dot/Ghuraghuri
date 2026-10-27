@@ -71,6 +71,39 @@
         }, true);
     }
 
+    window.loadJsPdfOnDemand = function (cb) {
+        if (window.jspdf && window.jspdf.jsPDF) {
+            if (typeof cb === "function") cb();
+            return;
+        }
+        if (window.__jsPdfLoading) {
+            window.__jsPdfCallbacks = window.__jsPdfCallbacks || [];
+            if (typeof cb === "function") window.__jsPdfCallbacks.push(cb);
+            return;
+        }
+        window.__jsPdfLoading = true;
+        window.__jsPdfCallbacks = typeof cb === "function" ? [cb] : [];
+
+        var s = document.createElement("script");
+        s.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+        s.integrity = "sha384-JcnsjUPPylna1s1fvi1u12X5qjY5OL56iySh75FdtrwhO/SWXgMjoVqcKyIIWOLk";
+        s.crossOrigin = "anonymous";
+        s.onload = function () {
+            window.__jsPdfLoading = false;
+            var cbs = window.__jsPdfCallbacks || [];
+            window.__jsPdfCallbacks = [];
+            cbs.forEach(function (f) { try { f(); } catch (e) {} });
+        };
+        s.onerror = function () {
+            window.__jsPdfLoading = false;
+            console.warn("[Safe] jsPDF on-demand load failed");
+            var cbs = window.__jsPdfCallbacks || [];
+            window.__jsPdfCallbacks = [];
+            cbs.forEach(function (f) { try { f(); } catch (e) {} });
+        };
+        document.head.appendChild(s);
+    };
+
     window.SAFE = Object.freeze({
         html: html,
         url: url,

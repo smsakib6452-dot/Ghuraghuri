@@ -5,6 +5,7 @@ import { ExperienceSection } from "@/components/home/ExperienceSection";
 import { MapSectionLazy } from "@/components/home/MapSectionLazy";
 import { DivisionsSection } from "@/components/home/DivisionsSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
+import { ChattogramPromo } from "@/components/home/ChattogramPromo";
 import { TripQuizModal } from "@/components/home/TripQuizModal";
 import destinationsData from "@/data/destinations.json";
 import translationsData from "@/data/translations.json";
@@ -70,7 +71,10 @@ export default function HomePage() {
       {/* 5. 8 Divisions Cultural & Scenic Explorer */}
       <DivisionsSection />
 
-      {/* 6. Complete Travel Hub (Hotels, Dining, Transport, Tourist Police) */}
+      {/* 6. Chattogram Interactive Poster Studio Promo */}
+      <ChattogramPromo />
+
+      {/* 7. Complete Travel Hub (Hotels, Dining, Transport, Tourist Police) */}
       <ServicesSection />
 
       {/* 7. Smart Trip Quiz Modal */}

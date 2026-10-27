@@ -1,15 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useApp } from "@/context/AppContext";
 import rawDestinations from "@/data/destinations.json";
 import { Destination } from "@/types/destination";
 import {
-  Lock,
-  LogIn,
-  LogOut,
   Plus,
   Search,
   Filter,
@@ -29,9 +27,6 @@ import {
   Save,
 } from "lucide-react";
 
-const ADMIN_EMAIL = "ghuraghuri@traveler.com";
-const ADMIN_PASSWORD_HASH = "cd16e1b57fcb7051ac32c10fe49f13bbfeed1a7197058554a1dfecfd20f848ac";
-const AUTH_KEY = "ghuraghuri_admin_authenticated";
 const STORAGE_CUSTOM_DESTS = "ghuraghuri_custom_destinations";
 
 const BADGES = [
@@ -56,23 +51,14 @@ const DIVISIONS = [
   "Mymensingh",
 ];
 
-async function sha256(message: string): Promise<string> {
-  const msgBuffer = new TextEncoder().encode(message);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
-}
-
 export default function AdminPage() {
+  // Fail closed: In production, /admin is completely disabled and returns a real 404
+  if (process.env.NODE_ENV === "production") {
+    notFound();
+  }
+
   const { language } = useApp();
   const isBn = language === "bn";
-
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [authLoading, setAuthLoading] = useState<boolean>(true);
-  const [emailInput, setEmailInput] = useState<string>("");
-  const [passwordInput, setPasswordInput] = useState<string>("");
-  const [loginError, setLoginError] = useState<string>("");
-  const [submittingLogin, setSubmittingLogin] = useState<boolean>(false);
 
   // Destinations state
   const [destinations, setDestinations] = useState<Destination[]>([]);
@@ -102,19 +88,6 @@ export default function AdminPage() {
   const [formThingsToDo, setFormThingsToDo] = useState<string>("");
   const [formAttractions, setFormAttractions] = useState<string>("");
 
-  // Check authentication status on mount
-  useEffect(() => {
-    try {
-      const storedAuth =
-        sessionStorage.getItem(AUTH_KEY) || localStorage.getItem(AUTH_KEY);
-      const storedExp = localStorage.getItem("ghuraghuri_admin_exp");
-      if (storedAuth === "1" && (!storedExp || Date.now() < Number(storedExp))) {
-        setIsAuthenticated(true);
-      }
-    } catch {}
-    setAuthLoading(false);
-  }, []);
-
   // Load destinations and merge custom local overrides
   useEffect(() => {
     const baseList = (rawDestinations as unknown as Destination[]) || [];
@@ -135,51 +108,6 @@ export default function AdminPage() {
   const showToast = (msg: string) => {
     setToastMessage(msg);
     setTimeout(() => setToastMessage(""), 4000);
-  };
-
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoginError("");
-    setSubmittingLogin(true);
-
-    try {
-      const enteredEmail = emailInput.trim().toLowerCase();
-      const enteredPassHash = await sha256(passwordInput);
-
-      if (
-        enteredEmail === ADMIN_EMAIL &&
-        enteredPassHash === ADMIN_PASSWORD_HASH
-      ) {
-        const exp = Date.now() + 2 * 60 * 60 * 1000; // 2 hour session
-        try {
-          localStorage.setItem(AUTH_KEY, "1");
-          localStorage.setItem("ghuraghuri_admin_exp", String(exp));
-          sessionStorage.setItem(AUTH_KEY, "1");
-        } catch {}
-        setIsAuthenticated(true);
-        showToast(isBn ? "সফলভাবে লগইন হয়েছে!" : "Logged in successfully!");
-      } else {
-        setLoginError(
-          isBn
-            ? "ইমেইল বা পাসওয়ার্ড সঠিক নয়। পুনরায় চেষ্টা করুন।"
-            : "Invalid email or password. Please try again."
-        );
-      }
-    } catch (err) {
-      setLoginError("Login process error. Try again.");
-    } finally {
-      setSubmittingLogin(false);
-    }
-  };
-
-  const handleLogout = () => {
-    try {
-      localStorage.removeItem(AUTH_KEY);
-      localStorage.removeItem("ghuraghuri_admin_exp");
-      sessionStorage.removeItem(AUTH_KEY);
-    } catch {}
-    setIsAuthenticated(false);
-    showToast(isBn ? "লগআউট সম্পন্ন হয়েছে।" : "Logged out.");
   };
 
   const openNewEditor = () => {
@@ -353,104 +281,7 @@ export default function AdminPage() {
     return matchesSearch && matchesDivision;
   });
 
-  if (authLoading) {
-    return (
-      <div className="min-h-[70vh] flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-[#0f4a38] border-t-transparent rounded-full animate-spin"></div>
-      </div>
-    );
-  }
-
-  // LOGIN SCREEN
-  if (!isAuthenticated) {
-    return (
-      <section className="min-h-[80vh] flex items-center justify-center px-4 py-16 bg-gradient-to-b from-[#f2f7f4] to-[#fbfdfc] dark:from-[#061510] dark:to-[#0c241c]">
-        <div className="w-full max-w-md bg-white dark:bg-[#0c241c] rounded-3xl p-8 sm:p-10 shadow-2xl border border-[#0f4a38]/10 dark:border-white/10 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#f4a340]/10 rounded-full blur-2xl pointer-events-none"></div>
-
-          <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-[#0f4a38]/10 dark:bg-[#1f9d76]/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-[#0f4a38] dark:text-[#2ecc71]">
-              <Lock className="w-8 h-8" />
-            </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0f4a38] dark:text-white">
-              {isBn ? "প্রশাসক প্যানেল" : "Admin Panel"}
-            </h1>
-            <p className="text-sm text-[#4e6b60] dark:text-[#95b3a6] mt-2">
-              {isBn
-                ? "ঘুরাঘুরি প্ল্যাটফর্ম ব্যবস্থাপনার জন্য লগইন করুন"
-                : "Sign in with your verified credentials"}
-            </p>
-          </div>
-
-          {loginError && (
-            <div className="mb-6 p-4 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900/50 flex items-center gap-3 text-red-700 dark:text-red-300 text-sm">
-              <AlertCircle className="w-5 h-5 shrink-0" />
-              <span>{loginError}</span>
-            </div>
-          )}
-
-          <form onSubmit={handleLogin} className="space-y-5">
-            <div>
-              <label
-                htmlFor="admin-email"
-                className="block text-xs font-bold uppercase tracking-wider text-[#4e6b60] dark:text-[#95b3a6] mb-2"
-              >
-                {isBn ? "অ্যাডমিন ইমেইল" : "Admin Email"}
-              </label>
-              <input
-                id="admin-email"
-                type="email"
-                required
-                value={emailInput}
-                onChange={(e) => setEmailInput(e.target.value)}
-                placeholder="Ghuraghuri@traveler.com"
-                className="w-full px-4 py-3 rounded-xl border border-[#0f4a38]/20 dark:border-white/20 bg-[#fbfdfc] dark:bg-[#061510] text-[#0d211a] dark:text-white focus:outline-none focus:ring-2 focus:ring-[#0f4a38] dark:focus:ring-[#1f9d76] transition-all"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="admin-password"
-                className="block text-xs font-bold uppercase tracking-wider text-[#4e6b60] dark:text-[#95b3a6] mb-2"
-              >
-                {isBn ? "পাসওয়ার্ড" : "Password"}
-              </label>
-              <input
-                id="admin-password"
-                type="password"
-                required
-                value={passwordInput}
-                onChange={(e) => setPasswordInput(e.target.value)}
-                placeholder="••••••••••••"
-                className="w-full px-4 py-3 rounded-xl border border-[#0f4a38]/20 dark:border-white/20 bg-[#fbfdfc] dark:bg-[#061510] text-[#0d211a] dark:text-white focus:outline-none focus:ring-2 focus:ring-[#0f4a38] dark:focus:ring-[#1f9d76] transition-all"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={submittingLogin}
-              className="w-full py-3.5 px-6 rounded-xl font-bold text-white bg-[#0f4a38] hover:bg-[#156b50] active:scale-[0.99] shadow-lg shadow-[#0f4a38]/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <LogIn className="w-5 h-5" />
-              <span>{isBn ? "লগইন করুন" : "Secure Sign In"}</span>
-            </button>
-          </form>
-
-          <div className="mt-8 pt-6 border-t border-[#0f4a38]/10 dark:border-white/10 text-center">
-            <Link
-              href="/"
-              className="text-xs font-semibold text-[#0f4a38] dark:text-[#2ecc71] hover:underline flex items-center justify-center gap-1.5"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>{isBn ? "মূল হোমপেজে ফিরুন" : "Back to Ghuraghuri Home"}</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // AUTHENTICATED DASHBOARD
+  // DASHBOARD (Dev-Only)
   return (
     <div className="min-h-screen bg-[#fbfdfc] dark:bg-[#061510] py-8 px-4 sm:px-6 lg:px-8">
       {/* Toast Notification */}
@@ -467,7 +298,7 @@ export default function AdminPage() {
           <div>
             <div className="flex items-center gap-2 text-xs font-bold text-[#f4a340] uppercase tracking-wider mb-1">
               <Sparkles className="w-4 h-4" />
-              <span>{isBn ? "লাইভ কন্ট্রোল রুম" : "Live Master Control"}</span>
+              <span>{isBn ? "লাইভ কন্ট্রোল রুম (ডেভ মোড)" : "Master Control (Dev Mode)"}</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black text-[#0f4a38] dark:text-white">
               {isBn ? "ঘুরাঘুরি ডেস্টিনেশন ম্যানেজার" : "Destination Studio & Manager"}
@@ -497,13 +328,13 @@ export default function AdminPage() {
               <span>{isBn ? "JSON এক্সপোর্ট" : "Export JSON"}</span>
             </button>
 
-            <button
-              onClick={handleLogout}
-              className="px-4 py-2.5 rounded-xl font-semibold text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/30 hover:bg-red-100 flex items-center gap-2 border border-red-200 dark:border-red-900/40 text-sm transition-all cursor-pointer"
+            <Link
+              href="/"
+              className="px-4 py-2.5 rounded-xl font-semibold text-[#0f4a38] dark:text-[#2ecc71] bg-[#0f4a38]/10 hover:bg-[#0f4a38]/20 flex items-center gap-2 text-sm transition-all cursor-pointer"
             >
-              <LogOut className="w-4 h-4" />
-              <span>{isBn ? "লগআউট" : "Logout"}</span>
-            </button>
+              <ArrowLeft className="w-4 h-4" />
+              <span>{isBn ? "হোমপেজে ফিরুন" : "Back to Home"}</span>
+            </Link>
           </div>
         </div>
 
@@ -785,7 +616,7 @@ export default function AdminPage() {
 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-[#4e6b60] dark:text-[#95b3a6] mb-1.5">
-                    Verified Quality Badge
+                    Curated Quality Badge
                   </label>
                   <select
                     value={formBadge}

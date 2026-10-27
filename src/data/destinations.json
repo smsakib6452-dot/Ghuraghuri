@@ -22962,5 +22962,2329 @@
     "gallery": [
       "/assets/destinations/sajek-valley-konglak-peak.webp"
     ]
+  },
+  {
+    "id": 272,
+    "name": "University of Chittagong",
+    "name_bn": "চট্টগ্রাম বিশ্ববিদ্যালয় (চবি)",
+    "slug": "chittagong-university",
+    "division": "Chattogram",
+    "district": "Chattogram",
+    "upazila": "Hathazari",
+    "category": "Campus & Heritage",
+    "categories": [
+      "Campus & Heritage",
+      "Nature",
+      "Hill"
+    ],
+    "rating": 4.9,
+    "reviews": 1450,
+    "latitude": 22.4716,
+    "longitude": 91.7877,
+    "image": "/assets/destinations/chittagong-university.webp",
+    "imageLg": "/assets/destinations/chittagong-university.webp",
+    "gallery": [
+      "/assets/destinations/chittagong-university.webp"
+    ],
+    "photoId": "cu-campus-shuttle",
+    "galleryIds": [
+      "cu-campus-shuttle",
+      "cu-zero-point",
+      "cu-shahid-minar"
+    ],
+    "shortDesc": "Bangladesh's most scenic hill-enclosed university campus, home to the world's only daily student shuttle train.",
+    "description": "The University of Chittagong (CU), established in 1966 across 1,754 rolling acres in Hathazari, is renowned as one of South Asia's most breathtaking academic sanctuaries. Nestled among tranquil green valleys and undulating hills, CU is globally celebrated for its iconic daily student Shuttle Train (শাটল ট্রেন), which connects Chattogram city to the campus with singing and camaraderie. The campus boasts historic landmarks including the Zero Point monument, Katapahar hill path, an amphitheater-style Shaheed Minar carved into the hillside, the Central Library, lush Botanical Garden, and natural waterfalls (Shonajhuri and Chhoto Jharna).",
+    "bestTime": "October – March (Winter & Spring)",
+    "recommendedDays": "1 day",
+    "difficulty": "Easy",
+    "budget": "BDT 300 – 800 / day",
+    "travelType": "Students, Heritage Lovers, Nature Enthusiasts, Photographers",
+    "activities": [
+      "Ride the legendary Shuttle Train from Chattogram Railway Station / Sholoshohor",
+      "Walk along the serene Katapahar hill road",
+      "Visit the hillside Shaheed Minar and amphitheater",
+      "Explore the Botanical Garden and Germplasm Center",
+      "Hike to Shonajhuri and Chhoto Jharna waterfalls",
+      "Relax at the Zero Point and Suhrawardy Hall circle"
+    ],
+    "attractions": [
+      "University Shuttle Train (শাটল ট্রেন)",
+      "Zero Point & Monument",
+      "Hilltop Shaheed Minar",
+      "Katapahar Scenic Hill Walk",
+      "CU Central Library & Museum",
+      "Botanical Garden",
+      "Shonajhuri Waterfall"
+    ],
+    "tips": [
+      "Board the shuttle train from Sholoshohor Station in the morning for the authentic student experience.",
+      "Wear comfortable walking shoes for hilly pathways.",
+      "Respect academic zones and hall areas during ongoing lectures."
+    ],
+    "things_to_do": [
+      "Ride the legendary Shuttle Train",
+      "Stroll along Katapahar",
+      "Visit the hillside Shaheed Minar",
+      "Hike to natural campus waterfalls",
+      "Enjoy traditional campus snacks at Jhupri"
+    ],
+    "what_to_see": [
+      "CU Shuttle Train",
+      "Zero Point",
+      "Shaheed Minar",
+      "Katapahar",
+      "Botanical Garden",
+      "Shonajhuri Waterfall"
+    ],
+    "travel_tips": [
+      "Shuttle train schedule is available at Sholoshohor station.",
+      "Local CNG auto-rickshaws run regularly from Oxygen Mor to CU 1 No. Gate."
+    ],
+    "transport_options": [
+      "Train (Shuttle)",
+      "Local Bus",
+      "CNG Auto-rickshaw",
+      "Private Car"
+    ],
+    "nearby_destinations": [
+      "foys-lake",
+      "bhatiari-lake",
+      "patenga-beach"
+    ],
+    "nearby_hotels": [
+      "Radisson Blu Chattogram Bay View",
+      "The Peninsula Chittagong",
+      "Hotel Agrabad"
+    ],
+    "featured": true,
+    "popularity": "very_high",
+    "status": "active",
+    "tags": [
+      "campus",
+      "heritage",
+      "hill",
+      "train",
+      "nature"
+    ],
+    "travelInfo": {
+      "from": "Chattogram City",
+      "distanceKm": 22,
+      "duration": "45 minutes by Shuttle Train or 50 minutes by road",
+      "route": "Chattogram Station / Sholoshohor → Oxygen Mor → Hathazari Road → CU Campus",
+      "transport": [
+        "Train (Shuttle Train from Sholoshohor)",
+        "Bus from Oxygen Mor",
+        "CNG Auto-rickshaw"
+      ]
+    }
+  },
+  {
+    "id": 273,
+    "name": "Khoiyachhora Waterfall",
+    "name_bn": "খৈয়াছড়া ঝরনা",
+    "slug": "khoiyachhora-waterfall",
+    "division": "Chattogram",
+    "district": "Chattogram",
+    "upazila": "Mirsharai",
+    "category": "Waterfall",
+    "categories": [
+      "Waterfall",
+      "Adventure",
+      "Nature"
+    ],
+    "rating": 4.8,
+    "reviews": 980,
+    "latitude": 22.7562,
+    "longitude": 91.5843,
+    "image": "/assets/destinations/khoiyachhora-waterfall.webp",
+    "imageLg": "/assets/destinations/khoiyachhora-waterfall.webp",
+    "gallery": [
+      "/assets/destinations/khoiyachhora-waterfall.webp"
+    ],
+    "photoId": "khoiyachhora-cascade",
+    "galleryIds": [
+      "khoiyachhora-cascade"
+    ],
+    "shortDesc": "The undisputed 'Queen of Waterfalls' in Bangladesh, boasting 9 magnificent cascades deep inside the Mirsharai hills.",
+    "description": "Tucked inside the rugged Mirsharai hill range, Khoiyachhora is acclaimed as one of Bangladesh's most majestic natural spectacles. It features nine cascading vertical steps that tumble through ancient mossy cliffs, creating crystal-clear natural plunge pools surrounded by thick semi-evergreen forest. The trek from Barotakia Bazar along the mountain stream is an adventurous journey of wading through shallow water, climbing rocky outcrops, and taking in breathtaking tropical scenery.",
+    "bestTime": "July – October (Monsoon & Autumn for full water volume)",
+    "recommendedDays": "1 day",
+    "difficulty": "Moderate to Challenging",
+    "budget": "BDT 500 – 1,200 / day",
+    "travelType": "Adventure Seekers, Trekkers, Youth Groups",
+    "activities": [
+      "Stream trekking along the rocky gorge",
+      "Climbing to upper tiers (Steps 2 through 9)",
+      "Swimming in natural plunge pools",
+      "Nature photography & birdwatching"
+    ],
+    "attractions": [
+      "9 Cascading Tiers",
+      "Natural Hill Pool",
+      "Deep Mountain Canyon",
+      "Mirsharai Forest Ridge"
+    ],
+    "tips": [
+      "Wear trekking shoes with strong grip for slippery rocks.",
+      "Hire a local youth guide from Barotakia Bazar.",
+      "Never attempt to climb the upper cascades during torrential cloudbursts."
+    ],
+    "things_to_do": [
+      "Trek the stream bed",
+      "Bathe under the waterfalls",
+      "Climb to tier 3 and above with a guide"
+    ],
+    "what_to_see": [
+      "Multi-tiered cascade",
+      "Lush jungle ravine",
+      "Forest flora"
+    ],
+    "travel_tips": [
+      "Start early morning from Chattogram or Dhaka.",
+      "Carry waterproof bags for electronics."
+    ],
+    "transport_options": [
+      "Bus",
+      "Train (to Sitakunda/Feni)",
+      "CNG Auto-rickshaw"
+    ],
+    "nearby_destinations": [
+      "sitakunda",
+      "mohamaya-lake-kayaking",
+      "napittachhora-waterfall"
+    ],
+    "nearby_hotels": [
+      "Sitakunda Rest Houses",
+      "Hotels in Chattogram City"
+    ],
+    "featured": true,
+    "popularity": "high",
+    "status": "active",
+    "tags": [
+      "waterfall",
+      "trekking",
+      "adventure",
+      "nature"
+    ],
+    "travelInfo": {
+      "from": "Chattogram",
+      "distanceKm": 55,
+      "duration": "1.5 hours",
+      "route": "Chattogram → Dhaka-Chattogram Highway → Mirsharai Barotakia Bazar → 4 km trek",
+      "transport": [
+        "Bus from AK Khan gate to Barotakia",
+        "CNG to trailhead",
+        "Foot trek"
+      ]
+    }
+  },
+  {
+    "id": 274,
+    "name": "Napittachhora Waterfall",
+    "name_bn": "নাপিত্তাছড়া ঝরনা",
+    "slug": "napittachhora-waterfall",
+    "division": "Chattogram",
+    "district": "Chattogram",
+    "upazila": "Mirsharai",
+    "category": "Waterfall",
+    "categories": [
+      "Waterfall",
+      "Adventure"
+    ],
+    "rating": 4.7,
+    "reviews": 620,
+    "latitude": 22.7831,
+    "longitude": 91.5622,
+    "image": "/assets/destinations/napittachhora-waterfall.webp",
+    "imageLg": "/assets/destinations/napittachhora-waterfall.webp",
+    "gallery": [
+      "/assets/destinations/napittachhora-waterfall.webp"
+    ],
+    "photoId": "napittachhora-trail",
+    "galleryIds": [
+      "napittachhora-trail"
+    ],
+    "shortDesc": "A trio of stunning waterfalls—Kupikatakum, Mithachhora, and Bandarkum—hidden inside a dramatic rocky ravine.",
+    "description": "Located at Noiduar Mor in Mirsharai, Napittachhora is a pristine natural canyon trail sheltering three distinct waterfalls: Kupikatakum, Mithachhora, and the towering Bandarkum. As you hike through the winding boulder-strewn stream bed surrounded by sheer rock faces, the soothing sound of rushing water and cool forest breezes create an unforgettable wilderness trek.",
+    "bestTime": "June – October",
+    "recommendedDays": "1 day",
+    "difficulty": "Moderate",
+    "budget": "BDT 500 – 1,000 / day",
+    "travelType": "Adventure, Trekking, Friends",
+    "activities": [
+      "Gorge hiking",
+      "Cascade bathing",
+      "Rock scrambling",
+      "Wildlife listening"
+    ],
+    "attractions": [
+      "Kupikatakum Waterfall",
+      "Mithachhora Waterfall",
+      "Bandarkum Waterfall"
+    ],
+    "tips": [
+      "Carry anti-leech socks during monsoon.",
+      "Start before 10 AM to complete all three falls safely."
+    ],
+    "things_to_do": [
+      "Hike the stream",
+      "Swim in the natural pools",
+      "Trek between the three waterfalls"
+    ],
+    "what_to_see": [
+      "Three waterfalls",
+      "Deep rocky canyon",
+      "Subtropical forest"
+    ],
+    "travel_tips": [
+      "Get off at Noiduar Bazar on the Dhaka-Chattogram highway."
+    ],
+    "transport_options": [
+      "Bus",
+      "CNG Auto-rickshaw"
+    ],
+    "nearby_destinations": [
+      "khoiyachhora-waterfall",
+      "mohamaya-lake-kayaking"
+    ],
+    "nearby_hotels": [
+      "Mirsharai Rest Houses",
+      "Chattogram Hotels"
+    ],
+    "featured": false,
+    "popularity": "high",
+    "status": "active",
+    "tags": [
+      "waterfall",
+      "trek",
+      "canyon"
+    ],
+    "travelInfo": {
+      "from": "Chattogram",
+      "distanceKm": 58,
+      "duration": "1.5 hours",
+      "route": "Chattogram → Noiduar Bazar, Mirsharai → 2-3 hour trek",
+      "transport": [
+        "Bus",
+        "CNG",
+        "Walking"
+      ]
+    }
+  },
+  {
+    "id": 275,
+    "name": "Parki Beach",
+    "name_bn": "পারকি সৈকত",
+    "slug": "parki-beach",
+    "division": "Chattogram",
+    "district": "Chattogram",
+    "upazila": "Anwara",
+    "category": "Beach",
+    "categories": [
+      "Beach",
+      "Nature"
+    ],
+    "rating": 4.5,
+    "reviews": 730,
+    "latitude": 22.1895,
+    "longitude": 91.8102,
+    "image": "/assets/destinations/parki-beach.webp",
+    "imageLg": "/assets/destinations/parki-beach.webp",
+    "gallery": [
+      "/assets/destinations/parki-beach.webp"
+    ],
+    "photoId": "parki-jhau-beach",
+    "galleryIds": [
+      "parki-jhau-beach"
+    ],
+    "shortDesc": "A golden coastal beach near the Karnaphuli river mouth, bordered by an enchanting pine-tamarisk forest.",
+    "description": "Situated in Anwara upazila south of Chattogram city, Parki Beach is a tranquil 15-kilometer sandy coastline along the Bay of Bengal. Shaded by a dense Jhau (tamarisk) forest that whistles in the sea breeze, the beach is famous for scenic views of cargo ships anchored in the outer harbor, quiet sunset walks, and fresh local seafood shacks.",
+    "bestTime": "October – March",
+    "recommendedDays": "1 day",
+    "difficulty": "Easy",
+    "budget": "BDT 400 – 1,000 / day",
+    "travelType": "Family, Couples, Photographers",
+    "activities": [
+      "Sunset watching",
+      "Forest strolls",
+      "Beach cricket",
+      "Seafood tasting"
+    ],
+    "attractions": [
+      "Jhau Forest",
+      "Bay of Bengal Shoreline",
+      "Karnaphuli River Estuary"
+    ],
+    "tips": [
+      "Visit during low tide for a broad firm sand expanse.",
+      "Easily accessible via Karnaphuli Tunnel."
+    ],
+    "things_to_do": [
+      "Walk among the tamarisk trees",
+      "Watch the coastal sunset",
+      "Taste freshly fried pomfret and crab"
+    ],
+    "what_to_see": [
+      "Anchored cargo ships",
+      "Endless coastline",
+      "Pine forest"
+    ],
+    "travel_tips": [
+      "Travel through the Bangabandhu Tunnel for a modern, swift journey."
+    ],
+    "transport_options": [
+      "Bus",
+      "CNG Auto-rickshaw",
+      "Private Car"
+    ],
+    "nearby_destinations": [
+      "patenga-beach",
+      "chattogram-war-cemetery"
+    ],
+    "nearby_hotels": [
+      "Chattogram City Hotels"
+    ],
+    "featured": false,
+    "popularity": "high",
+    "status": "active",
+    "tags": [
+      "beach",
+      "sea",
+      "jhau-forest"
+    ],
+    "travelInfo": {
+      "from": "Chattogram City",
+      "distanceKm": 25,
+      "duration": "40 minutes via Bangabandhu Tunnel",
+      "route": "Chattogram City → Bangabandhu Tunnel → Anwara → Parki Beach",
+      "transport": [
+        "Private Car",
+        "CNG Auto-rickshaw",
+        "Bus"
+      ]
+    }
+  },
+  {
+    "id": 276,
+    "name": "Banshkhali Sea Beach",
+    "name_bn": "বাঁশখালী সমুদ্র সৈকত",
+    "slug": "banshkhali-sea-beach",
+    "division": "Chattogram",
+    "district": "Chattogram",
+    "upazila": "Banshkhali",
+    "category": "Beach",
+    "categories": [
+      "Beach",
+      "Nature"
+    ],
+    "rating": 4.4,
+    "reviews": 510,
+    "latitude": 21.9833,
+    "longitude": 91.8667,
+    "image": "/assets/destinations/banshkhali-sea-beach.webp",
+    "imageLg": "/assets/destinations/banshkhali-sea-beach.webp",
+    "gallery": [
+      "/assets/destinations/banshkhali-sea-beach.webp"
+    ],
+    "photoId": "banshkhali-coast",
+    "galleryIds": [
+      "banshkhali-coast"
+    ],
+    "shortDesc": "The second longest unbroken sea beach in Bangladesh (37 km), offering secluded sands and breathtaking sunsets.",
+    "description": "Stretching along the southwestern edge of Chattogram district, Banshkhali Sea Beach spans 37 kilometers of pristine, untamed coastline. Free from commercial overcrowding, this vast beach is celebrated for its lush coastal casuarina woodlands, red crab colonies, tranquil fisherman hamlets, and uninterrupted sunset panoramas over the Bay of Bengal.",
+    "bestTime": "November – February",
+    "recommendedDays": "1 – 2 days",
+    "difficulty": "Easy",
+    "budget": "BDT 500 – 1,200 / day",
+    "travelType": "Solo, Nature Lovers, Off-beat Explorers",
+    "activities": [
+      "Beach walking",
+      "Bird watching",
+      "Visiting fishing villages",
+      "Sunset photography"
+    ],
+    "attractions": [
+      "37 km Unbroken Coastline",
+      "Jhau Forest",
+      "Banshkhali Eco Park (nearby)"
+    ],
+    "tips": [
+      "Combine with a visit to the Banshkhali Eco Park suspension bridge."
+    ],
+    "things_to_do": [
+      "Walk along the peaceful sands",
+      "Enjoy the secluded ocean breeze",
+      "Watch traditional fishermen cast nets"
+    ],
+    "what_to_see": [
+      "Red crabs",
+      "Casuarina groves",
+      "Sunset over Bay of Bengal"
+    ],
+    "travel_tips": [
+      "Direct buses run from Bahaddarhat bus terminal in Chattogram."
+    ],
+    "transport_options": [
+      "Bus",
+      "Private Car",
+      "CNG"
+    ],
+    "nearby_destinations": [
+      "banshkhali-eco-park",
+      "parki-beach"
+    ],
+    "nearby_hotels": [
+      "Chattogram City Hotels"
+    ],
+    "featured": false,
+    "popularity": "medium",
+    "status": "active",
+    "tags": [
+      "beach",
+      "coast",
+      "nature"
+    ],
+    "travelInfo": {
+      "from": "Chattogram City",
+      "distanceKm": 45,
+      "duration": "1.5 hours",
+      "route": "Chattogram → Chandanaish / Anwara → Banshkhali Coast",
+      "transport": [
+        "Bus from Bahaddarhat",
+        "Private Vehicle"
+      ]
+    }
+  },
+  {
+    "id": 277,
+    "name": "Curzon Hall, University of Dhaka",
+    "name_bn": "কার্জন হল, ঢাকা বিশ্ববিদ্যালয়",
+    "slug": "curzon-hall",
+    "division": "Dhaka",
+    "district": "Dhaka",
+    "upazila": "Shahbagh",
+    "category": "Historical",
+    "categories": [
+      "Historical",
+      "Campus & Heritage",
+      "Architectural"
+    ],
+    "rating": 4.9,
+    "reviews": 1820,
+    "latitude": 23.7275,
+    "longitude": 90.4038,
+    "image": "/assets/destinations/curzon-hall.webp",
+    "imageLg": "/assets/destinations/curzon-hall.webp",
+    "gallery": [
+      "/assets/destinations/curzon-hall.webp"
+    ],
+    "photoId": "curzon-hall-redbrick",
+    "galleryIds": [
+      "curzon-hall-redbrick"
+    ],
+    "shortDesc": "A 120-year-old architectural masterpiece of Indo-Saracenic red-brick heritage on the University of Dhaka campus.",
+    "description": "Built in 1904 and named after Lord Curzon, Curzon Hall is one of the most magnificent colonial architectural monuments in the Indian subcontinent. Now housing the Faculty of Science of the University of Dhaka, the complex seamlessly blends Mughal domes and ornate arches with European neoclassical design in deep terracotta red brick. Surrounded by a botanical garden, serene pond, and manicured lawns, it is an essential cultural pilgrimage site in the capital.",
+    "bestTime": "Year-round (especially afternoons and holidays)",
+    "recommendedDays": "Half day",
+    "difficulty": "Easy",
+    "budget": "BDT 100 – 300",
+    "travelType": "Architecture Lovers, History Buffs, Photographers, Students",
+    "activities": [
+      "Architectural photography",
+      "Campus walk",
+      "Visiting the Science faculty museum and botanical garden"
+    ],
+    "attractions": [
+      "Curzon Hall Central Pavilion",
+      "DU Science Campus",
+      "Botanical Enclave"
+    ],
+    "tips": [
+      "Friday and Saturday are the best days to visit when regular classes are closed.",
+      "Metro Rail Curzon Hall / High Court station makes access effortless."
+    ],
+    "things_to_do": [
+      "Explore the ornate Mughal-European arches",
+      "Photograph the red brick facade",
+      "Walk around the quiet quadrangle"
+    ],
+    "what_to_see": [
+      "Terracotta domes",
+      "Historical plaque",
+      "Ancient trees"
+    ],
+    "travel_tips": [
+      "Easily reachable via Dhaka Metro Rail Line 6 (Bangladesh Secretariat station)."
+    ],
+    "transport_options": [
+      "Metro Rail",
+      "Rickshaw",
+      "Ride-sharing"
+    ],
+    "nearby_destinations": [
+      "central-shaheed-minar",
+      "national-museum",
+      "ahsan-manzil"
+    ],
+    "nearby_hotels": [
+      "InterContinental Dhaka",
+      "Pan Pacific Sonargaon"
+    ],
+    "featured": true,
+    "popularity": "very_high",
+    "status": "active",
+    "tags": [
+      "heritage",
+      "campus",
+      "history",
+      "architecture"
+    ],
+    "travelInfo": {
+      "from": "Central Dhaka",
+      "distanceKm": 2,
+      "duration": "10 minutes",
+      "route": "Shahbagh → High Court → Curzon Hall",
+      "transport": [
+        "Metro Rail",
+        "Rickshaw",
+        "Bus"
+      ]
+    }
+  },
+  {
+    "id": 278,
+    "name": "Jahangirnagar University",
+    "name_bn": "জাহাঙ্গীরনগর বিশ্ববিদ্যালয় (জাবি)",
+    "slug": "jahangirnagar-university",
+    "division": "Dhaka",
+    "district": "Dhaka",
+    "upazila": "Savar",
+    "category": "Campus & Nature",
+    "categories": [
+      "Campus & Nature",
+      "Nature",
+      "Wildlife"
+    ],
+    "rating": 4.8,
+    "reviews": 1390,
+    "latitude": 23.8825,
+    "longitude": 90.2672,
+    "image": "/assets/destinations/jahangirnagar-university.webp",
+    "imageLg": "/assets/destinations/jahangirnagar-university.webp",
+    "gallery": [
+      "/assets/destinations/jahangirnagar-university.webp"
+    ],
+    "photoId": "ju-birds-lake",
+    "galleryIds": [
+      "ju-birds-lake"
+    ],
+    "shortDesc": "Bangladesh's premier residential sanctuary campus, famous for winter migratory birds and vibrant red water-lily lakes.",
+    "description": "Spread over nearly 700 lush acres in Savar, Jahangirnagar University is Bangladesh's sole fully residential public university and a celebrated ecological sanctuary. In winter, thousands of Siberian and Himalayan migratory waterfowl (Lesser Whistling Ducks, Pintails, Teals) flock to its crimson water-lily ponds. The campus is equally famed for its monumental 71-foot Shaheed Minar, the country's first Butterfly Research Park, the Muktamancha open-air amphitheater, and tree-lined cycling avenues.",
+    "bestTime": "November – February (Migratory bird season)",
+    "recommendedDays": "1 day",
+    "difficulty": "Easy",
+    "budget": "BDT 300 – 800 / day",
+    "travelType": "Birdwatchers, Nature Lovers, Photographers, Families",
+    "activities": [
+      "Birdwatching at the Transport Yard & Administrative building lakes",
+      "Renting a bicycle to explore the lush campus avenues",
+      "Visiting the Butterfly Park and Research Fair",
+      "Admiring the nation's tallest modernist Shaheed Minar"
+    ],
+    "attractions": [
+      "Migratory Bird Lakes",
+      "Tallest Shaheed Minar in Bangladesh",
+      "Muktamancha Open-air Theatre",
+      "Butterfly Research Park",
+      "Jahangirnagar Botanical Gardens"
+    ],
+    "tips": [
+      "Carry binoculars and a telephoto lens for bird photography.",
+      "Strictly avoid making loud noises or throwing pebbles into bird lakes.",
+      "Rent a bicycle near the main gate for the best experience."
+    ],
+    "things_to_do": [
+      "Watch flocks of migratory birds",
+      "Cycle through shaded roads",
+      "Taste famous campus parathas and pitha"
+    ],
+    "what_to_see": [
+      "Flocks of whistling teal",
+      "Red water lilies",
+      "Modernist sculpture"
+    ],
+    "travel_tips": [
+      "Direct AC buses run from Gabtoli and Farmgate along the Dhaka-Aricha highway."
+    ],
+    "transport_options": [
+      "Bus",
+      "Private Car",
+      "Bicycle"
+    ],
+    "nearby_destinations": [
+      "national-martyrs-memorial",
+      "bhawal-national-park"
+    ],
+    "nearby_hotels": [
+      "Savar Rest Houses",
+      "Dhaka Hotels"
+    ],
+    "featured": true,
+    "popularity": "very_high",
+    "status": "active",
+    "tags": [
+      "campus",
+      "birds",
+      "nature",
+      "lake"
+    ],
+    "travelInfo": {
+      "from": "Dhaka Zero Point",
+      "distanceKm": 32,
+      "duration": "1 – 1.5 hours",
+      "route": "Gabtoli → Aminbazar → Savar → Jahangirnagar University Main Gate",
+      "transport": [
+        "Bus (Thikana, Baishakhi)",
+        "Private Car"
+      ]
+    }
+  },
+  {
+    "id": 279,
+    "name": "Bangabandhu Military Museum",
+    "name_bn": "বঙ্গবন্ধু সামরিক জাদুঘর",
+    "slug": "bangabandhu-military-museum",
+    "division": "Dhaka",
+    "district": "Dhaka",
+    "upazila": "Tejgaon",
+    "category": "Museum",
+    "categories": [
+      "Museum",
+      "Cultural",
+      "Architecture"
+    ],
+    "rating": 4.8,
+    "reviews": 1120,
+    "latitude": 23.7681,
+    "longitude": 90.3872,
+    "image": "/assets/destinations/bangabandhu-military-museum.webp",
+    "imageLg": "/assets/destinations/bangabandhu-military-museum.webp",
+    "gallery": [
+      "/assets/destinations/bangabandhu-military-museum.webp"
+    ],
+    "photoId": "military-museum-dhaka",
+    "galleryIds": [
+      "military-museum-dhaka"
+    ],
+    "shortDesc": "A state-of-the-art national military history museum with interactive galleries, planetarium, and world-class architecture.",
+    "description": "Located along Bijoy Sarani in central Dhaka, the Bangabandhu Military Museum is one of South Asia's most cutting-edge museum complexes. Spanning six distinct sections dedicated to the Bangladesh Army, Navy, Air Force, and the 1971 Liberation War, the museum features tanks, fighter jets, naval weapons, VR simulation rides, and a massive stargazing planetarium, all encased in award-winning contemporary architecture.",
+    "bestTime": "Year-round (Closed Wednesdays)",
+    "recommendedDays": "Half day",
+    "difficulty": "Easy",
+    "budget": "BDT 200 – 500",
+    "travelType": "Family, Children, History Buffs, Tech Enthusiasts",
+    "activities": [
+      "Viewing historic combat vehicles",
+      "Experiencing flight and submarine simulators",
+      "Planetarium shows",
+      "Courtyard evening stroll"
+    ],
+    "attractions": [
+      "Air Force Fighter Aircraft Pavilion",
+      "Army Tanks & Artillery",
+      "Naval Fleet Gallery",
+      "Liberation War Memorial"
+    ],
+    "tips": [
+      "Buy tickets online or early at the counter to secure planetarium show slots."
+    ],
+    "things_to_do": [
+      "Explore three floors of military tech",
+      "Try the VR flight simulator",
+      "Enjoy the riverside landscaped garden"
+    ],
+    "what_to_see": [
+      "MiG fighter aircraft",
+      "Historic tanks",
+      "Augmented reality historical displays"
+    ],
+    "travel_tips": [
+      "Bijoy Sarani Metro Station is a short walking distance away."
+    ],
+    "transport_options": [
+      "Metro Rail (Bijoy Sarani)",
+      "Bus",
+      "CNG",
+      "Car"
+    ],
+    "nearby_destinations": [
+      "national-parliament-house",
+      "hatirjheel",
+      "bangladesh-national-museum"
+    ],
+    "nearby_hotels": [
+      "Pan Pacific Sonargaon",
+      "Radisson Blu Dhaka"
+    ],
+    "featured": false,
+    "popularity": "high",
+    "status": "active",
+    "tags": [
+      "museum",
+      "modern",
+      "history",
+      "military"
+    ],
+    "travelInfo": {
+      "from": "Dhaka City Center",
+      "distanceKm": 4,
+      "duration": "15 minutes",
+      "route": "Farmgate → Bijoy Sarani",
+      "transport": [
+        "Metro Rail Line 6",
+        "Bus",
+        "Rickshaw"
+      ]
+    }
+  },
+  {
+    "id": 280,
+    "name": "Banglar Taj Mahal",
+    "name_bn": "বাংলার তাজমহল",
+    "slug": "banglar-taj-mahal",
+    "division": "Dhaka",
+    "district": "Narayanganj",
+    "upazila": "Sonargaon",
+    "category": "Cultural",
+    "categories": [
+      "Cultural",
+      "Historical"
+    ],
+    "rating": 4.1,
+    "reviews": 840,
+    "latitude": 23.7548,
+    "longitude": 90.5822,
+    "image": "/assets/destinations/banglar-taj-mahal.webp",
+    "imageLg": "/assets/destinations/banglar-taj-mahal.webp",
+    "gallery": [
+      "/assets/destinations/banglar-taj-mahal.webp"
+    ],
+    "photoId": "banglar-taj-mahal",
+    "galleryIds": [
+      "banglar-taj-mahal"
+    ],
+    "shortDesc": "A life-size architectural replica of Agra's world wonder, set in rural Sonargaon alongside Pyramid replicas.",
+    "description": "Built by Bangladeshi filmmaker Ahsanullah Moni in Sonargaon, Banglar Taj Mahal is a scaled architectural homage to the iconic Taj Mahal of Agra. Clad in imported marble, ornate brass finials, and surrounded by reflective waterways and fountain gardens, it provides visitors with an accessible glimpse of Mughal grandeur right beside Egyptian pyramid replicas and artisan craft stalls.",
+    "bestTime": "October – March",
+    "recommendedDays": "Half day",
+    "difficulty": "Easy",
+    "budget": "BDT 300 – 600",
+    "travelType": "Family, Couples, Curious Explorers",
+    "activities": [
+      "Photography with white marble facades",
+      "Viewing the interior cenotaph replica",
+      "Exploring the adjacent Egyptian pyramid park"
+    ],
+    "attractions": [
+      "White Marble Dome",
+      "Fountain Gardens",
+      "Pyramid Replicas"
+    ],
+    "tips": [
+      "Combine your trip with Panam City and Sonargaon Folk Art Museum."
+    ],
+    "things_to_do": [
+      "Take creative photos",
+      "Walk the marble plaza",
+      "Tour the miniature cinema museum"
+    ],
+    "what_to_see": [
+      "Mughal dome replica",
+      "Water canals",
+      "Egyptian mini pyramid"
+    ],
+    "travel_tips": [
+      "Accessible via Dhaka-Chittagong Highway, exiting at Mograpara."
+    ],
+    "transport_options": [
+      "Bus",
+      "Private Car",
+      "CNG Auto-rickshaw"
+    ],
+    "nearby_destinations": [
+      "panam-city",
+      "sonargaon",
+      "folk-art-museum"
+    ],
+    "nearby_hotels": [
+      "Sonargaon Resorts",
+      "Dhaka Hotels"
+    ],
+    "featured": false,
+    "popularity": "medium",
+    "status": "active",
+    "tags": [
+      "replica",
+      "architecture",
+      "monument"
+    ],
+    "travelInfo": {
+      "from": "Dhaka",
+      "distanceKm": 28,
+      "duration": "45 minutes",
+      "route": "Dhaka → Jatrabari → Dhaka-Chittagong Highway → Mograpara → Perabo",
+      "transport": [
+        "Bus to Mograpara",
+        "CNG to site"
+      ]
+    }
+  },
+  {
+    "id": 281,
+    "name": "Utma Chhora",
+    "name_bn": "উৎমাছড়া",
+    "slug": "utma-chhora",
+    "division": "Sylhet",
+    "district": "Sylhet",
+    "upazila": "Companiganj",
+    "category": "Nature",
+    "categories": [
+      "Nature",
+      "River",
+      "Adventure"
+    ],
+    "rating": 4.8,
+    "reviews": 790,
+    "latitude": 25.1432,
+    "longitude": 91.7588,
+    "image": "/assets/destinations/utma-chhora.webp",
+    "imageLg": "/assets/destinations/utma-chhora.webp",
+    "gallery": [
+      "/assets/destinations/utma-chhora.webp"
+    ],
+    "photoId": "utma-chhora-stones",
+    "galleryIds": [
+      "utma-chhora-stones"
+    ],
+    "shortDesc": "A pristine river of crystal-clear mountain water cascading over miles of white pebbles along the Meghalaya border.",
+    "description": "Located in Companiganj upazila of Sylhet, Utma Chhora is one of Bangladesh's purest off-the-beaten-path aquatic wonders. Flowing directly from the lush green hills of the Indian state of Meghalaya, this shallow, sparkling mountain brook glides over an endless bed of smooth white and grey stones. Less crowded than Jaflong or Bichanakandi, it offers pristine mountain air and unforgettable wading through icy mountain currents.",
+    "bestTime": "June – October (Monsoon & Post-Monsoon)",
+    "recommendedDays": "1 day",
+    "difficulty": "Moderate",
+    "budget": "BDT 800 – 1,800 / day",
+    "travelType": "Adventure, Nature Lovers, Youth",
+    "activities": [
+      "Wading in ice-cold crystal water",
+      "Stone bed walking",
+      "Trekking along the green border hills",
+      "Landscape photography"
+    ],
+    "attractions": [
+      "White Stone Stream",
+      "Meghalaya Hill Vistas",
+      "Turong Chhora (nearby)"
+    ],
+    "tips": [
+      "Never cross the international zero point marker.",
+      "Wear water shoes to protect feet against sharp underwater rocks."
+    ],
+    "things_to_do": [
+      "Bathe in clear mountain water",
+      "Photograph the stone river",
+      "Explore the border countryside"
+    ],
+    "what_to_see": [
+      "Rolling Meghalaya cliffs",
+      "White stone beds",
+      "Mountain brook"
+    ],
+    "travel_tips": [
+      "Take a local CNG from Sylhet Amberkhana to Dayamir Bazar, then motor-bike or boat to Utma."
+    ],
+    "transport_options": [
+      "Bus",
+      "CNG",
+      "Motorcycle",
+      "Boat"
+    ],
+    "nearby_destinations": [
+      "sada-pathor",
+      "bichanakandi",
+      "ratargul-swamp-forest"
+    ],
+    "nearby_hotels": [
+      "Sylhet City Hotels",
+      "Companiganj Rest Houses"
+    ],
+    "featured": true,
+    "popularity": "high",
+    "status": "active",
+    "tags": [
+      "river",
+      "stone",
+      "nature",
+      "sylhet"
+    ],
+    "travelInfo": {
+      "from": "Sylhet City",
+      "distanceKm": 42,
+      "duration": "2 hours",
+      "route": "Sylhet Amberkhana → Companiganj → Dayamir Bazar → Utma Chhora",
+      "transport": [
+        "CNG to Dayamir",
+        "Local trail bike / boat to border"
+      ]
+    }
+  },
+  {
+    "id": 282,
+    "name": "Turong Chhora",
+    "name_bn": "তুরংছড়া",
+    "slug": "turong-chhora",
+    "division": "Sylhet",
+    "district": "Sylhet",
+    "upazila": "Companiganj",
+    "category": "Nature",
+    "categories": [
+      "Nature",
+      "River"
+    ],
+    "rating": 4.7,
+    "reviews": 480,
+    "latitude": 25.1554,
+    "longitude": 91.7412,
+    "image": "/assets/destinations/turong-chhora.webp",
+    "imageLg": "/assets/destinations/turong-chhora.webp",
+    "gallery": [
+      "/assets/destinations/turong-chhora.webp"
+    ],
+    "photoId": "turong-chhora-brook",
+    "galleryIds": [
+      "turong-chhora-brook"
+    ],
+    "shortDesc": "A hidden gem of sparkling turquoise stream waters cascading over wild boulder steps near Utma.",
+    "description": "Neighboring Utma Chhora in Companiganj, Turong Chhora is an idyllic mountain brook characterized by sparkling cascading rapids, lush subtropical overhangs, and smooth natural stone basins. The peaceful quiet and clean mountain water flowing beneath the clouds make it a dream haven for hikers seeking untouched nature.",
+    "bestTime": "June – October",
+    "recommendedDays": "1 day",
+    "difficulty": "Moderate",
+    "budget": "BDT 800 – 1,500 / day",
+    "travelType": "Adventure, Nature Enthusiasts",
+    "activities": [
+      "Stream trekking",
+      "Relaxing in natural water pools",
+      "Border nature walks"
+    ],
+    "attractions": [
+      "Natural Rapids",
+      "Meghalaya Foothills",
+      "Pebble Stream"
+    ],
+    "tips": [
+      "Best combined in a single day tour with Utma Chhora."
+    ],
+    "things_to_do": [
+      "Trek from Utma to Turong",
+      "Enjoy the tranquil mountain water",
+      "Capture landscape shots"
+    ],
+    "what_to_see": [
+      "Turquoise waters",
+      "High green border ridges",
+      "Boulder rapids"
+    ],
+    "travel_tips": [
+      "Hire a local bike rider or boatman from Dayamir."
+    ],
+    "transport_options": [
+      "CNG",
+      "Motorcycle",
+      "Walking"
+    ],
+    "nearby_destinations": [
+      "utma-chhora",
+      "sada-pathor"
+    ],
+    "nearby_hotels": [
+      "Sylhet City Hotels"
+    ],
+    "featured": false,
+    "popularity": "medium",
+    "status": "active",
+    "tags": [
+      "stream",
+      "nature",
+      "sylhet"
+    ],
+    "travelInfo": {
+      "from": "Sylhet City",
+      "distanceKm": 45,
+      "duration": "2 hours",
+      "route": "Sylhet → Companiganj → Dayamir → Turong Chhora",
+      "transport": [
+        "CNG",
+        "Trail bike"
+      ]
+    }
+  },
+  {
+    "id": 283,
+    "name": "Shangrampunji Waterfall (Mayabi Jharna)",
+    "name_bn": "সাংগ্রামপুঞ্জি ঝরনা (মায়াবী ঝরনা)",
+    "slug": "shangrampunji-waterfall",
+    "division": "Sylhet",
+    "district": "Sylhet",
+    "upazila": "Gowainghat",
+    "category": "Waterfall",
+    "categories": [
+      "Waterfall",
+      "Nature"
+    ],
+    "rating": 4.7,
+    "reviews": 1100,
+    "latitude": 25.1762,
+    "longitude": 92.0154,
+    "image": "/assets/destinations/shangrampunji-waterfall.webp",
+    "imageLg": "/assets/destinations/shangrampunji-waterfall.webp",
+    "gallery": [
+      "/assets/destinations/shangrampunji-waterfall.webp"
+    ],
+    "photoId": "mayabi-jharna-jaflong",
+    "galleryIds": [
+      "mayabi-jharna-jaflong"
+    ],
+    "shortDesc": "The legendary multi-tiered cascading waterfall nestled inside the lush Shangrampunji Khasia border forest at Jaflong.",
+    "description": "Popularly known as Mayabi Jharna (মায়াবী ঝরনা), Shangrampunji Waterfall is situated just across the Piyain river at Jaflong near the indigenous Shangrampunji Khasia punji. Tumbling down through multiple verdant mossy steps of natural limestone bedrock surrounded by betel-leaf groves and tall subtropical trees, this cascading jewel provides a refreshing cool spray and unmatched photographic grandeur.",
+    "bestTime": "June – October (Monsoon & Autumn)",
+    "recommendedDays": "Half day",
+    "difficulty": "Easy",
+    "budget": "BDT 400 – 900",
+    "travelType": "Family, Friends, Nature Lovers",
+    "activities": [
+      "Boat ride across Piyain river",
+      "Bathing under the cool waterfall tiers",
+      "Visiting Khasia indigenous village and betel leaf gardens"
+    ],
+    "attractions": [
+      "Mayabi Jharna Cascades",
+      "Khasia Tribal Punji",
+      "Piyain River Sandbanks",
+      "Jaflong Zero Point"
+    ],
+    "tips": [
+      "Hire a wooden country boat from Jaflong Zero Point to cross the river.",
+      "Be mindful of slippery moss-covered rocks."
+    ],
+    "things_to_do": [
+      "Take a refreshing bath in the cascade",
+      "Explore Khasia community lifestyle",
+      "Photograph the tiers"
+    ],
+    "what_to_see": [
+      "Multi-tier waterfalls",
+      "Green betel leaf orchards",
+      "Distant Dawki bridge in India"
+    ],
+    "travel_tips": [
+      "Direct tourist buses and microbuses run from Sylhet Sobhanighat to Jaflong."
+    ],
+    "transport_options": [
+      "Bus",
+      "Microbus",
+      "Country Boat"
+    ],
+    "nearby_destinations": [
+      "jaflong",
+      "lalakhal",
+      "ratargul-swamp-forest"
+    ],
+    "nearby_hotels": [
+      "Jaflong Tourist Rest Houses",
+      "Sylhet City Hotels"
+    ],
+    "featured": true,
+    "popularity": "high",
+    "status": "active",
+    "tags": [
+      "waterfall",
+      "jaflong",
+      "nature"
+    ],
+    "travelInfo": {
+      "from": "Sylhet City",
+      "distanceKm": 58,
+      "duration": "1.5 – 2 hours",
+      "route": "Sylhet → Tamabil Highway → Jaflong Zero Point → 10 min boat cross to Shangrampunji",
+      "transport": [
+        "Bus from Sobhanighat",
+        "Private Car",
+        "Country Boat"
+      ]
+    }
+  },
+  {
+    "id": 284,
+    "name": "Rajshahi University (Paris Road)",
+    "name_bn": "রাজশাহী বিশ্ববিদ্যালয় (প্যারিস রোড)",
+    "slug": "rajshahi-university",
+    "division": "Rajshahi",
+    "district": "Rajshahi",
+    "upazila": "Motihar",
+    "category": "Campus & Heritage",
+    "categories": [
+      "Campus & Heritage",
+      "Historical",
+      "Nature"
+    ],
+    "rating": 4.9,
+    "reviews": 1540,
+    "latitude": 24.3688,
+    "longitude": 88.6381,
+    "image": "/assets/destinations/rajshahi-university.webp",
+    "imageLg": "/assets/destinations/rajshahi-university.webp",
+    "gallery": [
+      "/assets/destinations/rajshahi-university.webp"
+    ],
+    "photoId": "ru-paris-road",
+    "galleryIds": [
+      "ru-paris-road"
+    ],
+    "shortDesc": "The iconic 750-acre 'Green Sanctuary' campus renowned for its legendary sky-touching Paris Road Gagan Sirish trees.",
+    "description": "Established in 1953, the University of Rajshahi (RU) is celebrated as Bangladesh's most verdant, architecturally harmonious campus. Its signature pride is the legendary 'Paris Road', lined with towering Gagan Sirish (Albizia richardiana) trees planted in the 1960s that form a majestic cathedral-like natural canopy. The campus also features the magnificent 'Sabhash Bangladesh' Liberation War monument sculpted by Nitun Kundu, the historic Shahidullah Arts building, and the revered Shaheed Smriti Sangrahashala museum.",
+    "bestTime": "October – March",
+    "recommendedDays": "1 day",
+    "difficulty": "Easy",
+    "budget": "BDT 200 – 600 / day",
+    "travelType": "History Lovers, Students, Architecture Enthusiasts, Walkers",
+    "activities": [
+      "Strolling down the enchanting Paris Road canopy",
+      "Photographing the Sabhash Bangladesh monument",
+      "Visiting the Varendra Research Museum branch and Shahid Smriti Sangrahashala",
+      "Cycling around the lush lakes and university stadium"
+    ],
+    "attractions": [
+      "Paris Road Gagan Sirish Canopy",
+      "Sabhash Bangladesh Monument",
+      "Shaheed Smriti Sangrahashala",
+      "Shahidullah Arts Building",
+      "RU Central Library & Pond"
+    ],
+    "tips": [
+      "Autumn and winter afternoons offer sublime golden-hour sunlight through the Paris Road trees.",
+      "Respect academic environments."
+    ],
+    "things_to_do": [
+      "Walk Paris Road",
+      "Sit by the university ponds",
+      "Taste famous Rajshahi sweets at University gate"
+    ],
+    "what_to_see": [
+      "Cathedral tree canopy",
+      "Liberation war sculpture",
+      "Red brick faculty architecture"
+    ],
+    "travel_tips": [
+      "Located right along the Dhaka-Rajshahi highway in Motihar."
+    ],
+    "transport_options": [
+      "Auto-rickshaw",
+      "Rickshaw",
+      "Bus"
+    ],
+    "nearby_destinations": [
+      "varendra-museum",
+      "padma-river-rajshahi",
+      "puthia-temple-complex"
+    ],
+    "nearby_hotels": [
+      "Hotel Grand Riverview Rajshahi",
+      "Parjatan Motel Rajshahi"
+    ],
+    "featured": true,
+    "popularity": "very_high",
+    "status": "active",
+    "tags": [
+      "campus",
+      "paris-road",
+      "heritage",
+      "trees"
+    ],
+    "travelInfo": {
+      "from": "Rajshahi Zero Point",
+      "distanceKm": 5,
+      "duration": "15 minutes",
+      "route": "Zero Point → Shaheb Bazar → Talaimari → RU Main Gate",
+      "transport": [
+        "Battery auto-rickshaw",
+        "Rickshaw"
+      ]
+    }
+  },
+  {
+    "id": 285,
+    "name": "Chalan Beel",
+    "name_bn": "চলনবিল",
+    "slug": "chalan-beel",
+    "division": "Rajshahi",
+    "district": "Natore",
+    "upazila": "Singra",
+    "category": "Nature",
+    "categories": [
+      "Nature",
+      "Wetland",
+      "Eco Tourism"
+    ],
+    "rating": 4.6,
+    "reviews": 860,
+    "latitude": 24.45,
+    "longitude": 89.25,
+    "image": "/assets/destinations/chalan-beel.webp",
+    "imageLg": "/assets/destinations/chalan-beel.webp",
+    "gallery": [
+      "/assets/destinations/chalan-beel.webp"
+    ],
+    "photoId": "chalan-beel-water",
+    "galleryIds": [
+      "chalan-beel-water"
+    ],
+    "shortDesc": "The largest inland wetland marsh and aquatic ecosystem in northern Bangladesh, a paradise of monsoon boat journeys.",
+    "description": "Spanning across Natore, Sirajganj, and Pabna districts, Chalan Beel is a colossal interconnected network of wetlands, rivers, and lagoons. During the monsoon, the entire region transforms into a vast inland sea with gentle waves, water lilies, and picturesque village mounds rising like islands. It is nationally celebrated for delicious fresh river fish, birdwatching, and sunset engine-boat safaris across endless horizons.",
+    "bestTime": "July – October (Full monsoon water) or December – February (Migratory birds)",
+    "recommendedDays": "1 – 2 days",
+    "difficulty": "Easy",
+    "budget": "BDT 600 – 1,500 / day",
+    "travelType": "Family, Nature Lovers, Foodies, Photographers",
+    "activities": [
+      "Engine boat cruising across the vast wetland",
+      "Tasting authentic fresh Chalan Beel fish curries",
+      "Visiting the Chalan Beel Museum in Gurudaspur",
+      "Sunset watching from Singra submersible road"
+    ],
+    "attractions": [
+      "Vast Open Waters",
+      "Singra Submersible Road",
+      "Chalan Beel Museum",
+      "Water Lily Fields"
+    ],
+    "tips": [
+      "Hire a motorized boat from Singra or Tarash ghat for an open water tour.",
+      "Taste the local fresh koi, magur, and boal fish."
+    ],
+    "things_to_do": [
+      "Take a boat safari",
+      "Eat fresh local fish at ghat restaurants",
+      "Watch the endless monsoon sunset"
+    ],
+    "what_to_see": [
+      "Island villages",
+      "Fishermen with polo and nets",
+      "Aquatic birds"
+    ],
+    "travel_tips": [
+      "Reached easily from Natore town via the Natore-Bogra highway."
+    ],
+    "transport_options": [
+      "Bus",
+      "Train to Natore/Ullapara",
+      "Engine Boat"
+    ],
+    "nearby_destinations": [
+      "natore-rajbari",
+      "uttara-gano-bhaban"
+    ],
+    "nearby_hotels": [
+      "Hotels in Natore Town",
+      "Parjatan Motel"
+    ],
+    "featured": true,
+    "popularity": "high",
+    "status": "active",
+    "tags": [
+      "wetland",
+      "beel",
+      "nature",
+      "monsoon"
+    ],
+    "travelInfo": {
+      "from": "Natore Town",
+      "distanceKm": 25,
+      "duration": "40 minutes",
+      "route": "Natore → Singra Highway → Chalan Beel Ghat",
+      "transport": [
+        "Bus to Singra",
+        "CNG Auto-rickshaw",
+        "Country boat"
+      ]
+    }
+  },
+  {
+    "id": 286,
+    "name": "Somapura Mahavihara (Paharpur)",
+    "name_bn": "সোমপুর মহাবিহার (পাহাড়পুর)",
+    "slug": "somapura-mahavihara",
+    "division": "Rajshahi",
+    "district": "Naogaon",
+    "upazila": "Badalgachhi",
+    "category": "Historical",
+    "categories": [
+      "Historical",
+      "Archaeological",
+      "UNESCO Heritage"
+    ],
+    "rating": 4.9,
+    "reviews": 1670,
+    "latitude": 25.0315,
+    "longitude": 88.9769,
+    "image": "/assets/destinations/somapura-mahavihara.webp",
+    "imageLg": "/assets/destinations/somapura-mahavihara.webp",
+    "gallery": [
+      "/assets/destinations/somapura-mahavihara.webp"
+    ],
+    "photoId": "paharpur-cruciform-stupa",
+    "galleryIds": [
+      "paharpur-cruciform-stupa"
+    ],
+    "shortDesc": "An 8th-century UNESCO World Heritage Buddhist monastic city, the largest pre-modern monastery south of the Himalayas.",
+    "description": "Designated as a UNESCO World Heritage Site in 1985, Somapura Mahavihara was built under the great Pala Emperor Dharmapala in the late 8th century. Spanning an astonishing 27-acre quadrangle with 177 monk residential cells and a monumental cruciform central shrine, it stands as the zenith of Buddhist terracotta art and brick architecture in Asia. The site museum displays priceless stone statues, inscribed copper plates, and thousands of carved terracotta plaques reflecting ancient Bengal life.",
+    "bestTime": "October – March",
+    "recommendedDays": "1 day",
+    "difficulty": "Easy",
+    "budget": "BDT 400 – 1,000 / day",
+    "travelType": "History Lovers, Archaeology Enthusiasts, Global Travelers, Students",
+    "activities": [
+      "Exploring the 177 monastic cells",
+      "Admiring the central cruciform temple and terracotta plaques",
+      "Visiting the Paharpur Archaeological Museum",
+      "Walking through the landscaped ancient courtyards"
+    ],
+    "attractions": [
+      "Central Cruciform Stupa",
+      "Monastic Cells Quadrangle",
+      "Paharpur Site Museum",
+      "Terracotta Bas-Reliefs",
+      "Ancient Bathing Ghat (Sandhyavati Ghat)"
+    ],
+    "tips": [
+      "Hire a certified archaeological guide at the entrance to understand the site's rich history.",
+      "Avoid visiting during noon heat in summer."
+    ],
+    "things_to_do": [
+      "Walk around the central sanctum",
+      "Explore the museum antiquities",
+      "Photograph the terracotta details"
+    ],
+    "what_to_see": [
+      "1200-year-old terracotta tiles",
+      "Grand cruciform brick shrine",
+      "Bronze and basalt Buddha sculptures"
+    ],
+    "travel_tips": [
+      "Direct trains run from Dhaka to Joypurhat, from where Paharpur is just 12 km by auto-rickshaw."
+    ],
+    "transport_options": [
+      "Train (to Joypurhat)",
+      "Bus",
+      "CNG Auto-rickshaw"
+    ],
+    "nearby_destinations": [
+      "mahasthangarh",
+      "kusumba-mosque",
+      "kantajew-temple"
+    ],
+    "nearby_hotels": [
+      "Archaeology Rest House Paharpur",
+      "Joypurhat Hotels"
+    ],
+    "featured": true,
+    "popularity": "very_high",
+    "status": "active",
+    "tags": [
+      "unesco",
+      "historical",
+      "archaeology",
+      "monastery"
+    ],
+    "travelInfo": {
+      "from": "Dhaka",
+      "distanceKm": 280,
+      "duration": "5 hours by Train",
+      "route": "Dhaka Kamalapur → Joypurhat Station (Drutojan/Ekota Express) → 12 km auto to Paharpur",
+      "transport": [
+        "Intercity Train",
+        "Direct Bus from Gabtoli",
+        "CNG Auto-rickshaw"
+      ]
+    }
+  },
+  {
+    "id": 287,
+    "name": "Kotka Beach & Wildlife Sanctuary",
+    "name_bn": "কোটকা সমুদ্র সৈকত ও অভয়ারণ্য",
+    "slug": "kotka-beach-sundarbans",
+    "division": "Khulna",
+    "district": "Bagerhat",
+    "upazila": "Sarankhola",
+    "category": "Forest",
+    "categories": [
+      "Forest",
+      "Wildlife",
+      "Beach",
+      "UNESCO Heritage"
+    ],
+    "rating": 4.9,
+    "reviews": 1140,
+    "latitude": 21.8542,
+    "longitude": 89.7781,
+    "image": "/assets/destinations/kotka-beach-sundarbans.webp",
+    "imageLg": "/assets/destinations/kotka-beach-sundarbans.webp",
+    "gallery": [
+      "/assets/destinations/kotka-beach-sundarbans.webp"
+    ],
+    "photoId": "kotka-deer-beach",
+    "galleryIds": [
+      "kotka-deer-beach"
+    ],
+    "shortDesc": "The wild crown jewel of the Sundarbans, boasting herds of spotted deer, tiger trails, and the secluded Jamtola Beach.",
+    "description": "Located deep in the southeastern sanctuary of the UNESCO-inscribed Sundarbans Mangrove Forest, Kotka is one of the most thrilling wilderness destinations on earth. A wooden watchtower overlooks vast grass meadows where hundreds of spotted deer (Chitra horin) and wild boars graze. A guided forest trail takes visitors through dense mangrove trees to Jamtola Beach—an untouched ocean shoreline littered with ancient petrified tree roots and genuine Royal Bengal Tiger footprints.",
+    "bestTime": "November – February (Sundarbans cruise season)",
+    "recommendedDays": "3 – 4 days (Sundarbans boat package)",
+    "difficulty": "Moderate",
+    "budget": "BDT 8,000 – 18,000 (Multi-day luxury ship tour)",
+    "travelType": "Wildlife Enthusiasts, Explorers, Photographers",
+    "activities": [
+      "Climbing the Kotka Wildlife Watchtower",
+      "Trekking to Jamtola Sea Beach",
+      "Spotting Royal Bengal Tiger pugmarks",
+      "Canopy birdwatching and silent canal cruising in dinghy boats"
+    ],
+    "attractions": [
+      "Kotka Watchtower & Deer Meadow",
+      "Jamtola Sea Beach",
+      "Tiger Point",
+      "Mangrove Forest Trails"
+    ],
+    "tips": [
+      "Must visit via an authorized tourist vessel with armed forest department guards.",
+      "Follow forest safety protocols and stay strictly with your group."
+    ],
+    "things_to_do": [
+      "Watch hundreds of spotted deer",
+      "Hike through the wild mangrove forest",
+      "Listen to forest bird calls"
+    ],
+    "what_to_see": [
+      "Spotted deer",
+      "Bengal tiger footprints",
+      "Ghost trees on Jamtola beach",
+      "Saltwater crocodiles"
+    ],
+    "travel_tips": [
+      "Board a multi-day Sundarbans cruise vessel from Khulna or Mongla."
+    ],
+    "transport_options": [
+      "Tourist Cruise Ship",
+      "Country Boat"
+    ],
+    "nearby_destinations": [
+      "sundarbans",
+      "karamjal",
+      "hiron-point"
+    ],
+    "nearby_hotels": [
+      "Aboard Sundarbans Cruise Ship",
+      "Mongla Parjatan Hotel"
+    ],
+    "featured": true,
+    "popularity": "very_high",
+    "status": "active",
+    "tags": [
+      "sundarbans",
+      "wildlife",
+      "tiger",
+      "beach",
+      "forest"
+    ],
+    "travelInfo": {
+      "from": "Mongla Port / Khulna",
+      "distanceKm": 120,
+      "duration": "10 – 14 hours by river vessel",
+      "route": "Khulna/Mongla → Rupsha / Pasur River → Sundarbans Core Zone → Kotka Sanctuary",
+      "transport": [
+        "Sundarbans Tourist Cruise Ship"
+      ]
+    }
+  },
+  {
+    "id": 288,
+    "name": "Hiron Point (Nilkamal)",
+    "name_bn": "হিরণ পয়েন্ট (নীলকমল)",
+    "slug": "hiron-point",
+    "division": "Khulna",
+    "district": "Khulna",
+    "upazila": "Koyra",
+    "category": "Forest",
+    "categories": [
+      "Forest",
+      "Wildlife",
+      "UNESCO Heritage"
+    ],
+    "rating": 4.8,
+    "reviews": 780,
+    "latitude": 21.7833,
+    "longitude": 89.4667,
+    "image": "/assets/destinations/hiron-point.webp",
+    "imageLg": "/assets/destinations/hiron-point.webp",
+    "gallery": [
+      "/assets/destinations/hiron-point.webp"
+    ],
+    "photoId": "hiron-point-nilkamal",
+    "galleryIds": [
+      "hiron-point-nilkamal"
+    ],
+    "shortDesc": "A protected wildlife haven in the southern Sundarbans, celebrated for kingfishers, deer, and Royal Bengal Tigers.",
+    "description": "Hiron Point, also known by the enchanting name of Nilkamal, is a premier wildlife sanctuary located in the southern part of the Sundarbans near the Bay of Bengal. Situated along the banks of the Nilkamal river, it features a scenic wooden boardwalk through mangrove roots, a wildlife watchtower, and rich biodiversity including otters, monitor lizards, eagles, and spotted deer.",
+    "bestTime": "November – February",
+    "recommendedDays": "3 – 4 days (Cruise package)",
+    "difficulty": "Moderate",
+    "budget": "BDT 8,000 – 18,000 (Cruise package)",
+    "travelType": "Adventure, Nature Lovers, Wildlife Photographers",
+    "activities": [
+      "Boardwalk walking through mangrove roots",
+      "Watching wild otters fishing",
+      "Birdwatching along the creek",
+      "Sunset over Nilkamal river"
+    ],
+    "attractions": [
+      "Nilkamal River",
+      "Boardwalk Trail",
+      "Forest Watchtower",
+      "Wildlife Sanctuary"
+    ],
+    "tips": [
+      "Maintain complete silence while walking on the boardwalk to avoid startling wild animals."
+    ],
+    "things_to_do": [
+      "Climb the watchtower",
+      "Explore the coastal mangrove",
+      "Spot diverse birds and deer"
+    ],
+    "what_to_see": [
+      "Spotted deer",
+      "Wild boar",
+      "Kingfishers",
+      "Bengal tigers in wild habitat"
+    ],
+    "travel_tips": [
+      "Accessible only via guided cruise ships originating from Mongla or Khulna."
+    ],
+    "transport_options": [
+      "Cruise Ship",
+      "Forest Motor Launch"
+    ],
+    "nearby_destinations": [
+      "kotka-beach-sundarbans",
+      "sundarbans",
+      "karamjal"
+    ],
+    "nearby_hotels": [
+      "Cruise Ship Cabins"
+    ],
+    "featured": false,
+    "popularity": "high",
+    "status": "active",
+    "tags": [
+      "sundarbans",
+      "wildlife",
+      "mangrove"
+    ],
+    "travelInfo": {
+      "from": "Mongla Port",
+      "distanceKm": 135,
+      "duration": "12 hours by vessel",
+      "route": "Mongla → Pasur River → Southern Sundarbans → Hiron Point",
+      "transport": [
+        "Tourist Vessel"
+      ]
+    }
+  },
+  {
+    "id": 289,
+    "name": "Karamjal Eco Tourism Centre",
+    "name_bn": "করমজল ইকো ট্যুরিজম কেন্দ্র",
+    "slug": "karamjal",
+    "division": "Khulna",
+    "district": "Bagerhat",
+    "upazila": "Mongla",
+    "category": "Wildlife",
+    "categories": [
+      "Wildlife",
+      "Eco Tourism",
+      "Forest"
+    ],
+    "rating": 4.6,
+    "reviews": 1250,
+    "latitude": 22.4283,
+    "longitude": 89.5931,
+    "image": "/assets/destinations/karamjal.webp",
+    "imageLg": "/assets/destinations/karamjal.webp",
+    "gallery": [
+      "/assets/destinations/karamjal.webp"
+    ],
+    "photoId": "karamjal-canopy-trail",
+    "galleryIds": [
+      "karamjal-canopy-trail"
+    ],
+    "shortDesc": "The prime gateway to the Sundarbans, home to the nation's only saltwater crocodile breeding centre and deer sanctuary.",
+    "description": "Located just a short scenic boat ride from Mongla port, Karamjal is the most accessible eco-tourism facility in the Sundarbans. It features the country's sole government breeding center for the endangered saltwater crocodile (Romeo and Juliet), a spotted deer breeding station, a scenic 1.5-kilometer elevated wooden canopy boardwalk winding through sundari and gewa trees, and a 30-foot wildlife observation tower.",
+    "bestTime": "Year-round (Best: October – March)",
+    "recommendedDays": "Half to 1 day",
+    "difficulty": "Easy",
+    "budget": "BDT 500 – 1,200 / day",
+    "travelType": "Family, Children, Day-trippers, Nature Lovers",
+    "activities": [
+      "Walking the wooden canopy walkway",
+      "Visiting crocodile breeding enclosures",
+      "Feeding spotted deer under ranger supervision",
+      "Spotting monkeys and dolphins in the Pasur river"
+    ],
+    "attractions": [
+      "Saltwater Crocodile Breeding Station",
+      "Deer Sanctuary",
+      "Wooden Canopy Walkway",
+      "Sundarbans Relief Map & Museum"
+    ],
+    "tips": [
+      "Watch out for cheeky rhesus macaques who may try to grab loose food items or sunglasses."
+    ],
+    "things_to_do": [
+      "Walk among the mangrove roots",
+      "See baby and giant saltwater crocodiles",
+      "Climb the watchtower"
+    ],
+    "what_to_see": [
+      "Giant saltwater crocodiles",
+      "Spotted deer herds",
+      "Rhesus macaques",
+      "Sundari mangrove trees"
+    ],
+    "travel_tips": [
+      "Hire a motorized country boat or speed boat from Mongla Ferry Ghat."
+    ],
+    "transport_options": [
+      "Motorboat from Mongla",
+      "Trawler",
+      "Speedboat"
+    ],
+    "nearby_destinations": [
+      "bagerhat",
+      "kotka-beach-sundarbans",
+      "sundarbans"
+    ],
+    "nearby_hotels": [
+      "Parjatan Hotel Pashur Mongla",
+      "City Inn Khulna"
+    ],
+    "featured": true,
+    "popularity": "very_high",
+    "status": "active",
+    "tags": [
+      "crocodiles",
+      "deer",
+      "sundarbans",
+      "canopy"
+    ],
+    "travelInfo": {
+      "from": "Mongla Ghat",
+      "distanceKm": 8,
+      "duration": "45 minutes by engine boat",
+      "route": "Khulna → Mongla Port → Pasur River Boat Crossing → Karamjal",
+      "transport": [
+        "Engine Boat / Trawler from Mongla Ghat"
+      ]
+    }
+  },
+  {
+    "id": 290,
+    "name": "Bhimruli Floating Guava Market",
+    "name_bn": "ভীমরুলী ভাসমান পেয়ারা বাজার",
+    "slug": "bhimruli-floating-guava-market",
+    "division": "Barishal",
+    "district": "Jhalakathi",
+    "upazila": "Jhalakathi Sadar",
+    "category": "Cultural",
+    "categories": [
+      "Cultural",
+      "River",
+      "Agri-Tourism"
+    ],
+    "rating": 4.8,
+    "reviews": 1420,
+    "latitude": 22.6841,
+    "longitude": 90.1834,
+    "image": "/assets/destinations/bhimruli-floating-guava-market.webp",
+    "imageLg": "/assets/destinations/bhimruli-floating-guava-market.webp",
+    "gallery": [
+      "/assets/destinations/bhimruli-floating-guava-market.webp"
+    ],
+    "photoId": "bhimruli-guava-boats",
+    "galleryIds": [
+      "bhimruli-guava-boats"
+    ],
+    "shortDesc": "South Asia's largest floating produce market, where hundreds of wooden boats trade fresh green guavas on winding canals.",
+    "description": "Nestled at the Y-shaped junction of canals in Bhimruli village of Jhalakathi, this 200-year-old floating market is often dubbed the 'Venice of Bengal'. Every day during peak harvest, hundreds of wooden dinghies filled to the brim with crispy green local guavas (পেয়ারা) and hog plums (আমড়া) gather on the water. Cruising through the quiet canal networks under lush canopies of guava orchards and traditional brick bridges is one of the most magical rural experiences in Bangladesh.",
+    "bestTime": "July – September (Peak guava harvest season)",
+    "recommendedDays": "1 – 2 days",
+    "difficulty": "Easy",
+    "budget": "BDT 500 – 1,500 / day",
+    "travelType": "Photographers, Culture Seekers, Families, Foodies",
+    "activities": [
+      "Cruising through canal guava orchards in a traditional wooden boat",
+      "Photographing floating boat transactions from the iron bridge",
+      "Tasting fresh sweet guavas and hog plums straight from orchards",
+      "Exploring traditional backwater village lifestyle"
+    ],
+    "attractions": [
+      "Floating Boat Market",
+      "Bhimruli Iron Bridge Viewpoint",
+      "Canal Guava Orchards",
+      "Floating Hog Plum & Rice Trade"
+    ],
+    "tips": [
+      "Arrive at the market between 9:00 AM and 1:00 PM when trade is at its peak.",
+      "Hire a small wooden boat (dinghy) for an intimate canal voyage."
+    ],
+    "things_to_do": [
+      "Ride a dinghy boat through the market",
+      "Buy freshly plucked guavas",
+      "Photograph the boat vendors from the bridge"
+    ],
+    "what_to_see": [
+      "Boats piled high with green guavas",
+      "Canal networks",
+      "Lush orchard canopies"
+    ],
+    "travel_tips": [
+      "Direct launch from Dhaka Sadarghat to Barishal or Hularhat, then auto to Bhimruli."
+    ],
+    "transport_options": [
+      "Launch (from Dhaka)",
+      "Engine Boat",
+      "Auto-rickshaw",
+      "Bus"
+    ],
+    "nearby_destinations": [
+      "guthia-mosque",
+      "durga-sagar",
+      "kuakata"
+    ],
+    "nearby_hotels": [
+      "Hotels in Barishal City",
+      "Jhalakathi Rest Houses"
+    ],
+    "featured": true,
+    "popularity": "very_high",
+    "status": "active",
+    "tags": [
+      "market",
+      "guava",
+      "river",
+      "boat",
+      "barishal"
+    ],
+    "travelInfo": {
+      "from": "Barishal City",
+      "distanceKm": 28,
+      "duration": "1 hour by road or 1.5 hours by boat",
+      "route": "Barishal Rupatali → Jhalakathi → Bhimruli Canal Ghat",
+      "transport": [
+        "Auto-rickshaw / Bus to Jhalakathi",
+        "Trawler/Dinghy boat through canals"
+      ]
+    }
+  },
+  {
+    "id": 291,
+    "name": "Lebur Char & Red Crab Island",
+    "name_bn": "লেবুর চর ও লাল কাঁকড়ার দ্বীপ",
+    "slug": "lebur-char",
+    "division": "Barishal",
+    "district": "Patuakhali",
+    "upazila": "Kalapara",
+    "category": "Beach",
+    "categories": [
+      "Beach",
+      "Nature",
+      "Wildlife"
+    ],
+    "rating": 4.7,
+    "reviews": 890,
+    "latitude": 21.8215,
+    "longitude": 90.0712,
+    "image": "/assets/destinations/lebur-char.webp",
+    "imageLg": "/assets/destinations/lebur-char.webp",
+    "gallery": [
+      "/assets/destinations/lebur-char.webp"
+    ],
+    "photoId": "lebur-char-crabs",
+    "galleryIds": [
+      "lebur-char-crabs"
+    ],
+    "shortDesc": "The wild western point of Kuakata where the Payra river meets the sea, famed for colonies of red ghost crabs and sunsets.",
+    "description": "Located at the westernmost tip of Kuakata beach, Lebur Char (also known as Lebur Bon) is an unspoiled natural estuary where the Payra and Shibbaria rivers merge into the Bay of Bengal. As the tide recedes, miles of glistening wet sand are carpeted by thousands of bright red ghost crabs scurrying in unison. The char is also famous for its mangrove tree root formations, fresh open-air grilled fish shacks, and spectacular uninterrupted sunset views.",
+    "bestTime": "October – March",
+    "recommendedDays": "Half day",
+    "difficulty": "Easy",
+    "budget": "BDT 300 – 800",
+    "travelType": "Nature Lovers, Photographers, Foodies, Couples",
+    "activities": [
+      "Watching thousands of red ghost crabs scurry across the sand",
+      "Tasting freshly caught grilled Rupchanda and Coral fish",
+      "Walking along the estuary sands where river meets sea",
+      "Capturing sunset photographs with mangrove driftwood"
+    ],
+    "attractions": [
+      "Red Ghost Crab Colonies",
+      "River-Sea Confluence",
+      "Fresh Fish BBQ Stalls",
+      "Mangrove Driftwood"
+    ],
+    "tips": [
+      "Approach the crabs quietly without sudden movements, as they vanish into sand holes instantly.",
+      "Eat at the local beachside grilled fish shacks for an unforgettable meal."
+    ],
+    "things_to_do": [
+      "Watch red crabs",
+      "Eat freshly barbecued pomfret",
+      "Watch the golden sun sink into the sea"
+    ],
+    "what_to_see": [
+      "Carpet of crimson crabs",
+      "River mouth",
+      "Sunset reflection on tidal sands"
+    ],
+    "travel_tips": [
+      "Hire a local motorcycle or auto-rickshaw along Kuakata beach to reach Lebur Char in 20 minutes."
+    ],
+    "transport_options": [
+      "Motorcycle",
+      "Auto-rickshaw",
+      "Bicycle"
+    ],
+    "nearby_destinations": [
+      "kuakata",
+      "fatrar-char",
+      "gangamati-reserved-forest"
+    ],
+    "nearby_hotels": [
+      "Sikder Resort Kuakata",
+      "Parjatan Motel Kuakata",
+      "Hotel Graver Inn"
+    ],
+    "featured": true,
+    "popularity": "high",
+    "status": "active",
+    "tags": [
+      "kuakata",
+      "crabs",
+      "sunset",
+      "beach"
+    ],
+    "travelInfo": {
+      "from": "Kuakata Zero Point",
+      "distanceKm": 8,
+      "duration": "20 minutes by beach bike",
+      "route": "Kuakata Main Beach → Western Beach Trail → Lebur Char",
+      "transport": [
+        "Beach Motorcycle",
+        "Auto-rickshaw"
+      ]
+    }
+  },
+  {
+    "id": 293,
+    "name": "Tin Bigha Corridor",
+    "name_bn": "তিন বিঘা করিডোর ও দহগ্রাম-আঙ্গরপোতা",
+    "slug": "tin-bigha-corridor",
+    "division": "Rangpur",
+    "district": "Lalmonirhat",
+    "upazila": "Patgram",
+    "category": "Historical",
+    "categories": [
+      "Historical",
+      "Border Heritage"
+    ],
+    "rating": 4.5,
+    "reviews": 620,
+    "latitude": 26.2572,
+    "longitude": 88.9839,
+    "image": "/assets/destinations/tin-bigha-corridor.webp",
+    "imageLg": "/assets/destinations/tin-bigha-corridor.webp",
+    "gallery": [
+      "/assets/destinations/tin-bigha-corridor.webp"
+    ],
+    "photoId": "tin-bigha-gate",
+    "galleryIds": [
+      "tin-bigha-gate"
+    ],
+    "shortDesc": "A historic sovereign land strip connecting Dahagram-Angarpota enclave with mainland Bangladesh.",
+    "description": "The Tin Bigha Corridor is a strip of sovereign territory in Patgram upazila of Lalmonirhat that connects the Dahagram-Angarpota enclave—the largest enclave of Bangladesh—to the mainland. Marked by significant diplomatic history, border gates, and peaceful pastoral borderland scenery, it is a fascinating educational pilgrimage site showcasing national heritage, border cooperation, and tranquil countryside life.",
+    "bestTime": "October – March",
+    "recommendedDays": "1 day",
+    "difficulty": "Easy",
+    "budget": "BDT 300 – 800",
+    "travelType": "History Lovers, Curious Travelers, Patriotic Visitors",
+    "activities": [
+      "Walking through the historical border corridor",
+      "Visiting Dahagram enclave countryside",
+      "Observing the BGB and BSF joint border security gates",
+      "Photographing the lush northern green fields"
+    ],
+    "attractions": [
+      "Tin Bigha Gate",
+      "Dahagram Enclave",
+      "Border Zero Line",
+      "Patgram Countryside"
+    ],
+    "tips": [
+      "Carry national identification (NID) for smooth border crossing inspection.",
+      "Corridor is open 24 hours for civilian transit."
+    ],
+    "things_to_do": [
+      "Walk the corridor",
+      "See the enclave lifestyle",
+      "Photograph border gates"
+    ],
+    "what_to_see": [
+      "Border flags",
+      "Sovereign corridor strip",
+      "Rural North Bengal landscapes"
+    ],
+    "travel_tips": [
+      "Direct trains run from Dhaka to Burimari / Patgram (Karatoya / Lalmoni Express)."
+    ],
+    "transport_options": [
+      "Bus",
+      "Train to Patgram",
+      "Auto-rickshaw"
+    ],
+    "nearby_destinations": [
+      "teesta-barrage",
+      "tajhat-palace"
+    ],
+    "nearby_hotels": [
+      "Patgram Rest Houses",
+      "Lalmonirhat Hotels"
+    ],
+    "featured": false,
+    "popularity": "medium",
+    "status": "active",
+    "tags": [
+      "border",
+      "corridor",
+      "history",
+      "rangpur"
+    ],
+    "travelInfo": {
+      "from": "Lalmonirhat Town",
+      "distanceKm": 85,
+      "duration": "2 hours",
+      "route": "Lalmonirhat → Burimari Highway → Patgram → Tin Bigha Corridor",
+      "transport": [
+        "Bus to Patgram",
+        "Auto-rickshaw to Corridor"
+      ]
+    }
+  },
+  {
+    "id": 294,
+    "name": "Swapnapuri",
+    "name_bn": "স্বপ্নপুরী",
+    "slug": "swapnapuri-dinajpur",
+    "division": "Rangpur",
+    "district": "Dinajpur",
+    "upazila": "Nawabganj",
+    "category": "Family",
+    "categories": [
+      "Family",
+      "Theme Park",
+      "Nature"
+    ],
+    "rating": 4.4,
+    "reviews": 1350,
+    "latitude": 25.4333,
+    "longitude": 89.0833,
+    "image": "/assets/destinations/swapnapuri-dinajpur.webp",
+    "imageLg": "/assets/destinations/swapnapuri-dinajpur.webp",
+    "gallery": [
+      "/assets/destinations/swapnapuri-dinajpur.webp"
+    ],
+    "photoId": "swapnapuri-park",
+    "galleryIds": [
+      "swapnapuri-park"
+    ],
+    "shortDesc": "North Bengal's premier sprawling amusement and eco-park complex covering hundreds of landscaped acres.",
+    "description": "Situated in Nawabganj upazila of Dinajpur, Swapnapuri is a massive artificial and natural tourism complex covering over 400 acres. Featuring expansive boating lakes with water pedal-boats, life-size dinosaur and animal sculptures, a mini zoo, cable car rides, lush gardens, and picnic spots, it is one of northern Bangladesh's most popular family entertainment destinations.",
+    "bestTime": "October – March",
+    "recommendedDays": "1 day",
+    "difficulty": "Easy",
+    "budget": "BDT 400 – 1,000 / day",
+    "travelType": "Family with Kids, School Tours, Picnickers",
+    "activities": [
+      "Pedal boating on artificial lakes",
+      "Riding the cable car",
+      "Visiting the mini zoo and dinosaur park",
+      "Picnicking under shady tree groves"
+    ],
+    "attractions": [
+      "Boating Lakes",
+      "Giant Statues & Sculpture Park",
+      "Cable Car",
+      "Mini Zoo",
+      "Fish Aquarium"
+    ],
+    "tips": [
+      "Arrive by 10 AM to enjoy all sections before afternoon picnic crowds arrive.",
+      "Great family stop when visiting Kantajew Temple."
+    ],
+    "things_to_do": [
+      "Ride pedal boats",
+      "Take family photos with statues",
+      "Walk the floral gardens"
+    ],
+    "what_to_see": [
+      "Giant sculptures",
+      "Boating lakes",
+      "Cable car over water"
+    ],
+    "travel_tips": [
+      "Easily reached via Phulbari or Dinajpur town by bus and auto."
+    ],
+    "transport_options": [
+      "Bus",
+      "Auto-rickshaw",
+      "Car"
+    ],
+    "nearby_destinations": [
+      "kantajew-temple",
+      "ramsagar"
+    ],
+    "nearby_hotels": [
+      "Swapnapuri In-Park Cottages",
+      "Dinajpur City Hotels"
+    ],
+    "featured": false,
+    "popularity": "high",
+    "status": "active",
+    "tags": [
+      "amusement",
+      "family",
+      "dinajpur",
+      "park"
+    ],
+    "travelInfo": {
+      "from": "Dinajpur Town",
+      "distanceKm": 52,
+      "duration": "1.5 hours",
+      "route": "Dinajpur → Phulbari Highway → Nawabganj → Swapnapuri",
+      "transport": [
+        "Bus to Phulbari",
+        "Auto-rickshaw to park gate"
+      ]
+    }
+  },
+  {
+    "id": 295,
+    "name": "Susang Durgapur China Clay Hills",
+    "name_bn": "সুসং দুর্গাপুর চীনামাটির পাহাড় ও বিজয়পুর লেক",
+    "slug": "susang-durgapur-china-clay",
+    "division": "Mymensingh",
+    "district": "Netrokona",
+    "upazila": "Durgapur",
+    "category": "Nature",
+    "categories": [
+      "Nature",
+      "Hill",
+      "Lake"
+    ],
+    "rating": 4.9,
+    "reviews": 1480,
+    "latitude": 25.1389,
+    "longitude": 90.6861,
+    "image": "/assets/destinations/susang-durgapur-china-clay.webp",
+    "imageLg": "/assets/destinations/susang-durgapur-china-clay.webp",
+    "gallery": [
+      "/assets/destinations/susang-durgapur-china-clay.webp"
+    ],
+    "photoId": "durgapur-china-clay",
+    "galleryIds": [
+      "durgapur-china-clay"
+    ],
+    "shortDesc": "Striking pastel-colored China clay hills embracing a mesmerizing turquoise ceramic lake near the Indian border.",
+    "description": "Located in Bijoypur near the Indo-Bangladesh border in Netrokona, the China Clay Hills of Susang Durgapur (চীনামাটির পাহাড়) are one of Bangladesh's most visually surreal natural wonders. Rain and mineral-rich deposits have carved pastel-white, pink, and lilac clay cliffs that cradle deep, transparent turquoise-blue ceramic water pools. The surrounding landscape features the crystalline Someshwari River, Ranikhong mission church atop the ridge, and views of the mist-shrouded Meghalaya mountains.",
+    "bestTime": "October – March (Winter brings clear turquoise water)",
+    "recommendedDays": "1 – 2 days",
+    "difficulty": "Easy to Moderate",
+    "budget": "BDT 800 – 1,800 / day",
+    "travelType": "Nature Lovers, Photographers, Youth Groups, Adventure Seekers",
+    "activities": [
+      "Climbing the white and pink China clay cliffs",
+      "Photographing the mesmerizing turquoise blue ceramic lake",
+      "Boating across the crystal clear Someshwari River",
+      "Visiting the historic Ranikhong Catholic Church and Garo tribal villages",
+      "Trekking to the zero point border hills"
+    ],
+    "attractions": [
+      "Turquoise Ceramic Lake",
+      "China Clay Hills (Bijoypur)",
+      "Crystal Shomeshwari River",
+      "Ranikhong Church on Hilltop",
+      "Hajong & Garo Cultural Academy"
+    ],
+    "tips": [
+      "Hire a local motorcycle rider from Birishiri for full-day sightseeing around all spots.",
+      "Swimming in the ceramic lake is strictly discouraged due to abrupt underwater depth and mineral composition.",
+      "Winter mornings present magical mist rising from the Someshwari river."
+    ],
+    "things_to_do": [
+      "Photograph the turquoise water against white hills",
+      "Cross Someshwari river on a country boat",
+      "Visit Ranikhong hilltop"
+    ],
+    "what_to_see": [
+      "Turquoise lake",
+      "Pastel clay cliffs",
+      "Garo hill vistas",
+      "Shomeshwari riverbeds"
+    ],
+    "travel_tips": [
+      "Direct buses run from Dhaka Mohakhali to Birishiri / Susang Durgapur."
+    ],
+    "transport_options": [
+      "Bus from Mohakhali",
+      "Train to Jaria Jhanjail",
+      "Local Motorcycle"
+    ],
+    "nearby_destinations": [
+      "birishiri",
+      "shashi-lodge"
+    ],
+    "nearby_hotels": [
+      "YMCA Rest House Birishiri",
+      "Swarnalata Guest House"
+    ],
+    "featured": true,
+    "popularity": "very_high",
+    "status": "active",
+    "tags": [
+      "china-clay",
+      "lake",
+      "hills",
+      "durgapur",
+      "nature"
+    ],
+    "travelInfo": {
+      "from": "Dhaka",
+      "distanceKm": 180,
+      "duration": "5 – 6 hours",
+      "route": "Dhaka Mohakhali → Mymensingh → Shamganj → Birishiri → Durgapur",
+      "transport": [
+        "Bus from Mohakhali to Birishiri",
+        "Local trail motorcycle to Bijoypur"
+      ]
+    }
+  },
+  {
+    "id": 296,
+    "name": "Garo Hills Border & Ranikhong",
+    "name_bn": "গারো পাহাড় ও রানীখং",
+    "slug": "garo-hills-ranikhong",
+    "division": "Mymensingh",
+    "district": "Netrokona",
+    "upazila": "Durgapur",
+    "category": "Cultural",
+    "categories": [
+      "Cultural",
+      "Hill",
+      "Heritage"
+    ],
+    "rating": 4.7,
+    "reviews": 670,
+    "latitude": 25.15,
+    "longitude": 90.6667,
+    "image": "/assets/destinations/garo-hills-ranikhong.webp",
+    "imageLg": "/assets/destinations/garo-hills-ranikhong.webp",
+    "gallery": [
+      "/assets/destinations/garo-hills-ranikhong.webp"
+    ],
+    "photoId": "ranikhong-garo-hills",
+    "galleryIds": [
+      "ranikhong-garo-hills"
+    ],
+    "shortDesc": "A century-old historic Catholic mission perched atop a hill overlooking the Shomeshwari river and Meghalaya ranges.",
+    "description": "Built in 1912 by Catholic missionaries on a high cliff overlooking the Someshwari River, the Ranikhong Church is a cultural and architectural gem. From its serene hilltop vantage point, travelers are treated to a panoramic vista of the river meanders, sandy riverbanks, and the towering green ridges of the Indian Meghalaya hills. The surrounding area is home to warm Garo and Hajong indigenous communities with rich cultural traditions.",
+    "bestTime": "October – March",
+    "recommendedDays": "Half to 1 day",
+    "difficulty": "Easy",
+    "budget": "BDT 400 – 900",
+    "travelType": "Cultural Seekers, Photographers, Peaceful Explorers",
+    "activities": [
+      "Visiting the 1912 Ranikhong Catholic Church",
+      "Enjoying panoramic views of the Shomeshwari river valley",
+      "Experiencing Garo tribal cultural hospitality",
+      "Exploring Moni Singha monument"
+    ],
+    "attractions": [
+      "Ranikhong Mission Church",
+      "Someshwari River Viewpoint",
+      "Garo Village Settlements",
+      "Moni Singha Monument"
+    ],
+    "tips": [
+      "Dress respectfully when entering the church grounds.",
+      "Combine with your visit to the China Clay Hills."
+    ],
+    "things_to_do": [
+      "Admire the church architecture",
+      "Look out over the river valley",
+      "Learn about local Garo culture"
+    ],
+    "what_to_see": [
+      "100-year-old brick church",
+      "River meanders below",
+      "Meghalaya mountain ridge"
+    ],
+    "travel_tips": [
+      "Located 7 km north of Birishiri, reached by trail bike or auto."
+    ],
+    "transport_options": [
+      "Motorcycle",
+      "Auto-rickshaw",
+      "Bicycle"
+    ],
+    "nearby_destinations": [
+      "susang-durgapur-china-clay",
+      "birishiri"
+    ],
+    "nearby_hotels": [
+      "Birishiri Guesthouses"
+    ],
+    "featured": false,
+    "popularity": "high",
+    "status": "active",
+    "tags": [
+      "heritage",
+      "church",
+      "garo",
+      "hills"
+    ],
+    "travelInfo": {
+      "from": "Birishiri Town",
+      "distanceKm": 7,
+      "duration": "20 minutes by trail bike",
+      "route": "Birishiri → Someshwari River Crossing → Ranikhong Hilltop",
+      "transport": [
+        "Trail Motorcycle",
+        "Auto-rickshaw"
+      ]
+    }
   }
 ]

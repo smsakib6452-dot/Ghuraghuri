@@ -18,6 +18,7 @@ import {
   generateSosWhatsAppUrl,
   BudgetBreakdown,
 } from "@/lib/free-api-service";
+import { SITE_URL } from "@/lib/constants";
 import {
   Search,
   MapPin,
@@ -264,7 +265,7 @@ export default function TravelPlannerPage() {
       msg += `\n`;
     });
 
-    msg += `🌐 বিস্তারিত গাইড দেখুন: https://ghuraghuri.com/travel\n`;
+    msg += `🌐 বিস্তারিত গাইড দেখুন: ${SITE_URL}/travel\n`;
     window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
@@ -924,7 +925,7 @@ export default function TravelPlannerPage() {
                   <div className="p-5 pt-0">
                     <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[var(--glass-border)]">
                       <a
-                        href={`tel:${h.phone}`}
+                        href={`tel:${h.phone.startsWith("+") ? h.phone : `+88${h.phone.replace(/[^0-9]/g, "")}`}`}
                         className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] hover:text-white text-[#0f4a38] dark:text-[#2ecc71] text-xs font-bold transition-all"
                       >
                         <PhoneCall className="w-3.5 h-3.5" />
@@ -1018,7 +1019,7 @@ export default function TravelPlannerPage() {
                   <div className="p-5 pt-0">
                     <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[var(--glass-border)]">
                       <a
-                        href={`tel:${r.phone}`}
+                        href={`tel:${r.phone.startsWith("+") ? r.phone : `+88${r.phone.replace(/[^0-9]/g, "")}`}`}
                         className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] hover:text-white text-[#0f4a38] dark:text-[#2ecc71] text-xs font-bold transition-all"
                       >
                         <PhoneCall className="w-3.5 h-3.5" />
