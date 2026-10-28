@@ -7,45 +7,8 @@ import { Destination } from "@/types/destination";
 import { DestinationCard } from "@/components/destinations/DestinationCard";
 import { DestinationsFilterControls } from "@/components/destinations/DestinationsFilterControls";
 import { Compass, ChevronLeft, ChevronRight } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Explore All Destinations in Bangladesh | Ghuraghuri",
-  description: "Browse 295+ authentic travel destinations across all 8 divisions of Bangladesh. Find beaches, hills, waterfalls, tea gardens, and historic monuments.",
-  alternates: {
-    canonical: "/destinations",
-  },
-  openGraph: {
-    title: "Explore All Destinations in Bangladesh | Ghuraghuri",
-    description: "Browse 295+ authentic travel destinations across all 8 divisions of Bangladesh.",
-    url: "https://ghuraghuri.vercel.app/destinations",
-  },
-};
-
-const DIVISIONS = [
-  "Chattogram",
-  "Sylhet",
-  "Khulna",
-  "Barishal",
-  "Dhaka",
-  "Rajshahi",
-  "Rangpur",
-  "Mymensingh",
-];
-
-const CATEGORIES = [
-  "Beach",
-  "Hill",
-  "Waterfall",
-  "Forest",
-  "Island",
-  "Haor",
-  "Historical",
-  "Archaeological",
-  "Religious",
-  "Heritage",
-];
-
-const PAGE_SIZE = 24;
+import { buildRouteMetadata } from "@/lib/seo";
+import { CATEGORY_GROUPS, resolveCategoryGroup } from "@/lib/constants";
 
 export interface DestinationsSearchParams {
   q?: string;
@@ -59,6 +22,46 @@ interface PageProps {
   searchParams?: Promise<DestinationsSearchParams>;
 }
 
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const sp: DestinationsSearchParams = (await props.searchParams) || {};
+  const q = (sp.q || "").trim();
+  const division = (sp.division || "").trim();
+  const category = (sp.category || "").trim();
+  const requestedPage = Math.max(1, parseInt(sp.page || "1", 10) || 1);
+
+  const hasFilter = Boolean(q || division || category);
+  const isPaginated = !hasFilter && requestedPage > 1;
+
+  // Filtered URLs canonicalize to /destinations with noindex,follow
+  // Paginated ?page=N pages get self-referencing canonical
+  const canonicalPath = isPaginated
+    ? `/destinations?page=${requestedPage}`
+    : `/destinations`;
+
+  return buildRouteMetadata({
+    title: "Explore 295+ Destinations Across Bangladesh",
+    description:
+      "Browse 295+ curated travel destinations across Bangladesh. Filter by division, landscape category, or popularity to plan your ideal Bangladesh journey.",
+    path: canonicalPath,
+    noIndex: hasFilter,
+  });
+}
+
+const DIVISIONS = [
+  "Chattogram",
+  "Sylhet",
+  "Khulna",
+  "Barishal",
+  "Dhaka",
+  "Rajshahi",
+  "Rangpur",
+  "Mymensingh",
+];
+
+const CATEGORIES = Object.keys(CATEGORY_GROUPS);
+
+const PAGE_SIZE = 24;
+
 export default async function DestinationsPage(props: PageProps) {
   const sp: DestinationsSearchParams = (await props.searchParams) || {};
 
@@ -69,6 +72,7 @@ export default async function DestinationsPage(props: PageProps) {
   const requestedPage = Math.max(1, parseInt(sp.page || "1", 10) || 1);
 
   const allDestinations = destinationsData as unknown as Destination[];
+  const targetCategoryGroup = resolveCategoryGroup(category);
 
   // Server-side Filtering
   const filtered = allDestinations
@@ -87,15 +91,10 @@ export default async function DestinationsPage(props: PageProps) {
       }
 
       if (category) {
-        if (category === "Heritage" || category === "Historical") {
-          const isHistoricalOrArch =
-            item.category === "Historical" ||
-            item.category === "Archaeological" ||
-            item.category === "Heritage" ||
-            item.categories?.includes("Historical") ||
-            item.categories?.includes("Archaeological") ||
-            item.categories?.includes("Heritage");
-          if (!isHistoricalOrArch) return false;
+        if (targetCategoryGroup) {
+          if (resolveCategoryGroup(item.category) !== targetCategoryGroup) {
+            return false;
+          }
         } else if (item.category !== category && !item.categories?.includes(category)) {
           return false;
         }
@@ -107,10 +106,11 @@ export default async function DestinationsPage(props: PageProps) {
       if (sort === "name") {
         return a.name.localeCompare(b.name);
       }
-      const popWeight: Record<string, number> = { high: 3, medium: 2, low: 1 };
-      const pA = (popWeight[a.popularity || ""] || 0) + (a.featured ? 2 : 0);
-      const pB = (popWeight[b.popularity || ""] || 0) + (b.featured ? 2 : 0);
+      // Most Popular sort: popularity numeric weight first, then rating, then name
+      const pA = typeof a.popularity === "number" ? a.popularity : 0;
+      const pB = typeof b.popularity === "number" ? b.popularity : 0;
       if (pB !== pA) return pB - pA;
+      if (b.rating !== a.rating) return b.rating - a.rating;
       return a.name.localeCompare(b.name);
     });
 
@@ -144,8 +144,8 @@ export default async function DestinationsPage(props: PageProps) {
             <h1 className="text-2xl sm:text-4xl font-black text-foreground tracking-tight">
               {division
                 ? `${division} Division Destinations`
-                : category
-                ? `${category} Destinations in Bangladesh`
+                : targetCategoryGroup
+                ? `${targetCategoryGroup} Destinations in Bangladesh`
                 : "Explore All Destinations"}
             </h1>
             <p className="text-xs sm:text-sm text-[var(--text-muted)] font-medium mt-1">
@@ -181,47 +181,63 @@ export default async function DestinationsPage(props: PageProps) {
                   <DestinationCard
                     key={destination.id}
                     destination={destWithTr}
-                    priority={idx < 2 && currentPage === 1}
+                    priority={idx < 4}
                   />
                 );
               })}
             </div>
 
-            {/* Crawlable Pagination Bar with Real Links */}
+            {/* Accessible Server-Driven Pagination */}
             {totalPages > 1 && (
-              <nav aria-label="Destinations pagination" className="mt-14 flex items-center justify-center gap-2">
+              <nav
+                className="mt-12 flex items-center justify-center gap-2"
+                aria-label="Destinations Pagination"
+              >
                 {currentPage > 1 ? (
                   <Link
                     href={buildUrl(currentPage - 1)}
-                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-2xl bg-[var(--surface)] border border-[var(--glass-border)] text-xs font-bold text-foreground hover:border-[#0f4a38] transition-colors"
-                    aria-label="Previous page"
+                    className="flex items-center gap-1 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[var(--surface)] border border-[var(--glass-border)] text-foreground hover:bg-[var(--surface-raised)] transition-colors min-h-[40px]"
+                    aria-label="Previous Page"
                   >
                     <ChevronLeft className="w-4 h-4" />
-                    <span>Previous</span>
+                    <span>Prev</span>
                   </Link>
-                ) : null}
+                ) : (
+                  <span
+                    className="flex items-center gap-1 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[var(--surface)]/50 border border-[var(--glass-border)]/50 text-[var(--text-muted)] opacity-50 cursor-not-allowed min-h-[40px]"
+                    aria-disabled="true"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                    <span>Prev</span>
+                  </span>
+                )}
 
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5 px-3">
                   {Array.from({ length: totalPages }, (_, i) => i + 1)
-                    .filter((p) => p === 1 || p === totalPages || Math.abs(p - currentPage) <= 2)
-                    .map((p, index, array) => {
-                      const prevPage = array[index - 1];
+                    .filter((p) => {
+                      if (totalPages <= 7) return true;
+                      if (p === 1 || p === totalPages) return true;
+                      return Math.abs(p - currentPage) <= 1;
+                    })
+                    .map((p, idx, arr) => {
+                      const prevPage = arr[idx - 1];
                       const showEllipsis = prevPage && p - prevPage > 1;
-                      const isCurrent = p === currentPage;
 
                       return (
                         <React.Fragment key={p}>
                           {showEllipsis && (
-                            <span className="px-2 text-xs text-[var(--text-muted)]">...</span>
+                            <span className="px-2 text-xs text-[var(--text-muted)] select-none">
+                              …
+                            </span>
                           )}
                           <Link
                             href={buildUrl(p)}
-                            className={`min-w-[40px] h-10 px-3 rounded-2xl flex items-center justify-center text-xs font-bold transition-all ${
-                              isCurrent
-                                ? "bg-[#0f4a38] text-white shadow-md"
-                                : "bg-[var(--surface)] border border-[var(--glass-border)] text-foreground hover:border-[#0f4a38]"
+                            className={`min-w-[40px] min-h-[40px] flex items-center justify-center rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                              currentPage === p
+                                ? "bg-[#0f4a38] text-white dark:bg-[#1f9d76] shadow-sm pointer-events-none"
+                                : "bg-[var(--surface)] text-[var(--text-muted)] hover:text-foreground border border-[var(--glass-border)] hover:bg-[var(--surface-raised)]"
                             }`}
-                            aria-current={isCurrent ? "page" : undefined}
+                            aria-current={currentPage === p ? "page" : undefined}
                           >
                             {p}
                           </Link>
@@ -233,26 +249,34 @@ export default async function DestinationsPage(props: PageProps) {
                 {currentPage < totalPages ? (
                   <Link
                     href={buildUrl(currentPage + 1)}
-                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-2xl bg-[var(--surface)] border border-[var(--glass-border)] text-xs font-bold text-foreground hover:border-[#0f4a38] transition-colors"
-                    aria-label="Next page"
+                    className="flex items-center gap-1 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[var(--surface)] border border-[var(--glass-border)] text-foreground hover:bg-[var(--surface-raised)] transition-colors min-h-[40px]"
+                    aria-label="Next Page"
                   >
                     <span>Next</span>
                     <ChevronRight className="w-4 h-4" />
                   </Link>
-                ) : null}
+                ) : (
+                  <span
+                    className="flex items-center gap-1 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[var(--surface)]/50 border border-[var(--glass-border)]/50 text-[var(--text-muted)] opacity-50 cursor-not-allowed min-h-[40px]"
+                    aria-disabled="true"
+                  >
+                    <span>Next</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </span>
+                )}
               </nav>
             )}
           </>
         ) : (
-          <div className="text-center py-20 px-4 rounded-3xl bg-[var(--surface)] border border-[var(--glass-border)]">
-            <Compass className="w-12 h-12 mx-auto text-[var(--text-muted)] mb-3 opacity-50" />
-            <h2 className="text-xl font-bold text-foreground">No Destinations Found</h2>
-            <p className="text-xs sm:text-sm text-[var(--text-muted)] mt-1 mb-6">
-              Try adjusting your search criteria or resetting active filters.
+          <div className="py-20 text-center rounded-3xl bg-[var(--surface)] border border-[var(--glass-border)] p-8">
+            <Compass className="w-12 h-12 text-[var(--text-muted)] mx-auto mb-4 animate-spin-slow" />
+            <h2 className="text-xl font-bold text-foreground">No destinations found</h2>
+            <p className="text-sm text-[var(--text-muted)] mt-1 max-w-md mx-auto">
+              We couldn&apos;t find any spots matching your current filters. Try resetting the search or category filters.
             </p>
             <Link
               href="/destinations"
-              className="inline-block px-6 py-2.5 rounded-xl bg-[#0f4a38] text-white font-bold text-xs shadow-md"
+              className="mt-6 inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0f4a38] hover:bg-[#156b50] text-white text-xs font-bold transition-all shadow-sm"
             >
               Reset All Filters
             </Link>

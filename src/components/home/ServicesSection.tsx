@@ -51,7 +51,9 @@ export function ServicesSection() {
       icon: Bus,
       href: "/transport",
       badge: isBn ? "নির্ভুল দিকনির্দেশনা" : "Route Planner",
-      image: "/assets/destinations/marine-drive.webp",
+      image: "", // Icon-based card; reserve field for real transport photos
+      gradient: "from-slate-900 via-emerald-950 to-teal-950",
+      iconColor: "text-[#f4a340]",
     },
     {
       title: isBn ? "ট্যুরিস্ট পুলিশ ও জরুরি সহায়তা" : "Tourist Police & Safety",
@@ -61,7 +63,9 @@ export function ServicesSection() {
       icon: ShieldAlert,
       href: "/transport#police",
       badge: isBn ? "২৪/৭ নিরাপত্তা" : "24/7 Protection",
-      image: "/assets/destinations/patenga-beach.webp",
+      image: "", // Icon-based card; reserve field for real safety photos
+      gradient: "from-[#03100c] via-[#07251c] to-[#047857]/40",
+      iconColor: "text-[#2ecc71]",
     },
   ];
 
@@ -114,17 +118,34 @@ export function ServicesSection() {
                 key={item.title}
                 className="group flex flex-col rounded-3xl overflow-hidden bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5"
               >
-                <div className="relative aspect-[16/10] w-full overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 280px"
-                    loading="lazy"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#0f4a38]/90 text-white backdrop-blur-md">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={
+                        isBn
+                          ? `${item.title} — ঘুরেঘুরি ভ্রমণ সার্ভিস`
+                          : `${item.title} — Ghuraghuri Travel Service`
+                      }
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      loading="lazy"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div
+                      className={`w-full h-full bg-gradient-to-br ${item.gradient || "from-[#03100c] to-[#0f4a38]"} flex flex-col items-center justify-center p-6 text-center`}
+                    >
+                      <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 mb-2 shadow-inner">
+                        <Icon className={`w-8 h-8 ${item.iconColor || "text-[#2ecc71]"}`} />
+                      </div>
+                      <span className="text-xs font-bold text-white/90 tracking-wide">
+                        {item.title}
+                      </span>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#0f4a38]/90 text-white backdrop-blur-md z-10">
                     {item.badge}
                   </span>
                 </div>

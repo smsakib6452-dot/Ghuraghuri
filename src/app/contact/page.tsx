@@ -5,32 +5,14 @@ import { EMERGENCY_CONFIG } from "@/lib/emergency";
 import { FOOTER_CONFIG } from "@/config/footer";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/constants";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Get in touch with the Ghuraghuri travel team, tourist emergency helplines, or submit destination feedback.",
-  alternates: {
-    canonical: "/contact",
-  },
-  openGraph: {
-    title: "Contact Us | Ghuraghuri",
-    description: "Get in touch with the Ghuraghuri travel team, tourist emergency helplines, or submit destination feedback.",
-    url: `${SITE_URL}/contact`,
-    images: [
-      {
-        url: `${SITE_URL}/og-default.jpg`,
-        width: 1200,
-        height: 630,
-        alt: "Contact Ghuraghuri",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact Us | Ghuraghuri",
-    description: "Get in touch with the Ghuraghuri travel team, tourist emergency helplines, or submit destination feedback.",
-    images: [`${SITE_URL}/og-default.jpg`],
-  },
-};
+import { buildRouteMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildRouteMetadata({
+  title: "Contact Us & Tourist Emergency Helplines",
+  description:
+    "Get in touch with the Ghuraghuri travel team, access tourist emergency helplines, or submit suggestions to improve our Bangladesh destination guides.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

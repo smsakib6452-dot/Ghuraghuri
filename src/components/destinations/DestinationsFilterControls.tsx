@@ -5,6 +5,7 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { Search, Compass, Sparkles, X } from "lucide-react";
 import { useApp } from "@/context/AppContext";
 import { getDivisionBn, CATEGORIES_BN } from "@/lib/i18n";
+import { CATEGORY_GROUPS_BN } from "@/lib/constants";
 
 interface DestinationsFilterControlsProps {
   initialQuery?: string;
@@ -171,7 +172,7 @@ export function DestinationsFilterControls({
                 : "bg-[var(--surface-raised)] text-[var(--text-muted)] hover:text-foreground border border-[var(--glass-border)]"
             }`}
           >
-            {isBn ? (CATEGORIES_BN[cat] || cat) : cat}
+            {isBn ? (CATEGORY_GROUPS_BN[cat] || CATEGORIES_BN[cat] || cat) : cat}
           </button>
         ))}
 

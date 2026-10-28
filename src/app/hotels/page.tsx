@@ -187,9 +187,9 @@ function HotelsContent() {
                 {hotel.image ? (
                   <Image
                     src={hotel.image}
-                    alt={hotel.name}
+                    alt={`${hotel.name} (${hotel.type}) in ${hotel.hubName}`}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (

@@ -12,11 +12,15 @@ import translationsData from "@/data/translations.json";
 import { Destination } from "@/types/destination";
 import { JsonLd, getWebsiteSchema, getOrganizationSchema } from "@/components/seo/JsonLd";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-  },
-};
+import { buildRouteMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildRouteMetadata({
+  title: "Ghuraghuri — Bangladesh Travel Explorer | ঘুরাঘুরি",
+  description:
+    "Discover 295+ authentic tourist spots across all 8 divisions of Bangladesh. Explore hill tracks, sandy beaches, tea gardens, and complete travel guides.",
+  path: "/",
+  isAbsoluteTitle: true,
+});
 
 export default function HomePage() {
   const trData = translationsData as Record<string, any>;

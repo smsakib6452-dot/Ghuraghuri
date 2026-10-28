@@ -610,7 +610,11 @@ export function MapSection() {
                   <div className="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-gray-200 shadow-inner">
                     <Image
                       src={activeSpotImageSrc}
-                      alt={activeSpot.name}
+                      alt={
+                        isBn
+                          ? `${activeSpot.name_bn || activeSpot.name}, ${activeSpot.district}`
+                          : `${activeSpot.name} in ${activeSpot.district}, ${activeSpot.division}`
+                      }
                       fill
                       sizes="96px"
                       className="object-cover"

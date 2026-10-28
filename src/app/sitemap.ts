@@ -61,7 +61,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.3,
     },
+    {
+      url: `${baseUrl}/terms`,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
   ];
+
+  const divisionRoutes: MetadataRoute.Sitemap = [
+    "chattogram",
+    "sylhet",
+    "khulna",
+    "barishal",
+    "dhaka",
+    "rajshahi",
+    "rangpur",
+    "mymensingh",
+  ].map((div) => ({
+    url: `${baseUrl}/destinations/division/${div}`,
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
 
   const destinationRoutes: MetadataRoute.Sitemap = destinations.map((dest: any) => {
     const entry: MetadataRoute.Sitemap[number] = {
@@ -78,5 +98,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return entry;
   });
 
-  return [...staticRoutes, ...destinationRoutes];
+  return [...staticRoutes, ...divisionRoutes, ...destinationRoutes];
 }

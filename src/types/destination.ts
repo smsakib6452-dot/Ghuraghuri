@@ -2,6 +2,7 @@ export interface Destination {
   id: number;
   name: string;
   name_bn?: string;
+  altName?: string;
   slug: string;
   division: string;
   district: string;
@@ -12,7 +13,7 @@ export interface Destination {
   reviews: number;
   badge?: string;
   featured?: boolean;
-  popularity?: "high" | "medium" | "low" | string;
+  popularity?: number | string;
   latitude: number;
   longitude: number;
   image: string;

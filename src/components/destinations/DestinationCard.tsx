@@ -23,9 +23,15 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
 
   const title = isBn && destination.name_bn ? destination.name_bn : destination.name;
   const divisionText = isBn ? getDivisionBn(destination.division) : destination.division;
+  const isSameDistrictDivision =
+    destination.district.trim().toLowerCase() === destination.division.trim().toLowerCase();
   const locationText = isBn
-    ? `${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)}`
-    : `${destination.district}, ${destination.division}`;
+    ? (isSameDistrictDivision
+        ? getDistrictBn(destination.district)
+        : `${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)}`)
+    : (isSameDistrictDivision
+        ? destination.district
+        : `${destination.district}, ${destination.division}`);
   const descriptionText = isBn
     ? (destination.shortDesc_bn || destination.shortDesc)
     : destination.shortDesc;
@@ -39,15 +45,19 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
     ? destination.image
     : `/${destination.image.replace(/^\/+/, "")}`;
 
+  const descriptiveAlt = isBn
+    ? `${title}, ${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)}: ${destination.category}`
+    : `${destination.name} in ${destination.district}, ${destination.division}: ${destination.category}`;
+
   return (
     <article className="group relative flex flex-col rounded-3xl overflow-hidden bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5">
-      {/* Image Container with Badge Overlays */}
+      {/* Image Container with Badge Overlays - Fixed Aspect Ratio prevents CLS */}
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
         <Image
           src={imageSrc}
-          alt={title}
+          alt={descriptiveAlt}
           fill
-          sizes="(max-width: 640px) 94vw, (max-width: 1024px) 47vw, (max-width: 1280px) 31vw, 360px"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           priority={priority}
           fetchPriority={priority ? "high" : "auto"}
           loading={priority ? undefined : "lazy"}
@@ -62,15 +72,15 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
           </span>
         </div>
 
-        {/* Live Weather Quick Icon Button */}
+        {/* Live Weather Quick Icon Button (Accessible 40x40px tap target) */}
         <Link
           href={`/weather?spot=${destination.slug}`}
           onClick={(e) => e.stopPropagation()}
-          className="absolute bottom-3.5 right-3.5 w-8 h-8 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md text-[#f4a340] border border-white/20 transition-all shadow-md flex items-center justify-center hover:scale-110 z-10"
-          title={isBn ? "লাইভ আবহাওয়া দেখুন" : "View Live Weather"}
-          aria-label={isBn ? `${title}-এর লাইভ আবহাওয়া দেখুন` : `View live weather for ${title}`}
+          className="absolute bottom-3.5 right-3.5 w-10 h-10 min-w-[40px] min-h-[40px] rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md text-[#f4a340] border border-white/20 transition-all shadow-md flex items-center justify-center hover:scale-105 cursor-pointer z-10"
+          title={isBn ? `${title}-এর লাইভ আবহাওয়া দেখুন` : `Live weather for ${destination.name}`}
+          aria-label={isBn ? `${title}-এর লাইভ আবহাওয়া` : `Live weather for ${destination.name}`}
         >
-          <CloudSun className="w-4 h-4" />
+          <CloudSun className="w-5 h-5" />
         </Link>
 
         {/* Bookmark Button (Thumb-Friendly Touch Target) */}

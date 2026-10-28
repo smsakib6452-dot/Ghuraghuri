@@ -883,9 +883,9 @@ export default function TravelPlannerPage() {
                       {h.photo && h.photo.startsWith("/assets/") ? (
                         <Image
                           src={h.photo}
-                          alt={h.name}
+                          alt={`${h.name} (${h.type}) in ${h.hubName}`}
                           fill
-                          sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 360px"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       ) : (
@@ -970,9 +970,9 @@ export default function TravelPlannerPage() {
                       {r.photo && r.photo.startsWith("/assets/") ? (
                         <Image
                           src={r.photo}
-                          alt={r.name}
+                          alt={`${r.name} (${r.cuisine}) in ${r.hubName}`}
                           fill
-                          sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 360px"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       ) : (

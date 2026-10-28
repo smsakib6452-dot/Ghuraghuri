@@ -3,25 +3,14 @@ import Link from "next/link";
 import { ShieldCheck, Mail, ArrowLeft, Lock, EyeOff, CheckCircle2 } from "lucide-react";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/constants";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Learn how Ghuraghuri protects your privacy, what limited information is collected, and how we handle data.",
-  alternates: {
-    canonical: "/privacy",
-  },
-  openGraph: {
-    title: "Privacy Policy | Ghuraghuri",
-    description: "Learn how Ghuraghuri protects your privacy. Transparent, open, and tracker-free travel exploration.",
-    url: `${SITE_URL}/privacy`,
-    images: [`${SITE_URL}/og-default.jpg`],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Privacy Policy | Ghuraghuri",
-    description: "Transparent, open, and tracker-free travel exploration in Bangladesh.",
-    images: [`${SITE_URL}/og-default.jpg`],
-  },
-};
+import { buildRouteMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildRouteMetadata({
+  title: "Privacy Policy & Data Transparency",
+  description:
+    "Read the Ghuraghuri privacy policy. We protect traveler privacy with zero tracking ads, minimal data collection, and open, transparent travel information.",
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

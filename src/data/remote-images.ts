@@ -1,5 +1,5 @@
-// Local assets configuration for Travel Hub & external services
+// Local authentic assets for Travel Hub
 export const TRAVEL_HUB_REMOTE_IMAGES = {
-  hotels: "/assets/destinations/srimangal.webp",
-  dining: "/assets/destinations/old-dhaka.webp",
+  hotels: "/assets/hotels/resort-sajek.webp",
+  dining: "/assets/restaurants/rest-traditional.webp",
 } as const;

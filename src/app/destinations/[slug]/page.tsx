@@ -24,17 +24,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const destinations = destinationsData as unknown as Destination[];
   const destination = destinations.find((d) => d.slug === slug);
 
-  if (!destination) {
+  if (slug === "division" || !destination) {
     return {
-      title: "Destination Not Found | Ghuraghuri",
+      title: "Destination Not Found",
     };
   }
 
-  const title = `${destination.name} Travel Guide | Ghuraghuri Bangladesh`;
+  const title = `${destination.name} Travel Guide`;
   const desc = destination.shortDesc;
-  const imgUrl = destination.image.startsWith("http")
-    ? destination.image
-    : `${SITE_URL}/${destination.image.replace(/^\/+/, "")}`;
+  const ogImgUrl = `${SITE_URL}/assets/og/destinations/${destination.slug}.jpg`;
 
   return {
     title,
@@ -45,14 +43,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description: desc,
-      images: [{ url: imgUrl, width: 1200, height: 630, alt: destination.name }],
+      images: [
+        {
+          url: ogImgUrl,
+          width: 1200,
+          height: 630,
+          type: "image/jpeg",
+          alt: `${destination.name} Travel Guide — Ghuraghuri`,
+        },
+      ],
       url: `${SITE_URL}/destinations/${destination.slug}`,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description: desc,
-      images: [imgUrl],
+      images: [ogImgUrl],
     },
   };
 }
@@ -62,7 +68,7 @@ export default async function DestinationDetailPage({ params }: Props) {
   const destinations = destinationsData as unknown as Destination[];
   const destination = destinations.find((d) => d.slug === slug);
 
-  if (!destination) {
+  if (slug === "division" || !destination) {
     notFound();
   }
 

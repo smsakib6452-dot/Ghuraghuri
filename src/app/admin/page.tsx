@@ -418,8 +418,10 @@ export default function AdminPage() {
                                         : `/${dest.image.replace(/^\/+/, "")}`)
                                     : "/assets/destinations/sajek-valley.webp"
                                 }
-                                alt={dest.name}
+                                alt=""
+                                aria-hidden="true"
                                 fill
+                                sizes="48px"
                                 className="object-cover"
                               />
                             </div>
@@ -645,8 +647,9 @@ export default function AdminPage() {
                     {formImagePreview ? (
                       <Image
                         src={formImagePreview}
-                        alt="Preview"
+                        alt="Uploaded preview"
                         fill
+                        sizes="96px"
                         className="object-cover"
                       />
                     ) : (

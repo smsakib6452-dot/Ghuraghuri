@@ -14,27 +14,16 @@ import {
   Palmtree,
   Sailboat,
   Sparkles,
+  Building,
+  Flower2,
   type LucideIcon,
 } from "lucide-react";
-import { TOTAL_DESTINATIONS } from "@/lib/constants";
-import { formatNumberEnBn } from "@/lib/utils";
 import { formatDigits } from "@/lib/i18n";
-
-const EXPERIENCE_COUNTS: Record<string, number> = {
-  Hill: 8,
-  Beach: 13,
-  Waterfall: 15,
-  Forest: 13,
-  Haor: 4,
-  Historical: 104,
-  Heritage: 104,
-  Island: 15,
-  Religious: 16,
-};
+import { CATEGORY_GROUP_COUNTS } from "@/lib/constants";
 
 interface ExperienceItem {
   key: string;
-  category: string;
+  group: string;
   icon: LucideIcon;
   name_en: string;
   name_bn: string;
@@ -45,84 +34,114 @@ interface ExperienceItem {
 
 const EXPERIENCES: ExperienceItem[] = [
   {
+    key: "beaches",
+    group: "Beaches & Coast",
+    icon: Sun,
+    name_en: "Beaches & Coast",
+    name_bn: "সমুদ্র ও সোনালী সৈকত",
+    desc_en: "World's longest unbroken sands, sunset points, and ocean surf from Cox's Bazar to Kuakata.",
+    desc_bn: "বিশ্বের দীর্ঘতম ১২০ কিমি বালুকাময় সৈকত, প্রবাল দ্বীপ ও রক্তিম সূর্যাস্ত।",
+    gradient: "from-amber-900/40 via-amber-800/20 to-transparent",
+  },
+  {
     key: "hills",
-    category: "Hill",
+    group: "Hills & Peaks",
     icon: Mountain,
     name_en: "Hills & Peaks",
-    name_bn: "পাহাড় ও মেঘের রাজ্য",
+    name_bn: "পাহাড় ও মেঘের রাজ্য",
     desc_en: "Highland peaks, floating clouds, and breathtaking viewpoints in Sajek & Bandarban.",
     desc_bn: "মেঘের ভেলা, সবুজ উপত্যকা আর রোমাঞ্চকর পাহাড়ি ট্রেইল।",
     gradient: "from-emerald-900/40 via-emerald-800/20 to-transparent",
   },
   {
-    key: "beaches",
-    category: "Beach",
-    icon: Sun,
-    name_en: "Beaches & Coast",
-    name_bn: "সমুদ্র ও সোনালী সৈকত",
-    desc_en: "World's longest unbroken sands, sunset points, and ocean surf from Cox's Bazar to Kuakata.",
-    desc_bn: "বিশ্বের দীর্ঘতম ১২০ কিমি বালুকাময় সৈকত ও রক্তিম সূর্যাস্ত।",
-    gradient: "from-amber-900/40 via-amber-800/20 to-transparent",
-  },
-  {
-    key: "forests",
-    category: "Forest",
-    icon: Trees,
-    name_en: "Forests",
-    name_bn: "বন ও গভীর ম্যানগ্রোভ",
-    desc_en: "Sundarbans UNESCO World Heritage, Lawachara rainforest, and wildlife biodiversity.",
-    desc_bn: "রয়েল বেঙ্গল টাইগারের সুন্দরবন ও লাউয়াছড়ার জীববৈচিত্র্য।",
-    gradient: "from-green-900/40 via-green-800/20 to-transparent",
-  },
-  {
-    key: "heritage",
-    category: "Historical",
-    icon: Landmark,
-    name_en: "Heritage",
-    name_bn: "ঐতিহ্য ও প্রত্নতত্ত্ব",
-    desc_en: "Centuries-old zamindar palaces, terracotta temples, and Buddhist viharas.",
-    desc_bn: "পাহাড়পুর বৌদ্ধবিহার, কান্তজীউ মন্দির ও ঐতিহাসিক রাজপ্রাসাদ।",
-    gradient: "from-orange-900/40 via-orange-800/20 to-transparent",
-  },
-  {
     key: "waterfalls",
-    category: "Waterfall",
+    group: "Waterfalls",
     icon: Waves,
     name_en: "Waterfalls",
     name_bn: "ঝরনা ও পাথুরে ক্যাসকেড",
-    desc_en: "Hidden mountain springs, crystal streams, and thrilling hidden cascades.",
+    desc_en: "Hidden mountain springs, crystal streams, and thrilling cascades across hills.",
     desc_bn: "নাফাকুম, মাধবকুণ্ড ও দামতুয়ার গর্জনমুখর নীল জলরাশি।",
     gradient: "from-cyan-900/40 via-cyan-800/20 to-transparent",
   },
   {
+    key: "forests",
+    group: "Forests & Wildlife",
+    icon: Trees,
+    name_en: "Forests & Wildlife",
+    name_bn: "বন ও বন্যপ্রাণী",
+    desc_en: "Sundarbans UNESCO World Heritage, Lawachara rainforest, and wildlife reserves.",
+    desc_bn: "রয়েল বেঙ্গল টাইগারের সুন্দরবন, লাউয়াছড়ার জীববৈচিত্র্য ও সংরক্ষিত বন।",
+    gradient: "from-green-900/40 via-green-800/20 to-transparent",
+  },
+  {
     key: "islands",
-    category: "Island",
+    group: "Islands",
     icon: Palmtree,
     name_en: "Islands & Reefs",
     name_bn: "দ্বীপ ও প্রবাল সৈকত",
     desc_en: "Turquoise lagoons, coconut groves, and tranquil horizons at Saint Martin and Manpura.",
-    desc_bn: "স্বচ্ছ নীল সমুদ্রের প্রবাল প্রাচীর ও নারিকেল জিঞ্জিরা।",
+    desc_bn: "স্বচ্ছ নীল সমুদ্রের প্রবাল প্রাচীর, নারিকেল জিঞ্জিরা ও মনপুরা।",
     gradient: "from-blue-900/40 via-blue-800/20 to-transparent",
   },
   {
     key: "wetlands",
-    category: "Haor",
+    group: "Rivers, Lakes & Wetlands",
     icon: Sailboat,
-    name_en: "Wetlands & Rivers",
-    name_bn: "হাওর ও শান্ত জলাভূমি",
-    desc_en: "Vast inland freshwater seas, luxury houseboats, and migratory birds in Tanguar Haor.",
-    desc_bn: "টাঙ্গুয়ার হাওরের মেঘালয় সীমান্ত আর রাজকীয় হাউসবোট ক্রুজ।",
+    name_en: "Rivers, Lakes & Wetlands",
+    name_bn: "নদী, হ্রদ ও হাওর",
+    desc_en: "Vast inland freshwater seas, luxury houseboats on Tanguar Haor, and scenic rivers.",
+    desc_bn: "টাঙ্গুয়ার হাওরের মেঘালয় সীমান্ত, কাপ্তাই হ্রদ ও মনোরম নদীপথ।",
     gradient: "from-sky-900/40 via-sky-800/20 to-transparent",
   },
   {
+    key: "heritage",
+    group: "Heritage & History",
+    icon: Landmark,
+    name_en: "Heritage & History",
+    name_bn: "ঐতিহ্য ও প্রত্নতত্ত্ব",
+    desc_en: "Centuries-old zamindar palaces, terracotta temples, and ancient Buddhist viharas.",
+    desc_bn: "পাহাড়পুর বৌদ্ধবিহার, কান্তজীউ মন্দির ও ঐতিহাসিক রাজপ্রাসাদ।",
+    gradient: "from-orange-900/40 via-orange-800/20 to-transparent",
+  },
+  {
     key: "spiritual",
-    category: "Religious",
+    group: "Religious Sites",
     icon: Sparkles,
-    name_en: "Spiritual Sites",
-    name_bn: "আধ্যাত্মিক ও পবিত্র মাজার",
-    desc_en: "Sufi shrines of Shah Jalal, historic mosques of Bagerhat, and sacred pilgrimage sites.",
+    name_en: "Religious & Sacred Sites",
+    name_bn: "আধ্যাত্মিক ও পবিত্র স্থান",
+    desc_en: "Sufi shrines of Sylhet, historic mosques of Bagerhat, and sacred pilgrimage destinations.",
     desc_bn: "হযরত শাহজালাল (র.) মাজার ও ষাট গম্বুজ ঐতিহাসিক মসজিদ।",
     gradient: "from-teal-900/40 via-teal-800/20 to-transparent",
+  },
+  {
+    key: "culture",
+    group: "Culture & Museums",
+    icon: Building,
+    name_en: "Culture & Museums",
+    name_bn: "সংস্কৃতি ও জাদুঘর",
+    desc_en: "Folk art museums, tribal cultural centers, historic artisan towns, and heritage cities.",
+    desc_bn: "সোনারগাঁ লোকশিল্প জাদুঘর, জাতিতাত্ত্বিক সংগ্রহশালা ও গ্রামীণ কারুশিল্প।",
+    gradient: "from-rose-900/40 via-rose-800/20 to-transparent",
+  },
+  {
+    key: "nature",
+    group: "Nature & Gardens",
+    icon: Flower2,
+    name_en: "Nature & Gardens",
+    name_bn: "প্রকৃতি ও চা বাগান",
+    desc_en: "Rolling tea slopes in Srimangal, botanical reserves, and lush rural landscapes.",
+    desc_bn: "শ্রীমঙ্গলের সুবিশাল চা বাগান, বোটানিক্যাল গার্ডেন ও সবুজ প্রান্তর।",
+    gradient: "from-lime-900/40 via-lime-800/20 to-transparent",
+  },
+  {
+    key: "family",
+    group: "Family & Fun",
+    icon: Compass,
+    name_en: "Family & Adventure",
+    name_bn: "পরিবার ও রোমাঞ্চ",
+    desc_en: "Scenic recreation spots, safari parks, lakeside amusement, and resort areas.",
+    desc_bn: "ফয়েজ লেক, সাফারি পার্ক ও পরিবারের সাথে আনন্দময় ছুটি কাটানোর স্পট।",
+    gradient: "from-violet-900/40 via-violet-800/20 to-transparent",
   },
 ];
 
@@ -130,8 +149,8 @@ export function ExperienceSection() {
   const { language } = useApp();
   const isBn = language === "bn";
 
-  const getCount = (cat: string) => {
-    return EXPERIENCE_COUNTS[cat] || 0;
+  const getCount = (groupName: string) => {
+    return CATEGORY_GROUP_COUNTS[groupName] || 0;
   };
 
   return (
@@ -153,15 +172,15 @@ export function ExperienceSection() {
           </p>
         </div>
 
-        {/* 8 Experience Cards Grid: Single column on <=360px, 2-col on 361px-1023px, 4-col on desktop */}
+        {/* 11 Experience Cards Grid: Single column on <=360px, 2-col on 361px-1023px, 4-col on desktop */}
         <div className="grid grid-cols-1 min-[361px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 items-stretch">
           {EXPERIENCES.map((exp) => {
-            const count = getCount(exp.category);
+            const count = getCount(exp.group);
             const Icon = exp.icon;
             return (
               <Link
                 key={exp.key}
-                href={`/destinations?category=${encodeURIComponent(exp.category)}`}
+                href={`/destinations?category=${encodeURIComponent(exp.group)}`}
                 className="group relative p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl bg-[var(--surface-raised)] border border-[var(--glass-border)] hover:border-[#047857]/40 dark:hover:border-[#2ecc71]/40 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden h-full"
               >
                 {/* Glow Background */}

@@ -167,9 +167,13 @@ export function DestinationDetailClient({
       <div className="relative aspect-[16/10] sm:aspect-[21/9] h-auto min-h-[380px] sm:min-h-[440px] max-h-[600px] w-full overflow-hidden bg-[#061B14]">
         <Image
           src={imageSrc}
-          alt={destination.name}
+          alt={
+            isBn
+              ? `${destination.name_bn || destination.name}, ${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)} — ${destination.category} ভ্রমণ নির্দেশিকা`
+              : `${destination.name} in ${destination.district}, ${destination.division} — ${destination.category} Travel Guide`
+          }
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
           priority
           fetchPriority="high"
           className="object-cover"
@@ -456,7 +460,11 @@ export function DestinationDetailClient({
                                 ? rel.image
                                 : `/${rel.image.replace(/^\/+/, "")}`
                             }
-                            alt={rel.name}
+                            alt={
+                              isBn
+                                ? `${relTitle}, ${relDistrict}`
+                                : `${rel.name} in ${rel.district}, ${rel.division}`
+                            }
                             fill
                             sizes="56px"
                             className="object-cover group-hover:scale-105 transition-transform"

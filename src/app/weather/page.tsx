@@ -676,7 +676,11 @@ function WeatherContent() {
           {/* Full-Bleed Scenic Background Photo */}
           <Image
             src={selectedHub.image}
-            alt={selectedHub.name}
+            alt={
+              isBn
+                ? `${selectedHub.name_bn || selectedHub.name} লাইভ আবহাওয়া থিয়েটার`
+                : `${selectedHub.name} Live Weather Theatre`
+            }
             fill
             sizes="100vw"
             priority
@@ -938,9 +942,13 @@ function WeatherContent() {
                 >
                   <Image
                     src={hub.image}
-                    alt={hub.name}
+                    alt={
+                      isBn
+                        ? `${hub.name_bn || hub.name}, ${hub.district}`
+                        : `${hub.name} in ${hub.district}`
+                    }
                     fill
-                    sizes="(max-width: 768px) 50vw, 16vw"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
@@ -1006,7 +1014,8 @@ function WeatherContent() {
                     <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 bg-gray-200 dark:bg-gray-800">
                       <Image
                         src={spot.image}
-                        alt={spot.name}
+                        alt=""
+                        aria-hidden="true"
                         fill
                         sizes="48px"
                         className="object-cover group-hover:scale-110 transition-transform duration-300"

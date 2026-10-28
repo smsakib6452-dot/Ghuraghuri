@@ -85,14 +85,14 @@ export function Footer() {
   };
 
   const divisions = [
-    { name: "Chattogram", name_bn: "চট্টগ্রাম", href: "/destinations?division=Chattogram" },
-    { name: "Sylhet", name_bn: "সিলেট", href: "/destinations?division=Sylhet" },
-    { name: "Khulna", name_bn: "খুলনা", href: "/destinations?division=Khulna" },
-    { name: "Barishal", name_bn: "বরিশাল", href: "/destinations?division=Barishal" },
-    { name: "Dhaka", name_bn: "ঢাকা", href: "/destinations?division=Dhaka" },
-    { name: "Rajshahi", name_bn: "রাজশাহী", href: "/destinations?division=Rajshahi" },
-    { name: "Rangpur", name_bn: "রংপুর", href: "/destinations?division=Rangpur" },
-    { name: "Mymensingh", name_bn: "ময়মনসিংহ", href: "/destinations?division=Mymensingh" },
+    { name: "Chattogram", name_bn: "চট্টগ্রাম", href: "/destinations/division/chattogram" },
+    { name: "Sylhet", name_bn: "সিলেট", href: "/destinations/division/sylhet" },
+    { name: "Khulna", name_bn: "খুলনা", href: "/destinations/division/khulna" },
+    { name: "Barishal", name_bn: "বরিশাল", href: "/destinations/division/barishal" },
+    { name: "Dhaka", name_bn: "ঢাকা", href: "/destinations/division/dhaka" },
+    { name: "Rajshahi", name_bn: "রাজশাহী", href: "/destinations/division/rajshahi" },
+    { name: "Rangpur", name_bn: "রংপুর", href: "/destinations/division/rangpur" },
+    { name: "Mymensingh", name_bn: "ময়মনসিংহ", href: "/destinations/division/mymensingh" },
   ];
 
   return (
@@ -262,7 +262,7 @@ export function Footer() {
                 <p className="text-xs text-[#a3c4b6] mb-4 leading-relaxed">
                   {isBn
                     ? "নতুন নতুন গোপন স্পট এবং বিশ্বস্ত ট্রাভেল গাইডের আপডেটের জন্য আমাদের অফিশিয়াল চ্যানেলে যুক্ত থাকুন।"
-                    : "Follow our official channels for fresh photography, seasonal itineraries, and verified travel tips."}
+                    : "Follow our official channels for fresh photography, seasonal itineraries, and curated travel tips."}
                 </p>
                 <div className="flex flex-wrap items-center gap-2.5 pt-1">
                   {FOOTER_CONFIG.socialLinks.map((social) => (

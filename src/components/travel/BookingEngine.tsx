@@ -54,7 +54,8 @@ export type ScheduleItem = {
   arrive: string;
   fare: number;
   seatsLeft: number;
-  rating: number;
+  rating?: number;
+  lastChecked?: string;
   boarding: string[];
   dropping: string[];
 };
@@ -471,7 +472,11 @@ export default function BookingEngine({
                     <span className="px-2 py-0.5 rounded-full text-xs font-extrabold uppercase bg-[var(--surface)] border border-[var(--glass-border)]">
                       {item.type}
                     </span>
-                    <span className="text-xs font-bold text-[#f4a340]">★ {item.rating}</span>
+                    {item.lastChecked && (
+                      <span className="text-[11px] font-medium text-[var(--text-muted)]">
+                        {isBn ? `যাচাই: ${item.lastChecked}` : `Last checked: ${item.lastChecked}`}
+                      </span>
+                    )}
                   </div>
                   <p className="text-xs font-medium text-[var(--text-muted)] line-clamp-1">
                     {item.coach}

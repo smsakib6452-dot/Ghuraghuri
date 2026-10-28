@@ -104,14 +104,18 @@ export function DivisionsSection() {
             return (
               <Link
                 key={division.name}
-                href={`/destinations?division=${division.name}`}
+                href={`/destinations/division/${division.name.toLowerCase()}`}
                 className="group relative h-[150px] sm:h-72 rounded-2xl overflow-hidden border border-[var(--glass-border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <Image
                   src={division.image}
-                  alt={division.name}
+                  alt={
+                    isBn
+                      ? `${division.name_bn || division.name} বিভাগ — ${formatDigits(displayCount, true)}টি পর্যটন স্পট দেখুন`
+                      : `${division.name} Division scenic view — Explore ${displayCount} destinations`
+                  }
                   fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 280px"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* WCAG AA Compliant High-Contrast Scrim Overlay */}

@@ -82,7 +82,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "very_high",
+    "popularity": 100,
     "status": "active",
     "tags": [
       "beach"
@@ -184,7 +184,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "very_high",
+    "popularity": 99,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -286,7 +286,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "very_high",
+    "popularity": 98,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -385,7 +385,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "high",
+    "popularity": 93,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -483,7 +483,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "very_high",
+    "popularity": 95,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -505,6 +505,7 @@
     "name": "Srimangal",
     "name_bn": "শ্রীমঙ্গল",
     "slug": "srimangal",
+    "altName": "Sreemangal",
     "division": "Sylhet",
     "district": "Moulvibazar",
     "upazila": "",
@@ -529,7 +530,7 @@
       "photo-1473448912268-2022ce9509d8"
     ],
     "shortDesc": "The 'Tea Capital of Bangladesh' — endless emerald tea estates and the famous Lawachara rainforest.",
-    "description": "Srimangal sits at the heart of Bangladesh's tea country, where the landscape rolls into a hundred shades of green. Wake to mist over tea bushes, ride the narrow gauge train through plantations, and walk beneath the giants of Lawachara National Park. Spot gibbons in the canopy, taste the freshest tea in the world's tea garden, and visit the Monipuri silk village.",
+    "description": "Srimangal (also commonly spelled Sreemangal) sits at the heart of Bangladesh's tea country, where the landscape rolls into a hundred shades of green. Wake to mist over tea bushes, ride the narrow gauge train through plantations, and walk beneath the giants of Lawachara National Park. Spot gibbons in the canopy, taste the freshest tea in the world's tea garden, and visit the Monipuri silk village.",
     "bestTime": "November – February",
     "recommendedDays": "2 – 3 days",
     "difficulty": "Easy",
@@ -583,7 +584,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "high",
+    "popularity": 94,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -683,7 +684,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "very_high",
+    "popularity": 97,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -782,7 +783,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "very_high",
+    "popularity": 96,
     "status": "active",
     "tags": [
       "beach"
@@ -881,7 +882,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "high",
+    "popularity": 92,
     "status": "active",
     "tags": [
       "beach"
@@ -979,7 +980,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": false,
-    "popularity": "high",
+    "popularity": 88,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -1073,7 +1074,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": false,
-    "popularity": "high",
+    "popularity": 87,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -1167,7 +1168,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": false,
-    "popularity": "medium",
+    "popularity": 91,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -1362,7 +1363,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": false,
-    "popularity": "high",
+    "popularity": 86,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -1456,7 +1457,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": false,
-    "popularity": "medium",
+    "popularity": 85,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -1553,7 +1554,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": false,
-    "popularity": "high",
+    "popularity": 83,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -1671,7 +1672,7 @@
     ],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "high",
+    "popularity": 82,
     "status": "active",
     "tags": [
       "clay hills",
@@ -1796,7 +1797,7 @@
     ],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "very_high",
+    "popularity": 84,
     "status": "active",
     "tags": [
       "mosque",
@@ -1899,7 +1900,7 @@
     "nearby_destinations": [],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "high",
+    "popularity": 89,
     "status": "active",
     "tags": [],
     "travelInfo": {
@@ -2023,7 +2024,7 @@
     ],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "high",
+    "popularity": 81,
     "status": "active",
     "tags": [
       "buddhist",
@@ -10559,7 +10560,7 @@
     ],
     "nearby_hotels": [],
     "featured": true,
-    "popularity": "high",
+    "popularity": 90,
     "status": "active",
     "tags": [
       "peak",

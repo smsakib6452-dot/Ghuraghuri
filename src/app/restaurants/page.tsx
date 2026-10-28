@@ -166,9 +166,9 @@ export default function RestaurantsPage() {
                 {item.image ? (
                   <Image
                     src={item.image}
-                    alt={item.name}
+                    alt={`${item.name} (${item.cuisine}) in ${item.hubName}`}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (

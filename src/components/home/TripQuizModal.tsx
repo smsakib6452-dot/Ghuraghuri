@@ -59,7 +59,7 @@ export function TripQuizModal() {
       };
     } else if (selectedVibe === "tea") {
       pick = {
-        name: "Sreemangal",
+        name: "Srimangal",
         name_bn: "শ্রীমঙ্গল",
         slug: "srimangal",
         tagline: "Rolling tea slopes and pure serenity.",
@@ -94,7 +94,7 @@ export function TripQuizModal() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold mb-4 backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-[#f4a340]" />
-            <span>{isBn ? "স্মার্ট ট্রিপ ম্যাচমেকার" : "AI Trip Matcher"}</span>
+            <span>{isBn ? "ট্রিপ ম্যাচমেকার" : "Trip Matcher"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-black mb-3">
             {isBn ? "কোথায় যাবেন সিদ্ধান্ত নিতে পারছেন না?" : "Undecided Where to Go Next?"}
@@ -102,7 +102,7 @@ export function TripQuizModal() {
           <p className="text-sm sm:text-base text-[#d4ebe0] max-w-xl mx-auto mb-6">
             {isBn
               ? "মাত্র ২০ সেকেন্ডের কুইজে খুঁজে নিন আপনার পছন্দ ও বাজেট অনুযায়ী নিখুঁত পর্যটন স্পট।"
-              : "Answer 2 quick questions and let our intelligent explorer pinpoint your dream destination."}
+              : "Answer 2 quick questions and let our curated trip explorer pinpoint your dream destination."}
           </p>
           <button
             onClick={handleStart}

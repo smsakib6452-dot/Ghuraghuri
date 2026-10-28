@@ -85,7 +85,7 @@ const HERO_SLIDES: HeroSlide[] = [
     id: 3,
     image: "/assets/destinations/srimangal.webp",
     slug: "srimangal",
-    title: "Sreemangal",
+    title: "Srimangal",
     title_bn: "শ্রীমঙ্গল",
     location: "Moulvibazar · Tea Capital",
     location_bn: "মৌলভীবাজার · চায়ের রাজধানী",
@@ -141,7 +141,7 @@ export function HeroSection() {
   const [liveWeather, setLiveWeather] = useState<{
     coxsBazar: number | null;
     sajek: number | null;
-    sreemangal: number | null;
+    srimangal: number | null;
     khulna: number | null;
     lastUpdated: Date | null;
     isLoading: boolean;
@@ -149,7 +149,7 @@ export function HeroSection() {
   }>({
     coxsBazar: 33,
     sajek: 32,
-    sreemangal: 33,
+    srimangal: 33,
     khulna: 33,
     lastUpdated: null,
     isLoading: true,
@@ -166,24 +166,37 @@ export function HeroSection() {
   useEffect(() => {
     let isSubscribed = true;
     const fetchLivePulse = async () => {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 6000);
+
       try {
         const res = await fetch(
-          "https://api.open-meteo.com/v1/forecast?latitude=21.4272,23.3820,24.3065,22.8456&longitude=92.0058,92.2938,91.7296,89.5403&current=temperature_2m&timezone=Asia%2FDhaka"
+          "https://api.open-meteo.com/v1/forecast?latitude=21.4272,23.3820,24.3065,22.8456&longitude=92.0058,92.2938,91.7296,89.5403&current=temperature_2m&timezone=Asia%2FDhaka",
+          { signal: controller.signal }
         );
+        clearTimeout(timeoutId);
         if (!res.ok) throw new Error("Weather fetch failed");
         const data = await res.json();
         if (Array.isArray(data) && data.length >= 4 && isSubscribed) {
           setLiveWeather({
             coxsBazar: Math.round(data[0].current.temperature_2m),
             sajek: Math.round(data[1].current.temperature_2m),
-            sreemangal: Math.round(data[2].current.temperature_2m),
+            srimangal: Math.round(data[2].current.temperature_2m),
             khulna: Math.round(data[3].current.temperature_2m),
             lastUpdated: new Date(),
             isLoading: false,
             isError: false,
           });
+        } else if (isSubscribed) {
+          setLiveWeather((prev) => ({
+            ...prev,
+            isLoading: false,
+            isError: true,
+            lastUpdated: prev.lastUpdated || new Date(),
+          }));
         }
       } catch {
+        clearTimeout(timeoutId);
         if (isSubscribed) {
           setLiveWeather((prev) => ({
             ...prev,
@@ -270,7 +283,8 @@ export function HeroSection() {
   };
 
   const currentSlide = HERO_SLIDES[activeSlide];
-  const isCurrentBookmarked = isBookmarked(currentSlide.id);
+  const spotlightSlide = HERO_SLIDES[(activeSlide + 1) % HERO_SLIDES.length];
+  const isSpotlightBookmarked = isBookmarked(spotlightSlide.id);
 
   return (
     <section
@@ -290,7 +304,11 @@ export function HeroSection() {
             >
               <Image
                 src={slide.image}
-                alt={slide.title}
+                alt={
+                  isBn
+                    ? `${slide.title_bn}, ${slide.location_bn}: ${slide.tagline_bn}`
+                    : `${slide.title} in ${slide.location}: ${slide.tagline}`
+                }
                 fill
                 sizes="100vw"
                 priority={idx === 0}
@@ -410,7 +428,8 @@ export function HeroSection() {
                         <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-gray-200">
                           <Image
                             src={item.image.startsWith("http") || item.image.startsWith("/") ? item.image : `/${item.image.replace(/^\/+/, "")}`}
-                            alt={item.name}
+                            alt=""
+                            aria-hidden="true"
                             fill
                             sizes="40px"
                             loading="lazy"
@@ -486,7 +505,7 @@ export function HeroSection() {
               {[
                 { name: "Sajek Valley", name_bn: "সাজেক", slug: "sajek-valley" },
                 { name: "Cox's Bazar", name_bn: "কক্সবাজার", slug: "coxs-bazar" },
-                { name: "Sreemangal", name_bn: "শ্রীমঙ্গল", slug: "srimangal" },
+                { name: "Srimangal", name_bn: "শ্রীমঙ্গল", slug: "srimangal" },
                 { name: "Tanguar Haor", name_bn: "টাঙ্গুয়ার হাওর", slug: "tanguar-haor" },
                 { name: "Sundarbans", name_bn: "সুন্দরবন", slug: "sundarbans" },
                 { name: "Nilgiri", name_bn: "নীলগিরি", slug: "nilgiri" },
@@ -517,27 +536,31 @@ export function HeroSection() {
                 <div className="flex items-center gap-2 shrink-0">
                   <button
                     type="button"
-                    onClick={() => toggleBookmark(currentSlide.id)}
+                    onClick={() => toggleBookmark(spotlightSlide.id)}
                     className="p-1.5 rounded-full bg-black/40 hover:bg-black/60 border border-white/15 text-white transition-colors cursor-pointer shrink-0"
-                    title={isCurrentBookmarked ? "Remove from saved" : "Save destination"}
-                    aria-label={isCurrentBookmarked ? "Remove from bookmarks" : "Add to bookmarks"}
+                    title={isSpotlightBookmarked ? "Remove from saved" : "Save destination"}
+                    aria-label={isSpotlightBookmarked ? "Remove from bookmarks" : "Add to bookmarks"}
                   >
                     <Bookmark
                       className={`w-4 h-4 ${
-                        isCurrentBookmarked ? "fill-[#F4A340] text-[#F4A340]" : "text-white/80"
+                        isSpotlightBookmarked ? "fill-[#F4A340] text-[#F4A340]" : "text-white/80"
                       }`}
                     />
                   </button>
                 </div>
               </div>
 
-              {/* Spotlight Image Card */}
-              <div className="relative aspect-[16/10] sm:aspect-auto h-52 sm:h-60 rounded-2xl overflow-hidden mb-4 group">
+              {/* Spotlight Image Card - Fixed Aspect Ratio prevents CLS */}
+              <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-4 group bg-[#061B14]">
                 <Image
-                  src={currentSlide.image}
-                  alt={currentSlide.title}
+                  src={spotlightSlide.image}
+                  alt={
+                    isBn
+                      ? `${spotlightSlide.title_bn}, ${spotlightSlide.location_bn} — স্পটলাইট ভ্রমণ গন্তব্য`
+                      : `${spotlightSlide.title} in ${spotlightSlide.location} — Featured Spotlight Destination`
+                  }
                   fill
-                  sizes="(max-width: 1024px) 92vw, 440px"
+                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 50vw, 440px"
                   loading="lazy"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -545,11 +568,11 @@ export function HeroSection() {
                 
                 <div className="absolute bottom-3 left-3 right-3 text-white">
                   <h2 className="text-2xl sm:text-3xl font-black drop-shadow-md">
-                    {isBn ? currentSlide.title_bn : currentSlide.title}
+                    {isBn ? spotlightSlide.title_bn : spotlightSlide.title}
                   </h2>
                   <p className="text-xs text-[#D1E0D8] font-medium flex items-center gap-1.5 mt-0.5">
                     <MapPin className="w-3.5 h-3.5 text-[#F4A340]" />
-                    <span>{isBn ? currentSlide.location_bn : currentSlide.location}</span>
+                    <span>{isBn ? spotlightSlide.location_bn : spotlightSlide.location}</span>
                   </p>
                 </div>
               </div>
@@ -557,11 +580,11 @@ export function HeroSection() {
               {/* Spotlight Description & Tags */}
               <div className="space-y-3.5">
                 <p className="text-xs sm:text-sm text-[#D1E0D8] leading-relaxed line-clamp-2">
-                  {isBn ? currentSlide.tagline_bn : currentSlide.tagline}
+                  {isBn ? spotlightSlide.tagline_bn : spotlightSlide.tagline}
                 </p>
 
                 <div className="flex flex-wrap items-center gap-1.5">
-                  {(isBn && currentSlide.tags_bn ? currentSlide.tags_bn : currentSlide.tags).map((tag) => (
+                  {(isBn && spotlightSlide.tags_bn ? spotlightSlide.tags_bn : spotlightSlide.tags).map((tag) => (
                     <span
                       key={tag}
                       className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 text-xs font-semibold text-white/90"
@@ -573,7 +596,7 @@ export function HeroSection() {
 
                 {/* Explore CTA Button */}
                 <Link
-                  href={`/destinations/${currentSlide.slug}`}
+                  href={`/destinations/${spotlightSlide.slug}`}
                   className="w-full mt-2 min-h-[42px] py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#10B981] to-[#0f4a38] hover:from-[#35D07F] hover:to-[#10B981] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   <span>{isBn ? "গন্তব্যের বিস্তারিত দেখুন" : "Explore Destination"}</span>
@@ -628,15 +651,24 @@ export function HeroSection() {
             <div className="overflow-hidden relative flex-1 min-w-0">
               <div className="whitespace-nowrap flex items-center gap-6 text-white/95 text-xs font-medium animate-marquee hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-reduce:[animation-play-state:paused]">
                 <span>
-                  {`${isBn ? "🏖️ কক্সবাজার" : "🏖️ Cox's Bazar"} ${liveWeather.coxsBazar !== null ? formatDigits(liveWeather.coxsBazar, isBn) : "২৮"}°C · ${isBn ? "☁️ সাজেক" : "☁️ Sajek"} ${liveWeather.sajek !== null ? formatDigits(liveWeather.sajek, isBn) : "২২"}°C · ${isBn ? "🍵 শ্রীমঙ্গল" : "🍵 Sreemangal"} ${liveWeather.sreemangal !== null ? formatDigits(liveWeather.sreemangal, isBn) : "২৪"}°C · ${isBn ? "🐅 খুলনা" : "🐅 Khulna"} ${liveWeather.khulna !== null ? formatDigits(liveWeather.khulna, isBn) : "২৬"}°C`}
+                  {`${isBn ? "🏖️ কক্সবাজার" : "🏖️ Cox's Bazar"} ${liveWeather.coxsBazar !== null ? formatDigits(liveWeather.coxsBazar, isBn) : "২৮"}°C · ${isBn ? "☁️ সাজেক" : "☁️ Sajek"} ${liveWeather.sajek !== null ? formatDigits(liveWeather.sajek, isBn) : "২২"}°C · ${isBn ? "🍵 শ্রীমঙ্গল" : "🍵 Srimangal"} ${liveWeather.srimangal !== null ? formatDigits(liveWeather.srimangal, isBn) : "২৪"}°C · ${isBn ? "🐅 খুলনা" : "🐅 Khulna"} ${liveWeather.khulna !== null ? formatDigits(liveWeather.khulna, isBn) : "২৬"}°C`}
                 </span>
                 <span aria-hidden="true">
-                  {`${isBn ? "🏖️ কক্সবাজার" : "🏖️ Cox's Bazar"} ${liveWeather.coxsBazar !== null ? formatDigits(liveWeather.coxsBazar, isBn) : "২৮"}°C · ${isBn ? "☁️ সাজেক" : "☁️ Sajek"} ${liveWeather.sajek !== null ? formatDigits(liveWeather.sajek, isBn) : "২২"}°C · ${isBn ? "🍵 শ্রীমঙ্গল" : "🍵 Sreemangal"} ${liveWeather.sreemangal !== null ? formatDigits(liveWeather.sreemangal, isBn) : "২৪"}°C · ${isBn ? "🐅 খুলনা" : "🐅 Khulna"} ${liveWeather.khulna !== null ? formatDigits(liveWeather.khulna, isBn) : "২৬"}°C`}
+                  {`${isBn ? "🏖️ কক্সবাজার" : "🏖️ Cox's Bazar"} ${liveWeather.coxsBazar !== null ? formatDigits(liveWeather.coxsBazar, isBn) : "২৮"}°C · ${isBn ? "☁️ সাজেক" : "☁️ Sajek"} ${liveWeather.sajek !== null ? formatDigits(liveWeather.sajek, isBn) : "২২"}°C · ${isBn ? "🍵 শ্রীমঙ্গল" : "🍵 Srimangal"} ${liveWeather.srimangal !== null ? formatDigits(liveWeather.srimangal, isBn) : "২৪"}°C · ${isBn ? "🐅 খুলনা" : "🐅 Khulna"} ${liveWeather.khulna !== null ? formatDigits(liveWeather.khulna, isBn) : "২৬"}°C`}
                 </span>
               </div>
             </div>
-            <span className="text-[10px] text-white/50 shrink-0 font-normal hidden lg:inline">
-              {liveWeather.isLoading ? (isBn ? "লোড হচ্ছে..." : "Syncing...") : liveWeather.isError ? (isBn ? "ক্যাশড" : "Cached") : (isBn ? "সরাসরি" : "Live")}
+            <span className="text-[10px] text-white/70 shrink-0 font-medium hidden lg:inline-flex items-center gap-1.5">
+              {liveWeather.isLoading ? (
+                <>
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+                  <span>{isBn ? "সংযুক্ত হচ্ছে..." : "Connecting..."}</span>
+                </>
+              ) : liveWeather.isError ? (
+                <span>{isBn ? "ক্যাশড" : "Cached"}</span>
+              ) : (
+                <span className="text-[#35D07F] font-semibold">{isBn ? "সরাসরি" : "Live"}</span>
+              )}
             </span>
             <Link
               href="/weather"

@@ -16,9 +16,10 @@
     <meta property="og:url" content="https://ghuraghuri.vercel.app/chattogram" />
     <meta property="og:title" content="My Chattogram — চট্টগ্রামকে আপনি কতটা চেনেন?" />
     <meta property="og:description" content="নিজের চট্টগ্রামটা মানচিত্রে তৈরি করুন এবং ডাউনলোড করুন আপনার ব্যক্তিগত চাটগাঁ স্মৃতি পোস্টার।" />
-    <meta property="og:image" content="https://ghuraghuri.vercel.app/og-default.jpg" />
+    <meta property="og:image" content="https://ghuraghuri.vercel.app/og-chattogram.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="My Chattogram — Interactive Travel Map & Poster Studio" />
     <meta property="og:locale" content="bn_BD" />
 
     <!-- Twitter / X Cards -->
@@ -26,7 +27,7 @@
     <meta name="twitter:url" content="https://ghuraghuri.vercel.app/chattogram" />
     <meta name="twitter:title" content="My Chattogram — চট্টগ্রামকে আপনি কতটা চেনেন?" />
     <meta name="twitter:description" content="নিজের চট্টগ্রামটা মানচিত্রে তৈরি করুন এবং ডাউনলোড করুন আপনার ব্যক্তিগত চাটগাঁ স্মৃতি পোস্টার।" />
-    <meta name="twitter:image" content="https://ghuraghuri.vercel.app/og-default.jpg" />
+    <meta name="twitter:image" content="https://ghuraghuri.vercel.app/og-chattogram.jpg" />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -96,7 +97,7 @@
                 <nav class="ctg-nav-main-links" aria-label="মূল সাইট লিঙ্ক">
                     <a href="/destinations" class="ctg-nav-sublink">Destinations</a>
                     <span class="ctg-nav-sublink-dot" aria-hidden="true">·</span>
-                    <a href="/transport" class="ctg-nav-sublink">Map</a>
+                    <a href="/#map" class="ctg-nav-sublink">Map</a>
                     <span class="ctg-nav-sublink-dot" aria-hidden="true">·</span>
                     <a href="/hotels" class="ctg-nav-sublink">Hotels</a>
                 </nav>
@@ -794,7 +795,7 @@
                                 </div>
                                 <div class="ctg-exp-preview-chip ctg-chip-cyan">
                                     <span class="ctg-chip-icon">🗺️</span>
-                                    <span>১০৫টি দর্শনীয় স্থান <strong>• ট্রাভেল বাকেটলিস্ট</strong></span>
+                                    <span id="placesExpChipCount">১০৫টি দর্শনীয় স্থান <strong>• ট্রাভেল বাকেটলিস্ট</strong></span>
                                 </div>
                             </div>
                             <div class="ctg-exp-body">
@@ -1719,7 +1720,7 @@
                     <div class="ctg-section-head ctg-section-head-center ctg-reveal">
                         <span class="ctg-section-tag">MY CHATTOGRAM · EXPERIENCE 04</span>
                         <h2 class="ctg-section-title">চট্টগ্রাম বিভাগের কোথায় কোথায় গিয়েছেন?</h2>
-                        <p class="ctg-section-desc">১০৫টি দর্শনীয় স্থানের মধ্য থেকে আপনার ঘুরে দেখা স্থানগুলো নির্বাচন করে সোশ্যাল পোস্টার তৈরি করুন।</p>
+                        <p class="ctg-section-desc" id="placesExpSectionDesc">১০৫টি দর্শনীয় স্থানের মধ্য থেকে আপনার ঘুরে দেখা স্থানগুলো নির্বাচন করে সোশ্যাল পোস্টার তৈরি করুন।</p>
                     </div>
 
                     <!-- 3-Column Studio Layout -->
@@ -1840,7 +1841,7 @@
                                 <div class="ctg-poster-live-header">
                                     <div class="ctg-poster-live-titles">
                                         <h2 class="ctg-poster-live-title" id="placesPosterLiveTitle">আমার ঘোরা জায়গাগুলো</h2>
-                                        <p class="ctg-poster-live-subtitle">১০৫টি দর্শনীয় স্থানের ভ্রমণ মানচিত্র</p>
+                                        <p class="ctg-poster-live-subtitle" id="placesPosterLiveSubtitle">১০৫টি দর্শনীয় স্থানের ভ্রমণ মানচিত্র</p>
                                     </div>
                                     <div class="ctg-poster-live-top-rating" id="placesPosterLiveCard">
                                         <div class="ctg-poster-live-count" id="placesPosterLiveCount">০০ / ১০৫</div>
