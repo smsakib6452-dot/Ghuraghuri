@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type * as Leaflet from "leaflet";
+import "leaflet/dist/leaflet.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useApp } from "@/context/AppContext";
