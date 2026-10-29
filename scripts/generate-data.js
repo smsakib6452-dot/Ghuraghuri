@@ -164,7 +164,9 @@ const searchIndexData = {
 };
 
 const searchOutPath = path.resolve(__dirname, '../src/data/search-index.json');
+const publicSearchOutPath = path.resolve(__dirname, '../public/data/search-index.json');
 fs.writeFileSync(searchOutPath, JSON.stringify(searchIndexData) + '\n');
+fs.writeFileSync(publicSearchOutPath, JSON.stringify(searchIndexData) + '\n');
 
 console.log(`[generate-data] Verified and generated build-time constants:`);
 console.log(`  - Total Destinations: ${totalDestinations}`);

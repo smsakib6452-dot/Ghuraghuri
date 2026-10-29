@@ -51,14 +51,6 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
     remotePatterns: [],
   },
-  turbopack: {
-    rules: {
-      "src/**/*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
   async redirects() {
     return [
       {
