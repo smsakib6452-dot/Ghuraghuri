@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import destinationsData from "@/data/destinations.json";
 import translationsData from "@/data/translations.json";
-import { Destination } from "@/types/destination";
+import { Destination, DestinationTranslation } from "@/types/destination";
 import { JsonLd, getTouristAttractionSchema, getBreadcrumbListSchema } from "@/components/seo/JsonLd";
 import { DestinationDetailClient } from "@/components/destinations/DestinationDetailClient";
 import { SITE_URL } from "@/lib/constants";
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `${destination.name} Travel Guide`;
   const desc = destination.shortDesc;
-  const ogImgUrl = `${SITE_URL}/assets/og/destinations/${destination.slug}.jpg`;
+  const ogImgUrl = `${SITE_URL}/og/destinations/${destination.slug}.jpg`;
 
   return {
     title,
@@ -99,7 +99,7 @@ export default async function DestinationDetailPage({ params }: Props) {
     .filter((d) => d.division === destination.division && d.id !== destination.id)
     .slice(0, 3);
 
-  const destinationTranslation = (translationsData as Record<string, any>)[destination.slug] || null;
+  const destinationTranslation = (translationsData as Record<string, DestinationTranslation>)[destination.slug] || null;
 
   return (
     <>

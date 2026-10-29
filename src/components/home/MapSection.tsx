@@ -6,7 +6,6 @@ import "leaflet/dist/leaflet.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useApp } from "@/context/AppContext";
-import destinationsData from "@/data/destinations.json";
 import { Destination } from "@/types/destination";
 import {
   MapPin,
@@ -23,19 +22,21 @@ import {
 import { TOTAL_DESTINATIONS, DIVISION_COUNTS } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { formatDigits, getDistrictBn, getDivisionBn, CATEGORIES_BN } from "@/lib/i18n";
-import translationsData from "@/data/translations.json";
 
-const translations: Record<string, { shortDesc?: string; name_bn?: string }> =
-  translationsData as unknown as Record<string, { shortDesc?: string; name_bn?: string }>;
-
-
-const allDestinations = (destinationsData as unknown as Destination[]).filter(
-  (d) =>
-    typeof d.latitude === "number" &&
-    typeof d.longitude === "number" &&
-    d.latitude !== 0 &&
-    d.longitude !== 0
-);
+interface MapDestRawItem {
+  id: number;
+  slug: string;
+  name: string;
+  name_bn: string;
+  lat: number;
+  lng: number;
+  div: string;
+  dist: string;
+  cat: string;
+  img: string;
+  desc: string;
+  desc_bn: string;
+}
 
 interface ClusterItem {
   id: string;
@@ -49,17 +50,48 @@ export function MapSection() {
   const { language, theme } = useApp();
   const isBn = language === "bn";
 
+  const [destinations, setDestinations] = useState<Destination[]>([]);
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<Leaflet.Map | null>(null);
   const tileLayerRef = useRef<Leaflet.TileLayer | null>(null);
   const markersLayerRef = useRef<Leaflet.LayerGroup | null>(null);
 
   const [selectedDivision, setSelectedDivision] = useState<string>("all");
-  const [activeSpot, setActiveSpot] = useState<Destination | null>(null);
+  const [activeSpot, setActiveSpot] = useState<(Destination & { shortDesc_bn?: string }) | null>(null);
   const [currentZoom, setCurrentZoom] = useState<number>(7);
   const [showTouchHint, setShowTouchHint] = useState<boolean>(false);
   const touchHintTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const updateMapMarkersRef = useRef<((L: typeof Leaflet) => Promise<void>) | null>(null);
+
+  // Asynchronously load slim map coordinates and descriptions on-demand
+  useEffect(() => {
+    let isCancelled = false;
+    fetch("/data/map-destinations.json")
+      .then((res) => res.json())
+      .then((items: MapDestRawItem[]) => {
+        if (isCancelled) return;
+        const mapped: (Destination & { shortDesc_bn?: string })[] = items.map((it) => ({
+          id: it.id,
+          slug: it.slug,
+          name: it.name,
+          name_bn: it.name_bn,
+          latitude: it.lat,
+          longitude: it.lng,
+          division: it.div,
+          district: it.dist,
+          category: it.cat,
+          image: it.img,
+          shortDesc: it.desc,
+          shortDesc_bn: it.desc_bn,
+        } as unknown as Destination & { shortDesc_bn?: string }));
+        setDestinations(mapped);
+      })
+      .catch((err) => console.error("Failed to load map spots:", err));
+
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
 
   const divisions = useMemo(
     () => [
@@ -86,9 +118,9 @@ export function MapSection() {
 
   // Filter destinations based on active division
   const filteredDestinations = useMemo(() => {
-    if (selectedDivision === "all") return allDestinations;
-    return allDestinations.filter((d) => d.division === selectedDivision);
-  }, [selectedDivision]);
+    if (selectedDivision === "all") return destinations;
+    return destinations.filter((d) => d.division === selectedDivision);
+  }, [selectedDivision, destinations]);
 
   // Spatial clustering algorithm
   const computeClusters = useCallback(
@@ -647,8 +679,8 @@ export function MapSection() {
                     </p>
 
                     <p className="text-xs text-foreground/85 line-clamp-2 leading-relaxed pt-0.5">
-                      {isBn && translations[activeSpot.slug]?.shortDesc
-                        ? translations[activeSpot.slug].shortDesc
+                      {isBn
+                        ? (activeSpot.shortDesc_bn || activeSpot.shortDesc)
                         : activeSpot.shortDesc}
                     </p>
 

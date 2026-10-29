@@ -9,7 +9,7 @@ import { TOTAL_DESTINATIONS, SITE_URL } from "@/lib/constants";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: ["400", "600", "700"],
   display: "swap",
   preload: true,
   variable: "--font-sans",
@@ -52,11 +52,11 @@ export const metadata: Metadata = {
     description: `Discover ${TOTAL_DESTINATIONS}+ authentic tourist spots, pristine beaches, hills, and heritage sites of Bangladesh.`,
     images: [
       {
-        url: `${SITE_URL}/og-default.jpg`,
+        url: `${SITE_URL}/og/home.jpg`,
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Sajek Valley — Ghuraghuri Bangladesh Travel Explorer",
+        alt: "Ghuraghuri — Bangladesh Travel Explorer",
       },
     ],
   },
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ghuraghuri — Bangladesh Travel Explorer",
     description: `Discover ${TOTAL_DESTINATIONS}+ authentic tourist spots across Bangladesh.`,
-    images: [`${SITE_URL}/og-default.jpg`],
+    images: [`${SITE_URL}/og/home.jpg`],
   },
   icons: {
     icon: "/favicon.svg",
@@ -103,6 +103,12 @@ export default function RootLayout({
         className={`${plusJakartaSans.variable} ${hindSiliguri.variable} font-sans min-h-screen flex flex-col bg-[#fbfdfc] dark:bg-[#061510] text-[#0d211a] dark:text-[#f0f7f4] antialiased selection:bg-[#0f4a38] selection:text-white`}
       >
         <AppProvider>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#0f4a38] focus:text-white focus:rounded-xl focus:shadow-2xl focus:font-bold focus:outline-none focus:ring-2 focus:ring-[#f4a340]"
+          >
+            Skip to main content
+          </a>
           <Header />
           <main id="main-content" className="flex-1 w-full" tabIndex={-1}>
             {children}

@@ -4,13 +4,8 @@ import React, { useState, useEffect, useMemo } from "react";
 import {
   Train,
   Bus,
-  Hotel,
-  UtensilsCrossed,
   Ticket,
-  Calendar,
-  Users,
   Clock,
-  MapPin,
   CheckCircle2,
   Printer,
   Trash2,
@@ -18,7 +13,6 @@ import {
   ExternalLink,
   ChevronRight,
   ShieldAlert,
-  Calculator,
   Compass,
   PhoneCall,
   MessageCircle,
@@ -148,36 +142,46 @@ const BOGIES = ["ক (Ka)", "খ (Kha)", "গ (Ga)", "ঘ (Gha)", "ঙ (Uma)", "
 const STORAGE_KEY = "ghuraghuri_user_bookings";
 
 interface BookingEngineProps {
+  initialCorridor?: string;
   currentDestination: string;
   isBn: boolean;
   externalTrigger?: {
     type: "hotel" | "restaurant";
-    item: any;
+    item: { name: string; address: string; price?: number };
   } | null;
   onClearTrigger?: () => void;
 }
 
+function getCorridorFromDestination(dest?: string): string {
+  const q = (dest || "").toLowerCase();
+  if (q.includes("cox")) return "dhaka-coxs-bazar";
+  if (q.includes("chat") || q.includes("ctg") || q.includes("পতেঙ্গা") || q.includes("চট্টগ্রাম")) return "dhaka-chattogram";
+  if (q.includes("sylhet") || q.includes("সিলেট") || q.includes("sreemangal") || q.includes("শ্রীমঙ্গল") || q.includes("jaflong") || q.includes("tanguar")) return "dhaka-sylhet";
+  if (q.includes("sajek") || q.includes("সাজেক") || q.includes("khagrachhari") || q.includes("খাগড়াছড়ি")) return "dhaka-sajek";
+  if (q.includes("barishal") || q.includes("বরিশাল") || q.includes("kuakata") || q.includes("কুয়াকাটা")) return "dhaka-barishal";
+  if (q.includes("rajshahi") || q.includes("রাজশাহী") || q.includes("bogura") || q.includes("বগুড়া")) return "dhaka-rajshahi";
+  if (q.includes("khulna") || q.includes("খুলনা") || q.includes("sundarban") || q.includes("সুন্দরবন")) return "dhaka-khulna";
+  if (q.includes("rangpur") || q.includes("রংপুর") || q.includes("dinajpur") || q.includes("দিনাজপুর")) return "dhaka-rangpur";
+  return "dhaka-coxs-bazar";
+}
+
 export default function BookingEngine({
+  initialCorridor = "dhaka-coxs-bazar",
   currentDestination,
   isBn,
   externalTrigger,
   onClearTrigger,
 }: BookingEngineProps) {
-  // Corridor resolution
-  const [activeCorridor, setActiveCorridor] = useState<string>("dhaka-coxs-bazar");
+  // Corridor resolution (React 19 pure state adjustment from props)
+  const [prevDestination, setPrevDestination] = useState(currentDestination);
+  const [activeCorridor, setActiveCorridor] = useState<string>(() => 
+    currentDestination ? getCorridorFromDestination(currentDestination) : initialCorridor
+  );
 
-  useEffect(() => {
-    const q = (currentDestination || "").toLowerCase();
-    if (q.includes("cox")) setActiveCorridor("dhaka-coxs-bazar");
-    else if (q.includes("chat") || q.includes("ctg") || q.includes("পতেঙ্গা") || q.includes("চট্টগ্রাম")) setActiveCorridor("dhaka-chattogram");
-    else if (q.includes("sylhet") || q.includes("সিলেট") || q.includes("sreemangal") || q.includes("শ্রীমঙ্গল") || q.includes("jaflong") || q.includes("tanguar")) setActiveCorridor("dhaka-sylhet");
-    else if (q.includes("sajek") || q.includes("সাজেক") || q.includes("khagrachhari") || q.includes("খাগড়াছড়ি")) setActiveCorridor("dhaka-sajek");
-    else if (q.includes("barishal") || q.includes("বরিশাল") || q.includes("kuakata") || q.includes("কুয়াকাটা")) setActiveCorridor("dhaka-barishal");
-    else if (q.includes("rajshahi") || q.includes("রাজশাহী") || q.includes("bogura") || q.includes("বগুড়া")) setActiveCorridor("dhaka-rajshahi");
-    else if (q.includes("khulna") || q.includes("খুলনা") || q.includes("sundarban") || q.includes("সুন্দরবন")) setActiveCorridor("dhaka-khulna");
-    else if (q.includes("rangpur") || q.includes("রংপুর") || q.includes("dinajpur") || q.includes("দিনাজপুর")) setActiveCorridor("dhaka-rangpur");
-    else setActiveCorridor("dhaka-coxs-bazar");
-  }, [currentDestination]);
+  if (currentDestination !== prevDestination) {
+    setPrevDestination(currentDestination);
+    setActiveCorridor(getCorridorFromDestination(currentDestination));
+  }
 
   // Modal States
   const [activeModal, setActiveModal] = useState<"transport" | "hotel" | "restaurant" | "confirmation" | "myBookings" | null>(null);
@@ -195,10 +199,12 @@ export default function BookingEngine({
   const [hotelItem, setHotelItem] = useState<{ name: string; address: string; price: number } | null>(null);
   const [htRoomMultiplier, setHtRoomMultiplier] = useState<number>(1.0);
   const [htRoomTitle, setHtRoomTitle] = useState<string>("Standard Deluxe Room");
-  const [htCheckIn, setHtCheckIn] = useState<string>(new Date().toISOString().split("T")[0]);
-  const [htCheckOut, setHtCheckOut] = useState<string>(
-    new Date(Date.now() + 86400000).toISOString().split("T")[0]
-  );
+  const [htCheckIn, setHtCheckIn] = useState<string>(() => new Date().toISOString().split("T")[0]);
+  const [htCheckOut, setHtCheckOut] = useState<string>(() => {
+    const d = new Date();
+    d.setDate(d.getDate() + 1);
+    return d.toISOString().split("T")[0];
+  });
   const [htRooms, setHtRooms] = useState<number>(1);
   const [htGuests, setHtGuests] = useState<number>(2);
   const [htName, setHtName] = useState<string>("");
@@ -206,7 +212,7 @@ export default function BookingEngine({
 
   // Restaurant Reservation Modal State
   const [restItem, setRestItem] = useState<{ name: string; address: string } | null>(null);
-  const [rtDate, setRtDate] = useState<string>(new Date().toISOString().split("T")[0]);
+  const [rtDate, setRtDate] = useState<string>(() => new Date().toISOString().split("T")[0]);
   const [rtTimeSlot, setRtTimeSlot] = useState<string>("08:00 PM");
   const [rtGuests, setRtGuests] = useState<number>(2);
   const [rtName, setRtName] = useState<string>("");
@@ -226,8 +232,9 @@ export default function BookingEngine({
   });
 
   // Listen for external trigger (e.g. user clicked "Book" on a hotel card in page.tsx)
-  useEffect(() => {
-    if (!externalTrigger) return;
+  const [prevTrigger, setPrevTrigger] = useState(externalTrigger);
+  if (externalTrigger && externalTrigger !== prevTrigger) {
+    setPrevTrigger(externalTrigger);
     if (externalTrigger.type === "hotel") {
       setHotelItem({
         name: externalTrigger.item.name,
@@ -242,7 +249,12 @@ export default function BookingEngine({
       });
       setActiveModal("restaurant");
     }
-    if (onClearTrigger) onClearTrigger();
+  }
+
+  useEffect(() => {
+    if (externalTrigger && onClearTrigger) {
+      onClearTrigger();
+    }
   }, [externalTrigger, onClearTrigger]);
 
   const saveVoucher = (voucher: BookingVoucher) => {

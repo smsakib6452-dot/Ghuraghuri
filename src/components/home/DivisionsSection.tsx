@@ -105,6 +105,7 @@ export function DivisionsSection() {
               <Link
                 key={division.name}
                 href={`/destinations/division/${division.name.toLowerCase()}`}
+                prefetch={false}
                 className="group relative h-[150px] sm:h-72 rounded-2xl overflow-hidden border border-[var(--glass-border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <Image
@@ -115,7 +116,7 @@ export function DivisionsSection() {
                       : `${division.name} Division scenic view — Explore ${displayCount} destinations`
                   }
                   fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 175px, (max-width: 1024px) 25vw, 300px"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* WCAG AA Compliant High-Contrast Scrim Overlay */}

@@ -165,6 +165,7 @@ export function ServicesSection() {
 
                   <Link
                     href={item.href}
+                    prefetch={false}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#047857] dark:text-[#2ecc71] group-hover:underline pt-3 border-t border-[var(--glass-border)]"
                   >
                     <span>{isBn ? "বিস্তারিত দেখুন" : "Explore Guide"}</span>

@@ -128,7 +128,7 @@ export function Header() {
             >
               <div className="relative flex items-center h-10 sm:h-12 w-auto">
                 <Image
-                  src="/assets/logo.svg"
+                  src="/assets/logo.webp"
                   alt=""
                   width={160}
                   height={50}
@@ -136,7 +136,7 @@ export function Header() {
                   priority
                 />
                 <Image
-                  src="/assets/logo-dark.svg"
+                  src="/assets/logo-dark.webp"
                   alt=""
                   width={160}
                   height={50}
@@ -161,6 +161,7 @@ export function Header() {
                   <LinkComp
                     key={link.href}
                     href={link.href}
+                    prefetch={isDirect ? undefined : false}
                     className={`flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold transition-all duration-200 ${
                       isActive
                         ? "bg-[#0f4a38] text-white shadow-sm dark:bg-[#10B981] dark:text-black font-bold"
@@ -250,7 +251,7 @@ export function Header() {
             >
               <div className="relative flex items-center h-10 w-auto">
                 <Image
-                  src="/assets/logo.svg"
+                  src="/assets/logo.webp"
                   alt=""
                   width={140}
                   height={44}
@@ -258,7 +259,7 @@ export function Header() {
                   loading="lazy"
                 />
                 <Image
-                  src="/assets/logo-dark.svg"
+                  src="/assets/logo-dark.webp"
                   alt=""
                   width={140}
                   height={44}
@@ -290,6 +291,7 @@ export function Header() {
                 <LinkComp
                   key={link.href}
                   href={link.href}
+                  prefetch={isDirect ? undefined : false}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-base font-bold min-h-[48px] transition-all cursor-pointer ${
                     isActive

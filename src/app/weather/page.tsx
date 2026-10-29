@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useMemo, useRef, Suspense } from "react";
+import React, { useState, useEffect, useMemo, useRef, useCallback, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useApp } from "@/context/AppContext";
-import destinationsData from "@/data/destinations.json";
-import { Destination } from "@/types/destination";
 import {
   CloudSun,
   Sun,
@@ -222,43 +220,82 @@ function formatTimeString(isoString?: string) {
   }
 }
 
+function WeatherSpotSync({
+  allSpots,
+  onSpotResolved,
+}: {
+  allSpots: WeatherSpot[];
+  onSpotResolved: (spot: WeatherSpot) => void;
+}) {
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const spotParam = searchParams.get("spot");
+    if (spotParam) {
+      const match = allSpots.find((s) => s.slug === spotParam);
+      if (match) onSpotResolved(match);
+    }
+  }, [searchParams, allSpots, onSpotResolved]);
+
+  return null;
+}
+
 function WeatherContent() {
   const { language } = useApp();
   const isBn = language === "bn";
-  const searchParams = useSearchParams();
-  const spotParam = searchParams.get("spot");
 
-  // Map ALL 271 Destinations with unique slugs
+  const [extraSpots, setExtraSpots] = useState<WeatherSpot[]>([]);
+
+  useEffect(() => {
+    fetch("/data/map-destinations.json")
+      .then((res) => res.json())
+      .then((items: Array<{
+        name: string;
+        name_bn: string;
+        dist: string;
+        div: string;
+        lat: number;
+        lng: number;
+        img: string;
+        slug: string;
+      }>) => {
+        const loaded: WeatherSpot[] = items.map((it) => ({
+          name: it.name,
+          name_bn: it.name_bn,
+          district: it.dist,
+          division: it.div,
+          lat: it.lat,
+          lng: it.lng,
+          image: it.img,
+          slug: it.slug,
+        }));
+        setExtraSpots(loaded);
+      })
+      .catch(() => {});
+  }, []);
+
+  // Map spots (ICONIC_HUBS initial + full spots on client load)
   const allDestSpots: WeatherSpot[] = useMemo(() => {
+    if (extraSpots.length === 0) return ICONIC_HUBS;
     const seen = new Set<string>();
     const spots: WeatherSpot[] = [];
-    for (const d of destinationsData as unknown as Destination[]) {
+    for (const d of [...ICONIC_HUBS, ...extraSpots]) {
       if (!d.slug || seen.has(d.slug)) continue;
       seen.add(d.slug);
-      spots.push({
-        name: d.name,
-        name_bn: d.name_bn || d.name,
-        district: d.district,
-        division: d.division,
-        lat: d.latitude ?? 23.8103,
-        lng: d.longitude ?? 90.4125,
-        image: d.image || "/assets/destinations/sajek-valley.webp",
-        slug: d.slug,
-      });
+      spots.push(d);
     }
     return spots;
-  }, []);
+  }, [extraSpots]);
 
   // Default to Sajek Valley or spot query param
   const initialSpot = useMemo(() => {
-    if (spotParam) {
-      const match = allDestSpots.find((s) => s.slug === spotParam);
-      if (match) return match;
-    }
     return allDestSpots.find((s) => s.slug === "sajek-valley") || ICONIC_HUBS[0];
-  }, [spotParam, allDestSpots]);
+  }, [allDestSpots]);
 
   const [selectedHub, setSelectedHub] = useState<WeatherSpot>(initialSpot);
+
+  const handleSpotResolved = useCallback((spot: WeatherSpot) => {
+    setSelectedHub(spot);
+  }, []);
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const [allTemps, setAllTemps] = useState<Record<string, number>>({});
@@ -292,14 +329,6 @@ function WeatherContent() {
   const [visibleCount, setVisibleCount] = useState<number>(24);
 
   const heroRef = useRef<HTMLDivElement>(null);
-
-  // Sync spot param if changed
-  useEffect(() => {
-    if (spotParam) {
-      const match = allDestSpots.find((s) => s.slug === spotParam);
-      if (match) setSelectedHub(match);
-    }
-  }, [spotParam, allDestSpots]);
 
   // Search Autocomplete Matching
   const searchResults = useMemo(() => {
@@ -482,6 +511,9 @@ function WeatherContent() {
 
   return (
     <div className="min-h-screen pt-20 pb-20 bg-background relative overflow-hidden transition-colors duration-500">
+      <Suspense fallback={null}>
+        <WeatherSpotSync allSpots={allDestSpots} onSpotResolved={handleSpotResolved} />
+      </Suspense>
       {/* 0. DYNAMIC ATMOSPHERIC SKY CANOPY WITH ANIMATED FLOATING CLOUDS & RADIANT SUN CORONA (Inspired by Reference Image 1 & 3) */}
       <div className="relative w-full overflow-hidden pt-6 pb-4">
         {/* Living Ambient Sky Mesh Backdrop */}
@@ -526,6 +558,15 @@ function WeatherContent() {
                 : "Live Satellite Telemetry Connected • 64 Districts • Real-Time"}
             </span>
           </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight mb-2">
+            {isBn ? "বাংলাদেশ লাইভ আবহাওয়া ও ভ্রমণ পূর্বাভাস" : "Bangladesh 7-Day Live Weather & Climate Guide"}
+          </h1>
+          <p className="text-sm sm:text-base text-[var(--text-muted)] max-w-2xl mx-auto mb-4">
+            {isBn
+              ? "৬৪ জেলার রিয়েল-টাইম তাপমাত্রা, বৃষ্টিপাত আপডেট ও পর্যটন আবহাওয়ার সঠিক নির্দেশিকা।"
+              : "Real-time 7-day weather forecasts, seasonal climate guides, and rain updates across all 64 districts in Bangladesh."}
+          </p>
 
           {/* Dynamic Travel Condition Banner (Live Status) */}
           <div className="mb-4">
@@ -1112,16 +1153,5 @@ function WeatherContent() {
 }
 
 export default function WeatherPage() {
-  return (
-    <Suspense
-      fallback={
-        <div className="min-h-screen pt-36 pb-20 flex flex-col items-center justify-center text-[var(--text-muted)]">
-          <RefreshCw className="w-10 h-10 animate-spin text-[#0f4a38] dark:text-[#2ecc71] mb-3" />
-          <span className="text-sm font-semibold">Loading National Weather Hub...</span>
-        </div>
-      }
-    >
-      <WeatherContent />
-    </Suspense>
-  );
+  return <WeatherContent />;
 }

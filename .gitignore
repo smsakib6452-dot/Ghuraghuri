@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 /scratch/
+/backup-assets/
 
 # debug
 npm-debug.log*

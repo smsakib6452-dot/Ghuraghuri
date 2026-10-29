@@ -27,27 +27,11 @@ export function MapSectionLazy() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
 
+  // If user navigates directly to #map anchor, load immediately
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-
-    if (!("IntersectionObserver" in window)) {
+    if (typeof window !== "undefined" && window.location.hash === "#map") {
       setShouldLoad(true);
-      return;
     }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0]?.isIntersecting) {
-          setShouldLoad(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "400px" }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
   }, []);
 
   return (

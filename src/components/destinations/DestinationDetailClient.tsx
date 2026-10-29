@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useApp } from "@/context/AppContext";
-import { Destination } from "@/types/destination";
+import { Destination, DestinationTranslation } from "@/types/destination";
 import DestinationMap from "@/components/destinations/DestinationMap";
 import DestinationWeather from "@/components/destinations/DestinationWeather";
 import {
@@ -33,7 +33,7 @@ import {
 interface DestinationDetailClientProps {
   destination: Destination;
   related: Destination[];
-  translation?: any;
+  translation?: DestinationTranslation | null;
 }
 
 export function DestinationDetailClient({

@@ -58,6 +58,7 @@ export function FeaturedSection({ destinations }: FeaturedSectionProps) {
 
           <Link
             href="/destinations"
+            prefetch={false}
             className="inline-flex items-center gap-2 text-sm font-bold text-[#047857] dark:text-[#2ecc71] hover:underline"
           >
             <span>

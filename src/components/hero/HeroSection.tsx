@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/context/AppContext";
-import searchIndexData from "@/data/search-index.json";
 import { TOTAL_DESTINATIONS, TOTAL_DIVISIONS, TOTAL_DISTRICTS } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { CATEGORIES_BN, formatDigits } from "@/lib/i18n";
@@ -33,6 +32,34 @@ interface HeroSlide {
   rating_bn: string;
   tags: string[];
   tags_bn: string[];
+}
+
+interface SearchItem {
+  id: number | string;
+  slug: string;
+  name: string;
+  name_bn: string;
+  district: string;
+  division: string;
+  category: string;
+  image: string;
+}
+
+function inflateSearchIndex(data: { v: string[]; t: string[]; c: string[]; i: [string, string, string, number, number, number][] }): SearchItem[] {
+  if (!data || !data.i) return [];
+  return data.i.map(([s, name, name_bn, distIdx, divIdx, catIdx], idx) => {
+    const slug = s || name.toLowerCase().replace(/['\.]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    return {
+      id: idx + 1,
+      slug,
+      name,
+      name_bn,
+      district: data.t[distIdx] || "",
+      division: data.v[divIdx] || "",
+      category: (data.c && data.c[catIdx]) || "",
+      image: `/assets/destinations/${slug}.webp`,
+    };
+  });
 }
 
 const HERO_SLIDES: HeroSlide[] = [
@@ -217,7 +244,31 @@ export function HeroSection() {
   }, []);
 
   const searchBoxRef = useRef<HTMLDivElement>(null);
-  const allDestinations = searchIndexData;
+  const [allDestinations, setAllDestinations] = useState<SearchItem[]>([]);
+  const isSearchLoadedRef = useRef<boolean>(false);
+
+  const loadSearchIndex = useCallback(() => {
+    if (isSearchLoadedRef.current) return;
+    isSearchLoadedRef.current = true;
+    import("@/data/search-index.json").then((mod) => {
+      const data = mod.default || mod;
+      setAllDestinations(inflateSearchIndex(data as any));
+    }).catch(() => {
+      isSearchLoadedRef.current = false;
+    });
+  }, []);
+
+  // Preload search index on browser idle after initial load
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if ("requestIdleCallback" in window) {
+      const handle = (window as any).requestIdleCallback(loadSearchIndex, { timeout: 3500 });
+      return () => (window as any).cancelIdleCallback(handle);
+    } else {
+      const handle = setTimeout(loadSearchIndex, 2500);
+      return () => clearTimeout(handle);
+    }
+  }, [loadSearchIndex]);
 
   // Idle deferral callback for slides 2-5 after slide 1 loads
   const handleFirstSlideLoaded = () => {
@@ -384,12 +435,16 @@ export function HeroSection() {
                     type="text"
                     value={searchQuery}
                     onChange={(e) => {
+                      loadSearchIndex();
                       setSearchQuery(e.target.value);
                       setShowSuggestions(true);
                     }}
                     onFocus={() => {
+                      loadSearchIndex();
                       if (suggestions.length > 0) setShowSuggestions(true);
                     }}
+                    onPointerDown={loadSearchIndex}
+                    onMouseEnter={loadSearchIndex}
                     placeholder={
                       selectedDivision
                         ? isBn
@@ -422,6 +477,7 @@ export function HeroSection() {
                       <Link
                         key={item.id}
                         href={`/destinations/${item.slug}`}
+                        prefetch={false}
                         className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
                         onClick={() => setShowSuggestions(false)}
                       >
@@ -513,6 +569,7 @@ export function HeroSection() {
                 <Link
                   key={pop.slug}
                   href={`/destinations/${pop.slug}`}
+                  prefetch={false}
                   className="shrink-0 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 transition-all font-semibold backdrop-blur-sm"
                 >
                   {isBn ? pop.name_bn : pop.name}
@@ -597,6 +654,7 @@ export function HeroSection() {
                 {/* Explore CTA Button */}
                 <Link
                   href={`/destinations/${spotlightSlide.slug}`}
+                  prefetch={false}
                   className="w-full mt-2 min-h-[42px] py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#10B981] to-[#0f4a38] hover:from-[#35D07F] hover:to-[#10B981] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   <span>{isBn ? "গন্তব্যের বিস্তারিত দেখুন" : "Explore Destination"}</span>
@@ -614,7 +672,7 @@ export function HeroSection() {
           
           {/* 1. Verified Counter Stats */}
           <div className="flex items-center justify-center gap-4 sm:gap-6 shrink-0">
-            <Link href="/destinations" className="flex items-center gap-1.5 group hover:opacity-90 transition-opacity">
+            <Link href="/destinations" prefetch={false} className="flex items-center gap-1.5 group hover:opacity-90 transition-opacity">
               <span className="text-sm sm:text-base font-black text-[#35D07F] tabular-nums">
                 {isBn ? `${formatNumberEnBn(TOTAL_DESTINATIONS, true)}+` : `${TOTAL_DESTINATIONS}+`}
               </span>
@@ -623,7 +681,7 @@ export function HeroSection() {
               </span>
             </Link>
             <span className="text-white/20">•</span>
-            <Link href="/destinations" className="flex items-center gap-1.5 group hover:opacity-90 transition-opacity">
+            <Link href="/destinations" prefetch={false} className="flex items-center gap-1.5 group hover:opacity-90 transition-opacity">
               <span className="text-sm sm:text-base font-black text-[#35D07F] tabular-nums">
                 {formatNumberEnBn(TOTAL_DIVISIONS, isBn)}
               </span>
@@ -632,7 +690,7 @@ export function HeroSection() {
               </span>
             </Link>
             <span className="text-white/20">•</span>
-            <Link href="/destinations" className="flex items-center gap-1.5 group hover:opacity-90 transition-opacity">
+            <Link href="/destinations" prefetch={false} className="flex items-center gap-1.5 group hover:opacity-90 transition-opacity">
               <span className="text-sm sm:text-base font-black text-[#35D07F] tabular-nums">
                 {formatNumberEnBn(TOTAL_DISTRICTS, isBn)}
               </span>

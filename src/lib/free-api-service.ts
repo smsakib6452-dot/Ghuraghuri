@@ -31,7 +31,7 @@ export interface HighwayRouteResult {
   distanceKm: number;
   durationMinutes: number;
   durationHours: number;
-  geometry?: any;
+  geometry?: unknown;
   steps: RouteStep[];
   error?: string;
 }
@@ -226,9 +226,10 @@ export async function getLiveHighwayRoute(
 
       let steps: RouteStep[] = [];
       if (r.legs && r.legs[0] && r.legs[0].steps) {
-        const significant = r.legs[0].steps.filter((s: any) => s.name && s.name.trim().length > 0);
-        const sourceSteps = significant.length ? significant : r.legs[0].steps;
-        steps = sourceSteps.slice(0, 6).map((s: any, idx: number) => {
+        const rawSteps = r.legs[0].steps as Array<{ name?: string; distance: number }>;
+        const significant = rawSteps.filter((s) => s.name && s.name.trim().length > 0);
+        const sourceSteps = significant.length ? significant : rawSteps;
+        steps = sourceSteps.slice(0, 6).map((s, idx: number) => {
           const roadName = s.name && s.name.trim().length ? s.name : "National Highway Corridor";
           const dKm = +(s.distance / 1000).toFixed(1);
           const action = idx === 0 ? "Depart via " : "Follow ";
@@ -294,6 +295,19 @@ export async function getLiveHighwayRoute(
   }
 }
 
+interface OsmRawItem {
+  osm_id?: number | string;
+  display_name?: string;
+  lat: string;
+  lon: string;
+  address?: {
+    suburb?: string;
+    county?: string;
+    city?: string;
+    [key: string]: string | undefined;
+  };
+}
+
 /* ------------------------------------------------------------------ */
 /* 2. NOMINATIM OPENSTREETMAP POI API FOR HOTELS                       */
 /* ------------------------------------------------------------------ */
@@ -334,7 +348,7 @@ export async function getNearbyHotels(
         "/assets/hotels/resort-sajek.webp",
       ];
 
-      const items: OsmHotel[] = list.map((item: any, idx: number) => {
+      const items: OsmHotel[] = (list as OsmRawItem[]).map((item, idx: number) => {
         const rawName = (item.display_name || "").split(",")[0].trim();
         let cleanName = rawName.replace(/^hotel\s+/i, "Hotel ");
         if (!cleanName || cleanName.length < 3) cleanName = `Hotel ${placeName} ${idx + 1}`;
@@ -345,13 +359,13 @@ export async function getNearbyHotels(
         const basePrice = 1800 + ((idx * 850) % 3200);
 
         return {
-          id: `osm:hotel:${item.osm_id}`,
+          id: `osm:hotel:${item.osm_id || idx}`,
           provider: "OpenStreetMap Live",
           name: cleanName,
           address:
             item.address && (item.address.suburb || item.address.county || item.address.city)
               ? `${cleanName}, ${item.address.suburb || item.address.county || item.address.city || placeName}`
-              : item.display_name.split(",").slice(0, 3).join(", "),
+              : (item.display_name || "").split(",").slice(0, 3).join(", "),
           latitude: lat,
           longitude: lon,
           distanceKm: dist,
@@ -425,7 +439,7 @@ export async function getNearbyRestaurants(
         ["Family Diner", "Chinese & Indian", "Mocktails"],
       ];
 
-      const items: OsmRestaurant[] = list.map((item: any, idx: number) => {
+      const items: OsmRestaurant[] = (list as OsmRawItem[]).map((item, idx: number) => {
         const rawName = (item.display_name || "").split(",")[0].trim();
         let cleanName = rawName.replace(/^restaurant\s+/i, "");
         if (!cleanName || cleanName.length < 3 || cleanName.toLowerCase() === "unclassified") {
@@ -438,7 +452,7 @@ export async function getNearbyRestaurants(
         const cList = cuisines[idx % cuisines.length];
 
         return {
-          id: `osm:res:${item.osm_id}`,
+          id: `osm:res:${item.osm_id || idx}`,
           provider: "OpenStreetMap Live",
           name: cleanName,
           address: (item.display_name || "").split(",").slice(0, 3).join(", "),
@@ -498,7 +512,8 @@ export const EMERGENCY_CONTACTS = {
   ] as EmergencyContact[],
 };
 
-export function getEmergencyContacts(_regionKey?: string): EmergencyContact[] {
+export function getEmergencyContacts(regionKey?: string): EmergencyContact[] {
+  void regionKey;
   return [...EMERGENCY_CONTACTS.national];
 }
 
@@ -535,8 +550,8 @@ export function calculateTripBudget(
   persons: number,
   style: "budget" | "standard" | "luxury" = "standard"
 ): BudgetBreakdown {
-  const validDays = Math.max(1, parseInt(days as any, 10) || 3);
-  const validPersons = Math.max(1, parseInt(persons as any, 10) || 2);
+  const validDays = Math.max(1, typeof days === "number" ? days : parseInt(String(days), 10) || 3);
+  const validPersons = Math.max(1, typeof persons === "number" ? persons : parseInt(String(persons), 10) || 2);
 
   const name = (destName || "").toLowerCase();
   const isHill = name.includes("sajek") || name.includes("bandar") || name.includes("rangamati");

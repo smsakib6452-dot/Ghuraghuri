@@ -43,6 +43,8 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     description:
       "Browse 295+ curated travel destinations across Bangladesh. Filter by division, landscape category, or popularity to plan your ideal Bangladesh journey.",
     path: canonicalPath,
+    image: "/og/destinations.jpg",
+    imageAlt: "Explore Destinations Across Bangladesh",
     noIndex: hasFilter,
   });
 }
@@ -181,7 +183,7 @@ export default async function DestinationsPage(props: PageProps) {
                   <DestinationCard
                     key={destination.id}
                     destination={destWithTr}
-                    priority={idx < 4}
+                    priority={idx < 1}
                   />
                 );
               })}

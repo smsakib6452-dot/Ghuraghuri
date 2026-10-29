@@ -57,7 +57,7 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
           src={imageSrc}
           alt={descriptiveAlt}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(50vw - 36px), 286px"
           priority={priority}
           fetchPriority={priority ? "high" : "auto"}
           loading={priority ? undefined : "lazy"}
@@ -75,6 +75,7 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
         {/* Live Weather Quick Icon Button (Accessible 40x40px tap target) */}
         <Link
           href={`/weather?spot=${destination.slug}`}
+          prefetch={false}
           onClick={(e) => e.stopPropagation()}
           className="absolute bottom-3.5 right-3.5 w-10 h-10 min-w-[40px] min-h-[40px] rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md text-[#f4a340] border border-white/20 transition-all shadow-md flex items-center justify-center hover:scale-105 cursor-pointer z-10"
           title={isBn ? `${title}-এর লাইভ আবহাওয়া দেখুন` : `Live weather for ${destination.name}`}
@@ -110,7 +111,7 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
         </div>
 
         <h3 className="text-[1.125rem] font-extrabold text-foreground mb-1.5 group-hover:text-[#047857] dark:group-hover:text-[#2ecc71] transition-colors line-clamp-1 tracking-tight">
-          <Link href={`/destinations/${destination.slug}`} className="hover:underline">
+          <Link href={`/destinations/${destination.slug}`} prefetch={false} className="hover:underline">
             {title}
           </Link>
         </h3>
@@ -150,6 +151,7 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
 
           <Link
             href={`/destinations/${destination.slug}`}
+            prefetch={false}
             className="inline-flex items-center gap-1.5 font-bold text-xs text-[#047857] dark:text-[#2ecc71] bg-[#047857]/10 dark:bg-[#1f9d76]/20 hover:bg-[#047857]/20 px-3 py-1.5 rounded-xl transition-all cursor-pointer"
           >
             <span>{isBn ? "বিস্তারিত" : "Details"}</span>

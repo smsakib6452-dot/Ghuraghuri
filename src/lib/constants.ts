@@ -1,25 +1,16 @@
-import destinationsData from "@/data/destinations.json";
+import generatedCounts from "@/data/generated-counts.json";
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "https://ghuraghuri.vercel.app";
 
 export const CONTACT_EMAIL = "smsakib6452@gmail.com";
 
-export const TOTAL_DESTINATIONS = 295;
-export const TOTAL_DIVISIONS = 8;
-export const TOTAL_DISTRICTS = 64;
+export const TOTAL_DESTINATIONS = generatedCounts.totalDestinations;
+export const TOTAL_DIVISIONS = generatedCounts.totalDivisions;
+export const TOTAL_DISTRICTS = generatedCounts.totalDistricts;
 
-// Canonical destination counts per division
-export const DIVISION_COUNTS: Record<string, number> = {
-  Chattogram: 110,
-  Dhaka: 56,
-  Sylhet: 30,
-  Rajshahi: 27,
-  Khulna: 22,
-  Barishal: 19,
-  Rangpur: 19,
-  Mymensingh: 12,
-};
+// Canonical destination counts per division (computed at build-time from destinations.json)
+export const DIVISION_COUNTS: Record<string, number> = generatedCounts.divisionCounts;
 
 /**
  * 11 High-Level Destination Taxonomy Groups
@@ -74,33 +65,6 @@ export function resolveCategoryGroup(input: string): string | null {
 }
 
 /**
- * Compile-time / Build-time integrity check:
- * Asserts every destination in destinations.json belongs to exactly one category group.
+ * Precomputed canonical counts per category group from destinations.json (computed at build-time)
  */
-const unmappedCategories = new Set<string>();
-for (const dest of destinationsData as Array<{ name: string; category: string }>) {
-  if (!CATEGORY_TO_GROUP[dest.category]) {
-    unmappedCategories.add(dest.category);
-  }
-}
-
-if (unmappedCategories.size > 0) {
-  throw new Error(
-    `[Build-time Error] Unmapped destination categories found in destinations.json: ${Array.from(
-      unmappedCategories
-    ).join(", ")}. Every category must be assigned to an entry in CATEGORY_GROUPS.`
-  );
-}
-
-/**
- * Precomputed counts per category group from destinations.json
- */
-export const CATEGORY_GROUP_COUNTS: Record<string, number> = Object.keys(CATEGORY_GROUPS).reduce(
-  (acc, group) => {
-    acc[group] = (destinationsData as Array<{ category: string }>).filter(
-      (d) => CATEGORY_TO_GROUP[d.category] === group
-    ).length;
-    return acc;
-  },
-  {} as Record<string, number>
-);
+export const CATEGORY_GROUP_COUNTS: Record<string, number> = generatedCounts.categoryGroupCounts;

@@ -73,3 +73,22 @@ export interface Restaurant {
   cuisine: string;
   image?: string;
 }
+
+export interface DestinationTranslation {
+  name?: string;
+  shortDesc?: string;
+  description?: string;
+  bestTime?: string;
+  recommendedDays?: string;
+  budget?: string;
+  travelType?: string;
+  activities?: string[];
+  attractions?: string[];
+  tips?: string[];
+  travelInfo?: {
+    from?: string;
+    duration?: string;
+    route?: string;
+    flight?: string | null;
+  };
+}

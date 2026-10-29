@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useApp } from "@/context/AppContext";
 import { Heart, ShieldCheck, Mail, Send, CheckCircle2, Sparkles, AlertCircle } from "lucide-react";
-import confetti from "canvas-confetti";
 import { TOTAL_DESTINATIONS } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { formatDigits } from "@/lib/i18n";
@@ -59,12 +58,6 @@ export function Footer() {
       });
 
       if (res.ok) {
-        confetti({
-          particleCount: 80,
-          spread: 60,
-          origin: { y: 0.8 },
-          colors: ["#0f4a38", "#1f9d76", "#f4a340", "#2ecc71"],
-        });
         setSubscribed(true);
       } else {
         setErrorMessage(
@@ -109,7 +102,7 @@ export function Footer() {
               aria-label="Ghuraghuri Homepage"
             >
               <Image
-                src="/assets/logo-dark.svg"
+                src="/assets/logo-dark.webp"
                 alt=""
                 width={160}
                 height={50}
