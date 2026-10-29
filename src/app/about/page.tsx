@@ -3,7 +3,7 @@
 import React from "react";
 import { useApp } from "@/context/AppContext";
 import { Compass, ShieldCheck, Heart, Globe } from "lucide-react";
-import { TOTAL_DESTINATIONS } from "@/lib/constants";
+import { TOTAL_DESTINATIONS, TOTAL_DISTRICTS_OFFICIAL } from "@/lib/constants";
 import { formatDigits } from "@/lib/i18n";
 
 export default function AboutPage() {
@@ -38,7 +38,9 @@ export default function AboutPage() {
             },
             {
               label: isBn ? "জেলা কভারেজ" : "Districts",
-              value: isBn ? "৬৪/৬৪" : "64/64",
+              value: isBn
+                ? `${formatDigits(TOTAL_DISTRICTS_OFFICIAL, true)}/${formatDigits(TOTAL_DISTRICTS_OFFICIAL, true)}`
+                : `${TOTAL_DISTRICTS_OFFICIAL}/${TOTAL_DISTRICTS_OFFICIAL}`,
             },
             {
               label: isBn ? "বিভাগ" : "Divisions",

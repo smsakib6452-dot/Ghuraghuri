@@ -634,7 +634,7 @@ export function MapSection() {
               ? activeSpot.image.startsWith("http") || activeSpot.image.startsWith("/")
                 ? activeSpot.image
                 : `/${activeSpot.image.replace(/^\/+/, "")}`
-              : "/assets/destinations/sajek-valley.webp";
+              : "/assets/destinations/sajek-valley-konglak-peak.webp";
 
             return (
               <div className="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-md z-[1000] p-4.5 rounded-2xl bg-white/95 dark:bg-[#0c241c]/95 backdrop-blur-xl border border-white/30 dark:border-white/10 shadow-2xl animate-in fade-in-50 slide-in-from-bottom-4 duration-250">

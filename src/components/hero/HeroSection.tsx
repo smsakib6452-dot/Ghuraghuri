@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/context/AppContext";
-import { TOTAL_DESTINATIONS, TOTAL_DIVISIONS, TOTAL_DISTRICTS } from "@/lib/constants";
+import { TOTAL_DESTINATIONS, TOTAL_DIVISIONS, TOTAL_DISTRICTS_OFFICIAL } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { CATEGORIES_BN, formatDigits } from "@/lib/i18n";
 import {
@@ -24,6 +24,8 @@ interface HeroSlide {
   slug: string;
   title: string;
   title_bn: string;
+  district: string;
+  district_bn: string;
   location: string;
   location_bn: string;
   tagline: string;
@@ -32,6 +34,8 @@ interface HeroSlide {
   rating_bn: string;
   tags: string[];
   tags_bn: string[];
+  caption: string;
+  caption_bn: string;
 }
 
 interface SearchItem {
@@ -57,86 +61,109 @@ function inflateSearchIndex(data: { v: string[]; t: string[]; c: string[]; i: [s
       district: data.t[distIdx] || "",
       division: data.v[divIdx] || "",
       category: (data.c && data.c[catIdx]) || "",
-      image: `/assets/destinations/${slug}.webp`,
+      image:
+        slug === "sajek-valley"
+          ? "/assets/destinations/sajek-valley-konglak-peak.webp"
+          : `/assets/destinations/${slug}.webp`,
     };
   });
 }
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    id: 7,
-    image: "/assets/destinations/sundarbans.webp",
-    slug: "sundarbans",
-    title: "Sundarbans",
-    title_bn: "সুন্দরবন",
-    location: "Khulna · Mangrove Wilderness",
-    location_bn: "খুলনা · ম্যানগ্রোভ অরণ্য",
-    tagline: "The largest mangrove wilderness on earth, home of the majestic Royal Bengal Tiger.",
-    tagline_bn: "পৃথিবীর বৃহত্তম ম্যানগ্রোভ অরণ্য এবং রয়েল বেঙ্গল টাইগারের বিশ্বখ্যাত আবাসভূমি।",
-    rating: "4.9 · UNESCO Heritage",
-    rating_bn: "৪.৯ · ইউনেস্কো বিশ্ব ঐতিহ্য",
-    tags: ["Royal Bengal Tiger", "Mangrove Cruise", "Bio Reserve"],
-    tags_bn: ["রয়েল বেঙ্গল টাইগার", "ম্যানগ্রোভ ক্রুজ", "বায়োস্ফিয়ার রিজার্ভ"],
-  },
-  {
-    id: 4,
-    image: "/assets/destinations/sajek-valley.webp",
-    slug: "sajek-valley",
-    title: "Sajek Valley",
-    title_bn: "সাজেক ভ্যালি",
-    location: "Rangamati · Kingdom of Clouds",
-    location_bn: "রাঙ্গামাটি · মেঘের উপত্যকা",
-    tagline: "Wake up above a floating sea of clouds in Bangladesh's most scenic highland paradise.",
-    tagline_bn: "মেঘের দেশে মেঘের ভেলায় ভেসে চলা এক স্বর্গীয় অনুভূতি ও কংলাকের চূড়া।",
-    rating: "4.9 · Explorer Score",
-    rating_bn: "৪.৯ · এক্সপ্লোরার স্কোর",
-    tags: ["Cloud Sea", "Eco Resort", "Konglak Peak"],
-    tags_bn: ["মেঘের সমুদ্র", "ইকো রিসোর্ট", "কংলাক পাহাড়"],
-  },
-  {
     id: 1,
     image: "/assets/destinations/coxs-bazar.webp",
     slug: "coxs-bazar",
     title: "Cox's Bazar",
     title_bn: "কক্সবাজার",
+    district: "Cox's Bazar",
+    district_bn: "কক্সবাজার",
     location: "Cox's Bazar · Bay of Bengal",
     location_bn: "কক্সবাজার · বঙ্গোপসাগর তীর",
-    tagline: "Experience the world's longest 120km unbroken natural golden sand beach and Marine Drive.",
-    tagline_bn: "বিশ্বের দীর্ঘতম ১২০ কিমি নিরবচ্ছিন্ন প্রাকৃতিক বালুকাময় সমুদ্র সৈকত ও মেরিন ড্রাইভ।",
+    tagline: "The world's longest unbroken natural sea beach stretching over 120 km along the Bay of Bengal.",
+    tagline_bn: "বঙ্গোপসাগরের কোল ঘেঁষে ১২০ কিলোমিটার দীর্ঘ বিশ্বের দীর্ঘতম নিরবচ্ছিন্ন প্রাকৃতিক সমুদ্র সৈকত।",
     rating: "4.8 · Explorer Score",
     rating_bn: "৪.৮ · এক্সপ্লোরার স্কোর",
     tags: ["Longest Beach", "Sunset Point", "Marine Drive"],
     tags_bn: ["দীর্ঘতম সৈকত", "সূর্যাস্ত পয়েন্ট", "মেরিন ড্রাইভ"],
-  },
-  {
-    id: 3,
-    image: "/assets/destinations/srimangal.webp",
-    slug: "srimangal",
-    title: "Srimangal",
-    title_bn: "শ্রীমঙ্গল",
-    location: "Moulvibazar · Tea Capital",
-    location_bn: "মৌলভীবাজার · চায়ের রাজধানী",
-    tagline: "Endless rolling green tea gardens, rainforest trails, and misty quiet mornings.",
-    tagline_bn: "সবুজে ঘেরা চায়ের বাগান, লাউয়াছড়া রেইনফরেস্ট আর স্নিগ্ধ কুয়াশাভেজা সকাল।",
-    rating: "4.8 · Explorer Score",
-    rating_bn: "৪.৮ · এক্সপ্লোরার স্কোর",
-    tags: ["Tea Gardens", "Lawachara Forest", "7-Color Tea"],
-    tags_bn: ["চা বাগান", "লাউয়াছড়া বন", "৭ রঙের চা"],
+    caption: "Cox's Bazar",
+    caption_bn: "কক্সবাজার",
   },
   {
     id: 2,
-    image: "/assets/destinations/saint-martins-island.webp",
-    slug: "saint-martins-island",
-    title: "Saint Martin's Island",
-    title_bn: "সেন্ট মার্টিন দ্বীপ",
-    location: "Cox's Bazar · Coral Island",
-    location_bn: "কক্সবাজার · নারিকেল জিঞ্জিরা",
-    tagline: "Crystal turquoise waters, coral reefs, and tranquil coconut palm shores.",
-    tagline_bn: "স্বচ্ছ নীল জলরাশি, প্রবাল প্রাচীর আর নারিকেল বাগানের অপার নিস্তব্ধতা।",
+    image: "/assets/destinations/sajek-valley-konglak-peak.webp",
+    slug: "sajek-valley",
+    title: "Sajek Valley",
+    title_bn: "সাজেক ভ্যালি",
+    district: "Rangamati",
+    district_bn: "রাঙ্গামাটি",
+    location: "Rangamati · Kingdom of Clouds",
+    location_bn: "রাঙ্গামাটি · মেঘের উপত্যকা",
+    tagline: "The Queen of Hills in the Chittagong Hill Tracts where clouds drift across layered green peaks.",
+    tagline_bn: "সবুজ পাহাড়ের চূড়ায় মেঘের ভেলায় ভেসে চলা পার্বত্য চট্টগ্রামের মেঘের উপত্যকা।",
     rating: "4.9 · Explorer Score",
     rating_bn: "৪.৯ · এক্সপ্লোরার স্কোর",
-    tags: ["Coral Reefs", "Blue Waters", "Coconut Groves"],
-    tags_bn: ["প্রবাল প্রাচীর", "নীল জলরাশি", "নারিকেল বাগান"],
+    tags: ["Cloud Sea", "Konglak Peak", "Hill Tracts"],
+    tags_bn: ["মেঘের সমুদ্র", "কংলাক পাহাড়", "পার্বত্য অঞ্চল"],
+    caption: "Sajek Valley, Rangamati",
+    caption_bn: "সাজেক ভ্যালি, রাঙ্গামাটি",
+  },
+  {
+    id: 286,
+    image: "/assets/destinations/somapura-mahavihara.webp",
+    slug: "somapura-mahavihara",
+    title: "Somapura Mahavihara",
+    title_bn: "সোমপুর মহাবিহার",
+    district: "Naogaon",
+    district_bn: "নওগাঁ",
+    location: "Naogaon · UNESCO World Heritage",
+    location_bn: "নওগাঁ · ইউনেস্কো বিশ্ব ঐতিহ্য",
+    tagline: "8th-century Buddhist monastery and UNESCO World Heritage Site with monumental cruciform architecture.",
+    tagline_bn: "অষ্টম শতকের পাল সাম্রাজ্যের বৌদ্ধ মহাবিহার ও ইউনেস্কো স্বীকৃত প্রাচীন স্থাপত্য নিদর্শন।",
+    rating: "4.9 · UNESCO Heritage",
+    rating_bn: "৪.৯ · ইউনেস্কো বিশ্ব ঐতিহ্য",
+    tags: ["UNESCO Heritage", "Archaeology", "Pala Dynasty"],
+    tags_bn: ["ইউনেস্কো ঐতিহ্য", "প্রত্নতত্ত্ব", "পাল সাম্রাজ্য"],
+    caption: "Somapura Mahavihara, Naogaon",
+    caption_bn: "সোমপুর মহাবিহার, নওগাঁ",
+  },
+  {
+    id: 143,
+    image: "/assets/destinations/barikka-tila-jadukata-hero.webp",
+    slug: "barikka-tila",
+    title: "Barikka Tila",
+    title_bn: "বরিক্কা টিলা",
+    district: "Sunamganj",
+    district_bn: "সুনামগঞ্জ",
+    location: "Sunamganj · Jadukata River",
+    location_bn: "সুনামগঞ্জ · জাদুকাটা নদী",
+    tagline: "Forested hill rising above the crystal-clear waters of the Jadukata River and Meghalaya border.",
+    tagline_bn: "জাদুকাটা নদীর স্বচ্ছ জলরাশি আর মেঘালয় সীমান্ত ঘেঁষা সবুজ টিলার মনোমুগ্ধকর দৃশ্য।",
+    rating: "4.8 · Explorer Score",
+    rating_bn: "৪.৮ · এক্সপ্লোরার স্কোর",
+    tags: ["Jadukata River", "Haor View", "Highland Border"],
+    tags_bn: ["জাদুকাটা নদী", "হাওর ভিউ", "সীমান্ত পাহাড়"],
+    caption: "Barikka Tila, Sunamganj",
+    caption_bn: "বরিক্কা টিলা, সুনামগঞ্জ",
+  },
+  {
+    id: 289,
+    image: "/assets/destinations/karamjal.webp",
+    slug: "karamjal",
+    title: "Karamjal",
+    title_bn: "করমজল",
+    district: "Bagerhat",
+    district_bn: "বাগেরহাট",
+    location: "Bagerhat · Sundarbans",
+    location_bn: "বাগেরহাট · সুন্দরবন",
+    tagline: "Eco-tourism haven in the Sundarbans featuring mangrove canopy boardwalks and wildlife breeding.",
+    tagline_bn: "সুন্দরবনের প্রবেশদ্বার, ক্যানোপি বোর্ডওয়াক ও বন্যপ্রাণী প্রজনন কেন্দ্র সমৃদ্ধ ইকো-ট্যুরিজম কেন্দ্র।",
+    rating: "4.8 · Explorer Score",
+    rating_bn: "৪.৮ · এক্সপ্লোরার স্কোর",
+    tags: ["Sundarbans", "Canopy Walk", "Wildlife Haven"],
+    tags_bn: ["সুন্দরবন", "ক্যানোপি ওয়াক", "বন্যপ্রাণী"],
+    caption: "Karamjal, Sundarbans",
+    caption_bn: "করমজল, সুন্দরবন",
   },
 ];
 
@@ -159,6 +186,9 @@ export function HeroSection() {
 
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedDivision, setSelectedDivision] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -183,10 +213,19 @@ export function HeroSection() {
     isError: false,
   });
 
-  // Rotate between at least 3 featured destinations on client mount/reload
+  // Respect prefers-reduced-motion (checked after mount to prevent hydration mismatch)
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * HERO_SLIDES.length);
-    setActiveSlide(randomIndex);
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    if (mq.addEventListener) {
+      mq.addEventListener("change", handler);
+      return () => mq.removeEventListener("change", handler);
+    } else {
+      mq.addListener(handler);
+      return () => mq.removeListener(handler);
+    }
   }, []);
 
   // Fetch real-time weather from Open-Meteo for 4 key hubs
@@ -292,14 +331,14 @@ export function HeroSection() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Slide rotation timer
+  // Slide rotation timer (auto-rotates every 6.5s unless paused, hovered, focused, or user prefers reduced motion)
   useEffect(() => {
-    if (!isPlaying) return;
+    if (!isPlaying || isHovered || isFocused || prefersReducedMotion) return;
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
     }, 6500);
     return () => clearInterval(interval);
-  }, [isPlaying]);
+  }, [isPlaying, isHovered, isFocused, prefersReducedMotion]);
 
   const suggestions = useMemo(() => {
     if (!searchQuery.trim()) return [];
@@ -334,18 +373,21 @@ export function HeroSection() {
   };
 
   const currentSlide = HERO_SLIDES[activeSlide];
-  const spotlightSlide = HERO_SLIDES[(activeSlide + 1) % HERO_SLIDES.length];
-  const isSpotlightBookmarked = isBookmarked(spotlightSlide.id);
+  const isSpotlightBookmarked = isBookmarked(currentSlide.id);
 
   return (
     <section
       className="relative flex flex-col justify-between overflow-hidden bg-[#061B14]"
       aria-label="Bangladesh Travel Hero"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocusCapture={() => setIsFocused(true)}
+      onBlurCapture={() => setIsFocused(false)}
     >
       {/* Background Cinematic Crossfade Slider (Slide 1 eager with priority; slides 2-5 deferred until idle) */}
       <div className="absolute inset-0 z-0">
         {HERO_SLIDES.map((slide, idx) => {
-          if (idx > 0 && !mountedOtherSlides) return null;
+          if (idx > 0 && !mountedOtherSlides && activeSlide !== idx) return null;
           return (
             <div
               key={slide.image}
@@ -510,16 +552,12 @@ export function HeroSection() {
               )}
             </div>
 
-            {/* Division Filter Chips (Directly below search, sets division filter, single-line horizontal scroll with soft fade) */}
+            {/* Division Filter Chips (Directly below search, sets division filter; horizontal scroll on mobile, wraps on desktop >= 1024px) */}
             <div
-              className="relative w-full max-w-xl overflow-hidden py-0.5"
-              style={{
-                maskImage: "linear-gradient(to right, black calc(100% - 28px), transparent 100%)",
-                WebkitMaskImage: "linear-gradient(to right, black calc(100% - 28px), transparent 100%)",
-              }}
+              className="relative w-full max-w-xl lg:max-w-none overflow-hidden lg:overflow-visible py-0.5 [mask-image:linear-gradient(to_right,black_calc(100%-28px),transparent_100%)] lg:[mask-image:none] [-webkit-mask-image:linear-gradient(to_right,black_calc(100%-28px),transparent_100%)] lg:[-webkit-mask-image:none]"
             >
               <div
-                className="flex items-center gap-1.5 overflow-x-auto whitespace-nowrap py-0.5"
+                className="flex items-center gap-1.5 overflow-x-auto lg:overflow-visible whitespace-nowrap lg:whitespace-normal lg:flex-wrap py-0.5"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {HERO_DIVISIONS.map((div) => {
@@ -549,9 +587,9 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Trending Quick Chips (Directly below division chips in a single line) */}
+            {/* Trending Quick Chips (Directly below division chips; horizontal scroll on mobile, wraps on desktop >= 1024px) */}
             <div
-              className="flex items-center gap-1.5 text-xs text-white/90 overflow-x-auto whitespace-nowrap py-0.5 max-w-xl"
+              className="flex items-center gap-1.5 text-xs text-white/90 overflow-x-auto lg:overflow-visible whitespace-nowrap lg:whitespace-normal lg:flex-wrap py-0.5 max-w-xl lg:max-w-none"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               <span className="font-bold text-[#F4A340] mr-1 flex items-center gap-1.5 shrink-0">
@@ -577,6 +615,19 @@ export function HeroSection() {
               ))}
             </div>
 
+            {/* Photo Destination Caption */}
+            <div className="pt-2">
+              <Link
+                href={`/destinations/${currentSlide.slug}`}
+                prefetch={false}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/45 hover:bg-black/65 backdrop-blur-md border border-white/20 text-xs font-semibold text-white/90 hover:text-white transition-all shadow-sm group"
+                aria-label={isBn ? `ছবির স্থান: ${currentSlide.caption_bn}` : `Photo location: ${currentSlide.caption}`}
+              >
+                <MapPin className="w-3.5 h-3.5 text-[#F4A340] shrink-0 group-hover:scale-110 transition-transform" />
+                <span>{isBn ? currentSlide.caption_bn : currentSlide.caption}</span>
+              </Link>
+            </div>
+
           </div>
 
           {/* Right Column: FEATURED SPOTLIGHT Card */}
@@ -593,7 +644,7 @@ export function HeroSection() {
                 <div className="flex items-center gap-2 shrink-0">
                   <button
                     type="button"
-                    onClick={() => toggleBookmark(spotlightSlide.id)}
+                    onClick={() => toggleBookmark(currentSlide.id)}
                     className="p-1.5 rounded-full bg-black/40 hover:bg-black/60 border border-white/15 text-white transition-colors cursor-pointer shrink-0"
                     title={isSpotlightBookmarked ? "Remove from saved" : "Save destination"}
                     aria-label={isSpotlightBookmarked ? "Remove from bookmarks" : "Add to bookmarks"}
@@ -610,14 +661,15 @@ export function HeroSection() {
               {/* Spotlight Image Card - Fixed Aspect Ratio prevents CLS */}
               <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-4 group bg-[#061B14]">
                 <Image
-                  src={spotlightSlide.image}
+                  src={currentSlide.image}
                   alt={
                     isBn
-                      ? `${spotlightSlide.title_bn}, ${spotlightSlide.location_bn} — স্পটলাইট ভ্রমণ গন্তব্য`
-                      : `${spotlightSlide.title} in ${spotlightSlide.location} — Featured Spotlight Destination`
+                      ? `${currentSlide.title_bn}, ${currentSlide.district_bn || currentSlide.location_bn} — স্পটলাইট ভ্রমণ গন্তব্য`
+                      : `${currentSlide.title} in ${currentSlide.district || currentSlide.location} — Featured Spotlight Destination`
                   }
                   fill
-                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 50vw, 440px"
+                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 50vw, 600px"
+                  priority={false}
                   loading="lazy"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -625,11 +677,11 @@ export function HeroSection() {
                 
                 <div className="absolute bottom-3 left-3 right-3 text-white">
                   <h2 className="text-2xl sm:text-3xl font-black drop-shadow-md">
-                    {isBn ? spotlightSlide.title_bn : spotlightSlide.title}
+                    {isBn ? currentSlide.title_bn : currentSlide.title}
                   </h2>
                   <p className="text-xs text-[#D1E0D8] font-medium flex items-center gap-1.5 mt-0.5">
                     <MapPin className="w-3.5 h-3.5 text-[#F4A340]" />
-                    <span>{isBn ? spotlightSlide.location_bn : spotlightSlide.location}</span>
+                    <span>{isBn ? currentSlide.location_bn : currentSlide.location}</span>
                   </p>
                 </div>
               </div>
@@ -637,11 +689,11 @@ export function HeroSection() {
               {/* Spotlight Description & Tags */}
               <div className="space-y-3.5">
                 <p className="text-xs sm:text-sm text-[#D1E0D8] leading-relaxed line-clamp-2">
-                  {isBn ? spotlightSlide.tagline_bn : spotlightSlide.tagline}
+                  {isBn ? currentSlide.tagline_bn : currentSlide.tagline}
                 </p>
 
                 <div className="flex flex-wrap items-center gap-1.5">
-                  {(isBn && spotlightSlide.tags_bn ? spotlightSlide.tags_bn : spotlightSlide.tags).map((tag) => (
+                  {(isBn && currentSlide.tags_bn ? currentSlide.tags_bn : currentSlide.tags).map((tag) => (
                     <span
                       key={tag}
                       className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 text-xs font-semibold text-white/90"
@@ -653,7 +705,7 @@ export function HeroSection() {
 
                 {/* Explore CTA Button */}
                 <Link
-                  href={`/destinations/${spotlightSlide.slug}`}
+                  href={`/destinations/${currentSlide.slug}`}
                   prefetch={false}
                   className="w-full mt-2 min-h-[42px] py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#10B981] to-[#0f4a38] hover:from-[#35D07F] hover:to-[#10B981] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer"
                 >
@@ -692,7 +744,7 @@ export function HeroSection() {
             <span className="text-white/20">•</span>
             <Link href="/destinations" prefetch={false} className="flex items-center gap-1.5 group hover:opacity-90 transition-opacity">
               <span className="text-sm sm:text-base font-black text-[#35D07F] tabular-nums">
-                {formatNumberEnBn(TOTAL_DISTRICTS, isBn)}
+                {formatNumberEnBn(TOTAL_DISTRICTS_OFFICIAL, isBn)}
               </span>
               <span className="text-xs text-[#D1E0D8] font-medium">
                 {isBn ? "জেলা" : "Districts"}
@@ -743,7 +795,10 @@ export function HeroSection() {
               {HERO_SLIDES.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setActiveSlide(i)}
+                  onClick={() => {
+                    setMountedOtherSlides(true);
+                    setActiveSlide(i);
+                  }}
                   className={`h-2 rounded-full transition-all cursor-pointer ${
                     i === activeSlide ? "w-6 bg-[#F4A340]" : "w-2 bg-white/40 hover:bg-white/70"
                   }`}

@@ -124,8 +124,8 @@ export default function AdminPage() {
     setFormDescription("");
     setFormLatitude("23.8103");
     setFormLongitude("90.4125");
-    setFormImage("/assets/destinations/sajek-valley.webp");
-    setFormImagePreview("/assets/destinations/sajek-valley.webp");
+    setFormImage("/assets/destinations/sajek-valley-konglak-peak.webp");
+    setFormImagePreview("/assets/destinations/sajek-valley-konglak-peak.webp");
     setFormThingsToDo("");
     setFormAttractions("");
     setIsEditorOpen(true);
@@ -194,8 +194,8 @@ export default function AdminPage() {
       badge: formBadge,
       latitude: parseFloat(formLatitude) || 23.8103,
       longitude: parseFloat(formLongitude) || 90.4125,
-      image: formImage || "/assets/destinations/sajek-valley.webp",
-      imageLg: formImage || "/assets/destinations/sajek-valley.webp",
+      image: formImage || "/assets/destinations/sajek-valley-konglak-peak.webp",
+      imageLg: formImage || "/assets/destinations/sajek-valley-konglak-peak.webp",
       shortDesc: formShortDesc.trim() || formDescription.trim().slice(0, 140),
       description: formDescription.trim() || formShortDesc.trim(),
       bestTime: "October – March",
@@ -416,7 +416,7 @@ export default function AdminPage() {
                                     ? (dest.image.startsWith("http") || dest.image.startsWith("/")
                                         ? dest.image
                                         : `/${dest.image.replace(/^\/+/, "")}`)
-                                    : "/assets/destinations/sajek-valley.webp"
+                                    : "/assets/destinations/sajek-valley-konglak-peak.webp"
                                 }
                                 alt=""
                                 aria-hidden="true"

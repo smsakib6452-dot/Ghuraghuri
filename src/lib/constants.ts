@@ -7,7 +7,13 @@ export const CONTACT_EMAIL = "smsakib6452@gmail.com";
 
 export const TOTAL_DESTINATIONS = generatedCounts.totalDestinations;
 export const TOTAL_DIVISIONS = generatedCounts.totalDivisions;
-export const TOTAL_DISTRICTS = generatedCounts.totalDistricts;
+
+/**
+ * Bangladesh officially comprises 64 administrative districts (Zilas).
+ * Canonical official constant used for UI stats, counters, metadata, JSON-LD, and display copy.
+ */
+export const TOTAL_DISTRICTS_OFFICIAL = 64;
+export const TOTAL_DISTRICTS = TOTAL_DISTRICTS_OFFICIAL;
 
 // Canonical destination counts per division (computed at build-time from destinations.json)
 export const DIVISION_COUNTS: Record<string, number> = generatedCounts.divisionCounts;

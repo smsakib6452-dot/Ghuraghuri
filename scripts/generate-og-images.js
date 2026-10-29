@@ -76,7 +76,7 @@ async function generateAllOgImages() {
     },
     {
       file: 'hotels.jpg',
-      bg: 'assets/destinations/sajek-valley.webp',
+      bg: 'assets/destinations/sajek-valley-konglak-peak.webp',
       title: 'Hotels, Eco-Resorts & Stays in Bangladesh',
       subtitle: 'Verified Hotel Directory with Direct Contacts & Map Locations'
     },

@@ -1,5 +1,5 @@
 import React from "react";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, TOTAL_DISTRICTS_OFFICIAL } from "@/lib/constants";
 import { SOCIAL_LINKS } from "@/config/footer";
 
 interface JsonLdProps {
@@ -25,6 +25,7 @@ export function getWebsiteSchema() {
     name: "Ghuraghuri — Bangladesh Travel Explorer",
     alternateName: ["ঘুরাঘুরি", "ঘোরাঘুরি"],
     url: SITE_URL,
+    description: `Comprehensive travel guide covering all ${TOTAL_DISTRICTS_OFFICIAL} districts of Bangladesh.`,
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE_URL}/destinations?q={search_term_string}`,

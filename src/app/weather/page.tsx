@@ -92,7 +92,7 @@ const ICONIC_HUBS: WeatherSpot[] = [
     division: "Chattogram",
     lat: 23.3819,
     lng: 92.2938,
-    image: "/assets/destinations/sajek-valley.webp",
+    image: "/assets/destinations/sajek-valley-konglak-peak.webp",
     slug: "sajek-valley",
   },
   {

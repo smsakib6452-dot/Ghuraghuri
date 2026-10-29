@@ -123,10 +123,10 @@ var DESTINATIONS = [
         "reviews": 980,
         "latitude": 23.3819,
         "longitude": 92.2938,
-        "image": "assets/destinations/sajek-valley.webp",
-        "imageLg": "assets/destinations/sajek-valley.webp",
+        "image": "assets/destinations/sajek-valley-konglak-peak.webp",
+        "imageLg": "assets/destinations/sajek-valley-konglak-peak.webp",
         "gallery": [
-            "assets/destinations/sajek-valley.webp"
+            "assets/destinations/sajek-valley-konglak-peak.webp"
         ],
         "shortDesc": "A misty hilltop village perched 1,800 ft above sea level, famous for cloud-kissed sunrises.",
         "description": "Sajek Valley is the 'Queen of Hills' of Bangladesh, a serene hill village in the far north of the Chittagong Hill Tracts. Winding roads cut through layered green mountains that vanish into clouds, while sunrises paint the valley gold. The scenic drive alone — past Khagrachhari and the huge Ruilui Para viewpoint — is worth the journey. It is the perfect escape for nature lovers and photographers.",

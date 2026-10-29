@@ -47,7 +47,7 @@ const WEEKEND_TRIPS: ItineraryItem[] = [
     route_bn: "ঢাকা ➔ খাগড়াছড়ি ➔ সাজেক ভ্যালি ➔ দীঘিনালা",
     badges: ["☁️ Sea of Clouds", "🏕️ Wooden Cottage", "🚙 4x4 Chander Gari"],
     badges_bn: ["☁️ মেঘের ভেলা", "🏕️ কাঠের কটেজ", "🚙 ৪x৪ জিপ"],
-    image: "/assets/destinations/sajek-valley.webp",
+    image: "/assets/destinations/sajek-valley-konglak-peak.webp",
     link: "/destinations/sajek-valley",
   },
   {

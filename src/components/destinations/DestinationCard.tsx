@@ -25,6 +25,8 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
   const divisionText = isBn ? getDivisionBn(destination.division) : destination.division;
   const isSameDistrictDivision =
     destination.district.trim().toLowerCase() === destination.division.trim().toLowerCase();
+  const isSameNameDistrict =
+    destination.name.trim().toLowerCase() === destination.district.trim().toLowerCase();
   const locationText = isBn
     ? (isSameDistrictDivision
         ? getDistrictBn(destination.district)
@@ -46,8 +48,12 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
     : `/${destination.image.replace(/^\/+/, "")}`;
 
   const descriptiveAlt = isBn
-    ? `${title}, ${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)}: ${destination.category}`
-    : `${destination.name} in ${destination.district}, ${destination.division}: ${destination.category}`;
+    ? (isSameNameDistrict
+        ? `${title}, ${getDivisionBn(destination.division)}: ${destination.category}`
+        : `${title}, ${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)}: ${destination.category}`)
+    : (isSameNameDistrict
+        ? `${destination.name}, ${destination.division}: ${destination.category}`
+        : `${destination.name} in ${destination.district}, ${destination.division}: ${destination.category}`);
 
   return (
     <article className="group relative flex flex-col rounded-3xl overflow-hidden bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5">
