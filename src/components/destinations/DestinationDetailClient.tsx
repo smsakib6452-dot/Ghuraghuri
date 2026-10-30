@@ -29,6 +29,8 @@ import {
   formatDigits,
   localizeDuration,
 } from "@/lib/i18n";
+import { getDestinationImage, getDestinationImageLg } from "@/lib/destination-image";
+import { DestinationImagePlaceholder } from "@/components/common/DestinationImagePlaceholder";
 
 interface DestinationDetailClientProps {
   destination: Destination;
@@ -135,9 +137,12 @@ export function DestinationDetailClient({
     ? `${getDivisionBn(destination.division)} ${t.moreInSuffix}`.trim()
     : `${t.moreInPrefix} ${destination.division}`.trim();
 
-  const imageSrc = destination.image.startsWith("http")
-    ? destination.image
-    : `/${destination.image.replace(/^\/+/, "")}`;
+  const rawImage = getDestinationImageLg(destination) || getDestinationImage(destination);
+  const imageSrc = rawImage
+    ? rawImage.startsWith("http")
+      ? rawImage
+      : `/${rawImage.replace(/^\/+/, "")}`
+    : null;
 
   return (
     <article className="min-h-screen bg-[var(--background)] pb-20">
@@ -165,20 +170,29 @@ export function DestinationDetailClient({
 
       {/* Hero Visual Section - Fixed Aspect Ratio to prevent CLS */}
       <div className="relative aspect-[16/10] sm:aspect-[21/9] h-auto min-h-[380px] sm:min-h-[440px] max-h-[600px] w-full overflow-hidden bg-[#061B14]">
-        <Image
-          src={imageSrc}
-          alt={
-            isBn
-              ? `${destination.name_bn || destination.name}, ${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)} — ${destination.category} ভ্রমণ নির্দেশিকা`
-              : `${destination.name} in ${destination.district}, ${destination.division} — ${destination.category} Travel Guide`
-          }
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
-          priority
-          fetchPriority="high"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
+        {imageSrc ? (
+          <Image
+            src={imageSrc}
+            alt={
+              isBn
+                ? `${destination.name_bn || destination.name}, ${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)} — ${destination.category} ভ্রমণ নির্দেশিকা`
+                : `${destination.name} in ${destination.district}, ${destination.division} — ${destination.category} Travel Guide`
+            }
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
+            priority
+            fetchPriority="high"
+            className="object-cover"
+          />
+        ) : (
+          <DestinationImagePlaceholder
+            name={destination.name}
+            name_bn={destination.name_bn}
+            category={destination.category}
+            variant="hero"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20 pointer-events-none" />
 
         {/* Floating Back Button */}
         <div className="absolute top-6 left-6 z-10">
@@ -446,6 +460,12 @@ export function DestinationDetailClient({
                     const relDistrict = isBn
                       ? getDistrictBn(rel.district)
                       : rel.district;
+                    const relRawImage = getDestinationImage(rel);
+                    const relImageSrc = relRawImage
+                      ? relRawImage.startsWith("http")
+                        ? relRawImage
+                        : `/${relRawImage.replace(/^\/+/, "")}`
+                      : null;
 
                     return (
                       <Link
@@ -454,21 +474,26 @@ export function DestinationDetailClient({
                         className="flex items-center gap-3 p-2 rounded-xl hover:bg-[var(--surface-raised)] transition-colors group"
                       >
                         <div className="relative w-14 h-14 rounded-lg overflow-hidden shrink-0">
-                          <Image
-                            src={
-                              rel.image.startsWith("http")
-                                ? rel.image
-                                : `/${rel.image.replace(/^\/+/, "")}`
-                            }
-                            alt={
-                              isBn
-                                ? `${relTitle}, ${relDistrict}`
-                                : `${rel.name} in ${rel.district}, ${rel.division}`
-                            }
-                            fill
-                            sizes="56px"
-                            className="object-cover group-hover:scale-105 transition-transform"
-                          />
+                          {relImageSrc ? (
+                            <Image
+                              src={relImageSrc}
+                              alt={
+                                isBn
+                                  ? `${relTitle}, ${relDistrict}`
+                                  : `${rel.name} in ${rel.district}, ${rel.division}`
+                              }
+                              fill
+                              sizes="56px"
+                              className="object-cover group-hover:scale-105 transition-transform"
+                            />
+                          ) : (
+                            <DestinationImagePlaceholder
+                              name={rel.name}
+                              name_bn={rel.name_bn}
+                              category={rel.category}
+                              variant="mini"
+                            />
+                          )}
                         </div>
                         <div className="min-w-0 flex-1">
                           <h4 className="text-xs font-bold text-foreground group-hover:text-[#0f4a38] dark:group-hover:text-[#2ecc71] truncate">

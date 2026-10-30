@@ -26,6 +26,7 @@
 *.pem
 /scratch/
 /backup-assets/
+/image-audit/
 
 # debug
 npm-debug.log*
@@ -45,3 +46,4 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+/backup-assets/

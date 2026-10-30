@@ -8,6 +8,7 @@ import { Destination } from "@/types/destination";
 import { DestinationCard } from "@/components/destinations/DestinationCard";
 import { buildRouteMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/constants";
+import { getDestinationImage } from "@/lib/destination-image";
 import { MapPin, Compass, ArrowLeft } from "lucide-react";
 
 interface Props {
@@ -192,14 +193,20 @@ export default async function DivisionPage({ params }: Props) {
     name: `${config.name} Division Tourist Attractions`,
     description: config.description,
     numberOfItems: divisionDestinations.length,
-    itemListElement: divisionDestinations.map((d, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: d.name,
-      url: `${SITE_URL}/destinations/${d.slug}`,
-      image: `${SITE_URL}${d.image}`,
-      description: d.shortDesc,
-    })),
+    itemListElement: divisionDestinations.map((d, index) => {
+      const img = getDestinationImage(d);
+      const item: Record<string, any> = {
+        "@type": "ListItem",
+        position: index + 1,
+        name: d.name,
+        url: `${SITE_URL}/destinations/${d.slug}`,
+        description: d.shortDesc,
+      };
+      if (img) {
+        item.image = `${SITE_URL}${img}`;
+      }
+      return item;
+    }),
   };
 
   return (

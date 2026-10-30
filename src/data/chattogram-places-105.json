@@ -166,7 +166,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/itakhola-mura-cumilla.webp",
+      "image": null,
       "description": ""
     },
     {
@@ -194,7 +194,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/tribal-cultural-institute.webp",
+      "image": null,
       "description": "The Tribal Cultural Institute in Rangamati showcases the heritage of the Chakma, Marma, Tripura and other hill peoples through life-size models, costumes, musical instruments and household tools. It is the best single stop to understand the culture of the Chittagong Hill Tracts."
     },
     {
@@ -362,7 +362,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/khoasagar-dighi.webp",
+      "image": null,
       "description": ""
     },
     {
@@ -488,7 +488,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/hanging-bridge-rangamati.webp",
+      "image": null,
       "description": "The Hanging Bridge is the most photographed landmark of Rangamati, a pedestrian suspension bridge built in 2003 that crosses a narrow arm of Kaptai lake. Walking across it sways gently above the water and connects the town to tribal villages on the far shore."
     },
     {
@@ -558,7 +558,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/titas-river-viewpoint.webp",
+      "image": null,
       "description": ""
     },
     {
@@ -572,7 +572,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/chandpur-three-rivers.webp",
+      "image": null,
       "description": "Chandpur sits at the meeting of the Padma (Lower Ganges) and Meghna rivers, a broad stretch of water busy with launches, ferries and fishing boats. The riverfront is a classic photo spot, especially at sunset when the water glows orange."
     },
     {
@@ -600,7 +600,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/damtua-waterfall.webp",
+      "image": null,
       "description": ""
     },
     {
@@ -614,7 +614,7 @@
       "anchor": "end",
       "dx": -10,
       "dy": 4,
-      "image": "assets/destinations/dalal-bazar-zamindar-bari.webp",
+      "image": null,
       "description": ""
     },
     {
@@ -852,7 +852,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=1200&q=70",
+      "image": null,
       "description": ""
     },
     {
@@ -866,7 +866,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/banshkhali-eco-park.webp",
+      "image": null,
       "description": ""
     },
     {
@@ -936,7 +936,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/bhatiari-lake.webp",
+      "image": null,
       "description": "Bhatiari Lake sits beside the Bangladesh Navy zone in Chittagong and is a popular weekend escape for city residents. Rowing and pedal boats drift across calm water while gardens and picnic shelters line the shore. It is close to Foy's Lake and easy to combine into a day trip."
     },
     {
@@ -1034,7 +1034,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/marayan-thong-peak.webp",
+      "image": null,
       "description": ""
     },
     {
@@ -1062,7 +1062,7 @@
       "anchor": "start",
       "dx": 10,
       "dy": 4,
-      "image": "assets/destinations/muhurir-char.webp",
+      "image": null,
       "description": "Muhurir Char is a sandbar and riverside area along the Muhuri river near Feni town. Locals visit for picnics, boating and fishing, making it a pleasant weekend escape close to the city."
     },
     {
@@ -1216,7 +1216,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/rupban-mura-cumilla.webp",
+      "image": null,
       "description": ""
     },
     {
@@ -1272,7 +1272,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/lalmai-pahar-eco-park.webp",
+      "image": null,
       "description": ""
     },
     {
@@ -1496,7 +1496,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/haripur-barabari.webp",
+      "image": null,
       "description": "Haripur Barabari is a large 17th-century zamindar (landlord) mansion built by the wealthy Haripur family in Nasirnagar, Brahmanbaria. Its ornate facade, courtyards and decorative interiors are among the finest surviving examples of zamindari architecture in eastern Bengal."
     },
     {

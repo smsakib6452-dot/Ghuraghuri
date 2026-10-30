@@ -132,7 +132,7 @@ async function generateAllOgImages() {
     { slug: 'dhaka', name: 'Dhaka', count: 56, bg: 'assets/destinations/ahsan-manzil.webp' },
     { slug: 'rajshahi', name: 'Rajshahi', count: 27, bg: 'assets/destinations/puthia-temple-complex.webp' },
     { slug: 'rangpur', name: 'Rangpur', count: 19, bg: 'assets/destinations/tajhat-palace.webp' },
-    { slug: 'mymensingh', name: 'Mymensingh', count: 12, bg: 'assets/destinations/birishiri.webp' }
+    { slug: 'mymensingh', name: 'Mymensingh', count: 12, bg: 'assets/destinations/shashi-lodge.webp' }
   ];
 
   for (const div of divisionRoutes) {
@@ -153,6 +153,10 @@ async function generateAllOgImages() {
   const destinationsPath = path.resolve(__dirname, '../src/data/destinations.json');
   const destinations = JSON.parse(fs.readFileSync(destinationsPath, 'utf8'));
 
+  const quarantinePath = path.resolve(__dirname, '../src/data/image-quarantine.json');
+  const quarantine = fs.existsSync(quarantinePath) ? JSON.parse(fs.readFileSync(quarantinePath, 'utf8')) : [];
+  const quarantinedSlugs = new Set(quarantine.map(q => q.slug));
+
   const destOgDirLegacy = path.resolve(__dirname, '../public/assets/og/destinations');
   const destOgDir = path.resolve(__dirname, '../public/og/destinations');
   fs.mkdirSync(destOgDirLegacy, { recursive: true });
@@ -162,6 +166,14 @@ async function generateAllOgImages() {
   for (const d of destinations) {
     const outLegacy = path.join(destOgDirLegacy, `${d.slug}.jpg`);
     const outNew = path.join(destOgDir, `${d.slug}.jpg`);
+
+    if (quarantinedSlugs.has(d.slug)) {
+      // Overwrite/use default brand OG image for quarantined destinations
+      const defaultOgBuf = fs.readFileSync(path.resolve(__dirname, '../public/og-default.jpg'));
+      fs.writeFileSync(outLegacy, defaultOgBuf);
+      fs.writeFileSync(outNew, defaultOgBuf);
+      continue;
+    }
 
     if (fs.existsSync(outLegacy) && fs.existsSync(outNew)) {
       continue;

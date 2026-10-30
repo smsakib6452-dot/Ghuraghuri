@@ -7,6 +7,8 @@ import { useApp } from "@/context/AppContext";
 import { Destination } from "@/types/destination";
 import { MapPin, Bookmark, Clock, ArrowUpRight, CloudSun } from "lucide-react";
 import { getDivisionBn, getDistrictBn, localizeDuration } from "@/lib/i18n";
+import { getDestinationImage } from "@/lib/destination-image";
+import { DestinationImagePlaceholder } from "@/components/common/DestinationImagePlaceholder";
 
 interface DestinationCardProps {
   destination: Destination & {
@@ -43,9 +45,12 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
         : localizeDuration(destination.recommendedDays || "1 – 2 days", true))
     : (destination.recommendedDays || "1 – 2 days");
 
-  const imageSrc = destination.image.startsWith("http")
-    ? destination.image
-    : `/${destination.image.replace(/^\/+/, "")}`;
+  const rawImage = getDestinationImage(destination);
+  const imageSrc = rawImage
+    ? rawImage.startsWith("http")
+      ? rawImage
+      : `/${rawImage.replace(/^\/+/, "")}`
+    : null;
 
   const descriptiveAlt = isBn
     ? (isSameNameDistrict
@@ -59,16 +64,25 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
     <article className="group relative flex flex-col rounded-3xl overflow-hidden bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5">
       {/* Image Container with Badge Overlays - Fixed Aspect Ratio prevents CLS */}
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
-        <Image
-          src={imageSrc}
-          alt={descriptiveAlt}
-          fill
-          sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(50vw - 36px), 286px"
-          priority={priority}
-          fetchPriority={priority ? "high" : "auto"}
-          loading={priority ? undefined : "lazy"}
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-110 [filter:saturate(1.1)_contrast(1.05)]"
-        />
+        {imageSrc ? (
+          <Image
+            src={imageSrc}
+            alt={descriptiveAlt}
+            fill
+            sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(50vw - 36px), 286px"
+            priority={priority}
+            fetchPriority={priority ? "high" : "auto"}
+            loading={priority ? undefined : "lazy"}
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-110 [filter:saturate(1.1)_contrast(1.05)]"
+          />
+        ) : (
+          <DestinationImagePlaceholder
+            name={destination.name}
+            name_bn={destination.name_bn}
+            category={destination.category}
+            variant="card"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/15 pointer-events-none" />
 
         {/* Division Badge (Clean Frosted Tag matching Vanilla) */}

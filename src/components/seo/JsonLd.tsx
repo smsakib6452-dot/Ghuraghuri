@@ -64,7 +64,7 @@ export function getTouristAttractionSchema(destination: {
   name: string;
   name_bn?: string;
   description: string;
-  image: string;
+  image?: string | null;
   latitude: number;
   longitude: number;
   rating?: number;
@@ -74,15 +74,12 @@ export function getTouristAttractionSchema(destination: {
   district: string;
   slug: string;
 }) {
-  return {
+  const schema: Record<string, any> = {
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
     name: destination.name,
     alternateName: destination.name_bn,
     description: destination.description,
-    image: destination.image.startsWith("http")
-      ? destination.image
-      : `${SITE_URL}/${destination.image.replace(/^\/+/, "")}`,
     url: `${SITE_URL}/destinations/${destination.slug}`,
     geo: {
       "@type": "GeoCoordinates",
@@ -97,4 +94,12 @@ export function getTouristAttractionSchema(destination: {
     },
     touristType: destination.category,
   };
+
+  if (destination.image) {
+    schema.image = destination.image.startsWith("http")
+      ? destination.image
+      : `${SITE_URL}/${destination.image.replace(/^\/+/, "")}`;
+  }
+
+  return schema;
 }

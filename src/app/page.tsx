@@ -11,6 +11,7 @@ import destinationsData from "@/data/destinations.json";
 import translationsData from "@/data/translations.json";
 import { Destination } from "@/types/destination";
 import { JsonLd, getWebsiteSchema, getOrganizationSchema } from "@/components/seo/JsonLd";
+import { getDestinationImage } from "@/lib/destination-image";
 
 import { buildRouteMetadata } from "@/lib/seo";
 
@@ -45,7 +46,7 @@ export default function HomePage() {
         categories: d.categories || [],
         rating: d.rating,
         reviews: d.reviews,
-        image: d.image,
+        image: getDestinationImage(d) || "",
         recommendedDays: d.recommendedDays,
         shortDesc: d.shortDesc,
         shortDesc_bn: tr?.shortDesc,

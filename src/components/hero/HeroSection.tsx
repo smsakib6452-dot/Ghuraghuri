@@ -8,6 +8,7 @@ import { useApp } from "@/context/AppContext";
 import { TOTAL_DESTINATIONS, TOTAL_DIVISIONS, TOTAL_DISTRICTS_OFFICIAL } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { CATEGORIES_BN, formatDigits } from "@/lib/i18n";
+import { isImageQuarantined } from "@/lib/destination-image";
 import {
   Search,
   MapPin,
@@ -61,8 +62,9 @@ function inflateSearchIndex(data: { v: string[]; t: string[]; c: string[]; i: [s
       district: data.t[distIdx] || "",
       division: data.v[divIdx] || "",
       category: (data.c && data.c[catIdx]) || "",
-      image:
-        slug === "sajek-valley"
+      image: isImageQuarantined(slug)
+        ? ""
+        : slug === "sajek-valley"
           ? "/assets/destinations/sajek-valley-konglak-peak.webp"
           : `/assets/destinations/${slug}.webp`,
     };
@@ -523,16 +525,22 @@ export function HeroSection() {
                         className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
                         onClick={() => setShowSuggestions(false)}
                       >
-                        <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-gray-200">
-                          <Image
-                            src={item.image.startsWith("http") || item.image.startsWith("/") ? item.image : `/${item.image.replace(/^\/+/, "")}`}
-                            alt=""
-                            aria-hidden="true"
-                            fill
-                            sizes="40px"
-                            loading="lazy"
-                            className="object-cover"
-                          />
+                        <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+                          {item.image ? (
+                            <Image
+                              src={item.image.startsWith("http") || item.image.startsWith("/") ? item.image : `/${item.image.replace(/^\/+/, "")}`}
+                              alt=""
+                              aria-hidden="true"
+                              fill
+                              sizes="40px"
+                              loading="lazy"
+                              className="object-cover"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-[#061a14] flex items-center justify-center text-[#34d399]">
+                              <MapPin className="w-4 h-4 opacity-75" aria-hidden="true" />
+                            </div>
+                          )}
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-bold text-foreground truncate">

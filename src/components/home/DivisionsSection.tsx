@@ -63,7 +63,7 @@ const DIVISIONS_DATA = [
     name_bn: "ময়মনসিংহ",
     tagline: "Garo Hills & Brahmaputra Char",
     tagline_bn: "গারো পাহাড় ও ব্রহ্মপুত্র চর",
-    image: "/assets/destinations/birishiri.webp",
+    image: "/assets/destinations/shashi-lodge.webp",
   },
 ];
 

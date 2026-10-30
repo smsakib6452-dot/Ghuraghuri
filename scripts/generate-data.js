@@ -9,6 +9,11 @@ if (!fs.existsSync(destinationsPath)) {
 
 const destinations = JSON.parse(fs.readFileSync(destinationsPath, 'utf8'));
 
+// Load image quarantine list
+const quarantinePath = path.resolve(__dirname, '../src/data/image-quarantine.json');
+const quarantine = fs.existsSync(quarantinePath) ? JSON.parse(fs.readFileSync(quarantinePath, 'utf8')) : [];
+const quarantinedSlugs = new Set(quarantine.map(q => q.slug));
+
 // 1. Compute total destinations, divisions, districts
 const totalDestinations = destinations.length;
 const divisionsSet = new Set(destinations.map(d => d.division).filter(Boolean));
@@ -111,7 +116,7 @@ const slimMapDestinations = destinations.map(d => ({
   district: d.district,
   category: d.category,
   categories: d.categories || [],
-  image: d.image,
+  image: quarantinedSlugs.has(d.slug) ? null : d.image,
   shortDesc: d.shortDesc || "",
   shortDesc_bn: d.shortDesc_bn || ""
 }));
@@ -174,4 +179,35 @@ console.log(`  - Divisions (${totalDivisions}): ${JSON.stringify(sortedDivisionC
 console.log(`  - Districts (${totalDistricts}): ${uniqueDistricts.length} districts in search index`);
 console.log(`  - Category Groups: ${Object.keys(categoryGroupCounts).length} groups calculated`);
 console.log(`  - Written to ${path.relative(process.cwd(), countsOutPath)}, ${path.relative(process.cwd(), mapOutPath)}, and ${path.relative(process.cwd(), searchOutPath)}`);
+
+// 8. Build Guard: Verify all active (non-quarantined) destination images exist in /public
+console.log('\n[generate-data] Running Build Guard: Verifying active destination images...');
+const missingImages = [];
+
+destinations.forEach(d => {
+  if (quarantinedSlugs.has(d.slug)) {
+    return; // Quarantined images are safely omitted/moved
+  }
+  if (!d.image) {
+    missingImages.push({ slug: d.slug, error: 'Missing image field' });
+    return;
+  }
+  const cleanPath = d.image.replace(/^\/+/, '');
+  const publicPath = path.resolve(__dirname, '../public', cleanPath);
+  if (!fs.existsSync(publicPath)) {
+    missingImages.push({ slug: d.slug, path: cleanPath });
+  }
+});
+
+if (missingImages.length > 0) {
+  console.error('\n🚨 FATAL BUILD GUARD ERROR: The following active destinations reference missing images in /public:');
+  missingImages.forEach(m => {
+    console.error(`  - [${m.slug}]: ${m.path || m.error}`);
+  });
+  console.error(`Total offending slugs: ${missingImages.length}`);
+  process.exit(1);
+} else {
+  console.log(`✓ Build Guard PASSED: All ${destinations.length - quarantinedSlugs.size} active destinations have verified authentic images in /public.`);
+}
+
 

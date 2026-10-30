@@ -7,6 +7,7 @@ import { Destination, DestinationTranslation } from "@/types/destination";
 import { JsonLd, getTouristAttractionSchema, getBreadcrumbListSchema } from "@/components/seo/JsonLd";
 import { DestinationDetailClient } from "@/components/destinations/DestinationDetailClient";
 import { SITE_URL } from "@/lib/constants";
+import { getDestinationImage } from "@/lib/destination-image";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -76,7 +77,7 @@ export default async function DestinationDetailPage({ params }: Props) {
     name: destination.name,
     name_bn: destination.name_bn,
     description: destination.description,
-    image: destination.image,
+    image: getDestinationImage(destination),
     latitude: destination.latitude,
     longitude: destination.longitude,
     rating: destination.rating,

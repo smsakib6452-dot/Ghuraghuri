@@ -1,0 +1,928 @@
+[
+  {
+    "slug": "birishiri",
+    "name": "Birishiri",
+    "district": "Netrokona",
+    "reason": "Visible \"500px\" photo community watermark in the bottom-left corner of the ceramic lake image.",
+    "flags": [
+      "watermark-or-overlaid-text"
+    ],
+    "originalImage": "/assets/destinations/birishiri.webp",
+    "originalImageLg": "/assets/destinations/birishiri.webp",
+    "originalGallery": [
+      "/assets/destinations/birishiri.webp"
+    ]
+  },
+  {
+    "slug": "teesta-barrage",
+    "name": "Teesta Barrage",
+    "district": "Lalmonirhat",
+    "reason": "Watermark text (\"JOUR...\") visible in the bottom-right corner over the river water.",
+    "flags": [
+      "watermark-or-overlaid-text"
+    ],
+    "originalImage": "/assets/destinations/teesta-barrage.webp",
+    "originalImageLg": "/assets/destinations/teesta-barrage.webp",
+    "originalGallery": [
+      "/assets/destinations/teesta-barrage.webp"
+    ]
+  },
+  {
+    "slug": "baneshwar-temple",
+    "name": "Baneshwar Temple",
+    "district": "Jamalpur",
+    "reason": "Shows a modern roadside pink commercial shopfront building with iron shutters in Jamalpur rather than a historic temple.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/baneshwar-temple.webp",
+    "originalImageLg": "/assets/destinations/baneshwar-temple.webp",
+    "originalGallery": [
+      "/assets/destinations/baneshwar-temple.webp"
+    ]
+  },
+  {
+    "slug": "star-mosque",
+    "name": "Star Mosque",
+    "district": "Dhaka",
+    "reason": "Shows a marble Bengali dedication plaque mounted on a wall rather than the iconic multi-domed star-mosaic mosque architecture.",
+    "flags": [
+      "screenshot-or-poster",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/star-mosque.webp",
+    "originalImageLg": "/assets/destinations/star-mosque.webp",
+    "originalGallery": [
+      "/assets/destinations/star-mosque.webp"
+    ]
+  },
+  {
+    "slug": "bhatiari-lake",
+    "name": "Bhatiari Lake",
+    "district": "Chattogram",
+    "reason": "Shows heavy highway traffic congestion with buses, trucks, and roadside dust viewed from an overpass instead of Bhatiari lake.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/bhatiari-lake.webp",
+    "originalImageLg": "/assets/destinations/bhatiari-lake.webp",
+    "originalGallery": [
+      "/assets/destinations/bhatiari-lake.webp"
+    ]
+  },
+  {
+    "slug": "chandpur-three-rivers",
+    "name": "Padma–Meghna Confluence",
+    "district": "Chandpur",
+    "reason": "An actual geographic map graphic / diagram of Bengal showing regional divisions instead of an authentic river photo.",
+    "flags": [
+      "portrait-orientation",
+      "screenshot-or-poster",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/chandpur-three-rivers.webp",
+    "originalImageLg": "/assets/destinations/chandpur-three-rivers.webp",
+    "originalGallery": [
+      "/assets/destinations/chandpur-three-rivers.webp"
+    ]
+  },
+  {
+    "slug": "niladri-lake-sunamganj",
+    "name": "Niladri Lake",
+    "district": "Sunamganj",
+    "reason": "Shows a white bowl filled with rosogolla sweets in sugar syrup instead of Niladri lake / Shahid Siraj Lake in Sunamganj!",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/niladri-lake-sunamganj.webp",
+    "originalImageLg": "/assets/destinations/niladri-lake-sunamganj.webp",
+    "originalGallery": [
+      "/assets/destinations/niladri-lake-sunamganj.webp"
+    ]
+  },
+  {
+    "slug": "mawa-ferry-ghat",
+    "name": "Mawa Ghat & Padma Riverfront",
+    "district": "Munshiganj",
+    "reason": "Shows the iconic red-pink facade of Hawa Mahal located in Jaipur, India, instead of Mawa Ghat riverfront in Munshiganj!",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/mawa-ferry-ghat.webp",
+    "originalImageLg": "/assets/destinations/mawa-ferry-ghat.webp",
+    "originalGallery": [
+      "/assets/destinations/mawa-ferry-ghat.webp"
+    ]
+  },
+  {
+    "slug": "nuhash-palli",
+    "name": "Nuhash Palli",
+    "district": "Gazipur",
+    "reason": "Cropped close-up headshot portrait of author Humayun Ahmed with spectacles instead of the Nuhash Palli retreat grounds.",
+    "flags": [
+      "under-1200px-wide",
+      "portrait-orientation",
+      "people-prominent",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/nuhash-palli.webp",
+    "originalImageLg": "/assets/destinations/nuhash-palli.webp",
+    "originalGallery": [
+      "/assets/destinations/nuhash-palli.webp"
+    ]
+  },
+  {
+    "slug": "faridpur-rajbari",
+    "name": "Faridpur Zamindar Palace",
+    "district": "Faridpur",
+    "reason": "Oil painting portrait depiction of a seated woman and man in formal wear rather than the Faridpur Zamindar Palace.",
+    "flags": [
+      "portrait-orientation",
+      "possible-wrong-place",
+      "ai-or-illustration-looking"
+    ],
+    "originalImage": "/assets/destinations/faridpur-rajbari.webp",
+    "originalImageLg": "/assets/destinations/faridpur-rajbari.webp",
+    "originalGallery": [
+      "/assets/destinations/faridpur-rajbari.webp"
+    ]
+  },
+  {
+    "slug": "wari-bateshwar",
+    "name": "Wari-Bateshwar",
+    "district": "Narsingdi",
+    "reason": "An antique British colonial cartographic map graphic of Bengal instead of the ancient archaeological excavation site.",
+    "flags": [
+      "screenshot-or-poster",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/wari-bateshwar.webp",
+    "originalImageLg": "/assets/destinations/wari-bateshwar.webp",
+    "originalGallery": [
+      "/assets/destinations/wari-bateshwar.webp"
+    ]
+  },
+  {
+    "slug": "padma-river-rajshahi",
+    "name": "Padma Riverfront, Rajshahi",
+    "district": "Rajshahi",
+    "reason": "Shows the Varanasi Ghats on the River Ganges in Uttar Pradesh, India, with Hindu temple towers and wooden ghat boats!",
+    "flags": [
+      "under-1200px-wide",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/padma-river-rajshahi.webp",
+    "originalImageLg": "/assets/destinations/padma-river-rajshahi.webp",
+    "originalGallery": [
+      "/assets/destinations/padma-river-rajshahi.webp"
+    ]
+  },
+  {
+    "slug": "tahkhana-complex",
+    "name": "Tahkhana Complex",
+    "district": "Chapainawabganj",
+    "reason": "A collage of 4 separate photographs tiled together into one image.",
+    "flags": [
+      "portrait-orientation",
+      "screenshot-or-poster"
+    ],
+    "originalImage": "/assets/destinations/tahkhana-complex.webp",
+    "originalImageLg": "/assets/destinations/tahkhana-complex.webp",
+    "originalGallery": [
+      "/assets/destinations/tahkhana-complex.webp"
+    ]
+  },
+  {
+    "slug": "patisar-naogaon",
+    "name": "Patisar",
+    "district": "Naogaon",
+    "reason": "A collage graphic of a Rabindranath Tagore statue holding a Bangladesh flag alongside brick ruins.",
+    "flags": [
+      "portrait-orientation",
+      "screenshot-or-poster"
+    ],
+    "originalImage": "/assets/destinations/patisar-naogaon.webp",
+    "originalImageLg": "/assets/destinations/patisar-naogaon.webp",
+    "originalGallery": [
+      "/assets/destinations/patisar-naogaon.webp"
+    ]
+  },
+  {
+    "slug": "hardinge-bridge",
+    "name": "Hardinge Bridge",
+    "district": "Pabna",
+    "reason": "Prominent photographer signature watermark \"© Faisal Akram Ether\" in the bottom-right corner.",
+    "flags": [
+      "watermark-or-overlaid-text"
+    ],
+    "originalImage": "/assets/destinations/hardinge-bridge.webp",
+    "originalImageLg": "/assets/destinations/hardinge-bridge.webp",
+    "originalGallery": [
+      "/assets/destinations/hardinge-bridge.webp"
+    ]
+  },
+  {
+    "slug": "mothbari-neelkuthi",
+    "name": "Mothbari Neelkuthi",
+    "district": "Jashore",
+    "reason": "Shows a modern green and red painted village mosque with minarets instead of historic indigo factory (neelkuthi) ruins.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/mothbari-neelkuthi.webp",
+    "originalImageLg": "/assets/destinations/mothbari-neelkuthi.webp",
+    "originalGallery": [
+      "/assets/destinations/mothbari-neelkuthi.webp"
+    ]
+  },
+  {
+    "slug": "narail-chitra-river",
+    "name": "Chitra River (Narail)",
+    "district": "Narail",
+    "reason": "Shows an old dilapidated yellow residential building facade and a hanging paper kite rather than a river.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/narail-chitra-river.webp",
+    "originalImageLg": "/assets/destinations/narail-chitra-river.webp",
+    "originalGallery": [
+      "/assets/destinations/narail-chitra-river.webp"
+    ]
+  },
+  {
+    "slug": "chuadanga-heritage",
+    "name": "Chuadanga Heritage",
+    "district": "Chuadanga",
+    "reason": "Reuses the photograph of Sixty Dome Mosque in Bagerhat for Chuadanga Heritage.",
+    "flags": [
+      "possible-wrong-place",
+      "duplicate-image"
+    ],
+    "originalImage": "/assets/destinations/chuadanga-heritage.webp",
+    "originalImageLg": "/assets/destinations/chuadanga-heritage.webp",
+    "originalGallery": [
+      "/assets/destinations/chuadanga-heritage.webp"
+    ]
+  },
+  {
+    "slug": "fatrar-char",
+    "name": "Fatrar Char",
+    "district": "Patuakhali",
+    "reason": "Graphic pink/orange circular sun logo icon overlaid onto the sky.",
+    "flags": [
+      "watermark-or-overlaid-text"
+    ],
+    "originalImage": "/assets/destinations/fatrar-char.webp",
+    "originalImageLg": "/assets/destinations/fatrar-char.webp",
+    "originalGallery": [
+      "/assets/destinations/fatrar-char.webp"
+    ]
+  },
+  {
+    "slug": "pairaband-rangpur",
+    "name": "Pairaband",
+    "district": "Rangpur",
+    "reason": "Cropped, low-resolution black-and-white face portrait of pioneer Begum Rokeya instead of her memorial complex in Pairaband.",
+    "flags": [
+      "under-1200px-wide",
+      "portrait-orientation",
+      "people-prominent",
+      "possible-wrong-place",
+      "low-quality"
+    ],
+    "originalImage": "/assets/destinations/pairaband-rangpur.webp",
+    "originalImageLg": "/assets/destinations/pairaband-rangpur.webp",
+    "originalGallery": [
+      "/assets/destinations/pairaband-rangpur.webp"
+    ]
+  },
+  {
+    "slug": "zainul-abedin-museum",
+    "name": "Zainul Abedin Museum",
+    "district": "Mymensingh",
+    "reason": "Archival black-and-white bust portrait of artist Shilpacharya Zainul Abedin wearing a suit rather than the museum in Mymensingh.",
+    "flags": [
+      "under-1200px-wide",
+      "portrait-orientation",
+      "people-prominent",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/zainul-abedin-museum.webp",
+    "originalImageLg": "/assets/destinations/zainul-abedin-museum.webp",
+    "originalGallery": [
+      "/assets/destinations/zainul-abedin-museum.webp"
+    ]
+  },
+  {
+    "slug": "brahmaputra-river-mymensingh",
+    "name": "Brahmaputra River (Mymensingh)",
+    "district": "Mymensingh",
+    "reason": "Shows an urban aerial city skyline of concrete residential apartment buildings rather than the Brahmaputra River.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/brahmaputra-river-mymensingh.webp",
+    "originalImageLg": "/assets/destinations/brahmaputra-river-mymensingh.webp",
+    "originalGallery": [
+      "/assets/destinations/brahmaputra-river-mymensingh.webp"
+    ]
+  },
+  {
+    "slug": "ranikhong",
+    "name": "Ranikhong",
+    "district": "Netrokona",
+    "reason": "A digital vector administrative map of Bangladesh highlighting Rangpur Division in red rather than Ranikhong church or Netrokona hills.",
+    "flags": [
+      "portrait-orientation",
+      "screenshot-or-poster",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/ranikhong-mission-netrokona.webp",
+    "originalImageLg": "/assets/destinations/ranikhong-mission-netrokona.webp",
+    "originalGallery": [
+      "/assets/destinations/ranikhong-mission-netrokona.webp"
+    ]
+  },
+  {
+    "slug": "habiganj-tea-gardens",
+    "name": "Habiganj Tea Gardens",
+    "district": "Habiganj",
+    "reason": "Shows an ancient terracotta brick mosque dome and palm tree (Shankarpasha Shahi Mosque) instead of tea gardens.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/habiganj-tea-gardens.webp",
+    "originalImageLg": "/assets/destinations/habiganj-tea-gardens.webp",
+    "originalGallery": [
+      "/assets/destinations/habiganj-tea-gardens.webp"
+    ]
+  },
+  {
+    "slug": "kansat-mango-market",
+    "name": "Kansat Mango Market",
+    "district": "Chapainawabganj",
+    "reason": "Shows a clear glass bowl of yellow mashed mango pudding / dessert rather than the famous Kansat wholesale mango market.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/kansat-mango-market.webp",
+    "originalImageLg": "/assets/destinations/kansat-mango-market.webp",
+    "originalGallery": [
+      "/assets/destinations/kansat-mango-market.webp"
+    ]
+  },
+  {
+    "slug": "hemnagar-rajbari",
+    "name": "Hemnagar Rajbari",
+    "district": "Tangail",
+    "reason": "An official Bangladesh Railway network route map diagram with legends instead of Hemnagar Zamindar Palace!",
+    "flags": [
+      "screenshot-or-poster",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/hemnagar-rajbari.webp",
+    "originalImageLg": "/assets/destinations/hemnagar-rajbari.webp",
+    "originalGallery": [
+      "/assets/destinations/hemnagar-rajbari.webp"
+    ]
+  },
+  {
+    "slug": "dalal-bazar-zamindar-bari",
+    "name": "Dalal Bazar Zamindar Bari",
+    "district": "Lakshmipur",
+    "reason": "Visible smartphone camera watermark stamp (\"Camera ...\") in the lower-left corner.",
+    "flags": [
+      "watermark-or-overlaid-text"
+    ],
+    "originalImage": "/assets/destinations/dalal-bazar-zamindar-bari.webp",
+    "originalImageLg": "/assets/destinations/dalal-bazar-zamindar-bari.webp",
+    "originalGallery": [
+      "/assets/destinations/dalal-bazar-zamindar-bari.webp"
+    ]
+  },
+  {
+    "slug": "titas-river-viewpoint",
+    "name": "Titas River Viewpoint",
+    "district": "Brahmanbaria",
+    "reason": "Historical black-and-white archival photograph of a cavalry battle charge with horses and armed soldiers instead of river view.",
+    "flags": [
+      "possible-wrong-place",
+      "low-quality"
+    ],
+    "originalImage": "/assets/destinations/titas-river-viewpoint.webp",
+    "originalImageLg": "/assets/destinations/titas-river-viewpoint.webp",
+    "originalGallery": [
+      "/assets/destinations/titas-river-viewpoint.webp"
+    ]
+  },
+  {
+    "slug": "borostation-molhead-chandpur",
+    "name": "Borostation Molhead / Three Rivers Estuary",
+    "district": "Chandpur",
+    "reason": "Digital watermark text (\"Thunderstorm Media...\") overlaid across the bottom of the sunset river shot.",
+    "flags": [
+      "watermark-or-overlaid-text"
+    ],
+    "originalImage": "/assets/destinations/chandpur-molhead-three-rivers.webp",
+    "originalImageLg": "/assets/destinations/chandpur-molhead-three-rivers.webp",
+    "originalGallery": [
+      "/assets/destinations/chandpur-molhead-three-rivers.webp"
+    ]
+  },
+  {
+    "slug": "lalmai-pahar-eco-park",
+    "name": "Lalmai Pahar & Eco Park",
+    "district": "Cumilla",
+    "reason": "Aerial view of a dense urban residential development with concrete building frames instead of a hill eco park.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/lalmai-pahar-eco-park.webp",
+    "originalImageLg": "/assets/destinations/lalmai-pahar-eco-park.webp",
+    "originalGallery": [
+      "/assets/destinations/lalmai-pahar-eco-park.webp"
+    ]
+  },
+  {
+    "slug": "rupban-mura-cumilla",
+    "name": "Rupban Mura",
+    "district": "Cumilla",
+    "reason": "Close-up catalog illustration of two ancient gold coins from the archaeological excavation rather than the excavated stupa site.",
+    "flags": [
+      "under-1200px-wide",
+      "screenshot-or-poster",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/rupban-mura-cumilla.webp",
+    "originalImageLg": "/assets/destinations/rupban-mura-cumilla.webp",
+    "originalGallery": [
+      "/assets/destinations/rupban-mura-cumilla.webp"
+    ]
+  },
+  {
+    "slug": "banshkhali-eco-park",
+    "name": "Banshkhali Eco Park & Hanging Bridge",
+    "district": "Chattogram",
+    "reason": "Shows an ancient stone-and-brick multi-domed mosque rather than Banshkhali Eco Park or its suspension bridge.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/banshkhali-eco-park.webp",
+    "originalImageLg": "/assets/destinations/banshkhali-eco-park.webp",
+    "originalGallery": [
+      "/assets/destinations/banshkhali-eco-park.webp"
+    ]
+  },
+  {
+    "slug": "marayan-thong-peak",
+    "name": "Marayan Thong Peak",
+    "district": "Bandarban",
+    "reason": "Shows a black-and-white cascading waterfall instead of Marayan Thong mountain summit and Buddhist shrine.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/marayan-thong-peak.webp",
+    "originalImageLg": "/assets/destinations/marayan-thong-peak.webp",
+    "originalGallery": [
+      "/assets/destinations/marayan-thong-peak.webp"
+    ]
+  },
+  {
+    "slug": "jaflong",
+    "name": "Jaflong",
+    "district": "Sylhet",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/jaflong.webp",
+    "originalImageLg": "/assets/destinations/jaflong.webp",
+    "originalGallery": [
+      "/assets/destinations/jaflong.webp"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null
+  },
+  {
+    "slug": "mirkadim-fort",
+    "name": "Mirkadim Fort",
+    "district": "Munshiganj",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "low-quality",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/mirkadim-fort.webp",
+    "originalImageLg": "/assets/destinations/mirkadim-fort.webp",
+    "originalGallery": [
+      "/assets/destinations/mirkadim-fort.webp"
+    ],
+    "referenceUrl": "https://www.thedailystar.net/life-living/travel/news/pirates-forts-and-no-crowds-the-ultimate-history-geeks-dream-spot-3729721",
+    "reviewerNote": null
+  },
+  {
+    "slug": "baliati-palace",
+    "name": "Baliati Palace",
+    "district": "Manikganj",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/baliati-palace.webp",
+    "originalImageLg": "/assets/destinations/baliati-palace.webp",
+    "originalGallery": [
+      "/assets/destinations/baliati-palace.webp"
+    ],
+    "referenceUrl": "https://baliatipalace.com/",
+    "reviewerNote": null
+  },
+  {
+    "slug": "tungipara",
+    "name": "Tungipara",
+    "district": "Gopalganj",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "low-quality"
+    ],
+    "originalImage": "/assets/destinations/tungipara.webp",
+    "originalImageLg": "/assets/destinations/tungipara.webp",
+    "originalGallery": [
+      "/assets/destinations/tungipara.webp"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null
+  },
+  {
+    "slug": "lakkatura-tea-estate",
+    "name": "Lakkatura Tea Estate",
+    "district": "Sylhet",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "low-quality"
+    ],
+    "originalImage": "/assets/destinations/lakkatura-tea-estate.webp",
+    "originalImageLg": "/assets/destinations/lakkatura-tea-estate.webp",
+    "originalGallery": [
+      "/assets/destinations/lakkatura-tea-estate.webp"
+    ],
+    "referenceUrl": "https://adarbepari.com/lakkatura-tea-garden-estate-sylhet",
+    "reviewerNote": null
+  },
+  {
+    "slug": "ham-ham-waterfall",
+    "name": "Ham Ham Waterfall",
+    "district": "Moulvibazar",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "duplicate-image"
+    ],
+    "originalImage": "/assets/destinations/ham-ham-waterfall.webp",
+    "originalImageLg": "/assets/destinations/ham-ham-waterfall.webp",
+    "originalGallery": [
+      "/assets/destinations/ham-ham-waterfall.webp"
+    ],
+    "referenceUrl": "https://www.tripadvisor.com/Attraction_Review-g3746420-d8532390-Reviews-Ham_Ham_Waterfall-Sreemangal_Sylhet_Division.html",
+    "reviewerNote": null
+  },
+  {
+    "slug": "rangabali-island",
+    "name": "Rangabali Island",
+    "district": "Patuakhali",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/rangabali-island.webp",
+    "originalImageLg": "/assets/destinations/rangabali-island.webp",
+    "originalGallery": [
+      "/assets/destinations/rangabali-island.webp"
+    ],
+    "referenceUrl": "https://www.alamy.com/rangabali-patuakhali-bangladesh-3252017-the-hut-by-the-tentulia-river-in-a-green-background-image419115964.html",
+    "reviewerNote": null
+  },
+  {
+    "slug": "hanging-bridge-rangamati",
+    "name": "Hanging Bridge",
+    "district": "Rangamati",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/hanging-bridge-rangamati.webp",
+    "originalImageLg": "/assets/destinations/hanging-bridge-rangamati.webp",
+    "originalGallery": [
+      "/assets/destinations/hanging-bridge-rangamati.webp"
+    ],
+    "referenceUrl": "https://commons.wikimedia.org/wiki/File:Hanging_Bridge,_Kaptai_Lake.jpg",
+    "reviewerNote": null
+  },
+  {
+    "slug": "tribal-cultural-institute",
+    "name": "Tribal Cultural Institute",
+    "district": "Rangamati",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "low-quality"
+    ],
+    "originalImage": "/assets/destinations/tribal-cultural-institute.webp",
+    "originalImageLg": "/assets/destinations/tribal-cultural-institute.webp",
+    "originalGallery": [
+      "/assets/destinations/tribal-cultural-institute.webp"
+    ],
+    "referenceUrl": "https://share.google/8yikFa66YCvksf5v6",
+    "reviewerNote": null
+  },
+  {
+    "slug": "haripur-barabari",
+    "name": "Haripur Barabari",
+    "district": "Brahmanbaria",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "portrait-orientation",
+      "low-quality",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/haripur-barabari.webp",
+    "originalImageLg": "/assets/destinations/haripur-barabari.webp",
+    "originalGallery": [
+      "/assets/destinations/haripur-barabari.webp"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null
+  },
+  {
+    "slug": "muhurir-char",
+    "name": "Muhurir Char",
+    "district": "Feni",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/muhurir-char.webp",
+    "originalImageLg": "/assets/destinations/muhurir-char.webp",
+    "originalGallery": [
+      "/assets/destinations/muhurir-char.webp"
+    ],
+    "referenceUrl": "https://greenbelt.com.bd/travblog/muhuri-project-ishtiak-ahmed/",
+    "reviewerNote": null
+  },
+  {
+    "slug": "shah-paran-mazar",
+    "name": "Hazrat Shah Paran Mazar",
+    "district": "Sylhet",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/hazrat-shah-paran-mazar.webp",
+    "originalImageLg": "/assets/destinations/hazrat-shah-paran-mazar.webp",
+    "originalGallery": [
+      "/assets/destinations/hazrat-shah-paran-mazar.webp"
+    ],
+    "referenceUrl": "https://adarbepari.com/hazrat-shah-paran-mazar-sylhet",
+    "reviewerNote": null
+  },
+  {
+    "slug": "ramna-park-dhaka",
+    "name": "Ramna Park",
+    "district": "Dhaka",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "under-1200px-wide",
+      "portrait-orientation"
+    ],
+    "originalImage": "/assets/destinations/ramna-park-dhaka.webp",
+    "originalImageLg": "/assets/destinations/ramna-park-dhaka.webp",
+    "originalGallery": [
+      "/assets/destinations/ramna-park-dhaka.webp"
+    ],
+    "referenceUrl": "https://www.tripadvisor.com/Attraction_Review-g293936-d2258125-Reviews-Ramna_Park-Dhaka_City_Dhaka_Division.html",
+    "reviewerNote": null
+  },
+  {
+    "slug": "nikli-haor",
+    "name": "Nikli Haor",
+    "district": "Kishoreganj",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "portrait-orientation"
+    ],
+    "originalImage": "/assets/destinations/nikli-haor.webp",
+    "originalImageLg": "/assets/destinations/nikli-haor.webp",
+    "originalGallery": [
+      "/assets/destinations/nikli-haor.webp"
+    ],
+    "referenceUrl": "https://www.trip.com/moments/detail/kishoreganj-district-1706309-152118976/",
+    "reviewerNote": null
+  },
+  {
+    "slug": "rajbari-goalanda",
+    "name": "Goalanda Ghat",
+    "district": "Rajbari",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "duplicate-image"
+    ],
+    "originalImage": "/assets/destinations/goalanda-ghat.webp",
+    "originalImageLg": "/assets/destinations/goalanda-ghat.webp",
+    "originalGallery": [
+      "/assets/destinations/goalanda-ghat.webp"
+    ],
+    "referenceUrl": "https://goalanda.rajbari.gov.bd/pages/tourist-spot",
+    "reviewerNote": null
+  },
+  {
+    "slug": "magura-nabaganga",
+    "name": "Nabaganga River (Magura)",
+    "district": "Magura",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "low-quality"
+    ],
+    "originalImage": "/assets/destinations/magura-nabaganga.webp",
+    "originalImageLg": "/assets/destinations/magura-nabaganga.webp",
+    "originalGallery": [
+      "/assets/destinations/magura-nabaganga.webp"
+    ],
+    "referenceUrl": "https://www.dreamstime.com/beautiful-nabaganga-river-nature-magura-district-bangladesh-beautiful-nabaganga-river-nature-image331500942",
+    "reviewerNote": null
+  },
+  {
+    "slug": "someshwari-river",
+    "name": "Someshwari River",
+    "district": "Netrokona",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "duplicate-image"
+    ],
+    "originalImage": "/assets/destinations/someshwari-river.webp",
+    "originalImageLg": "/assets/destinations/someshwari-river.webp",
+    "originalGallery": [
+      "/assets/destinations/someshwari-river.webp"
+    ],
+    "referenceUrl": "https://www.thedailystar.net/life-living/travel/news/someshwari-river-dreams-3986351",
+    "reviewerNote": null
+  },
+  {
+    "slug": "rakhine-village",
+    "name": "Rakhine Villages (Kuakata)",
+    "district": "Patuakhali",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/rakhine-village.webp",
+    "originalImageLg": "/assets/destinations/rakhine-village.webp",
+    "originalGallery": [
+      "/assets/destinations/rakhine-village.webp"
+    ],
+    "referenceUrl": "https://netra.news/2026/rakhine-village-no-people/",
+    "reviewerNote": null
+  },
+  {
+    "slug": "bangladesh-agricultural-university",
+    "name": "Bangladesh Agricultural University",
+    "district": "Mymensingh",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "under-1200px-wide"
+    ],
+    "originalImage": "/assets/destinations/bau-mymensingh-campus.webp",
+    "originalImageLg": "/assets/destinations/bau-mymensingh-campus.webp",
+    "originalGallery": [
+      "/assets/destinations/bau-mymensingh-campus.webp"
+    ],
+    "referenceUrl": "https://vromonguide.com/place/bangladesh-agricultural-university",
+    "reviewerNote": null
+  },
+  {
+    "slug": "khoasagar-dighi",
+    "name": "Khoasagar Dighi",
+    "district": "Lakshmipur",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/khoasagar-dighi.webp",
+    "originalImageLg": "/assets/destinations/khoasagar-dighi.webp",
+    "originalGallery": [
+      "/assets/destinations/khoasagar-dighi.webp"
+    ],
+    "referenceUrl": "https://www.sonalinews.com/feature/news/192692",
+    "reviewerNote": null
+  },
+  {
+    "slug": "itakhola-mura-cumilla",
+    "name": "Itakhola Mura",
+    "district": "Cumilla",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "portrait-orientation"
+    ],
+    "originalImage": "/assets/destinations/itakhola-mura-cumilla.webp",
+    "originalImageLg": "/assets/destinations/itakhola-mura-cumilla.webp",
+    "originalGallery": [
+      "/assets/destinations/itakhola-mura-cumilla.webp"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null
+  },
+  {
+    "slug": "damtua-waterfall",
+    "name": "Damtua Waterfall",
+    "district": "Bandarban",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "duplicate-image"
+    ],
+    "originalImage": "/assets/destinations/damtua-waterfall.webp",
+    "originalImageLg": "/assets/destinations/damtua-waterfall.webp",
+    "originalGallery": [
+      "/assets/destinations/damtua-waterfall.webp"
+    ],
+    "referenceUrl": "https://www.localguidesconnect.com/t/trekking-to-damtua-waterfall-bandarban-bangladesh/375870",
+    "reviewerNote": null
+  },
+  {
+    "slug": "parki-beach",
+    "name": "Parki Beach",
+    "district": "Chattogram",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "under-1200px-wide",
+      "portrait-orientation"
+    ],
+    "originalImage": "/assets/destinations/parki-beach.webp",
+    "originalImageLg": "/assets/destinations/parki-beach.webp",
+    "originalGallery": [
+      "/assets/destinations/parki-beach.webp"
+    ],
+    "referenceUrl": "https://adarbepari.com/parki-sea-beach-chittagong",
+    "reviewerNote": null
+  },
+  {
+    "slug": "utma-chhora",
+    "name": "Utma Chhora",
+    "district": "Sylhet",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "portrait-orientation",
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/utma-chhora.webp",
+    "originalImageLg": "/assets/destinations/utma-chhora.webp",
+    "originalGallery": [
+      "/assets/destinations/utma-chhora.webp"
+    ],
+    "referenceUrl": "https://adarbepari.com/utmachora-sylhet",
+    "reviewerNote": null
+  },
+  {
+    "slug": "swapnapuri-dinajpur",
+    "name": "Swapnapuri",
+    "district": "Dinajpur",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/swapnapuri-dinajpur.webp",
+    "originalImageLg": "/assets/destinations/swapnapuri-dinajpur.webp",
+    "originalGallery": [
+      "/assets/destinations/swapnapuri-dinajpur.webp"
+    ],
+    "referenceUrl": "https://adarbepari.com/shopnopuri-picnic-spot-dinajpur",
+    "reviewerNote": null
+  },
+  {
+    "slug": "susang-durgapur-china-clay",
+    "name": "Susang Durgapur China Clay Hills",
+    "district": "Netrokona",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "originalImage": "/assets/destinations/susang-durgapur-china-clay.webp",
+    "originalImageLg": "/assets/destinations/susang-durgapur-china-clay.webp",
+    "originalGallery": [
+      "/assets/destinations/susang-durgapur-china-clay.webp"
+    ],
+    "referenceUrl": "https://offroadbangladesh.com/",
+    "reviewerNote": null
+  },
+  {
+    "slug": "garo-hills-ranikhong",
+    "name": "Garo Hills Border & Ranikhong",
+    "district": "Netrokona",
+    "reason": "Wrong place / landmark mismatch identified in image during visual review.",
+    "flags": [
+      "duplicate-image"
+    ],
+    "originalImage": "/assets/destinations/garo-hills-ranikhong.webp",
+    "originalImageLg": "/assets/destinations/garo-hills-ranikhong.webp",
+    "originalGallery": [
+      "/assets/destinations/garo-hills-ranikhong.webp"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null
+  }
+]

@@ -1,0 +1,354 @@
+[
+  {
+    "slug": "sundarbans",
+    "name": "Sundarbans",
+    "district": "Khulna",
+    "status": "Replace (other reason)",
+    "flags": [
+      "portrait-orientation"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/sundarbans.webp"
+  },
+  {
+    "slug": "ratargul-swamp-forest",
+    "name": "Ratargul Swamp Forest",
+    "district": "Sylhet",
+    "status": "Replace (other reason)",
+    "flags": [
+      "duplicate-image"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/ratargul-swamp-forest.webp"
+  },
+  {
+    "slug": "mahasthangarh",
+    "name": "Mahasthangarh",
+    "district": "Bogura",
+    "status": "Replace (other reason)",
+    "flags": [
+      "duplicate-image"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/mahasthangarh.webp"
+  },
+  {
+    "slug": "bagerhat",
+    "name": "Bagerhat",
+    "district": "Bagerhat",
+    "status": "Low quality",
+    "flags": [
+      "duplicate-image"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/bagerhat.webp"
+  },
+  {
+    "slug": "madhabkunda",
+    "name": "Madhabkunda",
+    "district": "Moulvibazar",
+    "status": "Low quality",
+    "flags": [
+      "portrait-orientation"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/madhabkunda-waterfall.webp"
+  },
+  {
+    "slug": "madhupur-national-park",
+    "name": "Madhupur National Park",
+    "district": "Tangail",
+    "status": "Low quality",
+    "flags": [
+      "portrait-orientation"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/madhupur-national-park.webp"
+  },
+  {
+    "slug": "lalakhal",
+    "name": "Lalakhal",
+    "district": "Sylhet",
+    "status": "Low quality",
+    "flags": [
+      "under-1200px-wide"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/lalakhal.webp"
+  },
+  {
+    "slug": "bichanakandi",
+    "name": "Bichanakandi",
+    "district": "Sylhet",
+    "status": "Replace (other reason)",
+    "flags": [
+      "under-1200px-wide"
+    ],
+    "referenceUrl": "https://vromonguide.com/place/bisnakandi",
+    "reviewerNote": null,
+    "image": "/assets/destinations/bichanakandi.webp"
+  },
+  {
+    "slug": "shankhari-bazar",
+    "name": "Shankhari Bazar",
+    "district": "Dhaka",
+    "status": "Low quality",
+    "flags": [
+      "under-1200px-wide"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/shankhari-bazar.webp"
+  },
+  {
+    "slug": "baitul-mukarram",
+    "name": "Baitul Mukarram",
+    "district": "Dhaka",
+    "status": "Replace (other reason)",
+    "flags": [
+      "under-1200px-wide"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/baitul-mukarram.webp"
+  },
+  {
+    "slug": "lalon-shah-shrine",
+    "name": "Lalon Shah Shrine",
+    "district": "Kushtia",
+    "status": "Replace (other reason)",
+    "flags": [
+      "low-quality"
+    ],
+    "referenceUrl": "https://bn.wikipedia.org/wiki/%E0%A6%B2%E0%A6%BE%E0%A6%B2%E0%A6%A8_%E0%A6%B6%E0%A6%BE%E0%A6%B9%E0%A7%87%E0%A6%B0_%E0%A6%AE%E0%A6%BE%E0%A6%9C%E0%A6%BE%E0%A6%B0",
+    "reviewerNote": null,
+    "image": "/assets/destinations/lalon-shah-shrine.webp"
+  },
+  {
+    "slug": "panthumai",
+    "name": "Panthumai",
+    "district": "Sylhet",
+    "status": "Low quality",
+    "flags": [
+      "portrait-orientation"
+    ],
+    "referenceUrl": "https://vromonguide.com/place/panthumai-waterfall-sylhet",
+    "reviewerNote": null,
+    "image": "/assets/destinations/panthumai.webp"
+  },
+  {
+    "slug": "dhan-siri-waterfall",
+    "name": "Dhan Siri Waterfall",
+    "district": "Bandarban",
+    "status": "Replace (other reason)",
+    "flags": [
+      "duplicate-image"
+    ],
+    "referenceUrl": "https://www.tripadvisor.com/Attractions-g2368232-Activities-c57-t95-Bandarban_Chittagong_Division.html",
+    "reviewerNote": null,
+    "image": "/assets/destinations/dhan-siri-waterfall.webp"
+  },
+  {
+    "slug": "national-botanical-garden",
+    "name": "National Botanical Garden",
+    "district": "Dhaka",
+    "status": "Low quality",
+    "flags": [
+      "possible-wrong-place"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/national-botanical-garden.webp"
+  },
+  {
+    "slug": "shuvolong-waterfall",
+    "name": "Shuvolong Waterfall",
+    "district": "Rangamati",
+    "status": "Replace (other reason)",
+    "flags": [
+      "portrait-orientation"
+    ],
+    "referenceUrl": "https://www.trip.com/moments/detail/barkal-upazila-1870179-143775081/",
+    "reviewerNote": null,
+    "image": "/assets/destinations/shuvolong-waterfall.webp"
+  },
+  {
+    "slug": "rajban-bihar",
+    "name": "Rajban Bihar",
+    "district": "Rangamati",
+    "status": "Low quality",
+    "flags": [
+      "under-1200px-wide"
+    ],
+    "referenceUrl": "https://vromonguide.com/place/rajbana-vihara",
+    "reviewerNote": null,
+    "image": "/assets/destinations/rajban-bihar.webp"
+  },
+  {
+    "slug": "sonagazi",
+    "name": "Sonagazi",
+    "district": "Feni",
+    "status": "Replace (other reason)",
+    "flags": [
+      "duplicate-image"
+    ],
+    "referenceUrl": "https://observerbd.com/news/137609",
+    "reviewerNote": null,
+    "image": "/assets/destinations/sonagazi.webp"
+  },
+  {
+    "slug": "osmani-museum-sylhet",
+    "name": "Osmani Museum",
+    "district": "Sylhet",
+    "status": "Low quality",
+    "flags": [
+      "under-1200px-wide"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/osmani-museum-sylhet.webp"
+  },
+  {
+    "slug": "bogura-heritage-park",
+    "name": "Mahasthangarh Heritage Park",
+    "district": "Bogura",
+    "status": "Low quality",
+    "flags": [
+      "duplicate-image"
+    ],
+    "referenceUrl": "https://otithi.brac.net/blog/mahasthangarh-paharpur-kantajew-temple-distance-routes-trip-planner",
+    "reviewerNote": null,
+    "image": "/assets/destinations/bogura-heritage-park.webp"
+  },
+  {
+    "slug": "chuadanga-heritage",
+    "name": "Chuadanga Heritage",
+    "district": "Chuadanga",
+    "status": "Replace (other reason)",
+    "flags": [
+      "possible-wrong-place",
+      "duplicate-image"
+    ],
+    "referenceUrl": "https://vromonguide.com/location/chuadanga",
+    "reviewerNote": null,
+    "image": "/assets/destinations/chuadanga-heritage.webp"
+  },
+  {
+    "slug": "swarupkathi",
+    "name": "Swarupkathi",
+    "district": "Pirojpur",
+    "status": "Replace (other reason)",
+    "flags": [
+      "duplicate-image"
+    ],
+    "referenceUrl": "https://www.thedailystar.net/country/timber-town-1553344",
+    "reviewerNote": null,
+    "image": "/assets/destinations/swarupkathi-floating-market.webp"
+  },
+  {
+    "slug": "muhuri-dam-irrigation-project",
+    "name": "Muhuri Dam & Irrigation Project",
+    "district": "Feni",
+    "status": "Replace (other reason)",
+    "flags": [
+      "duplicate-image"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": "double esece may be",
+    "image": "/assets/destinations/muhuri-dam-irrigation-project.webp"
+  },
+  {
+    "slug": "titas-river-viewpoint",
+    "name": "Titas River Viewpoint",
+    "district": "Brahmanbaria",
+    "status": "Replace (other reason)",
+    "flags": [
+      "possible-wrong-place",
+      "low-quality"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": "double esece",
+    "image": "/assets/destinations/titas-river-viewpoint.webp"
+  },
+  {
+    "slug": "borostation-molhead-chandpur",
+    "name": "Borostation Molhead / Three Rivers Estuary",
+    "district": "Chandpur",
+    "status": "Replace (other reason)",
+    "flags": [
+      "watermark-or-overlaid-text"
+    ],
+    "referenceUrl": "https://www.localguidesconnect.com/t/three-rivers-adjustment-area-chandpur-boro-station/399382",
+    "reviewerNote": null,
+    "image": "/assets/destinations/chandpur-molhead-three-rivers.webp"
+  },
+  {
+    "slug": "raktadhara-memorial-chandpur",
+    "name": "Raktadhara Memorial",
+    "district": "Chandpur",
+    "status": "Low quality",
+    "flags": [
+      "portrait-orientation"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/raktadhara-memorial.webp"
+  },
+  {
+    "slug": "polwel-park-love-point",
+    "name": "Polwel Park & Love Point",
+    "district": "Rangamati",
+    "status": "Low quality",
+    "flags": [
+      "portrait-orientation"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/polwel-love-point.webp"
+  },
+  {
+    "slug": "jahangirnagar-university",
+    "name": "Jahangirnagar University",
+    "district": "Dhaka",
+    "status": "Low quality",
+    "flags": [
+      "under-1200px-wide",
+      "portrait-orientation"
+    ],
+    "referenceUrl": "https://juniv.edu/discussion/9708",
+    "reviewerNote": null,
+    "image": "/assets/destinations/jahangirnagar-university.webp"
+  },
+  {
+    "slug": "bangabandhu-military-museum",
+    "name": "Bangabandhu Military Museum",
+    "district": "Dhaka",
+    "status": "Replace (other reason)",
+    "flags": [
+      "under-1200px-wide",
+      "portrait-orientation"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": null,
+    "image": "/assets/destinations/bangabandhu-military-museum.webp"
+  },
+  {
+    "slug": "turong-chhora",
+    "name": "Turong Chhora",
+    "district": "Sylhet",
+    "status": "Low quality",
+    "flags": [
+      "duplicate-image"
+    ],
+    "referenceUrl": "https://www.localguidesconnect.com/t/topic/264769",
+    "reviewerNote": null,
+    "image": "/assets/destinations/turong-chhora.webp"
+  }
+]
