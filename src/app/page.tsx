@@ -14,11 +14,12 @@ import { JsonLd, getWebsiteSchema, getOrganizationSchema } from "@/components/se
 import { getDestinationImage } from "@/lib/destination-image";
 
 import { buildRouteMetadata } from "@/lib/seo";
+import { TOTAL_DESTINATIONS } from "@/lib/constants";
 
 export const metadata: Metadata = buildRouteMetadata({
   title: "Ghuraghuri — Bangladesh Travel Explorer | ঘুরাঘুরি",
   description:
-    "Discover 295+ authentic tourist spots across all 8 divisions of Bangladesh. Explore hill tracks, sandy beaches, tea gardens, and complete travel guides.",
+    `Discover ${TOTAL_DESTINATIONS}+ authentic tourist spots across all 8 divisions of Bangladesh. Explore hill tracks, sandy beaches, tea gardens, and complete travel guides.`,
   path: "/",
   isAbsoluteTitle: true,
 });

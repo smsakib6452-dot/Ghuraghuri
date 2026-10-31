@@ -76,6 +76,7 @@ export default async function DestinationDetailPage({ params }: Props) {
   const schema = getTouristAttractionSchema({
     name: destination.name,
     name_bn: destination.name_bn,
+    alternateNames: destination.alternateNames,
     description: destination.description,
     image: getDestinationImage(destination),
     latitude: destination.latitude,

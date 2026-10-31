@@ -1,29 +1,29 @@
 {
-  "totalDestinations": 295,
+  "totalDestinations": 278,
   "totalDivisions": 8,
   "totalDistricts": 64,
   "divisionCounts": {
-    "Chattogram": 110,
+    "Chattogram": 96,
     "Dhaka": 56,
     "Sylhet": 30,
-    "Rajshahi": 27,
+    "Rajshahi": 25,
     "Khulna": 22,
-    "Barishal": 19,
     "Rangpur": 19,
+    "Barishal": 18,
     "Mymensingh": 12
   },
   "categoryGroupCounts": {
     "Beaches & Coast": 20,
-    "Hills & Peaks": 20,
-    "Waterfalls": 18,
+    "Hills & Peaks": 17,
+    "Waterfalls": 16,
     "Forests & Wildlife": 27,
-    "Islands": 15,
-    "Rivers, Lakes & Wetlands": 64,
-    "Heritage & History": 118,
-    "Religious Sites": 24,
-    "Culture & Museums": 103,
-    "Nature & Gardens": 112,
-    "Family & Fun": 46
+    "Islands": 14,
+    "Rivers, Lakes & Wetlands": 59,
+    "Heritage & History": 115,
+    "Religious Sites": 23,
+    "Culture & Museums": 101,
+    "Nature & Gardens": 104,
+    "Family & Fun": 44
   },
-  "generatedAt": "2026-10-30T14:28:29.072Z"
+  "generatedAt": "2026-10-31T07:13:24.018Z"
 }

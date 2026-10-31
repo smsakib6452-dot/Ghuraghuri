@@ -84,7 +84,8 @@
     "originalImageLg": "/assets/destinations/chandpur-three-rivers.webp",
     "originalGallery": [
       "/assets/destinations/chandpur-three-rivers.webp"
-    ]
+    ],
+    "referenceUrl": "https://www.localguidesconnect.com/t/three-rivers-adjustment-area-chandpur-boro-station/399382"
   },
   {
     "slug": "niladri-lake-sunamganj",
@@ -398,49 +399,6 @@
     "originalImageLg": "/assets/destinations/dalal-bazar-zamindar-bari.webp",
     "originalGallery": [
       "/assets/destinations/dalal-bazar-zamindar-bari.webp"
-    ]
-  },
-  {
-    "slug": "titas-river-viewpoint",
-    "name": "Titas River Viewpoint",
-    "district": "Brahmanbaria",
-    "reason": "Historical black-and-white archival photograph of a cavalry battle charge with horses and armed soldiers instead of river view.",
-    "flags": [
-      "possible-wrong-place",
-      "low-quality"
-    ],
-    "originalImage": "/assets/destinations/titas-river-viewpoint.webp",
-    "originalImageLg": "/assets/destinations/titas-river-viewpoint.webp",
-    "originalGallery": [
-      "/assets/destinations/titas-river-viewpoint.webp"
-    ]
-  },
-  {
-    "slug": "borostation-molhead-chandpur",
-    "name": "Borostation Molhead / Three Rivers Estuary",
-    "district": "Chandpur",
-    "reason": "Digital watermark text (\"Thunderstorm Media...\") overlaid across the bottom of the sunset river shot.",
-    "flags": [
-      "watermark-or-overlaid-text"
-    ],
-    "originalImage": "/assets/destinations/chandpur-molhead-three-rivers.webp",
-    "originalImageLg": "/assets/destinations/chandpur-molhead-three-rivers.webp",
-    "originalGallery": [
-      "/assets/destinations/chandpur-molhead-three-rivers.webp"
-    ]
-  },
-  {
-    "slug": "lalmai-pahar-eco-park",
-    "name": "Lalmai Pahar & Eco Park",
-    "district": "Cumilla",
-    "reason": "Aerial view of a dense urban residential development with concrete building frames instead of a hill eco park.",
-    "flags": [
-      "possible-wrong-place"
-    ],
-    "originalImage": "/assets/destinations/lalmai-pahar-eco-park.webp",
-    "originalImageLg": "/assets/destinations/lalmai-pahar-eco-park.webp",
-    "originalGallery": [
-      "/assets/destinations/lalmai-pahar-eco-park.webp"
     ]
   },
   {

@@ -82,7 +82,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/ananda-vihara-kotbari.webp",
+      "image": "/assets/destinations/ananda-vihara-kotbari.webp",
       "description": ""
     },
     {
@@ -96,7 +96,7 @@
       "anchor": "end",
       "dx": -10,
       "dy": 8,
-      "image": "assets/destinations/amiakhum.webp",
+      "image": "/assets/destinations/amiakhum.webp",
       "description": "Amiakhum is a beautiful multi-tiered waterfall in the Ruma upazila of Bandarban, where water splits into two streams over mossy rocks. It is less crowded than Nafakhum and a rewarding add-on to a Boga Lake or Keokradong trek."
     },
     {
@@ -110,7 +110,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1200&q=70",
+      "image": "/assets/destinations/arifil-mosque-sarail.webp",
       "description": ""
     },
     {
@@ -124,36 +124,8 @@
       "anchor": "start",
       "dx": 10,
       "dy": 4,
-      "image": "assets/destinations/alutila-cave.webp",
+      "image": "/assets/destinations/alutila-cave.webp",
       "description": "Alutila is Khagrachhari's signature adventure spot — a limestone cave carved into the hillside where visitors climb through cool, narrow chambers by torchlight. Above ground, a hanging bridge sways across a rocky riverbed, and walking trails lead deeper into the forested hills. It's a short, fun escape into the Chittagong Hill Tracts that needs no special equipment."
-    },
-    {
-      "id": 221,
-      "name": "Alutila Tourist Center",
-      "name_bn": "আলুটিলা পর্যটন কেন্দ্র",
-      "district": "Khagrachhari",
-      "category": "Nature",
-      "x": 315.4,
-      "y": 269.4,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": "assets/destinations/alutila-tourist-center.webp",
-      "description": "The Alutila tourist center sits in the hills of Khagrachhari close to the famous Alutila (Debbari) cave and gua (gorge). A suspension bridge across the gua and short forest walks make it a pleasant stop, and the nearby cave is the deepest cave in Bangladesh by some accounts."
-    },
-    {
-      "id": 266,
-      "name": "Alutila Mystery Cave",
-      "name_bn": "আলুটিলা রহস্যময় গুহা",
-      "district": "Khagrachhari",
-      "category": "Adventure",
-      "x": 345.2,
-      "y": 279.5,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": "assets/destinations/alutila-mystery-cave.webp",
-      "description": ""
     },
     {
       "id": 256,
@@ -180,7 +152,7 @@
       "anchor": "end",
       "dx": -10,
       "dy": 4,
-      "image": "assets/destinations/inani-beach.webp",
+      "image": "/assets/destinations/inani-beach.webp",
       "description": "Inani Beach sits on the Marine Drive south of Cox's Bazar, offering a calmer, more scenic stretch of the world's longest beach. Golden sand is scattered with coral and rock boulders, and the road itself — hugging the cliffs above the surf — is one of Bangladesh's most beautiful drives. Sunrise here is unforgettable."
     },
     {
@@ -208,7 +180,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/ulchapara-mosque.webp",
+      "image": "/assets/destinations/ulchapara-mosque.webp",
       "description": ""
     },
     {
@@ -222,7 +194,7 @@
       "anchor": "end",
       "dx": -10,
       "dy": 4,
-      "image": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=70",
+      "image": "/assets/destinations/kalbhairab-temple.webp",
       "description": ""
     },
     {
@@ -236,21 +208,7 @@
       "anchor": "end",
       "dx": -10,
       "dy": 4,
-      "image": "assets/destinations/bajra-shahi-mosque.webp",
-      "description": ""
-    },
-    {
-      "id": 271,
-      "name": "Sajek Valley Konglak Peak",
-      "name_bn": "কংলাক পাহাড় চূড়া, সাজেক",
-      "district": "Rangamati",
-      "category": "Mountain",
-      "x": 411.1,
-      "y": 208.2,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": "assets/destinations/sajek-valley-konglak-peak.webp",
+      "image": "/assets/destinations/bajra-shahi-mosque.webp",
       "description": ""
     },
     {
@@ -264,7 +222,7 @@
       "anchor": "end",
       "dx": -10,
       "dy": 4,
-      "image": "assets/destinations/coxs-bazar.webp",
+      "image": "/assets/destinations/coxs-bazar.webp",
       "description": "Cox's Bazar is Bangladesh's most iconic beach destination and the longest unbroken natural sea beach in the world. Golden sands, gentle waves and colorful beach life stretch for over 120 km along the Bay of Bengal. From sunbathing and sea-bathing to seafood feasts and sunset cruises, it offers something for every kind of traveler. Visit nearby Himchari and Inani for quieter stretches and viewpoints."
     },
     {
@@ -278,7 +236,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/kamalnagar-meghna-riverbank.webp",
+      "image": "/assets/destinations/kamalnagar-meghna-riverbank.webp",
       "description": ""
     },
     {
@@ -292,7 +250,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/kaptai-national-park.webp",
+      "image": "/assets/destinations/kaptai-national-park.webp",
       "description": "Kaptai National Park protects tropical evergreen forest along Kaptai lake, home to spotted deer, barking deer, capped langurs and birds. Walking trails lead through the trees, and the lake edge offers peaceful picnic spots."
     },
     {
@@ -306,7 +264,7 @@
       "anchor": "start",
       "dx": 10,
       "dy": 4,
-      "image": "assets/destinations/kaptai-lake.webp",
+      "image": "/assets/destinations/kaptai-lake.webp",
       "description": "Kaptai Lake is the biggest lake in Bangladesh, formed in 1962 when the Kaptai Dam flooded the Karnaphuli valley. Its countless arms reach into forested hills, dotted with islands and floating Chakma villages. A full-day wooden boat trip — past submerged peaks, fishing boats and golden sunsets — is one of the great experiences of the Chittagong Hill Tracts."
     },
     {
@@ -320,22 +278,8 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/kutubdia-island.webp",
+      "image": "/assets/destinations/kutubdia-island.webp",
       "description": "Kutubdia is a flat, sun-bleached island off Cox's Bazar, known for its sprawling salt fields, swaying coconut groves and deserted sandy beaches. An old lighthouse and scattered fishing villages add charm. With few tourists, it is the place for slow walks, salt-farm photography and staring across the endless Bay."
-    },
-    {
-      "id": 127,
-      "name": "Cumilla War Cemetery",
-      "name_bn": "কুমিল্লা ওয়ার সেমেট্রি",
-      "district": "Cumilla",
-      "category": "Historical",
-      "x": 181.6,
-      "y": 195.9,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": "assets/destinations/cumilla-war-cemetery.webp",
-      "description": "Cumilla War Cemetery, managed by the Commonwealth War Graves Commission, holds more than 700 graves of soldiers who died in the Burma campaign of World War II. Rows of identical headstones and clipped lawns give it a moving, serene atmosphere."
     },
     {
       "id": 112,
@@ -348,7 +292,7 @@
       "anchor": "start",
       "dx": 10,
       "dy": 4,
-      "image": "assets/destinations/keokradong.webp",
+      "image": "/assets/destinations/keokradong.webp",
       "description": "Keokradong, at around 1,240 metres, is one of Bangladesh's highest peaks and a classic trekking destination. The multi-hour climb winds through villages, bamboo groves and cloud forest to a summit marked by a small shelter. Sunrise from the top is considered one of the country's great experiences."
     },
     {
@@ -376,7 +320,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/gandhi-ashram-trust-noakhali.webp",
+      "image": "/assets/destinations/gandhi-ashram-trust-noakhali.webp",
       "description": ""
     },
     {
@@ -390,7 +334,7 @@
       "anchor": "end",
       "dx": -10,
       "dy": 8,
-      "image": "assets/destinations/guliakhali-sea-beach.webp",
+      "image": "/assets/destinations/guliakhali-sea-beach.webp",
       "description": ""
     },
     {
@@ -404,7 +348,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/chattogram-war-cemetery.webp",
+      "image": "/assets/destinations/chattogram-war-cemetery.webp",
       "description": "The Chattogram War Cemetery is the resting place of over 700 soldiers of the Commonwealth who died in the Burma Campaign of World War II. Immaculate lawns, flowering trees and simple stone graves create an atmosphere of quiet dignity in the middle of the city. It is a moving, beautifully kept piece of living history."
     },
     {
@@ -418,22 +362,8 @@
       "anchor": "end",
       "dx": -10,
       "dy": -4,
-      "image": "assets/destinations/chandranath-hill.webp",
+      "image": "/assets/destinations/chandranath-hill.webp",
       "description": "Chandranath Hill is one of Bangladesh's most important Hindu pilgrimage sites, topped by the Chandra Shekhar Shiva temple built in the 4th century. Climbing roughly 3,000 steps rewards visitors with panoramic views over Sitakunda Eco Park, the Karnaphuli river and the distant Bay of Bengal."
-    },
-    {
-      "id": 259,
-      "name": "Chandranath Peak & Temple",
-      "name_bn": "চন্দ্রনাথ পাহাড় চূড়া ও মন্দির",
-      "district": "Chattogram",
-      "category": "Mountain",
-      "x": 285.5,
-      "y": 376,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": "assets/destinations/chandranath-peak-temple.webp",
-      "description": ""
     },
     {
       "id": 238,
@@ -446,7 +376,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/chandgazi-bhuiyan-mosque.webp",
+      "image": "/assets/destinations/chandgazi-bhuiyan-mosque.webp",
       "description": ""
     },
     {
@@ -460,7 +390,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/chandanpura-mosque.webp",
+      "image": "/assets/destinations/chandanpura-mosque.webp",
       "description": "Chandanpura Mosque is an architectural curiosity in the heart of old Chattogram. Built in the 18th century, it bristles with no fewer than eleven domes and a dozen ornate minarets, crammed into a narrow lane of the old port town. Its ornate, almost fairy-tale silhouette stands out among the trading houses and bazaars."
     },
     {
@@ -474,7 +404,7 @@
       "anchor": "start",
       "dx": 10,
       "dy": 4,
-      "image": "assets/destinations/chimbuk-hill.webp",
+      "image": "/assets/destinations/chimbuk-hill.webp",
       "description": "Chimbuk Hill is the most famous viewpoint in the Chittagong Hill Tracts, its crest offering a 360-degree panorama of layered green ridges vanishing into the distance. The winding road up is scenic, and from the top you can see Bandarban town and, on clear days, far into the hills. A breathtaking spot for sunrise or sunset."
     },
     {
@@ -502,7 +432,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/teknaf.webp",
+      "image": "/assets/destinations/teknaf.webp",
       "description": "Teknaf is the southern tip of mainland Bangladesh, a town squeezed between the Naf River and the sea. From its small beach and jetty, boats depart for Saint Martin's Island and Shah Porir Dwip, while fishermen haul their nets along the river. It has a raw, frontier feel and glorious sunsets over Myanmar's distant hills."
     },
     {
@@ -516,7 +446,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/dim-pahar-alikadam-thanchi.webp",
+      "image": "/assets/destinations/dim-pahar-alikadam-thanchi.webp",
       "description": ""
     },
     {
@@ -530,7 +460,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=70",
+      "image": "/assets/destinations/mayabini-lake.webp",
       "description": ""
     },
     {
@@ -544,22 +474,8 @@
       "anchor": "start",
       "dx": 10,
       "dy": 4,
-      "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=70",
+      "image": "/assets/destinations/titas-river.webp",
       "description": "The Titas river is a branch of the Meghna that runs through Brahmanbaria, made famous by Adwaita Mallabarman's novel 'A River Called Titas' and the classic film based on it. Its banks hold fishing villages, ghats and the everyday river life of rural Bangladesh."
-    },
-    {
-      "id": 242,
-      "name": "Titas River Viewpoint",
-      "name_bn": "তিতাস নদী ঘাট ও লেক",
-      "district": "Brahmanbaria",
-      "category": "River",
-      "x": 165.1,
-      "y": 85.7,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": null,
-      "description": ""
     },
     {
       "id": 129,
@@ -586,7 +502,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/thanchi.webp",
+      "image": "/assets/destinations/thanchi.webp",
       "description": "Thanchi is a remote upazila of Bandarban bordering Myanmar, known as the base camp for treks to Nilgiri, Remakri, Nafakhum and beyond. The road to Thanchi is a spectacular ride along the Sangu river, past hanging bamboo bridges and tribal villages."
     },
     {
@@ -628,7 +544,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/dighinala.webp",
+      "image": "/assets/destinations/dighinala.webp",
       "description": "Dighinala is a scenic upazila of Khagrachhari known for rolling hills, rivers and indigenous villages. It is the staging point for the journey toward Sajek Valley and offers its own viewpoints over the surrounding green mountains."
     },
     {
@@ -642,7 +558,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/dulahazra-safari-park.webp",
+      "image": "/assets/destinations/dulahazra-safari-park.webp",
       "description": "Dulahazra Safari Park in Chakaria is Bangladesh's biggest wildlife park, where visitors ride a safari bus through open enclosures filled with Bengal tigers, lions, bears, crocodiles, deer and monkeys. There is also a traditional zoo, a children's corner and picnic lawns. It is a hugely popular family stop on the way to Cox's Bazar."
     },
     {
@@ -656,7 +572,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/dhan-siri-waterfall.webp",
+      "image": "/assets/destinations/dhan-siri-waterfall.webp",
       "description": "Dhan Siri Waterfall, deep in the forests of Bandarban's Lama upazila, is one of the tallest waterfalls in Bangladesh. Reaching it requires a trek through jungle and hills — an adventure in itself — before the water crashes into a misty gorge below. For experienced trekkers it is the ultimate Hill Tracts reward."
     },
     {
@@ -670,7 +586,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "https://images.unsplash.com/photo-1445262102387-5fbb30a5e59d?auto=format&fit=crop&w=1200&q=70",
+      "image": "/assets/destinations/naf-river.webp",
       "description": "The Naf River separates Teknaf from Myanmar and is a serene waterway lined with villages, fishing boats and mangroves. Boat trips offer views of the St. Martin's channel, the rocky island of Shahpari and daily life along the border. It is at its most photogenic at sunrise."
     },
     {
@@ -684,7 +600,7 @@
       "anchor": "start",
       "dx": 10,
       "dy": 10,
-      "image": "assets/destinations/nafakhum.webp",
+      "image": "/assets/destinations/nafakhum.webp",
       "description": "Nafakhum is often called the largest waterfall in Bangladesh, formed where the Sangu (Shangu) river drops over a sheer cliff in a deafening white curtain. Reaching it involves a rough jeep ride and a hike through the forest, but the sight of the wide falls is unforgettable."
     },
     {
@@ -698,22 +614,8 @@
       "anchor": "end",
       "dx": -10,
       "dy": -4,
-      "image": "assets/destinations/nijhum-dwip.webp",
+      "image": "/assets/destinations/nijhum-dwip.webp",
       "description": "Nijhum Dwip ('Silent Island') is a serene, sparsely populated island in the Meghna estuary. Its northern shore is a dense mangrove forest, its southern coast an endless quiet beach where herds of spotted deer roam free. With very few visitors, it is the place to go for total solitude, starry skies and sunsets with no crowds."
-    },
-    {
-      "id": 244,
-      "name": "Nijhum Dwip & Deer Sanctuary",
-      "name_bn": "নিঝুম দ্বীপ ও হরিণ অভয়ারণ্য",
-      "district": "Noakhali",
-      "category": "Island",
-      "x": 145,
-      "y": 505,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": "assets/destinations/nijhum-dwip-deer-sanctuary.webp",
-      "description": ""
     },
     {
       "id": 55,
@@ -726,7 +628,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/nilachal.webp",
+      "image": "/assets/destinations/nilachal.webp",
       "description": "Nilachal is the most famous viewpoint in Bandarban, perched on a spur above the town with commanding views of the Sangu River valley and ranges of blue hills. In monsoon mornings clouds drift through the valleys; in the dry season the panorama stretches for kilometres. A small café and easy access make sunset here irresistible."
     },
     {
@@ -740,7 +642,7 @@
       "anchor": "start",
       "dx": 10,
       "dy": 6,
-      "image": "assets/destinations/nilgiri.webp",
+      "image": "/assets/destinations/nilgiri.webp",
       "description": "Nilgiri is one of the highest tourist-accessible peaks in Bangladesh at around 2,000 feet, offering a grandstand view over the mountains of Bandarban and Myanmar beyond. A viewpoint, resort and observation deck sit on the summit, and on clear mornings the entire valley is visible below a sea of clouds."
     },
     {
@@ -754,7 +656,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/ethnological-museum-chattogram.webp",
+      "image": "/assets/destinations/ethnological-museum-chattogram.webp",
       "description": "The Ethnological Museum in Chittagong is the country's first and only museum devoted to indigenous communities. Galleries display tribal life-size models, traditional houses, musical instruments, fishing tools, costumes and crafts from the Chittagong Hill Tracts, the coastal belt and beyond."
     },
     {
@@ -768,22 +670,8 @@
       "anchor": "start",
       "dx": 10,
       "dy": 4,
-      "image": "assets/destinations/patenga-beach.webp",
+      "image": "/assets/destinations/patenga-beach.webp",
       "description": "Patenga is the beach of Chattogram, where the Karnaphuli River meets the Bay of Bengal. Sandwiched between the busy port and the sea, it has a wide stretch of sand, gentle surf and that classic salty-evening atmosphere. Watch container ships drift past, fly a kite in the sea breeze, and finish with grilled seafood from the stalls along the promenade."
-    },
-    {
-      "id": 269,
-      "name": "Polwel Park & Love Point",
-      "name_bn": "পলওয়েল পার্ক ও লাভ পয়েন্ট",
-      "district": "Rangamati",
-      "category": "Nature",
-      "x": 386.4,
-      "y": 377.5,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=70",
-      "description": ""
     },
     {
       "id": 220,
@@ -796,7 +684,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/polwel-park.webp",
+      "image": "/assets/destinations/polwel-park.webp",
       "description": "Polwel is a quiet hillside picnic spot in Bilaichhari upazila of Rangamati, known for a gentle waterfall and shaded trails around it. It is a laid-back nature escape well off the usual tourist route, best combined with a drive through the Chittagong Hill Tracts."
     },
     {
@@ -810,7 +698,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/panchari.webp",
+      "image": "/assets/destinations/panchari.webp",
       "description": "Panchari is a quiet upazila of Khagrachhari where green hills, small streams and indigenous communities offer an unhurried escape. It is less visited than Sajek or Dighinala, appealing to travellers who want authentic hill-country life."
     },
     {
@@ -824,7 +712,7 @@
       "anchor": "start",
       "dx": 10,
       "dy": 4,
-      "image": "assets/destinations/foys-lake.webp",
+      "image": "/assets/destinations/foys-lake.webp",
       "description": "Foy's Lake was created over a century ago by engineer Foy to supply water to Chattogram; today its glassy water sits in a bowl of forested hills that shade a popular theme park. Take a paddle boat across the lake, ride the cable car up for sweeping views over the city, and spend a relaxed afternoon at the water's edge — a firm favourite for families."
     },
     {
@@ -838,22 +726,8 @@
       "anchor": "end",
       "dx": -10,
       "dy": -4,
-      "image": "assets/destinations/boga-lake.webp",
+      "image": "/assets/destinations/boga-lake.webp",
       "description": "Boga Lake is one of Bangladesh's most beautiful high-altitude lakes, sitting at roughly 1,200 metres above sea level in the mountains above Ruma. The trek to the lake passes through Mru and Bawm villages, bamboo bridges and rainforest. Camping by the water is the highlight for many adventurers."
-    },
-    {
-      "id": 248,
-      "name": "Borostation Molhead / Three Rivers Estuary",
-      "name_bn": "বড়স্টেশন মোলহেড / তিন নদীর মোহনা",
-      "district": "Chandpur",
-      "category": "River",
-      "x": 71.4,
-      "y": 246.6,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": null,
-      "description": ""
     },
     {
       "id": 260,
@@ -880,7 +754,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/bandarban.webp",
+      "image": "/assets/destinations/bandarban.webp",
       "description": "Bandarban is a paradise of green hills, roaring waterfalls and living indigenous culture. Home to Bangladesh's highest peak, Tajingdong (1,280 m), and sacred sites like Nilachal and Boga Lake, it draws trekkers and photographers alike. The Sangu River cuts deep valleys through the landscape, and hillside villages of the Marma, Mru and Bawm people add a rich cultural layer to every journey."
     },
     {
@@ -894,7 +768,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/bayazid-bostami-shrine.webp",
+      "image": "/assets/destinations/bayazid-bostami-shrine.webp",
       "description": "The Bayazid Bostami Shrine honours the Sufi saint of the same name and is one of Chattogram's most visited holy sites. Its fame rests largely on the adjoining pond, said to be centuries old and home to large turtles that devotees believe are reincarnated sinners. Watching the turtles glide up for offerings, amid incense and prayers, is a singular experience."
     },
     {
@@ -908,7 +782,7 @@
       "anchor": "start",
       "dx": 10,
       "dy": -4,
-      "image": "assets/destinations/bijoy-singh-dighi.webp",
+      "image": "/assets/destinations/bijoy-singh-dighi.webp",
       "description": ""
     },
     {
@@ -922,7 +796,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/buddha-dhatu-jadi.webp",
+      "image": "/assets/destinations/buddha-dhatu-jadi.webp",
       "description": "Buddha Dhatu Jadi near Bandarban town is the largest Theravada Buddhist temple in Bangladesh, built in 2000 by the Marma community. Its brilliant white structure rises from a hillside in concentric terraces crowned by a golden Buddha, with smaller statues and a monastery below. The quiet grounds and panoramic hill views make it one of the most photogenic sites in the Chittagong Hill Tracts."
     },
     {
@@ -950,7 +824,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/maju-chowdhury-hat-ghat.webp",
+      "image": "/assets/destinations/maju-chowdhury-hat-ghat.webp",
       "description": ""
     },
     {
@@ -964,7 +838,7 @@
       "anchor": "start",
       "dx": 10,
       "dy": 4,
-      "image": "assets/destinations/mainamati.webp",
+      "image": "/assets/destinations/mainamati.webp",
       "description": "Mainamati is an archaeological treasure-house, its gentle hills hiding the ruins of an 8th-century Buddhist kingdom. Shalban Vihara, a sprawling brick monastery, is the crown jewel, while Kutila Mura's three shrines and the Mainamati Museum's exquisite bronze and terracotta relics complete the picture. Just an hour from Comilla town, it is an easy, rewarding history trip."
     },
     {
@@ -978,7 +852,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/mainamati-museum.webp",
+      "image": "/assets/destinations/mainamati-museum.webp",
       "description": "The Mainamati Museum houses sculptures, coins, terracotta plaques and pottery recovered from the Salban Vihara and nearby archaeological sites. Its collection illustrates the Buddhist and Buddhist-influenced culture that shaped this region of Bengal between the 8th and 12th centuries."
     },
     {
@@ -992,8 +866,8 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/mainamati-war-cemetery.webp",
-      "description": ""
+      "image": "/assets/destinations/mainamati-war-cemetery.webp",
+      "description": "Cumilla War Cemetery, managed by the Commonwealth War Graves Commission, holds more than 700 graves of soldiers who died in the Burma campaign of World War II. Rows of identical headstones and clipped lawns give it a moving, serene atmosphere."
     },
     {
       "id": 258,
@@ -1006,7 +880,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/mohamaya-lake-kayaking.webp",
+      "image": "/assets/destinations/mohamaya-lake-kayaking.webp",
       "description": ""
     },
     {
@@ -1020,7 +894,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=70",
+      "image": "/assets/destinations/maheshkhali-adinath.webp",
       "description": "Maheshkhali is a hilly island off Cox's Bazar, home to the ancient Adinath Temple on a forested peak and a scattering of Buddhist pagodas. Its hills, salt fields and quiet beaches make it a gentle day trip from Cox's Bazar. Climb the temple hill for sweeping views over the island and the sea beyond."
     },
     {
@@ -1048,7 +922,7 @@
       "anchor": "start",
       "dx": 10,
       "dy": 4,
-      "image": "assets/destinations/mini-coxs-bazar-chandpur.webp",
+      "image": "/assets/destinations/mini-coxs-bazar-chandpur.webp",
       "description": "The sandbar on the Meghna river near Chandpur is locally nicknamed 'Mini Cox's Bazar' because of its wide, open sand field that appears at low tide. It draws picnickers and photographers looking for a beach-like experience along the river."
     },
     {
@@ -1076,8 +950,8 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/muhuri-dam-irrigation-project.webp",
-      "description": ""
+      "image": "/assets/destinations/muhuri-dam-irrigation-project.webp",
+      "description": "Sonagazi is a coastal upazila of Feni district where the landscape turns to rivers, chars and low farmland near the Bay of Bengal. It offers a quiet, authentic look at coastal Bangladesh away from tourist routes."
     },
     {
       "id": 54,
@@ -1090,7 +964,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/meghla.webp",
+      "image": "/assets/destinations/meghla.webp",
       "description": "Meghla is a lively hill park on the outskirts of Bandarban, combining a scenic lake, hanging bridges, pedal boats and viewpoints in one easy spot. Families love its gentle walks and photo stops, while the views across the green hills and town are lovely. It is the perfect warm-up before deeper adventures into the Hill Tracts."
     },
     {
@@ -1104,7 +978,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/marine-drive.webp",
+      "image": "/assets/destinations/marine-drive.webp",
       "description": "Marine Drive is one of South Asia's most scenic coastal roads, running 80 km from Cox's Bazar's Laboni Point to Teknaf with the sea on one side and forests and hills on the other. It links Himchari, Inani and the sandbanks of the bay, making it the perfect way to explore the southern coast by car, motorbike or bicycle."
     },
     {
@@ -1118,7 +992,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=70",
+      "image": "/assets/destinations/raktadhara-memorial.webp",
       "description": ""
     },
     {
@@ -1132,7 +1006,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/rangamati.webp",
+      "image": "/assets/destinations/rangamati.webp",
       "description": "Rangamati wraps around the man-made Kaptai Lake, a vast inland sea among forested hills. Hanging cottages over the water, the centuries-old Rajban Vihara, and floating market towns of the Chakma people make it one of the most laid-back destinations in the country. A boat ride across the lake at sunrise is an experience you will not forget."
     },
     {
@@ -1146,7 +1020,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/rajban-bihar.webp",
+      "image": "/assets/destinations/rajban-bihar.webp",
       "description": "Rajban Bihar is a historic Theravada Buddhist monastery in Rangamati town, said to be around three centuries old. Its serene compound, golden stupas and prayer halls make it both a place of worship and a tranquil stop for visitors."
     },
     {
@@ -1160,7 +1034,7 @@
       "anchor": "end",
       "dx": -10,
       "dy": -4,
-      "image": "assets/destinations/ramgati-lakshmipur.webp",
+      "image": "/assets/destinations/ramgati-lakshmipur.webp",
       "description": "Ramgati is a low-lying upazila of Lakshmipur district facing the Meghna river and the islands of Bhola across the water. Its riverside villages, ferries and views over the wide Meghna make it a quiet stop for travellers exploring the delta."
     },
     {
@@ -1174,7 +1048,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/ramu.webp",
+      "image": "/assets/destinations/ramu.webp",
       "description": "Ramu, a short drive inland from Cox's Bazar, is the spiritual heart of the region's Buddhist community. Home to some of Bangladesh's oldest temples and pagodas, its quiet lanes are lined with shrines and towering Buddhist statues. It offers a serene, cultural contrast to the beach town's energy."
     },
     {
@@ -1188,22 +1062,8 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/richhang-waterfall.webp",
+      "image": "/assets/destinations/richhang-waterfall.webp",
       "description": "Richhang Waterfall, hidden in the green hills near Khagrachhari's Marisha area, is one of the most spectacular cascades in the Chittagong Hill Tracts. In the monsoon the water plunges over a wide rock shelf into a misty pool below, framed by jungle and bamboo groves. A short trek through the forest and a few village paths lead to this wild, beautiful spot."
-    },
-    {
-      "id": 268,
-      "name": "Richhang Waterfall",
-      "name_bn": "রিসাং ঝর্ণা",
-      "district": "Khagrachhari",
-      "category": "Waterfall",
-      "x": 337,
-      "y": 273.5,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=70",
-      "description": ""
     },
     {
       "id": 255,
@@ -1230,7 +1090,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/rupsha-zamindar-bari-chandpur.webp",
+      "image": "/assets/destinations/rupsha-zamindar-bari-chandpur.webp",
       "description": ""
     },
     {
@@ -1244,7 +1104,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/remakri.webp",
+      "image": "/assets/destinations/remakri.webp",
       "description": "Remakri is the southernmost Bangladeshi village along the Sangu river, near the Myanmar border. It is the trailhead for Nafakhum and offers simple stays, tribal culture and the feeling of being at the very edge of the country."
     },
     {
@@ -1258,22 +1118,8 @@
       "anchor": "start",
       "dx": 10,
       "dy": -4,
-      "image": "assets/destinations/lalmai-hills.webp",
+      "image": "/assets/destinations/lalmai-hills.webp",
       "description": "The Lalmai Hills are a chain of low hills near Cumilla that once carried an entire Buddhist monastic complex. Today they are partly quarried, yet walking the remaining slopes still reveals brick ruins, forested valleys and open views of the surrounding plain."
-    },
-    {
-      "id": 253,
-      "name": "Lalmai Pahar & Eco Park",
-      "name_bn": "লালমাই পাহাড় ও ইকো পার্ক",
-      "district": "Cumilla",
-      "category": "Hill",
-      "x": 172.3,
-      "y": 204.5,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": null,
-      "description": ""
     },
     {
       "id": 251,
@@ -1286,7 +1132,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/lohagara-moth-chandpur.webp",
+      "image": "/assets/destinations/lohagara-moth-chandpur.webp",
       "description": ""
     },
     {
@@ -1300,7 +1146,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=70",
+      "image": "/assets/destinations/shilmiler-pathar.webp",
       "description": ""
     },
     {
@@ -1314,22 +1160,8 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/shuvolong-waterfall.webp",
+      "image": "/assets/destinations/shuvolong-waterfall.webp",
       "description": "Shuvolong is a picturesque waterfall that pours directly into Kaptai lake, making it a highlight of the Rangamati boat circuit. Boats pause so visitors can swim in the cool water where the falls meet the lake, surrounded by forested hills."
-    },
-    {
-      "id": 270,
-      "name": "Shuvolong Waterfall",
-      "name_bn": "শুভলং ঝর্ণা ও কাপ্তাই লেক ক্রুজ",
-      "district": "Rangamati",
-      "category": "Waterfall",
-      "x": 398.8,
-      "y": 361.9,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=70",
-      "description": ""
     },
     {
       "id": 115,
@@ -1342,7 +1174,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/shoilo-propat.webp",
+      "image": "/assets/destinations/shoilo-propat.webp",
       "description": "Shoilo Propat is one of the most accessible waterfalls in Bandarban, located along the road to Chimbuk hill. Water tumbles down a mossy rock face into a small pool, making it a popular photo stop on the way to Meghla or Chimbuk."
     },
     {
@@ -1356,7 +1188,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/sandwip-island.webp",
+      "image": "/assets/destinations/sandwip-island.webp",
       "description": "Sandwip is a large island in the Meghna estuary with a storied past — once a major trading port, it retains old mosques and a distinct island culture. Cycling or walking its quiet lanes, past fields, bazaars and river ghats, is a genuine slice of rural Bangladesh. Its history and remoteness make it a rewarding off-beat destination."
     },
     {
@@ -1370,7 +1202,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/saka-haphong-peak.webp",
+      "image": "/assets/destinations/saka-haphong-peak.webp",
       "description": ""
     },
     {
@@ -1384,7 +1216,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/sangu-river.webp",
+      "image": "/assets/destinations/sangu-river.webp",
       "description": "The Sangu (Shangu) river is the lifeblood of Bandarban, winding through deep green valleys from the hills to the Bay of Bengal. Traditional wooden boats ferry travellers between villages, while the upper reaches offer some of the country's few white-water rafting stretches."
     },
     {
@@ -1398,22 +1230,8 @@
       "anchor": "end",
       "dx": -10,
       "dy": 4,
-      "image": "assets/destinations/sajek-valley-konglak-peak.webp",
+      "image": "/assets/destinations/sajek-valley-konglak-peak.webp",
       "description": "Sajek Valley is the 'Queen of Hills' of Bangladesh, a serene hill village in the far north of the Chittagong Hill Tracts. Winding roads cut through layered green mountains that vanish into clouds, while sunrises paint the valley gold. The scenic drive alone — past Khagrachhari and the huge Ruilui Para viewpoint — is worth the journey. It is the perfect escape for nature lovers and photographers."
-    },
-    {
-      "id": 23,
-      "name": "Sitakunda",
-      "name_bn": "সীতাকুণ্ড",
-      "district": "Chattogram",
-      "category": "Nature",
-      "x": 285.1,
-      "y": 383.8,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": "assets/destinations/sitakunda.webp",
-      "description": "Sitakunda offers a full day of hills and greenery a short drive north of Chattogram. Chandranath Hill, the highest peak of the Chattogram district, is crowned by an ancient temple and draws pilgrims year-round. Nearby, Sitakunda Eco Park and Bhatiary's forested slopes hide small waterfalls and shady trails perfect for a nature escape."
     },
     {
       "id": 261,
@@ -1426,8 +1244,8 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/sitakunda-botanical-garden-ecopark.webp",
-      "description": ""
+      "image": "/assets/destinations/sitakunda-botanical-garden-ecopark.webp",
+      "description": "Sitakunda offers a full day of hills and greenery a short drive north of Chattogram. Chandranath Hill, the highest peak of the Chattogram district, is crowned by an ancient temple and draws pilgrims year-round. Nearby, Sitakunda Eco Park and Bhatiary's forested slopes hide small waterfalls and shady trails perfect for a nature escape."
     },
     {
       "id": 8,
@@ -1440,22 +1258,8 @@
       "anchor": "end",
       "dx": -10,
       "dy": -6,
-      "image": "assets/destinations/saint-martins-island.webp",
+      "image": "/assets/destinations/saint-martins-island.webp",
       "description": "Saint Martin's Island, or Narikel Jinjira, is Bangladesh's only coral island, floating in the deep blue Bay of Bengal. With no roads and no vehicles, life here moves to the rhythm of the tide. Swim in crystal-clear water, collect rare seashells on Chera Dwip, and sleep in beachside cottages under a sky full of stars."
-    },
-    {
-      "id": 135,
-      "name": "Sonagazi",
-      "name_bn": "সোনাগাজী",
-      "district": "Feni",
-      "category": "River",
-      "x": 226.9,
-      "y": 331.8,
-      "anchor": "start",
-      "dx": 8,
-      "dy": 3,
-      "image": "assets/destinations/sonagazi.webp",
-      "description": "Sonagazi is a coastal upazila of Feni district where the landscape turns to rivers, chars and low farmland near the Bay of Bengal. It offers a quiet, authentic look at coastal Bangladesh away from tourist routes."
     },
     {
       "id": 99,
@@ -1468,7 +1272,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/sonadia-island.webp",
+      "image": "/assets/destinations/sonadia-island.webp",
       "description": "Sonadia Island is a largely uninhabited island off Cox's Bazar, famed for its shell-strewn beaches and rich birdlife. Protected as an ecologically critical area, it is a magnet for migratory birds and for those seeking total solitude. Reached by local boat, it offers wild beaches and a true escape from the crowds."
     },
     {
@@ -1482,7 +1286,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=70",
+      "image": "/assets/destinations/swarna-dwip.webp",
       "description": ""
     },
     {
@@ -1510,7 +1314,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/haimchar.webp",
+      "image": "/assets/destinations/haimchar.webp",
       "description": "Haimchar is a riverine upazila of Chandpur where the Meghna splits into channels around low-lying chars. Village ferries, fishing boats and floating markets offer an authentic look at river life in the delta."
     },
     {
@@ -1524,7 +1328,7 @@
       "anchor": "start",
       "dx": 8,
       "dy": 3,
-      "image": "assets/destinations/hatiya-island.webp",
+      "image": "/assets/destinations/hatiya-island.webp",
       "description": "Hatiya is one of Bangladesh's largest islands, a low-lying expanse in the Meghna estuary shaped by tides and rivers. Fishing villages, shrimp farms and long quiet shores stretch across it, while sunsets over the estuary are spectacular. It is a genuinely rural, off-the-beaten-path island experience."
     },
     {
@@ -1538,7 +1342,7 @@
       "anchor": "start",
       "dx": 10,
       "dy": 4,
-      "image": "assets/destinations/himchari-national-park.webp",
+      "image": "/assets/destinations/himchari-national-park.webp",
       "description": "Himchari National Park hugs the coast a few kilometres south of Cox's Bazar, where forested hills tumble toward a wide bay. A short trek leads to a seasonal waterfall, while the main viewpoint rewards climbers with a stunning panorama of the sea meeting the green hills. It is the classic companion stop to the town's famous beach."
     }
   ]

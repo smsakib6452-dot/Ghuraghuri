@@ -57,6 +57,13 @@ async function generateAllOgImages() {
     .resize({ width: 220 })
     .toBuffer();
 
+  const destinationsPath = path.resolve(__dirname, '../src/data/destinations.json');
+  const destinations = JSON.parse(fs.readFileSync(destinationsPath, 'utf8'));
+  const divCounts = {};
+  for (const d of destinations) {
+    divCounts[d.division] = (divCounts[d.division] || 0) + 1;
+  }
+
   // 1. Static Routes
   const ogDir = path.resolve(__dirname, '../public/og');
   fs.mkdirSync(ogDir, { recursive: true });
@@ -66,7 +73,7 @@ async function generateAllOgImages() {
       file: 'home.jpg',
       bg: 'assets/destinations/sundarbans.webp',
       title: 'Ghuraghuri • Bangladesh Travel Explorer',
-      subtitle: 'Discover 295+ Curated Tourist Destinations Across 8 Divisions'
+      subtitle: `Discover ${destinations.length}+ Curated Tourist Destinations Across 8 Divisions`
     },
     {
       file: 'destinations.jpg',
@@ -108,7 +115,7 @@ async function generateAllOgImages() {
       file: 'chattogram.jpg',
       bg: 'assets/destinations/coxs-bazar.webp',
       title: 'Chattogram Division Travel Guide',
-      subtitle: 'Explore 110 Handpicked Spots, Hills, Beaches & Scenic Drives'
+      subtitle: `Explore ${divCounts.Chattogram || 0} Handpicked Spots, Hills, Beaches & Scenic Drives`
     }
   ];
 
@@ -125,14 +132,14 @@ async function generateAllOgImages() {
   fs.mkdirSync(divisionsDir, { recursive: true });
 
   const divisionRoutes = [
-    { slug: 'chattogram', name: 'Chattogram', count: 110, bg: 'assets/destinations/coxs-bazar.webp' },
-    { slug: 'sylhet', name: 'Sylhet', count: 30, bg: 'assets/destinations/srimangal.webp' },
-    { slug: 'khulna', name: 'Khulna', count: 22, bg: 'assets/destinations/sundarbans.webp' },
-    { slug: 'barishal', name: 'Barishal', count: 19, bg: 'assets/destinations/kuakata.webp' },
-    { slug: 'dhaka', name: 'Dhaka', count: 56, bg: 'assets/destinations/ahsan-manzil.webp' },
-    { slug: 'rajshahi', name: 'Rajshahi', count: 27, bg: 'assets/destinations/puthia-temple-complex.webp' },
-    { slug: 'rangpur', name: 'Rangpur', count: 19, bg: 'assets/destinations/tajhat-palace.webp' },
-    { slug: 'mymensingh', name: 'Mymensingh', count: 12, bg: 'assets/destinations/shashi-lodge.webp' }
+    { slug: 'chattogram', name: 'Chattogram', count: divCounts.Chattogram || 0, bg: 'assets/destinations/coxs-bazar.webp' },
+    { slug: 'sylhet', name: 'Sylhet', count: divCounts.Sylhet || 0, bg: 'assets/destinations/srimangal.webp' },
+    { slug: 'khulna', name: 'Khulna', count: divCounts.Khulna || 0, bg: 'assets/destinations/sundarbans.webp' },
+    { slug: 'barishal', name: 'Barishal', count: divCounts.Barishal || 0, bg: 'assets/destinations/kuakata.webp' },
+    { slug: 'dhaka', name: 'Dhaka', count: divCounts.Dhaka || 0, bg: 'assets/destinations/ahsan-manzil.webp' },
+    { slug: 'rajshahi', name: 'Rajshahi', count: divCounts.Rajshahi || 0, bg: 'assets/destinations/puthia-temple-complex.webp' },
+    { slug: 'rangpur', name: 'Rangpur', count: divCounts.Rangpur || 0, bg: 'assets/destinations/tajhat-palace.webp' },
+    { slug: 'mymensingh', name: 'Mymensingh', count: divCounts.Mymensingh || 0, bg: 'assets/destinations/shashi-lodge.webp' }
   ];
 
   for (const div of divisionRoutes) {
@@ -150,8 +157,6 @@ async function generateAllOgImages() {
   }
 
   // 3. Destination Pages
-  const destinationsPath = path.resolve(__dirname, '../src/data/destinations.json');
-  const destinations = JSON.parse(fs.readFileSync(destinationsPath, 'utf8'));
 
   const quarantinePath = path.resolve(__dirname, '../src/data/image-quarantine.json');
   const quarantine = fs.existsSync(quarantinePath) ? JSON.parse(fs.readFileSync(quarantinePath, 'utf8')) : [];

@@ -63,6 +63,7 @@ export function getBreadcrumbListSchema(items: { name: string; url: string }[]) 
 export function getTouristAttractionSchema(destination: {
   name: string;
   name_bn?: string;
+  alternateNames?: string[];
   description: string;
   image?: string | null;
   latitude: number;
@@ -74,11 +75,23 @@ export function getTouristAttractionSchema(destination: {
   district: string;
   slug: string;
 }) {
+  const allAltNames = Array.from(
+    new Set(
+      [destination.name_bn, ...(destination.alternateNames || [])]
+        .filter((n): n is string => Boolean(n && n.trim()))
+        .map((n) => n.trim())
+    )
+  );
+
   const schema: Record<string, any> = {
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
     name: destination.name,
-    alternateName: destination.name_bn,
+    ...(allAltNames.length === 1
+      ? { alternateName: allAltNames[0] }
+      : allAltNames.length > 1
+      ? { alternateName: allAltNames }
+      : {}),
     description: destination.description,
     url: `${SITE_URL}/destinations/${destination.slug}`,
     geo: {

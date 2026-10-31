@@ -5,10 +5,6 @@
  * ============================================================================
  */
 
-const u = function (id, w) {
-    return "https://images.unsplash.com/" + id + "?auto=format&fit=crop&w=" + w + "&q=70";
-};
-
 var DESTINATIONS = [
     {
         "id": 1,
@@ -26,10 +22,16 @@ var DESTINATIONS = [
         "reviews": 1240,
         "latitude": 21.4272,
         "longitude": 92.0058,
-        "image": "assets/destinations/coxs-bazar.webp",
-        "imageLg": "assets/destinations/coxs-bazar.webp",
+        "image": "/assets/destinations/coxs-bazar.webp",
+        "imageLg": "/assets/destinations/coxs-bazar.webp",
         "gallery": [
-            "assets/destinations/coxs-bazar.webp"
+            "/assets/destinations/coxs-bazar.webp"
+        ],
+        "photoId": "photo-1507525428034-b723cf961d3e",
+        "galleryIds": [
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1504851149312-7a075b496cc7",
+            "photo-1519046904884-53103b34b206"
         ],
         "shortDesc": "Home to the world's longest unbroken natural sea beach, stretching 120 km along the Bay of Bengal.",
         "description": "Cox's Bazar is Bangladesh's most iconic beach destination and the longest unbroken natural sea beach in the world. Golden sands, gentle waves and colorful beach life stretch for over 120 km along the Bay of Bengal. From sunbathing and sea-bathing to seafood feasts and sunset cruises, it offers something for every kind of traveler. Visit nearby Himchari and Inani for quieter stretches and viewpoints.",
@@ -87,7 +89,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "very_high",
+        "popularity": 100,
         "status": "active",
         "tags": [
             "beach"
@@ -117,16 +119,23 @@ var DESTINATIONS = [
         "category": "Mountain",
         "categories": [
             "Mountain",
-            "Adventure"
+            "Adventure",
+            "Nature"
         ],
         "rating": 4.8,
         "reviews": 980,
         "latitude": 23.3819,
         "longitude": 92.2938,
-        "image": "assets/destinations/sajek-valley-konglak-peak.webp",
-        "imageLg": "assets/destinations/sajek-valley-konglak-peak.webp",
+        "image": "/assets/destinations/sajek-valley-konglak-peak.webp",
+        "imageLg": "/assets/destinations/sajek-valley-konglak-peak.webp",
         "gallery": [
-            "assets/destinations/sajek-valley-konglak-peak.webp"
+            "/assets/destinations/sajek-valley-konglak-peak.webp"
+        ],
+        "photoId": "photo-1470071459604-3b5ec3a7fe05",
+        "galleryIds": [
+            "GBYWXNWO81A",
+            "photo-1509266272358-7701da638078",
+            "photo-1469474968028-56623f02e42e"
         ],
         "shortDesc": "A misty hilltop village perched 1,800 ft above sea level, famous for cloud-kissed sunrises.",
         "description": "Sajek Valley is the 'Queen of Hills' of Bangladesh, a serene hill village in the far north of the Chittagong Hill Tracts. Winding roads cut through layered green mountains that vanish into clouds, while sunrises paint the valley gold. The scenic drive alone — past Khagrachhari and the huge Ruilui Para viewpoint — is worth the journey. It is the perfect escape for nature lovers and photographers.",
@@ -183,7 +192,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "very_high",
+        "popularity": 99,
         "status": "active",
         "tags": [],
         "travelInfo": {
@@ -197,7 +206,13 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Sajek Valley Konglak Peak",
+            "কংলাক পাহাড় চূড়া, সাজেক",
+            "Konglak Peak",
+            "Konglak Para"
+        ]
     },
     {
         "id": 3,
@@ -217,10 +232,16 @@ var DESTINATIONS = [
         "reviews": 860,
         "latitude": 22.1953,
         "longitude": 92.2189,
-        "image": "assets/destinations/bandarban.webp",
-        "imageLg": "assets/destinations/bandarban.webp",
+        "image": "/assets/destinations/bandarban.webp",
+        "imageLg": "/assets/destinations/bandarban.webp",
         "gallery": [
-            "assets/destinations/bandarban.webp"
+            "/assets/destinations/bandarban.webp"
+        ],
+        "photoId": "photo-1469474968028-56623f02e42e",
+        "galleryIds": [
+            "wdwLVUPU_Bw",
+            "photo-1470071459604-3b5ec3a7fe05",
+            "photo-1432405972618-c60b0225b8f9"
         ],
         "shortDesc": "Bangladesh's most scenic hill district, with dramatic peaks, waterfalls and indigenous villages.",
         "description": "Bandarban is a paradise of green hills, roaring waterfalls and living indigenous culture. Home to Bangladesh's highest peak, Tajingdong (1,280 m), and sacred sites like Nilachal and Boga Lake, it draws trekkers and photographers alike. The Sangu River cuts deep valleys through the landscape, and hillside villages of the Marma, Mru and Bawm people add a rich cultural layer to every journey.",
@@ -279,7 +300,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "very_high",
+        "popularity": 98,
         "status": "active",
         "tags": [],
         "travelInfo": {
@@ -312,10 +333,16 @@ var DESTINATIONS = [
         "reviews": 720,
         "latitude": 22.647,
         "longitude": 92.152,
-        "image": "assets/destinations/rangamati.webp",
-        "imageLg": "assets/destinations/rangamati.webp",
+        "image": "/assets/destinations/rangamati.webp",
+        "imageLg": "/assets/destinations/rangamati.webp",
         "gallery": [
-            "assets/destinations/rangamati.webp"
+            "/assets/destinations/rangamati.webp"
+        ],
+        "photoId": "photo-1506744038136-46273834b3fb",
+        "galleryIds": [
+            "Gusfeboth4A",
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1501785888041-af3ef285b470"
         ],
         "shortDesc": "The lake district of Bangladesh — emerald hills around the vast Kaptai Lake.",
         "description": "Rangamati wraps around the man-made Kaptai Lake, a vast inland sea among forested hills. Hanging cottages over the water, the centuries-old Rajban Vihara, and floating market towns of the Chakma people make it one of the most laid-back destinations in the country. A boat ride across the lake at sunrise is an experience you will not forget.",
@@ -372,7 +399,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "high",
+        "popularity": 93,
         "status": "active",
         "tags": [],
         "travelInfo": {
@@ -405,10 +432,16 @@ var DESTINATIONS = [
         "reviews": 830,
         "latitude": 24.8949,
         "longitude": 91.8687,
-        "image": "assets/destinations/sylhet.webp",
-        "imageLg": "assets/destinations/sylhet.webp",
+        "image": "/assets/destinations/sylhet.webp",
+        "imageLg": "/assets/destinations/sylhet.webp",
         "gallery": [
-            "assets/destinations/sylhet.webp"
+            "/assets/destinations/sylhet.webp"
+        ],
+        "photoId": "photo-1472214103451-9374bd1c798e",
+        "galleryIds": [
+            "zzUTACsJZ80",
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1439066615861-d1af74d74000"
         ],
         "shortDesc": "Tea country and the spiritual heart of Bangladesh — rolling green hills and ancient shrines.",
         "description": "Sylhet is a region of endless tea gardens, blue waters and spiritual heritage. Beyond the city, the countryside rolls into manicured tea estates, while Hazrat Shah Jalal's revered shrine anchors the city's identity. A gateway to Jaflong, Ratargul and Srimangal, Sylhet rewards visitors with lush scenery and some of the warmest hospitality in Bangladesh.",
@@ -464,7 +497,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "very_high",
+        "popularity": 95,
         "status": "active",
         "tags": [],
         "travelInfo": {
@@ -486,6 +519,7 @@ var DESTINATIONS = [
         "name": "Srimangal",
         "name_bn": "শ্রীমঙ্গল",
         "slug": "srimangal",
+        "altName": "Sreemangal",
         "division": "Sylhet",
         "district": "Moulvibazar",
         "upazila": "",
@@ -498,13 +532,19 @@ var DESTINATIONS = [
         "reviews": 690,
         "latitude": 24.3065,
         "longitude": 91.7296,
-        "image": "assets/destinations/srimangal.webp",
-        "imageLg": "assets/destinations/srimangal.webp",
+        "image": "/assets/destinations/srimangal.webp",
+        "imageLg": "/assets/destinations/srimangal.webp",
         "gallery": [
-            "assets/destinations/srimangal.webp"
+            "/assets/destinations/srimangal.webp"
+        ],
+        "photoId": "photo-1500530855697-b586d89ba3ee",
+        "galleryIds": [
+            "zzUTACsJZ80",
+            "photo-1448375240586-882707db888b",
+            "photo-1473448912268-2022ce9509d8"
         ],
         "shortDesc": "The 'Tea Capital of Bangladesh' — endless emerald tea estates and the famous Lawachara rainforest.",
-        "description": "Srimangal sits at the heart of Bangladesh's tea country, where the landscape rolls into a hundred shades of green. Wake to mist over tea bushes, ride the narrow gauge train through plantations, and walk beneath the giants of Lawachara National Park. Spot gibbons in the canopy, taste the freshest tea in the world's tea garden, and visit the Monipuri silk village.",
+        "description": "Srimangal (also commonly spelled Sreemangal) sits at the heart of Bangladesh's tea country, where the landscape rolls into a hundred shades of green. Wake to mist over tea bushes, ride the narrow gauge train through plantations, and walk beneath the giants of Lawachara National Park. Spot gibbons in the canopy, taste the freshest tea in the world's tea garden, and visit the Monipuri silk village.",
         "bestTime": "November – February",
         "recommendedDays": "2 – 3 days",
         "difficulty": "Easy",
@@ -558,7 +598,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "high",
+        "popularity": 94,
         "status": "active",
         "tags": [],
         "travelInfo": {
@@ -572,7 +612,10 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Sreemangal"
+        ]
     },
     {
         "id": 7,
@@ -592,10 +635,16 @@ var DESTINATIONS = [
         "reviews": 1010,
         "latitude": 21.9497,
         "longitude": 89.1833,
-        "image": "assets/destinations/sundarbans.webp",
-        "imageLg": "assets/destinations/sundarbans.webp",
+        "image": "/assets/destinations/sundarbans.webp",
+        "imageLg": "/assets/destinations/sundarbans.webp",
         "gallery": [
-            "assets/destinations/sundarbans.webp"
+            "/assets/destinations/sundarbans.webp"
+        ],
+        "photoId": "photo-1505118380757-91f5f5632de0",
+        "galleryIds": [
+            "2m1t5yzAf5k",
+            "photo-1448375240586-882707db888b",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "The world's largest mangrove forest and home of the majestic Royal Bengal Tiger.",
         "description": "The Sundarbans is a UNESCO World Heritage Site and the largest mangrove forest on Earth, a labyrinth of tidal rivers, mudflats and saltwater forest. It is the last stronghold of the Royal Bengal Tiger, and home to spotted deer, crocodiles and dolphins. Exploring by boat — through Katka, Hiron Point and the mysterious Dublar Char — is a once-in-a-lifetime wildlife adventure.",
@@ -652,7 +701,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "very_high",
+        "popularity": 97,
         "status": "active",
         "tags": [],
         "travelInfo": {
@@ -685,10 +734,16 @@ var DESTINATIONS = [
         "reviews": 870,
         "latitude": 20.6107,
         "longitude": 92.328,
-        "image": "assets/destinations/saint-martins-island.webp",
-        "imageLg": "assets/destinations/saint-martins-island.webp",
+        "image": "/assets/destinations/saint-martins-island.webp",
+        "imageLg": "/assets/destinations/saint-martins-island.webp",
         "gallery": [
-            "assets/destinations/saint-martins-island.webp"
+            "/assets/destinations/saint-martins-island.webp"
+        ],
+        "photoId": "photo-1519046904884-53103b34b206",
+        "galleryIds": [
+            "Fz-jPKN9mmI",
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "Bangladesh's only coral island — turquoise water, white sands and seashell heaven.",
         "description": "Saint Martin's Island, or Narikel Jinjira, is Bangladesh's only coral island, floating in the deep blue Bay of Bengal. With no roads and no vehicles, life here moves to the rhythm of the tide. Swim in crystal-clear water, collect rare seashells on Chera Dwip, and sleep in beachside cottages under a sky full of stars.",
@@ -745,7 +800,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "very_high",
+        "popularity": 96,
         "status": "active",
         "tags": [
             "beach"
@@ -780,10 +835,16 @@ var DESTINATIONS = [
         "reviews": 610,
         "latitude": 21.8294,
         "longitude": 90.1238,
-        "image": "assets/destinations/kuakata.webp",
-        "imageLg": "assets/destinations/kuakata.webp",
+        "image": "/assets/destinations/kuakata.webp",
+        "imageLg": "/assets/destinations/kuakata.webp",
         "gallery": [
-            "assets/destinations/kuakata.webp"
+            "/assets/destinations/kuakata.webp"
+        ],
+        "photoId": "photo-1507525428034-b723cf961d3e",
+        "galleryIds": [
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1470252649378-9c29740c9fa8",
+            "photo-1519046904884-53103b34b206"
         ],
         "shortDesc": "The rare beach where you can watch both sunrise and sunset over the Bay of Bengal.",
         "description": "Kuakata offers one of the world's rare views of both sunrise and sunset from the same beach, across 18 km of untouched golden sand. Framed by coconut palms and the deep green Gangamati forest, it is quieter and calmer than Cox's Bazar. Local Rakhine culture, fisher-village life and the sacred Fatrar Char turtle sanctuary add character.",
@@ -838,7 +899,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "high",
+        "popularity": 92,
         "status": "active",
         "tags": [
             "beach"
@@ -864,11 +925,11 @@ var DESTINATIONS = [
         "division": "Sylhet",
         "district": "Sylhet",
         "upazila": "",
-        "category": "River",
+        "category": "Waterfall",
         "categories": [
-            "River",
+            "Waterfall",
             "Nature",
-            "Hills"
+            "Adventure"
         ],
         "rating": 4.5,
         "reviews": 540,
@@ -877,6 +938,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1432405972618-c60b0225b8f9",
+        "galleryIds": [
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1473448912268-2022ce9509d8",
+            "photo-1448375240586-882707db888b"
+        ],
         "shortDesc": "Where the Piyain River meets the Meghalaya hills — waterfalls, riverside stones and green borderlands.",
         "description": "Jaflong sits on the edge of the Meghalaya hills of India, where the crystal-clear Piyain River tumbles across smooth river stones beneath the forested Khasia hills. The wide riverbed scattered with stones, the small cascades, and the lush border scenery make it one of Sylhet's most photogenic spots. A morning here with the mist lifting off the water is pure magic.",
         "bestTime": "October – March",
@@ -928,7 +995,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": false,
-        "popularity": "high",
+        "popularity": 88,
         "status": "active",
         "tags": [],
         "travelInfo": {
@@ -961,10 +1028,16 @@ var DESTINATIONS = [
         "reviews": 470,
         "latitude": 24.9705,
         "longitude": 91.9878,
-        "image": "assets/destinations/ratargul-swamp-forest.webp",
-        "imageLg": "assets/destinations/ratargul-swamp-forest.webp",
+        "image": "/assets/destinations/ratargul-swamp-forest.webp",
+        "imageLg": "/assets/destinations/ratargul-swamp-forest.webp",
         "gallery": [
-            "assets/destinations/ratargul.webp"
+            "/assets/destinations/ratargul-swamp-forest.webp"
+        ],
+        "photoId": "photo-1448375240586-882707db888b",
+        "galleryIds": [
+            "photo-1448375240586-882707db888b",
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1476514525535-07fb3b4ae5f1"
         ],
         "shortDesc": "Bangladesh's only freshwater swamp forest — glide through flooded trees in a wooden boat.",
         "description": "Ratargul is a unique freshwater swamp forest, a flooded woodland of trees standing knee-deep in tea-colored water. Silent rowing boats drift between submerged trunks while kingfishers and monkeys watch from the canopy. Best visited in the monsoon when the water is high, it feels like paddling through a living, breathing Jurassic scene.",
@@ -1016,7 +1089,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": false,
-        "popularity": "high",
+        "popularity": 87,
         "status": "active",
         "tags": [],
         "travelInfo": {
@@ -1029,7 +1102,11 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": "Fly to Sylhet, then ~1.5 hrs by road"
-        }
+        },
+        "alternateNames": [
+            "Ratargul",
+            "রাতারগুল"
+        ]
     },
     {
         "id": 12,
@@ -1048,10 +1125,16 @@ var DESTINATIONS = [
         "reviews": 390,
         "latitude": 25.1274,
         "longitude": 91.0808,
-        "image": "assets/destinations/tanguar-haor.webp",
-        "imageLg": "assets/destinations/tanguar-haor.webp",
+        "image": "/assets/destinations/tanguar-haor.webp",
+        "imageLg": "/assets/destinations/tanguar-haor.webp",
         "gallery": [
-            "assets/destinations/tanguar-haor.webp"
+            "/assets/destinations/tanguar-haor.webp"
+        ],
+        "photoId": "photo-1501785888041-af3ef285b470",
+        "galleryIds": [
+            "photo-1501785888041-af3ef285b470",
+            "photo-1506744038136-46273834b3fb",
+            "photo-1472214103451-9374bd1c798e"
         ],
         "shortDesc": "A vast wetland sanctuary in winter — home to thousands of migratory waterfowl.",
         "description": "Tanguar Haor is a Ramsar wetland of world importance and one of the largest freshwater wetlands in South Asia. In winter it becomes a dazzling mirror-sheet of water crowded with hundreds of thousands of migratory birds. In monsoon it swells into a vast inland sea dotted with floating villages. A boat journey here in January is a bird-watcher's dream.",
@@ -1104,7 +1187,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": false,
-        "popularity": "medium",
+        "popularity": 91,
         "status": "active",
         "tags": [],
         "travelInfo": {
@@ -1138,10 +1221,17 @@ var DESTINATIONS = [
         "reviews": 280,
         "latitude": 22.0634,
         "longitude": 90.9,
-        "image": "assets/destinations/nijhum-dwip.webp",
-        "imageLg": "assets/destinations/nijhum-dwip.webp",
+        "image": "/assets/destinations/nijhum-dwip.webp",
+        "imageLg": "/assets/destinations/nijhum-dwip.webp",
         "gallery": [
-            "assets/destinations/nijhum-dwip.webp"
+            "/assets/destinations/nijhum-dwip.webp",
+            "assets/destinations/nijhum-dwip-deer-sanctuary.webp"
+        ],
+        "photoId": "photo-1506929562872-bb421503ef21",
+        "galleryIds": [
+            "photo-1506929562872-bb421503ef21",
+            "photo-1504851149312-7a075b496cc7",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "The 'Silent Island' of the Bay — deer, dense mangrove forest and empty golden beaches.",
         "description": "Nijhum Dwip ('Silent Island') is a serene, sparsely populated island in the Meghna estuary. Its northern shore is a dense mangrove forest, its southern coast an endless quiet beach where herds of spotted deer roam free. With very few visitors, it is the place to go for total solitude, starry skies and sunsets with no crowds.",
@@ -1210,7 +1300,11 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Nijhum Dwip & Deer Sanctuary",
+            "নিঝুম দ্বীপ ও হরিণ অভয়ারণ্য"
+        ]
     },
     {
         "id": 14,
@@ -1229,10 +1323,16 @@ var DESTINATIONS = [
         "reviews": 520,
         "latitude": 23.6482,
         "longitude": 90.6085,
-        "image": "assets/destinations/sonargaon.webp",
-        "imageLg": "assets/destinations/sonargaon.webp",
+        "image": "/assets/destinations/sonargaon.webp",
+        "imageLg": "/assets/destinations/sonargaon.webp",
         "gallery": [
-            "assets/destinations/sonargaon.webp"
+            "/assets/destinations/sonargaon.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "fi1cYqgfkmo",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "The medieval capital of Bengal — a living museum of Mughal-era palaces and folk art.",
         "description": "Sonargaon was the capital of Bengal between the 13th and 16th centuries, and today its Panam City streets are frozen in time. Ornate abandoned mansions line the brick road of Panam Nagar, while the Folk Art and Crafts Museum showcases the finest of Bengali heritage. Just 30 km from Dhaka, it is the easiest, richest history day-trip in Bangladesh.",
@@ -1287,7 +1387,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": false,
-        "popularity": "high",
+        "popularity": 86,
         "status": "active",
         "tags": [],
         "travelInfo": {
@@ -1304,114 +1404,35 @@ var DESTINATIONS = [
         }
     },
     {
-        "id": 15,
-        "name": "Paharpur",
-        "name_bn": "পাহাড়পুর",
-        "slug": "paharpur",
-        "division": "Rajshahi",
-        "district": "Naogaon",
-        "upazila": "",
-        "category": "Historical",
-        "categories": [
-            "Historical"
-        ],
-        "rating": 4.6,
-        "reviews": 350,
-        "latitude": 25.0308,
-        "longitude": 88.9772,
-        "image": "assets/destinations/paharpur.webp",
-        "imageLg": "assets/destinations/paharpur.webp",
-        "gallery": [
-            "assets/destinations/paharpur.webp"
-        ],
-        "shortDesc": "Somapura Mahavihara — the ruins of one of the largest Buddhist monasteries in the world.",
-        "description": "Paharpur's Somapura Mahavihara is a UNESCO World Heritage Site and one of the most important archaeological discoveries in South Asia. Built in the 8th century by King Dharmapala, this vast cruciform Buddhist monastery was once the largest of its kind in the world, its tiered terracotta tower rising from the jungle of northwest Bengal. The intricate terracotta plaques are a masterpiece of ancient artistry.",
-        "bestTime": "October – March",
-        "recommendedDays": "1 – 2 days",
-        "difficulty": "Easy",
-        "budget": "BDT 1,200 – 2,500 / day (approx)",
-        "travelType": "History, Culture, Families",
-        "activities": [
-            "Site exploration",
-            "Terracotta plaque viewing",
-            "Museum visit",
-            "Sunset over ruins",
-            "Photography"
-        ],
-        "attractions": [
-            "Somapura Mahavihara",
-            "Paharpur Museum",
-            "Jagaddala Vihara (ruins)",
-            "Temple complex grounds"
-        ],
-        "tips": [
-            "Carry water and a hat — shade is limited.",
-            "The museum closes early (usually 5pm).",
-            "Visit on weekdays for a quieter experience."
-        ],
-        "things_to_do": [
-            "Site exploration",
-            "Terracotta plaque viewing",
-            "Museum visit",
-            "Sunset over ruins",
-            "Photography"
-        ],
-        "what_to_see": [
-            "Somapura Mahavihara",
-            "Paharpur Museum",
-            "Jagaddala Vihara (ruins)",
-            "Temple complex grounds"
-        ],
-        "travel_tips": [
-            "Carry water and a hat — shade is limited.",
-            "The museum closes early (usually 5pm).",
-            "Visit on weekdays for a quieter experience."
-        ],
-        "transport_options": [
-            "Bus",
-            "Train",
-            "Private Car"
-        ],
-        "nearby_destinations": [],
-        "nearby_hotels": [],
-        "featured": false,
-        "popularity": "medium",
-        "status": "active",
-        "tags": [],
-        "travelInfo": {
-            "from": "Dhaka",
-            "distanceKm": 360,
-            "duration": "6 – 8 hours",
-            "route": "Dhaka → Bogura → Naogaon → Paharpur (or by rail to Jamalganj)",
-            "transport": [
-                "Bus",
-                "Train",
-                "Private Car"
-            ],
-            "flight": null
-        }
-    },
-    {
         "id": 16,
         "name": "Mahasthangarh",
         "name_bn": "মহাস্থানগড়",
         "slug": "mahasthangarh",
         "division": "Rajshahi",
         "district": "Bogura",
-        "upazila": "",
+        "upazila": "Shibganj",
         "category": "Historical",
         "categories": [
             "Historical",
-            "Cultural"
+            "Cultural",
+            "Museum",
+            "Archaeological",
+            "Family"
         ],
         "rating": 4.5,
         "reviews": 410,
         "latitude": 24.9613,
         "longitude": 89.3431,
-        "image": "assets/destinations/mahasthangarh.webp",
-        "imageLg": "assets/destinations/mahasthangarh.webp",
+        "image": "/assets/destinations/mahasthangarh.webp",
+        "imageLg": "/assets/destinations/mahasthangarh.webp",
         "gallery": [
-            "assets/destinations/mahasthangarh.webp"
+            "/assets/destinations/mahasthangarh.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada"
         ],
         "shortDesc": "The oldest archaeological site in Bangladesh — the ruined citadel of ancient Pundravardhana.",
         "description": "Mahasthangarh is the oldest city-site in Bangladesh, a fortified citadel that stood from around the 3rd century BC. Walking its grassy ramparts, you stand over 2,200 years of history: Mauryan, Pala, Sena and Mughal layers stacked beneath your feet. The nearby museum holds exquisite finds, while the sacred Narayana temple by the Karatoya River remains a living place of worship.",
@@ -1425,50 +1446,76 @@ var DESTINATIONS = [
             "Museum visit",
             "Bihar & temple exploration",
             "Karatoya river view",
-            "Photography"
+            "Photography",
+            "Tour the museum",
+            "Walk the park",
+            "See model ancient dwellings"
         ],
         "attractions": [
             "Mahasthangarh citadel",
             "Mahasthangarh Museum",
             "Narayana Temple",
             "Gokul Medh",
-            "Bhasu Vihara"
+            "Bhasu Vihara",
+            "Heritage museum",
+            "Model dwellings",
+            "Ancient city view"
         ],
         "tips": [
             "Two hours is enough for the site and museum.",
             "Combine with nearby Sattar village or Bogura's sweets.",
-            "Go early morning for the best photos."
+            "Go early morning for the best photos.",
+            "Combine with the main Mahasthangarh citadel",
+            "Good for families",
+            "Best in winter"
         ],
         "things_to_do": [
             "Citadel walk",
             "Museum visit",
             "Bihar & temple exploration",
             "Karatoya river view",
-            "Photography"
+            "Photography",
+            "Tour the museum",
+            "Walk the park",
+            "See model ancient dwellings"
         ],
         "what_to_see": [
             "Mahasthangarh citadel",
             "Mahasthangarh Museum",
             "Narayana Temple",
             "Gokul Medh",
-            "Bhasu Vihara"
+            "Bhasu Vihara",
+            "Heritage museum",
+            "Model dwellings",
+            "Ancient city view"
         ],
         "travel_tips": [
             "Two hours is enough for the site and museum.",
             "Combine with nearby Sattar village or Bogura's sweets.",
-            "Go early morning for the best photos."
+            "Go early morning for the best photos.",
+            "Combine with the main Mahasthangarh citadel",
+            "Good for families",
+            "Best in winter"
         ],
         "transport_options": [
             "Bus",
             "Train",
-            "Private Car"
+            "Private Car",
+            "CNG"
         ],
-        "nearby_destinations": [],
+        "nearby_destinations": [
+            "gokul-medh",
+            "vasu-bihar"
+        ],
         "nearby_hotels": [],
         "featured": false,
-        "popularity": "high",
+        "popularity": 83,
         "status": "active",
-        "tags": [],
+        "tags": [
+            "museum",
+            "heritage park",
+            "mahasthangarh"
+        ],
         "travelInfo": {
             "from": "Dhaka",
             "distanceKm": 220,
@@ -1480,7 +1527,11 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Mahasthangarh Heritage Park",
+            "মহাস্থানগড় হেরিটেজ পার্ক"
+        ]
     },
     {
         "id": 17,
@@ -1504,6 +1555,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1476514525535-07fb3b4ae5f1",
+        "galleryIds": [
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1501785888041-af3ef285b470",
+            "photo-1506744038136-46273834b3fb"
+        ],
         "shortDesc": "Layered white clay hills and a deep blue lake ringed by the oldest Garo settlement in Bangladesh.",
         "description": "Birishiri in Netrokona is a hidden gem of layered white clay hills surrounding a serene, vivid-blue lake. The landscape looks almost otherworldly — cream-colored escarpments rising above turquoise water. It is also the oldest Garo (Mandail) Christian settlement in Bangladesh, adding a fascinating cultural dimension with churches and missionary heritage amid the hills.",
         "bestTime": "November – February",
@@ -1576,7 +1633,7 @@ var DESTINATIONS = [
         ],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "high",
+        "popularity": 82,
         "status": "active",
         "tags": [
             "clay hills",
@@ -1615,10 +1672,16 @@ var DESTINATIONS = [
         "reviews": 900,
         "latitude": 22.6747,
         "longitude": 89.7928,
-        "image": "assets/destinations/bagerhat.webp",
-        "imageLg": "assets/destinations/bagerhat.webp",
+        "image": "/assets/destinations/bagerhat.webp",
+        "imageLg": "/assets/destinations/bagerhat.webp",
         "gallery": [
-            "assets/destinations/bagerhat.webp"
+            "/assets/destinations/bagerhat.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "Home to the Sixty Dome Mosque, the grandest monument of Bengal's Sultanate era and a UNESCO World Heritage Site.",
         "description": "Bagerhat preserves the magnificent legacy of the 15th-century saint Khan Jahan Ali. The UNESCO-listed Sixty Dome Mosque (Shat Gambuj Masjid), with its forest of 77 interior pillars, is the largest brick mosque of Bengal's Sultanate period. Around it stand the Nine Dome Mosque, Khan Jahan's tomb and a ring of ancient ponds — a quiet, atmospheric afternoon in one of Bangladesh's most important heritage towns.",
@@ -1695,7 +1758,7 @@ var DESTINATIONS = [
         ],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "very_high",
+        "popularity": 84,
         "status": "active",
         "tags": [
             "mosque",
@@ -1733,10 +1796,16 @@ var DESTINATIONS = [
         "reviews": 630,
         "latitude": 23.7104,
         "longitude": 90.4074,
-        "image": "assets/destinations/old-dhaka.webp",
-        "imageLg": "assets/destinations/old-dhaka.webp",
+        "image": "/assets/destinations/old-dhaka.webp",
+        "imageLg": "/assets/destinations/old-dhaka.webp",
         "gallery": [
-            "assets/destinations/old-dhaka.webp"
+            "/assets/destinations/old-dhaka.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "The beating heart of the capital — Mughal forts, a pink palace, rickshaws and the Buriganga riverfront.",
         "description": "Old Dhaka is where the city's soul lives: the 17th-century Lalbagh Fort, the fairytale-pink Ahsan Manzil, the swirling crowds of Sadarghat and the star-studded Star Mosque. Ride a hand-painted rickshaw through narrow lanes, feast on biryani and fuchka, and watch river life from the Buriganga at sunset. It is chaotic, vibrant and utterly unforgettable.",
@@ -1792,7 +1861,7 @@ var DESTINATIONS = [
         "nearby_destinations": [],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "high",
+        "popularity": 89,
         "status": "active",
         "tags": [],
         "travelInfo": {
@@ -1828,10 +1897,16 @@ var DESTINATIONS = [
         "reviews": 400,
         "latitude": 23.4539,
         "longitude": 91.1214,
-        "image": "assets/destinations/mainamati.webp",
-        "imageLg": "assets/destinations/mainamati.webp",
+        "image": "/assets/destinations/mainamati.webp",
+        "imageLg": "/assets/destinations/mainamati.webp",
         "gallery": [
-            "assets/destinations/mainamati.webp"
+            "/assets/destinations/mainamati.webp"
+        ],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "A low range of hills honeycombed with Buddhist ruins — monasteries and stupas from 1,500 years ago.",
         "description": "Mainamati is an archaeological treasure-house, its gentle hills hiding the ruins of an 8th-century Buddhist kingdom. Shalban Vihara, a sprawling brick monastery, is the crown jewel, while Kutila Mura's three shrines and the Mainamati Museum's exquisite bronze and terracotta relics complete the picture. Just an hour from Comilla town, it is an easy, rewarding history trip.",
@@ -1906,11 +1981,11 @@ var DESTINATIONS = [
         "nearby_destinations": [
             "lalmai-hills",
             "mainamati-museum",
-            "cumilla-war-cemetery"
+            "Mainamati War Cemetery"
         ],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "high",
+        "popularity": 81,
         "status": "active",
         "tags": [
             "buddhist",
@@ -1949,10 +2024,16 @@ var DESTINATIONS = [
         "reviews": 360,
         "latitude": 24.6125,
         "longitude": 92.1649,
-        "image": "assets/destinations/madhabkunda-waterfall.webp",
-        "imageLg": "assets/destinations/madhabkunda-waterfall.webp",
+        "image": "/assets/destinations/madhabkunda-waterfall.webp",
+        "imageLg": "/assets/destinations/madhabkunda-waterfall.webp",
         "gallery": [
-            "assets/destinations/madhabkunda-waterfall.webp"
+            "/assets/destinations/madhabkunda-waterfall.webp"
+        ],
+        "photoId": "photo-1476514525535-07fb3b4ae5f1",
+        "galleryIds": [
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1473448912268-2022ce9509d8",
+            "photo-1448375240586-882707db888b"
         ],
         "shortDesc": "Bangladesh's tallest waterfall, thundering down 61 metres into a mossy green plunge pool.",
         "description": "Madhabkunda, near Barlekha, is the country's highest waterfall at 61 metres. During the monsoon the water roars off the ledge into a deep, misty pool framed by dense forest and giant boulders. The short trek down the hillside is lined with tea bushes and tribal villages, making it one of Sylhet's most spectacular natural getaways.",
@@ -2038,10 +2119,16 @@ var DESTINATIONS = [
         "reviews": 450,
         "latitude": 22.4445,
         "longitude": 91.7899,
-        "image": "assets/destinations/foys-lake.webp",
-        "imageLg": "assets/destinations/foys-lake.webp",
+        "image": "/assets/destinations/foys-lake.webp",
+        "imageLg": "/assets/destinations/foys-lake.webp",
         "gallery": [
-            "assets/destinations/foys-lake.webp"
+            "/assets/destinations/foys-lake.webp"
+        ],
+        "photoId": "photo-1501785888041-af3ef285b470",
+        "galleryIds": [
+            "photo-1501785888041-af3ef285b470",
+            "photo-1472214103451-9374bd1c798e",
+            "photo-1506744038136-46273834b3fb"
         ],
         "shortDesc": "A man-made lake cradled by green hills, now Chattogram's favourite family amusement getaway.",
         "description": "Foy's Lake was created over a century ago by engineer Foy to supply water to Chattogram; today its glassy water sits in a bowl of forested hills that shade a popular theme park. Take a paddle boat across the lake, ride the cable car up for sweeping views over the city, and spend a relaxed afternoon at the water's edge — a firm favourite for families.",
@@ -2115,97 +2202,6 @@ var DESTINATIONS = [
         }
     },
     {
-        "id": 23,
-        "name": "Sitakunda",
-        "name_bn": "সীতাকুণ্ড",
-        "slug": "sitakunda",
-        "division": "Chattogram",
-        "district": "Chattogram",
-        "upazila": "",
-        "category": "Nature",
-        "categories": [
-            "Nature",
-            "Adventure"
-        ],
-        "rating": 4.1,
-        "reviews": 290,
-        "latitude": 22.6164,
-        "longitude": 91.6826,
-        "image": "assets/destinations/sitakunda.webp",
-        "imageLg": "assets/destinations/sitakunda.webp",
-        "gallery": [
-            "assets/destinations/sitakunda.webp"
-        ],
-        "shortDesc": "Hills, a Hindu pilgrimage peak, an eco park and waterfalls — right on Chattogram's doorstep.",
-        "description": "Sitakunda offers a full day of hills and greenery a short drive north of Chattogram. Chandranath Hill, the highest peak of the Chattogram district, is crowned by an ancient temple and draws pilgrims year-round. Nearby, Sitakunda Eco Park and Bhatiary's forested slopes hide small waterfalls and shady trails perfect for a nature escape.",
-        "bestTime": "November – February",
-        "recommendedDays": "1 day",
-        "difficulty": "Moderate",
-        "budget": "BDT 1,200 – 2,500 / day (approx)",
-        "travelType": "Nature, Pilgrims, Hikers",
-        "activities": [
-            "Chandranath Hill climb",
-            "Temple visit",
-            "Eco park trail walk",
-            "Waterfall hunt",
-            "Viewpoint photography"
-        ],
-        "attractions": [
-            "Chandranath Hill & Temple",
-            "Sitakunda Eco Park",
-            "Bhatiary Hills",
-            "Bamboo (Jharna) falls",
-            "Riverside villages"
-        ],
-        "tips": [
-            "Start the hill climb before noon to avoid heat.",
-            "Eco park entry is cheap but the trails are long — carry water.",
-            "Respect temple customs and remove shoes when asked."
-        ],
-        "things_to_do": [
-            "Chandranath Hill climb",
-            "Temple visit",
-            "Eco park trail walk",
-            "Waterfall hunt",
-            "Viewpoint photography"
-        ],
-        "what_to_see": [
-            "Chandranath Hill & Temple",
-            "Sitakunda Eco Park",
-            "Bhatiary Hills",
-            "Bamboo (Jharna) falls",
-            "Riverside villages"
-        ],
-        "travel_tips": [
-            "Start the hill climb before noon to avoid heat.",
-            "Eco park entry is cheap but the trails are long — carry water.",
-            "Respect temple customs and remove shoes when asked."
-        ],
-        "transport_options": [
-            "Bus",
-            "Train",
-            "Private Car"
-        ],
-        "nearby_destinations": [],
-        "nearby_hotels": [],
-        "featured": false,
-        "popularity": "medium",
-        "status": "active",
-        "tags": [],
-        "travelInfo": {
-            "from": "Chattogram",
-            "distanceKm": 255,
-            "duration": "5 – 6 hours",
-            "route": "Dhaka → Chattogram → Sitakunda (Dhaka–Chattogram highway)",
-            "transport": [
-                "Bus",
-                "Train",
-                "Private Car"
-            ],
-            "flight": null
-        }
-    },
-    {
         "id": 24,
         "name": "Patenga Beach",
         "name_bn": "পতেঙ্গা সৈকত",
@@ -2221,10 +2217,16 @@ var DESTINATIONS = [
         "reviews": 540,
         "latitude": 22.2385,
         "longitude": 91.8178,
-        "image": "assets/destinations/patenga-beach.webp",
-        "imageLg": "assets/destinations/patenga-beach.webp",
+        "image": "/assets/destinations/patenga-beach.webp",
+        "imageLg": "/assets/destinations/patenga-beach.webp",
         "gallery": [
-            "assets/destinations/patenga-beach.webp"
+            "/assets/destinations/patenga-beach.webp"
+        ],
+        "photoId": "photo-1507525428034-b723cf961d3e",
+        "galleryIds": [
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1504851149312-7a075b496cc7",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "Chattogram's own seaside promenade — golden sand, ships on the horizon and a buzzing evening boardwalk.",
         "description": "Patenga is the beach of Chattogram, where the Karnaphuli River meets the Bay of Bengal. Sandwiched between the busy port and the sea, it has a wide stretch of sand, gentle surf and that classic salty-evening atmosphere. Watch container ships drift past, fly a kite in the sea breeze, and finish with grilled seafood from the stalls along the promenade.",
@@ -2314,10 +2316,16 @@ var DESTINATIONS = [
         "reviews": 380,
         "latitude": 23.9119,
         "longitude": 90.2666,
-        "image": "assets/destinations/national-martyrs-memorial.webp",
-        "imageLg": "assets/destinations/national-martyrs-memorial.webp",
+        "image": "/assets/destinations/national-martyrs-memorial.webp",
+        "imageLg": "/assets/destinations/national-martyrs-memorial.webp",
         "gallery": [
-            "assets/destinations/national-martyrs-memorial.webp"
+            "/assets/destinations/national-martyrs-memorial.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "The soaring monument to the heroes of Bangladesh's Liberation War, set in lakeside gardens at Savar.",
         "description": "The National Martyrs' Memorial at Savar is a striking architectural tribute to those who gave their lives for Bangladesh in 1971. Seven triangular towers rise 46 metres high, symbolising seven distinct chapters of the independence struggle, above a serene complex of pools, lawns and tree-lined avenues. A visit here is moving, reflective and essential for understanding the nation.",
@@ -2408,6 +2416,12 @@ var DESTINATIONS = [
         "gallery": [
             "/assets/destinations/varendra-museum.webp"
         ],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada",
+            "photo-1524492412937-b28074a5d7da"
+        ],
         "shortDesc": "Bangladesh's oldest museum — a treasure-house of Bengal's sculpture, coins, manuscripts and terracotta.",
         "description": "Founded in 1910, the Varendra Research Museum in Rajshahi is the oldest museum in Bangladesh and one of the finest. Its galleries hold superb Pala-era stone sculptures, terracotta plaques, ancient coins, and rare Bengali manuscripts that trace two millennia of the Varendra region's history. A compact, fascinating stop for anyone interested in Bengal's deep past.",
         "bestTime": "October – March",
@@ -2497,6 +2511,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1501785888041-af3ef285b470",
+        "galleryIds": [
+            "photo-1501785888041-af3ef285b470",
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1506744038136-46273834b3fb"
+        ],
         "shortDesc": "A mighty river dam and vast reservoir in the northern plains — a scenic engineering landmark.",
         "description": "The Teesta Barrage near Lalmonirhat is one of Bangladesh's grandest irrigation structures, taming the Teesta River into a huge sheet of blue water. Beyond its engineering, the site is a beloved picnic spot: walk the long barrage deck, watch fishermen on the reservoir, and stay for one of the flat northern plains' famous wide-open sunsets.",
         "bestTime": "November – February",
@@ -2580,10 +2600,16 @@ var DESTINATIONS = [
         "reviews": 160,
         "latitude": 26.4846,
         "longitude": 88.4097,
-        "image": "assets/destinations/tetulia.webp",
-        "imageLg": "assets/destinations/tetulia.webp",
+        "image": "/assets/destinations/tetulia.webp",
+        "imageLg": "/assets/destinations/tetulia.webp",
         "gallery": [
-            "assets/destinations/tetulia.webp"
+            "/assets/destinations/tetulia.webp"
+        ],
+        "photoId": "photo-1500530855697-b586d89ba3ee",
+        "galleryIds": [
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1472214103451-9374bd1c798e",
+            "photo-1473448912268-2022ce9509d8"
         ],
         "shortDesc": "Rolling tea estates in Bangladesh's northernmost corner, where the foothills of the Himalayas begin.",
         "description": "Tetulia, in Panchagarh, marks the very northern tip of Bangladesh — a land of gently rolling tea gardens kissed by cool air drifting from the Himalayas. Green estates stretch to the horizon, dotted with pluckers in bright sarees, while the Dhalabari viewpoint gives panoramic views over the border hills. A peaceful, photogenic alternative to Sylhet's busier tea country.",
@@ -2667,10 +2693,18 @@ var DESTINATIONS = [
         "reviews": 240,
         "latitude": 23.0383,
         "longitude": 91.8966,
-        "image": "assets/destinations/alutila-cave.webp",
-        "imageLg": "assets/destinations/alutila-cave.webp",
+        "image": "/assets/destinations/alutila-cave.webp",
+        "imageLg": "/assets/destinations/alutila-cave.webp",
         "gallery": [
-            "assets/destinations/alutila-cave.webp"
+            "/assets/destinations/alutila-cave.webp",
+            "assets/destinations/alutila-mystery-cave.webp",
+            "assets/destinations/alutila-tourist-center.webp"
+        ],
+        "photoId": "photo-1441974231531-c6227db76b6e",
+        "galleryIds": [
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1469474968028-56623f02e42e",
+            "photo-1470071459604-3b5ec3a7fe05"
         ],
         "shortDesc": "A mysterious cave and swaying hanging bridge in the green hills of Khagrachhari.",
         "description": "Alutila is Khagrachhari's signature adventure spot — a limestone cave carved into the hillside where visitors climb through cool, narrow chambers by torchlight. Above ground, a hanging bridge sways across a rocky riverbed, and walking trails lead deeper into the forested hills. It's a short, fun escape into the Chittagong Hill Tracts that needs no special equipment.",
@@ -2684,50 +2718,75 @@ var DESTINATIONS = [
             "Hanging bridge crossing",
             "Riverbed walk",
             "Hill trail trek",
-            "Village & lake visit (nearby)"
+            "Village & lake visit (nearby)",
+            "Cross the suspension bridge",
+            "Visit the Alutila cave",
+            "Forest walks"
         ],
         "attractions": [
             "Alutila Cave",
             "Hanging Bridge",
             "Richhang Waterfall (nearby)",
             "Kanglak hill views",
-            "Khagrachhari town"
+            "Khagrachhari town",
+            "Gua (gorge)",
+            "Suspension bridge"
         ],
         "tips": [
             "Carry a torch for the cave and wear grippy shoes.",
             "Check the hill tracts entry requirements in advance.",
-            "Combine with Richhang and Sajek on a multi-day loop."
+            "Combine with Richhang and Sajek on a multi-day loop.",
+            "Carry a torch for the cave",
+            "Wear non-slip shoes",
+            "Combine with Richhang waterfall"
         ],
         "things_to_do": [
             "Cave exploration",
             "Hanging bridge crossing",
             "Riverbed walk",
             "Hill trail trek",
-            "Village & lake visit (nearby)"
+            "Village & lake visit (nearby)",
+            "Cross the suspension bridge",
+            "Visit the Alutila cave",
+            "Forest walks"
         ],
         "what_to_see": [
             "Alutila Cave",
             "Hanging Bridge",
             "Richhang Waterfall (nearby)",
             "Kanglak hill views",
-            "Khagrachhari town"
+            "Khagrachhari town",
+            "Gua (gorge)",
+            "Suspension bridge"
         ],
         "travel_tips": [
             "Carry a torch for the cave and wear grippy shoes.",
             "Check the hill tracts entry requirements in advance.",
-            "Combine with Richhang and Sajek on a multi-day loop."
+            "Combine with Richhang and Sajek on a multi-day loop.",
+            "Carry a torch for the cave",
+            "Wear non-slip shoes",
+            "Combine with Richhang waterfall"
         ],
         "transport_options": [
             "Bus",
             "Chander Gari",
-            "Private Car"
+            "Private Car",
+            "CNG",
+            "Bike"
         ],
-        "nearby_destinations": [],
+        "nearby_destinations": [
+            "richhang-waterfall",
+            "alutila-cave"
+        ],
         "nearby_hotels": [],
         "featured": false,
         "popularity": "medium",
         "status": "active",
-        "tags": [],
+        "tags": [
+            "cave",
+            "suspension bridge",
+            "hills"
+        ],
         "travelInfo": {
             "from": "Dhaka",
             "distanceKm": 280,
@@ -2739,7 +2798,13 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Alutila Mystery Cave",
+            "আলুটিলা রহস্যময় গুহা",
+            "Alutila Tourist Center",
+            "আলুটিলা পর্যটন কেন্দ্র"
+        ]
     },
     {
         "id": 30,
@@ -2758,10 +2823,16 @@ var DESTINATIONS = [
         "reviews": 140,
         "latitude": 22.9177,
         "longitude": 90.1693,
-        "image": "assets/destinations/guthia-mosque.webp",
-        "imageLg": "assets/destinations/guthia-mosque.webp",
+        "image": "/assets/destinations/guthia-mosque.webp",
+        "imageLg": "/assets/destinations/guthia-mosque.webp",
         "gallery": [
-            "assets/destinations/guthia-mosque.webp"
+            "/assets/destinations/guthia-mosque.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "Barishal's dazzling white mosque ringed by ponds and gardens — the 'star attraction' of the south.",
         "description": "The Guthia Mosque (Baitul Aman Jame Masjid) in Barishal is a masterpiece of modern mosque architecture. Its brilliant white facade, towering minarets and central dome are mirrored in an ornamental pond, surrounded by manicured lawns and flower gardens. Beautiful by day and glowing at night, it has become the most photographed landmark in southern Bangladesh.",
@@ -2847,10 +2918,16 @@ var DESTINATIONS = [
         "reviews": 260,
         "latitude": 25.7851,
         "longitude": 88.6678,
-        "image": "assets/destinations/kantajew-temple.webp",
-        "imageLg": "assets/destinations/kantajew-temple.webp",
+        "image": "/assets/destinations/kantajew-temple.webp",
+        "imageLg": "/assets/destinations/kantajew-temple.webp",
         "gallery": [
-            "assets/destinations/kantajew-temple.webp"
+            "/assets/destinations/kantajew-temple.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "An ornate 18th-century Hindu temple covered in thousands of terracotta panels — the 'gem' of Dinajpur.",
         "description": "The Kantajew Temple (Kantanagar) in Dinajpur is a masterpiece of late-medieval terracotta art. Built in 1752 by Maharaja Pran Nath, its walls are embroidered with thousands of baked-clay panels depicting epics, myths, floral patterns and daily life. Once crowned with nine ornate spires, the remaining brick-and-terracotta body still dazzles. Alongside the ruined twin temple and its pond, it is one of northern Bangladesh's finest sights.",
@@ -2938,10 +3015,16 @@ var DESTINATIONS = [
         "reviews": 170,
         "latitude": 24.8167,
         "longitude": 88.1467,
-        "image": "assets/destinations/chhoto-sona-masjid.webp",
-        "imageLg": "assets/destinations/chhoto-sona-masjid.webp",
+        "image": "/assets/destinations/chhoto-sona-masjid.webp",
+        "imageLg": "/assets/destinations/chhoto-sona-masjid.webp",
         "gallery": [
-            "assets/destinations/chhoto-sona-masjid.webp"
+            "/assets/destinations/chhoto-sona-masjid.webp"
+        ],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "A jewel of the Sultanate era — the 15th-century 'Golden Mosque' in the ancient city of Gaur.",
         "description": "Chhoto Sona Masjid is the finest surviving monument of Gaur, the medieval capital of Bengal. Built in 1493, its name means 'Little Golden Mosque', from the gilded domes that once crowned it. The 15 domes, carved stone panels and delicate terracotta reliefs mark the peak of Sultanate architecture, set among the scattered ruins of the once-mighty city of Gaur.",
@@ -3010,7 +3093,11 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Choto Sona Mosque",
+            "Chhoto Sona Masjid"
+        ]
     },
     {
         "id": 33,
@@ -3029,10 +3116,16 @@ var DESTINATIONS = [
         "reviews": 150,
         "latitude": 24.3672,
         "longitude": 88.8392,
-        "image": "assets/destinations/puthia-temple-complex.webp",
-        "imageLg": "assets/destinations/puthia-temple-complex.webp",
+        "image": "/assets/destinations/puthia-temple-complex.webp",
+        "imageLg": "/assets/destinations/puthia-temple-complex.webp",
         "gallery": [
-            "assets/destinations/puthia-temple-complex.webp"
+            "/assets/destinations/puthia-temple-complex.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada"
         ],
         "shortDesc": "A dazzling cluster of terracotta Hindu temples gathered around an ornate Rajbari palace.",
         "description": "Puthia, a small town near Rajshahi, holds one of Bangladesh's richest collections of Hindu temples. Around the grand Puthia Rajbari palace stand the towering Shiva temple, the five-spired Pancha Ratna, and the exquisitely decorated Govinda and Jagannath temples — all covered in vivid terracotta panels. During festivals the complex bursts into life, but any day offers an unforgettable heritage walk.",
@@ -3120,10 +3213,16 @@ var DESTINATIONS = [
         "reviews": 190,
         "latitude": 23.9043,
         "longitude": 89.2447,
-        "image": "assets/destinations/shilaidaha-kuthibari.webp",
-        "imageLg": "assets/destinations/shilaidaha-kuthibari.webp",
+        "image": "/assets/destinations/shilaidaha-kuthibari.webp",
+        "imageLg": "/assets/destinations/shilaidaha-kuthibari.webp",
         "gallery": [
-            "assets/destinations/shilaidaha-kuthibari.webp"
+            "/assets/destinations/shilaidaha-kuthibari.webp"
+        ],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada",
+            "photo-1501785888041-af3ef285b470"
         ],
         "shortDesc": "The riverside country house where Rabindranath Tagore composed some of his most famous works.",
         "description": "Shilaidaha Kuthibari is the rural estate on the Padma where Rabindranath Tagore spent the most creative years of his life, writing poems, plays and songs in the 1890s and 1900s. The two-storey brick house is now a museum of manuscripts, photographs and personal effects, set in mango groves beside the great river. It is a pilgrimage for lovers of Bengali literature.",
@@ -3211,10 +3310,16 @@ var DESTINATIONS = [
         "reviews": 430,
         "latitude": 24.3188,
         "longitude": 91.7854,
-        "image": "assets/destinations/lawachara-national-park.webp",
-        "imageLg": "assets/destinations/lawachara-national-park.webp",
+        "image": "/assets/destinations/lawachara-national-park.webp",
+        "imageLg": "/assets/destinations/lawachara-national-park.webp",
         "gallery": [
-            "assets/destinations/lawachara-national-park.webp"
+            "/assets/destinations/lawachara-national-park.webp"
+        ],
+        "photoId": "photo-1476514525535-07fb3b4ae5f1",
+        "galleryIds": [
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1476514525535-07fb3b4ae5f1"
         ],
         "shortDesc": "A protected lowland rainforest alive with gibbons, macaques and towering old-growth trees.",
         "description": "Lawachara National Park is one of the few surviving lowland tropical forests of Bangladesh, a cathedral of tall trees, lianas and rare wildlife near Srimangal. Walk the shaded trails and you may hear the haunting call of the hoolock gibbon or spot capped langurs, macaques and more than 200 bird species. A canopy walk at the adjacent eco-park gives a bird's-eye view of the treetops.",
@@ -3300,10 +3405,16 @@ var DESTINATIONS = [
         "reviews": 310,
         "latitude": 24.0928,
         "longitude": 90.4145,
-        "image": "assets/destinations/bhawal-national-park.webp",
-        "imageLg": "assets/destinations/bhawal-national-park.webp",
+        "image": "/assets/destinations/bhawal-national-park.webp",
+        "imageLg": "/assets/destinations/bhawal-national-park.webp",
         "gallery": [
-            "assets/destinations/bhawal-national-park.webp"
+            "/assets/destinations/bhawal-national-park.webp"
+        ],
+        "photoId": "photo-1441974231531-c6227db76b6e",
+        "galleryIds": [
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1448375240586-882707db888b",
+            "photo-1476514525535-07fb3b4ae5f1"
         ],
         "shortDesc": "Dhaka's closest forest escape — rolling sal woodlands and picnic lawns at Gazipur.",
         "description": "Bhawal National Park, at Rajendrapur in Gazipur, is the green lung nearest to Dhaka. Its gentle hills of shal (sal) forest criss-crossed by footpaths and lakes have been a favourite picnic and walking spot for generations. Listen for birds in the canopy, row across the park's lake, or simply spread a mat under the trees for a classic Bangladeshi family day out.",
@@ -3389,10 +3500,16 @@ var DESTINATIONS = [
         "reviews": 220,
         "latitude": 24.6408,
         "longitude": 90.0701,
-        "image": "assets/destinations/madhupur-national-park.webp",
-        "imageLg": "assets/destinations/madhupur-national-park.webp",
+        "image": "/assets/destinations/madhupur-national-park.webp",
+        "imageLg": "/assets/destinations/madhupur-national-park.webp",
         "gallery": [
-            "assets/destinations/madhupur-national-park.webp"
+            "/assets/destinations/madhupur-national-park.webp"
+        ],
+        "photoId": "photo-1476514525535-07fb3b4ae5f1",
+        "galleryIds": [
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1476514525535-07fb3b4ae5f1"
         ],
         "shortDesc": "Ancient sal forest and meandering rivers — a tranquil wilderness in the heart of the country.",
         "description": "Madhupur National Park protects one of the last large stands of sal forest on the elevated Madhupur tract in Tangail. Dense, dappled woodland gives way to clearings, pineapple orchards and small rivers that weave through the reserve. It is quieter and wilder than Bhawal, a peaceful retreat for walkers, birders and anyone craving deep forest silence.",
@@ -3477,10 +3594,16 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 25.548,
         "longitude": 88.793,
-        "image": "assets/destinations/ramsagar.webp",
-        "imageLg": "assets/destinations/ramsagar.webp",
+        "image": "/assets/destinations/ramsagar.webp",
+        "imageLg": "/assets/destinations/ramsagar.webp",
         "gallery": [
-            "assets/destinations/ramsagar.webp"
+            "/assets/destinations/ramsagar.webp"
+        ],
+        "photoId": "photo-1501785888041-af3ef285b470",
+        "galleryIds": [
+            "photo-1501785888041-af3ef285b470",
+            "photo-1506744038136-46273834b3fb",
+            "photo-1476514525535-07fb3b4ae5f1"
         ],
         "shortDesc": "Bangladesh's largest man-made lake, ringed by forest — a serene picnic and boating spot.",
         "description": "Ramsagar in Dinajpur is the largest artificial lake in Bangladesh, dug in the 18th century by Raja Ram Nath. The vast sheet of water is framed by trees and grassy banks, with a small island and temple adding to its charm. A slow boat ride, a lakeside picnic and the huge northern sunset make it a lovely, off-the-beaten-path stop.",
@@ -3568,10 +3691,16 @@ var DESTINATIONS = [
         "reviews": 280,
         "latitude": 22.1953,
         "longitude": 92.2005,
-        "image": "assets/destinations/buddha-dhatu-jadi.webp",
-        "imageLg": "assets/destinations/buddha-dhatu-jadi.webp",
+        "image": "/assets/destinations/buddha-dhatu-jadi.webp",
+        "imageLg": "/assets/destinations/buddha-dhatu-jadi.webp",
         "gallery": [
-            "assets/destinations/buddha-dhatu-jadi.webp"
+            "/assets/destinations/buddha-dhatu-jadi.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1469474968028-56623f02e42e"
         ],
         "shortDesc": "The largest Theravada Buddhist temple in Bangladesh — golden Buddha, white terraces and hill views.",
         "description": "Buddha Dhatu Jadi near Bandarban town is the largest Theravada Buddhist temple in Bangladesh, built in 2000 by the Marma community. Its brilliant white structure rises from a hillside in concentric terraces crowned by a golden Buddha, with smaller statues and a monastery below. The quiet grounds and panoramic hill views make it one of the most photogenic sites in the Chittagong Hill Tracts.",
@@ -3658,10 +3787,17 @@ var DESTINATIONS = [
         "reviews": 260,
         "latitude": 23.119,
         "longitude": 91.931,
-        "image": "assets/destinations/richhang-waterfall.webp",
-        "imageLg": "assets/destinations/richhang-waterfall.webp",
+        "image": "/assets/destinations/richhang-waterfall.webp",
+        "imageLg": "/assets/destinations/richhang-waterfall.webp",
         "gallery": [
-            "assets/destinations/richhang-waterfall.webp"
+            "/assets/destinations/richhang-waterfall.webp",
+            "assets/destinations/richhang-waterfall-cascade.webp"
+        ],
+        "photoId": "photo-1432405972618-c60b0225b8f9",
+        "galleryIds": [
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1469474968028-56623f02e42e"
         ],
         "shortDesc": "A dramatic waterfall in Khagrachhari that thunders to life in the monsoon.",
         "description": "Richhang Waterfall, hidden in the green hills near Khagrachhari's Marisha area, is one of the most spectacular cascades in the Chittagong Hill Tracts. In the monsoon the water plunges over a wide rock shelf into a misty pool below, framed by jungle and bamboo groves. A short trek through the forest and a few village paths lead to this wild, beautiful spot.",
@@ -3728,7 +3864,10 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "রিসাং ঝর্ণা"
+        ]
     },
     {
         "id": 41,
@@ -3747,10 +3886,16 @@ var DESTINATIONS = [
         "reviews": 350,
         "latitude": 23.7273,
         "longitude": 90.3961,
-        "image": "assets/destinations/central-shaheed-minar.webp",
-        "imageLg": "assets/destinations/central-shaheed-minar.webp",
+        "image": "/assets/destinations/central-shaheed-minar.webp",
+        "imageLg": "/assets/destinations/central-shaheed-minar.webp",
         "gallery": [
-            "assets/destinations/central-shaheed-minar.webp"
+            "/assets/destinations/central-shaheed-minar.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "The national monument to the 1952 language martyrs — the soul of Bengali identity in Dhaka.",
         "description": "The Central Shaheed Minar near Dhaka University is Bangladesh's most sacred secular monument, honouring the students who gave their lives on 21 February 1952 in the Language Movement. Its stark marble pillars and the raised altar in the central plaza are covered in flowers year-round, especially on International Mother Language Day. It is a deeply moving place to walk through, any time of day.",
@@ -3837,10 +3982,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 22.7016,
         "longitude": 90.365,
-        "image": "assets/destinations/durga-sagar.webp",
-        "imageLg": "assets/destinations/durga-sagar.webp",
+        "image": "/assets/destinations/durga-sagar.webp",
+        "imageLg": "/assets/destinations/durga-sagar.webp",
         "gallery": [
-            "assets/destinations/durga-sagar.webp"
+            "/assets/destinations/durga-sagar.webp"
+        ],
+        "photoId": "photo-1506744038136-46273834b3fb",
+        "galleryIds": [
+            "photo-1506744038136-46273834b3fb",
+            "photo-1501785888041-af3ef285b470",
+            "photo-1472214103451-9374bd1c798e"
         ],
         "shortDesc": "A tranquil man-made lake in Barishal, one of the largest in southern Bangladesh.",
         "description": "Durga Sagar is a calm, tree-lined lake at the edge of Barishal town, dug centuries ago to store fresh water. It is one of the largest man-made lakes in the country, its still water fringed by green banks and small walkways. A quiet afternoon here — strolling, boating, or just watching the light change over the water — is the perfect antidote to city noise.",
@@ -3926,10 +4077,16 @@ var DESTINATIONS = [
         "reviews": 300,
         "latitude": 23.7371,
         "longitude": 90.3956,
-        "image": "assets/destinations/suhrawardy-udyan.webp",
-        "imageLg": "assets/destinations/suhrawardy-udyan.webp",
+        "image": "/assets/destinations/suhrawardy-udyan.webp",
+        "imageLg": "/assets/destinations/suhrawardy-udyan.webp",
         "gallery": [
-            "assets/destinations/suhrawardy-udyan.webp"
+            "/assets/destinations/suhrawardy-udyan.webp"
+        ],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "The historic park where Bangladesh's independence was declared in 1971 — now home to the Liberation War Museum.",
         "description": "Suhrawardy Udyan is one of Dhaka's most hallowed green spaces. On 7 March 1971 Sheikh Mujibur Rahman delivered his historic speech here, and on 16 December 1971 the Pakistani army surrendered on the same ground. Today the park is dotted with the Swadhinata Stambha (freedom monument), sculptural gardens, a lake and the acclaimed Liberation War Museum — a deeply moving stop for every visitor.",
@@ -4017,10 +4174,16 @@ var DESTINATIONS = [
         "reviews": 220,
         "latitude": 23.7616,
         "longitude": 90.3785,
-        "image": "assets/destinations/national-parliament-house.webp",
-        "imageLg": "assets/destinations/national-parliament-house.webp",
+        "image": "/assets/destinations/national-parliament-house.webp",
+        "imageLg": "/assets/destinations/national-parliament-house.webp",
         "gallery": [
-            "assets/destinations/national-parliament-house.webp"
+            "/assets/destinations/national-parliament-house.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "Louis Kahn's monumental Jatiya Sangsad Bhaban — one of the world's great modern buildings.",
         "description": "The Jatiya Sangsad Bhaban, designed by the legendary architect Louis Kahn, is a landmark of 20th-century architecture and one of the largest legislative complexes on Earth. Its dramatic geometric forms rise from an artificial lake in a composition of light, shadow and water. Visitors can walk the surrounding crescent lake and grounds, and photography at golden hour is unforgettable.",
@@ -4106,10 +4269,16 @@ var DESTINATIONS = [
         "reviews": 400,
         "latitude": 23.7377,
         "longitude": 90.395,
-        "image": "assets/destinations/bangladesh-national-museum.webp",
-        "imageLg": "assets/destinations/bangladesh-national-museum.webp",
+        "image": "/assets/destinations/bangladesh-national-museum.webp",
+        "imageLg": "/assets/destinations/bangladesh-national-museum.webp",
         "gallery": [
-            "assets/destinations/bangladesh-national-museum.webp"
+            "/assets/destinations/bangladesh-national-museum.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "The country's largest museum — from ancient Bengal and tribal life to the Liberation War.",
         "description": "The Bangladesh National Museum at Shahbagh is the nation's great storehouse of memory. Its galleries sweep from prehistoric and ancient Bengal through the Sultanate and Mughal eras to tribal culture, fine art and the Liberation War. Sculptures, coins, manuscripts and ethnographic treasures make it an absorbing 2–3 hour visit for history lovers of any age.",
@@ -4197,10 +4366,16 @@ var DESTINATIONS = [
         "reviews": 260,
         "latitude": 23.72,
         "longitude": 90.396,
-        "image": "assets/destinations/dhakeshwari-temple.webp",
-        "imageLg": "assets/destinations/dhakeshwari-temple.webp",
+        "image": "/assets/destinations/dhakeshwari-temple.webp",
+        "imageLg": "/assets/destinations/dhakeshwari-temple.webp",
         "gallery": [
-            "assets/destinations/dhakeshwari-temple.webp"
+            "/assets/destinations/dhakeshwari-temple.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "The national temple of Bangladesh — an ancient Hindu shrine in the heart of Old Dhaka.",
         "description": "Dhakeshwari Mandir is believed to have been founded in the 12th century and is considered the national temple of Bangladesh. Its bustling courtyards in the Bakshi Bazar area thrum with devotion, incense and the chatter of Old Dhaka. During Durga Puja the temple and its neighbourhood explode with colour, music and crowds, making it an unmissable cultural experience.",
@@ -4286,10 +4461,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 23.706,
         "longitude": 90.409,
-        "image": "assets/destinations/rose-garden-palace.webp",
-        "imageLg": "assets/destinations/rose-garden-palace.webp",
+        "image": "/assets/destinations/rose-garden-palace.webp",
+        "imageLg": "/assets/destinations/rose-garden-palace.webp",
         "gallery": [
-            "assets/destinations/rose-garden-palace.webp"
+            "/assets/destinations/rose-garden-palace.webp"
+        ],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "A crumbling 18th-century mansion of faded grandeur hidden in the lanes of Old Dhaka.",
         "description": "The Rose Garden Palace is a hauntingly beautiful relic of Old Dhaka's zamindar glory. Built in the 18th century, its peeling walls, ornate arches and grand staircase whisper of a rich past. Once used for films and events, it now stands as a photographer's dream and a poignant reminder of the city's layered history.",
@@ -4374,6 +4555,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1501785888041-af3ef285b470"
+        ],
         "shortDesc": "A Mughal river fort guarding the old capital of Bengal on the banks of the Meghna.",
         "description": "Mirkadim Fort, also known as the Munshiganj fort, is a crumbling Mughal-era river fort that once guarded the trading route to the old capital at Sonargaon. Its mossy ramparts and gateway stand beside the vast Meghna River, offering fine views of ferries and fishing boats. Quiet, atmospheric and wonderfully off the beaten track.",
         "bestTime": "November – February",
@@ -4459,6 +4646,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada",
+            "photo-1524492412937-b28074a5d7da"
+        ],
         "shortDesc": "A majestic zamindar mansion of nearly 200 rooms set in manicured gardens near Dhaka.",
         "description": "Baliati Palace is one of the grandest zamindar mansions of central Bengal, a vast two-storey complex with some 200 rooms arranged around lush courtyards. Built in the 18th–19th centuries, its columns, staircases and airy verandas survive remarkably intact. Just an hour from Dhaka, it is an easy, rewarding slice of aristocratic life.",
         "bestTime": "October – March",
@@ -4546,6 +4739,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
+        ],
         "shortDesc": "The birthplace of Sheikh Mujibur Rahman, Father of the Nation, with a grand mausoleum complex.",
         "description": "Tungipara in Gopalganj is the birthplace of Sheikh Mujibur Rahman, the Father of the Nation of Bangladesh. A striking modern mausoleum complex, built on the family homestead, honours his memory with a museum, lake and gardens. On national days it draws thousands of pilgrims, while on ordinary days it remains a serene place for quiet reflection.",
         "bestTime": "November – March",
@@ -4626,10 +4825,16 @@ var DESTINATIONS = [
         "reviews": 150,
         "latitude": 24.433,
         "longitude": 90.7762,
-        "image": "assets/destinations/pagla-mosque.webp",
-        "imageLg": "assets/destinations/pagla-mosque.webp",
+        "image": "/assets/destinations/pagla-mosque.webp",
+        "imageLg": "/assets/destinations/pagla-mosque.webp",
         "gallery": [
-            "assets/destinations/pagla-mosque.webp"
+            "/assets/destinations/pagla-mosque.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "A dazzling mosaic-covered mosque whose name literally means 'the madman's mosque'.",
         "description": "The Pagla Mosque in Kishoreganj is famous for its name — 'pagla' meaning madman — after the folk saint who built it. Its white exterior is a riot of colourful mosaics and tiled domes, quite unlike the austere mosques of Bengal. Devotees also leave charms and make wishes here, giving the mosque a warm, lively, deeply human atmosphere.",
@@ -4713,10 +4918,16 @@ var DESTINATIONS = [
         "reviews": 90,
         "latitude": 24.67,
         "longitude": 90.61,
-        "image": "assets/destinations/egarosindur.webp",
-        "imageLg": "assets/destinations/egarosindur.webp",
+        "image": "/assets/destinations/egarosindur.webp",
+        "imageLg": "/assets/destinations/egarosindur.webp",
         "gallery": [
-            "assets/destinations/egarosindur.webp"
+            "/assets/destinations/egarosindur.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1501785888041-af3ef285b470"
         ],
         "shortDesc": "A medieval archaeological site on the Brahmaputra with ancient mosque ruins and a majestic river view.",
         "description": "Egarosindur is an ancient settlement site on the banks of the old Brahmaputra in Kishoreganj. Scattered across its green fields are the evocative ruins of medieval mosques and tombs, sitting in dramatic contrast to the vast river. Quiet, atmospheric and rich in history, it rewards those who make the journey with genuine solitude.",
@@ -4796,10 +5007,16 @@ var DESTINATIONS = [
         "reviews": 480,
         "latitude": 22.71,
         "longitude": 92.21,
-        "image": "assets/destinations/kaptai-lake.webp",
-        "imageLg": "assets/destinations/kaptai-lake.webp",
+        "image": "/assets/destinations/kaptai-lake.webp",
+        "imageLg": "/assets/destinations/kaptai-lake.webp",
         "gallery": [
-            "assets/destinations/kaptai-lake.webp"
+            "/assets/destinations/kaptai-lake.webp"
+        ],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "bhJRm6K3YFo",
+            "photo-1469474968028-56623f02e42e",
+            "photo-1470071459604-3b5ec3a7fe05"
         ],
         "shortDesc": "Bangladesh's largest lake — a vast inland sea of emerald hills created by the Kaptai Dam.",
         "description": "Kaptai Lake is the biggest lake in Bangladesh, formed in 1962 when the Kaptai Dam flooded the Karnaphuli valley. Its countless arms reach into forested hills, dotted with islands and floating Chakma villages. A full-day wooden boat trip — past submerged peaks, fishing boats and golden sunsets — is one of the great experiences of the Chittagong Hill Tracts.",
@@ -4887,10 +5104,16 @@ var DESTINATIONS = [
         "reviews": 300,
         "latitude": 22.201,
         "longitude": 92.2295,
-        "image": "assets/destinations/meghla.webp",
-        "imageLg": "assets/destinations/meghla.webp",
+        "image": "/assets/destinations/meghla.webp",
+        "imageLg": "/assets/destinations/meghla.webp",
         "gallery": [
-            "assets/destinations/meghla.webp"
+            "/assets/destinations/meghla.webp"
+        ],
+        "photoId": "photo-1469474968028-56623f02e42e",
+        "galleryIds": [
+            "photo-1469474968028-56623f02e42e",
+            "photo-1470071459604-3b5ec3a7fe05",
+            "photo-1506744038136-46273834b3fb"
         ],
         "shortDesc": "A playful tourist park of lakes, bridges and hill views at the edge of Bandarban town.",
         "description": "Meghla is a lively hill park on the outskirts of Bandarban, combining a scenic lake, hanging bridges, pedal boats and viewpoints in one easy spot. Families love its gentle walks and photo stops, while the views across the green hills and town are lovely. It is the perfect warm-up before deeper adventures into the Hill Tracts.",
@@ -4976,10 +5199,16 @@ var DESTINATIONS = [
         "reviews": 320,
         "latitude": 22.1738,
         "longitude": 92.2105,
-        "image": "assets/destinations/nilachal.webp",
-        "imageLg": "assets/destinations/nilachal.webp",
+        "image": "/assets/destinations/nilachal.webp",
+        "imageLg": "/assets/destinations/nilachal.webp",
         "gallery": [
-            "assets/destinations/nilachal.webp"
+            "/assets/destinations/nilachal.webp"
+        ],
+        "photoId": "photo-1470071459604-3b5ec3a7fe05",
+        "galleryIds": [
+            "photo-1470071459604-3b5ec3a7fe05",
+            "photo-1469474968028-56623f02e42e",
+            "photo-1506744038136-46273834b3fb"
         ],
         "shortDesc": "Bandarban's crown viewpoint — sweeping panoramas over hills, rivers and the town below.",
         "description": "Nilachal is the most famous viewpoint in Bandarban, perched on a spur above the town with commanding views of the Sangu River valley and ranges of blue hills. In monsoon mornings clouds drift through the valleys; in the dry season the panorama stretches for kilometres. A small café and easy access make sunset here irresistible.",
@@ -5065,10 +5294,16 @@ var DESTINATIONS = [
         "reviews": 400,
         "latitude": 21.5906,
         "longitude": 92.0713,
-        "image": "assets/destinations/dulahazra-safari-park.webp",
-        "imageLg": "assets/destinations/dulahazra-safari-park.webp",
+        "image": "/assets/destinations/dulahazra-safari-park.webp",
+        "imageLg": "/assets/destinations/dulahazra-safari-park.webp",
         "gallery": [
-            "assets/destinations/dulahazra-safari-park.webp"
+            "/assets/destinations/dulahazra-safari-park.webp"
+        ],
+        "photoId": "photo-1441974231531-c6227db76b6e",
+        "galleryIds": [
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1448375240586-882707db888b",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "A drive-through wildlife park in Chakaria with lions, tigers, bears and crocodiles.",
         "description": "Dulahazra Safari Park in Chakaria is Bangladesh's biggest wildlife park, where visitors ride a safari bus through open enclosures filled with Bengal tigers, lions, bears, crocodiles, deer and monkeys. There is also a traditional zoo, a children's corner and picnic lawns. It is a hugely popular family stop on the way to Cox's Bazar.",
@@ -5156,10 +5391,16 @@ var DESTINATIONS = [
         "reviews": 350,
         "latitude": 21.347,
         "longitude": 92.05,
-        "image": "assets/destinations/himchari-national-park.webp",
-        "imageLg": "assets/destinations/himchari-national-park.webp",
+        "image": "/assets/destinations/himchari-national-park.webp",
+        "imageLg": "/assets/destinations/himchari-national-park.webp",
         "gallery": [
-            "assets/destinations/himchari-national-park.webp"
+            "/assets/destinations/himchari-national-park.webp"
+        ],
+        "photoId": "photo-1448375240586-882707db888b",
+        "galleryIds": [
+            "photo-1448375240586-882707db888b",
+            "photo-1469474968028-56623f02e42e",
+            "photo-1504851149312-7a075b496cc7"
         ],
         "shortDesc": "Waterfalls, forested hills and a sweeping ocean view just south of Cox's Bazar.",
         "description": "Himchari National Park hugs the coast a few kilometres south of Cox's Bazar, where forested hills tumble toward a wide bay. A short trek leads to a seasonal waterfall, while the main viewpoint rewards climbers with a stunning panorama of the sea meeting the green hills. It is the classic companion stop to the town's famous beach.",
@@ -5245,10 +5486,16 @@ var DESTINATIONS = [
         "reviews": 520,
         "latitude": 21.232,
         "longitude": 92.047,
-        "image": "assets/destinations/inani-beach.webp",
-        "imageLg": "assets/destinations/inani-beach.webp",
+        "image": "/assets/destinations/inani-beach.webp",
+        "imageLg": "/assets/destinations/inani-beach.webp",
         "gallery": [
-            "assets/destinations/coxs-bazar.webp"
+            "/assets/destinations/inani-beach.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "BJ_Bz2MFWmY",
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "A quieter stretch of golden sand with coral stones and dramatic rocky outcrops.",
         "description": "Inani Beach sits on the Marine Drive south of Cox's Bazar, offering a calmer, more scenic stretch of the world's longest beach. Golden sand is scattered with coral and rock boulders, and the road itself — hugging the cliffs above the surf — is one of Bangladesh's most beautiful drives. Sunrise here is unforgettable.",
@@ -5336,10 +5583,16 @@ var DESTINATIONS = [
         "reviews": 220,
         "latitude": 20.868,
         "longitude": 92.3,
-        "image": "assets/destinations/teknaf.webp",
-        "imageLg": "assets/destinations/teknaf.webp",
+        "image": "/assets/destinations/teknaf.webp",
+        "imageLg": "/assets/destinations/teknaf.webp",
         "gallery": [
-            "assets/destinations/teknaf.webp"
+            "/assets/destinations/teknaf.webp"
+        ],
+        "photoId": "photo-1507525428034-b723cf961d3e",
+        "galleryIds": [
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1504851149312-7a075b496cc7",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "Bangladesh's southernmost point — where the Naf River meets the sea, gateway to Saint Martin's.",
         "description": "Teknaf is the southern tip of mainland Bangladesh, a town squeezed between the Naf River and the sea. From its small beach and jetty, boats depart for Saint Martin's Island and Shah Porir Dwip, while fishermen haul their nets along the river. It has a raw, frontier feel and glorious sunsets over Myanmar's distant hills.",
@@ -5427,10 +5680,16 @@ var DESTINATIONS = [
         "reviews": 200,
         "latitude": 22.3655,
         "longitude": 91.8383,
-        "image": "assets/destinations/bayazid-bostami-shrine.webp",
-        "imageLg": "assets/destinations/bayazid-bostami-shrine.webp",
+        "image": "/assets/destinations/bayazid-bostami-shrine.webp",
+        "imageLg": "/assets/destinations/bayazid-bostami-shrine.webp",
         "gallery": [
-            "assets/destinations/bayazid-bostami-shrine.webp"
+            "/assets/destinations/bayazid-bostami-shrine.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "A revered Sufi shrine in Chattogram whose pond is famously home to ancient turtles.",
         "description": "The Bayazid Bostami Shrine honours the Sufi saint of the same name and is one of Chattogram's most visited holy sites. Its fame rests largely on the adjoining pond, said to be centuries old and home to large turtles that devotees believe are reincarnated sinners. Watching the turtles glide up for offerings, amid incense and prayers, is a singular experience.",
@@ -5518,10 +5777,16 @@ var DESTINATIONS = [
         "reviews": 160,
         "latitude": 22.3328,
         "longitude": 91.8371,
-        "image": "assets/destinations/chandanpura-mosque.webp",
-        "imageLg": "assets/destinations/chandanpura-mosque.webp",
+        "image": "/assets/destinations/chandanpura-mosque.webp",
+        "imageLg": "/assets/destinations/chandanpura-mosque.webp",
         "gallery": [
-            "assets/destinations/chandanpura-mosque.webp"
+            "/assets/destinations/chandanpura-mosque.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "An 18th-century mosque crowned with a thicket of domes and minarets in old Chattogram.",
         "description": "Chandanpura Mosque is an architectural curiosity in the heart of old Chattogram. Built in the 18th century, it bristles with no fewer than eleven domes and a dozen ornate minarets, crammed into a narrow lane of the old port town. Its ornate, almost fairy-tale silhouette stands out among the trading houses and bazaars.",
@@ -5604,10 +5869,16 @@ var DESTINATIONS = [
         "reviews": 130,
         "latitude": 22.3418,
         "longitude": 91.826,
-        "image": "assets/destinations/chattogram-war-cemetery.webp",
-        "imageLg": "assets/destinations/chattogram-war-cemetery.webp",
+        "image": "/assets/destinations/chattogram-war-cemetery.webp",
+        "imageLg": "/assets/destinations/chattogram-war-cemetery.webp",
         "gallery": [
-            "assets/destinations/chattogram-war-cemetery.webp"
+            "/assets/destinations/chattogram-war-cemetery.webp"
+        ],
+        "photoId": "photo-1448375240586-882707db888b",
+        "galleryIds": [
+            "photo-1448375240586-882707db888b",
+            "photo-1470071459604-3b5ec3a7fe05",
+            "photo-1476514525535-07fb3b4ae5f1"
         ],
         "shortDesc": "A serene Commonwealth war cemetery from World War II, beautifully maintained and peaceful.",
         "description": "The Chattogram War Cemetery is the resting place of over 700 soldiers of the Commonwealth who died in the Burma Campaign of World War II. Immaculate lawns, flowering trees and simple stone graves create an atmosphere of quiet dignity in the middle of the city. It is a moving, beautifully kept piece of living history.",
@@ -5691,10 +5962,16 @@ var DESTINATIONS = [
         "reviews": 100,
         "latitude": 21.83,
         "longitude": 91.853,
-        "image": "assets/destinations/kutubdia-island.webp",
-        "imageLg": "assets/destinations/kutubdia-island.webp",
+        "image": "/assets/destinations/kutubdia-island.webp",
+        "imageLg": "/assets/destinations/kutubdia-island.webp",
         "gallery": [
-            "assets/destinations/kutubdia-island.webp"
+            "/assets/destinations/kutubdia-island.webp"
+        ],
+        "photoId": "photo-1519046904884-53103b34b206",
+        "galleryIds": [
+            "photo-1519046904884-53103b34b206",
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "A low-lying island of salt fields, coconut groves and quiet beaches in the Bay of Bengal.",
         "description": "Kutubdia is a flat, sun-bleached island off Cox's Bazar, known for its sprawling salt fields, swaying coconut groves and deserted sandy beaches. An old lighthouse and scattered fishing villages add charm. With few tourists, it is the place for slow walks, salt-farm photography and staring across the endless Bay.",
@@ -5782,10 +6059,16 @@ var DESTINATIONS = [
         "reviews": 140,
         "latitude": 21.56,
         "longitude": 91.96,
-        "image": "assets/destinations/maheshkhali-adinath.webp",
-        "imageLg": "assets/destinations/maheshkhali-adinath.webp",
+        "image": "/assets/destinations/maheshkhali-adinath.webp",
+        "imageLg": "/assets/destinations/maheshkhali-adinath.webp",
         "gallery": [
-            "assets/destinations/maheshkhali-adinath.webp"
+            "/assets/destinations/maheshkhali-adinath.webp"
+        ],
+        "photoId": "photo-1470252649378-9c29740c9fa8",
+        "galleryIds": [
+            "photo-1470252649378-9c29740c9fa8",
+            "photo-1519046904884-53103b34b206",
+            "photo-1507525428034-b723cf961d3e"
         ],
         "shortDesc": "A hilly island with Buddhist shrines, salt fields and the Adinath Temple on a peak.",
         "description": "Maheshkhali is a hilly island off Cox's Bazar, home to the ancient Adinath Temple on a forested peak and a scattering of Buddhist pagodas. Its hills, salt fields and quiet beaches make it a gentle day trip from Cox's Bazar. Climb the temple hill for sweeping views over the island and the sea beyond.",
@@ -5871,10 +6154,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 22.46,
         "longitude": 91.42,
-        "image": "assets/destinations/sandwip-island.webp",
-        "imageLg": "assets/destinations/sandwip-island.webp",
+        "image": "/assets/destinations/sandwip-island.webp",
+        "imageLg": "/assets/destinations/sandwip-island.webp",
         "gallery": [
-            "assets/destinations/sandwip-island.webp"
+            "/assets/destinations/sandwip-island.webp"
+        ],
+        "photoId": "photo-1507525428034-b723cf961d3e",
+        "galleryIds": [
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1504851149312-7a075b496cc7",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "A historic river-island in the Meghna estuary, rich in old mosques and rural Bengali life.",
         "description": "Sandwip is a large island in the Meghna estuary with a storied past — once a major trading port, it retains old mosques and a distinct island culture. Cycling or walking its quiet lanes, past fields, bazaars and river ghats, is a genuine slice of rural Bangladesh. Its history and remoteness make it a rewarding off-beat destination.",
@@ -5960,10 +6249,16 @@ var DESTINATIONS = [
         "reviews": 210,
         "latitude": 25.097,
         "longitude": 91.905,
-        "image": "assets/destinations/lalakhal.webp",
-        "imageLg": "assets/destinations/lalakhal.webp",
+        "image": "/assets/destinations/lalakhal.webp",
+        "imageLg": "/assets/destinations/lalakhal.webp",
         "gallery": [
-            "assets/destinations/lalakhal.webp"
+            "/assets/destinations/lalakhal.webp"
+        ],
+        "photoId": "photo-1501785888041-af3ef285b470",
+        "galleryIds": [
+            "photo-1501785888041-af3ef285b470",
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1500530855697-b586d89ba3ee"
         ],
         "shortDesc": "A jade-green river channel winding through tea gardens, best explored by wooden boat.",
         "description": "Lalakhal is a striking emerald-green channel of the Surma river system near Sylhet, its unusually clear, green-tinted water flowing between tea gardens and sandbars. A gentle boat ride up the channel — past swimmers, sandbars and hills — is serene and photogenic. It is one of the most underrated half-day trips in the Sylhet region.",
@@ -6051,10 +6346,16 @@ var DESTINATIONS = [
         "reviews": 230,
         "latitude": 25.124,
         "longitude": 91.985,
-        "image": "assets/destinations/bichanakandi.webp",
-        "imageLg": "assets/destinations/bichanakandi.webp",
+        "image": "/assets/destinations/bichanakandi.webp",
+        "imageLg": "/assets/destinations/bichanakandi.webp",
         "gallery": [
-            "assets/destinations/bichanakandi.webp"
+            "/assets/destinations/bichanakandi.webp"
+        ],
+        "photoId": "photo-1506744038136-46273834b3fb",
+        "galleryIds": [
+            "photo-1506744038136-46273834b3fb",
+            "photo-1501785888041-af3ef285b470",
+            "photo-1441974231531-c6227db76b6e"
         ],
         "shortDesc": "A handsome arched bridge over crystal river pools where the hills of Meghalaya meet Sylhet.",
         "description": "Bichanakandi is a scenic spot on the Piyain River where a graceful arched bridge spans clear, turquoise pools beneath the cliffs of Meghalaya, India. The riverbed of smooth stones, the still water and the dramatic hill backdrop make it a magnet for photographers and swimmers. Early morning mist adds a dreamlike quality.",
@@ -6142,10 +6443,16 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 24.889,
         "longitude": 91.878,
-        "image": "assets/destinations/malnicherra-tea-estate.webp",
-        "imageLg": "assets/destinations/malnicherra-tea-estate.webp",
+        "image": "/assets/destinations/malnicherra-tea-estate.webp",
+        "imageLg": "/assets/destinations/malnicherra-tea-estate.webp",
         "gallery": [
-            "assets/destinations/malnicherra-tea-estate.webp"
+            "/assets/destinations/malnicherra-tea-estate.webp"
+        ],
+        "photoId": "photo-1500530855697-b586d89ba3ee",
+        "galleryIds": [
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1472214103451-9374bd1c798e",
+            "photo-1473448912268-2022ce9509d8"
         ],
         "shortDesc": "Bangladesh's oldest tea garden, planted in 1849 and still producing behind Sylhet town.",
         "description": "Malnicherra is the oldest tea estate in Bangladesh, established in 1849 near Sylhet town. Its rolling, carefully clipped bushes ripple under the sun as pluckers in bright sarees move through the rows. A wander through the estate, a look at the factory and a cup of fresh local tea make for a perfect gentle escape.",
@@ -6234,6 +6541,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1500530855697-b586d89ba3ee",
+        "galleryIds": [
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1472214103451-9374bd1c798e",
+            "photo-1448375240586-882707db888b"
+        ],
         "shortDesc": "One of the largest tea estates in the world — a green ocean of tea bushes near Sylhet.",
         "description": "Lakkatura is among the biggest tea estates on Earth, its thousands of hectares rolling into a green ocean of neatly planted bushes. Long avenues through the estate are perfect for a slow drive or cycle, with the tea factory offering a glimpse into processing. It is the definitive image of Sylhet's tea country.",
         "bestTime": "October – March",
@@ -6320,6 +6633,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1476514525535-07fb3b4ae5f1",
+        "galleryIds": [
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1473448912268-2022ce9509d8",
+            "photo-1448375240586-882707db888b"
+        ],
         "shortDesc": "A hidden twin waterfall tumbling through forest near Kamalganj — the 'weeping' falls.",
         "description": "Ham Ham Waterfall is a pair of cascades hidden in the forests near Kamalganj in Moulvibazar, their name echoing the sound of the falling water. A short walk through jungle and tea gardens leads to the falls, which plunge into cool pools beneath overhanging greenery. In the monsoon the twin streams are at their powerful best.",
         "bestTime": "June – September (peak) / October – March (clear)",
@@ -6383,7 +6702,12 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Hum Hum Waterfall",
+            "Ham Ham Waterfall",
+            "হুম হুম ঝরনা"
+        ]
     },
     {
         "id": 71,
@@ -6401,10 +6725,16 @@ var DESTINATIONS = [
         "reviews": 190,
         "latitude": 24.285,
         "longitude": 91.72,
-        "image": "assets/destinations/baikka-beel.webp",
-        "imageLg": "assets/destinations/baikka-beel.webp",
+        "image": "/assets/destinations/baikka-beel.webp",
+        "imageLg": "/assets/destinations/baikka-beel.webp",
         "gallery": [
-            "assets/destinations/baikka-beel.webp"
+            "/assets/destinations/baikka-beel.webp"
+        ],
+        "photoId": "photo-1476514525535-07fb3b4ae5f1",
+        "galleryIds": [
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1501785888041-af3ef285b470",
+            "photo-1441974231531-c6227db76b6e"
         ],
         "shortDesc": "A protected wetland sanctuary near Srimangal where thousands of migratory birds winter.",
         "description": "Baikka Beel is a community-protected wetland on the edge of Hail Haor near Srimangal, managed as a model for sustainable sanctuary conservation. From a watchtower you can scan vast reed beds and open water for cormorants, egrets, geese and ducks — thousands of birds winter here between November and February. A morning boat trip is a birder's delight.",
@@ -6488,10 +6818,16 @@ var DESTINATIONS = [
         "reviews": 160,
         "latitude": 24.34,
         "longitude": 91.8,
-        "image": "assets/destinations/madhabpur-lake.webp",
-        "imageLg": "assets/destinations/madhabpur-lake.webp",
+        "image": "/assets/destinations/madhabpur-lake.webp",
+        "imageLg": "/assets/destinations/madhabpur-lake.webp",
         "gallery": [
-            "assets/destinations/madhabpur-lake.webp"
+            "/assets/destinations/madhabpur-lake.webp"
+        ],
+        "photoId": "photo-1501785888041-af3ef285b470",
+        "galleryIds": [
+            "photo-1501785888041-af3ef285b470",
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1506744038136-46273834b3fb"
         ],
         "shortDesc": "A serene lake cupped in hills at the edge of Lawachara forest, near a historic Bawm village.",
         "description": "Madhabpur Lake sits quietly among the hills of Kamalganj, on the fringe of Lawachara National Park. The still water reflects surrounding forest and tea gardens, while the nearby Bawm village adds a touch of indigenous culture. It is a peaceful spot for a slow walk, a picnic or just soaking up the calm.",
@@ -6577,10 +6913,16 @@ var DESTINATIONS = [
         "reviews": 150,
         "latitude": 24.749,
         "longitude": 90.4,
-        "image": "assets/destinations/shashi-lodge.webp",
-        "imageLg": "assets/destinations/shashi-lodge.webp",
+        "image": "/assets/destinations/shashi-lodge.webp",
+        "imageLg": "/assets/destinations/shashi-lodge.webp",
         "gallery": [
-            "assets/destinations/shashi-lodge.webp"
+            "/assets/destinations/shashi-lodge.webp"
+        ],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "A stunning Indo-Saracenic palace from 1905, home to Mymensingh's heritage museum.",
         "description": "Shashi Lodge is a magnificent early-20th-century palace built for the zamindar of Mymensingh, blending Indo-Saracenic and colonial styles. Its ornate façade, domes and sweeping staircases now house a regional museum of art, archaeology and folk culture. Set in leafy gardens on the edge of town, it is Mymensingh's proudest landmark.",
@@ -6662,10 +7004,16 @@ var DESTINATIONS = [
         "reviews": 110,
         "latitude": 24.759,
         "longitude": 90.256,
-        "image": "assets/destinations/muktagacha-zamindar-bari.webp",
-        "imageLg": "assets/destinations/muktagacha-zamindar-bari.webp",
+        "image": "/assets/destinations/muktagacha-zamindar-bari.webp",
+        "imageLg": "/assets/destinations/muktagacha-zamindar-bari.webp",
         "gallery": [
-            "assets/destinations/muktagacha-zamindar-bari.webp"
+            "/assets/destinations/muktagacha-zamindar-bari.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "The grandest zamindar palace of the region with ornate arches, domes and lotus ponds.",
         "description": "Muktagacha Zamindar Bari is a sprawling 19th-century palace complex in Mymensingh's Muktagacha sub-district. Its stately halls, colonnaded courtyards, lotus ponds and Hindu temples preserve the grandeur of Bengal's feudal aristocracy. Quiet, atmospheric and free to wander, it is a hidden gem for history lovers.",
@@ -6752,6 +7100,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
+        ],
         "shortDesc": "A riverside Shiva temple from the 17th century, spiritually significant for Bengali Hindus.",
         "description": "Baneshwar Temple stands beside the Old Brahmaputra in Jamalpur's Dewanganj area, a sacred 17th-century Shiva shrine of great importance to Bengali Hindus. Its simple brick architecture contrasts with the powerful river, and the surrounding groves add a tranquil pilgrimage atmosphere. The site comes alive with devotees during the rainy-season Shiva festivals.",
         "bestTime": "October – March",
@@ -6834,10 +7188,16 @@ var DESTINATIONS = [
         "reviews": 140,
         "latitude": 24.42,
         "longitude": 88.98,
-        "image": "assets/destinations/natore-rajbari.webp",
-        "imageLg": "assets/destinations/natore-rajbari.webp",
+        "image": "/assets/destinations/natore-rajbari.webp",
+        "imageLg": "/assets/destinations/natore-rajbari.webp",
         "gallery": [
-            "assets/destinations/natore-rajbari.webp"
+            "/assets/destinations/natore-rajbari.webp"
+        ],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "The largest zamindar mansion of Bengal — a sprawling palace of courtyards and history.",
         "description": "Natore Rajbari is the grandest zamindar palace in Bangladesh, once home to the powerful Rani Bhabani of Bengal. Its vast complex of buildings, courtyards, temples and gardens covers an entire block of Natore town. Partly in ruins but endlessly atmospheric, it is a window into the wealth and power of Bengal's landlord era.",
@@ -6923,10 +7283,16 @@ var DESTINATIONS = [
         "reviews": 100,
         "latitude": 24.412,
         "longitude": 89.01,
-        "image": "assets/destinations/uttara-gano-bhaban.webp",
-        "imageLg": "assets/destinations/uttara-gano-bhaban.webp",
+        "image": "/assets/destinations/uttara-gano-bhaban.webp",
+        "imageLg": "/assets/destinations/uttara-gano-bhaban.webp",
         "gallery": [
-            "assets/destinations/uttara-gano-bhaban.webp"
+            "/assets/destinations/uttara-gano-bhaban.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "The northern palace where Bengal's independence was proclaimed, set on a vast green estate.",
         "description": "Uttara Gano Bhaban, formerly the Natore Rajbari's Dighapatia palace, is deeply woven into Bangladesh's history — it was here that the provisional government of free Bengal was proclaimed in 1971. The elegant colonial mansion sits on expansive lawns and gardens. A quiet, significant and photogenic heritage site.",
@@ -7008,10 +7374,16 @@ var DESTINATIONS = [
         "reviews": 130,
         "latitude": 25.748,
         "longitude": 89.258,
-        "image": "assets/destinations/tajhat-palace.webp",
-        "imageLg": "assets/destinations/tajhat-palace.webp",
+        "image": "/assets/destinations/tajhat-palace.webp",
+        "imageLg": "/assets/destinations/tajhat-palace.webp",
         "gallery": [
-            "assets/destinations/tajhat-palace.webp"
+            "/assets/destinations/tajhat-palace.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "A handsome early-20th-century palace housing Rangpur's regional museum.",
         "description": "Tajhat Palace is an elegant two-storey mansion built by the Tajhat zamindars in the early 1900s, its Italian-style arches and green roof standing out on the edge of Rangpur town. Today it houses a regional museum of coins, jewellery, terracotta and folk objects. Well-restored and serene, it is one of northern Bangladesh's best-kept heritage gems.",
@@ -7093,10 +7465,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 25.778,
         "longitude": 88.893,
-        "image": "assets/destinations/saidpur.webp",
-        "imageLg": "assets/destinations/saidpur.webp",
+        "image": "/assets/destinations/saidpur.webp",
+        "imageLg": "/assets/destinations/saidpur.webp",
         "gallery": [
-            "assets/destinations/saidpur.webp"
+            "/assets/destinations/saidpur.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "A charming old railway town with colonial-era bungalows and a Christian heritage village.",
         "description": "Saidpur in Nilphamari is a delightful colonial railway town, its red-brick station and British-era bungalows recalling the days of the narrow-gauge rail network. The nearby Christian Para village, with its distinctive community and church, is a rare cultural highlight of the northwest. Walking Saidpur's quiet streets is like stepping back a century.",
@@ -7182,10 +7560,16 @@ var DESTINATIONS = [
         "reviews": 110,
         "latitude": 22.07,
         "longitude": 90.66,
-        "image": "assets/destinations/char-kukri-mukri.webp",
-        "imageLg": "assets/destinations/char-kukri-mukri.webp",
+        "image": "/assets/destinations/char-kukri-mukri.webp",
+        "imageLg": "/assets/destinations/char-kukri-mukri.webp",
         "gallery": [
-            "assets/destinations/char-kukri-mukri.webp"
+            "/assets/destinations/char-kukri-mukri.webp"
+        ],
+        "photoId": "photo-1470252649378-9c29740c9fa8",
+        "galleryIds": [
+            "photo-1470252649378-9c29740c9fa8",
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1504851149312-7a075b496cc7"
         ],
         "shortDesc": "A quiet twin-island wildlife sanctuary of mangrove, deer and endless empty beaches.",
         "description": "Char Kukri Mukri is a twin-island wildlife sanctuary off Bhola, covered in mangrove forest and home to spotted deer, wild boar and countless birds. Its sandy fringes and quiet channels are completely undeveloped, offering genuine solitude. Access by local launch, exploring on foot or by boat, it is the ultimate off-grid escape.",
@@ -7274,6 +7658,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1504851149312-7a075b496cc7",
+        "galleryIds": [
+            "photo-1504851149312-7a075b496cc7",
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1470252649378-9c29740c9fa8"
+        ],
         "shortDesc": "A newly popular sea island of golden sand, pine trees and sunrise views on the Bay.",
         "description": "Rangabali is an emerging island destination off Patuakhali, its long sandy beaches fringed by wind-blown pine trees. The Andhar Manik river and the open Bay of Bengal surround it, and sunrises here are spectacular. Simple guesthouses and boat trips keep the experience raw and charming — a quieter cousin of Kuakata.",
         "bestTime": "November – February",
@@ -7360,10 +7750,16 @@ var DESTINATIONS = [
         "reviews": 450,
         "latitude": 23.7188,
         "longitude": 90.3882,
-        "image": "assets/destinations/lalbagh-fort.webp",
-        "imageLg": "assets/destinations/lalbagh-fort.webp",
+        "image": "/assets/destinations/lalbagh-fort.webp",
+        "imageLg": "/assets/destinations/lalbagh-fort.webp",
         "gallery": [
-            "assets/destinations/lalbagh-fort.webp"
+            "/assets/destinations/lalbagh-fort.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "Dhaka's unfinished 17th-century Mughal fortress — ramparts, a mosque, tombs and legend.",
         "description": "Lalbagh Fort is Dhaka's most famous Mughal monument, begun in 1678 by Prince Muhammad Azam and never completed. Within its red-brick ramparts stand the Qilla mosque, the tomb of Pari Bibi and a well where legend says treasure was abandoned. Its romantic, layered history and quiet grounds make it a must-see on any Dhaka itinerary.",
@@ -7451,10 +7847,16 @@ var DESTINATIONS = [
         "reviews": 520,
         "latitude": 23.7084,
         "longitude": 90.4076,
-        "image": "assets/destinations/ahsan-manzil.webp",
-        "imageLg": "assets/destinations/ahsan-manzil.webp",
+        "image": "/assets/destinations/ahsan-manzil.webp",
+        "imageLg": "/assets/destinations/ahsan-manzil.webp",
         "gallery": [
-            "assets/destinations/ahsan-manzil.webp"
+            "/assets/destinations/ahsan-manzil.webp"
+        ],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "The Pink Palace of Dhaka — a riverside symbol of the city's Nawab-era grandeur.",
         "description": "Ahsan Manzil, the famous Pink Palace, was the seat of Dhaka's Nawab family and its grandest residence. Built in 1872 on the banks of the Buriganga, its rose-coloured façade, shimmering dome and echoing halls now form the city's premier museum. Every visitor to Dhaka should spend a morning among its chandeliers and river breezes.",
@@ -7543,6 +7945,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
+        ],
         "shortDesc": "A tiny 18th-century mosque glittering with star-shaped mosaic tiles in Old Dhaka.",
         "description": "The Star Mosque (Tara Masjid) in Armanitola is a jewel of Old Dhaka, its walls covered in thousands of star-shaped tiles, marble mosaics and Chinese pottery patterns. Built in the early 19th century, the tiny prayer house dazzles in the afternoon sun. It is one of the most photogenic and beloved mosques in the capital.",
         "bestTime": "October – March",
@@ -7623,10 +8031,16 @@ var DESTINATIONS = [
         "reviews": 140,
         "latitude": 23.7125,
         "longitude": 90.404,
-        "image": "assets/destinations/shankhari-bazar.webp",
-        "imageLg": "assets/destinations/shankhari-bazar.webp",
+        "image": "/assets/destinations/shankhari-bazar.webp",
+        "imageLg": "/assets/destinations/shankhari-bazar.webp",
         "gallery": [
-            "assets/destinations/shankhari-bazar.webp"
+            "/assets/destinations/shankhari-bazar.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "An atmospheric 400-year-old lane of Hindu craft families in the heart of Old Dhaka.",
         "description": "Shankhari Bazar is a legendary narrow lane in Old Dhaka, home for four centuries to Hindu craftsmen and traders. Its shuttered wooden houses, crumbling façades and temple doorways tell stories of a rich community past. A quiet walk here, especially at dawn, is like travelling back through Dhaka's living history.",
@@ -7708,10 +8122,16 @@ var DESTINATIONS = [
         "reviews": 250,
         "latitude": 23.729,
         "longitude": 90.395,
-        "image": "assets/destinations/baitul-mukarram.webp",
-        "imageLg": "assets/destinations/baitul-mukarram.webp",
+        "image": "/assets/destinations/baitul-mukarram.webp",
+        "imageLg": "/assets/destinations/baitul-mukarram.webp",
         "gallery": [
-            "assets/destinations/baitul-mukarram.webp"
+            "/assets/destinations/baitul-mukarram.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "The national mosque of Bangladesh — a modern marble cube in the heart of Dhaka.",
         "description": "Baitul Mukarram is the national mosque of Bangladesh, a vast modern structure built in 1968 with a distinctive cube-like hall modelled on the Kaaba in Mecca. Set on an elevated plaza beside a bustling market in the Paltan area, it is both a spiritual centre and a lively urban landmark. Its clean geometric lines are striking at sunset.",
@@ -7795,10 +8215,16 @@ var DESTINATIONS = [
         "reviews": 70,
         "latitude": 23.562,
         "longitude": 90.531,
-        "image": "assets/destinations/idrakpur-fort.webp",
-        "imageLg": "assets/destinations/idrakpur-fort.webp",
+        "image": "/assets/destinations/idrakpur-fort.webp",
+        "imageLg": "/assets/destinations/idrakpur-fort.webp",
         "gallery": [
-            "assets/destinations/idrakpur-fort.webp"
+            "/assets/destinations/idrakpur-fort.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1501785888041-af3ef285b470"
         ],
         "shortDesc": "A round Mughal river fort at Munshiganj built to guard the old capital's water routes.",
         "description": "Idrakpur Fort is a rare circular Mughal river fort in Munshiganj, built in the 1660s to defend the approaches to the old capital at Sonargaon. Its round plan and thick walls stand quietly by the river among paddy fields. Pairs perfectly with nearby Mirkadim Fort for a half-day heritage circuit.",
@@ -7880,10 +8306,16 @@ var DESTINATIONS = [
         "reviews": 160,
         "latitude": 23.622,
         "longitude": 88.605,
-        "image": "assets/destinations/mujibnagar.webp",
-        "imageLg": "assets/destinations/mujibnagar.webp",
+        "image": "/assets/destinations/mujibnagar.webp",
+        "imageLg": "/assets/destinations/mujibnagar.webp",
         "gallery": [
-            "assets/destinations/mujibnagar.webp"
+            "/assets/destinations/mujibnagar.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "Where Bangladesh's first government took its oath in 1971 — the birthplace of the Republic.",
         "description": "Mujibnagar, in Meherpur, is hallowed ground of the Liberation War. On 17 April 1971 the provisional government of Bangladesh took its oath here, making this mango grove the de facto first capital of the Republic. The memorial complex and museum recount that momentous day, surrounded by the tranquil Amra Kanan groves.",
@@ -7965,10 +8397,16 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 23.906,
         "longitude": 89.12,
-        "image": "assets/destinations/lalon-shah-shrine.webp",
-        "imageLg": "assets/destinations/lalon-shah-shrine.webp",
+        "image": "/assets/destinations/lalon-shah-shrine.webp",
+        "imageLg": "/assets/destinations/lalon-shah-shrine.webp",
         "gallery": [
-            "assets/destinations/lalon-shah-shrine.webp"
+            "/assets/destinations/lalon-shah-shrine.webp"
+        ],
+        "photoId": "photo-1474181487882-5abf3f0ba6c2",
+        "galleryIds": [
+            "photo-1474181487882-5abf3f0ba6c2",
+            "photo-1548013146-72479768bada",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "The resting place of Baul mystic Fakir Lalon Shah, heart of Bangladesh's folk-song tradition.",
         "description": "Lalon Akhra near Kushtia is the shrine and hermitage of Fakir Lalon Shah, the great Baul mystic whose songs of humanity, love and philosophy define Bengali folk music. Around his tomb, Baul singers still gather to sing and discuss, keeping his tradition alive. The annual Lalon festival in February fills the site with music, colour and devotion.",
@@ -8052,10 +8490,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 24.185,
         "longitude": 88.835,
-        "image": "assets/destinations/bagha-mosque.webp",
-        "imageLg": "assets/destinations/bagha-mosque.webp",
+        "image": "/assets/destinations/bagha-mosque.webp",
+        "imageLg": "/assets/destinations/bagha-mosque.webp",
         "gallery": [
-            "assets/destinations/bagha-mosque.webp"
+            "/assets/destinations/bagha-mosque.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "A 16th-century mosque famous for its exquisite terracotta ornamentation near Rajshahi.",
         "description": "Bagha Mosque, built in 1523 by Sultan Nusrat Shah, is celebrated for some of the finest terracotta decoration of Bengal's Sultanate period. Its walls are alive with arabesques, vines and floral panels in rich baked clay. Set among green fields in Rajshahi's Bagha upazila, it is a quiet masterpiece of medieval art.",
@@ -8136,10 +8580,16 @@ var DESTINATIONS = [
         "reviews": 170,
         "latitude": 24.7,
         "longitude": 91.98,
-        "image": "assets/destinations/hakaluki-haor.webp",
-        "imageLg": "assets/destinations/hakaluki-haor.webp",
+        "image": "/assets/destinations/hakaluki-haor.webp",
+        "imageLg": "/assets/destinations/hakaluki-haor.webp",
         "gallery": [
-            "assets/destinations/hakaluki-haor.webp"
+            "/assets/destinations/hakaluki-haor.webp"
+        ],
+        "photoId": "photo-1501785888041-af3ef285b470",
+        "galleryIds": [
+            "photo-1501785888041-af3ef285b470",
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1472214103451-9374bd1c798e"
         ],
         "shortDesc": "One of South Asia's largest freshwater wetlands — a winter wonderland for migratory birds.",
         "description": "Hakaluki Haor is among the biggest freshwater wetlands in South Asia, a vast basin of shallow water, reed beds and floating villages across Moulvibazar and Sylhet. In winter, hundreds of thousands of migratory ducks, geese and waders arrive, filling the water with life and sound. A dawn boat ride here is pure magic.",
@@ -8225,10 +8675,16 @@ var DESTINATIONS = [
         "reviews": 140,
         "latitude": 24.132,
         "longitude": 91.46,
-        "image": "assets/destinations/satchari-national-park.webp",
-        "imageLg": "assets/destinations/satchari-national-park.webp",
+        "image": "/assets/destinations/satchari-national-park.webp",
+        "imageLg": "/assets/destinations/satchari-national-park.webp",
         "gallery": [
-            "assets/destinations/satchari-national-park.webp"
+            "/assets/destinations/satchari-national-park.webp"
+        ],
+        "photoId": "photo-1441974231531-c6227db76b6e",
+        "galleryIds": [
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1448375240586-882707db888b",
+            "photo-1470071459604-3b5ec3a7fe05"
         ],
         "shortDesc": "A living rainforest near Srimangal with hoolock gibbons, waterfalls and tribal villages.",
         "description": "Satchari National Park is a compact but precious lowland rainforest in Habiganj, home to hoolock gibbons, capped langurs and a rich birdlife. A short trail leads past a small waterfall and a Tipra village where locals still live traditionally. It is an easy, rewarding nature stop close to Srimangal.",
@@ -8312,10 +8768,16 @@ var DESTINATIONS = [
         "reviews": 90,
         "latitude": 24.124,
         "longitude": 91.624,
-        "image": "assets/destinations/rema-kalenga-wildlife-sanctuary.webp",
-        "imageLg": "assets/destinations/rema-kalenga-wildlife-sanctuary.webp",
+        "image": "/assets/destinations/rema-kalenga-wildlife-sanctuary.webp",
+        "imageLg": "/assets/destinations/rema-kalenga-wildlife-sanctuary.webp",
         "gallery": [
-            "assets/destinations/rema-kalenga-wildlife-sanctuary.webp"
+            "/assets/destinations/rema-kalenga-wildlife-sanctuary.webp"
+        ],
+        "photoId": "photo-1448375240586-882707db888b",
+        "galleryIds": [
+            "photo-1448375240586-882707db888b",
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1476514525535-07fb3b4ae5f1"
         ],
         "shortDesc": "A remote wildlife sanctuary of old-growth forest in Habiganj — quiet and wild.",
         "description": "Rema-Kalenga is a rugged wildlife sanctuary in the hills of Habiganj, protecting rare old-growth forest with gibbons, elephants and many birds. Its trails are raw and uncrowded, giving a true wilderness feel far from the tourist circuit. Best explored with a forest guide who knows where the wildlife hides.",
@@ -8395,10 +8857,16 @@ var DESTINATIONS = [
         "reviews": 100,
         "latitude": 25.152,
         "longitude": 92.02,
-        "image": "assets/destinations/panthumai.webp",
-        "imageLg": "assets/destinations/panthumai.webp",
+        "image": "/assets/destinations/panthumai.webp",
+        "imageLg": "/assets/destinations/panthumai.webp",
         "gallery": [
-            "assets/destinations/panthumai.webp"
+            "/assets/destinations/panthumai.webp"
+        ],
+        "photoId": "photo-1476514525535-07fb3b4ae5f1",
+        "galleryIds": [
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1501785888041-af3ef285b470",
+            "photo-1432405972618-c60b0225b8f9"
         ],
         "shortDesc": "A quiet riverside hamlet of green hills, stone beds and the Khasia people, near Jaflong.",
         "description": "Panthumai is a lesser-known riverside spot on the road to Jaflong, where the crystal Piyain River flows over smooth stone beds beneath green hills. The Khasia (Jaintia) village here offers a glimpse of traditional life. Quieter than Jaflong itself, it is perfect for a slow picnic and stone-field photography.",
@@ -8483,10 +8951,16 @@ var DESTINATIONS = [
         "reviews": 110,
         "latitude": 21.78,
         "longitude": 92.2,
-        "image": "assets/destinations/dhan-siri-waterfall.webp",
-        "imageLg": "assets/destinations/dhan-siri-waterfall.webp",
+        "image": "/assets/destinations/dhan-siri-waterfall.webp",
+        "imageLg": "/assets/destinations/dhan-siri-waterfall.webp",
         "gallery": [
-            "assets/destinations/dhan-siri-waterfall.webp"
+            "/assets/destinations/dhan-siri-waterfall.webp"
+        ],
+        "photoId": "photo-1432405972618-c60b0225b8f9",
+        "galleryIds": [
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1469474968028-56623f02e42e"
         ],
         "shortDesc": "One of the country's highest waterfalls, hidden in the forests of Bandarban's Lama area.",
         "description": "Dhan Siri Waterfall, deep in the forests of Bandarban's Lama upazila, is one of the tallest waterfalls in Bangladesh. Reaching it requires a trek through jungle and hills — an adventure in itself — before the water crashes into a misty gorge below. For experienced trekkers it is the ultimate Hill Tracts reward.",
@@ -8570,10 +9044,16 @@ var DESTINATIONS = [
         "reviews": 150,
         "latitude": 22.123,
         "longitude": 92.24,
-        "image": "assets/destinations/chimbuk-hill.webp",
-        "imageLg": "assets/destinations/chimbuk-hill.webp",
+        "image": "/assets/destinations/chimbuk-hill.webp",
+        "imageLg": "/assets/destinations/chimbuk-hill.webp",
         "gallery": [
-            "assets/destinations/chimbuk-hill.webp"
+            "/assets/destinations/chimbuk-hill.webp"
+        ],
+        "photoId": "photo-1470071459604-3b5ec3a7fe05",
+        "galleryIds": [
+            "photo-1470071459604-3b5ec3a7fe05",
+            "photo-1469474968028-56623f02e42e",
+            "photo-1506744038136-46273834b3fb"
         ],
         "shortDesc": "Bandarban's legendary viewpoint — rolling hills in every direction from a lofty perch.",
         "description": "Chimbuk Hill is the most famous viewpoint in the Chittagong Hill Tracts, its crest offering a 360-degree panorama of layered green ridges vanishing into the distance. The winding road up is scenic, and from the top you can see Bandarban town and, on clear days, far into the hills. A breathtaking spot for sunrise or sunset.",
@@ -8657,10 +9137,16 @@ var DESTINATIONS = [
         "reviews": 130,
         "latitude": 21.428,
         "longitude": 92.1,
-        "image": "assets/destinations/ramu.webp",
-        "imageLg": "assets/destinations/ramu.webp",
+        "image": "/assets/destinations/ramu.webp",
+        "imageLg": "/assets/destinations/ramu.webp",
         "gallery": [
-            "assets/destinations/ramu.webp"
+            "/assets/destinations/ramu.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "Cox's Bazar's Buddhist heartland — centuries-old temples and quiet pagoda groves.",
         "description": "Ramu, a short drive inland from Cox's Bazar, is the spiritual heart of the region's Buddhist community. Home to some of Bangladesh's oldest temples and pagodas, its quiet lanes are lined with shrines and towering Buddhist statues. It offers a serene, cultural contrast to the beach town's energy.",
@@ -8746,10 +9232,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 22.45,
         "longitude": 91.1,
-        "image": "assets/destinations/hatiya-island.webp",
-        "imageLg": "assets/destinations/hatiya-island.webp",
+        "image": "/assets/destinations/hatiya-island.webp",
+        "imageLg": "/assets/destinations/hatiya-island.webp",
         "gallery": [
-            "assets/destinations/hatiya-island.webp"
+            "/assets/destinations/hatiya-island.webp"
+        ],
+        "photoId": "photo-1507525428034-b723cf961d3e",
+        "galleryIds": [
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1504851149312-7a075b496cc7",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "A vast tidal island of the Meghna estuary, home to fishing villages and lonely shores.",
         "description": "Hatiya is one of Bangladesh's largest islands, a low-lying expanse in the Meghna estuary shaped by tides and rivers. Fishing villages, shrimp farms and long quiet shores stretch across it, while sunsets over the estuary are spectacular. It is a genuinely rural, off-the-beaten-path island experience.",
@@ -8835,10 +9327,16 @@ var DESTINATIONS = [
         "reviews": 90,
         "latitude": 21.5,
         "longitude": 91.98,
-        "image": "assets/destinations/sonadia-island.webp",
-        "imageLg": "assets/destinations/sonadia-island.webp",
+        "image": "/assets/destinations/sonadia-island.webp",
+        "imageLg": "/assets/destinations/sonadia-island.webp",
         "gallery": [
-            "assets/destinations/sonadia-island.webp"
+            "/assets/destinations/sonadia-island.webp"
+        ],
+        "photoId": "photo-1470252649378-9c29740c9fa8",
+        "galleryIds": [
+            "photo-1470252649378-9c29740c9fa8",
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1519046904884-53103b34b206"
         ],
         "shortDesc": "An uninhabited, shell-strewn island off Cox's Bazar — a haven for birds and beachcombers.",
         "description": "Sonadia Island is a largely uninhabited island off Cox's Bazar, famed for its shell-strewn beaches and rich birdlife. Protected as an ecologically critical area, it is a magnet for migratory birds and for those seeking total solitude. Reached by local boat, it offers wild beaches and a true escape from the crowds.",
@@ -8926,10 +9424,16 @@ var DESTINATIONS = [
         "reviews": 320,
         "latitude": 23.8063,
         "longitude": 90.344,
-        "image": "assets/destinations/bangladesh-national-zoo.webp",
-        "imageLg": "assets/destinations/bangladesh-national-zoo.webp",
+        "image": "/assets/destinations/bangladesh-national-zoo.webp",
+        "imageLg": "/assets/destinations/bangladesh-national-zoo.webp",
         "gallery": [
-            "assets/destinations/bangladesh-national-zoo.webp"
+            "/assets/destinations/bangladesh-national-zoo.webp"
+        ],
+        "photoId": "photo-1441974231531-c6227db76b6e",
+        "galleryIds": [
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1448375240586-882707db888b",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "Mirpur's sprawling zoo — lions, tigers, elephants and a beloved royal Bengal tiger program.",
         "description": "Bangladesh National Zoo in Mirpur is the country's largest zoological garden, home to hundreds of species including royal Bengal tigers, lions, elephants, bears and rare birds. Wide lawns, a children's zoo and shaded paths make it a favourite family outing. The tiger enclosure is the perennial highlight.",
@@ -9014,10 +9518,16 @@ var DESTINATIONS = [
         "reviews": 200,
         "latitude": 23.8135,
         "longitude": 90.353,
-        "image": "assets/destinations/national-botanical-garden.webp",
-        "imageLg": "assets/destinations/national-botanical-garden.webp",
+        "image": "/assets/destinations/national-botanical-garden.webp",
+        "imageLg": "/assets/destinations/national-botanical-garden.webp",
         "gallery": [
-            "assets/destinations/national-botanical-garden.webp"
+            "/assets/destinations/national-botanical-garden.webp"
+        ],
+        "photoId": "photo-1448375240586-882707db888b",
+        "galleryIds": [
+            "photo-1448375240586-882707db888b",
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1441974231531-c6227db76b6e"
         ],
         "shortDesc": "A lush garden of rare trees and orchids beside the zoo in Mirpur.",
         "description": "The National Botanical Garden in Mirpur is a green laboratory of Bangladesh's flora, holding hundreds of tree species, a famous orchid collection and aquatic plant ponds. Shaded paths and lawns make it a calm weekend retreat. It sits right beside the National Zoo, so the two are easily visited together.",
@@ -9103,10 +9613,16 @@ var DESTINATIONS = [
         "reviews": 260,
         "latitude": 23.482,
         "longitude": 90.258,
-        "image": "assets/destinations/padma-bridge.webp",
-        "imageLg": "assets/destinations/padma-bridge.webp",
+        "image": "/assets/destinations/padma-bridge.webp",
+        "imageLg": "/assets/destinations/padma-bridge.webp",
         "gallery": [
-            "assets/destinations/padma-bridge.webp"
+            "/assets/destinations/padma-bridge.webp"
+        ],
+        "photoId": "photo-1501785888041-af3ef285b470",
+        "galleryIds": [
+            "photo-1501785888041-af3ef285b470",
+            "photo-1548013146-72479768bada",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "Bangladesh's longest bridge — a 6.15 km steel-and-concrete symbol of national pride.",
         "description": "The Padma Bridge, opened in 2022, is the longest bridge in Bangladesh at 6.15 kilometres, carrying road and rail across the mighty Padma River. Built entirely with national funds, it is a symbol of the country's engineering confidence. The best views are from the riverbank at Mawa, especially at sunset.",
@@ -9188,10 +9704,16 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 24.395,
         "longitude": 89.685,
-        "image": "assets/destinations/bangabandhu-bridge.webp",
-        "imageLg": "assets/destinations/bangabandhu-bridge.webp",
+        "image": "/assets/destinations/bangabandhu-bridge.webp",
+        "imageLg": "/assets/destinations/bangabandhu-bridge.webp",
         "gallery": [
-            "assets/destinations/bangabandhu-bridge.webp"
+            "/assets/destinations/bangabandhu-bridge.webp"
+        ],
+        "photoId": "photo-1506744038136-46273834b3fb",
+        "galleryIds": [
+            "photo-1506744038136-46273834b3fb",
+            "photo-1501785888041-af3ef285b470",
+            "photo-1476514525535-07fb3b4ae5f1"
         ],
         "shortDesc": "The mighty Jamuna multipurpose bridge linking the east and west of Bangladesh.",
         "description": "The Bangabandhu (Jamuna) Bridge, opened in 1998, was the first bridge to connect the two halves of Bangladesh across the mighty Jamuna River. At 4.8 kilometres it remains one of the longest river bridges in South Asia. Crossing it — by road or the railway that runs along its length — is a road-trip landmark for every Bangladeshi.",
@@ -9274,10 +9796,16 @@ var DESTINATIONS = [
         "reviews": 80,
         "latitude": 25.01,
         "longitude": 90.04,
-        "image": "assets/destinations/madhabtila-eco-park.webp",
-        "imageLg": "assets/destinations/madhabtila-eco-park.webp",
+        "image": "/assets/destinations/madhabtila-eco-park.webp",
+        "imageLg": "/assets/destinations/madhabtila-eco-park.webp",
         "gallery": [
-            "assets/destinations/madhabtila-eco-park.webp"
+            "/assets/destinations/madhabtila-eco-park.webp"
+        ],
+        "photoId": "photo-1469474968028-56623f02e42e",
+        "galleryIds": [
+            "photo-1469474968028-56623f02e42e",
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1506744038136-46273834b3fb"
         ],
         "shortDesc": "A leafy hill park in Sherpur's Madhabtila with viewpoints over haor wetlands.",
         "description": "Madhabtila Eco Park sits on the low hills of Sherpur, where forested slopes rise above the haor wetlands of the region. Its walking trails and viewpoints offer calm panoramas over flooded fields and distant villages. A quiet, easy nature stop off the usual tourist route.",
@@ -9359,10 +9887,16 @@ var DESTINATIONS = [
         "reviews": 540,
         "latitude": 21.2,
         "longitude": 92.05,
-        "image": "assets/destinations/marine-drive.webp",
-        "imageLg": "assets/destinations/marine-drive.webp",
+        "image": "/assets/destinations/marine-drive.webp",
+        "imageLg": "/assets/destinations/marine-drive.webp",
         "gallery": [
-            "assets/destinations/marine-drive.webp"
+            "/assets/destinations/marine-drive.webp"
+        ],
+        "photoId": "photo-1504851149312-7a075b496cc7",
+        "galleryIds": [
+            "photo-1504851149312-7a075b496cc7",
+            "photo-1506929562872-bb421503ef21",
+            "photo-1507525428034-b723cf961d3e"
         ],
         "shortDesc": "A scenic 80 km coastal highway hugging the Bay of Bengal between Cox's Bazar and Teknaf.",
         "description": "Marine Drive is one of South Asia's most scenic coastal roads, running 80 km from Cox's Bazar's Laboni Point to Teknaf with the sea on one side and forests and hills on the other. It links Himchari, Inani and the sandbanks of the bay, making it the perfect way to explore the southern coast by car, motorbike or bicycle.",
@@ -9455,10 +9989,16 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 20.87,
         "longitude": 92.3,
-        "image": "assets/destinations/naf-river.webp",
-        "imageLg": "assets/destinations/naf-river.webp",
+        "image": "/assets/destinations/naf-river.webp",
+        "imageLg": "/assets/destinations/naf-river.webp",
         "gallery": [
-            "assets/destinations/naf-river.webp"
+            "/assets/destinations/naf-river.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
         ],
         "shortDesc": "The calm river that forms Bangladesh's southern border with Myanmar near Teknaf.",
         "description": "The Naf River separates Teknaf from Myanmar and is a serene waterway lined with villages, fishing boats and mangroves. Boat trips offer views of the St. Martin's channel, the rocky island of Shahpari and daily life along the border. It is at its most photogenic at sunrise.",
@@ -9546,16 +10086,24 @@ var DESTINATIONS = [
         "categories": [
             "Hill",
             "Religious",
-            "Adventure"
+            "Adventure",
+            "Mountain"
         ],
         "rating": 4.5,
         "reviews": 410,
         "latitude": 22.61,
         "longitude": 91.69,
-        "image": "assets/destinations/chandranath-hill.webp",
-        "imageLg": "assets/destinations/chandranath-hill.webp",
+        "image": "/assets/destinations/chandranath-hill.webp",
+        "imageLg": "/assets/destinations/chandranath-hill.webp",
         "gallery": [
-            "assets/destinations/chandranath-hill.webp"
+            "/assets/destinations/chandranath-hill.webp",
+            "assets/destinations/chandranath-peak-temple.webp"
+        ],
+        "photoId": "photo-1469474968028-56623f02e42e",
+        "galleryIds": [
+            "photo-1469474968028-56623f02e42e",
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1470071459604-3b5ec3a7fe05"
         ],
         "shortDesc": "A 350 m hill in Sitakunda crowned by a Shiva temple and sweeping views of the coast.",
         "description": "Chandranath Hill is one of Bangladesh's most important Hindu pilgrimage sites, topped by the Chandra Shekhar Shiva temple built in the 4th century. Climbing roughly 3,000 steps rewards visitors with panoramic views over Sitakunda Eco Park, the Karnaphuli river and the distant Bay of Bengal.",
@@ -9602,7 +10150,7 @@ var DESTINATIONS = [
             "Private Car"
         ],
         "nearby_destinations": [
-            "sitakunda",
+            "Sitakunda Botanical Garden & Ecopark",
             "foys-lake",
             "bhatiari-lake",
             "patenga-beach"
@@ -9628,7 +10176,11 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Chandranath Peak & Temple",
+            "চন্দ্রনাথ পাহাড় চূড়া ও মন্দির"
+        ]
     },
     {
         "id": 108,
@@ -9650,6 +10202,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1501785888041-af3ef285b470",
+        "galleryIds": [
+            "photo-1501785888041-af3ef285b470",
+            "photo-1506744038136-46273834b3fb",
+            "photo-1505142468610-359e7d316be0"
+        ],
         "shortDesc": "A peaceful boating lake near the Bhatiari Navy zone in Chittagong.",
         "description": "Bhatiari Lake sits beside the Bangladesh Navy zone in Chittagong and is a popular weekend escape for city residents. Rowing and pedal boats drift across calm water while gardens and picnic shelters line the shore. It is close to Foy's Lake and easy to combine into a day trip.",
         "bestTime": "October – March",
@@ -9696,7 +10254,7 @@ var DESTINATIONS = [
             "foys-lake",
             "chandranath-hill",
             "patenga-beach",
-            "sitakunda"
+            "Sitakunda Botanical Garden & Ecopark"
         ],
         "nearby_hotels": [],
         "featured": false,
@@ -9737,10 +10295,16 @@ var DESTINATIONS = [
         "reviews": 320,
         "latitude": 22.34,
         "longitude": 91.83,
-        "image": "assets/destinations/ethnological-museum-chattogram.webp",
-        "imageLg": "assets/destinations/ethnological-museum-chattogram.webp",
+        "image": "/assets/destinations/ethnological-museum-chattogram.webp",
+        "imageLg": "/assets/destinations/ethnological-museum-chattogram.webp",
         "gallery": [
-            "assets/destinations/ethnological-museum-chattogram.webp"
+            "/assets/destinations/ethnological-museum-chattogram.webp"
+        ],
+        "photoId": "photo-1520639888713-7851133b1ed0",
+        "galleryIds": [
+            "photo-1520639888713-7851133b1ed0",
+            "photo-1554907984-15263bfd63bd",
+            "photo-1554907984-15263bfd63bd"
         ],
         "shortDesc": "Bangladesh's only museum dedicated to the lives and crafts of its ethnic groups.",
         "description": "The Ethnological Museum in Chittagong is the country's first and only museum devoted to indigenous communities. Galleries display tribal life-size models, traditional houses, musical instruments, fishing tools, costumes and crafts from the Chittagong Hill Tracts, the coastal belt and beyond.",
@@ -9830,10 +10394,16 @@ var DESTINATIONS = [
         "reviews": 680,
         "latitude": 21.8,
         "longitude": 92.43,
-        "image": "assets/destinations/nilgiri.webp",
-        "imageLg": "assets/destinations/nilgiri.webp",
+        "image": "/assets/destinations/nilgiri.webp",
+        "imageLg": "/assets/destinations/nilgiri.webp",
         "gallery": [
-            "assets/destinations/nilgiri.webp"
+            "/assets/destinations/nilgiri.webp"
+        ],
+        "photoId": "photo-1469474968028-56623f02e42e",
+        "galleryIds": [
+            "photo-1469474968028-56623f02e42e",
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1470071459604-3b5ec3a7fe05"
         ],
         "shortDesc": "One of Bangladesh's highest accessible peaks, at 2,000 ft with cloud-sea views.",
         "description": "Nilgiri is one of the highest tourist-accessible peaks in Bangladesh at around 2,000 feet, offering a grandstand view over the mountains of Bandarban and Myanmar beyond. A viewpoint, resort and observation deck sit on the summit, and on clear mornings the entire valley is visible below a sea of clouds.",
@@ -9886,7 +10456,7 @@ var DESTINATIONS = [
         ],
         "nearby_hotels": [],
         "featured": true,
-        "popularity": "high",
+        "popularity": 90,
         "status": "active",
         "tags": [
             "peak",
@@ -9924,10 +10494,16 @@ var DESTINATIONS = [
         "reviews": 520,
         "latitude": 21.95,
         "longitude": 92.49,
-        "image": "assets/destinations/boga-lake.webp",
-        "imageLg": "assets/destinations/boga-lake.webp",
+        "image": "/assets/destinations/boga-lake.webp",
+        "imageLg": "/assets/destinations/boga-lake.webp",
         "gallery": [
-            "assets/destinations/boga-lake.webp"
+            "/assets/destinations/boga-lake.webp"
+        ],
+        "photoId": "photo-1506744038136-46273834b3fb",
+        "galleryIds": [
+            "photo-1506744038136-46273834b3fb",
+            "photo-1505142468610-359e7d316be0",
+            "photo-1476514525535-07fb3b4ae5f1"
         ],
         "shortDesc": "A high-altitude emerald lake at 1,200 m reached by a demanding 4-hour trek.",
         "description": "Boga Lake is one of Bangladesh's most beautiful high-altitude lakes, sitting at roughly 1,200 metres above sea level in the mountains above Ruma. The trek to the lake passes through Mru and Bawm villages, bamboo bridges and rainforest. Camping by the water is the highlight for many adventurers.",
@@ -10017,10 +10593,16 @@ var DESTINATIONS = [
         "reviews": 430,
         "latitude": 21.95,
         "longitude": 92.52,
-        "image": "assets/destinations/keokradong.webp",
-        "imageLg": "assets/destinations/keokradong.webp",
+        "image": "/assets/destinations/keokradong.webp",
+        "imageLg": "/assets/destinations/keokradong.webp",
         "gallery": [
-            "assets/destinations/keokradong.webp"
+            "/assets/destinations/keokradong.webp"
+        ],
+        "photoId": "photo-1469474968028-56623f02e42e",
+        "galleryIds": [
+            "photo-1469474968028-56623f02e42e",
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1486870591958-9b9d0d1dda99"
         ],
         "shortDesc": "Bangladesh's second-highest peak at 1,240 m, a classic overnight trek.",
         "description": "Keokradong, at around 1,240 metres, is one of Bangladesh's highest peaks and a classic trekking destination. The multi-hour climb winds through villages, bamboo groves and cloud forest to a summit marked by a small shelter. Sunrise from the top is considered one of the country's great experiences.",
@@ -10107,10 +10689,16 @@ var DESTINATIONS = [
         "reviews": 350,
         "latitude": 21.85,
         "longitude": 92.55,
-        "image": "assets/destinations/nafakhum.webp",
-        "imageLg": "assets/destinations/nafakhum.webp",
+        "image": "/assets/destinations/nafakhum.webp",
+        "imageLg": "/assets/destinations/nafakhum.webp",
         "gallery": [
-            "assets/destinations/nafakhum.webp"
+            "/assets/destinations/nafakhum.webp"
+        ],
+        "photoId": "photo-1544551763-46a013bb70d5",
+        "galleryIds": [
+            "photo-1544551763-46a013bb70d5",
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1476514525535-07fb3b4ae5f1"
         ],
         "shortDesc": "Bangladesh's largest waterfall, where the Sangu river thunders over a 100 ft cliff.",
         "description": "Nafakhum is often called the largest waterfall in Bangladesh, formed where the Sangu (Shangu) river drops over a sheer cliff in a deafening white curtain. Reaching it involves a rough jeep ride and a hike through the forest, but the sight of the wide falls is unforgettable.",
@@ -10197,10 +10785,16 @@ var DESTINATIONS = [
         "reviews": 160,
         "latitude": 21.93,
         "longitude": 92.5,
-        "image": "assets/destinations/amiakhum.webp",
-        "imageLg": "assets/destinations/amiakhum.webp",
+        "image": "/assets/destinations/amiakhum.webp",
+        "imageLg": "/assets/destinations/amiakhum.webp",
         "gallery": [
-            "assets/destinations/amiakhum.webp"
+            "/assets/destinations/amiakhum.webp"
+        ],
+        "photoId": "photo-1476514525535-07fb3b4ae5f1",
+        "galleryIds": [
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1519681393784-d120267933ba",
+            "photo-1544551763-46a013bb70d5"
         ],
         "shortDesc": "A twin-stream waterfall cascading over rock steps in the Ruma hills.",
         "description": "Amiakhum is a beautiful multi-tiered waterfall in the Ruma upazila of Bandarban, where water splits into two streams over mossy rocks. It is less crowded than Nafakhum and a rewarding add-on to a Boga Lake or Keokradong trek.",
@@ -10286,10 +10880,16 @@ var DESTINATIONS = [
         "reviews": 300,
         "latitude": 22.04,
         "longitude": 92.22,
-        "image": "assets/destinations/shoilo-propat.webp",
-        "imageLg": "assets/destinations/shoilo-propat.webp",
+        "image": "/assets/destinations/shoilo-propat.webp",
+        "imageLg": "/assets/destinations/shoilo-propat.webp",
         "gallery": [
-            "assets/destinations/shoilo-propat.webp"
+            "/assets/destinations/shoilo-propat.webp"
+        ],
+        "photoId": "photo-1476514525535-07fb3b4ae5f1",
+        "galleryIds": [
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1519681393784-d120267933ba",
+            "photo-1544551763-46a013bb70d5"
         ],
         "shortDesc": "A graceful cascading waterfall on the Bandarban–Chimbuk road.",
         "description": "Shoilo Propat is one of the most accessible waterfalls in Bandarban, located along the road to Chimbuk hill. Water tumbles down a mossy rock face into a small pool, making it a popular photo stop on the way to Meghla or Chimbuk.",
@@ -10376,10 +10976,16 @@ var DESTINATIONS = [
         "reviews": 220,
         "latitude": 22.02,
         "longitude": 92.2,
-        "image": "assets/destinations/sangu-river.webp",
-        "imageLg": "assets/destinations/sangu-river.webp",
+        "image": "/assets/destinations/sangu-river.webp",
+        "imageLg": "/assets/destinations/sangu-river.webp",
         "gallery": [
-            "assets/destinations/sangu-river.webp"
+            "/assets/destinations/sangu-river.webp"
+        ],
+        "photoId": "photo-1506905925346-21bda4d32df4",
+        "galleryIds": [
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d"
         ],
         "shortDesc": "The main river of the Chittagong Hill Tracts, perfect for boat trips and rafting.",
         "description": "The Sangu (Shangu) river is the lifeblood of Bandarban, winding through deep green valleys from the hills to the Bay of Bengal. Traditional wooden boats ferry travellers between villages, while the upper reaches offer some of the country's few white-water rafting stretches.",
@@ -10467,10 +11073,16 @@ var DESTINATIONS = [
         "reviews": 200,
         "latitude": 21.78,
         "longitude": 92.43,
-        "image": "assets/destinations/thanchi.webp",
-        "imageLg": "assets/destinations/thanchi.webp",
+        "image": "/assets/destinations/thanchi.webp",
+        "imageLg": "/assets/destinations/thanchi.webp",
         "gallery": [
-            "assets/destinations/thanchi.webp"
+            "/assets/destinations/thanchi.webp"
+        ],
+        "photoId": "photo-1500530855697-b586d89ba3ee",
+        "galleryIds": [
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1500382017468-9049fed747ef",
+            "photo-1473448912268-2022ce9509d8"
         ],
         "shortDesc": "The remote southern gateway to the waterfalls and peaks of southern Bandarban.",
         "description": "Thanchi is a remote upazila of Bandarban bordering Myanmar, known as the base camp for treks to Nilgiri, Remakri, Nafakhum and beyond. The road to Thanchi is a spectacular ride along the Sangu river, past hanging bamboo bridges and tribal villages.",
@@ -10558,10 +11170,16 @@ var DESTINATIONS = [
         "reviews": 140,
         "latitude": 21.83,
         "longitude": 92.5,
-        "image": "assets/destinations/remakri.webp",
-        "imageLg": "assets/destinations/remakri.webp",
+        "image": "/assets/destinations/remakri.webp",
+        "imageLg": "/assets/destinations/remakri.webp",
         "gallery": [
-            "assets/destinations/remakri.webp"
+            "/assets/destinations/remakri.webp"
+        ],
+        "photoId": "photo-1500530855697-b586d89ba3ee",
+        "galleryIds": [
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1500382017468-9049fed747ef",
+            "photo-1473448912268-2022ce9509d8"
         ],
         "shortDesc": "The last Bangladeshi settlement before Myanmar, ringed by forest and waterfalls.",
         "description": "Remakri is the southernmost Bangladeshi village along the Sangu river, near the Myanmar border. It is the trailhead for Nafakhum and offers simple stays, tribal culture and the feeling of being at the very edge of the country.",
@@ -10651,6 +11269,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1432405972618-c60b0225b8f9"
+        ],
         "shortDesc": "Rangamati's iconic suspension bridge linking the hill town to Kaptai lake villages.",
         "description": "The Hanging Bridge is the most photographed landmark of Rangamati, a pedestrian suspension bridge built in 2003 that crosses a narrow arm of Kaptai lake. Walking across it sways gently above the water and connects the town to tribal villages on the far shore.",
         "bestTime": "October – March",
@@ -10736,10 +11360,17 @@ var DESTINATIONS = [
         "reviews": 380,
         "latitude": 22.57,
         "longitude": 92.2,
-        "image": "assets/destinations/shuvolong-waterfall.webp",
-        "imageLg": "assets/destinations/shuvolong-waterfall.webp",
+        "image": "/assets/destinations/shuvolong-waterfall.webp",
+        "imageLg": "/assets/destinations/shuvolong-waterfall.webp",
         "gallery": [
-            "assets/destinations/shuvolong-waterfall.webp"
+            "/assets/destinations/shuvolong-waterfall.webp",
+            "assets/destinations/kaptai-lake-cruise.webp"
+        ],
+        "photoId": "photo-1519681393784-d120267933ba",
+        "galleryIds": [
+            "photo-1519681393784-d120267933ba",
+            "photo-1544551763-46a013bb70d5",
+            "photo-1432405972618-c60b0225b8f9"
         ],
         "shortDesc": "A waterfall that plunges straight into Kaptai lake, seen by boat.",
         "description": "Shuvolong is a picturesque waterfall that pours directly into Kaptai lake, making it a highlight of the Rangamati boat circuit. Boats pause so visitors can swim in the cool water where the falls meet the lake, surrounded by forested hills.",
@@ -10805,7 +11436,10 @@ var DESTINATIONS = [
                 "Boat"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "শুভলং ঝর্ণা ও কাপ্তাই লেক ক্রুজ"
+        ]
     },
     {
         "id": 121,
@@ -10825,10 +11459,16 @@ var DESTINATIONS = [
         "reviews": 260,
         "latitude": 22.62,
         "longitude": 92.17,
-        "image": "assets/destinations/kaptai-national-park.webp",
-        "imageLg": "assets/destinations/kaptai-national-park.webp",
+        "image": "/assets/destinations/kaptai-national-park.webp",
+        "imageLg": "/assets/destinations/kaptai-national-park.webp",
         "gallery": [
-            "assets/destinations/kaptai-national-park.webp"
+            "/assets/destinations/kaptai-national-park.webp"
+        ],
+        "photoId": "photo-1500530855697-b586d89ba3ee",
+        "galleryIds": [
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1448375240586-882707db888b",
+            "photo-1441974231531-c6227db76b6e"
         ],
         "shortDesc": "A protected forest with spotted deer, gibbons and a canopy of tall trees.",
         "description": "Kaptai National Park protects tropical evergreen forest along Kaptai lake, home to spotted deer, barking deer, capped langurs and birds. Walking trails lead through the trees, and the lake edge offers peaceful picnic spots.",
@@ -10918,10 +11558,16 @@ var DESTINATIONS = [
         "reviews": 210,
         "latitude": 22.65,
         "longitude": 92.18,
-        "image": "assets/destinations/rajban-bihar.webp",
-        "imageLg": "assets/destinations/rajban-bihar.webp",
+        "image": "/assets/destinations/rajban-bihar.webp",
+        "imageLg": "/assets/destinations/rajban-bihar.webp",
         "gallery": [
-            "assets/destinations/rajban-bihar.webp"
+            "/assets/destinations/rajban-bihar.webp"
+        ],
+        "photoId": "photo-1600047509807-ba8f99d2cdde",
+        "galleryIds": [
+            "photo-1600047509807-ba8f99d2cdde",
+            "photo-1561361513-2d000a50f0dc",
+            "photo-1555881400-74d7acaacd8b"
         ],
         "shortDesc": "A 300-year-old Buddhist monastery in the heart of Rangamati.",
         "description": "Rajban Bihar is a historic Theravada Buddhist monastery in Rangamati town, said to be around three centuries old. Its serene compound, golden stupas and prayer halls make it both a place of worship and a tranquil stop for visitors.",
@@ -11011,6 +11657,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1554907984-15263bfd63bd",
+        "galleryIds": [
+            "photo-1554907984-15263bfd63bd",
+            "photo-1548013146-72479768bada",
+            "photo-1520639888713-7851133b1ed0"
+        ],
         "shortDesc": "A museum of Chakma, Marma and other Hill Tracts cultures.",
         "description": "The Tribal Cultural Institute in Rangamati showcases the heritage of the Chakma, Marma, Tripura and other hill peoples through life-size models, costumes, musical instruments and household tools. It is the best single stop to understand the culture of the Chittagong Hill Tracts.",
         "bestTime": "Year-round",
@@ -11093,10 +11745,16 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 23.27,
         "longitude": 91.94,
-        "image": "assets/destinations/dighinala.webp",
-        "imageLg": "assets/destinations/dighinala.webp",
+        "image": "/assets/destinations/dighinala.webp",
+        "imageLg": "/assets/destinations/dighinala.webp",
         "gallery": [
-            "assets/destinations/dighinala.webp"
+            "/assets/destinations/dighinala.webp"
+        ],
+        "photoId": "photo-1500530855697-b586d89ba3ee",
+        "galleryIds": [
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1470071459604-3b5ec3a7fe05",
+            "photo-1486870591958-9b9d0d1dda99"
         ],
         "shortDesc": "A lush hill valley in Khagrachhari, gateway to Ruilui Para and hill views.",
         "description": "Dighinala is a scenic upazila of Khagrachhari known for rolling hills, rivers and indigenous villages. It is the staging point for the journey toward Sajek Valley and offers its own viewpoints over the surrounding green mountains.",
@@ -11184,10 +11842,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 23.27,
         "longitude": 91.89,
-        "image": "assets/destinations/panchari.webp",
-        "imageLg": "assets/destinations/panchari.webp",
+        "image": "/assets/destinations/panchari.webp",
+        "imageLg": "/assets/destinations/panchari.webp",
         "gallery": [
-            "assets/destinations/panchari.webp"
+            "/assets/destinations/panchari.webp"
+        ],
+        "photoId": "photo-1447958374760-1ce70cf11ee3",
+        "galleryIds": [
+            "photo-1447958374760-1ce70cf11ee3",
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1500382017468-9049fed747ef"
         ],
         "shortDesc": "A tranquil tribal upazila with streams, hills and village homestays.",
         "description": "Panchari is a quiet upazila of Khagrachhari where green hills, small streams and indigenous communities offer an unhurried escape. It is less visited than Sajek or Dighinala, appealing to travellers who want authentic hill-country life.",
@@ -11275,10 +11939,16 @@ var DESTINATIONS = [
         "reviews": 230,
         "latitude": 23.46,
         "longitude": 91.11,
-        "image": "assets/destinations/mainamati-museum.webp",
-        "imageLg": "assets/destinations/mainamati-museum.webp",
+        "image": "/assets/destinations/mainamati-museum.webp",
+        "imageLg": "/assets/destinations/mainamati-museum.webp",
         "gallery": [
-            "assets/destinations/mainamati-museum.webp"
+            "/assets/destinations/mainamati-museum.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1520639888713-7851133b1ed0",
+            "photo-1554907984-15263bfd63bd"
         ],
         "shortDesc": "A museum displaying artifacts from the Buddhist monastic city of Mainamati.",
         "description": "The Mainamati Museum houses sculptures, coins, terracotta plaques and pottery recovered from the Salban Vihara and nearby archaeological sites. Its collection illustrates the Buddhist and Buddhist-influenced culture that shaped this region of Bengal between the 8th and 12th centuries.",
@@ -11348,94 +12018,6 @@ var DESTINATIONS = [
         }
     },
     {
-        "id": 127,
-        "name": "Cumilla War Cemetery",
-        "name_bn": "কুমিল্লা ওয়ার সেমেট্রি",
-        "slug": "cumilla-war-cemetery",
-        "division": "Chattogram",
-        "district": "Cumilla",
-        "upazila": "Cumilla Sadar",
-        "category": "Historical",
-        "categories": [
-            "Historical",
-            "Heritage"
-        ],
-        "rating": 4.5,
-        "reviews": 170,
-        "latitude": 23.46,
-        "longitude": 91.18,
-        "image": "assets/destinations/cumilla-war-cemetery.webp",
-        "imageLg": "assets/destinations/cumilla-war-cemetery.webp",
-        "gallery": [
-            "assets/destinations/cumilla-war-cemetery.webp"
-        ],
-        "shortDesc": "A beautifully kept Commonwealth cemetery from World War II.",
-        "description": "Cumilla War Cemetery, managed by the Commonwealth War Graves Commission, holds more than 700 graves of soldiers who died in the Burma campaign of World War II. Rows of identical headstones and clipped lawns give it a moving, serene atmosphere.",
-        "bestTime": "Year-round",
-        "recommendedDays": "1 hour",
-        "difficulty": "Easy",
-        "budget": "",
-        "travelType": "History, Reflection, Families",
-        "activities": [
-            "Walk the grounds",
-            "Read the headstones",
-            "Reflect on history"
-        ],
-        "attractions": [
-            "War graves",
-            "Memorial gardens"
-        ],
-        "tips": [
-            "Visit during opening hours",
-            "Be respectful — it is an active cemetery",
-            "Combine with Mainamati"
-        ],
-        "things_to_do": [
-            "Walk the grounds",
-            "Read the headstones",
-            "Reflect on history"
-        ],
-        "what_to_see": [
-            "War graves",
-            "Memorial gardens"
-        ],
-        "travel_tips": [
-            "Visit during opening hours",
-            "Be respectful — it is an active cemetery",
-            "Combine with Mainamati"
-        ],
-        "transport_options": [
-            "Rickshaw",
-            "CNG",
-            "Private Car"
-        ],
-        "nearby_destinations": [
-            "mainamati",
-            "lalmai-hills"
-        ],
-        "nearby_hotels": [],
-        "featured": false,
-        "popularity": "medium",
-        "status": "active",
-        "tags": [
-            "war cemetery",
-            "world war ii",
-            "heritage"
-        ],
-        "travelInfo": {
-            "from": "Cumilla",
-            "distanceKm": 3,
-            "duration": "15 minutes",
-            "route": "Cumilla town → war cemetery",
-            "transport": [
-                "Rickshaw",
-                "CNG",
-                "Private Car"
-            ],
-            "flight": null
-        }
-    },
-    {
         "id": 128,
         "name": "Lalmai Hills",
         "name_bn": "লালমাই পাহাড়",
@@ -11453,10 +12035,16 @@ var DESTINATIONS = [
         "reviews": 150,
         "latitude": 23.43,
         "longitude": 91.12,
-        "image": "assets/destinations/lalmai-hills.webp",
-        "imageLg": "assets/destinations/lalmai-hills.webp",
+        "image": "/assets/destinations/lalmai-hills.webp",
+        "imageLg": "/assets/destinations/lalmai-hills.webp",
         "gallery": [
-            "assets/destinations/lalmai-hills.webp"
+            "/assets/destinations/lalmai-hills.webp"
+        ],
+        "photoId": "photo-1500530855697-b586d89ba3ee",
+        "galleryIds": [
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1470071459604-3b5ec3a7fe05",
+            "photo-1486870591958-9b9d0d1dda99"
         ],
         "shortDesc": "Low red-clay hills west of Cumilla dotted with ancient ruins.",
         "description": "The Lalmai Hills are a chain of low hills near Cumilla that once carried an entire Buddhist monastic complex. Today they are partly quarried, yet walking the remaining slopes still reveals brick ruins, forested valleys and open views of the surrounding plain.",
@@ -11524,7 +12112,11 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Lalmai Pahar & Eco Park",
+            "লালমাই পাহাড় ও ইকো পার্ক"
+        ]
     },
     {
         "id": 129,
@@ -11546,6 +12138,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1437482078695-73f5ca6c96e2",
+        "galleryIds": [
+            "photo-1437482078695-73f5ca6c96e2",
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d"
+        ],
         "shortDesc": "The point where the Padma and Meghna meet in a wide water vista at Chandpur.",
         "description": "Chandpur sits at the meeting of the Padma (Lower Ganges) and Meghna rivers, a broad stretch of water busy with launches, ferries and fishing boats. The riverfront is a classic photo spot, especially at sunset when the water glows orange.",
         "bestTime": "October – March",
@@ -11612,7 +12210,12 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Borostation Molhead / Three Rivers Estuary",
+            "বড়স্টেশন মোলহেড / তিন নদীর মোহনা",
+            "Boro Station Molhead"
+        ]
     },
     {
         "id": 130,
@@ -11632,10 +12235,16 @@ var DESTINATIONS = [
         "reviews": 130,
         "latitude": 23.16,
         "longitude": 90.72,
-        "image": "assets/destinations/mini-coxs-bazar-chandpur.webp",
-        "imageLg": "assets/destinations/mini-coxs-bazar-chandpur.webp",
+        "image": "/assets/destinations/mini-coxs-bazar-chandpur.webp",
+        "imageLg": "/assets/destinations/mini-coxs-bazar-chandpur.webp",
         "gallery": [
-            "assets/destinations/mini-coxs-bazar-chandpur.webp"
+            "/assets/destinations/mini-coxs-bazar-chandpur.webp"
+        ],
+        "photoId": "photo-1437482078695-73f5ca6c96e2",
+        "galleryIds": [
+            "photo-1437482078695-73f5ca6c96e2",
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d"
         ],
         "shortDesc": "A wide sandbar on the Meghna nicknamed 'Mini Cox's Bazar'.",
         "description": "The sandbar on the Meghna river near Chandpur is locally nicknamed 'Mini Cox's Bazar' because of its wide, open sand field that appears at low tide. It draws picnickers and photographers looking for a beach-like experience along the river.",
@@ -11721,10 +12330,16 @@ var DESTINATIONS = [
         "reviews": 80,
         "latitude": 23.32,
         "longitude": 90.8,
-        "image": "assets/destinations/haimchar.webp",
-        "imageLg": "assets/destinations/haimchar.webp",
+        "image": "/assets/destinations/haimchar.webp",
+        "imageLg": "/assets/destinations/haimchar.webp",
         "gallery": [
-            "assets/destinations/haimchar.webp"
+            "/assets/destinations/haimchar.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2",
+            "photo-1506905925346-21bda4d32df4"
         ],
         "shortDesc": "A riverine upazila of Chandpur surrounded by the Meghna.",
         "description": "Haimchar is a riverine upazila of Chandpur where the Meghna splits into channels around low-lying chars. Village ferries, fishing boats and floating markets offer an authentic look at river life in the delta.",
@@ -11814,6 +12429,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1561361513-2d000a50f0dc"
+        ],
         "shortDesc": "A grand 17th-century zamindar mansion of the Haripur zamindars.",
         "description": "Haripur Barabari is a large 17th-century zamindar (landlord) mansion built by the wealthy Haripur family in Nasirnagar, Brahmanbaria. Its ornate facade, courtyards and decorative interiors are among the finest surviving examples of zamindari architecture in eastern Bengal.",
         "bestTime": "October – March",
@@ -11893,16 +12514,23 @@ var DESTINATIONS = [
         "categories": [
             "River",
             "Cultural",
-            "Village"
+            "Village",
+            "Nature"
         ],
         "rating": 4.2,
         "reviews": 160,
         "latitude": 23.65,
         "longitude": 91.03,
-        "image": "assets/destinations/titas-river.webp",
-        "imageLg": "assets/destinations/titas-river.webp",
+        "image": "/assets/destinations/titas-river.webp",
+        "imageLg": "/assets/destinations/titas-river.webp",
         "gallery": [
-            "assets/destinations/titas-river.webp"
+            "/assets/destinations/titas-river.webp"
+        ],
+        "photoId": "photo-1506905925346-21bda4d32df4",
+        "galleryIds": [
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d"
         ],
         "shortDesc": "The river immortalised in Bengali literature, threading through Brahmanbaria.",
         "description": "The Titas river is a branch of the Meghna that runs through Brahmanbaria, made famous by Adwaita Mallabarman's novel 'A River Called Titas' and the classic film based on it. Its banks hold fishing villages, ghats and the everyday river life of rural Bangladesh.",
@@ -11971,7 +12599,11 @@ var DESTINATIONS = [
                 "Boat"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Titas River Viewpoint",
+            "তিতাস নদী ঘাট ও লেক"
+        ]
     },
     {
         "id": 134,
@@ -11993,6 +12625,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1506905925346-21bda4d32df4",
+        "galleryIds": [
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d"
+        ],
         "shortDesc": "A riverside char near Feni town, popular for picnics and boating.",
         "description": "Muhurir Char is a sandbar and riverside area along the Muhuri river near Feni town. Locals visit for picnics, boating and fishing, making it a pleasant weekend escape close to the city.",
         "bestTime": "October – March",
@@ -12033,7 +12671,7 @@ var DESTINATIONS = [
             "Private Car"
         ],
         "nearby_destinations": [
-            "sonagazi",
+            "Muhuri Dam & Irrigation Project",
             "ramgati-lakshmipur",
             "chandpur-three-rivers"
         ],
@@ -12059,94 +12697,6 @@ var DESTINATIONS = [
         }
     },
     {
-        "id": 135,
-        "name": "Sonagazi",
-        "name_bn": "সোনাগাজী",
-        "slug": "sonagazi",
-        "division": "Chattogram",
-        "district": "Feni",
-        "upazila": "Sonagazi",
-        "category": "River",
-        "categories": [
-            "River",
-            "Coastal",
-            "Village"
-        ],
-        "rating": 3.8,
-        "reviews": 60,
-        "latitude": 22.85,
-        "longitude": 91.4,
-        "image": "assets/destinations/sonagazi.webp",
-        "imageLg": "assets/destinations/sonagazi.webp",
-        "gallery": [
-            "assets/destinations/sonagazi.webp"
-        ],
-        "shortDesc": "A coastal upazila of Feni with rivers, chars and rural waterways.",
-        "description": "Sonagazi is a coastal upazila of Feni district where the landscape turns to rivers, chars and low farmland near the Bay of Bengal. It offers a quiet, authentic look at coastal Bangladesh away from tourist routes.",
-        "bestTime": "October – March",
-        "recommendedDays": "Half day",
-        "difficulty": "Easy",
-        "budget": "",
-        "travelType": "Solo, Nature, Culture",
-        "activities": [
-            "Village walks",
-            "Riverbank views",
-            "Watch fishing boats"
-        ],
-        "attractions": [
-            "River channels",
-            "Coastal chars"
-        ],
-        "tips": [
-            "Limited facilities — carry water",
-            "Best visited as a day trip",
-            "Ask locals for directions"
-        ],
-        "things_to_do": [
-            "Village walks",
-            "Riverbank views",
-            "Watch fishing boats"
-        ],
-        "what_to_see": [
-            "River channels",
-            "Coastal chars"
-        ],
-        "travel_tips": [
-            "Limited facilities — carry water",
-            "Best visited as a day trip",
-            "Ask locals for directions"
-        ],
-        "transport_options": [
-            "Bus",
-            "CNG"
-        ],
-        "nearby_destinations": [
-            "muhurir-char",
-            "ramgati-lakshmipur",
-            "nijhum-dwip"
-        ],
-        "nearby_hotels": [],
-        "featured": false,
-        "popularity": "low",
-        "status": "active",
-        "tags": [
-            "coastal",
-            "river",
-            "village"
-        ],
-        "travelInfo": {
-            "from": "Feni",
-            "distanceKm": 22,
-            "duration": "1 hour",
-            "route": "Feni → Sonagazi",
-            "transport": [
-                "Bus",
-                "CNG"
-            ],
-            "flight": null
-        }
-    },
-    {
         "id": 136,
         "name": "Ramgati",
         "name_bn": "রামগতি",
@@ -12163,10 +12713,16 @@ var DESTINATIONS = [
         "reviews": 70,
         "latitude": 22.61,
         "longitude": 90.99,
-        "image": "assets/destinations/ramgati-lakshmipur.webp",
-        "imageLg": "assets/destinations/ramgati-lakshmipur.webp",
+        "image": "/assets/destinations/ramgati-lakshmipur.webp",
+        "imageLg": "/assets/destinations/ramgati-lakshmipur.webp",
         "gallery": [
-            "assets/destinations/ramgati-lakshmipur.webp"
+            "/assets/destinations/ramgati-lakshmipur.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
         ],
         "shortDesc": "A riverine upazila of Lakshmipur along the banks of the Meghna.",
         "description": "Ramgati is a low-lying upazila of Lakshmipur district facing the Meghna river and the islands of Bhola across the water. Its riverside villages, ferries and views over the wide Meghna make it a quiet stop for travellers exploring the delta.",
@@ -12210,7 +12766,7 @@ var DESTINATIONS = [
         "nearby_destinations": [
             "char-kukri-mukri",
             "monpura",
-            "sonagazi",
+            "Muhuri Dam & Irrigation Project",
             "nijhum-dwip"
         ],
         "nearby_hotels": [],
@@ -12252,10 +12808,16 @@ var DESTINATIONS = [
         "reviews": 480,
         "latitude": 25.12,
         "longitude": 91.73,
-        "image": "assets/destinations/sada-pathor.webp",
-        "imageLg": "assets/destinations/sada-pathor.webp",
+        "image": "/assets/destinations/sada-pathor.webp",
+        "imageLg": "/assets/destinations/sada-pathor.webp",
         "gallery": [
-            "assets/destinations/sada-pathor.webp"
+            "/assets/destinations/sada-pathor.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
         ],
         "shortDesc": "A white-stone riverbed at Bholaganj where the crystal-clear stream sparkles.",
         "description": "Sada Pathor ('white stone') is the famous stone-littered bed of the river at Bholaganj, near the border with Meghalaya. Clear water tumbles over white and grey boulders, making it a favourite spot for wading, photography and riverside picnics.",
@@ -12346,10 +12908,16 @@ var DESTINATIONS = [
         "reviews": 980,
         "latitude": 24.89,
         "longitude": 91.87,
-        "image": "assets/destinations/hazrat-shah-jalal-mazar.webp",
-        "imageLg": "assets/destinations/hazrat-shah-jalal-mazar.webp",
+        "image": "/assets/destinations/hazrat-shah-jalal-mazar.webp",
+        "imageLg": "/assets/destinations/hazrat-shah-jalal-mazar.webp",
         "gallery": [
-            "assets/destinations/hazrat-shah-jalal-mazar.webp"
+            "/assets/destinations/hazrat-shah-jalal-mazar.webp"
+        ],
+        "photoId": "photo-1555881400-74d7acaacd8b",
+        "galleryIds": [
+            "photo-1555881400-74d7acaacd8b",
+            "photo-1543783207-ec64e4d95325",
+            "photo-1543783207-ec64e4d95325"
         ],
         "shortDesc": "The revered shrine of the great Sufi saint who brought Islam to Sylhet.",
         "description": "The mazar (shrine) of Hazrat Shah Jalal (R) is one of the most important Islamic pilgrimage sites in Bangladesh. The saint, who spread Islam in Sylhet in the early 14th century, rests beneath a domed mausoleum visited by thousands of devotees daily.",
@@ -12440,6 +13008,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1543783207-ec64e4d95325",
+        "galleryIds": [
+            "photo-1543783207-ec64e4d95325",
+            "photo-1555881400-74d7acaacd8b",
+            "photo-1555881400-74d7acaacd8b"
+        ],
         "shortDesc": "The shrine of Shah Jalal's nephew, set on a hill above Sylhet city.",
         "description": "Hazrat Shah Paran (R), the nephew of Hazrat Shah Jalal, is buried at a shrine on a low hill overlooking Sylhet. The peaceful complex, with its white dome and gardens, is an important pilgrimage site and offers a fine view of the city below.",
         "bestTime": "Year-round",
@@ -12523,10 +13097,16 @@ var DESTINATIONS = [
         "reviews": 210,
         "latitude": 24.89,
         "longitude": 91.87,
-        "image": "assets/destinations/osmani-museum-sylhet.webp",
-        "imageLg": "assets/destinations/osmani-museum-sylhet.webp",
+        "image": "/assets/destinations/osmani-museum-sylhet.webp",
+        "imageLg": "/assets/destinations/osmani-museum-sylhet.webp",
         "gallery": [
-            "assets/destinations/osmani-museum-sylhet.webp"
+            "/assets/destinations/osmani-museum-sylhet.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1520639888713-7851133b1ed0",
+            "photo-1554907984-15263bfd63bd"
         ],
         "shortDesc": "A museum dedicated to General M.A.G. Osmani, commander of the 1971 liberation forces.",
         "description": "The Osmani Museum in Sylhet honours General M.A.G. Osmani, the commander-in-chief of the Bangladesh Forces during the 1971 Liberation War. Personal belongings, photographs and documents trace his life and the struggle for independence.",
@@ -12610,10 +13190,16 @@ var DESTINATIONS = [
         "reviews": 190,
         "latitude": 25.05,
         "longitude": 91.66,
-        "image": "assets/destinations/jadukata-river.webp",
-        "imageLg": "assets/destinations/jadukata-river.webp",
+        "image": "/assets/destinations/jadukata-river.webp",
+        "imageLg": "/assets/destinations/jadukata-river.webp",
         "gallery": [
-            "assets/destinations/jadukata-river.webp"
+            "/assets/destinations/jadukata-river.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
         ],
         "shortDesc": "A crystal-clear river flowing into Tanguar Haor, great for boat trips.",
         "description": "The Jadukata is a clear, shallow river that drains into Tanguar Haor in Sunamganj. Boat trips along its winding course pass sandy islets, paddy fields and haor villages, especially rewarding during the winter bird migration season.",
@@ -12702,10 +13288,16 @@ var DESTINATIONS = [
         "reviews": 150,
         "latitude": 25.08,
         "longitude": 91.67,
-        "image": "assets/destinations/shimul-bagan.webp",
-        "imageLg": "assets/destinations/shimul-bagan.webp",
+        "image": "/assets/destinations/shimul-bagan.webp",
+        "imageLg": "/assets/destinations/shimul-bagan.webp",
         "gallery": [
-            "assets/destinations/shimul-bagan.webp"
+            "/assets/destinations/shimul-bagan.webp"
+        ],
+        "photoId": "photo-1501785888041-af3ef285b470",
+        "galleryIds": [
+            "photo-1501785888041-af3ef285b470",
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1476514525535-07fb3b4ae5f1"
         ],
         "shortDesc": "A red-cotton-tree (shimul) grove that blooms fiery orange in late winter.",
         "description": "Shimul Bagan is a plantation of shimul (silk-cotton) trees near Tahirpur in Sunamganj. In February, the trees burst into vivid red-orange blossom, carpeting the ground and drawing photographers and picnickers to this quiet countryside spot.",
@@ -12790,10 +13382,16 @@ var DESTINATIONS = [
         "reviews": 100,
         "latitude": 25.07,
         "longitude": 91.7,
-        "image": "assets/destinations/barikka-tila-jadukata.webp",
-        "imageLg": "assets/destinations/barikka-tila-jadukata.webp",
+        "image": "/assets/destinations/barikka-tila-jadukata.webp",
+        "imageLg": "/assets/destinations/barikka-tila-jadukata.webp",
         "gallery": [
-            "assets/destinations/barikka-tila-jadukata.webp"
+            "/assets/destinations/barikka-tila-jadukata.webp"
+        ],
+        "photoId": "photo-1470071459604-3b5ec3a7fe05",
+        "galleryIds": [
+            "photo-1470071459604-3b5ec3a7fe05",
+            "photo-1486870591958-9b9d0d1dda99",
+            "photo-1469474968028-56623f02e42e"
         ],
         "shortDesc": "A wooded hill in Sunamganj with views over the surrounding haors.",
         "description": "Barikka Tila is one of the few elevations in flat Sunamganj, a forested hill rising beside the haor wetlands. Climbing it gives a bird's-eye view of the water bodies and green fields that stretch to the horizon.",
@@ -12879,6 +13477,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1505142468610-359e7d316be0",
+        "galleryIds": [
+            "photo-1505142468610-359e7d316be0",
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1501785888041-af3ef285b470"
+        ],
         "shortDesc": "A secluded lake near Dhirai in Sunamganj, ideal for quiet boating.",
         "description": "Niladri Lake is a tranquil oxbow lake in the Dhirai area of Sunamganj, its name meaning 'blue hill'. Surrounded by village fields and dotted with water lilies, it offers peaceful boating far from tourist crowds.",
         "bestTime": "October – March",
@@ -12963,10 +13567,16 @@ var DESTINATIONS = [
         "reviews": 720,
         "latitude": 23.77,
         "longitude": 90.4,
-        "image": "assets/destinations/hatirjheel.webp",
-        "imageLg": "assets/destinations/hatirjheel.webp",
+        "image": "/assets/destinations/hatirjheel.webp",
+        "imageLg": "/assets/destinations/hatirjheel.webp",
         "gallery": [
-            "assets/destinations/hatirjheel.webp"
+            "/assets/destinations/hatirjheel.webp"
+        ],
+        "photoId": "photo-1505142468610-359e7d316be0",
+        "galleryIds": [
+            "photo-1505142468610-359e7d316be0",
+            "photo-1476514525535-07fb3b4ae5f1",
+            "photo-1501785888041-af3ef285b470"
         ],
         "shortDesc": "Dhaka's urban lake park with jogging paths, boats and skyline views.",
         "description": "Hatirjheel is a man-made lake in the heart of Dhaka, transformed into a large urban park with walkways, a musical fountain, boating and an amphitheatre. At night its bridges are lit, and by day it is a favourite for walking, jogging and family outings.",
@@ -13061,6 +13671,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1477959858617-67f85cf4f1df",
+        "galleryIds": [
+            "photo-1477959858617-67f85cf4f1df",
+            "photo-1519501025264-65ba15a82390",
+            "photo-1480714378408-67cf0d13bc1b"
+        ],
         "shortDesc": "The green lung of Dhaka, a leafy park beside the Ramna Lake.",
         "description": "Ramna Park is one of Dhaka's oldest and largest parks, surrounding the lovely Ramna Lake. Ancient trees, lawns, flower gardens and walking paths make it a calm retreat in the middle of the city, popular with joggers, families and couples.",
         "bestTime": "October – March",
@@ -13148,10 +13764,16 @@ var DESTINATIONS = [
         "reviews": 890,
         "latitude": 23.78,
         "longitude": 90.4,
-        "image": "assets/destinations/liberation-war-museum.webp",
-        "imageLg": "assets/destinations/liberation-war-museum.webp",
+        "image": "/assets/destinations/liberation-war-museum.webp",
+        "imageLg": "/assets/destinations/liberation-war-museum.webp",
         "gallery": [
-            "assets/destinations/liberation-war-museum.webp"
+            "/assets/destinations/liberation-war-museum.webp"
+        ],
+        "photoId": "photo-1554907984-15263bfd63bd",
+        "galleryIds": [
+            "photo-1554907984-15263bfd63bd",
+            "photo-1548013146-72479768bada",
+            "photo-1520639888713-7851133b1ed0"
         ],
         "shortDesc": "Bangladesh's premier museum of the 1971 Liberation War.",
         "description": "The Liberation War Museum in Agargaon is the country's central museum dedicated to the 1971 war of independence. Powerful galleries hold weapons, photographs, documents, sculptures and personal stories of freedom fighters, tracing the nation's path to independence.",
@@ -13240,10 +13862,16 @@ var DESTINATIONS = [
         "reviews": 560,
         "latitude": 23.65,
         "longitude": 90.6,
-        "image": "assets/destinations/panam-city.webp",
-        "imageLg": "assets/destinations/panam-city.webp",
+        "image": "/assets/destinations/panam-city.webp",
+        "imageLg": "/assets/destinations/panam-city.webp",
         "gallery": [
-            "assets/destinations/panam-city.webp"
+            "/assets/destinations/panam-city.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1432405972618-c60b0225b8f9"
         ],
         "shortDesc": "The deserted 19th-century merchant quarter of Sonargaon, frozen in time.",
         "description": "Panam City is a 19th-century trading town built by wealthy Hindu cloth merchants in Sonargaon. Its grand abandoned buildings along a single wide street blend British, Mughal and Bengali styles, and today it is a haunting, photogenic heritage site.",
@@ -13331,10 +13959,16 @@ var DESTINATIONS = [
         "reviews": 380,
         "latitude": 23.65,
         "longitude": 90.6,
-        "image": "assets/destinations/folk-art-museum.webp",
-        "imageLg": "assets/destinations/folk-art-museum.webp",
+        "image": "/assets/destinations/folk-art-museum.webp",
+        "imageLg": "/assets/destinations/folk-art-museum.webp",
         "gallery": [
-            "assets/destinations/folk-art-museum.webp"
+            "/assets/destinations/folk-art-museum.webp"
+        ],
+        "photoId": "photo-1554907984-15263bfd63bd",
+        "galleryIds": [
+            "photo-1554907984-15263bfd63bd",
+            "photo-1548013146-72479768bada",
+            "photo-1520639888713-7851133b1ed0"
         ],
         "shortDesc": "A museum of village crafts housed in the old Sonargaon panch bari.",
         "description": "The Bangladesh Folk Art Museum in Sonargaon occupies a historic panch bari (five-house) complex and displays an outstanding collection of rural crafts — terracotta, brass, jute, bamboo, nakshi kantha embroidery and folk instruments.",
@@ -13421,10 +14055,16 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 23.64,
         "longitude": 90.6,
-        "image": "assets/destinations/goaldi-mosque.webp",
-        "imageLg": "assets/destinations/goaldi-mosque.webp",
+        "image": "/assets/destinations/goaldi-mosque.webp",
+        "imageLg": "/assets/destinations/goaldi-mosque.webp",
         "gallery": [
-            "assets/destinations/goaldi-mosque.webp"
+            "/assets/destinations/goaldi-mosque.webp"
+        ],
+        "photoId": "photo-1555881400-74d7acaacd8b",
+        "galleryIds": [
+            "photo-1555881400-74d7acaacd8b",
+            "photo-1543783207-ec64e4d95325",
+            "photo-1555881400-74d7acaacd8b"
         ],
         "shortDesc": "A 16th-century single-domed mosque in the heart of old Sonargaon.",
         "description": "Goaldi Mosque was built in 1519 during the Husain Shahi dynasty, one of the few surviving medieval monuments of Sonargaon. Its single dome and carved terracotta decoration are fine examples of Sultanate-era Bengali architecture.",
@@ -13513,6 +14153,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
+        ],
         "shortDesc": "The historic Padma river crossing at Mawa, beside the Padma Bridge.",
         "description": "Mawa Ghat on the Padma river was the main Dhaka–Faridpur ferry crossing for decades and remains a lively riverfront beside the new Padma Bridge. Visitors come for river views, launches, and the sight of the country's largest bridge overhead.",
         "bestTime": "October – March",
@@ -13598,10 +14244,16 @@ var DESTINATIONS = [
         "reviews": 130,
         "latitude": 23.55,
         "longitude": 90.52,
-        "image": "assets/destinations/bikrampur-munshiganj.webp",
-        "imageLg": "assets/destinations/bikrampur-munshiganj.webp",
+        "image": "/assets/destinations/bikrampur-munshiganj.webp",
+        "imageLg": "/assets/destinations/bikrampur-munshiganj.webp",
         "gallery": [
-            "assets/destinations/bikrampur-munshiganj.webp"
+            "/assets/destinations/bikrampur-munshiganj.webp"
+        ],
+        "photoId": "photo-1598425237654-4fc758e50a93",
+        "galleryIds": [
+            "photo-1598425237654-4fc758e50a93",
+            "photo-1448375240586-882707db888b",
+            "photo-1548013146-72479768bada"
         ],
         "shortDesc": "The ancient capital of Bengal, rich with archaeological mounds.",
         "description": "Bikrampur, around Munshiganj, was a capital of ancient Bengal and a major centre of Buddhism and learning. Numerous archaeological mounds have yielded Buddhist stupas and artifacts, and its temples and history make it a rewarding heritage circuit.",
@@ -13689,10 +14341,16 @@ var DESTINATIONS = [
         "reviews": 640,
         "latitude": 24.06,
         "longitude": 90.4,
-        "image": "assets/destinations/bangabandhu-safari-park-gazipur.webp",
-        "imageLg": "assets/destinations/bangabandhu-safari-park-gazipur.webp",
+        "image": "/assets/destinations/bangabandhu-safari-park-gazipur.webp",
+        "imageLg": "/assets/destinations/bangabandhu-safari-park-gazipur.webp",
         "gallery": [
-            "assets/destinations/bangabandhu-safari-park-gazipur.webp"
+            "/assets/destinations/bangabandhu-safari-park-gazipur.webp"
+        ],
+        "photoId": "photo-1474511320723-9a56873867b5",
+        "galleryIds": [
+            "photo-1474511320723-9a56873867b5",
+            "photo-1546182990-dffeafbe841d",
+            "photo-1564349683136-77e08dba1ef7"
         ],
         "shortDesc": "Bangladesh's largest safari park, home to lions, tigers, giraffes and more.",
         "description": "Bangabandhu Sheikh Mujib Safari Park at Gazipur is Bangladesh's biggest safari park, where animals roam in large natural enclosures. A guided park bus passes lions, Bengal tigers, giraffes, zebras and bears, while walkways show monkeys, reptiles and native deer.",
@@ -13783,6 +14441,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1566073771259-6a8506099945",
+        "galleryIds": [
+            "photo-1566073771259-6a8506099945",
+            "photo-1571896349842-33c89424de2d",
+            "photo-1582719508461-905c673771fd"
+        ],
         "shortDesc": "The famous film village built by Humayun Ahmed near Gazipur.",
         "description": "Nuhash Palli is the picturesque film village built by the late writer Humayun Ahmed near Gazipur, the setting for beloved films like 'Srabon Megher Din'. Visitors walk the rustic sets, ponds and gardens that once appeared on screen.",
         "bestTime": "October – March",
@@ -13866,10 +14530,16 @@ var DESTINATIONS = [
         "reviews": 140,
         "latitude": 24,
         "longitude": 90.42,
-        "image": "assets/destinations/bhawal-rajbari-gazipur.webp",
-        "imageLg": "assets/destinations/bhawal-rajbari-gazipur.webp",
+        "image": "/assets/destinations/bhawal-rajbari-gazipur.webp",
+        "imageLg": "/assets/destinations/bhawal-rajbari-gazipur.webp",
         "gallery": [
-            "assets/destinations/bhawal-rajbari-gazipur.webp"
+            "/assets/destinations/bhawal-rajbari-gazipur.webp"
+        ],
+        "photoId": "photo-1523580494863-6f3031224c94",
+        "galleryIds": [
+            "photo-1523580494863-6f3031224c94",
+            "photo-1548013146-72479768bada",
+            "photo-1518495973542-4542c06a5843"
         ],
         "shortDesc": "The royal residence of the Bhawal zamindars near Gazipur town.",
         "description": "Bhawal Rajbari is the estate of the Bhawal zamindar family near Gazipur. Though partly in ruins, the palace compound, temples and grounds preserve the grandeur of this once-powerful landlord family, with Bhawal National Park just to the north.",
@@ -13954,10 +14624,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 23.86,
         "longitude": 90.09,
-        "image": "assets/destinations/teota-zamindar-bari.webp",
-        "imageLg": "assets/destinations/teota-zamindar-bari.webp",
+        "image": "/assets/destinations/teota-zamindar-bari.webp",
+        "imageLg": "/assets/destinations/teota-zamindar-bari.webp",
         "gallery": [
-            "assets/destinations/teota-zamindar-bari.webp"
+            "/assets/destinations/teota-zamindar-bari.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1518495973542-4542c06a5843",
+            "photo-1600607687939-ce8a6c25118c"
         ],
         "shortDesc": "A riverside zamindar mansion on the Dhaleshwari near Manikganj.",
         "description": "Teota Zamindar Bari is a grand early-20th-century mansion built by the Teota zamindars on the bank of the Dhaleshwari river. The palace, with its domes and colonnades, was partly demolished but its structure still impresses.",
@@ -14042,10 +14718,16 @@ var DESTINATIONS = [
         "reviews": 260,
         "latitude": 24.16,
         "longitude": 89.94,
-        "image": "assets/destinations/atia-mosque.webp",
-        "imageLg": "assets/destinations/atia-mosque.webp",
+        "image": "/assets/destinations/atia-mosque.webp",
+        "imageLg": "/assets/destinations/atia-mosque.webp",
         "gallery": [
-            "assets/destinations/atia-mosque.webp"
+            "/assets/destinations/atia-mosque.webp"
+        ],
+        "photoId": "photo-1543783207-ec64e4d95325",
+        "galleryIds": [
+            "photo-1543783207-ec64e4d95325",
+            "photo-1555881400-74d7acaacd8b",
+            "photo-1543783207-ec64e4d95325"
         ],
         "shortDesc": "A jewel of Sultanate architecture from 1609 near Tangail.",
         "description": "Atia Mosque was built in 1609 during Mughal rule and is considered one of the finest examples of Sultanate–Mughal mosque architecture in Bengal. Its three domes, glazed tiles and terracotta work remain remarkably well preserved.",
@@ -14130,10 +14812,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 24.16,
         "longitude": 89.95,
-        "image": "assets/destinations/pakutia-zamindar-bari.webp",
-        "imageLg": "assets/destinations/pakutia-zamindar-bari.webp",
+        "image": "/assets/destinations/pakutia-zamindar-bari.webp",
+        "imageLg": "/assets/destinations/pakutia-zamindar-bari.webp",
         "gallery": [
-            "assets/destinations/pakutia-zamindar-bari.webp"
+            "/assets/destinations/pakutia-zamindar-bari.webp"
+        ],
+        "photoId": "photo-1600607687939-ce8a6c25118c",
+        "galleryIds": [
+            "photo-1600607687939-ce8a6c25118c",
+            "photo-1523580494863-6f3031224c94",
+            "photo-1548013146-72479768bada"
         ],
         "shortDesc": "The stately zamindar mansion at Pakutia, Delduar.",
         "description": "Pakutia Zamindar Bari in Delduar, Tangail, was the estate of the Pakutia zamindar family. The large two-storey palace, tanks and gardens are a fine example of the region's landlord-era architecture and a quiet heritage stop.",
@@ -14221,6 +14909,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1501785888041-af3ef285b470",
+        "galleryIds": [
+            "photo-1501785888041-af3ef285b470",
+            "photo-1437482078695-73f5ca6c96e2",
+            "photo-1472214103451-9374bd1c798e"
+        ],
         "shortDesc": "A vast wetland of the Haor region, flooded in monsoon and full of birds in winter.",
         "description": "Nikli Haor is one of the large wetland basins of the Haor region in Kishoreganj. In the monsoon it becomes an inland sea of water and floating vegetation; in winter it dries to meadows grazed by cattle and visited by migratory birds.",
         "bestTime": "November – April",
@@ -14308,10 +15002,16 @@ var DESTINATIONS = [
         "reviews": 100,
         "latitude": 24.42,
         "longitude": 91.06,
-        "image": "assets/destinations/mithamain.webp",
-        "imageLg": "assets/destinations/mithamain.webp",
+        "image": "/assets/destinations/mithamain.webp",
+        "imageLg": "/assets/destinations/mithamain.webp",
         "gallery": [
-            "assets/destinations/mithamain.webp"
+            "/assets/destinations/mithamain.webp"
+        ],
+        "photoId": "photo-1437482078695-73f5ca6c96e2",
+        "galleryIds": [
+            "photo-1437482078695-73f5ca6c96e2",
+            "photo-1472214103451-9374bd1c798e",
+            "photo-1501785888041-af3ef285b470"
         ],
         "shortDesc": "A beautiful haor area known for winter duck hunting and boat trips.",
         "description": "Mithamain is a haor upazila of Kishoreganj famous for its wetlands and the traditional winter duck hunting that once drew shooters from around the world. Today it is a peaceful place for boating and watching waterbirds.",
@@ -14397,10 +15097,16 @@ var DESTINATIONS = [
         "reviews": 80,
         "latitude": 24.28,
         "longitude": 91.12,
-        "image": "assets/destinations/austagram.webp",
-        "imageLg": "assets/destinations/austagram.webp",
+        "image": "/assets/destinations/austagram.webp",
+        "imageLg": "/assets/destinations/austagram.webp",
         "gallery": [
-            "assets/destinations/austagram.webp"
+            "/assets/destinations/austagram.webp"
+        ],
+        "photoId": "photo-1437482078695-73f5ca6c96e2",
+        "galleryIds": [
+            "photo-1437482078695-73f5ca6c96e2",
+            "photo-1472214103451-9374bd1c798e",
+            "photo-1501785888041-af3ef285b470"
         ],
         "shortDesc": "A quiet haor area of Kishoreganj with floating villages.",
         "description": "Austagram is a haor upazila in the far east of Kishoreganj where villages sit on raised mounds surrounded by seasonal water. The area offers an authentic glimpse of Haor-region life and winter bird migration.",
@@ -14489,6 +15195,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1518495973542-4542c06a5843",
+            "photo-1600607687939-ce8a6c25118c"
+        ],
         "shortDesc": "The historic zamindar estate buildings of old Faridpur town.",
         "description": "Faridpur town preserves several zamindar (landlord) palaces and heritage buildings along the Padma region, remnants of the district's prosperous landlord families. Their ornate facades and courtyards offer a window into colonial-era Faridpur.",
         "bestTime": "October – March",
@@ -14571,10 +15283,16 @@ var DESTINATIONS = [
         "reviews": 80,
         "latitude": 23.16,
         "longitude": 90.19,
-        "image": "assets/destinations/arial-khan-river-madaripur.webp",
-        "imageLg": "assets/destinations/arial-khan-river-madaripur.webp",
+        "image": "/assets/destinations/arial-khan-river-madaripur.webp",
+        "imageLg": "/assets/destinations/arial-khan-river-madaripur.webp",
         "gallery": [
-            "assets/destinations/arial-khan-river-madaripur.webp"
+            "/assets/destinations/arial-khan-river-madaripur.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2",
+            "photo-1506905925346-21bda4d32df4"
         ],
         "shortDesc": "The branch of the Padma that flows through Madaripur district.",
         "description": "The Arial Khan river branches off the Padma and runs through Madaripur, carrying the district's boats and river life. Its wide, calm stretches are popular for sunset views and short boat rides around the town.",
@@ -14648,11 +15366,10 @@ var DESTINATIONS = [
         "division": "Dhaka",
         "district": "Rajbari",
         "upazila": "Goalanda",
-        "category": "Historical",
+        "category": "River",
         "categories": [
-            "Historical",
-            "Heritage",
-            "Archaeological"
+            "River",
+            "Historical"
         ],
         "rating": 4.1,
         "reviews": 110,
@@ -14661,6 +15378,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1506905925346-21bda4d32df4",
+        "galleryIds": [
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d"
+        ],
         "shortDesc": "The historic river port where the Padma and Jamuna were joined by rail.",
         "description": "Goalanda Ghat in Rajbari was once one of the busiest river ports in South Asia, connecting the Padma steamer route with the Darjeeling railway. The ghat and its heritage infrastructure are a nostalgic window into Bengal's old river transport era.",
         "bestTime": "October – March",
@@ -14726,7 +15449,11 @@ var DESTINATIONS = [
                 "Boat"
             ],
             "flight": null
-        }
+        },
+        "alternateNames": [
+            "Goalanda Ghat",
+            "গোয়ালন্দ ঘাট"
+        ]
     },
     {
         "id": 165,
@@ -14745,10 +15472,16 @@ var DESTINATIONS = [
         "reviews": 60,
         "latitude": 23.46,
         "longitude": 90.27,
-        "image": "assets/destinations/zajira-padma-riverfront.webp",
-        "imageLg": "assets/destinations/zajira-padma-riverfront.webp",
+        "image": "/assets/destinations/zajira-padma-riverfront.webp",
+        "imageLg": "/assets/destinations/zajira-padma-riverfront.webp",
         "gallery": [
-            "assets/destinations/zajira-padma-riverfront.webp"
+            "/assets/destinations/zajira-padma-riverfront.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2",
+            "photo-1506905925346-21bda4d32df4"
         ],
         "shortDesc": "The Padma riverfront town of Zajira, across from Mawa.",
         "description": "Zajira is the Shariatpur riverfront town facing Mawa across the Padma. The banks offer wide river views and ferry activity, and the town is close to the southern approach of the Padma Bridge.",
@@ -14836,6 +15569,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1448375240586-882707db888b",
+        "galleryIds": [
+            "photo-1448375240586-882707db888b",
+            "photo-1548013146-72479768bada",
+            "photo-1561361513-2d000a50f0dc"
+        ],
         "shortDesc": "One of Bangladesh's oldest archaeological sites, dating to the Iron Age.",
         "description": "Wari-Bateshwar near Narsingdi is one of the most important archaeological sites in Bangladesh, revealing an urban settlement with punch-marked coins, stone beads and pottery dating back over 2,000 years. Excavations suggest it was a thriving trade centre.",
         "bestTime": "October – March",
@@ -14922,10 +15661,16 @@ var DESTINATIONS = [
         "reviews": 210,
         "latitude": 24.36,
         "longitude": 88.84,
-        "image": "assets/destinations/puthia-rajbari.webp",
-        "imageLg": "assets/destinations/puthia-rajbari.webp",
+        "image": "/assets/destinations/puthia-rajbari.webp",
+        "imageLg": "/assets/destinations/puthia-rajbari.webp",
         "gallery": [
-            "assets/destinations/puthia-rajbari.webp"
+            "/assets/destinations/puthia-rajbari.webp"
+        ],
+        "photoId": "photo-1600607687939-ce8a6c25118c",
+        "galleryIds": [
+            "photo-1600607687939-ce8a6c25118c",
+            "photo-1523580494863-6f3031224c94",
+            "photo-1548013146-72479768bada"
         ],
         "shortDesc": "The elegant palace of the Puthia zamindars beside the temple complex.",
         "description": "Puthia Rajbari is the ornate early-19th-century palace of the Puthia zamindar family, standing beside the famous Puthia temple complex. Its terracotta-decorated facade and residential quarters were also once an indigo trading house.",
@@ -15015,6 +15760,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1506905925346-21bda4d32df4",
+        "galleryIds": [
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d"
+        ],
         "shortDesc": "Rajshahi's beautiful Padma riverfront, famous for sunset views.",
         "description": "Rajshahi town lies along a magnificent bend of the Padma (Ganges) river. The riverfront, near the Rajshahi city centre, is famous for wide sunset views, mango orchards along the banks and the gentle bustle of boats.",
         "bestTime": "October – March",
@@ -15102,10 +15853,16 @@ var DESTINATIONS = [
         "reviews": 220,
         "latitude": 24.37,
         "longitude": 88.62,
-        "image": "assets/destinations/hazrat-shah-makhdum-mazar.webp",
-        "imageLg": "assets/destinations/hazrat-shah-makhdum-mazar.webp",
+        "image": "/assets/destinations/hazrat-shah-makhdum-mazar.webp",
+        "imageLg": "/assets/destinations/hazrat-shah-makhdum-mazar.webp",
         "gallery": [
-            "assets/destinations/hazrat-shah-makhdum-mazar.webp"
+            "/assets/destinations/hazrat-shah-makhdum-mazar.webp"
+        ],
+        "photoId": "photo-1555881400-74d7acaacd8b",
+        "galleryIds": [
+            "photo-1555881400-74d7acaacd8b",
+            "photo-1555881400-74d7acaacd8b",
+            "photo-1543783207-ec64e4d95325"
         ],
         "shortDesc": "The medieval shrine of the Sufi saint who spread Islam in Rajshahi.",
         "description": "The mazar of Hazrat Shah Makhdum (R) is a major Sufi shrine in Rajshahi, dating from the medieval period. Its historic architecture, tomb and mosque draw pilgrims and visitors interested in the religious heritage of north Bengal.",
@@ -15190,10 +15947,16 @@ var DESTINATIONS = [
         "reviews": 170,
         "latitude": 24.82,
         "longitude": 88.15,
-        "image": "assets/destinations/darasbari-mosque.webp",
-        "imageLg": "assets/destinations/darasbari-mosque.webp",
+        "image": "/assets/destinations/darasbari-mosque.webp",
+        "imageLg": "/assets/destinations/darasbari-mosque.webp",
         "gallery": [
-            "assets/destinations/darasbari-mosque.webp"
+            "/assets/destinations/darasbari-mosque.webp"
+        ],
+        "photoId": "photo-1543783207-ec64e4d95325",
+        "galleryIds": [
+            "photo-1543783207-ec64e4d95325",
+            "photo-1555881400-74d7acaacd8b",
+            "photo-1543783207-ec64e4d95325"
         ],
         "shortDesc": "A grand Sultanate mosque from 1479 near the ancient capital Gaur.",
         "description": "Darasbari Mosque was built in 1479 during the reign of Sultan Shamsuddin Yusuf Shah, at the time the largest mosque in Bengal. Its monumental facade and domes mark it as a masterpiece of the Gaur Sultanate period.",
@@ -15284,6 +16047,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1432405972618-c60b0225b8f9"
+        ],
         "shortDesc": "The 17th-century Mughal complex at the ancient city of Gaur.",
         "description": "The Tahkhana Complex at Shibganj, Chapainawabganj, is a Mughal-era group of buildings including a darbar (audience hall), hammam (bathhouse) and tahkhana (underground cool chamber). It was part of the old city of Gaur.",
         "bestTime": "October – March",
@@ -15370,10 +16139,16 @@ var DESTINATIONS = [
         "reviews": 90,
         "latitude": 24.7,
         "longitude": 88.2,
-        "image": "assets/destinations/mahananda-river.webp",
-        "imageLg": "assets/destinations/mahananda-river.webp",
+        "image": "/assets/destinations/mahananda-river.webp",
+        "imageLg": "/assets/destinations/mahananda-river.webp",
         "gallery": [
-            "assets/destinations/mahananda-river.webp"
+            "/assets/destinations/mahananda-river.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
         ],
         "shortDesc": "The river of the mango belt, flowing past the old capital Gaur.",
         "description": "The Mahananda river flows through the mango-growing belt of Chapainawabganj, past the ruins of the ancient capital Gaur. Its banks are lined with mango orchards and, during the harvest season, colourful roadside markets.",
@@ -15458,10 +16233,16 @@ var DESTINATIONS = [
         "reviews": 200,
         "latitude": 24.92,
         "longitude": 88.68,
-        "image": "assets/destinations/kusumba-mosque.webp",
-        "imageLg": "assets/destinations/kusumba-mosque.webp",
+        "image": "/assets/destinations/kusumba-mosque.webp",
+        "imageLg": "/assets/destinations/kusumba-mosque.webp",
         "gallery": [
-            "assets/destinations/kusumba-mosque.webp"
+            "/assets/destinations/kusumba-mosque.webp"
+        ],
+        "photoId": "photo-1555881400-74d7acaacd8b",
+        "galleryIds": [
+            "photo-1555881400-74d7acaacd8b",
+            "photo-1543783207-ec64e4d95325",
+            "photo-1555881400-74d7acaacd8b"
         ],
         "shortDesc": "A 1558 Sultanate mosque, the 'Black Gem' of the Naogaon countryside.",
         "description": "Kusumba Mosque, built in 1558, is a superb Sultanate-era stone mosque in the Naogaon countryside, often called the 'Black Gem' for its dark basalt. Its domes, arches and stone carvings make it one of the finest mosques of the period.",
@@ -15504,7 +16285,7 @@ var DESTINATIONS = [
             "Private Car"
         ],
         "nearby_destinations": [
-            "paharpur",
+            "Somapura Mahavihara (Paharpur)",
             "patisar-naogaon"
         ],
         "nearby_hotels": [],
@@ -15550,6 +16331,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1561361513-2d000a50f0dc",
+        "galleryIds": [
+            "photo-1561361513-2d000a50f0dc",
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada"
+        ],
         "shortDesc": "The riverside village where Rabindranath Tagore managed the family estate.",
         "description": "Patisar, beside the Atrai river in Naogaon, is where Rabindranath Tagore managed his family's zamindari estate and wrote several famous works. The Kishori Mohan temple and riverside views recall Tagore's deep connection to rural Bengal.",
         "bestTime": "October – March",
@@ -15592,7 +16379,7 @@ var DESTINATIONS = [
         ],
         "nearby_destinations": [
             "kusumba-mosque",
-            "paharpur",
+            "Somapura Mahavihara (Paharpur)",
             "mahasthangarh"
         ],
         "nearby_hotels": [],
@@ -15634,10 +16421,16 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 24.96,
         "longitude": 89.34,
-        "image": "assets/destinations/gokul-medh.webp",
-        "imageLg": "assets/destinations/gokul-medh.webp",
+        "image": "/assets/destinations/gokul-medh.webp",
+        "imageLg": "/assets/destinations/gokul-medh.webp",
         "gallery": [
-            "assets/destinations/gokul-medh.webp"
+            "/assets/destinations/gokul-medh.webp"
+        ],
+        "photoId": "photo-1448375240586-882707db888b",
+        "galleryIds": [
+            "photo-1448375240586-882707db888b",
+            "photo-1548013146-72479768bada",
+            "photo-1561361513-2d000a50f0dc"
         ],
         "shortDesc": "A giant cruciform Buddhist stupa mound at Mahasthangarh.",
         "description": "Gokul Medh is one of the largest and most impressive structures of the ancient Mahasthangarh complex, a towering cruciform Buddhist stupa. Excavations have revealed its terraced brick form rising over the surrounding farmland.",
@@ -15682,8 +16475,7 @@ var DESTINATIONS = [
         "nearby_destinations": [
             "mahasthangarh",
             "behula-lakshindar-basor-ghor",
-            "vasu-bihar",
-            "bogura-heritage-park"
+            "vasu-bihar"
         ],
         "nearby_hotels": [],
         "featured": false,
@@ -15725,10 +16517,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 24.96,
         "longitude": 89.35,
-        "image": "assets/destinations/behula-lakshindar-basor-ghor.webp",
-        "imageLg": "assets/destinations/behula-lakshindar-basor-ghor.webp",
+        "image": "/assets/destinations/behula-lakshindar-basor-ghor.webp",
+        "imageLg": "/assets/destinations/behula-lakshindar-basor-ghor.webp",
         "gallery": [
-            "assets/destinations/behula-lakshindar-basor-ghor.webp"
+            "/assets/destinations/behula-lakshindar-basor-ghor.webp"
+        ],
+        "photoId": "photo-1598425237654-4fc758e50a93",
+        "galleryIds": [
+            "photo-1598425237654-4fc758e50a93",
+            "photo-1448375240586-882707db888b",
+            "photo-1548013146-72479768bada"
         ],
         "shortDesc": "Ruins tied to the folk legend of Behula and Lakshindar at Mahasthangarh.",
         "description": "Behula Lakshindar Basor Ghor is the name given to a ruined structure at Mahasthangarh, traditionally linked to the famous Bengali folk legend of Behula and Lakshindar. Local lore tells of the bridal chamber of the lovers in this ancient settlement.",
@@ -15773,8 +16571,7 @@ var DESTINATIONS = [
         "nearby_destinations": [
             "mahasthangarh",
             "gokul-medh",
-            "vasu-bihar",
-            "bogura-heritage-park"
+            "vasu-bihar"
         ],
         "nearby_hotels": [],
         "featured": false,
@@ -15816,10 +16613,16 @@ var DESTINATIONS = [
         "reviews": 130,
         "latitude": 24.92,
         "longitude": 89.34,
-        "image": "assets/destinations/vasu-bihar.webp",
-        "imageLg": "assets/destinations/vasu-bihar.webp",
+        "image": "/assets/destinations/vasu-bihar.webp",
+        "imageLg": "/assets/destinations/vasu-bihar.webp",
         "gallery": [
-            "assets/destinations/vasu-bihar.webp"
+            "/assets/destinations/vasu-bihar.webp"
+        ],
+        "photoId": "photo-1598425237654-4fc758e50a93",
+        "galleryIds": [
+            "photo-1598425237654-4fc758e50a93",
+            "photo-1448375240586-882707db888b",
+            "photo-1548013146-72479768bada"
         ],
         "shortDesc": "An ancient Buddhist monastery south of Mahasthangarh.",
         "description": "Vasu Bihar is a Buddhist monastery and temple complex dating from the Gupta and Pala periods, located just south of Mahasthangarh. Excavations have revealed shrines, stupas and a well, echoing the region's rich Buddhist heritage.",
@@ -15864,8 +16667,7 @@ var DESTINATIONS = [
         "nearby_destinations": [
             "mahasthangarh",
             "gokul-medh",
-            "behula-lakshindar-basor-ghor",
-            "bogura-heritage-park"
+            "behula-lakshindar-basor-ghor"
         ],
         "nearby_hotels": [],
         "featured": false,
@@ -15881,98 +16683,6 @@ var DESTINATIONS = [
             "distanceKm": 14,
             "duration": "30 minutes",
             "route": "Bogura → Mahasthangarh → Vasu Bihar",
-            "transport": [
-                "Bus",
-                "CNG",
-                "Private Car"
-            ],
-            "flight": null
-        }
-    },
-    {
-        "id": 178,
-        "name": "Mahasthangarh Heritage Park",
-        "name_bn": "মহাস্থানগড় হেরিটেজ পার্ক",
-        "slug": "bogura-heritage-park",
-        "division": "Rajshahi",
-        "district": "Bogura",
-        "upazila": "Shibganj",
-        "category": "Museum",
-        "categories": [
-            "Museum",
-            "Archaeological",
-            "Family"
-        ],
-        "rating": 4.3,
-        "reviews": 160,
-        "latitude": 24.96,
-        "longitude": 89.34,
-        "image": "assets/destinations/bogura-heritage-park.webp",
-        "imageLg": "assets/destinations/bogura-heritage-park.webp",
-        "gallery": [
-            "assets/destinations/bogura-heritage-park.webp"
-        ],
-        "shortDesc": "A landscaped museum park beside the ancient city of Mahasthangarh.",
-        "description": "Mahasthangarh Heritage Park is a landscaped complex near the ancient citadel with a museum of excavated artefacts, model ancient houses and walkways. It presents the 2,500-year history of the oldest known city in Bangladesh.",
-        "bestTime": "October – March",
-        "recommendedDays": "1 – 2 hours",
-        "difficulty": "Easy",
-        "budget": "",
-        "travelType": "Families, Students, History lovers",
-        "activities": [
-            "Tour the museum",
-            "Walk the park",
-            "See model ancient dwellings"
-        ],
-        "attractions": [
-            "Heritage museum",
-            "Model dwellings",
-            "Ancient city view"
-        ],
-        "tips": [
-            "Combine with the main Mahasthangarh citadel",
-            "Good for families",
-            "Best in winter"
-        ],
-        "things_to_do": [
-            "Tour the museum",
-            "Walk the park",
-            "See model ancient dwellings"
-        ],
-        "what_to_see": [
-            "Heritage museum",
-            "Model dwellings",
-            "Ancient city view"
-        ],
-        "travel_tips": [
-            "Combine with the main Mahasthangarh citadel",
-            "Good for families",
-            "Best in winter"
-        ],
-        "transport_options": [
-            "Bus",
-            "CNG",
-            "Private Car"
-        ],
-        "nearby_destinations": [
-            "mahasthangarh",
-            "gokul-medh",
-            "vasu-bihar"
-        ],
-        "nearby_hotels": [],
-        "featured": false,
-        "popularity": "medium",
-        "status": "active",
-        "tags": [
-            "museum",
-            "heritage park",
-            "mahasthangarh"
-        ],
-        "travelInfo": {
-            "from": "Bogura",
-            "distanceKm": 12,
-            "duration": "30 minutes",
-            "route": "Bogura → Mahasthangarh",
             "transport": [
                 "Bus",
                 "CNG",
@@ -15998,10 +16708,16 @@ var DESTINATIONS = [
         "reviews": 70,
         "latitude": 25.02,
         "longitude": 89.01,
-        "image": "assets/destinations/joypurhat-panchbibi.webp",
-        "imageLg": "assets/destinations/joypurhat-panchbibi.webp",
+        "image": "/assets/destinations/joypurhat-panchbibi.webp",
+        "imageLg": "/assets/destinations/joypurhat-panchbibi.webp",
         "gallery": [
-            "assets/destinations/joypurhat-panchbibi.webp"
+            "/assets/destinations/joypurhat-panchbibi.webp"
+        ],
+        "photoId": "photo-1432405972618-c60b0225b8f9",
+        "galleryIds": [
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1561361513-2d000a50f0dc",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "The town near Paharpur, with colonial-era heritage buildings.",
         "description": "Panchbibi is a historic town in Joypurhat district, close to the Paharpur World Heritage site across the border in Naogaon. The area retains colonial-era buildings and is a common overnight stop for visitors to the great monastery.",
@@ -16043,7 +16759,7 @@ var DESTINATIONS = [
             "CNG"
         ],
         "nearby_destinations": [
-            "paharpur",
+            "Somapura Mahavihara (Paharpur)",
             "mahasthangarh",
             "kusumba-mosque"
         ],
@@ -16089,6 +16805,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1561361513-2d000a50f0dc"
+        ],
         "shortDesc": "A historic 1915 railway bridge across the Padma at Paksey.",
         "description": "Hardinge Bridge, opened in 1915, is a historic railway bridge carrying trains across the Padma (Ganges) at Paksey, Ishwardi. Its massive steel spans and river setting make it a notable engineering heritage site.",
         "bestTime": "October – March",
@@ -16174,10 +16896,16 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 24.16,
         "longitude": 89.61,
-        "image": "assets/destinations/shahjadpur-kuthibari.webp",
-        "imageLg": "assets/destinations/shahjadpur-kuthibari.webp",
+        "image": "/assets/destinations/shahjadpur-kuthibari.webp",
+        "imageLg": "/assets/destinations/shahjadpur-kuthibari.webp",
         "gallery": [
-            "assets/destinations/shahjadpur-kuthibari.webp"
+            "/assets/destinations/shahjadpur-kuthibari.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1561361513-2d000a50f0dc"
         ],
         "shortDesc": "The Tagore family residence on the banks of the Karatoya.",
         "description": "Shahjadpur Kuthibari is the house where Rabindranath Tagore stayed while managing the family zamindari estate in Sirajganj. The beautifully restored riverside building is now a museum of Tagore's life and work in Bengal.",
@@ -16265,10 +16993,16 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 22.85,
         "longitude": 89.55,
-        "image": "assets/destinations/rupsha-river.webp",
-        "imageLg": "assets/destinations/rupsha-river.webp",
+        "image": "/assets/destinations/rupsha-river.webp",
+        "imageLg": "/assets/destinations/rupsha-river.webp",
         "gallery": [
-            "assets/destinations/rupsha-river.webp"
+            "/assets/destinations/rupsha-river.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
         ],
         "shortDesc": "The river that links Khulna city to the Sundarbans and the Bay of Bengal.",
         "description": "The Rupsha river flows past Khulna city, forming the main water route into the Sundarbans. Its wide channel, bridges and boat traffic make it a lively setting, especially at sunset when wooden launches head out toward the mangrove forest.",
@@ -16353,10 +17087,16 @@ var DESTINATIONS = [
         "reviews": 60,
         "latitude": 22.73,
         "longitude": 89.52,
-        "image": "assets/destinations/batiaghata.webp",
-        "imageLg": "assets/destinations/batiaghata.webp",
+        "image": "/assets/destinations/batiaghata.webp",
+        "imageLg": "/assets/destinations/batiaghata.webp",
         "gallery": [
-            "assets/destinations/batiaghata.webp"
+            "/assets/destinations/batiaghata.webp"
+        ],
+        "photoId": "photo-1500382017468-9049fed747ef",
+        "galleryIds": [
+            "photo-1500382017468-9049fed747ef",
+            "photo-1473448912268-2022ce9509d8",
+            "photo-1447958374760-1ce70cf11ee3"
         ],
         "shortDesc": "A riverside upazila of Khulna, gateway to the Sundarbans by boat.",
         "description": "Batiaghata is a riverine upazila of Khulna district along the Pasur and other tidal rivers leading into the Sundarbans. Villages, river channels and mangrove-lined waterways make it a starting point for exploring the delta.",
@@ -16443,10 +17183,16 @@ var DESTINATIONS = [
         "reviews": 520,
         "latitude": 22.67,
         "longitude": 89.74,
-        "image": "assets/destinations/khan-jahan-ali-mazar.webp",
-        "imageLg": "assets/destinations/khan-jahan-ali-mazar.webp",
+        "image": "/assets/destinations/khan-jahan-ali-mazar.webp",
+        "imageLg": "/assets/destinations/khan-jahan-ali-mazar.webp",
         "gallery": [
-            "assets/destinations/khan-jahan-ali-mazar.webp"
+            "/assets/destinations/khan-jahan-ali-mazar.webp"
+        ],
+        "photoId": "photo-1543783207-ec64e4d95325",
+        "galleryIds": [
+            "photo-1543783207-ec64e4d95325",
+            "photo-1543783207-ec64e4d95325",
+            "photo-1555881400-74d7acaacd8b"
         ],
         "shortDesc": "The resting place of the great saint and builder of Bagerhat.",
         "description": "The tomb of Khan Jahan Ali (d. 1459), the warrior-saint who founded Bagerhat, lies beside a large tank near the Sixty Dome Mosque. The simple stone tomb on a raised platform is a deeply revered pilgrimage site.",
@@ -16531,10 +17277,16 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 22.66,
         "longitude": 89.77,
-        "image": "assets/destinations/nine-dome-mosque.webp",
-        "imageLg": "assets/destinations/nine-dome-mosque.webp",
+        "image": "/assets/destinations/nine-dome-mosque.webp",
+        "imageLg": "/assets/destinations/nine-dome-mosque.webp",
         "gallery": [
-            "assets/destinations/nine-dome-mosque.webp"
+            "/assets/destinations/nine-dome-mosque.webp"
+        ],
+        "photoId": "photo-1555881400-74d7acaacd8b",
+        "galleryIds": [
+            "photo-1555881400-74d7acaacd8b",
+            "photo-1543783207-ec64e4d95325",
+            "photo-1555881400-74d7acaacd8b"
         ],
         "shortDesc": "An elegant nine-domed mosque of the Bagerhat mosque city.",
         "description": "The Nine Dome Mosque is one of the smaller but most elegant monuments of the Bagerhat mosque city, built in the same 15th-century Sultanate style as the Sixty Dome Mosque. Its graceful arches and domes are a photogenic addition to the heritage circuit.",
@@ -16619,10 +17371,16 @@ var DESTINATIONS = [
         "reviews": 110,
         "latitude": 22.67,
         "longitude": 89.76,
-        "image": "assets/destinations/singair-mosque.webp",
-        "imageLg": "assets/destinations/singair-mosque.webp",
+        "image": "/assets/destinations/singair-mosque.webp",
+        "imageLg": "/assets/destinations/singair-mosque.webp",
         "gallery": [
-            "assets/destinations/singair-mosque.webp"
+            "/assets/destinations/singair-mosque.webp"
+        ],
+        "photoId": "photo-1543783207-ec64e4d95325",
+        "galleryIds": [
+            "photo-1543783207-ec64e4d95325",
+            "photo-1555881400-74d7acaacd8b",
+            "photo-1543783207-ec64e4d95325"
         ],
         "shortDesc": "A restored single-domed mosque of the Bagerhat mosque city.",
         "description": "Singair Mosque is one of the monuments of the historic mosque city of Bagerhat, a compact single-domed structure built in the Sultanate style of Khan Jahan Ali's era. It sits within the UNESCO heritage zone, easy to visit with the other mosques.",
@@ -16707,10 +17465,16 @@ var DESTINATIONS = [
         "reviews": 150,
         "latitude": 22.45,
         "longitude": 89.05,
-        "image": "assets/destinations/kaliganj-satkhira.webp",
-        "imageLg": "assets/destinations/kaliganj-satkhira.webp",
+        "image": "/assets/destinations/kaliganj-satkhira.webp",
+        "imageLg": "/assets/destinations/kaliganj-satkhira.webp",
         "gallery": [
-            "assets/destinations/kaliganj-satkhira.webp"
+            "/assets/destinations/kaliganj-satkhira.webp"
+        ],
+        "photoId": "photo-1448375240586-882707db888b",
+        "galleryIds": [
+            "photo-1448375240586-882707db888b",
+            "photo-1441974231531-c6227db76b6e",
+            "photo-1441057206919-63d19fac2369"
         ],
         "shortDesc": "A gateway to the western Sundarbans from Satkhira district.",
         "description": "Kaliganj is a western gateway to the Sundarbans from Satkhira, giving access to the reserve forest's riverine interior. Boat trips from here pass canals, mudflats and wildlife toward the mangroves of the Sundarbans West zone.",
@@ -16797,10 +17561,16 @@ var DESTINATIONS = [
         "reviews": 90,
         "latitude": 22.29,
         "longitude": 89.19,
-        "image": "assets/destinations/burigoalini-sundarban.webp",
-        "imageLg": "assets/destinations/burigoalini-sundarban.webp",
+        "image": "/assets/destinations/burigoalini-sundarban.webp",
+        "imageLg": "/assets/destinations/burigoalini-sundarban.webp",
         "gallery": [
-            "assets/destinations/burigoalini-sundarban.webp"
+            "/assets/destinations/burigoalini-sundarban.webp"
+        ],
+        "photoId": "photo-1441057206919-63d19fac2369",
+        "galleryIds": [
+            "photo-1441057206919-63d19fac2369",
+            "photo-1505118380757-91f5f5632de0",
+            "photo-1448375240586-882707db888b"
         ],
         "shortDesc": "A village launch point on the edge of the western Sundarbans.",
         "description": "Burigoalini, in Shyamnagar upazila of Satkhira, is a riverside village on the edge of the Sundarbans West. It is a quieter alternative gateway for exploring the mangroves, with boat trips passing through forest-fringed channels.",
@@ -16887,10 +17657,16 @@ var DESTINATIONS = [
         "reviews": 110,
         "latitude": 22.32,
         "longitude": 89.26,
-        "image": "assets/destinations/munshiganj-eco-tourism.webp",
-        "imageLg": "assets/destinations/munshiganj-eco-tourism.webp",
+        "image": "/assets/destinations/munshiganj-eco-tourism.webp",
+        "imageLg": "/assets/destinations/munshiganj-eco-tourism.webp",
         "gallery": [
-            "assets/destinations/munshiganj-eco-tourism.webp"
+            "/assets/destinations/munshiganj-eco-tourism.webp"
+        ],
+        "photoId": "photo-1448375240586-882707db888b",
+        "galleryIds": [
+            "photo-1448375240586-882707db888b",
+            "photo-1469474968028-56623f02e42e",
+            "photo-1472214103451-9374bd1c798e"
         ],
         "shortDesc": "A community eco-tourism village beside the Sundarbans West.",
         "description": "Munshiganj in Shyamnagar is an eco-tourism village developed by the community on the edge of the Sundarbans West. Visitors enjoy mangroves, crab farming villages, cycling and village homestays in a low-impact setting.",
@@ -16981,6 +17757,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1561361513-2d000a50f0dc"
+        ],
         "shortDesc": "The last surviving indigo kuthi (estate house) of Jashore.",
         "description": "Mothbari Neelkuthi is one of the last surviving indigo plantation houses (kuthi) of British-era Jashore, where indigo was processed for export. Its sturdy brick structure stands as a rare monument to the region's colonial indigo economy.",
         "bestTime": "October – March",
@@ -17064,10 +17846,16 @@ var DESTINATIONS = [
         "reviews": 80,
         "latitude": 23.7,
         "longitude": 89.08,
-        "image": "assets/destinations/naldanga-zamindar-bari.webp",
-        "imageLg": "assets/destinations/naldanga-zamindar-bari.webp",
+        "image": "/assets/destinations/naldanga-zamindar-bari.webp",
+        "imageLg": "/assets/destinations/naldanga-zamindar-bari.webp",
         "gallery": [
-            "assets/destinations/naldanga-zamindar-bari.webp"
+            "/assets/destinations/naldanga-zamindar-bari.webp"
+        ],
+        "photoId": "photo-1523580494863-6f3031224c94",
+        "galleryIds": [
+            "photo-1523580494863-6f3031224c94",
+            "photo-1548013146-72479768bada",
+            "photo-1518495973542-4542c06a5843"
         ],
         "shortDesc": "A palace of the Naldanga zamindars in Jhenaidah.",
         "description": "Naldanga Zamindar Bari is a 19th-century palace complex of the Naldanga zamindar family in Jhenaidah district. The large two-storey mansion, temples and grounds reflect the prosperity of the region's landlord era.",
@@ -17156,6 +17944,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1437482078695-73f5ca6c96e2",
+        "galleryIds": [
+            "photo-1437482078695-73f5ca6c96e2",
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d"
+        ],
         "shortDesc": "The river that flows through the heart of Magura district.",
         "description": "The Nabaganga river runs through Magura district, carrying the region's boat traffic and shaping its low, green landscape. Its quiet banks are a place for leisurely walks and sunset views away from tourist routes.",
         "bestTime": "October – March",
@@ -17240,6 +18034,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
+        ],
         "shortDesc": "The birthplace-region river of the three martyrs, flowing through Narail.",
         "description": "The Chitra river flows through Narail, the birthplace district of the Liberation War martyrs Binoy, Badal and Dinesh. Its quiet riverbanks and green countryside honour the region's deep connection to Bangladesh's history.",
         "bestTime": "October – March",
@@ -17324,6 +18124,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1561361513-2d000a50f0dc",
+        "galleryIds": [
+            "photo-1561361513-2d000a50f0dc",
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada"
+        ],
         "shortDesc": "The historic border district known for its Durga Puja pandals and rivers.",
         "description": "Chuadanga is a historic border district of Khulna division known for grand Durga Puja celebrations and its position on the Matabhanga river. Its heritage buildings and riverbanks offer a calm, authentic slice of rural Bangladesh.",
         "bestTime": "October – March",
@@ -17407,10 +18213,16 @@ var DESTINATIONS = [
         "reviews": 170,
         "latitude": 22.7,
         "longitude": 90.37,
-        "image": "assets/destinations/oxford-mission-church.webp",
-        "imageLg": "assets/destinations/oxford-mission-church.webp",
+        "image": "/assets/destinations/oxford-mission-church.webp",
+        "imageLg": "/assets/destinations/oxford-mission-church.webp",
         "gallery": [
-            "assets/destinations/oxford-mission-church.webp"
+            "/assets/destinations/oxford-mission-church.webp"
+        ],
+        "photoId": "photo-1518495973542-4542c06a5843",
+        "galleryIds": [
+            "photo-1518495973542-4542c06a5843",
+            "photo-1600607687939-ce8a6c25118c",
+            "photo-1474181487882-5abf3f0ba6c2"
         ],
         "shortDesc": "A striking 19th-century Anglican church in Barishal town.",
         "description": "Oxford Mission Church of the Epiphany was built in 1903 by the Oxford Mission in Barishal. Its brick exterior, tall tower and serene grounds make it one of the most striking colonial-era churches in Bangladesh.",
@@ -17454,7 +18266,7 @@ var DESTINATIONS = [
         "nearby_destinations": [
             "durga-sagar",
             "guthia-mosque",
-            "floating-guava-market",
+            "Bhimruli Floating Guava Market",
             "barishal-bell-park"
         ],
         "nearby_hotels": [],
@@ -17495,10 +18307,16 @@ var DESTINATIONS = [
         "reviews": 140,
         "latitude": 22.7,
         "longitude": 90.37,
-        "image": "assets/destinations/barishal-bell-park.webp",
-        "imageLg": "assets/destinations/barishal-bell-park.webp",
+        "image": "/assets/destinations/barishal-bell-park.webp",
+        "imageLg": "/assets/destinations/barishal-bell-park.webp",
         "gallery": [
-            "assets/destinations/barishal-bell-park.webp"
+            "/assets/destinations/barishal-bell-park.webp"
+        ],
+        "photoId": "photo-1519501025264-65ba15a82390",
+        "galleryIds": [
+            "photo-1519501025264-65ba15a82390",
+            "photo-1480714378408-67cf0d13bc1b",
+            "photo-1494522358652-f30e61a60313"
         ],
         "shortDesc": "Barishal's green urban park by the Kirtankhola river.",
         "description": "Bell's Park is one of Barishal's oldest public parks, set beside the Kirtankhola river. Shaded paths, lawns and river views make it a pleasant spot for an evening walk or picnic in the heart of the city.",
@@ -17542,7 +18360,7 @@ var DESTINATIONS = [
         "nearby_destinations": [
             "oxford-mission-church",
             "durga-sagar",
-            "floating-guava-market",
+            "Bhimruli Floating Guava Market",
             "guthia-mosque"
         ],
         "nearby_hotels": [],
@@ -17567,95 +18385,6 @@ var DESTINATIONS = [
         }
     },
     {
-        "id": 197,
-        "name": "Floating Guava Market",
-        "name_bn": "ভাসমান পেয়ারা বাজার",
-        "slug": "floating-guava-market",
-        "division": "Barishal",
-        "district": "Jhalokathi",
-        "upazila": "Nalchity",
-        "category": "Cultural",
-        "categories": [
-            "Cultural",
-            "River",
-            "Village"
-        ],
-        "rating": 4.4,
-        "reviews": 260,
-        "latitude": 22.68,
-        "longitude": 90.25,
-        "image": "assets/destinations/floating-guava-market.webp",
-        "imageLg": "assets/destinations/floating-guava-market.webp",
-        "gallery": [
-            "assets/destinations/floating-guava-market.webp"
-        ],
-        "shortDesc": "Guavas traded from boats on the Kirtankhola river.",
-        "description": "The floating guava market is a unique riverine bazaar where farmers bring baskets of guavas by boat and sell them directly to traders on the water. It is a beloved cultural experience, most vibrant between July and November.",
-        "bestTime": "July – November",
-        "recommendedDays": "Half day",
-        "difficulty": "Easy",
-        "budget": "",
-        "travelType": "Culture, Families, Photographers",
-        "activities": [
-            "Watch the floating trade",
-            "Buy fresh guavas",
-            "Photograph the boats"
-        ],
-        "attractions": [
-            "Floating guava bazaar",
-            "Kirtankhola river"
-        ],
-        "tips": [
-            "Best in the guava season",
-            "Go early morning",
-            "Ask permission before photographing people"
-        ],
-        "things_to_do": [
-            "Watch the floating trade",
-            "Buy fresh guavas",
-            "Photograph the boats"
-        ],
-        "what_to_see": [
-            "Floating guava bazaar",
-            "Kirtankhola river"
-        ],
-        "travel_tips": [
-            "Best in the guava season",
-            "Go early morning",
-            "Ask permission before photographing people"
-        ],
-        "transport_options": [
-            "Bus",
-            "Boat"
-        ],
-        "nearby_destinations": [
-            "barishal-bell-park",
-            "durga-sagar",
-            "guthia-mosque",
-            "sugandha-river"
-        ],
-        "nearby_hotels": [],
-        "featured": false,
-        "popularity": "medium",
-        "status": "active",
-        "tags": [
-            "floating market",
-            "guava",
-            "river"
-        ],
-        "travelInfo": {
-            "from": "Barishal",
-            "distanceKm": 30,
-            "duration": "1 hour",
-            "route": "Barishal → Nalchity → river market",
-            "transport": [
-                "Bus",
-                "Boat"
-            ],
-            "flight": null
-        }
-    },
-    {
         "id": 198,
         "name": "Monpura Island",
         "name_bn": "মনপুরা দ্বীপ",
@@ -17673,10 +18402,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 22.28,
         "longitude": 90.89,
-        "image": "assets/destinations/monpura-island.webp",
-        "imageLg": "assets/destinations/monpura-island.webp",
+        "image": "/assets/destinations/monpura-island.webp",
+        "imageLg": "/assets/destinations/monpura-island.webp",
         "gallery": [
-            "assets/destinations/monpura-island.webp"
+            "/assets/destinations/monpura-island.webp"
+        ],
+        "photoId": "photo-1519046904884-53103b34b206",
+        "galleryIds": [
+            "photo-1519046904884-53103b34b206",
+            "photo-1506929562872-bb421503ef21",
+            "photo-1470252649378-9c29740c9fa8"
         ],
         "shortDesc": "A remote river island of Bhola made famous by the film 'Monpura'.",
         "description": "Monpura is a remote island in the Meghna estuary of Bhola district, made famous by the classic film 'Monpura'. Life here revolves around the river — boats, fishing and low green fields — offering a genuinely off-grid slice of delta Bangladesh.",
@@ -17762,10 +18497,16 @@ var DESTINATIONS = [
         "reviews": 70,
         "latitude": 22.22,
         "longitude": 90.78,
-        "image": "assets/destinations/dhal-char-bhola.webp",
-        "imageLg": "assets/destinations/dhal-char-bhola.webp",
+        "image": "/assets/destinations/dhal-char-bhola.webp",
+        "imageLg": "/assets/destinations/dhal-char-bhola.webp",
         "gallery": [
-            "assets/destinations/dhal-char-bhola.webp"
+            "/assets/destinations/dhal-char-bhola.webp"
+        ],
+        "photoId": "photo-1506929562872-bb421503ef21",
+        "galleryIds": [
+            "photo-1506929562872-bb421503ef21",
+            "photo-1470252649378-9c29740c9fa8",
+            "photo-1507525428034-b723cf961d3e"
         ],
         "shortDesc": "A developing island of Bhola with open river beaches.",
         "description": "Dhal Char is one of the newer islands of Bhola district, rising from the Meghna estuary. Its open river beaches, wide skies and fishing villages make it a growing destination for those seeking a genuinely remote island experience.",
@@ -17850,10 +18591,16 @@ var DESTINATIONS = [
         "reviews": 60,
         "latitude": 22.06,
         "longitude": 90.12,
-        "image": "assets/destinations/taltali-barguna.webp",
-        "imageLg": "assets/destinations/taltali-barguna.webp",
+        "image": "/assets/destinations/taltali-barguna.webp",
+        "imageLg": "/assets/destinations/taltali-barguna.webp",
         "gallery": [
-            "assets/destinations/taltali-barguna.webp"
+            "/assets/destinations/taltali-barguna.webp"
+        ],
+        "photoId": "photo-1507525428034-b723cf961d3e",
+        "galleryIds": [
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1519046904884-53103b34b206",
+            "photo-1504851149312-7a075b496cc7"
         ],
         "shortDesc": "A coastal upazila of Barguna along the Payra river.",
         "description": "Taltali is a coastal upazila of Barguna district where the Payra river meets the seaward channels of the delta. Its riverside villages, boats and open skies capture the quiet rhythm of Bangladesh's southern coast.",
@@ -17937,10 +18684,16 @@ var DESTINATIONS = [
         "reviews": 60,
         "latitude": 22.18,
         "longitude": 90.13,
-        "image": "assets/destinations/payra-river-barguna.webp",
-        "imageLg": "assets/destinations/payra-river-barguna.webp",
+        "image": "/assets/destinations/payra-river-barguna.webp",
+        "imageLg": "/assets/destinations/payra-river-barguna.webp",
         "gallery": [
-            "assets/destinations/payra-river-barguna.webp"
+            "/assets/destinations/payra-river-barguna.webp"
+        ],
+        "photoId": "photo-1506905925346-21bda4d32df4",
+        "galleryIds": [
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d"
         ],
         "shortDesc": "The river flowing through Barguna toward the Bay of Bengal.",
         "description": "The Payra river runs through Barguna district before reaching the sea, its wide waters busy with fishing boats and coastal launches. The riverside offers peaceful views and a glimpse of delta life on Bangladesh's southern coast.",
@@ -18029,6 +18782,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1506929562872-bb421503ef21",
+        "galleryIds": [
+            "photo-1506929562872-bb421503ef21",
+            "photo-1470252649378-9c29740c9fa8",
+            "photo-1507525428034-b723cf961d3e"
+        ],
         "shortDesc": "A wild sandbank and beach near Kuakata with sea views.",
         "description": "Fatrar Char is a sandbar island off the coast near Kuakata in Patuakhali, reached by boat across the Bay of Bengal's inshore waters. Its empty beaches, dunes and fishing boats offer a raw, wild coastal experience.",
         "bestTime": "October – March",
@@ -18110,10 +18869,16 @@ var DESTINATIONS = [
         "reviews": 90,
         "latitude": 22.74,
         "longitude": 90.25,
-        "image": "assets/destinations/swarupkathi-floating-market.webp",
-        "imageLg": "assets/destinations/swarupkathi-floating-market.webp",
+        "image": "/assets/destinations/swarupkathi-floating-market.webp",
+        "imageLg": "/assets/destinations/swarupkathi-floating-market.webp",
         "gallery": [
-            "assets/destinations/swarupkathi-floating-market.webp"
+            "/assets/destinations/swarupkathi-floating-market.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2",
+            "photo-1506905925346-21bda4d32df4"
         ],
         "shortDesc": "A river town of Pirojpur known for guava orchards and waterways.",
         "description": "Swarupkathi is a riverine town in Pirojpur district surrounded by guava orchards and canals. It is one of the centres of the region's famous floating guava trade and a calm base for exploring delta rivers.",
@@ -18155,7 +18920,7 @@ var DESTINATIONS = [
             "Boat"
         ],
         "nearby_destinations": [
-            "floating-guava-market",
+            "Bhimruli Floating Guava Market",
             "sugandha-river",
             "guthia-mosque",
             "durga-sagar"
@@ -18198,10 +18963,16 @@ var DESTINATIONS = [
         "reviews": 60,
         "latitude": 22.63,
         "longitude": 90.2,
-        "image": "assets/destinations/sugandha-river.webp",
-        "imageLg": "assets/destinations/sugandha-river.webp",
+        "image": "/assets/destinations/sugandha-river.webp",
+        "imageLg": "/assets/destinations/sugandha-river.webp",
         "gallery": [
-            "assets/destinations/sugandha-river.webp"
+            "/assets/destinations/sugandha-river.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
         ],
         "shortDesc": "The river that runs through Jhalokathi's guava country.",
         "description": "The Sugandha river winds through Jhalokathi district, past the guava orchards that make the area famous. Its slow-moving waters and riverbank villages are ideal for short boat trips and quiet afternoons.",
@@ -18243,7 +19014,7 @@ var DESTINATIONS = [
             "Boat"
         ],
         "nearby_destinations": [
-            "floating-guava-market",
+            "Bhimruli Floating Guava Market",
             "swarupkathi",
             "durga-sagar"
         ],
@@ -18285,10 +19056,16 @@ var DESTINATIONS = [
         "reviews": 140,
         "latitude": 25.63,
         "longitude": 88.64,
-        "image": "assets/destinations/nayabad-mosque.webp",
-        "imageLg": "assets/destinations/nayabad-mosque.webp",
+        "image": "/assets/destinations/nayabad-mosque.webp",
+        "imageLg": "/assets/destinations/nayabad-mosque.webp",
         "gallery": [
-            "assets/destinations/nayabad-mosque.webp"
+            "/assets/destinations/nayabad-mosque.webp"
+        ],
+        "photoId": "photo-1555881400-74d7acaacd8b",
+        "galleryIds": [
+            "photo-1555881400-74d7acaacd8b",
+            "photo-1543783207-ec64e4d95325",
+            "photo-1555881400-74d7acaacd8b"
         ],
         "shortDesc": "An 18th-century stone mosque near Dinajpur town.",
         "description": "Nayabad Mosque, built in 1793, is one of the finest stone mosques of Dinajpur, ornamented with intricate terracotta and floral designs. It stands amid green fields just outside the district town.",
@@ -18373,10 +19150,16 @@ var DESTINATIONS = [
         "reviews": 120,
         "latitude": 25.63,
         "longitude": 88.64,
-        "image": "assets/destinations/dinajpur-rajbari.webp",
-        "imageLg": "assets/destinations/dinajpur-rajbari.webp",
+        "image": "/assets/destinations/dinajpur-rajbari.webp",
+        "imageLg": "/assets/destinations/dinajpur-rajbari.webp",
         "gallery": [
-            "assets/destinations/dinajpur-rajbari.webp"
+            "/assets/destinations/dinajpur-rajbari.webp"
+        ],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1518495973542-4542c06a5843",
+            "photo-1600607687939-ce8a6c25118c"
         ],
         "shortDesc": "The former palace of the Dinajpur zamindar family.",
         "description": "Dinajpur Rajbari is the estate complex of the Dinajpur zamindar family, partly preserved with grand buildings and a museum of royal memorabilia. It offers a glimpse of the landlord-era grandeur of north Bengal.",
@@ -18463,6 +19246,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1548013146-72479768bada",
+        "galleryIds": [
+            "photo-1548013146-72479768bada",
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1561361513-2d000a50f0dc"
+        ],
         "shortDesc": "The birthplace village of Begum Rokeya, pioneer of women's education.",
         "description": "Pairaband in Mithapukur, Rangpur, is the birthplace of Begum Rokeya Sakhawat Hossain, the pioneering feminist writer and educationist. The village is a place of quiet pilgrimage for those inspired by her legacy.",
         "bestTime": "October – March",
@@ -18546,10 +19335,16 @@ var DESTINATIONS = [
         "reviews": 50,
         "latitude": 25.79,
         "longitude": 89.19,
-        "image": "assets/destinations/keranirhat.webp",
-        "imageLg": "assets/destinations/keranirhat.webp",
+        "image": "/assets/destinations/keranirhat.webp",
+        "imageLg": "/assets/destinations/keranirhat.webp",
         "gallery": [
-            "assets/destinations/keranirhat.webp"
+            "/assets/destinations/keranirhat.webp"
+        ],
+        "photoId": "photo-1432405972618-c60b0225b8f9",
+        "galleryIds": [
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1561361513-2d000a50f0dc",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "A historic market town near Rangpur with old buildings.",
         "description": "Keranirhat is a historic area near Rangpur city known for its old market and colonial-era buildings. It reflects the trading heritage of north Bengal and is a pleasant place for a short heritage walk.",
@@ -18632,10 +19427,16 @@ var DESTINATIONS = [
         "reviews": 50,
         "latitude": 26.03,
         "longitude": 88.47,
-        "image": "assets/destinations/tangon-river-thakurgaon.webp",
-        "imageLg": "assets/destinations/tangon-river-thakurgaon.webp",
+        "image": "/assets/destinations/tangon-river-thakurgaon.webp",
+        "imageLg": "/assets/destinations/tangon-river-thakurgaon.webp",
         "gallery": [
-            "assets/destinations/tangon-river-thakurgaon.webp"
+            "/assets/destinations/tangon-river-thakurgaon.webp"
+        ],
+        "photoId": "photo-1506905925346-21bda4d32df4",
+        "galleryIds": [
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d"
         ],
         "shortDesc": "The river of Thakurgaon, with seasonal sandbars and green banks.",
         "description": "The Tangon river flows through Thakurgaon district, its wide seasonal channel exposing sandbars in the dry months. It is a quiet riverine setting for walks and rural scenery in the far north-west of Bangladesh.",
@@ -18718,10 +19519,16 @@ var DESTINATIONS = [
         "reviews": 40,
         "latitude": 26.08,
         "longitude": 88.34,
-        "image": "assets/destinations/haripur-rajbari-thakurgaon.webp",
-        "imageLg": "assets/destinations/haripur-rajbari-thakurgaon.webp",
+        "image": "/assets/destinations/haripur-rajbari-thakurgaon.webp",
+        "imageLg": "/assets/destinations/haripur-rajbari-thakurgaon.webp",
         "gallery": [
-            "assets/destinations/haripur-rajbari-thakurgaon.webp"
+            "/assets/destinations/haripur-rajbari-thakurgaon.webp"
+        ],
+        "photoId": "photo-1518495973542-4542c06a5843",
+        "galleryIds": [
+            "photo-1518495973542-4542c06a5843",
+            "photo-1600607687939-ce8a6c25118c",
+            "photo-1523580494863-6f3031224c94"
         ],
         "shortDesc": "The ruined zamindar palace at Haripur, Thakurgaon.",
         "description": "Haripur Rajbari in Baliadangi, Thakurgaon, is the ruined estate of the Haripur zamindar family. Its crumbling walls and ponds hint at past grandeur in this quiet corner of north-west Bangladesh.",
@@ -18806,10 +19613,16 @@ var DESTINATIONS = [
         "reviews": 70,
         "latitude": 25.33,
         "longitude": 89.55,
-        "image": "assets/destinations/jamuna-charlands.webp",
-        "imageLg": "assets/destinations/jamuna-charlands.webp",
+        "image": "/assets/destinations/jamuna-charlands.webp",
+        "imageLg": "/assets/destinations/jamuna-charlands.webp",
         "gallery": [
-            "assets/destinations/jamuna-charlands.webp"
+            "/assets/destinations/jamuna-charlands.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
         ],
         "shortDesc": "The vast sandbar islands of the Jamuna around Gaibandha.",
         "description": "The Jamuna river around Gaibandha is famous for its shifting sandbar islands (chars), home to resilient river communities. Boats ferry between the chars, offering a raw look at life on the country's largest river.",
@@ -18893,10 +19706,16 @@ var DESTINATIONS = [
         "reviews": 80,
         "latitude": 25.28,
         "longitude": 89.7,
-        "image": "assets/destinations/chilmari-kurigram.webp",
-        "imageLg": "assets/destinations/chilmari-kurigram.webp",
+        "image": "/assets/destinations/chilmari-kurigram.webp",
+        "imageLg": "/assets/destinations/chilmari-kurigram.webp",
         "gallery": [
-            "assets/destinations/chilmari-kurigram.webp"
+            "/assets/destinations/chilmari-kurigram.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
         ],
         "shortDesc": "The historic river port on the Brahmaputra in Kurigram.",
         "description": "Chilmari is an historic river port on the Brahmaputra (Jamuna) in Kurigram district, once a key stop for steamers and trade. Today its ghats, ferries and river views preserve the romance of Bengal's old water routes.",
@@ -18980,10 +19799,16 @@ var DESTINATIONS = [
         "reviews": 90,
         "latitude": 26.63,
         "longitude": 88.52,
-        "image": "assets/destinations/banglabandha.webp",
-        "imageLg": "assets/destinations/banglabandha.webp",
+        "image": "/assets/destinations/banglabandha.webp",
+        "imageLg": "/assets/destinations/banglabandha.webp",
         "gallery": [
-            "assets/destinations/banglabandha.webp"
+            "/assets/destinations/banglabandha.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1432405972618-c60b0225b8f9"
         ],
         "shortDesc": "Bangladesh's northernmost point, a historic border gateway.",
         "description": "Banglabandha is the northernmost point of Bangladesh, a land border crossing between Bangladesh, India and Nepal. The zero-point border area has historic significance and is visited for its frontier atmosphere and views.",
@@ -19069,10 +19894,16 @@ var DESTINATIONS = [
         "reviews": 80,
         "latitude": 26.35,
         "longitude": 88.42,
-        "image": "assets/destinations/mahananda-river-panchagarh.webp",
-        "imageLg": "assets/destinations/mahananda-river-panchagarh.webp",
+        "image": "/assets/destinations/mahananda-river-panchagarh.webp",
+        "imageLg": "/assets/destinations/mahananda-river-panchagarh.webp",
         "gallery": [
-            "assets/destinations/mahananda-river-panchagarh.webp"
+            "/assets/destinations/mahananda-river-panchagarh.webp"
+        ],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
         ],
         "shortDesc": "The river that flows from the Himalayas through Panchagarh.",
         "description": "The Mahananda river enters Bangladesh from the Himalayas through Panchagarh, flowing past the district's tea gardens and green farmland. Its clear channels and shingled banks are a scenic feature of Bangladesh's far north.",
@@ -19158,6 +19989,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1554907984-15263bfd63bd",
+        "galleryIds": [
+            "photo-1554907984-15263bfd63bd",
+            "photo-1554907984-15263bfd63bd",
+            "photo-1548013146-72479768bada"
+        ],
         "shortDesc": "A museum honouring Shilpacharya Zainul Abedin beside the Brahmaputra.",
         "description": "The Zainul Abedin Museum in Mymensingh celebrates the life and art of Shilpacharya Zainul Abedin, pioneer of modern Bangladeshi art. Works and sketches are displayed in a riverside gallery named after the great painter.",
         "bestTime": "Year-round",
@@ -19245,6 +20082,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1445262102387-5fbb30a5e59d",
+        "galleryIds": [
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1437482078695-73f5ca6c96e2"
+        ],
         "shortDesc": "The great river that flows past Mymensingh town.",
         "description": "The old Brahmaputra river flows beside Mymensingh town, its wide channel forming a popular riverside promenade. Boats, ghats and the calm water make it a lovely spot for an evening walk or sunset boat ride.",
         "bestTime": "October – March",
@@ -19330,6 +20173,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1506905925346-21bda4d32df4",
+        "galleryIds": [
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d"
+        ],
         "shortDesc": "The clear river running beside the Birishiri hills.",
         "description": "The Someshwari river flows out of the Meghalaya hills past Birishiri in Netrokona, its clear water and rocky shallows perfect for wading and photography. It is the scenic backbone of the Durgapur area.",
         "bestTime": "October – March",
@@ -19413,6 +20262,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1473448912268-2022ce9509d8",
+        "galleryIds": [
+            "photo-1473448912268-2022ce9509d8",
+            "photo-1447958374760-1ce70cf11ee3",
+            "photo-1500530855697-b586d89ba3ee"
+        ],
         "shortDesc": "A hill village near Birishiri with tribal culture and views.",
         "description": "Ranikhong is a small hill village near Birishiri in Netrokona where indigenous communities live amid forested slopes. It offers village homestays, tribal culture and peaceful walks in the hills.",
         "bestTime": "October – March",
@@ -19497,6 +20352,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1597318181409-cf64d0b5d8a2",
+        "galleryIds": [
+            "photo-1597318181409-cf64d0b5d8a2",
+            "photo-1441986300917-64674bd600d8",
+            "photo-1564890369478-c89ca6d9cde9"
+        ],
         "shortDesc": "Lush tea estates in the Chunarughat belt of Habiganj.",
         "description": "The Chunarughat area of Habiganj is dotted with tea estates producing some of Bangladesh's finest leaves. Rolling green rows of tea bushes, misty mornings and village estates make this a quiet alternative to the busier Moulvibazar gardens.",
         "bestTime": "November – February",
@@ -19571,21 +20432,27 @@ var DESTINATIONS = [
         "division": "Chattogram",
         "district": "Rangamati",
         "upazila": "Bilaichhari",
-        "category": "Park",
+        "category": "Waterfall",
         "categories": [
-            "Park",
-            "Lakeside",
+            "Waterfall",
+            "Nature",
             "Picnic Spot",
-            "Nature"
+            "Lake"
         ],
         "rating": 4.2,
         "reviews": 120,
         "latitude": 22.51,
         "longitude": 92.27,
-        "image": "assets/destinations/polwel-park.webp",
-        "imageLg": "assets/destinations/polwel-park.webp",
+        "image": "/assets/destinations/polwel-park.webp",
+        "imageLg": "/assets/destinations/polwel-park.webp",
         "gallery": [
-            "assets/destinations/polwel-park.webp"
+            "/assets/destinations/polwel-park.webp"
+        ],
+        "photoId": "photo-1519681393784-d120267933ba",
+        "galleryIds": [
+            "photo-1519681393784-d120267933ba",
+            "photo-1544551763-46a013bb70d5",
+            "photo-1432405972618-c60b0225b8f9"
         ],
         "shortDesc": "A secluded waterfall and picnic spot in the green hills of Bilaichhari, Rangamati.",
         "description": "Polwel is a quiet hillside picnic spot in Bilaichhari upazila of Rangamati, known for a gentle waterfall and shaded trails around it. It is a laid-back nature escape well off the usual tourist route, best combined with a drive through the Chittagong Hill Tracts.",
@@ -19649,97 +20516,11 @@ var DESTINATIONS = [
                 "Private Car"
             ],
             "flight": null
-        }
-    },
-    {
-        "id": 221,
-        "name": "Alutila Tourist Center",
-        "name_bn": "আলুটিলা পর্যটন কেন্দ্র",
-        "slug": "alutila-tourist-center",
-        "division": "Chattogram",
-        "district": "Khagrachhari",
-        "upazila": "",
-        "category": "Nature",
-        "categories": [
-            "Nature",
-            "Adventure"
-        ],
-        "rating": 4.3,
-        "reviews": 260,
-        "latitude": 23.13,
-        "longitude": 91.83,
-        "image": "assets/destinations/alutila-tourist-center.webp",
-        "imageLg": "assets/destinations/alutila-tourist-center.webp",
-        "gallery": [
-            "assets/destinations/alutila-tourist-center.webp"
-        ],
-        "shortDesc": "A hillside tourism complex near the Alutila cave with suspension bridges and viewpoints.",
-        "description": "The Alutila tourist center sits in the hills of Khagrachhari close to the famous Alutila (Debbari) cave and gua (gorge). A suspension bridge across the gua and short forest walks make it a pleasant stop, and the nearby cave is the deepest cave in Bangladesh by some accounts.",
-        "bestTime": "October – March",
-        "recommendedDays": "Half day",
-        "difficulty": "Easy",
-        "budget": "",
-        "travelType": "Family, Adventure, Friends",
-        "activities": [
-            "Cross the suspension bridge",
-            "Visit the Alutila cave",
-            "Forest walks"
-        ],
-        "attractions": [
-            "Alutila cave",
-            "Gua (gorge)",
-            "Suspension bridge"
-        ],
-        "tips": [
-            "Carry a torch for the cave",
-            "Wear non-slip shoes",
-            "Combine with Richhang waterfall"
-        ],
-        "things_to_do": [
-            "Cross the suspension bridge",
-            "Visit the Alutila cave",
-            "Forest walks"
-        ],
-        "what_to_see": [
-            "Alutila cave",
-            "Gua (gorge)",
-            "Suspension bridge"
-        ],
-        "travel_tips": [
-            "Carry a torch for the cave",
-            "Wear non-slip shoes",
-            "Combine with Richhang waterfall"
-        ],
-        "transport_options": [
-            "CNG",
-            "Private Car",
-            "Bike"
-        ],
-        "nearby_destinations": [
-            "richhang-waterfall",
-            "alutila-cave"
-        ],
-        "nearby_hotels": [],
-        "featured": false,
-        "popularity": "medium",
-        "status": "active",
-        "tags": [
-            "cave",
-            "suspension bridge",
-            "hills"
-        ],
-        "travelInfo": {
-            "from": "Khagrachhari",
-            "distanceKm": 14,
-            "duration": "30 – 40 minutes",
-            "route": "Khagrachhari → Alutila",
-            "transport": [
-                "CNG",
-                "Private Car",
-                "Bike"
-            ],
-            "flight": null
-        }
+        },
+        "alternateNames": [
+            "Polwel Park & Love Point",
+            "পলওয়েল পার্ক ও লাভ পয়েন্ট"
+        ]
     },
     {
         "id": 222,
@@ -19761,6 +20542,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1561361513-2d000a50f0dc",
+        "galleryIds": [
+            "photo-1561361513-2d000a50f0dc",
+            "photo-1600047509807-ba8f99d2cdde",
+            "photo-1524492412937-b28074a5d7da"
+        ],
         "shortDesc": "A famous riverside mango bazar in Shibganj, Chapainawabganj, buzzing in the mango season.",
         "description": "Kansat is a historic bazar on the banks of the Mahananda river in Shibganj upazila, Chapainawabganj. In the mango season (May–July) its sprawling haat becomes one of Bangladesh's liveliest fruit markets, with tonnes of the district's famous mangoes traded daily from dawn.",
         "bestTime": "May – July (mango season)",
@@ -19841,10 +20628,16 @@ var DESTINATIONS = [
         "reviews": 90,
         "latitude": 22.84,
         "longitude": 89.52,
-        "image": "assets/destinations/digholia-khulna.webp",
-        "imageLg": "assets/destinations/digholia-khulna.webp",
+        "image": "/assets/destinations/digholia-khulna.webp",
+        "imageLg": "/assets/destinations/digholia-khulna.webp",
         "gallery": [
-            "assets/destinations/digholia-khulna.webp"
+            "/assets/destinations/digholia-khulna.webp"
+        ],
+        "photoId": "photo-1524492412937-b28074a5d7da",
+        "galleryIds": [
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada",
+            "photo-1432405972618-c60b0225b8f9"
         ],
         "shortDesc": "A Khulna upazila with a century-old railway bridge and calm riverine landscapes.",
         "description": "Digholia is an upazila of Khulna district best known for its historic early-20th-century railway bridge over the Bhairab river. Around it stretch rice fields, riverside ghats and quiet village life — a peaceful, offbeat slice of southwestern Bangladesh.",
@@ -19926,10 +20719,16 @@ var DESTINATIONS = [
         "reviews": 110,
         "latitude": 21.9,
         "longitude": 90.13,
-        "image": "assets/destinations/gangamati-reserved-forest.webp",
-        "imageLg": "assets/destinations/gangamati-reserved-forest.webp",
+        "image": "/assets/destinations/gangamati-reserved-forest.webp",
+        "imageLg": "/assets/destinations/gangamati-reserved-forest.webp",
         "gallery": [
-            "assets/destinations/sundarbans.webp"
+            "/assets/destinations/gangamati-reserved-forest.webp"
+        ],
+        "photoId": "photo-1505118380757-91f5f5632de0",
+        "galleryIds": [
+            "photo-1505118380757-91f5f5632de0",
+            "photo-1448375240586-882707db888b",
+            "photo-1441974231531-c6227db76b6e"
         ],
         "shortDesc": "A protected coastal forest and mangrove belt on the road to Kuakata.",
         "description": "Gangamati is a reserved forest area in Kalapara upazila of Patuakhali, lying on the approach to Kuakata. A mix of planted and natural coastal forest, it shelters local wildlife and gives a green contrast to the surrounding paddy flats. It is best explored as a short nature stop en route to Kuakata.",
@@ -20016,6 +20815,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1600047509807-ba8f99d2cdde",
+        "galleryIds": [
+            "photo-1600047509807-ba8f99d2cdde",
+            "photo-1524492412937-b28074a5d7da",
+            "photo-1548013146-72479768bada"
+        ],
         "shortDesc": "The ethnic Rakhine (Arakanese) settlements around Kuakata, known for weaving and culture.",
         "description": "Around Kuakata live communities of the Rakhine (Arakanese) people, who arrived from Myanmar centuries ago. Their villages are known for handloom weaving, distinctive cuisine and Buddhist festivals. A walk through a Rakhine village offers a rare glimpse of this coastal minority culture.",
         "bestTime": "October – March",
@@ -20104,6 +20909,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1518495973542-4542c06a5843",
+        "galleryIds": [
+            "photo-1518495973542-4542c06a5843",
+            "photo-1600607687939-ce8a6c25118c",
+            "photo-1474181487882-5abf3f0ba6c2"
+        ],
         "shortDesc": "A late-18th-century zamindar mansion in Delduar, Tangail, rich with colonial-era charm.",
         "description": "Hemnagar Rajbari is a zamindar estate house in Delduar upazila of Tangail, dating to the late 18th and 19th centuries. Its terracotta accents, courtyards and aging walls speak of the region's landlord-era past. The mansion is a quieter heritage stop than the famous Tangail palaces nearby.",
         "bestTime": "October – March",
@@ -20184,10 +20995,16 @@ var DESTINATIONS = [
         "reviews": 100,
         "latitude": 25.74,
         "longitude": 89.25,
-        "image": "assets/destinations/carmichael-college.webp",
-        "imageLg": "assets/destinations/carmichael-college.webp",
+        "image": "/assets/destinations/carmichael-college.webp",
+        "imageLg": "/assets/destinations/carmichael-college.webp",
         "gallery": [
-            "assets/destinations/carmichael-college.webp"
+            "/assets/destinations/carmichael-college.webp"
+        ],
+        "photoId": "photo-1432405972618-c60b0225b8f9",
+        "galleryIds": [
+            "photo-1432405972618-c60b0225b8f9",
+            "photo-1561361513-2d000a50f0dc",
+            "photo-1524492412937-b28074a5d7da"
         ],
         "shortDesc": "A 1916-era college campus in Rangpur with stately British-period buildings.",
         "description": "Carmichael College was founded in Rangpur in 1916 and is one of the oldest and grandest colleges in northern Bengal. Its red-brick colonial buildings, clock tower and sprawling lawns make the campus a pleasant place to walk and photograph. It remains one of Bangladesh's premier institutions.",
@@ -20273,6 +21090,12 @@ var DESTINATIONS = [
         "image": null,
         "imageLg": null,
         "gallery": [],
+        "photoId": "photo-1480714378408-67cf0d13bc1b",
+        "galleryIds": [
+            "photo-1480714378408-67cf0d13bc1b",
+            "photo-1494522358652-f30e61a60313",
+            "photo-1477959858617-67f85cf4f1df"
+        ],
         "shortDesc": "The lush, tree-lined campus of Bangladesh's premier agricultural university in Mymensingh.",
         "description": "Bangladesh Agricultural University (BAU), established in 1961, is the country's foremost institution for agricultural science. Its vast green campus in Mymensingh is dotted with century-old trees, experimental plots, a museum and the nearby scenic Baldah Garden. The grounds are a favourite for quiet evening strolls.",
         "bestTime": "October – March",
@@ -20355,10 +21178,16 @@ var DESTINATIONS = [
         "reviews": 70,
         "latitude": 23.53,
         "longitude": 89.73,
-        "image": "assets/destinations/madhukhali.webp",
-        "imageLg": "assets/destinations/madhukhali.webp",
+        "image": "/assets/destinations/madhukhali.webp",
+        "imageLg": "/assets/destinations/madhukhali.webp",
         "gallery": [
-            "assets/destinations/madhukhali.webp"
+            "/assets/destinations/madhukhali.webp"
+        ],
+        "photoId": "photo-1437482078695-73f5ca6c96e2",
+        "galleryIds": [
+            "photo-1437482078695-73f5ca6c96e2",
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d"
         ],
         "shortDesc": "A Padma-side upazila of Faridpur known for riverside ghats and village landscapes.",
         "description": "Madhukhali is an upazila of Faridpur district lying along the Padma river. Its ghats, seasonal chars (river islands) and paddy fields capture the classic charland life of central Bangladesh. Boats and ferries are the everyday transport across the wide river here.",
@@ -20438,10 +21267,16 @@ var DESTINATIONS = [
         "reviews": 90,
         "latitude": 23.01,
         "longitude": 89.55,
-        "image": "assets/destinations/madhumati-river.webp",
-        "imageLg": "assets/destinations/madhumati-river.webp",
+        "image": "/assets/destinations/madhumati-river.webp",
+        "imageLg": "/assets/destinations/madhumati-river.webp",
         "gallery": [
-            "assets/destinations/madhumati-river.webp"
+            "/assets/destinations/madhumati-river.webp"
+        ],
+        "photoId": "photo-1506905925346-21bda4d32df4",
+        "galleryIds": [
+            "photo-1506905925346-21bda4d32df4",
+            "photo-1445262102387-5fbb30a5e59d",
+            "photo-1445262102387-5fbb30a5e59d"
         ],
         "shortDesc": "The gentle Madhumati river threading through Gopalganj — perfect for quiet boat trips.",
         "description": "The Madhumati river flows through Gopalganj district, its slow brown waters bordered by palm-lined banks and village ghats. A short boat trip on the Madhumati is a peaceful way to experience the riverine heart of Bangladesh, especially around dusk when birds settle along the banks.",
@@ -20520,10 +21355,16 @@ var DESTINATIONS = [
         "reviews": 85,
         "latitude": 24.48,
         "longitude": 91,
-        "image": "assets/destinations/itna-mithamain-haor-road.webp",
-        "imageLg": "assets/destinations/itna-mithamain-haor-road.webp",
+        "image": "/assets/destinations/itna-mithamain-haor-road.webp",
+        "imageLg": "/assets/destinations/itna-mithamain-haor-road.webp",
         "gallery": [
-            "assets/destinations/itna-mithamain-haor-road.webp"
+            "/assets/destinations/itna-mithamain-haor-road.webp"
+        ],
+        "photoId": "photo-1447958374760-1ce70cf11ee3",
+        "galleryIds": [
+            "photo-1447958374760-1ce70cf11ee3",
+            "photo-1500530855697-b586d89ba3ee",
+            "photo-1500382017468-9049fed747ef"
         ],
         "shortDesc": "A quiet haor-side upazila of Kishoreganj, surrounded by wetlands and rivers.",
         "description": "Itna is a rural upazila in the east of Kishoreganj district, set among the haor wetlands of the region. In winter its vast water bodies attract migratory birds; in the monsoon the landscape turns into a shallow inland sea dotted with homesteads. It is an offbeat spot for birdwatchers and slow travelers.",
@@ -20642,11 +21483,11 @@ var DESTINATIONS = [
         "reviews": 195,
         "latitude": 22.885,
         "longitude": 90.795,
-        "image": "assets/destinations/maju-chowdhury-hat-ghat.webp",
+        "image": "/assets/destinations/maju-chowdhury-hat-ghat.webp",
         "shortDesc": "মেঘনা নদীর তীরে অবস্থিত প্রাণবন্ত নদীবন্দর ও মনোরম সূর্যাস্ত দেখার স্থান।",
-        "imageLg": "assets/destinations/maju-chowdhury-hat-ghat.webp",
+        "imageLg": "/assets/destinations/maju-chowdhury-hat-ghat.webp",
         "gallery": [
-            "assets/destinations/maju-chowdhury-hat-ghat.webp"
+            "/assets/destinations/maju-chowdhury-hat-ghat.webp"
         ]
     },
     {
@@ -20665,11 +21506,11 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 22.782,
         "longitude": 90.875,
-        "image": "assets/destinations/kamalnagar-meghna-riverbank.webp",
+        "image": "/assets/destinations/kamalnagar-meghna-riverbank.webp",
         "shortDesc": "প্রমত্তা মেঘনার উত্তাল রূপ ও দিগন্তজোড়া মুক্ত বাতাসের শান্ত নদী সৈকত।",
-        "imageLg": "assets/destinations/kamalnagar-meghna-riverbank.webp",
+        "imageLg": "/assets/destinations/kamalnagar-meghna-riverbank.webp",
         "gallery": [
-            "assets/destinations/kamalnagar-meghna-riverbank.webp"
+            "/assets/destinations/kamalnagar-meghna-riverbank.webp"
         ]
     },
     {
@@ -20682,18 +21523,83 @@ var DESTINATIONS = [
         "category": "River",
         "categories": [
             "River",
-            "Nature"
+            "Nature",
+            "Coastal",
+            "Village"
         ],
         "rating": 4.5,
         "reviews": 420,
         "latitude": 22.8465,
         "longitude": 91.4332,
-        "image": "assets/destinations/muhuri-dam-irrigation-project.webp",
+        "image": "/assets/destinations/muhuri-dam-irrigation-project.webp",
         "shortDesc": "দেশের দ্বিতীয় বৃহত্তম সেচ প্রকল্প, সুবিশাল রেগুলেটর এবং অতিথি পাখির জলকেলি।",
-        "imageLg": "assets/destinations/muhuri-dam-irrigation-project.webp",
+        "imageLg": "/assets/destinations/muhuri-dam-irrigation-project.webp",
         "gallery": [
-            "assets/destinations/muhuri-dam-irrigation-project.webp"
-        ]
+            "/assets/destinations/muhuri-dam-irrigation-project.webp"
+        ],
+        "alternateNames": [
+            "Sonagazi",
+            "সোনাগাজী"
+        ],
+        "tags": [
+            "coastal",
+            "river",
+            "village"
+        ],
+        "activities": [
+            "Village walks",
+            "Riverbank views",
+            "Watch fishing boats"
+        ],
+        "attractions": [
+            "River channels",
+            "Coastal chars"
+        ],
+        "tips": [
+            "Limited facilities — carry water",
+            "Best visited as a day trip",
+            "Ask locals for directions"
+        ],
+        "things_to_do": [
+            "Village walks",
+            "Riverbank views",
+            "Watch fishing boats"
+        ],
+        "what_to_see": [
+            "River channels",
+            "Coastal chars"
+        ],
+        "travel_tips": [
+            "Limited facilities — carry water",
+            "Best visited as a day trip",
+            "Ask locals for directions"
+        ],
+        "transport_options": [
+            "Bus",
+            "CNG"
+        ],
+        "nearby_destinations": [
+            "muhurir-char",
+            "ramgati-lakshmipur",
+            "nijhum-dwip"
+        ],
+        "description": "Sonagazi is a coastal upazila of Feni district where the landscape turns to rivers, chars and low farmland near the Bay of Bengal. It offers a quiet, authentic look at coastal Bangladesh away from tourist routes.",
+        "bestTime": "October – March",
+        "recommendedDays": "Half day",
+        "difficulty": "Easy",
+        "travelType": "Solo, Nature, Culture",
+        "travelInfo": {
+            "from": "Feni",
+            "distanceKm": 22,
+            "duration": "1 hour",
+            "route": "Feni → Sonagazi",
+            "transport": [
+                "Bus",
+                "CNG"
+            ],
+            "flight": null
+        },
+        "upazila": "Sonagazi"
     },
     {
         "id": 237,
@@ -20711,11 +21617,11 @@ var DESTINATIONS = [
         "reviews": 350,
         "latitude": 23.0182,
         "longitude": 91.3855,
-        "image": "assets/destinations/bijoy-singh-dighi.webp",
+        "image": "/assets/destinations/bijoy-singh-dighi.webp",
         "shortDesc": "সেন বংশের স্মৃতিবিজড়িত শতবর্ষী প্রাচীন স্বচ্ছ জলের ঐতিহ্যবাহী দিঘি।",
-        "imageLg": "assets/destinations/bijoy-singh-dighi.webp",
+        "imageLg": "/assets/destinations/bijoy-singh-dighi.webp",
         "gallery": [
-            "assets/destinations/bijoy-singh-dighi.webp"
+            "/assets/destinations/bijoy-singh-dighi.webp"
         ]
     },
     {
@@ -20734,11 +21640,11 @@ var DESTINATIONS = [
         "reviews": 210,
         "latitude": 23.0412,
         "longitude": 91.4421,
-        "image": "assets/destinations/chandgazi-bhuiyan-mosque.webp",
+        "image": "/assets/destinations/chandgazi-bhuiyan-mosque.webp",
         "shortDesc": "মুঘল স্থাপত্যরীতির প্রাচীন ঐতিহাসিক তিন গম্বুজ বিশিষ্ট মসজিদ।",
-        "imageLg": "assets/destinations/chandgazi-bhuiyan-mosque.webp",
+        "imageLg": "/assets/destinations/chandgazi-bhuiyan-mosque.webp",
         "gallery": [
-            "assets/destinations/chandgazi-bhuiyan-mosque.webp"
+            "/assets/destinations/chandgazi-bhuiyan-mosque.webp"
         ]
     },
     {
@@ -20757,11 +21663,11 @@ var DESTINATIONS = [
         "reviews": 160,
         "latitude": 23.035,
         "longitude": 91.52,
-        "image": "assets/destinations/shilmiler-pathar.webp",
+        "image": "/assets/destinations/shilmiler-pathar.webp",
         "shortDesc": "সীমান্তবর্তী ছাগলনাইয়ার পাহাড়ি ঢাল ও প্রাচীন পাথুরে শিলাখণ্ডের স্থান।",
-        "imageLg": "assets/destinations/shilmiler-pathar.webp",
+        "imageLg": "/assets/destinations/shilmiler-pathar.webp",
         "gallery": [
-            "assets/destinations/shilmiler-pathar.webp"
+            "/assets/destinations/shilmiler-pathar.webp"
         ]
     },
     {
@@ -20780,11 +21686,11 @@ var DESTINATIONS = [
         "reviews": 480,
         "latitude": 23.9785,
         "longitude": 91.112,
-        "image": "assets/destinations/kalbhairab-temple.webp",
+        "image": "/assets/destinations/kalbhairab-temple.webp",
         "shortDesc": "ভারতীয় উপমহাদেশের অন্যতম বিশালাকার ঐতিহাসিক কালভৈরব শিবমূর্তি।",
-        "imageLg": "assets/destinations/kalbhairab-temple.webp",
+        "imageLg": "/assets/destinations/kalbhairab-temple.webp",
         "gallery": [
-            "assets/destinations/kalbhairab-temple.webp"
+            "/assets/destinations/kalbhairab-temple.webp"
         ]
     },
     {
@@ -20803,33 +21709,12 @@ var DESTINATIONS = [
         "reviews": 320,
         "latitude": 23.985,
         "longitude": 91.135,
-        "image": "assets/destinations/arifil-mosque-sarail.webp",
+        "image": "/assets/destinations/arifil-mosque-sarail.webp",
         "shortDesc": "মুঘল আমলের ঐতিহ্যমণ্ডিত সরাইলের আরিফাইল মসজিদ এবং ঐতিহাসিক হাতিরপুল সেতু।",
-        "imageLg": "assets/destinations/arifil-mosque-sarail.webp",
+        "imageLg": "/assets/destinations/arifil-mosque-sarail.webp",
         "gallery": [
-            "assets/destinations/arifil-mosque-sarail.webp"
+            "/assets/destinations/arifil-mosque-sarail.webp"
         ]
-    },
-    {
-        "id": 242,
-        "name": "Titas River Viewpoint",
-        "name_bn": "তিতাস নদী ঘাট ও লেক",
-        "slug": "titas-river-viewpoint",
-        "division": "Chattogram",
-        "district": "Brahmanbaria",
-        "category": "River",
-        "categories": [
-            "River",
-            "Nature"
-        ],
-        "rating": 4.4,
-        "reviews": 290,
-        "latitude": 23.955,
-        "longitude": 91.1,
-        "image": null,
-        "shortDesc": "অদৈত মল্লবর্মণের 'তিতাস একটি নদীর নাম' খ্যাত বিখ্যাত রূপসী তিতাস নদী।",
-        "imageLg": null,
-        "gallery": []
     },
     {
         "id": 243,
@@ -20847,34 +21732,11 @@ var DESTINATIONS = [
         "reviews": 175,
         "latitude": 23.932,
         "longitude": 91.121,
-        "image": "assets/destinations/ulchapara-mosque.webp",
+        "image": "/assets/destinations/ulchapara-mosque.webp",
         "shortDesc": "সুলতানি ও মুঘল স্থাপত্যরীতির প্রাচীন ঐতিহাসিক উলচাপাড়া মসজিদ।",
-        "imageLg": "assets/destinations/ulchapara-mosque.webp",
+        "imageLg": "/assets/destinations/ulchapara-mosque.webp",
         "gallery": [
-            "assets/destinations/ulchapara-mosque.webp"
-        ]
-    },
-    {
-        "id": 244,
-        "name": "Nijhum Dwip & Deer Sanctuary",
-        "name_bn": "নিঝুম দ্বীপ ও হরিণ অভয়ারণ্য",
-        "slug": "nijhum-dwip-deer-sanctuary",
-        "division": "Chattogram",
-        "district": "Noakhali",
-        "category": "Island",
-        "categories": [
-            "Island",
-            "Nature"
-        ],
-        "rating": 4.7,
-        "reviews": 860,
-        "latitude": 22.0725,
-        "longitude": 91.0022,
-        "image": "assets/destinations/nijhum-dwip-deer-sanctuary.webp",
-        "shortDesc": "বঙ্গোপসাগরের বুকে কেওড়া বনের মায়াবী দ্বীপ এবং হাজার হাজার চিত্রা হরিণের বিচরণভূমি।",
-        "imageLg": "assets/destinations/nijhum-dwip-deer-sanctuary.webp",
-        "gallery": [
-            "assets/destinations/nijhum-dwip-deer-sanctuary.webp"
+            "/assets/destinations/ulchapara-mosque.webp"
         ]
     },
     {
@@ -20893,11 +21755,11 @@ var DESTINATIONS = [
         "reviews": 410,
         "latitude": 22.9865,
         "longitude": 91.0965,
-        "image": "assets/destinations/bajra-shahi-mosque.webp",
+        "image": "/assets/destinations/bajra-shahi-mosque.webp",
         "shortDesc": "মুঘল সম্রাট মোহাম্মদ শাহের রাজত্বকালে নির্মিত দিল্লির জামে মসজিদের অনুকরণে তৈরি ঐতিহ্য।",
-        "imageLg": "assets/destinations/bajra-shahi-mosque.webp",
+        "imageLg": "/assets/destinations/bajra-shahi-mosque.webp",
         "gallery": [
-            "assets/destinations/bajra-shahi-mosque.webp"
+            "/assets/destinations/bajra-shahi-mosque.webp"
         ]
     },
     {
@@ -20916,11 +21778,11 @@ var DESTINATIONS = [
         "reviews": 340,
         "latitude": 23.021,
         "longitude": 91.085,
-        "image": "assets/destinations/gandhi-ashram-trust-noakhali.webp",
+        "image": "/assets/destinations/gandhi-ashram-trust-noakhali.webp",
         "shortDesc": "মহাত্মা গান্ধীর ঐতিহাসিক নোয়াখালী সফরের স্মৃতিবিজড়িত শান্তি আশ্রম ও জাদুঘর।",
-        "imageLg": "assets/destinations/gandhi-ashram-trust-noakhali.webp",
+        "imageLg": "/assets/destinations/gandhi-ashram-trust-noakhali.webp",
         "gallery": [
-            "assets/destinations/gandhi-ashram-trust-noakhali.webp"
+            "/assets/destinations/gandhi-ashram-trust-noakhali.webp"
         ]
     },
     {
@@ -20939,33 +21801,12 @@ var DESTINATIONS = [
         "reviews": 230,
         "latitude": 22.45,
         "longitude": 91.2,
-        "image": "assets/destinations/swarna-dwip.webp",
+        "image": "/assets/destinations/swarna-dwip.webp",
         "shortDesc": "মেঘনা মোহনার বিস্তীর্ণ সবুজ ঘাসে ঘেরা সুরক্ষিত নয়নাভিরাম উপকূলীয় দ্বীপ।",
-        "imageLg": "assets/destinations/swarna-dwip.webp",
+        "imageLg": "/assets/destinations/swarna-dwip.webp",
         "gallery": [
-            "assets/destinations/swarna-dwip.webp"
+            "/assets/destinations/swarna-dwip.webp"
         ]
-    },
-    {
-        "id": 248,
-        "name": "Borostation Molhead / Three Rivers Estuary",
-        "name_bn": "বড়স্টেশন মোলহেড / তিন নদীর মোহনা",
-        "slug": "borostation-molhead-chandpur",
-        "division": "Chattogram",
-        "district": "Chandpur",
-        "category": "River",
-        "categories": [
-            "River",
-            "Nature"
-        ],
-        "rating": 4.6,
-        "reviews": 790,
-        "latitude": 23.2325,
-        "longitude": 90.645,
-        "image": null,
-        "shortDesc": "পদ্মা, মেঘনা ও ডাকাতিয়া নদীর মিলনস্থল এবং চাঁদপুরের বিখ্যাত রূপালি ইলিশের মোহনা।",
-        "imageLg": null,
-        "gallery": []
     },
     {
         "id": 249,
@@ -20983,11 +21824,11 @@ var DESTINATIONS = [
         "reviews": 310,
         "latitude": 23.23,
         "longitude": 90.635,
-        "image": "assets/destinations/raktadhara-memorial.webp",
+        "image": "/assets/destinations/raktadhara-memorial.webp",
         "shortDesc": "মুক্তিযুদ্ধের স্মৃতিবাহী রক্তধারা স্তম্ভ ও মোহনার বুক চিরে জেগে ওঠা বালুচর।",
-        "imageLg": "assets/destinations/raktadhara-memorial.webp",
+        "imageLg": "/assets/destinations/raktadhara-memorial.webp",
         "gallery": [
-            "assets/destinations/raktadhara-memorial.webp"
+            "/assets/destinations/raktadhara-memorial.webp"
         ]
     },
     {
@@ -21005,11 +21846,11 @@ var DESTINATIONS = [
         "reviews": 260,
         "latitude": 23.185,
         "longitude": 90.72,
-        "image": "assets/destinations/rupsha-zamindar-bari-chandpur.webp",
+        "image": "/assets/destinations/rupsha-zamindar-bari-chandpur.webp",
         "shortDesc": "ফরিদগঞ্জের আড়াইশ বছরের প্রাচীন রূপসা জমিদার বাড়ি ও কারুকার্যময় ধ্বংসাবশেষ।",
-        "imageLg": "assets/destinations/rupsha-zamindar-bari-chandpur.webp",
+        "imageLg": "/assets/destinations/rupsha-zamindar-bari-chandpur.webp",
         "gallery": [
-            "assets/destinations/rupsha-zamindar-bari-chandpur.webp"
+            "/assets/destinations/rupsha-zamindar-bari-chandpur.webp"
         ]
     },
     {
@@ -21028,11 +21869,11 @@ var DESTINATIONS = [
         "reviews": 180,
         "latitude": 23.265,
         "longitude": 90.785,
-        "image": "assets/destinations/lohagara-moth-chandpur.webp",
+        "image": "/assets/destinations/lohagara-moth-chandpur.webp",
         "shortDesc": "ডাকাতিয়া নদীর তীরে অবস্থিত প্রাচীন লোহাগড়া জমিদারদের আকাশছোঁয়া মঠ।",
-        "imageLg": "assets/destinations/lohagara-moth-chandpur.webp",
+        "imageLg": "/assets/destinations/lohagara-moth-chandpur.webp",
         "gallery": [
-            "assets/destinations/lohagara-moth-chandpur.webp"
+            "/assets/destinations/lohagara-moth-chandpur.webp"
         ]
     },
     {
@@ -21045,39 +21886,84 @@ var DESTINATIONS = [
         "category": "Historical",
         "categories": [
             "Historical",
-            "Museum"
+            "Museum",
+            "Heritage"
         ],
         "rating": 4.7,
         "reviews": 920,
         "latitude": 23.4688,
         "longitude": 91.1275,
-        "image": "assets/destinations/mainamati-war-cemetery.webp",
+        "image": "/assets/destinations/mainamati-war-cemetery.webp",
         "shortDesc": "দ্বিতীয় বিশ্বযুদ্ধের বীর সেনাদের সংরক্ষিত প্রশান্ত স্মৃতিসৌধ ও ফুলেল প্রাঙ্গণ।",
-        "imageLg": "assets/destinations/mainamati-war-cemetery.webp",
+        "imageLg": "/assets/destinations/mainamati-war-cemetery.webp",
         "gallery": [
-            "assets/destinations/mainamati-war-cemetery.webp"
-        ]
-    },
-    {
-        "id": 253,
-        "name": "Lalmai Pahar & Eco Park",
-        "name_bn": "লালমাই পাহাড় ও ইকো পার্ক",
-        "slug": "lalmai-pahar-eco-park",
-        "division": "Chattogram",
-        "district": "Cumilla",
-        "category": "Hill",
-        "categories": [
-            "Hill",
-            "Nature"
+            "/assets/destinations/mainamati-war-cemetery.webp",
+            "assets/destinations/cumilla-war-cemetery.webp"
         ],
-        "rating": 4.5,
-        "reviews": 610,
-        "latitude": 23.4215,
-        "longitude": 91.135,
-        "image": null,
-        "shortDesc": "লাল মাটির প্রাকৃতিক টিলা, পাহাড়ি সৌন্দর্য ও প্রাচীন প্রত্নতত্ত্বের মেলবন্ধন।",
-        "imageLg": null,
-        "gallery": []
+        "alternateNames": [
+            "Cumilla War Cemetery",
+            "কুমিল্লা ওয়ার সেমেট্রি"
+        ],
+        "tags": [
+            "war cemetery",
+            "world war ii",
+            "heritage"
+        ],
+        "activities": [
+            "Walk the grounds",
+            "Read the headstones",
+            "Reflect on history"
+        ],
+        "attractions": [
+            "War graves",
+            "Memorial gardens"
+        ],
+        "tips": [
+            "Visit during opening hours",
+            "Be respectful — it is an active cemetery",
+            "Combine with Mainamati"
+        ],
+        "things_to_do": [
+            "Walk the grounds",
+            "Read the headstones",
+            "Reflect on history"
+        ],
+        "what_to_see": [
+            "War graves",
+            "Memorial gardens"
+        ],
+        "travel_tips": [
+            "Visit during opening hours",
+            "Be respectful — it is an active cemetery",
+            "Combine with Mainamati"
+        ],
+        "transport_options": [
+            "Rickshaw",
+            "CNG",
+            "Private Car"
+        ],
+        "nearby_destinations": [
+            "mainamati",
+            "lalmai-hills"
+        ],
+        "description": "Cumilla War Cemetery, managed by the Commonwealth War Graves Commission, holds more than 700 graves of soldiers who died in the Burma campaign of World War II. Rows of identical headstones and clipped lawns give it a moving, serene atmosphere.",
+        "bestTime": "Year-round",
+        "recommendedDays": "1 hour",
+        "difficulty": "Easy",
+        "travelType": "History, Reflection, Families",
+        "travelInfo": {
+            "from": "Cumilla",
+            "distanceKm": 3,
+            "duration": "15 minutes",
+            "route": "Cumilla town → war cemetery",
+            "transport": [
+                "Rickshaw",
+                "CNG",
+                "Private Car"
+            ],
+            "flight": null
+        },
+        "upazila": "Cumilla Sadar"
     },
     {
         "id": 254,
@@ -21094,11 +21980,11 @@ var DESTINATIONS = [
         "reviews": 430,
         "latitude": 23.435,
         "longitude": 91.13,
-        "image": "assets/destinations/ananda-vihara-kotbari.webp",
+        "image": "/assets/destinations/ananda-vihara-kotbari.webp",
         "shortDesc": "অষ্টম শতকের দেব বংশের রাজা আনন্দদেব কর্তৃক নির্মিত বৌদ্ধ সভ্যতার অন্যতম বিশাল বিহার।",
-        "imageLg": "assets/destinations/ananda-vihara-kotbari.webp",
+        "imageLg": "/assets/destinations/ananda-vihara-kotbari.webp",
         "gallery": [
-            "assets/destinations/ananda-vihara-kotbari.webp"
+            "/assets/destinations/ananda-vihara-kotbari.webp"
         ]
     },
     {
@@ -21157,11 +22043,11 @@ var DESTINATIONS = [
         "reviews": 1120,
         "latitude": 22.5855,
         "longitude": 91.615,
-        "image": "assets/destinations/guliakhali-sea-beach.webp",
+        "image": "/assets/destinations/guliakhali-sea-beach.webp",
         "shortDesc": "সবুজ ঘাসের গালিচা ও ম্যানগ্রোভ বনের মোহনীয় সংমিশ্রণে অনন্য গ্রিন বিচ।",
-        "imageLg": "assets/destinations/guliakhali-sea-beach.webp",
+        "imageLg": "/assets/destinations/guliakhali-sea-beach.webp",
         "gallery": [
-            "assets/destinations/guliakhali-sea-beach.webp"
+            "/assets/destinations/guliakhali-sea-beach.webp"
         ]
     },
     {
@@ -21180,34 +22066,11 @@ var DESTINATIONS = [
         "reviews": 980,
         "latitude": 22.8055,
         "longitude": 91.562,
-        "image": "assets/destinations/mohamaya-lake-kayaking.webp",
+        "image": "/assets/destinations/mohamaya-lake-kayaking.webp",
         "shortDesc": "দেশের দ্বিতীয় বৃহত্তম কৃত্রিম লেক, পাহাড়ি ঝর্ণা এবং রোমাঞ্চকর কায়াকিং।",
-        "imageLg": "assets/destinations/mohamaya-lake-kayaking.webp",
+        "imageLg": "/assets/destinations/mohamaya-lake-kayaking.webp",
         "gallery": [
-            "assets/destinations/mohamaya-lake-kayaking.webp"
-        ]
-    },
-    {
-        "id": 259,
-        "name": "Chandranath Peak & Temple",
-        "name_bn": "চন্দ্রনাথ পাহাড় চূড়া ও মন্দির",
-        "slug": "chandranath-peak-temple",
-        "division": "Chattogram",
-        "district": "Chattogram",
-        "category": "Mountain",
-        "categories": [
-            "Mountain",
-            "Religious"
-        ],
-        "rating": 4.7,
-        "reviews": 1350,
-        "latitude": 22.6515,
-        "longitude": 91.685,
-        "image": "assets/destinations/chandranath-peak-temple.webp",
-        "shortDesc": "সমুদ্রপৃষ্ঠ থেকে ১,১৫২ ফুট উঁচুতে সীতাকুণ্ডের সর্বোচ্চ চূড়া ও পবিত্র তীর্থস্থান।",
-        "imageLg": "assets/destinations/chandranath-peak-temple.webp",
-        "gallery": [
-            "assets/destinations/chandranath-peak-temple.webp"
+            "/assets/destinations/mohamaya-lake-kayaking.webp"
         ]
     },
     {
@@ -21241,18 +22104,85 @@ var DESTINATIONS = [
         "category": "Waterfall",
         "categories": [
             "Waterfall",
-            "Nature"
+            "Nature",
+            "Adventure"
         ],
         "rating": 4.5,
         "reviews": 840,
         "latitude": 22.632,
         "longitude": 91.668,
-        "image": "assets/destinations/sitakunda-botanical-garden-ecopark.webp",
+        "image": "/assets/destinations/sitakunda-botanical-garden-ecopark.webp",
         "shortDesc": "সহস্রধারা ও সুপ্তধারা ঝর্ণা এবং সমৃদ্ধ বনজ উদ্ভিদের সবুজ উদ্যান।",
-        "imageLg": "assets/destinations/sitakunda-botanical-garden-ecopark.webp",
+        "imageLg": "/assets/destinations/sitakunda-botanical-garden-ecopark.webp",
         "gallery": [
-            "assets/destinations/sitakunda-botanical-garden-ecopark.webp"
-        ]
+            "/assets/destinations/sitakunda-botanical-garden-ecopark.webp",
+            "assets/destinations/sitakunda.webp"
+        ],
+        "alternateNames": [
+            "Sitakunda",
+            "সীতাকুণ্ড"
+        ],
+        "activities": [
+            "Chandranath Hill climb",
+            "Temple visit",
+            "Eco park trail walk",
+            "Waterfall hunt",
+            "Viewpoint photography"
+        ],
+        "attractions": [
+            "Chandranath Hill & Temple",
+            "Sitakunda Eco Park",
+            "Bhatiary Hills",
+            "Bamboo (Jharna) falls",
+            "Riverside villages"
+        ],
+        "tips": [
+            "Start the hill climb before noon to avoid heat.",
+            "Eco park entry is cheap but the trails are long — carry water.",
+            "Respect temple customs and remove shoes when asked."
+        ],
+        "things_to_do": [
+            "Chandranath Hill climb",
+            "Temple visit",
+            "Eco park trail walk",
+            "Waterfall hunt",
+            "Viewpoint photography"
+        ],
+        "what_to_see": [
+            "Chandranath Hill & Temple",
+            "Sitakunda Eco Park",
+            "Bhatiary Hills",
+            "Bamboo (Jharna) falls",
+            "Riverside villages"
+        ],
+        "travel_tips": [
+            "Start the hill climb before noon to avoid heat.",
+            "Eco park entry is cheap but the trails are long — carry water.",
+            "Respect temple customs and remove shoes when asked."
+        ],
+        "transport_options": [
+            "Bus",
+            "Train",
+            "Private Car"
+        ],
+        "description": "Sitakunda offers a full day of hills and greenery a short drive north of Chattogram. Chandranath Hill, the highest peak of the Chattogram district, is crowned by an ancient temple and draws pilgrims year-round. Nearby, Sitakunda Eco Park and Bhatiary's forested slopes hide small waterfalls and shady trails perfect for a nature escape.",
+        "bestTime": "November – February",
+        "recommendedDays": "1 day",
+        "difficulty": "Moderate",
+        "budget": "BDT 1,200 – 2,500 / day (approx)",
+        "travelType": "Nature, Pilgrims, Hikers",
+        "travelInfo": {
+            "from": "Chattogram",
+            "distanceKm": 255,
+            "duration": "5 – 6 hours",
+            "route": "Dhaka → Chattogram → Sitakunda (Dhaka–Chattogram highway)",
+            "transport": [
+                "Bus",
+                "Train",
+                "Private Car"
+            ],
+            "flight": null
+        }
     },
     {
         "id": 262,
@@ -21312,11 +22242,11 @@ var DESTINATIONS = [
         "reviews": 580,
         "latitude": 21.7865,
         "longitude": 92.605,
-        "image": "assets/destinations/saka-haphong-peak.webp",
+        "image": "/assets/destinations/saka-haphong-peak.webp",
         "shortDesc": "সমুদ্রপৃষ্ঠ থেকে ৩,৪৫১ ফুট উচ্চতায় বাংলাদেশের অনানুষ্ঠানিক সর্বোচ্চ পর্বতশৃঙ্গ।",
-        "imageLg": "assets/destinations/saka-haphong-peak.webp",
+        "imageLg": "/assets/destinations/saka-haphong-peak.webp",
         "gallery": [
-            "assets/destinations/saka-haphong-peak.webp"
+            "/assets/destinations/saka-haphong-peak.webp"
         ]
     },
     {
@@ -21335,34 +22265,11 @@ var DESTINATIONS = [
         "reviews": 790,
         "latitude": 21.662,
         "longitude": 92.385,
-        "image": "assets/destinations/dim-pahar-alikadam-thanchi.webp",
+        "image": "/assets/destinations/dim-pahar-alikadam-thanchi.webp",
         "shortDesc": "আলীকদম-থানচি সড়কের আড়াই হাজার ফুট উঁচুতে দেশের সর্বোচ্চ সড়ক ও মেঘ ছুঁয়ে যাওয়া টিলা।",
-        "imageLg": "assets/destinations/dim-pahar-alikadam-thanchi.webp",
+        "imageLg": "/assets/destinations/dim-pahar-alikadam-thanchi.webp",
         "gallery": [
-            "assets/destinations/dim-pahar-alikadam-thanchi.webp"
-        ]
-    },
-    {
-        "id": 266,
-        "name": "Alutila Mystery Cave",
-        "name_bn": "আলুটিলা রহস্যময় গুহা",
-        "slug": "alutila-mystery-cave",
-        "division": "Chattogram",
-        "district": "Khagrachhari",
-        "category": "Adventure",
-        "categories": [
-            "Adventure",
-            "Nature"
-        ],
-        "rating": 4.6,
-        "reviews": 1180,
-        "latitude": 23.085,
-        "longitude": 91.975,
-        "image": "assets/destinations/alutila-mystery-cave.webp",
-        "shortDesc": "মশাল জ্বালিয়ে অন্ধকার সুড়ঙ্গ ও শীতল পাথুরে তলদেশ পাড়ি দেওয়ার রোমাঞ্চকর গুহা।",
-        "imageLg": "assets/destinations/alutila-mystery-cave.webp",
-        "gallery": [
-            "assets/destinations/alutila-mystery-cave.webp"
+            "/assets/destinations/dim-pahar-alikadam-thanchi.webp"
         ]
     },
     {
@@ -21381,104 +22288,2382 @@ var DESTINATIONS = [
         "reviews": 540,
         "latitude": 23.125,
         "longitude": 91.965,
-        "image": "assets/destinations/mayabini-lake.webp",
+        "image": "/assets/destinations/mayabini-lake.webp",
         "shortDesc": "পাহাড়ের কোলে আঁকাবাঁকা মায়াবিনী লেক ও তারেং চূড়া থেকে খাগড়াছড়ির মনোরম ভিউ।",
-        "imageLg": "assets/destinations/mayabini-lake.webp",
+        "imageLg": "/assets/destinations/mayabini-lake.webp",
         "gallery": [
-            "assets/destinations/mayabini-lake.webp"
+            "/assets/destinations/mayabini-lake.webp"
         ]
     },
     {
-        "id": 268,
-        "name": "Richhang Waterfall",
-        "name_bn": "রিসাং ঝর্ণা",
-        "slug": "richhang-waterfall",
+        "id": 272,
+        "name": "University of Chittagong",
+        "name_bn": "চট্টগ্রাম বিশ্ববিদ্যালয় (চবি)",
+        "slug": "chittagong-university",
         "division": "Chattogram",
-        "district": "Khagrachhari",
+        "district": "Chattogram",
+        "upazila": "Hathazari",
+        "category": "Campus & Heritage",
+        "categories": [
+            "Campus & Heritage",
+            "Nature",
+            "Hill"
+        ],
+        "rating": 4.9,
+        "reviews": 1450,
+        "latitude": 22.4716,
+        "longitude": 91.7877,
+        "image": "/assets/destinations/chittagong-university.webp",
+        "imageLg": "/assets/destinations/chittagong-university.webp",
+        "gallery": [
+            "/assets/destinations/chittagong-university.webp"
+        ],
+        "photoId": "cu-campus-shuttle",
+        "galleryIds": [
+            "cu-campus-shuttle",
+            "cu-zero-point",
+            "cu-shahid-minar"
+        ],
+        "shortDesc": "Bangladesh's most scenic hill-enclosed university campus, home to the world's only daily student shuttle train.",
+        "description": "The University of Chittagong (CU), established in 1966 across 1,754 rolling acres in Hathazari, is renowned as one of South Asia's most breathtaking academic sanctuaries. Nestled among tranquil green valleys and undulating hills, CU is globally celebrated for its iconic daily student Shuttle Train (শাটল ট্রেন), which connects Chattogram city to the campus with singing and camaraderie. The campus boasts historic landmarks including the Zero Point monument, Katapahar hill path, an amphitheater-style Shaheed Minar carved into the hillside, the Central Library, lush Botanical Garden, and natural waterfalls (Shonajhuri and Chhoto Jharna).",
+        "bestTime": "October – March (Winter & Spring)",
+        "recommendedDays": "1 day",
+        "difficulty": "Easy",
+        "budget": "BDT 300 – 800 / day",
+        "travelType": "Students, Heritage Lovers, Nature Enthusiasts, Photographers",
+        "activities": [
+            "Ride the legendary Shuttle Train from Chattogram Railway Station / Sholoshohor",
+            "Walk along the serene Katapahar hill road",
+            "Visit the hillside Shaheed Minar and amphitheater",
+            "Explore the Botanical Garden and Germplasm Center",
+            "Hike to Shonajhuri and Chhoto Jharna waterfalls",
+            "Relax at the Zero Point and Suhrawardy Hall circle"
+        ],
+        "attractions": [
+            "University Shuttle Train (শাটল ট্রেন)",
+            "Zero Point & Monument",
+            "Hilltop Shaheed Minar",
+            "Katapahar Scenic Hill Walk",
+            "CU Central Library & Museum",
+            "Botanical Garden",
+            "Shonajhuri Waterfall"
+        ],
+        "tips": [
+            "Board the shuttle train from Sholoshohor Station in the morning for the authentic student experience.",
+            "Wear comfortable walking shoes for hilly pathways.",
+            "Respect academic zones and hall areas during ongoing lectures."
+        ],
+        "things_to_do": [
+            "Ride the legendary Shuttle Train",
+            "Stroll along Katapahar",
+            "Visit the hillside Shaheed Minar",
+            "Hike to natural campus waterfalls",
+            "Enjoy traditional campus snacks at Jhupri"
+        ],
+        "what_to_see": [
+            "CU Shuttle Train",
+            "Zero Point",
+            "Shaheed Minar",
+            "Katapahar",
+            "Botanical Garden",
+            "Shonajhuri Waterfall"
+        ],
+        "travel_tips": [
+            "Shuttle train schedule is available at Sholoshohor station.",
+            "Local CNG auto-rickshaws run regularly from Oxygen Mor to CU 1 No. Gate."
+        ],
+        "transport_options": [
+            "Train (Shuttle)",
+            "Local Bus",
+            "CNG Auto-rickshaw",
+            "Private Car"
+        ],
+        "nearby_destinations": [
+            "foys-lake",
+            "bhatiari-lake",
+            "patenga-beach"
+        ],
+        "nearby_hotels": [
+            "Radisson Blu Chattogram Bay View",
+            "The Peninsula Chittagong",
+            "Hotel Agrabad"
+        ],
+        "featured": true,
+        "popularity": "very_high",
+        "status": "active",
+        "tags": [
+            "campus",
+            "heritage",
+            "hill",
+            "train",
+            "nature"
+        ],
+        "travelInfo": {
+            "from": "Chattogram City",
+            "distanceKm": 22,
+            "duration": "45 minutes by Shuttle Train or 50 minutes by road",
+            "route": "Chattogram Station / Sholoshohor → Oxygen Mor → Hathazari Road → CU Campus",
+            "transport": [
+                "Train (Shuttle Train from Sholoshohor)",
+                "Bus from Oxygen Mor",
+                "CNG Auto-rickshaw"
+            ]
+        }
+    },
+    {
+        "id": 273,
+        "name": "Khoiyachhora Waterfall",
+        "name_bn": "খৈয়াছড়া ঝরনা",
+        "slug": "khoiyachhora-waterfall",
+        "division": "Chattogram",
+        "district": "Chattogram",
+        "upazila": "Mirsharai",
         "category": "Waterfall",
         "categories": [
             "Waterfall",
+            "Adventure",
+            "Nature"
+        ],
+        "rating": 4.8,
+        "reviews": 980,
+        "latitude": 22.7562,
+        "longitude": 91.5843,
+        "image": "/assets/destinations/khoiyachhora-waterfall.webp",
+        "imageLg": "/assets/destinations/khoiyachhora-waterfall.webp",
+        "gallery": [
+            "/assets/destinations/khoiyachhora-waterfall.webp"
+        ],
+        "photoId": "khoiyachhora-cascade",
+        "galleryIds": [
+            "khoiyachhora-cascade"
+        ],
+        "shortDesc": "The undisputed 'Queen of Waterfalls' in Bangladesh, boasting 9 magnificent cascades deep inside the Mirsharai hills.",
+        "description": "Tucked inside the rugged Mirsharai hill range, Khoiyachhora is acclaimed as one of Bangladesh's most majestic natural spectacles. It features nine cascading vertical steps that tumble through ancient mossy cliffs, creating crystal-clear natural plunge pools surrounded by thick semi-evergreen forest. The trek from Barotakia Bazar along the mountain stream is an adventurous journey of wading through shallow water, climbing rocky outcrops, and taking in breathtaking tropical scenery.",
+        "bestTime": "July – October (Monsoon & Autumn for full water volume)",
+        "recommendedDays": "1 day",
+        "difficulty": "Moderate to Challenging",
+        "budget": "BDT 500 – 1,200 / day",
+        "travelType": "Adventure Seekers, Trekkers, Youth Groups",
+        "activities": [
+            "Stream trekking along the rocky gorge",
+            "Climbing to upper tiers (Steps 2 through 9)",
+            "Swimming in natural plunge pools",
+            "Nature photography & birdwatching"
+        ],
+        "attractions": [
+            "9 Cascading Tiers",
+            "Natural Hill Pool",
+            "Deep Mountain Canyon",
+            "Mirsharai Forest Ridge"
+        ],
+        "tips": [
+            "Wear trekking shoes with strong grip for slippery rocks.",
+            "Hire a local youth guide from Barotakia Bazar.",
+            "Never attempt to climb the upper cascades during torrential cloudbursts."
+        ],
+        "things_to_do": [
+            "Trek the stream bed",
+            "Bathe under the waterfalls",
+            "Climb to tier 3 and above with a guide"
+        ],
+        "what_to_see": [
+            "Multi-tiered cascade",
+            "Lush jungle ravine",
+            "Forest flora"
+        ],
+        "travel_tips": [
+            "Start early morning from Chattogram or Dhaka.",
+            "Carry waterproof bags for electronics."
+        ],
+        "transport_options": [
+            "Bus",
+            "Train (to Sitakunda/Feni)",
+            "CNG Auto-rickshaw"
+        ],
+        "nearby_destinations": [
+            "Sitakunda Botanical Garden & Ecopark",
+            "mohamaya-lake-kayaking",
+            "napittachhora-waterfall"
+        ],
+        "nearby_hotels": [
+            "Sitakunda Rest Houses",
+            "Hotels in Chattogram City"
+        ],
+        "featured": true,
+        "popularity": "high",
+        "status": "active",
+        "tags": [
+            "waterfall",
+            "trekking",
+            "adventure",
+            "nature"
+        ],
+        "travelInfo": {
+            "from": "Chattogram",
+            "distanceKm": 55,
+            "duration": "1.5 hours",
+            "route": "Chattogram → Dhaka-Chattogram Highway → Mirsharai Barotakia Bazar → 4 km trek",
+            "transport": [
+                "Bus from AK Khan gate to Barotakia",
+                "CNG to trailhead",
+                "Foot trek"
+            ]
+        }
+    },
+    {
+        "id": 274,
+        "name": "Napittachhora Waterfall",
+        "name_bn": "নাপিত্তাছড়া ঝরনা",
+        "slug": "napittachhora-waterfall",
+        "division": "Chattogram",
+        "district": "Chattogram",
+        "upazila": "Mirsharai",
+        "category": "Waterfall",
+        "categories": [
+            "Waterfall",
+            "Adventure"
+        ],
+        "rating": 4.7,
+        "reviews": 620,
+        "latitude": 22.7831,
+        "longitude": 91.5622,
+        "image": "/assets/destinations/napittachhora-waterfall.webp",
+        "imageLg": "/assets/destinations/napittachhora-waterfall.webp",
+        "gallery": [
+            "/assets/destinations/napittachhora-waterfall.webp"
+        ],
+        "photoId": "napittachhora-trail",
+        "galleryIds": [
+            "napittachhora-trail"
+        ],
+        "shortDesc": "A trio of stunning waterfalls—Kupikatakum, Mithachhora, and Bandarkum—hidden inside a dramatic rocky ravine.",
+        "description": "Located at Noiduar Mor in Mirsharai, Napittachhora is a pristine natural canyon trail sheltering three distinct waterfalls: Kupikatakum, Mithachhora, and the towering Bandarkum. As you hike through the winding boulder-strewn stream bed surrounded by sheer rock faces, the soothing sound of rushing water and cool forest breezes create an unforgettable wilderness trek.",
+        "bestTime": "June – October",
+        "recommendedDays": "1 day",
+        "difficulty": "Moderate",
+        "budget": "BDT 500 – 1,000 / day",
+        "travelType": "Adventure, Trekking, Friends",
+        "activities": [
+            "Gorge hiking",
+            "Cascade bathing",
+            "Rock scrambling",
+            "Wildlife listening"
+        ],
+        "attractions": [
+            "Kupikatakum Waterfall",
+            "Mithachhora Waterfall",
+            "Bandarkum Waterfall"
+        ],
+        "tips": [
+            "Carry anti-leech socks during monsoon.",
+            "Start before 10 AM to complete all three falls safely."
+        ],
+        "things_to_do": [
+            "Hike the stream",
+            "Swim in the natural pools",
+            "Trek between the three waterfalls"
+        ],
+        "what_to_see": [
+            "Three waterfalls",
+            "Deep rocky canyon",
+            "Subtropical forest"
+        ],
+        "travel_tips": [
+            "Get off at Noiduar Bazar on the Dhaka-Chattogram highway."
+        ],
+        "transport_options": [
+            "Bus",
+            "CNG Auto-rickshaw"
+        ],
+        "nearby_destinations": [
+            "khoiyachhora-waterfall",
+            "mohamaya-lake-kayaking"
+        ],
+        "nearby_hotels": [
+            "Mirsharai Rest Houses",
+            "Chattogram Hotels"
+        ],
+        "featured": false,
+        "popularity": "high",
+        "status": "active",
+        "tags": [
+            "waterfall",
+            "trek",
+            "canyon"
+        ],
+        "travelInfo": {
+            "from": "Chattogram",
+            "distanceKm": 58,
+            "duration": "1.5 hours",
+            "route": "Chattogram → Noiduar Bazar, Mirsharai → 2-3 hour trek",
+            "transport": [
+                "Bus",
+                "CNG",
+                "Walking"
+            ]
+        }
+    },
+    {
+        "id": 275,
+        "name": "Parki Beach",
+        "name_bn": "পারকি সৈকত",
+        "slug": "parki-beach",
+        "division": "Chattogram",
+        "district": "Chattogram",
+        "upazila": "Anwara",
+        "category": "Beach",
+        "categories": [
+            "Beach",
             "Nature"
         ],
         "rating": 4.5,
-        "reviews": 870,
-        "latitude": 23.112,
-        "longitude": 91.935,
-        "image": "assets/destinations/richhang-waterfall-cascade.webp",
-        "shortDesc": "১০০ ফুট উঁচু খাড়া পাহাড় থেকে আছড়ে পড়া শীতল পানির প্রাকৃতিক ঝর্ণা ও পাথুরে স্লাইড।",
-        "imageLg": "assets/destinations/richhang-waterfall-cascade.webp",
-        "gallery": [
-            "assets/destinations/richhang-waterfall-cascade.webp"
-        ]
+        "reviews": 730,
+        "latitude": 22.1895,
+        "longitude": 91.8102,
+        "image": null,
+        "imageLg": null,
+        "gallery": [],
+        "photoId": "parki-jhau-beach",
+        "galleryIds": [
+            "parki-jhau-beach"
+        ],
+        "shortDesc": "A golden coastal beach near the Karnaphuli river mouth, bordered by an enchanting pine-tamarisk forest.",
+        "description": "Situated in Anwara upazila south of Chattogram city, Parki Beach is a tranquil 15-kilometer sandy coastline along the Bay of Bengal. Shaded by a dense Jhau (tamarisk) forest that whistles in the sea breeze, the beach is famous for scenic views of cargo ships anchored in the outer harbor, quiet sunset walks, and fresh local seafood shacks.",
+        "bestTime": "October – March",
+        "recommendedDays": "1 day",
+        "difficulty": "Easy",
+        "budget": "BDT 400 – 1,000 / day",
+        "travelType": "Family, Couples, Photographers",
+        "activities": [
+            "Sunset watching",
+            "Forest strolls",
+            "Beach cricket",
+            "Seafood tasting"
+        ],
+        "attractions": [
+            "Jhau Forest",
+            "Bay of Bengal Shoreline",
+            "Karnaphuli River Estuary"
+        ],
+        "tips": [
+            "Visit during low tide for a broad firm sand expanse.",
+            "Easily accessible via Karnaphuli Tunnel."
+        ],
+        "things_to_do": [
+            "Walk among the tamarisk trees",
+            "Watch the coastal sunset",
+            "Taste freshly fried pomfret and crab"
+        ],
+        "what_to_see": [
+            "Anchored cargo ships",
+            "Endless coastline",
+            "Pine forest"
+        ],
+        "travel_tips": [
+            "Travel through the Bangabandhu Tunnel for a modern, swift journey."
+        ],
+        "transport_options": [
+            "Bus",
+            "CNG Auto-rickshaw",
+            "Private Car"
+        ],
+        "nearby_destinations": [
+            "patenga-beach",
+            "chattogram-war-cemetery"
+        ],
+        "nearby_hotels": [
+            "Chattogram City Hotels"
+        ],
+        "featured": false,
+        "popularity": "high",
+        "status": "active",
+        "tags": [
+            "beach",
+            "sea",
+            "jhau-forest"
+        ],
+        "travelInfo": {
+            "from": "Chattogram City",
+            "distanceKm": 25,
+            "duration": "40 minutes via Bangabandhu Tunnel",
+            "route": "Chattogram City → Bangabandhu Tunnel → Anwara → Parki Beach",
+            "transport": [
+                "Private Car",
+                "CNG Auto-rickshaw",
+                "Bus"
+            ]
+        }
     },
     {
-        "id": 269,
-        "name": "Polwel Park & Love Point",
-        "name_bn": "পলওয়েল পার্ক ও লাভ পয়েন্ট",
-        "slug": "polwel-park-love-point",
+        "id": 276,
+        "name": "Banshkhali Sea Beach",
+        "name_bn": "বাঁশখালী সমুদ্র সৈকত",
+        "slug": "banshkhali-sea-beach",
         "division": "Chattogram",
-        "district": "Rangamati",
+        "district": "Chattogram",
+        "upazila": "Banshkhali",
+        "category": "Beach",
+        "categories": [
+            "Beach",
+            "Nature"
+        ],
+        "rating": 4.4,
+        "reviews": 510,
+        "latitude": 21.9833,
+        "longitude": 91.8667,
+        "image": "/assets/destinations/banshkhali-sea-beach.webp",
+        "imageLg": "/assets/destinations/banshkhali-sea-beach.webp",
+        "gallery": [
+            "/assets/destinations/banshkhali-sea-beach.webp"
+        ],
+        "photoId": "banshkhali-coast",
+        "galleryIds": [
+            "banshkhali-coast"
+        ],
+        "shortDesc": "The second longest unbroken sea beach in Bangladesh (37 km), offering secluded sands and breathtaking sunsets.",
+        "description": "Stretching along the southwestern edge of Chattogram district, Banshkhali Sea Beach spans 37 kilometers of pristine, untamed coastline. Free from commercial overcrowding, this vast beach is celebrated for its lush coastal casuarina woodlands, red crab colonies, tranquil fisherman hamlets, and uninterrupted sunset panoramas over the Bay of Bengal.",
+        "bestTime": "November – February",
+        "recommendedDays": "1 – 2 days",
+        "difficulty": "Easy",
+        "budget": "BDT 500 – 1,200 / day",
+        "travelType": "Solo, Nature Lovers, Off-beat Explorers",
+        "activities": [
+            "Beach walking",
+            "Bird watching",
+            "Visiting fishing villages",
+            "Sunset photography"
+        ],
+        "attractions": [
+            "37 km Unbroken Coastline",
+            "Jhau Forest",
+            "Banshkhali Eco Park (nearby)"
+        ],
+        "tips": [
+            "Combine with a visit to the Banshkhali Eco Park suspension bridge."
+        ],
+        "things_to_do": [
+            "Walk along the peaceful sands",
+            "Enjoy the secluded ocean breeze",
+            "Watch traditional fishermen cast nets"
+        ],
+        "what_to_see": [
+            "Red crabs",
+            "Casuarina groves",
+            "Sunset over Bay of Bengal"
+        ],
+        "travel_tips": [
+            "Direct buses run from Bahaddarhat bus terminal in Chattogram."
+        ],
+        "transport_options": [
+            "Bus",
+            "Private Car",
+            "CNG"
+        ],
+        "nearby_destinations": [
+            "banshkhali-eco-park",
+            "parki-beach"
+        ],
+        "nearby_hotels": [
+            "Chattogram City Hotels"
+        ],
+        "featured": false,
+        "popularity": "medium",
+        "status": "active",
+        "tags": [
+            "beach",
+            "coast",
+            "nature"
+        ],
+        "travelInfo": {
+            "from": "Chattogram City",
+            "distanceKm": 45,
+            "duration": "1.5 hours",
+            "route": "Chattogram → Chandanaish / Anwara → Banshkhali Coast",
+            "transport": [
+                "Bus from Bahaddarhat",
+                "Private Vehicle"
+            ]
+        }
+    },
+    {
+        "id": 277,
+        "name": "Curzon Hall, University of Dhaka",
+        "name_bn": "কার্জন হল, ঢাকা বিশ্ববিদ্যালয়",
+        "slug": "curzon-hall",
+        "division": "Dhaka",
+        "district": "Dhaka",
+        "upazila": "Shahbagh",
+        "category": "Historical",
+        "categories": [
+            "Historical",
+            "Campus & Heritage",
+            "Architectural"
+        ],
+        "rating": 4.9,
+        "reviews": 1820,
+        "latitude": 23.7275,
+        "longitude": 90.4038,
+        "image": "/assets/destinations/curzon-hall.webp",
+        "imageLg": "/assets/destinations/curzon-hall.webp",
+        "gallery": [
+            "/assets/destinations/curzon-hall.webp"
+        ],
+        "photoId": "curzon-hall-redbrick",
+        "galleryIds": [
+            "curzon-hall-redbrick"
+        ],
+        "shortDesc": "A 120-year-old architectural masterpiece of Indo-Saracenic red-brick heritage on the University of Dhaka campus.",
+        "description": "Built in 1904 and named after Lord Curzon, Curzon Hall is one of the most magnificent colonial architectural monuments in the Indian subcontinent. Now housing the Faculty of Science of the University of Dhaka, the complex seamlessly blends Mughal domes and ornate arches with European neoclassical design in deep terracotta red brick. Surrounded by a botanical garden, serene pond, and manicured lawns, it is an essential cultural pilgrimage site in the capital.",
+        "bestTime": "Year-round (especially afternoons and holidays)",
+        "recommendedDays": "Half day",
+        "difficulty": "Easy",
+        "budget": "BDT 100 – 300",
+        "travelType": "Architecture Lovers, History Buffs, Photographers, Students",
+        "activities": [
+            "Architectural photography",
+            "Campus walk",
+            "Visiting the Science faculty museum and botanical garden"
+        ],
+        "attractions": [
+            "Curzon Hall Central Pavilion",
+            "DU Science Campus",
+            "Botanical Enclave"
+        ],
+        "tips": [
+            "Friday and Saturday are the best days to visit when regular classes are closed.",
+            "Metro Rail Curzon Hall / High Court station makes access effortless."
+        ],
+        "things_to_do": [
+            "Explore the ornate Mughal-European arches",
+            "Photograph the red brick facade",
+            "Walk around the quiet quadrangle"
+        ],
+        "what_to_see": [
+            "Terracotta domes",
+            "Historical plaque",
+            "Ancient trees"
+        ],
+        "travel_tips": [
+            "Easily reachable via Dhaka Metro Rail Line 6 (Bangladesh Secretariat station)."
+        ],
+        "transport_options": [
+            "Metro Rail",
+            "Rickshaw",
+            "Ride-sharing"
+        ],
+        "nearby_destinations": [
+            "central-shaheed-minar",
+            "national-museum",
+            "ahsan-manzil"
+        ],
+        "nearby_hotels": [
+            "InterContinental Dhaka",
+            "Pan Pacific Sonargaon"
+        ],
+        "featured": true,
+        "popularity": "very_high",
+        "status": "active",
+        "tags": [
+            "heritage",
+            "campus",
+            "history",
+            "architecture"
+        ],
+        "travelInfo": {
+            "from": "Central Dhaka",
+            "distanceKm": 2,
+            "duration": "10 minutes",
+            "route": "Shahbagh → High Court → Curzon Hall",
+            "transport": [
+                "Metro Rail",
+                "Rickshaw",
+                "Bus"
+            ]
+        }
+    },
+    {
+        "id": 278,
+        "name": "Jahangirnagar University",
+        "name_bn": "জাহাঙ্গীরনগর বিশ্ববিদ্যালয় (জাবি)",
+        "slug": "jahangirnagar-university",
+        "division": "Dhaka",
+        "district": "Dhaka",
+        "upazila": "Savar",
+        "category": "Campus & Nature",
+        "categories": [
+            "Campus & Nature",
+            "Nature",
+            "Wildlife"
+        ],
+        "rating": 4.8,
+        "reviews": 1390,
+        "latitude": 23.8825,
+        "longitude": 90.2672,
+        "image": "/assets/destinations/jahangirnagar-university.webp",
+        "imageLg": "/assets/destinations/jahangirnagar-university.webp",
+        "gallery": [
+            "/assets/destinations/jahangirnagar-university.webp"
+        ],
+        "photoId": "ju-birds-lake",
+        "galleryIds": [
+            "ju-birds-lake"
+        ],
+        "shortDesc": "Bangladesh's premier residential sanctuary campus, famous for winter migratory birds and vibrant red water-lily lakes.",
+        "description": "Spread over nearly 700 lush acres in Savar, Jahangirnagar University is Bangladesh's sole fully residential public university and a celebrated ecological sanctuary. In winter, thousands of Siberian and Himalayan migratory waterfowl (Lesser Whistling Ducks, Pintails, Teals) flock to its crimson water-lily ponds. The campus is equally famed for its monumental 71-foot Shaheed Minar, the country's first Butterfly Research Park, the Muktamancha open-air amphitheater, and tree-lined cycling avenues.",
+        "bestTime": "November – February (Migratory bird season)",
+        "recommendedDays": "1 day",
+        "difficulty": "Easy",
+        "budget": "BDT 300 – 800 / day",
+        "travelType": "Birdwatchers, Nature Lovers, Photographers, Families",
+        "activities": [
+            "Birdwatching at the Transport Yard & Administrative building lakes",
+            "Renting a bicycle to explore the lush campus avenues",
+            "Visiting the Butterfly Park and Research Fair",
+            "Admiring the nation's tallest modernist Shaheed Minar"
+        ],
+        "attractions": [
+            "Migratory Bird Lakes",
+            "Tallest Shaheed Minar in Bangladesh",
+            "Muktamancha Open-air Theatre",
+            "Butterfly Research Park",
+            "Jahangirnagar Botanical Gardens"
+        ],
+        "tips": [
+            "Carry binoculars and a telephoto lens for bird photography.",
+            "Strictly avoid making loud noises or throwing pebbles into bird lakes.",
+            "Rent a bicycle near the main gate for the best experience."
+        ],
+        "things_to_do": [
+            "Watch flocks of migratory birds",
+            "Cycle through shaded roads",
+            "Taste famous campus parathas and pitha"
+        ],
+        "what_to_see": [
+            "Flocks of whistling teal",
+            "Red water lilies",
+            "Modernist sculpture"
+        ],
+        "travel_tips": [
+            "Direct AC buses run from Gabtoli and Farmgate along the Dhaka-Aricha highway."
+        ],
+        "transport_options": [
+            "Bus",
+            "Private Car",
+            "Bicycle"
+        ],
+        "nearby_destinations": [
+            "national-martyrs-memorial",
+            "bhawal-national-park"
+        ],
+        "nearby_hotels": [
+            "Savar Rest Houses",
+            "Dhaka Hotels"
+        ],
+        "featured": true,
+        "popularity": "very_high",
+        "status": "active",
+        "tags": [
+            "campus",
+            "birds",
+            "nature",
+            "lake"
+        ],
+        "travelInfo": {
+            "from": "Dhaka Zero Point",
+            "distanceKm": 32,
+            "duration": "1 – 1.5 hours",
+            "route": "Gabtoli → Aminbazar → Savar → Jahangirnagar University Main Gate",
+            "transport": [
+                "Bus (Thikana, Baishakhi)",
+                "Private Car"
+            ]
+        }
+    },
+    {
+        "id": 279,
+        "name": "Bangabandhu Military Museum",
+        "name_bn": "বঙ্গবন্ধু সামরিক জাদুঘর",
+        "slug": "bangabandhu-military-museum",
+        "division": "Dhaka",
+        "district": "Dhaka",
+        "upazila": "Tejgaon",
+        "category": "Museum",
+        "categories": [
+            "Museum",
+            "Cultural",
+            "Architecture"
+        ],
+        "rating": 4.8,
+        "reviews": 1120,
+        "latitude": 23.7681,
+        "longitude": 90.3872,
+        "image": "/assets/destinations/bangabandhu-military-museum.webp",
+        "imageLg": "/assets/destinations/bangabandhu-military-museum.webp",
+        "gallery": [
+            "/assets/destinations/bangabandhu-military-museum.webp"
+        ],
+        "photoId": "military-museum-dhaka",
+        "galleryIds": [
+            "military-museum-dhaka"
+        ],
+        "shortDesc": "A state-of-the-art national military history museum with interactive galleries, planetarium, and world-class architecture.",
+        "description": "Located along Bijoy Sarani in central Dhaka, the Bangabandhu Military Museum is one of South Asia's most cutting-edge museum complexes. Spanning six distinct sections dedicated to the Bangladesh Army, Navy, Air Force, and the 1971 Liberation War, the museum features tanks, fighter jets, naval weapons, VR simulation rides, and a massive stargazing planetarium, all encased in award-winning contemporary architecture.",
+        "bestTime": "Year-round (Closed Wednesdays)",
+        "recommendedDays": "Half day",
+        "difficulty": "Easy",
+        "budget": "BDT 200 – 500",
+        "travelType": "Family, Children, History Buffs, Tech Enthusiasts",
+        "activities": [
+            "Viewing historic combat vehicles",
+            "Experiencing flight and submarine simulators",
+            "Planetarium shows",
+            "Courtyard evening stroll"
+        ],
+        "attractions": [
+            "Air Force Fighter Aircraft Pavilion",
+            "Army Tanks & Artillery",
+            "Naval Fleet Gallery",
+            "Liberation War Memorial"
+        ],
+        "tips": [
+            "Buy tickets online or early at the counter to secure planetarium show slots."
+        ],
+        "things_to_do": [
+            "Explore three floors of military tech",
+            "Try the VR flight simulator",
+            "Enjoy the riverside landscaped garden"
+        ],
+        "what_to_see": [
+            "MiG fighter aircraft",
+            "Historic tanks",
+            "Augmented reality historical displays"
+        ],
+        "travel_tips": [
+            "Bijoy Sarani Metro Station is a short walking distance away."
+        ],
+        "transport_options": [
+            "Metro Rail (Bijoy Sarani)",
+            "Bus",
+            "CNG",
+            "Car"
+        ],
+        "nearby_destinations": [
+            "national-parliament-house",
+            "hatirjheel",
+            "bangladesh-national-museum"
+        ],
+        "nearby_hotels": [
+            "Pan Pacific Sonargaon",
+            "Radisson Blu Dhaka"
+        ],
+        "featured": false,
+        "popularity": "high",
+        "status": "active",
+        "tags": [
+            "museum",
+            "modern",
+            "history",
+            "military"
+        ],
+        "travelInfo": {
+            "from": "Dhaka City Center",
+            "distanceKm": 4,
+            "duration": "15 minutes",
+            "route": "Farmgate → Bijoy Sarani",
+            "transport": [
+                "Metro Rail Line 6",
+                "Bus",
+                "Rickshaw"
+            ]
+        }
+    },
+    {
+        "id": 280,
+        "name": "Banglar Taj Mahal",
+        "name_bn": "বাংলার তাজমহল",
+        "slug": "banglar-taj-mahal",
+        "division": "Dhaka",
+        "district": "Narayanganj",
+        "upazila": "Sonargaon",
+        "category": "Cultural",
+        "categories": [
+            "Cultural",
+            "Historical"
+        ],
+        "rating": 4.1,
+        "reviews": 840,
+        "latitude": 23.7548,
+        "longitude": 90.5822,
+        "image": "/assets/destinations/banglar-taj-mahal.webp",
+        "imageLg": "/assets/destinations/banglar-taj-mahal.webp",
+        "gallery": [
+            "/assets/destinations/banglar-taj-mahal.webp"
+        ],
+        "photoId": "banglar-taj-mahal",
+        "galleryIds": [
+            "banglar-taj-mahal"
+        ],
+        "shortDesc": "A life-size architectural replica of Agra's world wonder, set in rural Sonargaon alongside Pyramid replicas.",
+        "description": "Built by Bangladeshi filmmaker Ahsanullah Moni in Sonargaon, Banglar Taj Mahal is a scaled architectural homage to the iconic Taj Mahal of Agra. Clad in imported marble, ornate brass finials, and surrounded by reflective waterways and fountain gardens, it provides visitors with an accessible glimpse of Mughal grandeur right beside Egyptian pyramid replicas and artisan craft stalls.",
+        "bestTime": "October – March",
+        "recommendedDays": "Half day",
+        "difficulty": "Easy",
+        "budget": "BDT 300 – 600",
+        "travelType": "Family, Couples, Curious Explorers",
+        "activities": [
+            "Photography with white marble facades",
+            "Viewing the interior cenotaph replica",
+            "Exploring the adjacent Egyptian pyramid park"
+        ],
+        "attractions": [
+            "White Marble Dome",
+            "Fountain Gardens",
+            "Pyramid Replicas"
+        ],
+        "tips": [
+            "Combine your trip with Panam City and Sonargaon Folk Art Museum."
+        ],
+        "things_to_do": [
+            "Take creative photos",
+            "Walk the marble plaza",
+            "Tour the miniature cinema museum"
+        ],
+        "what_to_see": [
+            "Mughal dome replica",
+            "Water canals",
+            "Egyptian mini pyramid"
+        ],
+        "travel_tips": [
+            "Accessible via Dhaka-Chittagong Highway, exiting at Mograpara."
+        ],
+        "transport_options": [
+            "Bus",
+            "Private Car",
+            "CNG Auto-rickshaw"
+        ],
+        "nearby_destinations": [
+            "panam-city",
+            "sonargaon",
+            "folk-art-museum"
+        ],
+        "nearby_hotels": [
+            "Sonargaon Resorts",
+            "Dhaka Hotels"
+        ],
+        "featured": false,
+        "popularity": "medium",
+        "status": "active",
+        "tags": [
+            "replica",
+            "architecture",
+            "monument"
+        ],
+        "travelInfo": {
+            "from": "Dhaka",
+            "distanceKm": 28,
+            "duration": "45 minutes",
+            "route": "Dhaka → Jatrabari → Dhaka-Chittagong Highway → Mograpara → Perabo",
+            "transport": [
+                "Bus to Mograpara",
+                "CNG to site"
+            ]
+        }
+    },
+    {
+        "id": 281,
+        "name": "Utma Chhora",
+        "name_bn": "উৎমাছড়া",
+        "slug": "utma-chhora",
+        "division": "Sylhet",
+        "district": "Sylhet",
+        "upazila": "Companiganj",
         "category": "Nature",
         "categories": [
             "Nature",
-            "Lake"
+            "River",
+            "Adventure"
         ],
-        "rating": 4.6,
-        "reviews": 730,
-        "latitude": 22.645,
-        "longitude": 92.175,
-        "image": "assets/destinations/polwel-love-point.webp",
-        "shortDesc": "কাপ্তাই লেকের তীরে সাজানো আধুনিক ইকো পার্ক, কটেজ ও রোমান্টিক লাভ পয়েন্ট।",
-        "imageLg": "assets/destinations/polwel-love-point.webp",
-        "gallery": [
-            "assets/destinations/polwel-love-point.webp"
-        ]
+        "rating": 4.8,
+        "reviews": 790,
+        "latitude": 25.1432,
+        "longitude": 91.7588,
+        "image": null,
+        "imageLg": null,
+        "gallery": [],
+        "photoId": "utma-chhora-stones",
+        "galleryIds": [
+            "utma-chhora-stones"
+        ],
+        "shortDesc": "A pristine river of crystal-clear mountain water cascading over miles of white pebbles along the Meghalaya border.",
+        "description": "Located in Companiganj upazila of Sylhet, Utma Chhora is one of Bangladesh's purest off-the-beaten-path aquatic wonders. Flowing directly from the lush green hills of the Indian state of Meghalaya, this shallow, sparkling mountain brook glides over an endless bed of smooth white and grey stones. Less crowded than Jaflong or Bichanakandi, it offers pristine mountain air and unforgettable wading through icy mountain currents.",
+        "bestTime": "June – October (Monsoon & Post-Monsoon)",
+        "recommendedDays": "1 day",
+        "difficulty": "Moderate",
+        "budget": "BDT 800 – 1,800 / day",
+        "travelType": "Adventure, Nature Lovers, Youth",
+        "activities": [
+            "Wading in ice-cold crystal water",
+            "Stone bed walking",
+            "Trekking along the green border hills",
+            "Landscape photography"
+        ],
+        "attractions": [
+            "White Stone Stream",
+            "Meghalaya Hill Vistas",
+            "Turong Chhora (nearby)"
+        ],
+        "tips": [
+            "Never cross the international zero point marker.",
+            "Wear water shoes to protect feet against sharp underwater rocks."
+        ],
+        "things_to_do": [
+            "Bathe in clear mountain water",
+            "Photograph the stone river",
+            "Explore the border countryside"
+        ],
+        "what_to_see": [
+            "Rolling Meghalaya cliffs",
+            "White stone beds",
+            "Mountain brook"
+        ],
+        "travel_tips": [
+            "Take a local CNG from Sylhet Amberkhana to Dayamir Bazar, then motor-bike or boat to Utma."
+        ],
+        "transport_options": [
+            "Bus",
+            "CNG",
+            "Motorcycle",
+            "Boat"
+        ],
+        "nearby_destinations": [
+            "sada-pathor",
+            "bichanakandi",
+            "ratargul-swamp-forest"
+        ],
+        "nearby_hotels": [
+            "Sylhet City Hotels",
+            "Companiganj Rest Houses"
+        ],
+        "featured": true,
+        "popularity": "high",
+        "status": "active",
+        "tags": [
+            "river",
+            "stone",
+            "nature",
+            "sylhet"
+        ],
+        "travelInfo": {
+            "from": "Sylhet City",
+            "distanceKm": 42,
+            "duration": "2 hours",
+            "route": "Sylhet Amberkhana → Companiganj → Dayamir Bazar → Utma Chhora",
+            "transport": [
+                "CNG to Dayamir",
+                "Local trail bike / boat to border"
+            ]
+        }
     },
     {
-        "id": 270,
-        "name": "Shuvolong Waterfall & Kaptai Cruise",
-        "name_bn": "শুভলং ঝর্ণা ও কাপ্তাই লেক ক্রুজ",
-        "slug": "shuvolong-waterfall",
-        "division": "Chattogram",
-        "district": "Rangamati",
+        "id": 282,
+        "name": "Turong Chhora",
+        "name_bn": "তুরংছড়া",
+        "slug": "turong-chhora",
+        "division": "Sylhet",
+        "district": "Sylhet",
+        "upazila": "Companiganj",
+        "category": "Nature",
+        "categories": [
+            "Nature",
+            "River"
+        ],
+        "rating": 4.7,
+        "reviews": 480,
+        "latitude": 25.1554,
+        "longitude": 91.7412,
+        "image": "/assets/destinations/turong-chhora.webp",
+        "imageLg": "/assets/destinations/turong-chhora.webp",
+        "gallery": [
+            "/assets/destinations/turong-chhora.webp"
+        ],
+        "photoId": "turong-chhora-brook",
+        "galleryIds": [
+            "turong-chhora-brook"
+        ],
+        "shortDesc": "A hidden gem of sparkling turquoise stream waters cascading over wild boulder steps near Utma.",
+        "description": "Neighboring Utma Chhora in Companiganj, Turong Chhora is an idyllic mountain brook characterized by sparkling cascading rapids, lush subtropical overhangs, and smooth natural stone basins. The peaceful quiet and clean mountain water flowing beneath the clouds make it a dream haven for hikers seeking untouched nature.",
+        "bestTime": "June – October",
+        "recommendedDays": "1 day",
+        "difficulty": "Moderate",
+        "budget": "BDT 800 – 1,500 / day",
+        "travelType": "Adventure, Nature Enthusiasts",
+        "activities": [
+            "Stream trekking",
+            "Relaxing in natural water pools",
+            "Border nature walks"
+        ],
+        "attractions": [
+            "Natural Rapids",
+            "Meghalaya Foothills",
+            "Pebble Stream"
+        ],
+        "tips": [
+            "Best combined in a single day tour with Utma Chhora."
+        ],
+        "things_to_do": [
+            "Trek from Utma to Turong",
+            "Enjoy the tranquil mountain water",
+            "Capture landscape shots"
+        ],
+        "what_to_see": [
+            "Turquoise waters",
+            "High green border ridges",
+            "Boulder rapids"
+        ],
+        "travel_tips": [
+            "Hire a local bike rider or boatman from Dayamir."
+        ],
+        "transport_options": [
+            "CNG",
+            "Motorcycle",
+            "Walking"
+        ],
+        "nearby_destinations": [
+            "utma-chhora",
+            "sada-pathor"
+        ],
+        "nearby_hotels": [
+            "Sylhet City Hotels"
+        ],
+        "featured": false,
+        "popularity": "medium",
+        "status": "active",
+        "tags": [
+            "stream",
+            "nature",
+            "sylhet"
+        ],
+        "travelInfo": {
+            "from": "Sylhet City",
+            "distanceKm": 45,
+            "duration": "2 hours",
+            "route": "Sylhet → Companiganj → Dayamir → Turong Chhora",
+            "transport": [
+                "CNG",
+                "Trail bike"
+            ]
+        }
+    },
+    {
+        "id": 283,
+        "name": "Shangrampunji Waterfall (Mayabi Jharna)",
+        "name_bn": "সাংগ্রামপুঞ্জি ঝরনা (মায়াবী ঝরনা)",
+        "slug": "shangrampunji-waterfall",
+        "division": "Sylhet",
+        "district": "Sylhet",
+        "upazila": "Gowainghat",
         "category": "Waterfall",
         "categories": [
             "Waterfall",
-            "Lake"
+            "Nature"
         ],
-        "rating": 4.6,
-        "reviews": 950,
-        "latitude": 22.715,
-        "longitude": 92.235,
-        "image": "assets/destinations/kaptai-lake-cruise.webp",
-        "shortDesc": "কাপ্তাই হ্রদের স্বচ্ছ বুক চিরে ট্রলার ভ্রমণের পর পাহাড় থেকে পতিত শুভলং ঝর্ণা।",
-        "imageLg": "assets/destinations/kaptai-lake-cruise.webp",
+        "rating": 4.7,
+        "reviews": 1100,
+        "latitude": 25.1762,
+        "longitude": 92.0154,
+        "image": "/assets/destinations/shangrampunji-waterfall.webp",
+        "imageLg": "/assets/destinations/shangrampunji-waterfall.webp",
         "gallery": [
-            "assets/destinations/kaptai-lake-cruise.webp"
-        ]
+            "/assets/destinations/shangrampunji-waterfall.webp"
+        ],
+        "photoId": "mayabi-jharna-jaflong",
+        "galleryIds": [
+            "mayabi-jharna-jaflong"
+        ],
+        "shortDesc": "The legendary multi-tiered cascading waterfall nestled inside the lush Shangrampunji Khasia border forest at Jaflong.",
+        "description": "Popularly known as Mayabi Jharna (মায়াবী ঝরনা), Shangrampunji Waterfall is situated just across the Piyain river at Jaflong near the indigenous Shangrampunji Khasia punji. Tumbling down through multiple verdant mossy steps of natural limestone bedrock surrounded by betel-leaf groves and tall subtropical trees, this cascading jewel provides a refreshing cool spray and unmatched photographic grandeur.",
+        "bestTime": "June – October (Monsoon & Autumn)",
+        "recommendedDays": "Half day",
+        "difficulty": "Easy",
+        "budget": "BDT 400 – 900",
+        "travelType": "Family, Friends, Nature Lovers",
+        "activities": [
+            "Boat ride across Piyain river",
+            "Bathing under the cool waterfall tiers",
+            "Visiting Khasia indigenous village and betel leaf gardens"
+        ],
+        "attractions": [
+            "Mayabi Jharna Cascades",
+            "Khasia Tribal Punji",
+            "Piyain River Sandbanks",
+            "Jaflong Zero Point"
+        ],
+        "tips": [
+            "Hire a wooden country boat from Jaflong Zero Point to cross the river.",
+            "Be mindful of slippery moss-covered rocks."
+        ],
+        "things_to_do": [
+            "Take a refreshing bath in the cascade",
+            "Explore Khasia community lifestyle",
+            "Photograph the tiers"
+        ],
+        "what_to_see": [
+            "Multi-tier waterfalls",
+            "Green betel leaf orchards",
+            "Distant Dawki bridge in India"
+        ],
+        "travel_tips": [
+            "Direct tourist buses and microbuses run from Sylhet Sobhanighat to Jaflong."
+        ],
+        "transport_options": [
+            "Bus",
+            "Microbus",
+            "Country Boat"
+        ],
+        "nearby_destinations": [
+            "jaflong",
+            "lalakhal",
+            "ratargul-swamp-forest"
+        ],
+        "nearby_hotels": [
+            "Jaflong Tourist Rest Houses",
+            "Sylhet City Hotels"
+        ],
+        "featured": true,
+        "popularity": "high",
+        "status": "active",
+        "tags": [
+            "waterfall",
+            "jaflong",
+            "nature"
+        ],
+        "travelInfo": {
+            "from": "Sylhet City",
+            "distanceKm": 58,
+            "duration": "1.5 – 2 hours",
+            "route": "Sylhet → Tamabil Highway → Jaflong Zero Point → 10 min boat cross to Shangrampunji",
+            "transport": [
+                "Bus from Sobhanighat",
+                "Private Car",
+                "Country Boat"
+            ]
+        }
     },
     {
-        "id": 271,
-        "name": "Sajek Valley Konglak Peak",
-        "name_bn": "কংলাক পাহাড় চূড়া, সাজেক",
-        "slug": "sajek-valley-konglak-peak",
-        "division": "Chattogram",
-        "district": "Rangamati",
-        "category": "Mountain",
+        "id": 284,
+        "name": "Rajshahi University (Paris Road)",
+        "name_bn": "রাজশাহী বিশ্ববিদ্যালয় (প্যারিস রোড)",
+        "slug": "rajshahi-university",
+        "division": "Rajshahi",
+        "district": "Rajshahi",
+        "upazila": "Motihar",
+        "category": "Campus & Heritage",
         "categories": [
-            "Mountain",
+            "Campus & Heritage",
+            "Historical",
             "Nature"
         ],
         "rating": 4.9,
-        "reviews": 1480,
-        "latitude": 23.405,
-        "longitude": 92.295,
-        "image": "assets/destinations/sajek-valley-konglak-peak.webp",
-        "shortDesc": "মেঘের উপত্যকা সাজেকের সর্বোচ্চ চূড়া কংলাক পাড়া যেখান থেকে চারপাশের মেঘ ও পাহাড়ের ৩৬০ ডিগ্রি ভিউ দেখা যায়।",
-        "imageLg": "assets/destinations/sajek-valley-konglak-peak.webp",
+        "reviews": 1540,
+        "latitude": 24.3688,
+        "longitude": 88.6381,
+        "image": "/assets/destinations/rajshahi-university.webp",
+        "imageLg": "/assets/destinations/rajshahi-university.webp",
         "gallery": [
-            "assets/destinations/sajek-valley-konglak-peak.webp"
+            "/assets/destinations/rajshahi-university.webp"
+        ],
+        "photoId": "ru-paris-road",
+        "galleryIds": [
+            "ru-paris-road"
+        ],
+        "shortDesc": "The iconic 750-acre 'Green Sanctuary' campus renowned for its legendary sky-touching Paris Road Gagan Sirish trees.",
+        "description": "Established in 1953, the University of Rajshahi (RU) is celebrated as Bangladesh's most verdant, architecturally harmonious campus. Its signature pride is the legendary 'Paris Road', lined with towering Gagan Sirish (Albizia richardiana) trees planted in the 1960s that form a majestic cathedral-like natural canopy. The campus also features the magnificent 'Sabhash Bangladesh' Liberation War monument sculpted by Nitun Kundu, the historic Shahidullah Arts building, and the revered Shaheed Smriti Sangrahashala museum.",
+        "bestTime": "October – March",
+        "recommendedDays": "1 day",
+        "difficulty": "Easy",
+        "budget": "BDT 200 – 600 / day",
+        "travelType": "History Lovers, Students, Architecture Enthusiasts, Walkers",
+        "activities": [
+            "Strolling down the enchanting Paris Road canopy",
+            "Photographing the Sabhash Bangladesh monument",
+            "Visiting the Varendra Research Museum branch and Shahid Smriti Sangrahashala",
+            "Cycling around the lush lakes and university stadium"
+        ],
+        "attractions": [
+            "Paris Road Gagan Sirish Canopy",
+            "Sabhash Bangladesh Monument",
+            "Shaheed Smriti Sangrahashala",
+            "Shahidullah Arts Building",
+            "RU Central Library & Pond"
+        ],
+        "tips": [
+            "Autumn and winter afternoons offer sublime golden-hour sunlight through the Paris Road trees.",
+            "Respect academic environments."
+        ],
+        "things_to_do": [
+            "Walk Paris Road",
+            "Sit by the university ponds",
+            "Taste famous Rajshahi sweets at University gate"
+        ],
+        "what_to_see": [
+            "Cathedral tree canopy",
+            "Liberation war sculpture",
+            "Red brick faculty architecture"
+        ],
+        "travel_tips": [
+            "Located right along the Dhaka-Rajshahi highway in Motihar."
+        ],
+        "transport_options": [
+            "Auto-rickshaw",
+            "Rickshaw",
+            "Bus"
+        ],
+        "nearby_destinations": [
+            "varendra-museum",
+            "padma-river-rajshahi",
+            "puthia-temple-complex"
+        ],
+        "nearby_hotels": [
+            "Hotel Grand Riverview Rajshahi",
+            "Parjatan Motel Rajshahi"
+        ],
+        "featured": true,
+        "popularity": "very_high",
+        "status": "active",
+        "tags": [
+            "campus",
+            "paris-road",
+            "heritage",
+            "trees"
+        ],
+        "travelInfo": {
+            "from": "Rajshahi Zero Point",
+            "distanceKm": 5,
+            "duration": "15 minutes",
+            "route": "Zero Point → Shaheb Bazar → Talaimari → RU Main Gate",
+            "transport": [
+                "Battery auto-rickshaw",
+                "Rickshaw"
+            ]
+        }
+    },
+    {
+        "id": 285,
+        "name": "Chalan Beel",
+        "name_bn": "চলনবিল",
+        "slug": "chalan-beel",
+        "division": "Rajshahi",
+        "district": "Natore",
+        "upazila": "Singra",
+        "category": "Nature",
+        "categories": [
+            "Nature",
+            "Wetland",
+            "Eco Tourism"
+        ],
+        "rating": 4.6,
+        "reviews": 860,
+        "latitude": 24.45,
+        "longitude": 89.25,
+        "image": "/assets/destinations/chalan-beel.webp",
+        "imageLg": "/assets/destinations/chalan-beel.webp",
+        "gallery": [
+            "/assets/destinations/chalan-beel.webp"
+        ],
+        "photoId": "chalan-beel-water",
+        "galleryIds": [
+            "chalan-beel-water"
+        ],
+        "shortDesc": "The largest inland wetland marsh and aquatic ecosystem in northern Bangladesh, a paradise of monsoon boat journeys.",
+        "description": "Spanning across Natore, Sirajganj, and Pabna districts, Chalan Beel is a colossal interconnected network of wetlands, rivers, and lagoons. During the monsoon, the entire region transforms into a vast inland sea with gentle waves, water lilies, and picturesque village mounds rising like islands. It is nationally celebrated for delicious fresh river fish, birdwatching, and sunset engine-boat safaris across endless horizons.",
+        "bestTime": "July – October (Full monsoon water) or December – February (Migratory birds)",
+        "recommendedDays": "1 – 2 days",
+        "difficulty": "Easy",
+        "budget": "BDT 600 – 1,500 / day",
+        "travelType": "Family, Nature Lovers, Foodies, Photographers",
+        "activities": [
+            "Engine boat cruising across the vast wetland",
+            "Tasting authentic fresh Chalan Beel fish curries",
+            "Visiting the Chalan Beel Museum in Gurudaspur",
+            "Sunset watching from Singra submersible road"
+        ],
+        "attractions": [
+            "Vast Open Waters",
+            "Singra Submersible Road",
+            "Chalan Beel Museum",
+            "Water Lily Fields"
+        ],
+        "tips": [
+            "Hire a motorized boat from Singra or Tarash ghat for an open water tour.",
+            "Taste the local fresh koi, magur, and boal fish."
+        ],
+        "things_to_do": [
+            "Take a boat safari",
+            "Eat fresh local fish at ghat restaurants",
+            "Watch the endless monsoon sunset"
+        ],
+        "what_to_see": [
+            "Island villages",
+            "Fishermen with polo and nets",
+            "Aquatic birds"
+        ],
+        "travel_tips": [
+            "Reached easily from Natore town via the Natore-Bogra highway."
+        ],
+        "transport_options": [
+            "Bus",
+            "Train to Natore/Ullapara",
+            "Engine Boat"
+        ],
+        "nearby_destinations": [
+            "natore-rajbari",
+            "uttara-gano-bhaban"
+        ],
+        "nearby_hotels": [
+            "Hotels in Natore Town",
+            "Parjatan Motel"
+        ],
+        "featured": true,
+        "popularity": "high",
+        "status": "active",
+        "tags": [
+            "wetland",
+            "beel",
+            "nature",
+            "monsoon"
+        ],
+        "travelInfo": {
+            "from": "Natore Town",
+            "distanceKm": 25,
+            "duration": "40 minutes",
+            "route": "Natore → Singra Highway → Chalan Beel Ghat",
+            "transport": [
+                "Bus to Singra",
+                "CNG Auto-rickshaw",
+                "Country boat"
+            ]
+        }
+    },
+    {
+        "id": 286,
+        "name": "Somapura Mahavihara (Paharpur)",
+        "name_bn": "সোমপুর মহাবিহার (পাহাড়পুর)",
+        "slug": "somapura-mahavihara",
+        "division": "Rajshahi",
+        "district": "Naogaon",
+        "upazila": "Badalgachhi",
+        "category": "Historical",
+        "categories": [
+            "Historical",
+            "Archaeological",
+            "UNESCO Heritage"
+        ],
+        "rating": 4.9,
+        "reviews": 1670,
+        "latitude": 25.0315,
+        "longitude": 88.9769,
+        "image": "/assets/destinations/somapura-mahavihara.webp",
+        "imageLg": "/assets/destinations/somapura-mahavihara.webp",
+        "gallery": [
+            "/assets/destinations/somapura-mahavihara.webp",
+            "assets/destinations/paharpur.webp"
+        ],
+        "photoId": "paharpur-cruciform-stupa",
+        "galleryIds": [
+            "paharpur-cruciform-stupa"
+        ],
+        "shortDesc": "An 8th-century UNESCO World Heritage Buddhist monastic city, the largest pre-modern monastery south of the Himalayas.",
+        "description": "Designated as a UNESCO World Heritage Site in 1985, Somapura Mahavihara was built under the great Pala Emperor Dharmapala in the late 8th century. Spanning an astonishing 27-acre quadrangle with 177 monk residential cells and a monumental cruciform central shrine, it stands as the zenith of Buddhist terracotta art and brick architecture in Asia. The site museum displays priceless stone statues, inscribed copper plates, and thousands of carved terracotta plaques reflecting ancient Bengal life.",
+        "bestTime": "October – March",
+        "recommendedDays": "1 day",
+        "difficulty": "Easy",
+        "budget": "BDT 400 – 1,000 / day",
+        "travelType": "History Lovers, Archaeology Enthusiasts, Global Travelers, Students",
+        "activities": [
+            "Exploring the 177 monastic cells",
+            "Admiring the central cruciform temple and terracotta plaques",
+            "Visiting the Paharpur Archaeological Museum",
+            "Walking through the landscaped ancient courtyards",
+            "Site exploration",
+            "Terracotta plaque viewing",
+            "Museum visit",
+            "Sunset over ruins",
+            "Photography"
+        ],
+        "attractions": [
+            "Central Cruciform Stupa",
+            "Monastic Cells Quadrangle",
+            "Paharpur Site Museum",
+            "Terracotta Bas-Reliefs",
+            "Ancient Bathing Ghat (Sandhyavati Ghat)",
+            "Somapura Mahavihara",
+            "Paharpur Museum",
+            "Jagaddala Vihara (ruins)",
+            "Temple complex grounds"
+        ],
+        "tips": [
+            "Hire a certified archaeological guide at the entrance to understand the site's rich history.",
+            "Avoid visiting during noon heat in summer.",
+            "Carry water and a hat — shade is limited.",
+            "The museum closes early (usually 5pm).",
+            "Visit on weekdays for a quieter experience."
+        ],
+        "things_to_do": [
+            "Walk around the central sanctum",
+            "Explore the museum antiquities",
+            "Photograph the terracotta details",
+            "Site exploration",
+            "Terracotta plaque viewing",
+            "Museum visit",
+            "Sunset over ruins",
+            "Photography"
+        ],
+        "what_to_see": [
+            "1200-year-old terracotta tiles",
+            "Grand cruciform brick shrine",
+            "Bronze and basalt Buddha sculptures",
+            "Somapura Mahavihara",
+            "Paharpur Museum",
+            "Jagaddala Vihara (ruins)",
+            "Temple complex grounds"
+        ],
+        "travel_tips": [
+            "Direct trains run from Dhaka to Joypurhat, from where Paharpur is just 12 km by auto-rickshaw.",
+            "Carry water and a hat — shade is limited.",
+            "The museum closes early (usually 5pm).",
+            "Visit on weekdays for a quieter experience."
+        ],
+        "transport_options": [
+            "Train (to Joypurhat)",
+            "Bus",
+            "CNG Auto-rickshaw",
+            "Train",
+            "Private Car"
+        ],
+        "nearby_destinations": [
+            "mahasthangarh",
+            "kusumba-mosque",
+            "kantajew-temple"
+        ],
+        "nearby_hotels": [
+            "Archaeology Rest House Paharpur",
+            "Joypurhat Hotels"
+        ],
+        "featured": true,
+        "popularity": "very_high",
+        "status": "active",
+        "tags": [
+            "unesco",
+            "historical",
+            "archaeology",
+            "monastery"
+        ],
+        "travelInfo": {
+            "from": "Dhaka",
+            "distanceKm": 280,
+            "duration": "5 hours by Train",
+            "route": "Dhaka Kamalapur → Joypurhat Station (Drutojan/Ekota Express) → 12 km auto to Paharpur",
+            "transport": [
+                "Intercity Train",
+                "Direct Bus from Gabtoli",
+                "CNG Auto-rickshaw"
+            ]
+        },
+        "alternateNames": [
+            "Paharpur",
+            "পাহাড়পুর"
         ]
+    },
+    {
+        "id": 287,
+        "name": "Kotka Beach & Wildlife Sanctuary",
+        "name_bn": "কোটকা সমুদ্র সৈকত ও অভয়ারণ্য",
+        "slug": "kotka-beach-sundarbans",
+        "division": "Khulna",
+        "district": "Bagerhat",
+        "upazila": "Sarankhola",
+        "category": "Forest",
+        "categories": [
+            "Forest",
+            "Wildlife",
+            "Beach",
+            "UNESCO Heritage"
+        ],
+        "rating": 4.9,
+        "reviews": 1140,
+        "latitude": 21.8542,
+        "longitude": 89.7781,
+        "image": "/assets/destinations/kotka-beach-sundarbans.webp",
+        "imageLg": "/assets/destinations/kotka-beach-sundarbans.webp",
+        "gallery": [
+            "/assets/destinations/kotka-beach-sundarbans.webp"
+        ],
+        "photoId": "kotka-deer-beach",
+        "galleryIds": [
+            "kotka-deer-beach"
+        ],
+        "shortDesc": "The wild crown jewel of the Sundarbans, boasting herds of spotted deer, tiger trails, and the secluded Jamtola Beach.",
+        "description": "Located deep in the southeastern sanctuary of the UNESCO-inscribed Sundarbans Mangrove Forest, Kotka is one of the most thrilling wilderness destinations on earth. A wooden watchtower overlooks vast grass meadows where hundreds of spotted deer (Chitra horin) and wild boars graze. A guided forest trail takes visitors through dense mangrove trees to Jamtola Beach—an untouched ocean shoreline littered with ancient petrified tree roots and genuine Royal Bengal Tiger footprints.",
+        "bestTime": "November – February (Sundarbans cruise season)",
+        "recommendedDays": "3 – 4 days (Sundarbans boat package)",
+        "difficulty": "Moderate",
+        "budget": "BDT 8,000 – 18,000 (Multi-day luxury ship tour)",
+        "travelType": "Wildlife Enthusiasts, Explorers, Photographers",
+        "activities": [
+            "Climbing the Kotka Wildlife Watchtower",
+            "Trekking to Jamtola Sea Beach",
+            "Spotting Royal Bengal Tiger pugmarks",
+            "Canopy birdwatching and silent canal cruising in dinghy boats"
+        ],
+        "attractions": [
+            "Kotka Watchtower & Deer Meadow",
+            "Jamtola Sea Beach",
+            "Tiger Point",
+            "Mangrove Forest Trails"
+        ],
+        "tips": [
+            "Must visit via an authorized tourist vessel with armed forest department guards.",
+            "Follow forest safety protocols and stay strictly with your group."
+        ],
+        "things_to_do": [
+            "Watch hundreds of spotted deer",
+            "Hike through the wild mangrove forest",
+            "Listen to forest bird calls"
+        ],
+        "what_to_see": [
+            "Spotted deer",
+            "Bengal tiger footprints",
+            "Ghost trees on Jamtola beach",
+            "Saltwater crocodiles"
+        ],
+        "travel_tips": [
+            "Board a multi-day Sundarbans cruise vessel from Khulna or Mongla."
+        ],
+        "transport_options": [
+            "Tourist Cruise Ship",
+            "Country Boat"
+        ],
+        "nearby_destinations": [
+            "sundarbans",
+            "karamjal",
+            "hiron-point"
+        ],
+        "nearby_hotels": [
+            "Aboard Sundarbans Cruise Ship",
+            "Mongla Parjatan Hotel"
+        ],
+        "featured": true,
+        "popularity": "very_high",
+        "status": "active",
+        "tags": [
+            "sundarbans",
+            "wildlife",
+            "tiger",
+            "beach",
+            "forest"
+        ],
+        "travelInfo": {
+            "from": "Mongla Port / Khulna",
+            "distanceKm": 120,
+            "duration": "10 – 14 hours by river vessel",
+            "route": "Khulna/Mongla → Rupsha / Pasur River → Sundarbans Core Zone → Kotka Sanctuary",
+            "transport": [
+                "Sundarbans Tourist Cruise Ship"
+            ]
+        }
+    },
+    {
+        "id": 288,
+        "name": "Hiron Point (Nilkamal)",
+        "name_bn": "হিরণ পয়েন্ট (নীলকমল)",
+        "slug": "hiron-point",
+        "division": "Khulna",
+        "district": "Khulna",
+        "upazila": "Koyra",
+        "category": "Forest",
+        "categories": [
+            "Forest",
+            "Wildlife",
+            "UNESCO Heritage"
+        ],
+        "rating": 4.8,
+        "reviews": 780,
+        "latitude": 21.7833,
+        "longitude": 89.4667,
+        "image": "/assets/destinations/hiron-point.webp",
+        "imageLg": "/assets/destinations/hiron-point.webp",
+        "gallery": [
+            "/assets/destinations/hiron-point.webp"
+        ],
+        "photoId": "hiron-point-nilkamal",
+        "galleryIds": [
+            "hiron-point-nilkamal"
+        ],
+        "shortDesc": "A protected wildlife haven in the southern Sundarbans, celebrated for kingfishers, deer, and Royal Bengal Tigers.",
+        "description": "Hiron Point, also known by the enchanting name of Nilkamal, is a premier wildlife sanctuary located in the southern part of the Sundarbans near the Bay of Bengal. Situated along the banks of the Nilkamal river, it features a scenic wooden boardwalk through mangrove roots, a wildlife watchtower, and rich biodiversity including otters, monitor lizards, eagles, and spotted deer.",
+        "bestTime": "November – February",
+        "recommendedDays": "3 – 4 days (Cruise package)",
+        "difficulty": "Moderate",
+        "budget": "BDT 8,000 – 18,000 (Cruise package)",
+        "travelType": "Adventure, Nature Lovers, Wildlife Photographers",
+        "activities": [
+            "Boardwalk walking through mangrove roots",
+            "Watching wild otters fishing",
+            "Birdwatching along the creek",
+            "Sunset over Nilkamal river"
+        ],
+        "attractions": [
+            "Nilkamal River",
+            "Boardwalk Trail",
+            "Forest Watchtower",
+            "Wildlife Sanctuary"
+        ],
+        "tips": [
+            "Maintain complete silence while walking on the boardwalk to avoid startling wild animals."
+        ],
+        "things_to_do": [
+            "Climb the watchtower",
+            "Explore the coastal mangrove",
+            "Spot diverse birds and deer"
+        ],
+        "what_to_see": [
+            "Spotted deer",
+            "Wild boar",
+            "Kingfishers",
+            "Bengal tigers in wild habitat"
+        ],
+        "travel_tips": [
+            "Accessible only via guided cruise ships originating from Mongla or Khulna."
+        ],
+        "transport_options": [
+            "Cruise Ship",
+            "Forest Motor Launch"
+        ],
+        "nearby_destinations": [
+            "kotka-beach-sundarbans",
+            "sundarbans",
+            "karamjal"
+        ],
+        "nearby_hotels": [
+            "Cruise Ship Cabins"
+        ],
+        "featured": false,
+        "popularity": "high",
+        "status": "active",
+        "tags": [
+            "sundarbans",
+            "wildlife",
+            "mangrove"
+        ],
+        "travelInfo": {
+            "from": "Mongla Port",
+            "distanceKm": 135,
+            "duration": "12 hours by vessel",
+            "route": "Mongla → Pasur River → Southern Sundarbans → Hiron Point",
+            "transport": [
+                "Tourist Vessel"
+            ]
+        }
+    },
+    {
+        "id": 289,
+        "name": "Karamjal Eco Tourism Centre",
+        "name_bn": "করমজল ইকো ট্যুরিজম কেন্দ্র",
+        "slug": "karamjal",
+        "division": "Khulna",
+        "district": "Bagerhat",
+        "upazila": "Mongla",
+        "category": "Wildlife",
+        "categories": [
+            "Wildlife",
+            "Eco Tourism",
+            "Forest"
+        ],
+        "rating": 4.6,
+        "reviews": 1250,
+        "latitude": 22.4283,
+        "longitude": 89.5931,
+        "image": "/assets/destinations/karamjal.webp",
+        "imageLg": "/assets/destinations/karamjal.webp",
+        "gallery": [
+            "/assets/destinations/karamjal.webp"
+        ],
+        "photoId": "karamjal-canopy-trail",
+        "galleryIds": [
+            "karamjal-canopy-trail"
+        ],
+        "shortDesc": "The prime gateway to the Sundarbans, home to the nation's only saltwater crocodile breeding centre and deer sanctuary.",
+        "description": "Located just a short scenic boat ride from Mongla port, Karamjal is the most accessible eco-tourism facility in the Sundarbans. It features the country's sole government breeding center for the endangered saltwater crocodile (Romeo and Juliet), a spotted deer breeding station, a scenic 1.5-kilometer elevated wooden canopy boardwalk winding through sundari and gewa trees, and a 30-foot wildlife observation tower.",
+        "bestTime": "Year-round (Best: October – March)",
+        "recommendedDays": "Half to 1 day",
+        "difficulty": "Easy",
+        "budget": "BDT 500 – 1,200 / day",
+        "travelType": "Family, Children, Day-trippers, Nature Lovers",
+        "activities": [
+            "Walking the wooden canopy walkway",
+            "Visiting crocodile breeding enclosures",
+            "Feeding spotted deer under ranger supervision",
+            "Spotting monkeys and dolphins in the Pasur river"
+        ],
+        "attractions": [
+            "Saltwater Crocodile Breeding Station",
+            "Deer Sanctuary",
+            "Wooden Canopy Walkway",
+            "Sundarbans Relief Map & Museum"
+        ],
+        "tips": [
+            "Watch out for cheeky rhesus macaques who may try to grab loose food items or sunglasses."
+        ],
+        "things_to_do": [
+            "Walk among the mangrove roots",
+            "See baby and giant saltwater crocodiles",
+            "Climb the watchtower"
+        ],
+        "what_to_see": [
+            "Giant saltwater crocodiles",
+            "Spotted deer herds",
+            "Rhesus macaques",
+            "Sundari mangrove trees"
+        ],
+        "travel_tips": [
+            "Hire a motorized country boat or speed boat from Mongla Ferry Ghat."
+        ],
+        "transport_options": [
+            "Motorboat from Mongla",
+            "Trawler",
+            "Speedboat"
+        ],
+        "nearby_destinations": [
+            "bagerhat",
+            "kotka-beach-sundarbans",
+            "sundarbans"
+        ],
+        "nearby_hotels": [
+            "Parjatan Hotel Pashur Mongla",
+            "City Inn Khulna"
+        ],
+        "featured": true,
+        "popularity": "very_high",
+        "status": "active",
+        "tags": [
+            "crocodiles",
+            "deer",
+            "sundarbans",
+            "canopy"
+        ],
+        "travelInfo": {
+            "from": "Mongla Ghat",
+            "distanceKm": 8,
+            "duration": "45 minutes by engine boat",
+            "route": "Khulna → Mongla Port → Pasur River Boat Crossing → Karamjal",
+            "transport": [
+                "Engine Boat / Trawler from Mongla Ghat"
+            ]
+        }
+    },
+    {
+        "id": 290,
+        "name": "Bhimruli Floating Guava Market",
+        "name_bn": "ভীমরুলী ভাসমান পেয়ারা বাজার",
+        "slug": "bhimruli-floating-guava-market",
+        "division": "Barishal",
+        "district": "Jhalokathi",
+        "upazila": "Jhalakathi Sadar",
+        "category": "Cultural",
+        "categories": [
+            "Cultural",
+            "River",
+            "Agri-Tourism",
+            "Village"
+        ],
+        "rating": 4.8,
+        "reviews": 1420,
+        "latitude": 22.6841,
+        "longitude": 90.1834,
+        "image": "/assets/destinations/bhimruli-floating-guava-market.webp",
+        "imageLg": "/assets/destinations/bhimruli-floating-guava-market.webp",
+        "gallery": [
+            "/assets/destinations/bhimruli-floating-guava-market.webp"
+        ],
+        "photoId": "bhimruli-guava-boats",
+        "galleryIds": [
+            "bhimruli-guava-boats"
+        ],
+        "shortDesc": "South Asia's largest floating produce market, where hundreds of wooden boats trade fresh green guavas on winding canals.",
+        "description": "Nestled at the Y-shaped junction of canals in Bhimruli village of Jhalakathi, this 200-year-old floating market is often dubbed the 'Venice of Bengal'. Every day during peak harvest, hundreds of wooden dinghies filled to the brim with crispy green local guavas (পেয়ারা) and hog plums (আমড়া) gather on the water. Cruising through the quiet canal networks under lush canopies of guava orchards and traditional brick bridges is one of the most magical rural experiences in Bangladesh.",
+        "bestTime": "July – September (Peak guava harvest season)",
+        "recommendedDays": "1 – 2 days",
+        "difficulty": "Easy",
+        "budget": "BDT 500 – 1,500 / day",
+        "travelType": "Photographers, Culture Seekers, Families, Foodies",
+        "activities": [
+            "Cruising through canal guava orchards in a traditional wooden boat",
+            "Photographing floating boat transactions from the iron bridge",
+            "Tasting fresh sweet guavas and hog plums straight from orchards",
+            "Exploring traditional backwater village lifestyle",
+            "Watch the floating trade",
+            "Buy fresh guavas",
+            "Photograph the boats"
+        ],
+        "attractions": [
+            "Floating Boat Market",
+            "Bhimruli Iron Bridge Viewpoint",
+            "Canal Guava Orchards",
+            "Floating Hog Plum & Rice Trade",
+            "Floating guava bazaar",
+            "Kirtankhola river"
+        ],
+        "tips": [
+            "Arrive at the market between 9:00 AM and 1:00 PM when trade is at its peak.",
+            "Hire a small wooden boat (dinghy) for an intimate canal voyage.",
+            "Best in the guava season",
+            "Go early morning",
+            "Ask permission before photographing people"
+        ],
+        "things_to_do": [
+            "Ride a dinghy boat through the market",
+            "Buy freshly plucked guavas",
+            "Photograph the boat vendors from the bridge",
+            "Watch the floating trade",
+            "Buy fresh guavas",
+            "Photograph the boats"
+        ],
+        "what_to_see": [
+            "Boats piled high with green guavas",
+            "Canal networks",
+            "Lush orchard canopies",
+            "Floating guava bazaar",
+            "Kirtankhola river"
+        ],
+        "travel_tips": [
+            "Direct launch from Dhaka Sadarghat to Barishal or Hularhat, then auto to Bhimruli.",
+            "Best in the guava season",
+            "Go early morning",
+            "Ask permission before photographing people"
+        ],
+        "transport_options": [
+            "Launch (from Dhaka)",
+            "Engine Boat",
+            "Auto-rickshaw",
+            "Bus",
+            "Boat"
+        ],
+        "nearby_destinations": [
+            "guthia-mosque",
+            "durga-sagar",
+            "kuakata",
+            "barishal-bell-park",
+            "sugandha-river"
+        ],
+        "nearby_hotels": [
+            "Hotels in Barishal City",
+            "Jhalakathi Rest Houses"
+        ],
+        "featured": true,
+        "popularity": "very_high",
+        "status": "active",
+        "tags": [
+            "market",
+            "guava",
+            "river",
+            "boat",
+            "barishal",
+            "floating market"
+        ],
+        "travelInfo": {
+            "from": "Barishal City",
+            "distanceKm": 28,
+            "duration": "1 hour by road or 1.5 hours by boat",
+            "route": "Barishal Rupatali → Jhalakathi → Bhimruli Canal Ghat",
+            "transport": [
+                "Auto-rickshaw / Bus to Jhalakathi",
+                "Trawler/Dinghy boat through canals"
+            ]
+        },
+        "alternateNames": [
+            "Floating Guava Market",
+            "ভাসমান পেয়ারা বাজার"
+        ]
+    },
+    {
+        "id": 291,
+        "name": "Lebur Char & Red Crab Island",
+        "name_bn": "লেবুর চর ও লাল কাঁকড়ার দ্বীপ",
+        "slug": "lebur-char",
+        "division": "Barishal",
+        "district": "Patuakhali",
+        "upazila": "Kalapara",
+        "category": "Beach",
+        "categories": [
+            "Beach",
+            "Nature",
+            "Wildlife"
+        ],
+        "rating": 4.7,
+        "reviews": 890,
+        "latitude": 21.8215,
+        "longitude": 90.0712,
+        "image": "/assets/destinations/lebur-char.webp",
+        "imageLg": "/assets/destinations/lebur-char.webp",
+        "gallery": [
+            "/assets/destinations/lebur-char.webp"
+        ],
+        "photoId": "lebur-char-crabs",
+        "galleryIds": [
+            "lebur-char-crabs"
+        ],
+        "shortDesc": "The wild western point of Kuakata where the Payra river meets the sea, famed for colonies of red ghost crabs and sunsets.",
+        "description": "Located at the westernmost tip of Kuakata beach, Lebur Char (also known as Lebur Bon) is an unspoiled natural estuary where the Payra and Shibbaria rivers merge into the Bay of Bengal. As the tide recedes, miles of glistening wet sand are carpeted by thousands of bright red ghost crabs scurrying in unison. The char is also famous for its mangrove tree root formations, fresh open-air grilled fish shacks, and spectacular uninterrupted sunset views.",
+        "bestTime": "October – March",
+        "recommendedDays": "Half day",
+        "difficulty": "Easy",
+        "budget": "BDT 300 – 800",
+        "travelType": "Nature Lovers, Photographers, Foodies, Couples",
+        "activities": [
+            "Watching thousands of red ghost crabs scurry across the sand",
+            "Tasting freshly caught grilled Rupchanda and Coral fish",
+            "Walking along the estuary sands where river meets sea",
+            "Capturing sunset photographs with mangrove driftwood"
+        ],
+        "attractions": [
+            "Red Ghost Crab Colonies",
+            "River-Sea Confluence",
+            "Fresh Fish BBQ Stalls",
+            "Mangrove Driftwood"
+        ],
+        "tips": [
+            "Approach the crabs quietly without sudden movements, as they vanish into sand holes instantly.",
+            "Eat at the local beachside grilled fish shacks for an unforgettable meal."
+        ],
+        "things_to_do": [
+            "Watch red crabs",
+            "Eat freshly barbecued pomfret",
+            "Watch the golden sun sink into the sea"
+        ],
+        "what_to_see": [
+            "Carpet of crimson crabs",
+            "River mouth",
+            "Sunset reflection on tidal sands"
+        ],
+        "travel_tips": [
+            "Hire a local motorcycle or auto-rickshaw along Kuakata beach to reach Lebur Char in 20 minutes."
+        ],
+        "transport_options": [
+            "Motorcycle",
+            "Auto-rickshaw",
+            "Bicycle"
+        ],
+        "nearby_destinations": [
+            "kuakata",
+            "fatrar-char",
+            "gangamati-reserved-forest"
+        ],
+        "nearby_hotels": [
+            "Sikder Resort Kuakata",
+            "Parjatan Motel Kuakata",
+            "Hotel Graver Inn"
+        ],
+        "featured": true,
+        "popularity": "high",
+        "status": "active",
+        "tags": [
+            "kuakata",
+            "crabs",
+            "sunset",
+            "beach"
+        ],
+        "travelInfo": {
+            "from": "Kuakata Zero Point",
+            "distanceKm": 8,
+            "duration": "20 minutes by beach bike",
+            "route": "Kuakata Main Beach → Western Beach Trail → Lebur Char",
+            "transport": [
+                "Beach Motorcycle",
+                "Auto-rickshaw"
+            ]
+        }
+    },
+    {
+        "id": 293,
+        "name": "Tin Bigha Corridor",
+        "name_bn": "তিন বিঘা করিডোর ও দহগ্রাম-আঙ্গরপোতা",
+        "slug": "tin-bigha-corridor",
+        "division": "Rangpur",
+        "district": "Lalmonirhat",
+        "upazila": "Patgram",
+        "category": "Historical",
+        "categories": [
+            "Historical",
+            "Border Heritage"
+        ],
+        "rating": 4.5,
+        "reviews": 620,
+        "latitude": 26.2572,
+        "longitude": 88.9839,
+        "image": "/assets/destinations/tin-bigha-corridor.webp",
+        "imageLg": "/assets/destinations/tin-bigha-corridor.webp",
+        "gallery": [
+            "/assets/destinations/tin-bigha-corridor.webp"
+        ],
+        "photoId": "tin-bigha-gate",
+        "galleryIds": [
+            "tin-bigha-gate"
+        ],
+        "shortDesc": "A historic sovereign land strip connecting Dahagram-Angarpota enclave with mainland Bangladesh.",
+        "description": "The Tin Bigha Corridor is a strip of sovereign territory in Patgram upazila of Lalmonirhat that connects the Dahagram-Angarpota enclave—the largest enclave of Bangladesh—to the mainland. Marked by significant diplomatic history, border gates, and peaceful pastoral borderland scenery, it is a fascinating educational pilgrimage site showcasing national heritage, border cooperation, and tranquil countryside life.",
+        "bestTime": "October – March",
+        "recommendedDays": "1 day",
+        "difficulty": "Easy",
+        "budget": "BDT 300 – 800",
+        "travelType": "History Lovers, Curious Travelers, Patriotic Visitors",
+        "activities": [
+            "Walking through the historical border corridor",
+            "Visiting Dahagram enclave countryside",
+            "Observing the BGB and BSF joint border security gates",
+            "Photographing the lush northern green fields"
+        ],
+        "attractions": [
+            "Tin Bigha Gate",
+            "Dahagram Enclave",
+            "Border Zero Line",
+            "Patgram Countryside"
+        ],
+        "tips": [
+            "Carry national identification (NID) for smooth border crossing inspection.",
+            "Corridor is open 24 hours for civilian transit."
+        ],
+        "things_to_do": [
+            "Walk the corridor",
+            "See the enclave lifestyle",
+            "Photograph border gates"
+        ],
+        "what_to_see": [
+            "Border flags",
+            "Sovereign corridor strip",
+            "Rural North Bengal landscapes"
+        ],
+        "travel_tips": [
+            "Direct trains run from Dhaka to Burimari / Patgram (Karatoya / Lalmoni Express)."
+        ],
+        "transport_options": [
+            "Bus",
+            "Train to Patgram",
+            "Auto-rickshaw"
+        ],
+        "nearby_destinations": [
+            "teesta-barrage",
+            "tajhat-palace"
+        ],
+        "nearby_hotels": [
+            "Patgram Rest Houses",
+            "Lalmonirhat Hotels"
+        ],
+        "featured": false,
+        "popularity": "medium",
+        "status": "active",
+        "tags": [
+            "border",
+            "corridor",
+            "history",
+            "rangpur"
+        ],
+        "travelInfo": {
+            "from": "Lalmonirhat Town",
+            "distanceKm": 85,
+            "duration": "2 hours",
+            "route": "Lalmonirhat → Burimari Highway → Patgram → Tin Bigha Corridor",
+            "transport": [
+                "Bus to Patgram",
+                "Auto-rickshaw to Corridor"
+            ]
+        }
+    },
+    {
+        "id": 294,
+        "name": "Swapnapuri",
+        "name_bn": "স্বপ্নপুরী",
+        "slug": "swapnapuri-dinajpur",
+        "division": "Rangpur",
+        "district": "Dinajpur",
+        "upazila": "Nawabganj",
+        "category": "Family",
+        "categories": [
+            "Family",
+            "Theme Park",
+            "Nature"
+        ],
+        "rating": 4.4,
+        "reviews": 1350,
+        "latitude": 25.4333,
+        "longitude": 89.0833,
+        "image": null,
+        "imageLg": null,
+        "gallery": [],
+        "photoId": "swapnapuri-park",
+        "galleryIds": [
+            "swapnapuri-park"
+        ],
+        "shortDesc": "North Bengal's premier sprawling amusement and eco-park complex covering hundreds of landscaped acres.",
+        "description": "Situated in Nawabganj upazila of Dinajpur, Swapnapuri is a massive artificial and natural tourism complex covering over 400 acres. Featuring expansive boating lakes with water pedal-boats, life-size dinosaur and animal sculptures, a mini zoo, cable car rides, lush gardens, and picnic spots, it is one of northern Bangladesh's most popular family entertainment destinations.",
+        "bestTime": "October – March",
+        "recommendedDays": "1 day",
+        "difficulty": "Easy",
+        "budget": "BDT 400 – 1,000 / day",
+        "travelType": "Family with Kids, School Tours, Picnickers",
+        "activities": [
+            "Pedal boating on artificial lakes",
+            "Riding the cable car",
+            "Visiting the mini zoo and dinosaur park",
+            "Picnicking under shady tree groves"
+        ],
+        "attractions": [
+            "Boating Lakes",
+            "Giant Statues & Sculpture Park",
+            "Cable Car",
+            "Mini Zoo",
+            "Fish Aquarium"
+        ],
+        "tips": [
+            "Arrive by 10 AM to enjoy all sections before afternoon picnic crowds arrive.",
+            "Great family stop when visiting Kantajew Temple."
+        ],
+        "things_to_do": [
+            "Ride pedal boats",
+            "Take family photos with statues",
+            "Walk the floral gardens"
+        ],
+        "what_to_see": [
+            "Giant sculptures",
+            "Boating lakes",
+            "Cable car over water"
+        ],
+        "travel_tips": [
+            "Easily reached via Phulbari or Dinajpur town by bus and auto."
+        ],
+        "transport_options": [
+            "Bus",
+            "Auto-rickshaw",
+            "Car"
+        ],
+        "nearby_destinations": [
+            "kantajew-temple",
+            "ramsagar"
+        ],
+        "nearby_hotels": [
+            "Swapnapuri In-Park Cottages",
+            "Dinajpur City Hotels"
+        ],
+        "featured": false,
+        "popularity": "high",
+        "status": "active",
+        "tags": [
+            "amusement",
+            "family",
+            "dinajpur",
+            "park"
+        ],
+        "travelInfo": {
+            "from": "Dinajpur Town",
+            "distanceKm": 52,
+            "duration": "1.5 hours",
+            "route": "Dinajpur → Phulbari Highway → Nawabganj → Swapnapuri",
+            "transport": [
+                "Bus to Phulbari",
+                "Auto-rickshaw to park gate"
+            ]
+        }
+    },
+    {
+        "id": 295,
+        "name": "Susang Durgapur China Clay Hills",
+        "name_bn": "সুসং দুর্গাপুর চীনামাটির পাহাড় ও বিজয়পুর লেক",
+        "slug": "susang-durgapur-china-clay",
+        "division": "Mymensingh",
+        "district": "Netrokona",
+        "upazila": "Durgapur",
+        "category": "Nature",
+        "categories": [
+            "Nature",
+            "Hill",
+            "Lake"
+        ],
+        "rating": 4.9,
+        "reviews": 1480,
+        "latitude": 25.1389,
+        "longitude": 90.6861,
+        "image": null,
+        "imageLg": null,
+        "gallery": [],
+        "photoId": "durgapur-china-clay",
+        "galleryIds": [
+            "durgapur-china-clay"
+        ],
+        "shortDesc": "Striking pastel-colored China clay hills embracing a mesmerizing turquoise ceramic lake near the Indian border.",
+        "description": "Located in Bijoypur near the Indo-Bangladesh border in Netrokona, the China Clay Hills of Susang Durgapur (চীনামাটির পাহাড়) are one of Bangladesh's most visually surreal natural wonders. Rain and mineral-rich deposits have carved pastel-white, pink, and lilac clay cliffs that cradle deep, transparent turquoise-blue ceramic water pools. The surrounding landscape features the crystalline Someshwari River, Ranikhong mission church atop the ridge, and views of the mist-shrouded Meghalaya mountains.",
+        "bestTime": "October – March (Winter brings clear turquoise water)",
+        "recommendedDays": "1 – 2 days",
+        "difficulty": "Easy to Moderate",
+        "budget": "BDT 800 – 1,800 / day",
+        "travelType": "Nature Lovers, Photographers, Youth Groups, Adventure Seekers",
+        "activities": [
+            "Climbing the white and pink China clay cliffs",
+            "Photographing the mesmerizing turquoise blue ceramic lake",
+            "Boating across the crystal clear Someshwari River",
+            "Visiting the historic Ranikhong Catholic Church and Garo tribal villages",
+            "Trekking to the zero point border hills"
+        ],
+        "attractions": [
+            "Turquoise Ceramic Lake",
+            "China Clay Hills (Bijoypur)",
+            "Crystal Shomeshwari River",
+            "Ranikhong Church on Hilltop",
+            "Hajong & Garo Cultural Academy"
+        ],
+        "tips": [
+            "Hire a local motorcycle rider from Birishiri for full-day sightseeing around all spots.",
+            "Swimming in the ceramic lake is strictly discouraged due to abrupt underwater depth and mineral composition.",
+            "Winter mornings present magical mist rising from the Someshwari river."
+        ],
+        "things_to_do": [
+            "Photograph the turquoise water against white hills",
+            "Cross Someshwari river on a country boat",
+            "Visit Ranikhong hilltop"
+        ],
+        "what_to_see": [
+            "Turquoise lake",
+            "Pastel clay cliffs",
+            "Garo hill vistas",
+            "Shomeshwari riverbeds"
+        ],
+        "travel_tips": [
+            "Direct buses run from Dhaka Mohakhali to Birishiri / Susang Durgapur."
+        ],
+        "transport_options": [
+            "Bus from Mohakhali",
+            "Train to Jaria Jhanjail",
+            "Local Motorcycle"
+        ],
+        "nearby_destinations": [
+            "birishiri",
+            "shashi-lodge"
+        ],
+        "nearby_hotels": [
+            "YMCA Rest House Birishiri",
+            "Swarnalata Guest House"
+        ],
+        "featured": true,
+        "popularity": "very_high",
+        "status": "active",
+        "tags": [
+            "china-clay",
+            "lake",
+            "hills",
+            "durgapur",
+            "nature"
+        ],
+        "travelInfo": {
+            "from": "Dhaka",
+            "distanceKm": 180,
+            "duration": "5 – 6 hours",
+            "route": "Dhaka Mohakhali → Mymensingh → Shamganj → Birishiri → Durgapur",
+            "transport": [
+                "Bus from Mohakhali to Birishiri",
+                "Local trail motorcycle to Bijoypur"
+            ]
+        }
+    },
+    {
+        "id": 296,
+        "name": "Garo Hills Border & Ranikhong",
+        "name_bn": "গারো পাহাড় ও রানীখং",
+        "slug": "garo-hills-ranikhong",
+        "division": "Mymensingh",
+        "district": "Netrokona",
+        "upazila": "Durgapur",
+        "category": "Cultural",
+        "categories": [
+            "Cultural",
+            "Hill",
+            "Heritage"
+        ],
+        "rating": 4.7,
+        "reviews": 670,
+        "latitude": 25.15,
+        "longitude": 90.6667,
+        "image": null,
+        "imageLg": null,
+        "gallery": [],
+        "photoId": "ranikhong-garo-hills",
+        "galleryIds": [
+            "ranikhong-garo-hills"
+        ],
+        "shortDesc": "A century-old historic Catholic mission perched atop a hill overlooking the Shomeshwari river and Meghalaya ranges.",
+        "description": "Built in 1912 by Catholic missionaries on a high cliff overlooking the Someshwari River, the Ranikhong Church is a cultural and architectural gem. From its serene hilltop vantage point, travelers are treated to a panoramic vista of the river meanders, sandy riverbanks, and the towering green ridges of the Indian Meghalaya hills. The surrounding area is home to warm Garo and Hajong indigenous communities with rich cultural traditions.",
+        "bestTime": "October – March",
+        "recommendedDays": "Half to 1 day",
+        "difficulty": "Easy",
+        "budget": "BDT 400 – 900",
+        "travelType": "Cultural Seekers, Photographers, Peaceful Explorers",
+        "activities": [
+            "Visiting the 1912 Ranikhong Catholic Church",
+            "Enjoying panoramic views of the Shomeshwari river valley",
+            "Experiencing Garo tribal cultural hospitality",
+            "Exploring Moni Singha monument"
+        ],
+        "attractions": [
+            "Ranikhong Mission Church",
+            "Someshwari River Viewpoint",
+            "Garo Village Settlements",
+            "Moni Singha Monument"
+        ],
+        "tips": [
+            "Dress respectfully when entering the church grounds.",
+            "Combine with your visit to the China Clay Hills."
+        ],
+        "things_to_do": [
+            "Admire the church architecture",
+            "Look out over the river valley",
+            "Learn about local Garo culture"
+        ],
+        "what_to_see": [
+            "100-year-old brick church",
+            "River meanders below",
+            "Meghalaya mountain ridge"
+        ],
+        "travel_tips": [
+            "Located 7 km north of Birishiri, reached by trail bike or auto."
+        ],
+        "transport_options": [
+            "Motorcycle",
+            "Auto-rickshaw",
+            "Bicycle"
+        ],
+        "nearby_destinations": [
+            "susang-durgapur-china-clay",
+            "birishiri"
+        ],
+        "nearby_hotels": [
+            "Birishiri Guesthouses"
+        ],
+        "featured": false,
+        "popularity": "high",
+        "status": "active",
+        "tags": [
+            "heritage",
+            "church",
+            "garo",
+            "hills"
+        ],
+        "travelInfo": {
+            "from": "Birishiri Town",
+            "distanceKm": 7,
+            "duration": "20 minutes by trail bike",
+            "route": "Birishiri → Someshwari River Crossing → Ranikhong Hilltop",
+            "transport": [
+                "Trail Motorcycle",
+                "Auto-rickshaw"
+            ]
+        }
     }
 ];
 

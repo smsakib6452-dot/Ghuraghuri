@@ -112,7 +112,8 @@
     "category": "Mountain",
     "categories": [
       "Mountain",
-      "Adventure"
+      "Adventure",
+      "Nature"
     ],
     "rating": 4.8,
     "reviews": 980,
@@ -198,7 +199,13 @@
         "Private Car"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Sajek Valley Konglak Peak",
+      "কংলাক পাহাড় চূড়া, সাজেক",
+      "Konglak Peak",
+      "Konglak Para"
+    ]
   },
   {
     "id": 3,
@@ -598,7 +605,10 @@
         "Private Car"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Sreemangal"
+    ]
   },
   {
     "id": 7,
@@ -1087,7 +1097,11 @@
         "Private Car"
       ],
       "flight": "Fly to Sylhet, then ~1.5 hrs by road"
-    }
+    },
+    "alternateNames": [
+      "Ratargul",
+      "রাতারগুল"
+    ]
   },
   {
     "id": 12,
@@ -1205,7 +1219,8 @@
     "image": "/assets/destinations/nijhum-dwip.webp",
     "imageLg": "/assets/destinations/nijhum-dwip.webp",
     "gallery": [
-      "/assets/destinations/nijhum-dwip.webp"
+      "/assets/destinations/nijhum-dwip.webp",
+      "assets/destinations/nijhum-dwip-deer-sanctuary.webp"
     ],
     "photoId": "photo-1506929562872-bb421503ef21",
     "galleryIds": [
@@ -1280,7 +1295,11 @@
         "Private Car"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Nijhum Dwip & Deer Sanctuary",
+      "নিঝুম দ্বীপ ও হরিণ অভয়ারণ্য"
+    ]
   },
   {
     "id": 14,
@@ -1380,111 +1399,20 @@
     }
   },
   {
-    "id": 15,
-    "name": "Paharpur",
-    "name_bn": "পাহাড়পুর",
-    "slug": "paharpur",
-    "division": "Rajshahi",
-    "district": "Naogaon",
-    "upazila": "",
-    "category": "Historical",
-    "categories": [
-      "Historical"
-    ],
-    "rating": 4.6,
-    "reviews": 350,
-    "latitude": 25.0308,
-    "longitude": 88.9772,
-    "image": "/assets/destinations/paharpur.webp",
-    "imageLg": "/assets/destinations/paharpur.webp",
-    "gallery": [
-      "/assets/destinations/paharpur.webp"
-    ],
-    "photoId": "photo-1432405972618-c60b0225b8f9",
-    "galleryIds": [
-      "photo-1474181487882-5abf3f0ba6c2",
-      "photo-1548013146-72479768bada",
-      "photo-1524492412937-b28074a5d7da"
-    ],
-    "shortDesc": "Somapura Mahavihara — the ruins of one of the largest Buddhist monasteries in the world.",
-    "description": "Paharpur's Somapura Mahavihara is a UNESCO World Heritage Site and one of the most important archaeological discoveries in South Asia. Built in the 8th century by King Dharmapala, this vast cruciform Buddhist monastery was once the largest of its kind in the world, its tiered terracotta tower rising from the jungle of northwest Bengal. The intricate terracotta plaques are a masterpiece of ancient artistry.",
-    "bestTime": "October – March",
-    "recommendedDays": "1 – 2 days",
-    "difficulty": "Easy",
-    "budget": "BDT 1,200 – 2,500 / day (approx)",
-    "travelType": "History, Culture, Families",
-    "activities": [
-      "Site exploration",
-      "Terracotta plaque viewing",
-      "Museum visit",
-      "Sunset over ruins",
-      "Photography"
-    ],
-    "attractions": [
-      "Somapura Mahavihara",
-      "Paharpur Museum",
-      "Jagaddala Vihara (ruins)",
-      "Temple complex grounds"
-    ],
-    "tips": [
-      "Carry water and a hat — shade is limited.",
-      "The museum closes early (usually 5pm).",
-      "Visit on weekdays for a quieter experience."
-    ],
-    "things_to_do": [
-      "Site exploration",
-      "Terracotta plaque viewing",
-      "Museum visit",
-      "Sunset over ruins",
-      "Photography"
-    ],
-    "what_to_see": [
-      "Somapura Mahavihara",
-      "Paharpur Museum",
-      "Jagaddala Vihara (ruins)",
-      "Temple complex grounds"
-    ],
-    "travel_tips": [
-      "Carry water and a hat — shade is limited.",
-      "The museum closes early (usually 5pm).",
-      "Visit on weekdays for a quieter experience."
-    ],
-    "transport_options": [
-      "Bus",
-      "Train",
-      "Private Car"
-    ],
-    "nearby_destinations": [],
-    "nearby_hotels": [],
-    "featured": false,
-    "popularity": 85,
-    "status": "active",
-    "tags": [],
-    "travelInfo": {
-      "from": "Dhaka",
-      "distanceKm": 360,
-      "duration": "6 – 8 hours",
-      "route": "Dhaka → Bogura → Naogaon → Paharpur (or by rail to Jamalganj)",
-      "transport": [
-        "Bus",
-        "Train",
-        "Private Car"
-      ],
-      "flight": null
-    }
-  },
-  {
     "id": 16,
     "name": "Mahasthangarh",
     "name_bn": "মহাস্থানগড়",
     "slug": "mahasthangarh",
     "division": "Rajshahi",
     "district": "Bogura",
-    "upazila": "",
+    "upazila": "Shibganj",
     "category": "Historical",
     "categories": [
       "Historical",
-      "Cultural"
+      "Cultural",
+      "Museum",
+      "Archaeological",
+      "Family"
     ],
     "rating": 4.5,
     "reviews": 410,
@@ -1513,50 +1441,76 @@
       "Museum visit",
       "Bihar & temple exploration",
       "Karatoya river view",
-      "Photography"
+      "Photography",
+      "Tour the museum",
+      "Walk the park",
+      "See model ancient dwellings"
     ],
     "attractions": [
       "Mahasthangarh citadel",
       "Mahasthangarh Museum",
       "Narayana Temple",
       "Gokul Medh",
-      "Bhasu Vihara"
+      "Bhasu Vihara",
+      "Heritage museum",
+      "Model dwellings",
+      "Ancient city view"
     ],
     "tips": [
       "Two hours is enough for the site and museum.",
       "Combine with nearby Sattar village or Bogura's sweets.",
-      "Go early morning for the best photos."
+      "Go early morning for the best photos.",
+      "Combine with the main Mahasthangarh citadel",
+      "Good for families",
+      "Best in winter"
     ],
     "things_to_do": [
       "Citadel walk",
       "Museum visit",
       "Bihar & temple exploration",
       "Karatoya river view",
-      "Photography"
+      "Photography",
+      "Tour the museum",
+      "Walk the park",
+      "See model ancient dwellings"
     ],
     "what_to_see": [
       "Mahasthangarh citadel",
       "Mahasthangarh Museum",
       "Narayana Temple",
       "Gokul Medh",
-      "Bhasu Vihara"
+      "Bhasu Vihara",
+      "Heritage museum",
+      "Model dwellings",
+      "Ancient city view"
     ],
     "travel_tips": [
       "Two hours is enough for the site and museum.",
       "Combine with nearby Sattar village or Bogura's sweets.",
-      "Go early morning for the best photos."
+      "Go early morning for the best photos.",
+      "Combine with the main Mahasthangarh citadel",
+      "Good for families",
+      "Best in winter"
     ],
     "transport_options": [
       "Bus",
       "Train",
-      "Private Car"
+      "Private Car",
+      "CNG"
     ],
-    "nearby_destinations": [],
+    "nearby_destinations": [
+      "gokul-medh",
+      "vasu-bihar"
+    ],
     "nearby_hotels": [],
     "featured": false,
     "popularity": 83,
     "status": "active",
-    "tags": [],
+    "tags": [
+      "museum",
+      "heritage park",
+      "mahasthangarh"
+    ],
     "travelInfo": {
       "from": "Dhaka",
       "distanceKm": 220,
@@ -1568,7 +1522,11 @@
         "Private Car"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Mahasthangarh Heritage Park",
+      "মহাস্থানগড় হেরিটেজ পার্ক"
+    ]
   },
   {
     "id": 17,
@@ -2020,7 +1978,7 @@
     "nearby_destinations": [
       "lalmai-hills",
       "mainamati-museum",
-      "cumilla-war-cemetery"
+      "Mainamati War Cemetery"
     ],
     "nearby_hotels": [],
     "featured": true,
@@ -2238,103 +2196,6 @@
         "Private Car"
       ],
       "flight": "Direct flights to Shah Amanat International Airport (CGP)"
-    }
-  },
-  {
-    "id": 23,
-    "name": "Sitakunda",
-    "name_bn": "সীতাকুণ্ড",
-    "slug": "sitakunda",
-    "division": "Chattogram",
-    "district": "Chattogram",
-    "upazila": "",
-    "category": "Nature",
-    "categories": [
-      "Nature",
-      "Adventure"
-    ],
-    "rating": 4.1,
-    "reviews": 290,
-    "latitude": 22.6164,
-    "longitude": 91.6826,
-    "image": "/assets/destinations/sitakunda.webp",
-    "imageLg": "/assets/destinations/sitakunda.webp",
-    "gallery": [
-      "/assets/destinations/sitakunda.webp"
-    ],
-    "photoId": "photo-1469474968028-56623f02e42e",
-    "galleryIds": [
-      "photo-1469474968028-56623f02e42e",
-      "photo-1470071459604-3b5ec3a7fe05",
-      "photo-1441974231531-c6227db76b6e"
-    ],
-    "shortDesc": "Hills, a Hindu pilgrimage peak, an eco park and waterfalls — right on Chattogram's doorstep.",
-    "description": "Sitakunda offers a full day of hills and greenery a short drive north of Chattogram. Chandranath Hill, the highest peak of the Chattogram district, is crowned by an ancient temple and draws pilgrims year-round. Nearby, Sitakunda Eco Park and Bhatiary's forested slopes hide small waterfalls and shady trails perfect for a nature escape.",
-    "bestTime": "November – February",
-    "recommendedDays": "1 day",
-    "difficulty": "Moderate",
-    "budget": "BDT 1,200 – 2,500 / day (approx)",
-    "travelType": "Nature, Pilgrims, Hikers",
-    "activities": [
-      "Chandranath Hill climb",
-      "Temple visit",
-      "Eco park trail walk",
-      "Waterfall hunt",
-      "Viewpoint photography"
-    ],
-    "attractions": [
-      "Chandranath Hill & Temple",
-      "Sitakunda Eco Park",
-      "Bhatiary Hills",
-      "Bamboo (Jharna) falls",
-      "Riverside villages"
-    ],
-    "tips": [
-      "Start the hill climb before noon to avoid heat.",
-      "Eco park entry is cheap but the trails are long — carry water.",
-      "Respect temple customs and remove shoes when asked."
-    ],
-    "things_to_do": [
-      "Chandranath Hill climb",
-      "Temple visit",
-      "Eco park trail walk",
-      "Waterfall hunt",
-      "Viewpoint photography"
-    ],
-    "what_to_see": [
-      "Chandranath Hill & Temple",
-      "Sitakunda Eco Park",
-      "Bhatiary Hills",
-      "Bamboo (Jharna) falls",
-      "Riverside villages"
-    ],
-    "travel_tips": [
-      "Start the hill climb before noon to avoid heat.",
-      "Eco park entry is cheap but the trails are long — carry water.",
-      "Respect temple customs and remove shoes when asked."
-    ],
-    "transport_options": [
-      "Bus",
-      "Train",
-      "Private Car"
-    ],
-    "nearby_destinations": [],
-    "nearby_hotels": [],
-    "featured": false,
-    "popularity": "medium",
-    "status": "active",
-    "tags": [],
-    "travelInfo": {
-      "from": "Chattogram",
-      "distanceKm": 255,
-      "duration": "5 – 6 hours",
-      "route": "Dhaka → Chattogram → Sitakunda (Dhaka–Chattogram highway)",
-      "transport": [
-        "Bus",
-        "Train",
-        "Private Car"
-      ],
-      "flight": null
     }
   },
   {
@@ -2834,7 +2695,9 @@
     "image": "/assets/destinations/alutila-cave.webp",
     "imageLg": "/assets/destinations/alutila-cave.webp",
     "gallery": [
-      "/assets/destinations/alutila-cave.webp"
+      "/assets/destinations/alutila-cave.webp",
+      "assets/destinations/alutila-mystery-cave.webp",
+      "assets/destinations/alutila-tourist-center.webp"
     ],
     "photoId": "photo-1441974231531-c6227db76b6e",
     "galleryIds": [
@@ -2854,50 +2717,75 @@
       "Hanging bridge crossing",
       "Riverbed walk",
       "Hill trail trek",
-      "Village & lake visit (nearby)"
+      "Village & lake visit (nearby)",
+      "Cross the suspension bridge",
+      "Visit the Alutila cave",
+      "Forest walks"
     ],
     "attractions": [
       "Alutila Cave",
       "Hanging Bridge",
       "Richhang Waterfall (nearby)",
       "Kanglak hill views",
-      "Khagrachhari town"
+      "Khagrachhari town",
+      "Gua (gorge)",
+      "Suspension bridge"
     ],
     "tips": [
       "Carry a torch for the cave and wear grippy shoes.",
       "Check the hill tracts entry requirements in advance.",
-      "Combine with Richhang and Sajek on a multi-day loop."
+      "Combine with Richhang and Sajek on a multi-day loop.",
+      "Carry a torch for the cave",
+      "Wear non-slip shoes",
+      "Combine with Richhang waterfall"
     ],
     "things_to_do": [
       "Cave exploration",
       "Hanging bridge crossing",
       "Riverbed walk",
       "Hill trail trek",
-      "Village & lake visit (nearby)"
+      "Village & lake visit (nearby)",
+      "Cross the suspension bridge",
+      "Visit the Alutila cave",
+      "Forest walks"
     ],
     "what_to_see": [
       "Alutila Cave",
       "Hanging Bridge",
       "Richhang Waterfall (nearby)",
       "Kanglak hill views",
-      "Khagrachhari town"
+      "Khagrachhari town",
+      "Gua (gorge)",
+      "Suspension bridge"
     ],
     "travel_tips": [
       "Carry a torch for the cave and wear grippy shoes.",
       "Check the hill tracts entry requirements in advance.",
-      "Combine with Richhang and Sajek on a multi-day loop."
+      "Combine with Richhang and Sajek on a multi-day loop.",
+      "Carry a torch for the cave",
+      "Wear non-slip shoes",
+      "Combine with Richhang waterfall"
     ],
     "transport_options": [
       "Bus",
       "Chander Gari",
-      "Private Car"
+      "Private Car",
+      "CNG",
+      "Bike"
     ],
-    "nearby_destinations": [],
+    "nearby_destinations": [
+      "richhang-waterfall",
+      "alutila-cave"
+    ],
     "nearby_hotels": [],
     "featured": false,
     "popularity": "medium",
     "status": "active",
-    "tags": [],
+    "tags": [
+      "cave",
+      "suspension bridge",
+      "hills"
+    ],
     "travelInfo": {
       "from": "Dhaka",
       "distanceKm": 280,
@@ -2909,7 +2797,13 @@
         "Private Car"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Alutila Mystery Cave",
+      "আলুটিলা রহস্যময় গুহা",
+      "Alutila Tourist Center",
+      "আলুটিলা পর্যটন কেন্দ্র"
+    ]
   },
   {
     "id": 30,
@@ -3198,7 +3092,11 @@
         "Private Car"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Choto Sona Mosque",
+      "Chhoto Sona Masjid"
+    ]
   },
   {
     "id": 33,
@@ -3891,7 +3789,8 @@
     "image": "/assets/destinations/richhang-waterfall.webp",
     "imageLg": "/assets/destinations/richhang-waterfall.webp",
     "gallery": [
-      "/assets/destinations/richhang-waterfall.webp"
+      "/assets/destinations/richhang-waterfall.webp",
+      "assets/destinations/richhang-waterfall-cascade.webp"
     ],
     "photoId": "photo-1432405972618-c60b0225b8f9",
     "galleryIds": [
@@ -3964,7 +3863,10 @@
         "Private Car"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "রিসাং ঝর্ণা"
+    ]
   },
   {
     "id": 41,
@@ -6809,7 +6711,12 @@
         "Private Car"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Hum Hum Waterfall",
+      "Ham Ham Waterfall",
+      "হুম হুম ঝরনা"
+    ]
   },
   {
     "id": 71,
@@ -10194,7 +10101,8 @@
     "categories": [
       "Hill",
       "Religious",
-      "Adventure"
+      "Adventure",
+      "Mountain"
     ],
     "rating": 4.5,
     "reviews": 410,
@@ -10203,7 +10111,8 @@
     "image": "/assets/destinations/chandranath-hill.webp",
     "imageLg": "/assets/destinations/chandranath-hill.webp",
     "gallery": [
-      "/assets/destinations/chandranath-hill.webp"
+      "/assets/destinations/chandranath-hill.webp",
+      "assets/destinations/chandranath-peak-temple.webp"
     ],
     "photoId": "photo-1469474968028-56623f02e42e",
     "galleryIds": [
@@ -10256,7 +10165,7 @@
       "Private Car"
     ],
     "nearby_destinations": [
-      "sitakunda",
+      "Sitakunda Botanical Garden & Ecopark",
       "foys-lake",
       "bhatiari-lake",
       "patenga-beach"
@@ -10282,7 +10191,11 @@
         "Private Car"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Chandranath Peak & Temple",
+      "চন্দ্রনাথ পাহাড় চূড়া ও মন্দির"
+    ]
   },
   {
     "id": 108,
@@ -10358,7 +10271,7 @@
       "foys-lake",
       "chandranath-hill",
       "patenga-beach",
-      "sitakunda"
+      "Sitakunda Botanical Garden & Ecopark"
     ],
     "nearby_hotels": [],
     "featured": false,
@@ -11469,7 +11382,8 @@
     "image": "/assets/destinations/shuvolong-waterfall.webp",
     "imageLg": "/assets/destinations/shuvolong-waterfall.webp",
     "gallery": [
-      "/assets/destinations/shuvolong-waterfall.webp"
+      "/assets/destinations/shuvolong-waterfall.webp",
+      "assets/destinations/kaptai-lake-cruise.webp"
     ],
     "photoId": "photo-1519681393784-d120267933ba",
     "galleryIds": [
@@ -11541,7 +11455,10 @@
         "Boat"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "শুভলং ঝর্ণা ও কাপ্তাই লেক ক্রুজ"
+    ]
   },
   {
     "id": 121,
@@ -12122,100 +12039,6 @@
     }
   },
   {
-    "id": 127,
-    "name": "Cumilla War Cemetery",
-    "name_bn": "কুমিল্লা ওয়ার সেমেট্রি",
-    "slug": "cumilla-war-cemetery",
-    "division": "Chattogram",
-    "district": "Cumilla",
-    "upazila": "Cumilla Sadar",
-    "category": "Historical",
-    "categories": [
-      "Historical",
-      "Heritage"
-    ],
-    "rating": 4.5,
-    "reviews": 170,
-    "latitude": 23.46,
-    "longitude": 91.18,
-    "image": "/assets/destinations/cumilla-war-cemetery.webp",
-    "imageLg": "/assets/destinations/cumilla-war-cemetery.webp",
-    "gallery": [
-      "/assets/destinations/cumilla-war-cemetery.webp"
-    ],
-    "photoId": "photo-1432405972618-c60b0225b8f9",
-    "galleryIds": [
-      "photo-1432405972618-c60b0225b8f9",
-      "photo-1561361513-2d000a50f0dc",
-      "photo-1524492412937-b28074a5d7da"
-    ],
-    "shortDesc": "A beautifully kept Commonwealth cemetery from World War II.",
-    "description": "Cumilla War Cemetery, managed by the Commonwealth War Graves Commission, holds more than 700 graves of soldiers who died in the Burma campaign of World War II. Rows of identical headstones and clipped lawns give it a moving, serene atmosphere.",
-    "bestTime": "Year-round",
-    "recommendedDays": "1 hour",
-    "difficulty": "Easy",
-    "budget": "",
-    "travelType": "History, Reflection, Families",
-    "activities": [
-      "Walk the grounds",
-      "Read the headstones",
-      "Reflect on history"
-    ],
-    "attractions": [
-      "War graves",
-      "Memorial gardens"
-    ],
-    "tips": [
-      "Visit during opening hours",
-      "Be respectful — it is an active cemetery",
-      "Combine with Mainamati"
-    ],
-    "things_to_do": [
-      "Walk the grounds",
-      "Read the headstones",
-      "Reflect on history"
-    ],
-    "what_to_see": [
-      "War graves",
-      "Memorial gardens"
-    ],
-    "travel_tips": [
-      "Visit during opening hours",
-      "Be respectful — it is an active cemetery",
-      "Combine with Mainamati"
-    ],
-    "transport_options": [
-      "Rickshaw",
-      "CNG",
-      "Private Car"
-    ],
-    "nearby_destinations": [
-      "mainamati",
-      "lalmai-hills"
-    ],
-    "nearby_hotels": [],
-    "featured": false,
-    "popularity": "medium",
-    "status": "active",
-    "tags": [
-      "war cemetery",
-      "world war ii",
-      "heritage"
-    ],
-    "travelInfo": {
-      "from": "Cumilla",
-      "distanceKm": 3,
-      "duration": "15 minutes",
-      "route": "Cumilla town → war cemetery",
-      "transport": [
-        "Rickshaw",
-        "CNG",
-        "Private Car"
-      ],
-      "flight": null
-    }
-  },
-  {
     "id": 128,
     "name": "Lalmai Hills",
     "name_bn": "লালমাই পাহাড়",
@@ -12310,7 +12133,11 @@
         "Private Car"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Lalmai Pahar & Eco Park",
+      "লালমাই পাহাড় ও ইকো পার্ক"
+    ]
   },
   {
     "id": 129,
@@ -12406,7 +12233,12 @@
         "Private Car"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Borostation Molhead / Three Rivers Estuary",
+      "বড়স্টেশন মোলহেড / তিন নদীর মোহনা",
+      "Boro Station Molhead"
+    ]
   },
   {
     "id": 130,
@@ -12707,7 +12539,8 @@
     "categories": [
       "River",
       "Cultural",
-      "Village"
+      "Village",
+      "Nature"
     ],
     "rating": 4.2,
     "reviews": 160,
@@ -12791,7 +12624,11 @@
         "Boat"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Titas River Viewpoint",
+      "তিতাস নদী ঘাট ও লেক"
+    ]
   },
   {
     "id": 134,
@@ -12861,7 +12698,7 @@
       "Private Car"
     ],
     "nearby_destinations": [
-      "sonagazi",
+      "Muhuri Dam & Irrigation Project",
       "ramgati-lakshmipur",
       "chandpur-three-rivers"
     ],
@@ -12882,100 +12719,6 @@
       "transport": [
         "CNG",
         "Private Car"
-      ],
-      "flight": null
-    }
-  },
-  {
-    "id": 135,
-    "name": "Sonagazi",
-    "name_bn": "সোনাগাজী",
-    "slug": "sonagazi",
-    "division": "Chattogram",
-    "district": "Feni",
-    "upazila": "Sonagazi",
-    "category": "River",
-    "categories": [
-      "River",
-      "Coastal",
-      "Village"
-    ],
-    "rating": 3.8,
-    "reviews": 60,
-    "latitude": 22.85,
-    "longitude": 91.4,
-    "image": "/assets/destinations/sonagazi.webp",
-    "imageLg": "/assets/destinations/sonagazi.webp",
-    "gallery": [
-      "/assets/destinations/sonagazi.webp"
-    ],
-    "photoId": "photo-1437482078695-73f5ca6c96e2",
-    "galleryIds": [
-      "photo-1437482078695-73f5ca6c96e2",
-      "photo-1506905925346-21bda4d32df4",
-      "photo-1445262102387-5fbb30a5e59d"
-    ],
-    "shortDesc": "A coastal upazila of Feni with rivers, chars and rural waterways.",
-    "description": "Sonagazi is a coastal upazila of Feni district where the landscape turns to rivers, chars and low farmland near the Bay of Bengal. It offers a quiet, authentic look at coastal Bangladesh away from tourist routes.",
-    "bestTime": "October – March",
-    "recommendedDays": "Half day",
-    "difficulty": "Easy",
-    "budget": "",
-    "travelType": "Solo, Nature, Culture",
-    "activities": [
-      "Village walks",
-      "Riverbank views",
-      "Watch fishing boats"
-    ],
-    "attractions": [
-      "River channels",
-      "Coastal chars"
-    ],
-    "tips": [
-      "Limited facilities — carry water",
-      "Best visited as a day trip",
-      "Ask locals for directions"
-    ],
-    "things_to_do": [
-      "Village walks",
-      "Riverbank views",
-      "Watch fishing boats"
-    ],
-    "what_to_see": [
-      "River channels",
-      "Coastal chars"
-    ],
-    "travel_tips": [
-      "Limited facilities — carry water",
-      "Best visited as a day trip",
-      "Ask locals for directions"
-    ],
-    "transport_options": [
-      "Bus",
-      "CNG"
-    ],
-    "nearby_destinations": [
-      "muhurir-char",
-      "ramgati-lakshmipur",
-      "nijhum-dwip"
-    ],
-    "nearby_hotels": [],
-    "featured": false,
-    "popularity": "low",
-    "status": "active",
-    "tags": [
-      "coastal",
-      "river",
-      "village"
-    ],
-    "travelInfo": {
-      "from": "Feni",
-      "distanceKm": 22,
-      "duration": "1 hour",
-      "route": "Feni → Sonagazi",
-      "transport": [
-        "Bus",
-        "CNG"
       ],
       "flight": null
     }
@@ -13050,7 +12793,7 @@
     "nearby_destinations": [
       "char-kukri-mukri",
       "monpura",
-      "sonagazi",
+      "Muhuri Dam & Irrigation Project",
       "nijhum-dwip"
     ],
     "nearby_hotels": [],
@@ -15749,7 +15492,11 @@
         "Boat"
       ],
       "flight": null
-    }
+    },
+    "alternateNames": [
+      "Goalanda Ghat",
+      "গোয়ালন্দ ঘাট"
+    ]
   },
   {
     "id": 165,
@@ -16587,7 +16334,7 @@
       "Private Car"
     ],
     "nearby_destinations": [
-      "paharpur",
+      "Somapura Mahavihara (Paharpur)",
       "patisar-naogaon"
     ],
     "nearby_hotels": [],
@@ -16683,7 +16430,7 @@
     ],
     "nearby_destinations": [
       "kusumba-mosque",
-      "paharpur",
+      "Somapura Mahavihara (Paharpur)",
       "mahasthangarh"
     ],
     "nearby_hotels": [],
@@ -16779,8 +16526,7 @@
     "nearby_destinations": [
       "mahasthangarh",
       "behula-lakshindar-basor-ghor",
-      "vasu-bihar",
-      "bogura-heritage-park"
+      "vasu-bihar"
     ],
     "nearby_hotels": [],
     "featured": false,
@@ -16876,8 +16622,7 @@
     "nearby_destinations": [
       "mahasthangarh",
       "gokul-medh",
-      "vasu-bihar",
-      "bogura-heritage-park"
+      "vasu-bihar"
     ],
     "nearby_hotels": [],
     "featured": false,
@@ -16973,8 +16718,7 @@
     "nearby_destinations": [
       "mahasthangarh",
       "gokul-medh",
-      "behula-lakshindar-basor-ghor",
-      "bogura-heritage-park"
+      "behula-lakshindar-basor-ghor"
     ],
     "nearby_hotels": [],
     "featured": false,
@@ -16990,104 +16734,6 @@
       "distanceKm": 14,
       "duration": "30 minutes",
       "route": "Bogura → Mahasthangarh → Vasu Bihar",
-      "transport": [
-        "Bus",
-        "CNG",
-        "Private Car"
-      ],
-      "flight": null
-    }
-  },
-  {
-    "id": 178,
-    "name": "Mahasthangarh Heritage Park",
-    "name_bn": "মহাস্থানগড় হেরিটেজ পার্ক",
-    "slug": "bogura-heritage-park",
-    "division": "Rajshahi",
-    "district": "Bogura",
-    "upazila": "Shibganj",
-    "category": "Museum",
-    "categories": [
-      "Museum",
-      "Archaeological",
-      "Family"
-    ],
-    "rating": 4.3,
-    "reviews": 160,
-    "latitude": 24.96,
-    "longitude": 89.34,
-    "image": "/assets/destinations/bogura-heritage-park.webp",
-    "imageLg": "/assets/destinations/bogura-heritage-park.webp",
-    "gallery": [
-      "/assets/destinations/bogura-heritage-park.webp"
-    ],
-    "photoId": "photo-1554907984-15263bfd63bd",
-    "galleryIds": [
-      "photo-1554907984-15263bfd63bd",
-      "photo-1548013146-72479768bada",
-      "photo-1520639888713-7851133b1ed0"
-    ],
-    "shortDesc": "A landscaped museum park beside the ancient city of Mahasthangarh.",
-    "description": "Mahasthangarh Heritage Park is a landscaped complex near the ancient citadel with a museum of excavated artefacts, model ancient houses and walkways. It presents the 2,500-year history of the oldest known city in Bangladesh.",
-    "bestTime": "October – March",
-    "recommendedDays": "1 – 2 hours",
-    "difficulty": "Easy",
-    "budget": "",
-    "travelType": "Families, Students, History lovers",
-    "activities": [
-      "Tour the museum",
-      "Walk the park",
-      "See model ancient dwellings"
-    ],
-    "attractions": [
-      "Heritage museum",
-      "Model dwellings",
-      "Ancient city view"
-    ],
-    "tips": [
-      "Combine with the main Mahasthangarh citadel",
-      "Good for families",
-      "Best in winter"
-    ],
-    "things_to_do": [
-      "Tour the museum",
-      "Walk the park",
-      "See model ancient dwellings"
-    ],
-    "what_to_see": [
-      "Heritage museum",
-      "Model dwellings",
-      "Ancient city view"
-    ],
-    "travel_tips": [
-      "Combine with the main Mahasthangarh citadel",
-      "Good for families",
-      "Best in winter"
-    ],
-    "transport_options": [
-      "Bus",
-      "CNG",
-      "Private Car"
-    ],
-    "nearby_destinations": [
-      "mahasthangarh",
-      "gokul-medh",
-      "vasu-bihar"
-    ],
-    "nearby_hotels": [],
-    "featured": false,
-    "popularity": "medium",
-    "status": "active",
-    "tags": [
-      "museum",
-      "heritage park",
-      "mahasthangarh"
-    ],
-    "travelInfo": {
-      "from": "Bogura",
-      "distanceKm": 12,
-      "duration": "30 minutes",
-      "route": "Bogura → Mahasthangarh",
       "transport": [
         "Bus",
         "CNG",
@@ -17164,7 +16810,7 @@
       "CNG"
     ],
     "nearby_destinations": [
-      "paharpur",
+      "Somapura Mahavihara (Paharpur)",
       "mahasthangarh",
       "kusumba-mosque"
     ],
@@ -18681,7 +18327,7 @@
     "nearby_destinations": [
       "durga-sagar",
       "guthia-mosque",
-      "floating-guava-market",
+      "Bhimruli Floating Guava Market",
       "barishal-bell-park"
     ],
     "nearby_hotels": [],
@@ -18775,7 +18421,7 @@
     "nearby_destinations": [
       "oxford-mission-church",
       "durga-sagar",
-      "floating-guava-market",
+      "Bhimruli Floating Guava Market",
       "guthia-mosque"
     ],
     "nearby_hotels": [],
@@ -18795,101 +18441,6 @@
       "transport": [
         "Rickshaw",
         "Walk"
-      ],
-      "flight": null
-    }
-  },
-  {
-    "id": 197,
-    "name": "Floating Guava Market",
-    "name_bn": "ভাসমান পেয়ারা বাজার",
-    "slug": "floating-guava-market",
-    "division": "Barishal",
-    "district": "Jhalokathi",
-    "upazila": "Nalchity",
-    "category": "Cultural",
-    "categories": [
-      "Cultural",
-      "River",
-      "Village"
-    ],
-    "rating": 4.4,
-    "reviews": 260,
-    "latitude": 22.68,
-    "longitude": 90.25,
-    "image": "/assets/destinations/floating-guava-market.webp",
-    "imageLg": "/assets/destinations/floating-guava-market.webp",
-    "gallery": [
-      "/assets/destinations/floating-guava-market.webp"
-    ],
-    "photoId": "photo-1561361513-2d000a50f0dc",
-    "galleryIds": [
-      "photo-1561361513-2d000a50f0dc",
-      "photo-1600047509807-ba8f99d2cdde",
-      "photo-1524492412937-b28074a5d7da"
-    ],
-    "shortDesc": "Guavas traded from boats on the Kirtankhola river.",
-    "description": "The floating guava market is a unique riverine bazaar where farmers bring baskets of guavas by boat and sell them directly to traders on the water. It is a beloved cultural experience, most vibrant between July and November.",
-    "bestTime": "July – November",
-    "recommendedDays": "Half day",
-    "difficulty": "Easy",
-    "budget": "",
-    "travelType": "Culture, Families, Photographers",
-    "activities": [
-      "Watch the floating trade",
-      "Buy fresh guavas",
-      "Photograph the boats"
-    ],
-    "attractions": [
-      "Floating guava bazaar",
-      "Kirtankhola river"
-    ],
-    "tips": [
-      "Best in the guava season",
-      "Go early morning",
-      "Ask permission before photographing people"
-    ],
-    "things_to_do": [
-      "Watch the floating trade",
-      "Buy fresh guavas",
-      "Photograph the boats"
-    ],
-    "what_to_see": [
-      "Floating guava bazaar",
-      "Kirtankhola river"
-    ],
-    "travel_tips": [
-      "Best in the guava season",
-      "Go early morning",
-      "Ask permission before photographing people"
-    ],
-    "transport_options": [
-      "Bus",
-      "Boat"
-    ],
-    "nearby_destinations": [
-      "barishal-bell-park",
-      "durga-sagar",
-      "guthia-mosque",
-      "sugandha-river"
-    ],
-    "nearby_hotels": [],
-    "featured": false,
-    "popularity": "medium",
-    "status": "active",
-    "tags": [
-      "floating market",
-      "guava",
-      "river"
-    ],
-    "travelInfo": {
-      "from": "Barishal",
-      "distanceKm": 30,
-      "duration": "1 hour",
-      "route": "Barishal → Nalchity → river market",
-      "transport": [
-        "Bus",
-        "Boat"
       ],
       "flight": null
     }
@@ -19432,7 +18983,7 @@
       "Boat"
     ],
     "nearby_destinations": [
-      "floating-guava-market",
+      "Bhimruli Floating Guava Market",
       "sugandha-river",
       "guthia-mosque",
       "durga-sagar"
@@ -19526,7 +19077,7 @@
       "Boat"
     ],
     "nearby_destinations": [
-      "floating-guava-market",
+      "Bhimruli Floating Guava Market",
       "swarupkathi",
       "durga-sagar"
     ],
@@ -20960,7 +20511,8 @@
     "categories": [
       "Waterfall",
       "Nature",
-      "Picnic Spot"
+      "Picnic Spot",
+      "Lake"
     ],
     "rating": 4.2,
     "reviews": 120,
@@ -21039,103 +20591,11 @@
         "Private Car"
       ],
       "flight": null
-    }
-  },
-  {
-    "id": 221,
-    "name": "Alutila Tourist Center",
-    "name_bn": "আলুটিলা পর্যটন কেন্দ্র",
-    "slug": "alutila-tourist-center",
-    "division": "Chattogram",
-    "district": "Khagrachhari",
-    "upazila": "",
-    "category": "Nature",
-    "categories": [
-      "Nature",
-      "Adventure"
-    ],
-    "rating": 4.3,
-    "reviews": 260,
-    "latitude": 23.13,
-    "longitude": 91.83,
-    "image": "/assets/destinations/alutila-tourist-center.webp",
-    "imageLg": "/assets/destinations/alutila-tourist-center.webp",
-    "gallery": [
-      "/assets/destinations/alutila-tourist-center.webp"
-    ],
-    "photoId": "photo-1472214103451-9374bd1c798e",
-    "galleryIds": [
-      "photo-1472214103451-9374bd1c798e",
-      "photo-1501785888041-af3ef285b470",
-      "photo-1500530855697-b586d89ba3ee"
-    ],
-    "shortDesc": "A hillside tourism complex near the Alutila cave with suspension bridges and viewpoints.",
-    "description": "The Alutila tourist center sits in the hills of Khagrachhari close to the famous Alutila (Debbari) cave and gua (gorge). A suspension bridge across the gua and short forest walks make it a pleasant stop, and the nearby cave is the deepest cave in Bangladesh by some accounts.",
-    "bestTime": "October – March",
-    "recommendedDays": "Half day",
-    "difficulty": "Easy",
-    "budget": "",
-    "travelType": "Family, Adventure, Friends",
-    "activities": [
-      "Cross the suspension bridge",
-      "Visit the Alutila cave",
-      "Forest walks"
-    ],
-    "attractions": [
-      "Alutila cave",
-      "Gua (gorge)",
-      "Suspension bridge"
-    ],
-    "tips": [
-      "Carry a torch for the cave",
-      "Wear non-slip shoes",
-      "Combine with Richhang waterfall"
-    ],
-    "things_to_do": [
-      "Cross the suspension bridge",
-      "Visit the Alutila cave",
-      "Forest walks"
-    ],
-    "what_to_see": [
-      "Alutila cave",
-      "Gua (gorge)",
-      "Suspension bridge"
-    ],
-    "travel_tips": [
-      "Carry a torch for the cave",
-      "Wear non-slip shoes",
-      "Combine with Richhang waterfall"
-    ],
-    "transport_options": [
-      "CNG",
-      "Private Car",
-      "Bike"
-    ],
-    "nearby_destinations": [
-      "richhang-waterfall",
-      "alutila-cave"
-    ],
-    "nearby_hotels": [],
-    "featured": false,
-    "popularity": "medium",
-    "status": "active",
-    "tags": [
-      "cave",
-      "suspension bridge",
-      "hills"
-    ],
-    "travelInfo": {
-      "from": "Khagrachhari",
-      "distanceKm": 14,
-      "duration": "30 – 40 minutes",
-      "route": "Khagrachhari → Alutila",
-      "transport": [
-        "CNG",
-        "Private Car",
-        "Bike"
-      ],
-      "flight": null
-    }
+    },
+    "alternateNames": [
+      "Polwel Park & Love Point",
+      "পলওয়েল পার্ক ও লাভ পয়েন্ট"
+    ]
   },
   {
     "id": 222,
@@ -22150,7 +21610,9 @@
     "category": "River",
     "categories": [
       "River",
-      "Nature"
+      "Nature",
+      "Coastal",
+      "Village"
     ],
     "rating": 4.5,
     "reviews": 420,
@@ -22161,7 +21623,70 @@
     "imageLg": "/assets/destinations/muhuri-dam-irrigation-project.webp",
     "gallery": [
       "/assets/destinations/muhuri-dam-irrigation-project.webp"
-    ]
+    ],
+    "alternateNames": [
+      "Sonagazi",
+      "সোনাগাজী"
+    ],
+    "tags": [
+      "coastal",
+      "river",
+      "village"
+    ],
+    "activities": [
+      "Village walks",
+      "Riverbank views",
+      "Watch fishing boats"
+    ],
+    "attractions": [
+      "River channels",
+      "Coastal chars"
+    ],
+    "tips": [
+      "Limited facilities — carry water",
+      "Best visited as a day trip",
+      "Ask locals for directions"
+    ],
+    "things_to_do": [
+      "Village walks",
+      "Riverbank views",
+      "Watch fishing boats"
+    ],
+    "what_to_see": [
+      "River channels",
+      "Coastal chars"
+    ],
+    "travel_tips": [
+      "Limited facilities — carry water",
+      "Best visited as a day trip",
+      "Ask locals for directions"
+    ],
+    "transport_options": [
+      "Bus",
+      "CNG"
+    ],
+    "nearby_destinations": [
+      "muhurir-char",
+      "ramgati-lakshmipur",
+      "nijhum-dwip"
+    ],
+    "description": "Sonagazi is a coastal upazila of Feni district where the landscape turns to rivers, chars and low farmland near the Bay of Bengal. It offers a quiet, authentic look at coastal Bangladesh away from tourist routes.",
+    "bestTime": "October – March",
+    "recommendedDays": "Half day",
+    "difficulty": "Easy",
+    "travelType": "Solo, Nature, Culture",
+    "travelInfo": {
+      "from": "Feni",
+      "distanceKm": 22,
+      "duration": "1 hour",
+      "route": "Feni → Sonagazi",
+      "transport": [
+        "Bus",
+        "CNG"
+      ],
+      "flight": null
+    },
+    "upazila": "Sonagazi"
   },
   {
     "id": 237,
@@ -22279,29 +21804,6 @@
     ]
   },
   {
-    "id": 242,
-    "name": "Titas River Viewpoint",
-    "name_bn": "তিতাস নদী ঘাট ও লেক",
-    "slug": "titas-river-viewpoint",
-    "division": "Chattogram",
-    "district": "Brahmanbaria",
-    "category": "River",
-    "categories": [
-      "River",
-      "Nature"
-    ],
-    "rating": 4.4,
-    "reviews": 290,
-    "latitude": 23.955,
-    "longitude": 91.1,
-    "image": "/assets/destinations/titas-river-viewpoint.webp",
-    "shortDesc": "অদৈত মল্লবর্মণের 'তিতাস একটি নদীর নাম' খ্যাত বিখ্যাত রূপসী তিতাস নদী।",
-    "imageLg": "/assets/destinations/titas-river-viewpoint.webp",
-    "gallery": [
-      "/assets/destinations/titas-river-viewpoint.webp"
-    ]
-  },
-  {
     "id": 243,
     "name": "Ulchapara Mosque",
     "name_bn": "উলচাপাড়া জামে মসজিদ",
@@ -22322,29 +21824,6 @@
     "imageLg": "/assets/destinations/ulchapara-mosque.webp",
     "gallery": [
       "/assets/destinations/ulchapara-mosque.webp"
-    ]
-  },
-  {
-    "id": 244,
-    "name": "Nijhum Dwip & Deer Sanctuary",
-    "name_bn": "নিঝুম দ্বীপ ও হরিণ অভয়ারণ্য",
-    "slug": "nijhum-dwip-deer-sanctuary",
-    "division": "Chattogram",
-    "district": "Noakhali",
-    "category": "Island",
-    "categories": [
-      "Island",
-      "Nature"
-    ],
-    "rating": 4.7,
-    "reviews": 860,
-    "latitude": 22.0725,
-    "longitude": 91.0022,
-    "image": "/assets/destinations/nijhum-dwip-deer-sanctuary.webp",
-    "shortDesc": "বঙ্গোপসাগরের বুকে কেওড়া বনের মায়াবী দ্বীপ এবং হাজার হাজার চিত্রা হরিণের বিচরণভূমি।",
-    "imageLg": "/assets/destinations/nijhum-dwip-deer-sanctuary.webp",
-    "gallery": [
-      "/assets/destinations/nijhum-dwip-deer-sanctuary.webp"
     ]
   },
   {
@@ -22414,29 +21893,6 @@
     "imageLg": "/assets/destinations/swarna-dwip.webp",
     "gallery": [
       "/assets/destinations/swarna-dwip.webp"
-    ]
-  },
-  {
-    "id": 248,
-    "name": "Borostation Molhead / Three Rivers Estuary",
-    "name_bn": "বড়স্টেশন মোলহেড / তিন নদীর মোহনা",
-    "slug": "borostation-molhead-chandpur",
-    "division": "Chattogram",
-    "district": "Chandpur",
-    "category": "River",
-    "categories": [
-      "River",
-      "Nature"
-    ],
-    "rating": 4.6,
-    "reviews": 790,
-    "latitude": 23.2325,
-    "longitude": 90.645,
-    "image": "/assets/destinations/chandpur-molhead-three-rivers.webp",
-    "shortDesc": "পদ্মা, মেঘনা ও ডাকাতিয়া নদীর মিলনস্থল এবং চাঁদপুরের বিখ্যাত রূপালি ইলিশের মোহনা।",
-    "imageLg": "/assets/destinations/chandpur-molhead-three-rivers.webp",
-    "gallery": [
-      "/assets/destinations/chandpur-molhead-three-rivers.webp"
     ]
   },
   {
@@ -22517,7 +21973,8 @@
     "category": "Historical",
     "categories": [
       "Historical",
-      "Museum"
+      "Museum",
+      "Heritage"
     ],
     "rating": 4.7,
     "reviews": 920,
@@ -22527,31 +21984,73 @@
     "shortDesc": "দ্বিতীয় বিশ্বযুদ্ধের বীর সেনাদের সংরক্ষিত প্রশান্ত স্মৃতিসৌধ ও ফুলেল প্রাঙ্গণ।",
     "imageLg": "/assets/destinations/mainamati-war-cemetery.webp",
     "gallery": [
-      "/assets/destinations/mainamati-war-cemetery.webp"
-    ]
-  },
-  {
-    "id": 253,
-    "name": "Lalmai Pahar & Eco Park",
-    "name_bn": "লালমাই পাহাড় ও ইকো পার্ক",
-    "slug": "lalmai-pahar-eco-park",
-    "division": "Chattogram",
-    "district": "Cumilla",
-    "category": "Hill",
-    "categories": [
-      "Hill",
-      "Nature"
+      "/assets/destinations/mainamati-war-cemetery.webp",
+      "assets/destinations/cumilla-war-cemetery.webp"
     ],
-    "rating": 4.5,
-    "reviews": 610,
-    "latitude": 23.4215,
-    "longitude": 91.135,
-    "image": "/assets/destinations/lalmai-pahar-eco-park.webp",
-    "shortDesc": "লাল মাটির প্রাকৃতিক টিলা, পাহাড়ি সৌন্দর্য ও প্রাচীন প্রত্নতত্ত্বের মেলবন্ধন।",
-    "imageLg": "/assets/destinations/lalmai-pahar-eco-park.webp",
-    "gallery": [
-      "/assets/destinations/lalmai-pahar-eco-park.webp"
-    ]
+    "alternateNames": [
+      "Cumilla War Cemetery",
+      "কুমিল্লা ওয়ার সেমেট্রি"
+    ],
+    "tags": [
+      "war cemetery",
+      "world war ii",
+      "heritage"
+    ],
+    "activities": [
+      "Walk the grounds",
+      "Read the headstones",
+      "Reflect on history"
+    ],
+    "attractions": [
+      "War graves",
+      "Memorial gardens"
+    ],
+    "tips": [
+      "Visit during opening hours",
+      "Be respectful — it is an active cemetery",
+      "Combine with Mainamati"
+    ],
+    "things_to_do": [
+      "Walk the grounds",
+      "Read the headstones",
+      "Reflect on history"
+    ],
+    "what_to_see": [
+      "War graves",
+      "Memorial gardens"
+    ],
+    "travel_tips": [
+      "Visit during opening hours",
+      "Be respectful — it is an active cemetery",
+      "Combine with Mainamati"
+    ],
+    "transport_options": [
+      "Rickshaw",
+      "CNG",
+      "Private Car"
+    ],
+    "nearby_destinations": [
+      "mainamati",
+      "lalmai-hills"
+    ],
+    "description": "Cumilla War Cemetery, managed by the Commonwealth War Graves Commission, holds more than 700 graves of soldiers who died in the Burma campaign of World War II. Rows of identical headstones and clipped lawns give it a moving, serene atmosphere.",
+    "bestTime": "Year-round",
+    "recommendedDays": "1 hour",
+    "difficulty": "Easy",
+    "travelType": "History, Reflection, Families",
+    "travelInfo": {
+      "from": "Cumilla",
+      "distanceKm": 3,
+      "duration": "15 minutes",
+      "route": "Cumilla town → war cemetery",
+      "transport": [
+        "Rickshaw",
+        "CNG",
+        "Private Car"
+      ],
+      "flight": null
+    },
+    "upazila": "Cumilla Sadar"
   },
   {
     "id": 254,
@@ -22666,29 +22165,6 @@
     ]
   },
   {
-    "id": 259,
-    "name": "Chandranath Peak & Temple",
-    "name_bn": "চন্দ্রনাথ পাহাড় চূড়া ও মন্দির",
-    "slug": "chandranath-peak-temple",
-    "division": "Chattogram",
-    "district": "Chattogram",
-    "category": "Mountain",
-    "categories": [
-      "Mountain",
-      "Religious"
-    ],
-    "rating": 4.7,
-    "reviews": 1350,
-    "latitude": 22.6515,
-    "longitude": 91.685,
-    "image": "/assets/destinations/chandranath-peak-temple.webp",
-    "shortDesc": "সমুদ্রপৃষ্ঠ থেকে ১,১৫২ ফুট উঁচুতে সীতাকুণ্ডের সর্বোচ্চ চূড়া ও পবিত্র তীর্থস্থান।",
-    "imageLg": "/assets/destinations/chandranath-peak-temple.webp",
-    "gallery": [
-      "/assets/destinations/chandranath-peak-temple.webp"
-    ]
-  },
-  {
     "id": 260,
     "name": "Banshkhali Eco Park & Hanging Bridge",
     "name_bn": "বাঁশখালী ইকোপার্ক ও ঝুলন্ত সেতু",
@@ -22721,7 +22197,8 @@
     "category": "Waterfall",
     "categories": [
       "Waterfall",
-      "Nature"
+      "Nature",
+      "Adventure"
     ],
     "rating": 4.5,
     "reviews": 840,
@@ -22731,8 +22208,74 @@
     "shortDesc": "সহস্রধারা ও সুপ্তধারা ঝর্ণা এবং সমৃদ্ধ বনজ উদ্ভিদের সবুজ উদ্যান।",
     "imageLg": "/assets/destinations/sitakunda-botanical-garden-ecopark.webp",
     "gallery": [
-      "/assets/destinations/sitakunda-botanical-garden-ecopark.webp"
-    ]
+      "/assets/destinations/sitakunda-botanical-garden-ecopark.webp",
+      "assets/destinations/sitakunda.webp"
+    ],
+    "alternateNames": [
+      "Sitakunda",
+      "সীতাকুণ্ড"
+    ],
+    "activities": [
+      "Chandranath Hill climb",
+      "Temple visit",
+      "Eco park trail walk",
+      "Waterfall hunt",
+      "Viewpoint photography"
+    ],
+    "attractions": [
+      "Chandranath Hill & Temple",
+      "Sitakunda Eco Park",
+      "Bhatiary Hills",
+      "Bamboo (Jharna) falls",
+      "Riverside villages"
+    ],
+    "tips": [
+      "Start the hill climb before noon to avoid heat.",
+      "Eco park entry is cheap but the trails are long — carry water.",
+      "Respect temple customs and remove shoes when asked."
+    ],
+    "things_to_do": [
+      "Chandranath Hill climb",
+      "Temple visit",
+      "Eco park trail walk",
+      "Waterfall hunt",
+      "Viewpoint photography"
+    ],
+    "what_to_see": [
+      "Chandranath Hill & Temple",
+      "Sitakunda Eco Park",
+      "Bhatiary Hills",
+      "Bamboo (Jharna) falls",
+      "Riverside villages"
+    ],
+    "travel_tips": [
+      "Start the hill climb before noon to avoid heat.",
+      "Eco park entry is cheap but the trails are long — carry water.",
+      "Respect temple customs and remove shoes when asked."
+    ],
+    "transport_options": [
+      "Bus",
+      "Train",
+      "Private Car"
+    ],
+    "description": "Sitakunda offers a full day of hills and greenery a short drive north of Chattogram. Chandranath Hill, the highest peak of the Chattogram district, is crowned by an ancient temple and draws pilgrims year-round. Nearby, Sitakunda Eco Park and Bhatiary's forested slopes hide small waterfalls and shady trails perfect for a nature escape.",
+    "bestTime": "November – February",
+    "recommendedDays": "1 day",
+    "difficulty": "Moderate",
+    "budget": "BDT 1,200 – 2,500 / day (approx)",
+    "travelType": "Nature, Pilgrims, Hikers",
+    "travelInfo": {
+      "from": "Chattogram",
+      "distanceKm": 255,
+      "duration": "5 – 6 hours",
+      "route": "Dhaka → Chattogram → Sitakunda (Dhaka–Chattogram highway)",
+      "transport": [
+        "Bus",
+        "Train",
+        "Private Car"
+      ],
+      "flight": null
+    }
   },
   {
     "id": 262,
@@ -22827,29 +22370,6 @@
     ]
   },
   {
-    "id": 266,
-    "name": "Alutila Mystery Cave",
-    "name_bn": "আলুটিলা রহস্যময় গুহা",
-    "slug": "alutila-mystery-cave",
-    "division": "Chattogram",
-    "district": "Khagrachhari",
-    "category": "Adventure",
-    "categories": [
-      "Adventure",
-      "Nature"
-    ],
-    "rating": 4.6,
-    "reviews": 1180,
-    "latitude": 23.085,
-    "longitude": 91.975,
-    "image": "/assets/destinations/alutila-mystery-cave.webp",
-    "shortDesc": "মশাল জ্বালিয়ে অন্ধকার সুড়ঙ্গ ও শীতল পাথুরে তলদেশ পাড়ি দেওয়ার রোমাঞ্চকর গুহা।",
-    "imageLg": "/assets/destinations/alutila-mystery-cave.webp",
-    "gallery": [
-      "/assets/destinations/alutila-mystery-cave.webp"
-    ]
-  },
-  {
     "id": 267,
     "name": "Tareng & Mayabini Lake",
     "name_bn": "তারেং হিল ও মায়াবিনী লেক",
@@ -22870,98 +22390,6 @@
     "imageLg": "/assets/destinations/mayabini-lake.webp",
     "gallery": [
       "/assets/destinations/mayabini-lake.webp"
-    ]
-  },
-  {
-    "id": 268,
-    "name": "Richhang Waterfall",
-    "name_bn": "রিসাং ঝর্ণা",
-    "slug": "richhang-waterfall-cascade",
-    "division": "Chattogram",
-    "district": "Khagrachhari",
-    "category": "Waterfall",
-    "categories": [
-      "Waterfall",
-      "Nature"
-    ],
-    "rating": 4.5,
-    "reviews": 870,
-    "latitude": 23.112,
-    "longitude": 91.935,
-    "image": "/assets/destinations/richhang-waterfall-cascade.webp",
-    "shortDesc": "১০০ ফুট উঁচু খাড়া পাহাড় থেকে আছড়ে পড়া শীতল পানির প্রাকৃতিক ঝর্ণা ও পাথুরে স্লাইড।",
-    "imageLg": "/assets/destinations/richhang-waterfall-cascade.webp",
-    "gallery": [
-      "/assets/destinations/richhang-waterfall-cascade.webp"
-    ]
-  },
-  {
-    "id": 269,
-    "name": "Polwel Park & Love Point",
-    "name_bn": "পলওয়েল পার্ক ও লাভ পয়েন্ট",
-    "slug": "polwel-park-love-point",
-    "division": "Chattogram",
-    "district": "Rangamati",
-    "category": "Nature",
-    "categories": [
-      "Nature",
-      "Lake"
-    ],
-    "rating": 4.6,
-    "reviews": 730,
-    "latitude": 22.645,
-    "longitude": 92.175,
-    "image": "/assets/destinations/polwel-love-point.webp",
-    "shortDesc": "কাপ্তাই লেকের তীরে সাজানো আধুনিক ইকো পার্ক, কটেজ ও রোমান্টিক লাভ পয়েন্ট।",
-    "imageLg": "/assets/destinations/polwel-love-point.webp",
-    "gallery": [
-      "/assets/destinations/polwel-love-point.webp"
-    ]
-  },
-  {
-    "id": 270,
-    "name": "Shuvolong Waterfall",
-    "name_bn": "শুভলং ঝর্ণা ও কাপ্তাই লেক ক্রুজ",
-    "slug": "shuvolong-waterfall-cruise",
-    "division": "Chattogram",
-    "district": "Rangamati",
-    "category": "Waterfall",
-    "categories": [
-      "Waterfall",
-      "Lake"
-    ],
-    "rating": 4.6,
-    "reviews": 950,
-    "latitude": 22.715,
-    "longitude": 92.235,
-    "image": "/assets/destinations/kaptai-lake-cruise.webp",
-    "shortDesc": "কাপ্তাই হ্রদের স্বচ্ছ বুক চিরে ট্রলার ভ্রমণের পর পাহাড় থেকে পতিত শুভলং ঝর্ণা।",
-    "imageLg": "/assets/destinations/kaptai-lake-cruise.webp",
-    "gallery": [
-      "/assets/destinations/kaptai-lake-cruise.webp"
-    ]
-  },
-  {
-    "id": 271,
-    "name": "Sajek Valley Konglak Peak",
-    "name_bn": "কংলাক পাহাড় চূড়া, সাজেক",
-    "slug": "sajek-valley-konglak-peak",
-    "division": "Chattogram",
-    "district": "Rangamati",
-    "category": "Mountain",
-    "categories": [
-      "Mountain",
-      "Nature"
-    ],
-    "rating": 4.9,
-    "reviews": 1480,
-    "latitude": 23.405,
-    "longitude": 92.295,
-    "image": "/assets/destinations/sajek-valley-konglak-peak.webp",
-    "shortDesc": "মেঘের উপত্যকা সাজেকের সর্বোচ্চ চূড়া কংলাক পাড়া যেখান থেকে চারপাশের মেঘ ও পাহাড়ের ৩৬০ ডিগ্রি ভিউ দেখা যায়।",
-    "imageLg": "/assets/destinations/sajek-valley-konglak-peak.webp",
-    "gallery": [
-      "/assets/destinations/sajek-valley-konglak-peak.webp"
     ]
   },
   {
@@ -23150,7 +22578,7 @@
       "CNG Auto-rickshaw"
     ],
     "nearby_destinations": [
-      "sitakunda",
+      "Sitakunda Botanical Garden & Ecopark",
       "mohamaya-lake-kayaking",
       "napittachhora-waterfall"
     ],
@@ -24338,7 +23766,8 @@
     "image": "/assets/destinations/somapura-mahavihara.webp",
     "imageLg": "/assets/destinations/somapura-mahavihara.webp",
     "gallery": [
-      "/assets/destinations/somapura-mahavihara.webp"
+      "/assets/destinations/somapura-mahavihara.webp",
+      "assets/destinations/paharpur.webp"
     ],
     "photoId": "paharpur-cruciform-stupa",
     "galleryIds": [
@@ -24355,36 +23784,62 @@
       "Exploring the 177 monastic cells",
       "Admiring the central cruciform temple and terracotta plaques",
       "Visiting the Paharpur Archaeological Museum",
-      "Walking through the landscaped ancient courtyards"
+      "Walking through the landscaped ancient courtyards",
+      "Site exploration",
+      "Terracotta plaque viewing",
+      "Museum visit",
+      "Sunset over ruins",
+      "Photography"
     ],
     "attractions": [
       "Central Cruciform Stupa",
       "Monastic Cells Quadrangle",
       "Paharpur Site Museum",
       "Terracotta Bas-Reliefs",
-      "Ancient Bathing Ghat (Sandhyavati Ghat)"
+      "Ancient Bathing Ghat (Sandhyavati Ghat)",
+      "Somapura Mahavihara",
+      "Paharpur Museum",
+      "Jagaddala Vihara (ruins)",
+      "Temple complex grounds"
     ],
     "tips": [
       "Hire a certified archaeological guide at the entrance to understand the site's rich history.",
-      "Avoid visiting during noon heat in summer."
+      "Avoid visiting during noon heat in summer.",
+      "Carry water and a hat — shade is limited.",
+      "The museum closes early (usually 5pm).",
+      "Visit on weekdays for a quieter experience."
     ],
     "things_to_do": [
       "Walk around the central sanctum",
       "Explore the museum antiquities",
-      "Photograph the terracotta details"
+      "Photograph the terracotta details",
+      "Site exploration",
+      "Terracotta plaque viewing",
+      "Museum visit",
+      "Sunset over ruins",
+      "Photography"
     ],
     "what_to_see": [
       "1200-year-old terracotta tiles",
       "Grand cruciform brick shrine",
-      "Bronze and basalt Buddha sculptures"
+      "Bronze and basalt Buddha sculptures",
+      "Somapura Mahavihara",
+      "Paharpur Museum",
+      "Jagaddala Vihara (ruins)",
+      "Temple complex grounds"
     ],
     "travel_tips": [
-      "Direct trains run from Dhaka to Joypurhat, from where Paharpur is just 12 km by auto-rickshaw."
+      "Direct trains run from Dhaka to Joypurhat, from where Paharpur is just 12 km by auto-rickshaw.",
+      "Carry water and a hat — shade is limited.",
+      "The museum closes early (usually 5pm).",
+      "Visit on weekdays for a quieter experience."
     ],
     "transport_options": [
       "Train (to Joypurhat)",
       "Bus",
-      "CNG Auto-rickshaw"
+      "CNG Auto-rickshaw",
+      "Train",
+      "Private Car"
     ],
     "nearby_destinations": [
       "mahasthangarh",
@@ -24414,7 +23869,11 @@
         "Direct Bus from Gabtoli",
         "CNG Auto-rickshaw"
       ]
-    }
+    },
+    "alternateNames": [
+      "Paharpur",
+      "পাহাড়পুর"
+    ]
   },
   {
     "id": 287,
@@ -24715,7 +24174,8 @@
     "categories": [
       "Cultural",
       "River",
-      "Agri-Tourism"
+      "Agri-Tourism",
+      "Village"
     ],
     "rating": 4.8,
     "reviews": 1420,
@@ -24741,41 +24201,60 @@
       "Cruising through canal guava orchards in a traditional wooden boat",
       "Photographing floating boat transactions from the iron bridge",
       "Tasting fresh sweet guavas and hog plums straight from orchards",
-      "Exploring traditional backwater village lifestyle"
+      "Exploring traditional backwater village lifestyle",
+      "Watch the floating trade",
+      "Buy fresh guavas",
+      "Photograph the boats"
     ],
     "attractions": [
       "Floating Boat Market",
       "Bhimruli Iron Bridge Viewpoint",
       "Canal Guava Orchards",
-      "Floating Hog Plum & Rice Trade"
+      "Floating Hog Plum & Rice Trade",
+      "Floating guava bazaar",
+      "Kirtankhola river"
     ],
     "tips": [
       "Arrive at the market between 9:00 AM and 1:00 PM when trade is at its peak.",
-      "Hire a small wooden boat (dinghy) for an intimate canal voyage."
+      "Hire a small wooden boat (dinghy) for an intimate canal voyage.",
+      "Best in the guava season",
+      "Go early morning",
+      "Ask permission before photographing people"
     ],
     "things_to_do": [
       "Ride a dinghy boat through the market",
       "Buy freshly plucked guavas",
-      "Photograph the boat vendors from the bridge"
+      "Photograph the boat vendors from the bridge",
+      "Watch the floating trade",
+      "Buy fresh guavas",
+      "Photograph the boats"
     ],
     "what_to_see": [
       "Boats piled high with green guavas",
       "Canal networks",
-      "Lush orchard canopies"
+      "Lush orchard canopies",
+      "Floating guava bazaar",
+      "Kirtankhola river"
     ],
     "travel_tips": [
-      "Direct launch from Dhaka Sadarghat to Barishal or Hularhat, then auto to Bhimruli."
+      "Direct launch from Dhaka Sadarghat to Barishal or Hularhat, then auto to Bhimruli.",
+      "Best in the guava season",
+      "Go early morning",
+      "Ask permission before photographing people"
     ],
     "transport_options": [
       "Launch (from Dhaka)",
       "Engine Boat",
       "Auto-rickshaw",
-      "Bus"
+      "Bus",
+      "Boat"
     ],
     "nearby_destinations": [
       "guthia-mosque",
       "durga-sagar",
-      "kuakata"
+      "kuakata",
+      "barishal-bell-park",
+      "sugandha-river"
     ],
     "nearby_hotels": [
       "Hotels in Barishal City",
@@ -24789,7 +24268,8 @@
       "guava",
       "river",
       "boat",
-      "barishal"
+      "barishal",
+      "floating market"
     ],
     "travelInfo": {
       "from": "Barishal City",
@@ -24800,7 +24280,11 @@
         "Auto-rickshaw / Bus to Jhalakathi",
         "Trawler/Dinghy boat through canals"
       ]
-    }
+    },
+    "alternateNames": [
+      "Floating Guava Market",
+      "ভাসমান পেয়ারা বাজার"
+    ]
   },
   {
     "id": 291,

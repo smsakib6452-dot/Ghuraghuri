@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Mail, PhoneCall, ShieldAlert, Globe, MessageSquare, MapPin } from "lucide-react";
 import { EMERGENCY_CONFIG } from "@/lib/emergency";
 import { FOOTER_CONFIG } from "@/config/footer";
-import { CONTACT_EMAIL, SITE_URL } from "@/lib/constants";
+import { CONTACT_EMAIL, SITE_URL, TOTAL_DESTINATIONS } from "@/lib/constants";
 
 import { buildRouteMetadata } from "@/lib/seo";
 
@@ -133,7 +133,7 @@ export default function ContactPage() {
             href="/destinations"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[var(--surface)] border border-[var(--glass-border)] text-foreground font-bold text-xs hover:border-[#0f4a38] transition-colors"
           >
-            <span>← Explore 271+ Destinations</span>
+            <span>← Explore {TOTAL_DESTINATIONS}+ Destinations</span>
           </Link>
         </div>
       </div>

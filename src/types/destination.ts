@@ -3,6 +3,7 @@ export interface Destination {
   name: string;
   name_bn?: string;
   altName?: string;
+  alternateNames?: string[];
   slug: string;
   division: string;
   district: string;

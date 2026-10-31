@@ -8,7 +8,7 @@ import { DestinationCard } from "@/components/destinations/DestinationCard";
 import { DestinationsFilterControls } from "@/components/destinations/DestinationsFilterControls";
 import { Compass, ChevronLeft, ChevronRight } from "lucide-react";
 import { buildRouteMetadata } from "@/lib/seo";
-import { CATEGORY_GROUPS, resolveCategoryGroup } from "@/lib/constants";
+import { CATEGORY_GROUPS, resolveCategoryGroup, TOTAL_DESTINATIONS } from "@/lib/constants";
 
 export interface DestinationsSearchParams {
   q?: string;
@@ -39,9 +39,9 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     : `/destinations`;
 
   return buildRouteMetadata({
-    title: "Explore 295+ Destinations Across Bangladesh",
+    title: `Explore ${TOTAL_DESTINATIONS}+ Destinations Across Bangladesh`,
     description:
-      "Browse 295+ curated travel destinations across Bangladesh. Filter by division, landscape category, or popularity to plan your ideal Bangladesh journey.",
+      `Browse ${TOTAL_DESTINATIONS}+ curated travel destinations across Bangladesh. Filter by division, landscape category, or popularity to plan your ideal Bangladesh journey.`,
     path: canonicalPath,
     image: "/og/destinations.jpg",
     imageAlt: "Explore Destinations Across Bangladesh",
@@ -83,9 +83,12 @@ export default async function DestinationsPage(props: PageProps) {
         const qLower = q.toLowerCase();
         const matchName = item.name.toLowerCase().includes(qLower);
         const matchBn = item.name_bn?.toLowerCase().includes(qLower);
+        const matchAlt = item.alternateNames?.some((alt) =>
+          alt.toLowerCase().includes(qLower)
+        );
         const matchDistrict = item.district.toLowerCase().includes(qLower);
         const matchCat = item.category.toLowerCase().includes(qLower);
-        if (!matchName && !matchBn && !matchDistrict && !matchCat) return false;
+        if (!matchName && !matchBn && !matchAlt && !matchDistrict && !matchCat) return false;
       }
 
       if (division && item.division !== division) {

@@ -27,6 +27,7 @@
 /scratch/
 /backup-assets/
 /image-audit/
+/duplicates-report.csv
 
 # debug
 npm-debug.log*

@@ -31,7 +31,7 @@
     "flags": [
       "duplicate-image"
     ],
-    "referenceUrl": null,
+    "referenceUrl": "https://otithi.brac.net/blog/mahasthangarh-paharpur-kantajew-temple-distance-routes-trip-planner",
     "reviewerNote": null,
     "image": "/assets/destinations/mahasthangarh.webp"
   },
@@ -192,18 +192,6 @@
     "image": "/assets/destinations/rajban-bihar.webp"
   },
   {
-    "slug": "sonagazi",
-    "name": "Sonagazi",
-    "district": "Feni",
-    "status": "Replace (other reason)",
-    "flags": [
-      "duplicate-image"
-    ],
-    "referenceUrl": "https://observerbd.com/news/137609",
-    "reviewerNote": null,
-    "image": "/assets/destinations/sonagazi.webp"
-  },
-  {
     "slug": "osmani-museum-sylhet",
     "name": "Osmani Museum",
     "district": "Sylhet",
@@ -214,18 +202,6 @@
     "referenceUrl": null,
     "reviewerNote": null,
     "image": "/assets/destinations/osmani-museum-sylhet.webp"
-  },
-  {
-    "slug": "bogura-heritage-park",
-    "name": "Mahasthangarh Heritage Park",
-    "district": "Bogura",
-    "status": "Low quality",
-    "flags": [
-      "duplicate-image"
-    ],
-    "referenceUrl": "https://otithi.brac.net/blog/mahasthangarh-paharpur-kantajew-temple-distance-routes-trip-planner",
-    "reviewerNote": null,
-    "image": "/assets/destinations/bogura-heritage-park.webp"
   },
   {
     "slug": "chuadanga-heritage",
@@ -260,34 +236,9 @@
     "flags": [
       "duplicate-image"
     ],
-    "referenceUrl": null,
+    "referenceUrl": "https://observerbd.com/news/137609",
     "reviewerNote": "double esece may be",
     "image": "/assets/destinations/muhuri-dam-irrigation-project.webp"
-  },
-  {
-    "slug": "titas-river-viewpoint",
-    "name": "Titas River Viewpoint",
-    "district": "Brahmanbaria",
-    "status": "Replace (other reason)",
-    "flags": [
-      "possible-wrong-place",
-      "low-quality"
-    ],
-    "referenceUrl": null,
-    "reviewerNote": "double esece",
-    "image": "/assets/destinations/titas-river-viewpoint.webp"
-  },
-  {
-    "slug": "borostation-molhead-chandpur",
-    "name": "Borostation Molhead / Three Rivers Estuary",
-    "district": "Chandpur",
-    "status": "Replace (other reason)",
-    "flags": [
-      "watermark-or-overlaid-text"
-    ],
-    "referenceUrl": "https://www.localguidesconnect.com/t/three-rivers-adjustment-area-chandpur-boro-station/399382",
-    "reviewerNote": null,
-    "image": "/assets/destinations/chandpur-molhead-three-rivers.webp"
   },
   {
     "slug": "raktadhara-memorial-chandpur",
@@ -300,18 +251,6 @@
     "referenceUrl": null,
     "reviewerNote": null,
     "image": "/assets/destinations/raktadhara-memorial.webp"
-  },
-  {
-    "slug": "polwel-park-love-point",
-    "name": "Polwel Park & Love Point",
-    "district": "Rangamati",
-    "status": "Low quality",
-    "flags": [
-      "portrait-orientation"
-    ],
-    "referenceUrl": null,
-    "reviewerNote": null,
-    "image": "/assets/destinations/polwel-love-point.webp"
   },
   {
     "slug": "jahangirnagar-university",

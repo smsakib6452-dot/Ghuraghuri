@@ -78,8 +78,8 @@ export default function AboutPage() {
             </p>
             <p>
               {isBn
-                ? "আমাদের প্ল্যাটফর্মে রয়েছে ৮টি বিভাগের ৬৪টি জেলার ২৭১টি বাছাইকৃত পর্যটন গন্তব্য, হোটেল ও খাবারের তথ্য এবং প্রাথমিক যাতায়াত রুট নির্দেশিকা।"
-                : "Our platform catalogs over 270 curated destinations across all 64 districts in Bangladesh, providing travel itineraries, transit schedules, and regional culinary traditions."}
+                ? `আমাদের প্ল্যাটফর্মে রয়েছে ৮টি বিভাগের ৬৪টি জেলার ${formatDigits(TOTAL_DESTINATIONS, true)}টি বাছাইকৃত পর্যটন গন্তব্য, হোটেল ও খাবারের তথ্য এবং প্রাথমিক যাতায়াত রুট নির্দেশিকা।`
+                : `Our platform catalogs ${TOTAL_DESTINATIONS} curated destinations across all 64 districts in Bangladesh, providing travel itineraries, transit schedules, and regional culinary traditions.`}
             </p>
           </div>
         </div>

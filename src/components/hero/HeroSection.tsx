@@ -44,21 +44,23 @@ interface SearchItem {
   slug: string;
   name: string;
   name_bn: string;
+  alternateNames?: string[];
   district: string;
   division: string;
   category: string;
   image: string;
 }
 
-function inflateSearchIndex(data: { v: string[]; t: string[]; c: string[]; i: [string, string, string, number, number, number][] }): SearchItem[] {
+function inflateSearchIndex(data: { v: string[]; t: string[]; c: string[]; i: [string, string, string, number, number, number, string[]?][] }): SearchItem[] {
   if (!data || !data.i) return [];
-  return data.i.map(([s, name, name_bn, distIdx, divIdx, catIdx], idx) => {
+  return data.i.map(([s, name, name_bn, distIdx, divIdx, catIdx, alternateNames], idx) => {
     const slug = s || name.toLowerCase().replace(/['\.]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
     return {
       id: idx + 1,
       slug,
       name,
       name_bn,
+      alternateNames: Array.isArray(alternateNames) ? alternateNames : undefined,
       district: data.t[distIdx] || "",
       division: data.v[divIdx] || "",
       category: (data.c && data.c[catIdx]) || "",
@@ -348,9 +350,12 @@ export function HeroSection() {
     return allDestinations
       .filter((d) => {
         const nameMatch = d.name.toLowerCase().includes(q);
-        const nameBnMatch = d.name_bn?.includes(q);
+        const nameBnMatch = d.name_bn?.toLowerCase().includes(q);
+        const altMatch = d.alternateNames?.some((alt) =>
+          alt.toLowerCase().includes(q)
+        );
         const distMatch = d.district.toLowerCase().includes(q);
-        return nameMatch || nameBnMatch || distMatch;
+        return nameMatch || nameBnMatch || altMatch || distMatch;
       })
       .slice(0, 5);
   }, [searchQuery, allDestinations]);

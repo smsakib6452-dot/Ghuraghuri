@@ -230,6 +230,13 @@ export function DestinationDetailClient({
             )}
           </h1>
 
+          {destination.alternateNames && destination.alternateNames.length > 0 && (
+            <p className="text-xs sm:text-sm text-white/80 mb-2">
+              {isBn ? "অন্য নাম: " : "Also known as: "}
+              {destination.alternateNames.join(", ")}
+            </p>
+          )}
+
           <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-white/90">
             <div className="flex items-center gap-1">
               <MapPin className="w-4 h-4 text-[#2ecc71]" />

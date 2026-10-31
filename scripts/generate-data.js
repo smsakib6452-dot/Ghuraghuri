@@ -109,6 +109,7 @@ const slimMapDestinations = destinations.map(d => ({
   id: d.id,
   name: d.name,
   name_bn: d.name_bn || d.name,
+  ...(Array.isArray(d.alternateNames) && d.alternateNames.length > 0 ? { alternateNames: d.alternateNames } : {}),
   slug: d.slug,
   latitude: d.latitude,
   longitude: d.longitude,
@@ -124,7 +125,7 @@ const slimMapDestinations = destinations.map(d => ({
 const mapOutPath = path.resolve(__dirname, '../public/data/map-destinations.json');
 fs.writeFileSync(mapOutPath, JSON.stringify(slimMapDestinations) + '\n');
 
-// 7. Generate compact search-index.json
+// 7. Generate compact search-index.json (including alternateNames and Bangla names)
 const uniqueDivisions = [];
 const uniqueDistricts = [];
 const uniqueCategories = [];
@@ -151,7 +152,7 @@ destinations.forEach(d => {
 const searchItems = destinations.map(d => {
   const autoSlug = d.name.toLowerCase().replace(/['\.]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const explicitSlug = d.slug !== autoSlug ? d.slug : "";
-  return [
+  const item = [
     explicitSlug,
     d.name,
     d.name_bn || d.name,
@@ -159,6 +160,10 @@ const searchItems = destinations.map(d => {
     divMap.get(d.division) ?? 0,
     catMap.get(d.category) ?? 0,
   ];
+  if (Array.isArray(d.alternateNames) && d.alternateNames.length > 0) {
+    item.push(d.alternateNames);
+  }
+  return item;
 });
 
 const searchIndexData = {
@@ -209,5 +214,103 @@ if (missingImages.length > 0) {
 } else {
   console.log(`✓ Build Guard PASSED: All ${destinations.length - quarantinedSlugs.size} active destinations have verified authentic images in /public.`);
 }
+
+// 9. Build Guard: Verify all destination slugs referenced across data files & component constants exist in destinations.json or slug-redirects.json
+console.log('\n[generate-data] Running Build Guard: Verifying destination slug references across data files and components...');
+const redirectsPath = path.resolve(__dirname, '../src/data/slug-redirects.json');
+const slugRedirects = fs.existsSync(redirectsPath) ? JSON.parse(fs.readFileSync(redirectsPath, 'utf8')) : {};
+const activeSlugs = new Set(destinations.map(d => d.slug));
+const redirectSlugs = new Set(Object.keys(slugRedirects));
+const slugErrors = [];
+
+// Verify redirect targets exist in active destinations
+for (const [oldSlug, newSlug] of Object.entries(slugRedirects)) {
+  if (!activeSlugs.has(newSlug)) {
+    slugErrors.push(`src/data/slug-redirects.json: target '${newSlug}' (for '${oldSlug}') does not exist in destinations.json`);
+  }
+  if (activeSlugs.has(oldSlug)) {
+    slugErrors.push(`src/data/slug-redirects.json: source '${oldSlug}' is still active in destinations.json`);
+  }
+}
+
+// Check JSON data files keyed by or containing destination slugs
+const jsonFilesToCheck = [
+  { file: '../src/data/image-quarantine.json', mode: 'array-slug', allowRedirect: false },
+  { file: '../src/data/image-replacement-queue.json', mode: 'array-slug', allowRedirect: false },
+  { file: '../src/data/translations.json', mode: 'object-keys', allowRedirect: false },
+  { file: '../src/data/translations.pending.json', mode: 'object-keys', allowRedirect: false },
+  { file: '../public/data/map-destinations.json', mode: 'array-slug', allowRedirect: false }
+];
+
+for (const item of jsonFilesToCheck) {
+  const fullPath = path.resolve(__dirname, item.file);
+  if (!fs.existsSync(fullPath)) continue;
+  const parsed = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+  const slugsToVerify = item.mode === 'object-keys' ? Object.keys(parsed) : parsed.map(x => x.slug);
+  for (const s of slugsToVerify) {
+    if (!activeSlugs.has(s) && !(item.allowRedirect && redirectSlugs.has(s))) {
+      slugErrors.push(`${item.file}: references invalid/retired destination slug '${s}'`);
+    }
+  }
+}
+
+// Scan component constants and pages for `/destinations/<slug>` or `slug: "<slug>"`
+const componentFilesToCheck = [
+  '../src/components/hero/HeroSection.tsx',
+  '../src/components/home/WeekendEscapes.tsx',
+  '../src/components/home/FeaturedSection.tsx',
+  '../src/components/home/TripFinderQuiz.tsx',
+  '../src/app/travel/page.tsx',
+  '../src/app/hotels/page.tsx',
+  '../src/app/restaurants/page.tsx',
+  '../public/data/destinations.js',
+  '../public/data/translations.js'
+];
+
+for (const relFile of componentFilesToCheck) {
+  const fullPath = path.resolve(__dirname, relFile);
+  if (!fs.existsSync(fullPath)) continue;
+  const content = fs.readFileSync(fullPath, 'utf8');
+  // Match /destinations/<slug> links (excluding division or template expressions)
+  const linkRegex = /\/destinations\/([a-z0-9-]+)(?=["'`?/#\s])/g;
+  let match;
+  while ((match = linkRegex.exec(content)) !== null) {
+    const slug = match[1];
+    if (slug === 'division') continue;
+    if (!activeSlugs.has(slug) && !redirectSlugs.has(slug)) {
+      slugErrors.push(`${relFile}: references unknown destination URL '/destinations/${slug}'`);
+    } else if (redirectSlugs.has(slug)) {
+      slugErrors.push(`${relFile}: references merged-away slug '/destinations/${slug}' (should use '${slugRedirects[slug]}')`);
+    }
+  }
+  // Match slug: "<slug>" or "slug": "<slug>"
+  const propRegex = /\bslug["']?\s*:\s*["']([a-z0-9-]+)["']/g;
+  while ((match = propRegex.exec(content)) !== null) {
+    const slug = match[1];
+    if (['chattogram', 'sylhet', 'khulna', 'barishal', 'dhaka', 'rajshahi', 'rangpur', 'mymensingh'].includes(slug)) continue;
+    if (!activeSlugs.has(slug) && !redirectSlugs.has(slug)) {
+      slugErrors.push(`${relFile}: references unknown slug '${slug}'`);
+    } else if (redirectSlugs.has(slug)) {
+      slugErrors.push(`${relFile}: references merged-away slug '${slug}' (should use '${slugRedirects[slug]}')`);
+    }
+  }
+  // Match I18N_DEST["<slug>"]
+  const i18nRegex = /I18N_DEST\[["']([a-z0-9-]+)["']\]/g;
+  while ((match = i18nRegex.exec(content)) !== null) {
+    const slug = match[1];
+    if (!activeSlugs.has(slug)) {
+      slugErrors.push(`${relFile}: I18N_DEST references invalid/merged-away slug '${slug}'`);
+    }
+  }
+}
+
+if (slugErrors.length > 0) {
+  console.error('\n🚨 FATAL BUILD GUARD ERROR: Invalid or merged-away destination slug references detected:');
+  slugErrors.forEach(e => console.error(`  - ${e}`));
+  process.exit(1);
+} else {
+  console.log(`✓ Build Guard PASSED: All destination slugs across data files and component constants are valid (${activeSlugs.size} active, ${redirectSlugs.size} redirects).`);
+}
+
 
 

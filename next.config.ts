@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import slugRedirects from "./src/data/slug-redirects.json";
 
 const cspCommon = [
   "default-src 'self'",
@@ -52,13 +53,13 @@ const nextConfig: NextConfig = {
     remotePatterns: [],
   },
   async redirects() {
-    return [
-      {
-        source: "/destinations/sreemangal",
-        destination: "/destinations/srimangal",
+    return Object.entries(slugRedirects as Record<string, string>).map(
+      ([oldSlug, newSlug]) => ({
+        source: `/destinations/${oldSlug}`,
+        destination: `/destinations/${newSlug}`,
         permanent: true,
-      },
-    ];
+      })
+    );
   },
   async rewrites() {
     return [
