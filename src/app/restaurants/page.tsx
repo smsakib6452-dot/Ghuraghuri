@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { useApp } from "@/context/AppContext";
 import travelData from "@/data/travel-services.json";
+import { resolveHubParam } from "@/components/hotels/HotelsClient";
 import {
   UtensilsCrossed,
   Star,
@@ -17,7 +19,7 @@ import {
   ArrowUp,
 } from "lucide-react";
 
-type Place = { name: string; name_bn: string };
+type Place = { name: string; name_bn: string; district?: string; division?: string };
 type RestaurantLine = {
   name: string;
   address: string;
@@ -27,11 +29,15 @@ type RestaurantLine = {
   photo: string;
   phone?: string;
   whatsapp?: string;
+  phoneVerified?: boolean;
+  website?: string;
   signature_dish?: string;
   signature_dish_bn?: string;
   price_person?: string;
   price_person_bn?: string;
   map_query?: string;
+  ratingSource?: string;
+  ratingCheckedAt?: string;
 };
 
 type TravelServicesData = {
@@ -39,9 +45,34 @@ type TravelServicesData = {
   places: Record<string, Place>;
 };
 
+function RestaurantsSearchParamSync({
+  hubs,
+  places,
+  onResolved,
+}: {
+  hubs: string[];
+  places: Record<string, Place>;
+  onResolved: (hub: string) => void;
+}) {
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const param = searchParams?.get("district") || searchParams?.get("hub");
+    if (param) {
+      const resolved = resolveHubParam(param, hubs, places);
+      if (resolved) {
+        onResolved(resolved);
+      }
+    }
+  }, [searchParams, hubs, places, onResolved]);
+  return null;
+}
+
 export default function RestaurantsPage() {
   const { language } = useApp();
   const isBn = language === "bn";
+  const { restaurants: restLines, places } = travelData as unknown as TravelServicesData;
+  const hubs = Object.keys(restLines);
+
   const [selectedHub, setSelectedHub] = useState<string>("all");
   const [visibleCount, setVisibleCount] = useState<number>(12);
 
@@ -49,9 +80,6 @@ export default function RestaurantsPage() {
     setSelectedHub(hub);
     setVisibleCount(12);
   };
-
-  const { restaurants: restLines, places } = travelData as unknown as TravelServicesData;
-  const hubs = Object.keys(restLines);
 
   const allRestaurants: Array<{
     hub: string;
@@ -64,10 +92,13 @@ export default function RestaurantsPage() {
     image: string;
     phone: string;
     whatsapp: string;
+    phoneVerified: boolean;
+    website?: string;
     signatureDish: string;
     pricePerson: string;
     mapQuery: string;
     ratingSource?: string;
+    ratingCheckedAt?: string;
   }> = [];
 
   for (const hub of hubs) {
@@ -81,11 +112,14 @@ export default function RestaurantsPage() {
         address: item.address,
         rating: item.rating,
         reviews: item.review_count,
-        cuisine: item.cuisine.join(", ") || "Authentic Local",
+        cuisine: item.cuisine.join(", ") || "Regional Cuisine",
         image: item.photo.startsWith("/assets/") ? item.photo : "",
-        ratingSource: (item as any).ratingSource,
+        ratingSource: item.ratingSource,
+        ratingCheckedAt: item.ratingCheckedAt,
         phone: item.phone || "+8801711000000",
         whatsapp: item.whatsapp || "8801711000000",
+        phoneVerified: item.phoneVerified === true,
+        website: item.website,
         signatureDish: isBn
           ? item.signature_dish_bn || item.signature_dish || "ঐতিহ্যবাহী দেশি খাবার"
           : item.signature_dish || "Traditional Local Delicacy",
@@ -106,20 +140,23 @@ export default function RestaurantsPage() {
 
   return (
     <div className="py-12 bg-[var(--background)] min-h-screen">
+      <Suspense fallback={null}>
+        <RestaurantsSearchParamSync hubs={hubs} places={places} onResolved={handleSelectHub} />
+      </Suspense>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f4a340]/10 text-[#d97706] text-xs font-bold mb-3">
             <UtensilsCrossed className="w-3.5 h-3.5" />
-            <span>{isBn ? "ঐতিহ্যবাহী স্বাদের সন্ধান" : "Culinary Heritage"}</span>
+            <span>{isBn ? "আঞ্চলিক খাবারের গাইড" : "Regional Dining Guide"}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-foreground tracking-tight">
             {isBn ? "খাবার ও রেস্তোরাঁ গাইড" : "Iconic Regional Food & Restaurants"}
           </h1>
           <p className="text-sm sm:text-base text-[var(--text-muted)] mt-2">
             {isBn
-              ? "মেজবানি, কাচ্চি, সাতকড়া, রূপচাঁদা, পাহাড়ি বাঁশ মুরগি ও নদীর তাজা মাছ — সিগনেচার ডিশ ও সরাসরি যোগাযোগের তালিকা।"
-              : "Discover legendary food traditions, iconic eateries, curated signature dishes, and direct contact counters across Bangladesh."}
+              ? "মেজবানি, কাচ্চি, সাতকড়া, রূপচাঁদা, পাহাড়ি বাঁশ মুরগি ও নদীর তাজা মাছ — বাছাইকৃত সিগনেচার ডিশ ও গুগল ম্যাপ লোকেশন।"
+              : "Explore regional food traditions, local eateries, curated signature dishes, and Google Maps directions across Bangladesh."}
           </p>
         </div>
 
@@ -156,10 +193,12 @@ export default function RestaurantsPage() {
 
         {/* Restaurants Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedRestaurants.slice(0, visibleCount).map((item, idx) => (
+          {displayedRestaurants.map((item, idx) => (
             <div
-              key={idx}
-              className="group flex flex-col rounded-2xl overflow-hidden bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5"
+              key={`${item.hub}-${item.name}-${idx}`}
+              className={`group flex-col rounded-2xl overflow-hidden bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 ${
+                idx >= visibleCount ? "hidden" : "flex"
+              }`}
             >
               {/* Photo & Overlays */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-amber-950/40 via-orange-950/30 to-stone-900/40 flex flex-col items-center justify-center p-4 text-center">
@@ -174,7 +213,9 @@ export default function RestaurantsPage() {
                 ) : (
                   <>
                     <UtensilsCrossed className="w-12 h-12 text-amber-400/60 mb-2" />
-                    <span className="text-xs font-semibold text-amber-200/80">{item.cuisine || "Authentic Local Dining"}</span>
+                    <span className="text-xs font-semibold text-amber-200/80">
+                      {item.cuisine || "Curated Local Dining"}
+                    </span>
                   </>
                 )}
                 <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-bold bg-black/60 text-white backdrop-blur-md">
@@ -183,10 +224,13 @@ export default function RestaurantsPage() {
                 <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-bold bg-[#0f4a38]/80 text-white backdrop-blur-md border border-white/20">
                   {isBn ? `${item.pricePerson} / জন` : `${item.pricePerson} / person`}
                 </span>
-                {(item as any).ratingSource && (
+                {item.ratingSource && item.ratingCheckedAt && (
                   <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold">
                     <Star className="w-3.5 h-3.5 text-[#f4a340] fill-[#f4a340]" />
                     <span>{item.rating}</span>
+                    <span className="text-[10px] font-normal text-white/80">
+                      (Rating from {item.ratingSource}, checked {item.ratingCheckedAt})
+                    </span>
                   </div>
                 )}
               </div>
@@ -221,48 +265,71 @@ export default function RestaurantsPage() {
                     <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-[var(--surface-raised)] text-[var(--text-muted)]">
                       {item.cuisine}
                     </span>
-                    <span className="text-xs text-[var(--text-muted)]">
-                      {item.reviews} {isBn ? "রিভিউ" : "Reviews"}
-                    </span>
                   </div>
 
-                  {/* Triple Action Bar (Call, WhatsApp, Maps) */}
-                  <div className="grid grid-cols-3 gap-2">
-                    <a
-                      href={`tel:${item.phone.startsWith("+") ? item.phone : `+88${item.phone.replace(/[^0-9]/g, "")}`}`}
-                      className="flex items-center justify-center gap-1.5 min-h-[38px] px-2 rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] hover:text-white dark:bg-[#1f9d76]/20 dark:hover:bg-[#1f9d76] text-xs font-bold transition-all text-[#0f4a38] dark:text-[#2ecc71] cursor-pointer"
-                      title={isBn ? "সরাসরি কল করুন" : "Call Directly"}
-                    >
-                      <PhoneCall className="w-3.5 h-3.5 shrink-0" />
-                      <span>{isBn ? "কল" : "Call"}</span>
-                    </a>
+                  {/* Action Bar: Call & WhatsApp rendered only when phoneVerified === true */}
+                  {item.phoneVerified === true ? (
+                    <div className="grid grid-cols-3 gap-2">
+                      <a
+                        href={`tel:${item.phone.startsWith("+") ? item.phone : `+88${item.phone.replace(/[^0-9]/g, "")}`}`}
+                        className="flex items-center justify-center gap-1.5 min-h-[38px] px-2 rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] hover:text-white dark:bg-[#1f9d76]/20 dark:hover:bg-[#1f9d76] text-xs font-bold transition-all text-[#0f4a38] dark:text-[#2ecc71] cursor-pointer"
+                        title={isBn ? "সরাসরি কল করুন" : "Call Directly"}
+                      >
+                        <PhoneCall className="w-3.5 h-3.5 shrink-0" />
+                        <span>{isBn ? "কল" : "Call"}</span>
+                      </a>
 
-                    <a
-                      href={`https://wa.me/${item.whatsapp}?text=${encodeURIComponent(
-                        isBn
-                          ? `হ্যালো, আমি ঘুরেঘুরি থেকে ${item.name}-এর টেবিল রিজার্ভেশন ও মেন্যু সম্পর্কে জানতে চাচ্ছি।`
-                          : `Hello, I would like to inquire about table reservation and menu at ${item.name}.`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-1.5 min-h-[38px] px-2 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366] hover:text-white dark:bg-[#25D366]/20 text-xs font-bold transition-all text-[#128C7E] dark:text-[#25D366] cursor-pointer"
-                      title={isBn ? "হোয়াটসঅ্যাপে মেসেজ দিন" : "WhatsApp Inquiry"}
-                    >
-                      <MessageCircle className="w-3.5 h-3.5 shrink-0" />
-                      <span>{isBn ? "মেসেজ" : "Chat"}</span>
-                    </a>
+                      <a
+                        href={`https://wa.me/${item.whatsapp}?text=${encodeURIComponent(
+                          isBn
+                            ? `হ্যালো, আমি ঘুরেঘুরি থেকে ${item.name}-এর টেবিল রিজার্ভেশন ও মেন্যু সম্পর্কে জানতে চাচ্ছি।`
+                            : `Hello, I would like to inquire about table reservation and menu at ${item.name}.`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-1.5 min-h-[38px] px-2 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366] hover:text-white dark:bg-[#25D366]/20 text-xs font-bold transition-all text-[#128C7E] dark:text-[#25D366] cursor-pointer"
+                        title={isBn ? "হোয়াটসঅ্যাপে মেসেজ দিন" : "WhatsApp Inquiry"}
+                      >
+                        <MessageCircle className="w-3.5 h-3.5 shrink-0" />
+                        <span>{isBn ? "মেসেজ" : "Chat"}</span>
+                      </a>
 
-                    <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${item.mapQuery}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-1.5 min-h-[38px] px-2 rounded-xl bg-blue-500/10 hover:bg-blue-600 hover:text-white dark:bg-blue-500/20 text-xs font-bold transition-all text-blue-600 dark:text-blue-400 cursor-pointer"
-                      title={isBn ? "গুগল ম্যাপসে ডিরেকশন দেখুন" : "View on Google Maps"}
-                    >
-                      <Navigation className="w-3.5 h-3.5 shrink-0" />
-                      <span>{isBn ? "ম্যাপ" : "Map"}</span>
-                    </a>
-                  </div>
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${item.mapQuery}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-1.5 min-h-[38px] px-2 rounded-xl bg-blue-500/10 hover:bg-blue-600 hover:text-white dark:bg-blue-500/20 text-xs font-bold transition-all text-blue-600 dark:text-blue-400 cursor-pointer"
+                        title={isBn ? "গুগল ম্যাপসে ডিরেকশন দেখুন" : "View on Google Maps"}
+                      >
+                        <Navigation className="w-3.5 h-3.5 shrink-0" />
+                        <span>{isBn ? "ম্যাপ" : "Map"}</span>
+                      </a>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${item.mapQuery}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-1.5 min-h-[38px] px-3 rounded-xl bg-blue-500/10 hover:bg-blue-600 hover:text-white dark:bg-blue-500/20 text-xs font-bold transition-all text-blue-600 dark:text-blue-400 cursor-pointer"
+                        title={isBn ? "গুগল ম্যাপসে ডিরেকশন দেখুন" : "View on Google Maps"}
+                      >
+                        <Navigation className="w-3.5 h-3.5 shrink-0" />
+                        <span>{isBn ? "গুগল ম্যাপে দেখুন" : "View on Google Maps"}</span>
+                      </a>
+                      {item.website && (
+                        <a
+                          href={item.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-1.5 min-h-[38px] px-3 rounded-xl bg-[var(--surface-raised)] hover:bg-[#0f4a38] hover:text-white text-xs font-bold transition-all text-foreground border border-[var(--glass-border)] cursor-pointer"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                          <span>{isBn ? "ওয়েবসাইট" : "Website"}</span>
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

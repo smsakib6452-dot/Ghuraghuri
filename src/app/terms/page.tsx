@@ -47,7 +47,7 @@ export default function TermsPage() {
             </div>
             <h2 className="text-base font-bold text-foreground">Open Information</h2>
             <p className="text-xs text-[var(--text-muted)] leading-relaxed">
-              Our travel content is curated for public educational and travel planning use across all 64 districts.
+              Our travel content is curated for public educational and travel planning use across all 64 districts of Bangladesh.
             </p>
           </div>
 

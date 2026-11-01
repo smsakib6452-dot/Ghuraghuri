@@ -44,8 +44,8 @@ export interface OsmHotel {
   latitude: number;
   longitude: number;
   distanceKm: number | null;
-  rating: number;
-  review_count: number;
+  rating?: number;
+  review_count?: number;
   price: number;
   currency: string;
   image: string;
@@ -62,8 +62,8 @@ export interface OsmRestaurant {
   latitude: number;
   longitude: number;
   distanceKm: number | null;
-  rating: number;
-  review_count: number;
+  rating?: number;
+  review_count?: number;
   price_level: string;
   price_for_two: number;
   currency: string;
@@ -369,8 +369,6 @@ export async function getNearbyHotels(
           latitude: lat,
           longitude: lon,
           distanceKm: dist,
-          rating: +(4.2 + (idx % 4) * 0.2).toFixed(1),
-          review_count: 45 + idx * 28,
           price: basePrice,
           currency: "BDT",
           image: hotelPhotos[idx % hotelPhotos.length],
@@ -432,7 +430,7 @@ export async function getNearbyRestaurants(
       ];
 
       const cuisines = [
-        ["Authentic Bengali", "Fresh Fish Curry", "Bhuna Khichuri"],
+        ["Traditional Bengali", "Fresh Fish Curry", "Bhuna Khichuri"],
         ["Seafood Special", "Rupchanda Fry", "Crab Masala"],
         ["Traditional Biryani", "Kacchi", "Borhani"],
         ["Local Street Cuisine", "Chui Jhal", "Paratha"],
@@ -459,8 +457,6 @@ export async function getNearbyRestaurants(
           latitude: lat,
           longitude: lon,
           distanceKm: dist,
-          rating: +(4.3 + (idx % 3) * 0.2).toFixed(1),
-          review_count: 55 + idx * 34,
           price_level: idx % 2 === 0 ? "৳৳" : "৳",
           price_for_two: 450 + idx * 220,
           currency: "BDT",

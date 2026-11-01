@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/context/AppContext";
-import { TOTAL_DESTINATIONS, TOTAL_DIVISIONS, TOTAL_DISTRICTS_OFFICIAL } from "@/lib/constants";
+import { TOTAL_DESTINATIONS, TOTAL_DIVISIONS, TOTAL_DISTRICTS_OFFICIAL, TOTAL_DISTRICTS_COVERED } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { CATEGORIES_BN, formatDigits } from "@/lib/i18n";
 import { isImageQuarantined } from "@/lib/destination-image";
@@ -31,8 +31,6 @@ interface HeroSlide {
   location_bn: string;
   tagline: string;
   tagline_bn: string;
-  rating: string;
-  rating_bn: string;
   tags: string[];
   tags_bn: string[];
   caption: string;
@@ -84,12 +82,10 @@ const HERO_SLIDES: HeroSlide[] = [
     district_bn: "কক্সবাজার",
     location: "Cox's Bazar · Bay of Bengal",
     location_bn: "কক্সবাজার · বঙ্গোপসাগর তীর",
-    tagline: "The world's longest unbroken natural sea beach stretching over 120 km along the Bay of Bengal.",
-    tagline_bn: "বঙ্গোপসাগরের কোল ঘেঁষে ১২০ কিলোমিটার দীর্ঘ বিশ্বের দীর্ঘতম নিরবচ্ছিন্ন প্রাকৃতিক সমুদ্র সৈকত।",
-    rating: "4.8 · Explorer Score",
-    rating_bn: "৪.৮ · এক্সপ্লোরার স্কোর",
+    tagline: "One of the world's longest unbroken natural sea beaches, stretching about 120 km along the Bay of Bengal.",
+    tagline_bn: "বঙ্গোপসাগরের কোল ঘেঁষে ১২০ কিলোমিটার দীর্ঘ বিশ্বের অন্যতম দীর্ঘতম নিরবচ্ছিন্ন প্রাকৃতিক সমুদ্র সৈকত।",
     tags: ["Longest Beach", "Sunset Point", "Marine Drive"],
-    tags_bn: ["দীর্ঘতম সৈকত", "সূর্যাস্ত পয়েন্ট", "মেরিন ড্রাইভ"],
+    tags_bn: ["সমুদ্র সৈকত", "সূর্যাস্ত পয়েন্ট", "মেরিন ড্রাইভ"],
     caption: "Cox's Bazar",
     caption_bn: "কক্সবাজার",
   },
@@ -105,8 +101,6 @@ const HERO_SLIDES: HeroSlide[] = [
     location_bn: "রাঙ্গামাটি · মেঘের উপত্যকা",
     tagline: "The Queen of Hills in the Chittagong Hill Tracts where clouds drift across layered green peaks.",
     tagline_bn: "সবুজ পাহাড়ের চূড়ায় মেঘের ভেলায় ভেসে চলা পার্বত্য চট্টগ্রামের মেঘের উপত্যকা।",
-    rating: "4.9 · Explorer Score",
-    rating_bn: "৪.৯ · এক্সপ্লোরার স্কোর",
     tags: ["Cloud Sea", "Konglak Peak", "Hill Tracts"],
     tags_bn: ["মেঘের সমুদ্র", "কংলাক পাহাড়", "পার্বত্য অঞ্চল"],
     caption: "Sajek Valley, Rangamati",
@@ -124,8 +118,6 @@ const HERO_SLIDES: HeroSlide[] = [
     location_bn: "নওগাঁ · ইউনেস্কো বিশ্ব ঐতিহ্য",
     tagline: "8th-century Buddhist monastery and UNESCO World Heritage Site with monumental cruciform architecture.",
     tagline_bn: "অষ্টম শতকের পাল সাম্রাজ্যের বৌদ্ধ মহাবিহার ও ইউনেস্কো স্বীকৃত প্রাচীন স্থাপত্য নিদর্শন।",
-    rating: "4.9 · UNESCO Heritage",
-    rating_bn: "৪.৯ · ইউনেস্কো বিশ্ব ঐতিহ্য",
     tags: ["UNESCO Heritage", "Archaeology", "Pala Dynasty"],
     tags_bn: ["ইউনেস্কো ঐতিহ্য", "প্রত্নতত্ত্ব", "পাল সাম্রাজ্য"],
     caption: "Somapura Mahavihara, Naogaon",
@@ -136,19 +128,17 @@ const HERO_SLIDES: HeroSlide[] = [
     image: "/assets/destinations/barikka-tila-jadukata-hero.webp",
     slug: "barikka-tila",
     title: "Barikka Tila",
-    title_bn: "বরিক্কা টিলা",
+    title_bn: "বারিক্কা টিলা",
     district: "Sunamganj",
     district_bn: "সুনামগঞ্জ",
     location: "Sunamganj · Jadukata River",
     location_bn: "সুনামগঞ্জ · জাদুকাটা নদী",
     tagline: "Forested hill rising above the crystal-clear waters of the Jadukata River and Meghalaya border.",
     tagline_bn: "জাদুকাটা নদীর স্বচ্ছ জলরাশি আর মেঘালয় সীমান্ত ঘেঁষা সবুজ টিলার মনোমুগ্ধকর দৃশ্য।",
-    rating: "4.8 · Explorer Score",
-    rating_bn: "৪.৮ · এক্সপ্লোরার স্কোর",
     tags: ["Jadukata River", "Haor View", "Highland Border"],
     tags_bn: ["জাদুকাটা নদী", "হাওর ভিউ", "সীমান্ত পাহাড়"],
     caption: "Barikka Tila, Sunamganj",
-    caption_bn: "বরিক্কা টিলা, সুনামগঞ্জ",
+    caption_bn: "বারিক্কা টিলা, সুনামগঞ্জ",
   },
   {
     id: 289,
@@ -162,8 +152,6 @@ const HERO_SLIDES: HeroSlide[] = [
     location_bn: "বাগেরহাট · সুন্দরবন",
     tagline: "Eco-tourism haven in the Sundarbans featuring mangrove canopy boardwalks and wildlife breeding.",
     tagline_bn: "সুন্দরবনের প্রবেশদ্বার, ক্যানোপি বোর্ডওয়াক ও বন্যপ্রাণী প্রজনন কেন্দ্র সমৃদ্ধ ইকো-ট্যুরিজম কেন্দ্র।",
-    rating: "4.8 · Explorer Score",
-    rating_bn: "৪.৮ · এক্সপ্লোরার স্কোর",
     tags: ["Sundarbans", "Canopy Walk", "Wildlife Haven"],
     tags_bn: ["সুন্দরবন", "ক্যানোপি ওয়াক", "বন্যপ্রাণী"],
     caption: "Karamjal, Sundarbans",
@@ -208,10 +196,10 @@ export function HeroSection() {
     isLoading: boolean;
     isError: boolean;
   }>({
-    coxsBazar: 33,
-    sajek: 32,
-    srimangal: 33,
-    khulna: 33,
+    coxsBazar: null,
+    sajek: null,
+    srimangal: null,
+    khulna: null,
     lastUpdated: null,
     isLoading: true,
     isError: false,
@@ -346,7 +334,7 @@ export function HeroSection() {
 
   const suggestions = useMemo(() => {
     if (!searchQuery.trim()) return [];
-    const q = searchQuery.toLowerCase();
+    const q = searchQuery.normalize("NFC").toLowerCase();
     return allDestinations
       .filter((d) => {
         const nameMatch = d.name.toLowerCase().includes(q);
@@ -757,7 +745,7 @@ export function HeroSection() {
             <span className="text-white/20">•</span>
             <Link href="/destinations" prefetch={false} className="flex items-center gap-1.5 group hover:opacity-90 transition-opacity">
               <span className="text-sm sm:text-base font-black text-[#35D07F] tabular-nums">
-                {formatNumberEnBn(TOTAL_DISTRICTS_OFFICIAL, isBn)}
+                {formatNumberEnBn(TOTAL_DISTRICTS_COVERED, isBn)}
               </span>
               <span className="text-xs text-[#D1E0D8] font-medium">
                 {isBn ? "জেলা" : "Districts"}
@@ -774,10 +762,10 @@ export function HeroSection() {
             <div className="overflow-hidden relative flex-1 min-w-0">
               <div className="whitespace-nowrap flex items-center gap-6 text-white/95 text-xs font-medium animate-marquee hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-reduce:[animation-play-state:paused]">
                 <span>
-                  {`${isBn ? "🏖️ কক্সবাজার" : "🏖️ Cox's Bazar"} ${liveWeather.coxsBazar !== null ? formatDigits(liveWeather.coxsBazar, isBn) : "২৮"}°C · ${isBn ? "☁️ সাজেক" : "☁️ Sajek"} ${liveWeather.sajek !== null ? formatDigits(liveWeather.sajek, isBn) : "২২"}°C · ${isBn ? "🍵 শ্রীমঙ্গল" : "🍵 Srimangal"} ${liveWeather.srimangal !== null ? formatDigits(liveWeather.srimangal, isBn) : "২৪"}°C · ${isBn ? "🐅 খুলনা" : "🐅 Khulna"} ${liveWeather.khulna !== null ? formatDigits(liveWeather.khulna, isBn) : "২৬"}°C`}
+                  {`${isBn ? "🏖️ কক্সবাজার" : "🏖️ Cox's Bazar"} ${liveWeather.coxsBazar !== null ? formatDigits(liveWeather.coxsBazar, isBn) : "--"}°C · ${isBn ? "☁️ সাজেক" : "☁️ Sajek"} ${liveWeather.sajek !== null ? formatDigits(liveWeather.sajek, isBn) : "--"}°C · ${isBn ? "🍵 শ্রীমঙ্গল" : "🍵 Srimangal"} ${liveWeather.srimangal !== null ? formatDigits(liveWeather.srimangal, isBn) : "--"}°C · ${isBn ? "🐅 খুলনা" : "🐅 Khulna"} ${liveWeather.khulna !== null ? formatDigits(liveWeather.khulna, isBn) : "--"}°C`}
                 </span>
                 <span aria-hidden="true">
-                  {`${isBn ? "🏖️ কক্সবাজার" : "🏖️ Cox's Bazar"} ${liveWeather.coxsBazar !== null ? formatDigits(liveWeather.coxsBazar, isBn) : "২৮"}°C · ${isBn ? "☁️ সাজেক" : "☁️ Sajek"} ${liveWeather.sajek !== null ? formatDigits(liveWeather.sajek, isBn) : "২২"}°C · ${isBn ? "🍵 শ্রীমঙ্গল" : "🍵 Srimangal"} ${liveWeather.srimangal !== null ? formatDigits(liveWeather.srimangal, isBn) : "২৪"}°C · ${isBn ? "🐅 খুলনা" : "🐅 Khulna"} ${liveWeather.khulna !== null ? formatDigits(liveWeather.khulna, isBn) : "২৬"}°C`}
+                  {`${isBn ? "🏖️ কক্সবাজার" : "🏖️ Cox's Bazar"} ${liveWeather.coxsBazar !== null ? formatDigits(liveWeather.coxsBazar, isBn) : "--"}°C · ${isBn ? "☁️ সাজেক" : "☁️ Sajek"} ${liveWeather.sajek !== null ? formatDigits(liveWeather.sajek, isBn) : "--"}°C · ${isBn ? "🍵 শ্রীমঙ্গল" : "🍵 Srimangal"} ${liveWeather.srimangal !== null ? formatDigits(liveWeather.srimangal, isBn) : "--"}°C · ${isBn ? "🐅 খুলনা" : "🐅 Khulna"} ${liveWeather.khulna !== null ? formatDigits(liveWeather.khulna, isBn) : "--"}°C`}
                 </span>
               </div>
             </div>
@@ -785,7 +773,7 @@ export function HeroSection() {
               {liveWeather.isLoading ? (
                 <>
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
-                  <span>{isBn ? "সংযুক্ত হচ্ছে..." : "Connecting..."}</span>
+                  <span className="sr-only">{isBn ? "আবহাওয়া লোড হচ্ছে" : "Loading live weather"}</span>
                 </>
               ) : liveWeather.isError ? (
                 <span>{isBn ? "ক্যাশড" : "Cached"}</span>

@@ -34,10 +34,10 @@ export function ServicesSection() {
       image: TRAVEL_HUB_REMOTE_IMAGES.hotels,
     },
     {
-      title: isBn ? "ঐতিহ্যবাহী আঞ্চলিক খাবার" : "Authentic Regional Cuisine",
+      title: isBn ? "ঐতিহ্যবাহী আঞ্চলিক খাবার" : "Regional Cuisine Guide",
       desc: isBn
         ? "মেজবানি মাংস, সাতকড়া বিফ, ইলিশ পাতুরি থেকে কাচ্চি বিরিয়ানি — লোকাল ফুড গাইড।"
-        : "Discover legendary local dishes, secret street food spots, and authentic culinary traditions.",
+        : "Discover legendary local dishes, street food spots, and regional culinary traditions.",
       icon: UtensilsCrossed,
       href: "/restaurants",
       badge: isBn ? "স্বাদের অভিযান" : "Local Flavors",
@@ -104,8 +104,8 @@ export function ServicesSection() {
           </h2>
           <p className="text-sm sm:text-base text-[var(--text-muted)] mt-2 max-w-xl">
             {isBn
-              ? "শুধুমাত্র স্পট নয় — আপনার পুরো যাত্রার জন্য বিশ্বস্ত হোটেল, স্থানীয় খাবার, বাস-ট্রেন ও নিরাপত্তা তথ্য।"
-              : "Beyond destinations: seamless lodging, genuine food recommendations, travel connectivity, and 24/7 security."}
+              ? "শুধুমাত্র স্পট নয় — আপনার পুরো যাত্রার জন্য বাছাইকৃত হোটেল, স্থানীয় খাবার, বাস-ট্রেন ও নিরাপত্তা তথ্য।"
+              : "Beyond destinations: curated lodging, regional food recommendations, travel connectivity, and 24/7 security."}
           </p>
         </div>
 

@@ -646,6 +646,10 @@ export function MapSection() {
                       alt={
                         isBn
                           ? `${activeSpot.name_bn || activeSpot.name}, ${activeSpot.district}`
+                          : activeSpot.district.trim().toLowerCase() === activeSpot.division.trim().toLowerCase()
+                          ? `${activeSpot.name}, ${activeSpot.division}`
+                          : activeSpot.name.trim().toLowerCase() === activeSpot.district.trim().toLowerCase()
+                          ? `${activeSpot.name} in ${activeSpot.division} Division`
                           : `${activeSpot.name} in ${activeSpot.district}, ${activeSpot.division}`
                       }
                       fill

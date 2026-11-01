@@ -121,7 +121,7 @@ async function generateAllOgImages() {
 
   for (const item of staticRoutes) {
     const target = path.join(ogDir, item.file);
-    if (!fs.existsSync(target)) {
+    if (true || !fs.existsSync(target)) {
       await renderCard(item.bg, item.title, item.subtitle, target, logoBuf);
       console.log(`Generated static OG: /og/${item.file}`);
     }
@@ -144,7 +144,7 @@ async function generateAllOgImages() {
 
   for (const div of divisionRoutes) {
     const target = path.join(divisionsDir, `${div.slug}.jpg`);
-    if (!fs.existsSync(target)) {
+    if (true || !fs.existsSync(target)) {
       await renderCard(
         div.bg,
         `${div.name} Division Travel Guide`,

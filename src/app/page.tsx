@@ -14,12 +14,12 @@ import { JsonLd, getWebsiteSchema, getOrganizationSchema } from "@/components/se
 import { getDestinationImage } from "@/lib/destination-image";
 
 import { buildRouteMetadata } from "@/lib/seo";
-import { TOTAL_DESTINATIONS } from "@/lib/constants";
+import { TOTAL_DESTINATIONS, TOTAL_DISTRICTS_COVERED, POPULAR_DESTINATIONS } from "@/lib/constants";
 
 export const metadata: Metadata = buildRouteMetadata({
   title: "Ghuraghuri — Bangladesh Travel Explorer | ঘুরাঘুরি",
   description:
-    `Discover ${TOTAL_DESTINATIONS}+ authentic tourist spots across all 8 divisions of Bangladesh. Explore hill tracks, sandy beaches, tea gardens, and complete travel guides.`,
+    `Explore ${TOTAL_DESTINATIONS} curated destinations across ${TOTAL_DISTRICTS_COVERED} districts of Bangladesh with interactive maps, live weather updates, transit routes, and local travel guides.`,
   path: "/",
   isAbsoluteTitle: true,
 });
@@ -29,10 +29,18 @@ export default function HomePage() {
   const curatedDestinations = (destinationsData as unknown as Destination[])
     .filter(
       (d) =>
-        d.featured ||
-        d.popularity === "high" ||
-        ["Beach", "Island", "Hill", "Mountain", "Waterfall", "Historical", "Archaeological", "Heritage"].includes(d.category)
+        !d.needsReview && (d.featured ||
+        POPULAR_DESTINATIONS.includes(d.slug) ||
+        ["Beach", "Island", "Hill", "Mountain", "Waterfall", "Historical", "Archaeological", "Heritage"].includes(d.category))
     )
+    .sort((a, b) => {
+      const idxA = POPULAR_DESTINATIONS.indexOf(a.slug);
+      const idxB = POPULAR_DESTINATIONS.indexOf(b.slug);
+      const rankA = idxA !== -1 ? idxA : Infinity;
+      const rankB = idxB !== -1 ? idxB : Infinity;
+      if (rankA !== rankB) return rankA - rankB;
+      return a.name.localeCompare(b.name);
+    })
     .slice(0, 40)
     .map((d) => {
       const tr = trData[d.slug];
@@ -45,9 +53,7 @@ export default function HomePage() {
         district: d.district,
         category: d.category,
         categories: d.categories || [],
-        rating: d.rating,
-        reviews: d.reviews,
-        image: getDestinationImage(d) || "",
+                        image: getDestinationImage(d) || "",
         recommendedDays: d.recommendedDays,
         shortDesc: d.shortDesc,
         shortDesc_bn: tr?.shortDesc,

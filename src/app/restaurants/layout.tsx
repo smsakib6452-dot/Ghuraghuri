@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { buildRouteMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildRouteMetadata({
-  title: "Authentic Restaurants & Food Guide in Bangladesh",
+  title: "Curated Restaurants & Regional Food Guide in Bangladesh",
   description:
-    "Explore authentic local eateries, traditional Bengali dining, and popular restaurants across Bangladesh. Discover signature dishes, price guides, and maps.",
+    "Explore curated local restaurants, traditional biriyani houses, and regional dining spots across Bangladesh with signature dishes, prices, and map links.",
   path: "/restaurants",
   image: "/og/restaurants.jpg",
-  imageAlt: "Authentic Restaurants and Food Guide in Bangladesh",
+  imageAlt: "Curated Restaurants and Regional Food Guide in Bangladesh",
 });
 
 export default function RestaurantsLayout({ children }: { children: React.ReactNode }) {

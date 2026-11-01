@@ -7,7 +7,7 @@ import translationsData from "@/data/translations.json";
 import { Destination } from "@/types/destination";
 import { DestinationCard } from "@/components/destinations/DestinationCard";
 import { buildRouteMetadata } from "@/lib/seo";
-import { SITE_URL, DIVISION_COUNTS } from "@/lib/constants";
+import { SITE_URL, DIVISION_COUNTS, POPULAR_DESTINATIONS } from "@/lib/constants";
 import { getDestinationImage } from "@/lib/destination-image";
 import { MapPin, Compass, ArrowLeft } from "lucide-react";
 
@@ -153,10 +153,11 @@ export default async function DivisionPage({ params }: Props) {
   const divisionDestinations = allDestinations
     .filter((d) => d.division.toLowerCase() === config.name.toLowerCase())
     .sort((a, b) => {
-      const pA = typeof a.popularity === "number" ? a.popularity : 0;
-      const pB = typeof b.popularity === "number" ? b.popularity : 0;
-      if (pB !== pA) return pB - pA;
-      if (b.rating !== a.rating) return b.rating - a.rating;
+      const popIndexA = POPULAR_DESTINATIONS.indexOf(a.slug);
+      const popIndexB = POPULAR_DESTINATIONS.indexOf(b.slug);
+      const rankA = popIndexA !== -1 ? popIndexA : Infinity;
+      const rankB = popIndexB !== -1 ? popIndexB : Infinity;
+      if (rankA !== rankB) return rankA - rankB;
       return a.name.localeCompare(b.name);
     });
 

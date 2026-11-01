@@ -28,20 +28,6 @@
     ]
   },
   {
-    "slug": "baneshwar-temple",
-    "name": "Baneshwar Temple",
-    "district": "Jamalpur",
-    "reason": "Shows a modern roadside pink commercial shopfront building with iron shutters in Jamalpur rather than a historic temple.",
-    "flags": [
-      "possible-wrong-place"
-    ],
-    "originalImage": "/assets/destinations/baneshwar-temple.webp",
-    "originalImageLg": "/assets/destinations/baneshwar-temple.webp",
-    "originalGallery": [
-      "/assets/destinations/baneshwar-temple.webp"
-    ]
-  },
-  {
     "slug": "star-mosque",
     "name": "Star Mosque",
     "district": "Dhaka",
@@ -882,5 +868,17 @@
     ],
     "referenceUrl": null,
     "reviewerNote": null
+  },
+  {
+    "slug": "dayamoyee-temple-jamalpur",
+    "name": "Dayamoyee Temple",
+    "district": "Jamalpur",
+    "reason": "no photo yet",
+    "flags": [
+      "missing-authentic-photo"
+    ],
+    "originalImage": null,
+    "originalImageLg": null,
+    "originalGallery": []
   }
 ]

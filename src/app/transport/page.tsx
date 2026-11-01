@@ -258,7 +258,18 @@ export default function TransportPage() {
     },
   ];
 
-  const busOperators = [
+  const busOperators: Array<{
+    name: string;
+    name_bn: string;
+    type: string;
+    type_bn: string;
+    phone: string;
+    helpline: string;
+    phoneVerified: boolean;
+    portalUrl?: string;
+    hub: string;
+    hub_bn: string;
+  }> = [
     {
       name: "Green Line Paribahan",
       name_bn: "গ্রিন লাইন পরিবহন",
@@ -266,6 +277,8 @@ export default function TransportPage() {
       type_bn: "স্ক্যানিয়া মাল্টি-অ্যাক্সেল ও ডাবল ডেকার লাক্সারি",
       phone: "01730-060000",
       helpline: "09613-445566",
+      phoneVerified: false,
+      portalUrl: "https://greenlinebd.com",
       hub: "Rajarbagh / Arambagh / Kalabagan",
       hub_bn: "রাজারবাগ / আরামবাগ / কলাবাগান",
     },
@@ -276,6 +289,8 @@ export default function TransportPage() {
       type_bn: "ভলভো ৯৬০০ ও নন-এসি দেশব্যাপী নেটওয়ার্ক",
       phone: "01713-049500",
       helpline: "01713-402671",
+      phoneVerified: false,
+      portalUrl: "https://www.shohoz.com/bus-tickets",
       hub: "Gabtoli / Sayedabad / Panthapath",
       hub_bn: "গাবতলী / সায়েদাবাদ / পান্থপথ",
     },
@@ -286,6 +301,8 @@ export default function TransportPage() {
       type_bn: "মার্সিডিজ-বেঞ্জ ও হুন্দাই এসি স্যুট",
       phone: "01711-440856",
       helpline: "01711-440857",
+      phoneVerified: false,
+      portalUrl: "https://www.shohoz.com/bus-tickets",
       hub: "Arambagh / Sayedabad / Fakirapool",
       hub_bn: "আরামবাগ / সায়েদাবাদ / ফকিরাপুল",
     },
@@ -296,6 +313,8 @@ export default function TransportPage() {
       type_bn: "সিলেট-চট্টগ্রাম হাই ফ্রিকোয়েন্সি সার্ভিস",
       phone: "01760-737600",
       helpline: "01760-737600",
+      phoneVerified: false,
+      portalUrl: "https://www.shohoz.com/bus-tickets",
       hub: "Mohakhali / Uttara / Kadamtoli",
       hub_bn: "মহাখালী / উত্তরা / কদমতলী (সিলেট)",
     },
@@ -306,6 +325,8 @@ export default function TransportPage() {
       type_bn: "সরাসরি হিল এক্সপ্রেস ও স্লিপার কোচ",
       phone: "01711-300444",
       helpline: "01762-692723",
+      phoneVerified: false,
+      portalUrl: "https://www.shohoz.com/bus-tickets",
       hub: "Arambagh / Sayedabad / Khagrachhari",
       hub_bn: "আরামবাগ / সায়েদাবাদ / খাগড়াছড়ি (সাজেক)",
     },
@@ -316,6 +337,8 @@ export default function TransportPage() {
       type_bn: "হুন্দাই লাক্সারি এসি কোচ",
       phone: "01762-684400",
       helpline: "01762-684401",
+      phoneVerified: false,
+      portalUrl: "https://deshtravelsbd.com",
       hub: "Arambagh / Sayedabad / Rajshahi",
       hub_bn: "আরামবাগ / সায়েদাবাদ / রাজশাহী",
     },
@@ -326,6 +349,8 @@ export default function TransportPage() {
       type_bn: "স্ক্যানিয়া মাল্টি-অ্যাক্সেল (উত্তরবঙ্গ)",
       phone: "01711-418854",
       helpline: "01713-333333",
+      phoneVerified: false,
+      portalUrl: "https://www.shohoz.com/bus-tickets",
       hub: "Gabtoli / Kalyanpur / Shiroil",
       hub_bn: "গাবতলী / কল্যাণপুর / শিরোইল (রাজশাহী)",
     },
@@ -336,6 +361,8 @@ export default function TransportPage() {
       type_bn: "পদ্মা সেতু দক্ষিণ এক্সপ্রেস",
       phone: "01711-010450",
       helpline: "01729-555555",
+      phoneVerified: false,
+      portalUrl: "https://www.shohoz.com/bus-tickets",
       hub: "Sayedabad / Gabtoli / Nathullabad",
       hub_bn: "সায়েদাবাদ / গাবতলী / নথুল্লাবাদ (বরিশাল)",
     },
@@ -625,16 +652,16 @@ export default function TransportPage() {
               </div>
             </div>
 
-            {/* Verified Bus Counters & Helplines */}
+            {/* Curated Bus Operators & Counter Directory */}
             <div className="p-8 rounded-3xl bg-[var(--surface)] border border-[var(--glass-border)] shadow-md">
               <div className="mb-6">
                 <h3 className="text-xl sm:text-2xl font-black text-foreground">
-                  {isBn ? "প্রধান আন্তঃজেলা বাস কাউন্টার ও হেল্পলাইন" : "Intercity Bus Operators & Central Helplines"}
+                  {isBn ? "প্রধান আন্তঃজেলা বাস অপারেটর ও কাউন্টার নির্দেশিকা" : "Intercity Bus Operators & Counter Directory"}
                 </h3>
                 <p className="text-xs sm:text-sm text-[var(--text-muted)] mt-1">
                   {isBn
-                    ? "সরাসরি বাসের টিকিট বুকিং ও আসন নিশ্চিতে কাউন্টারের ফোন নম্বরে কল করুন।"
-                    : "Curated phone numbers for central counters across Dhaka, Chattogram, and tourist destinations."}
+                    ? "ঢাকা, চট্টগ্রাম ও প্রধান পর্যটন রুটের বাস কাউন্টার লোকেশন ও অনলাইন পোর্টাল নির্দেশিকা।"
+                    : "Curated operator directory for central counters across Dhaka, Chattogram, and major tourist routes."}
                 </p>
               </div>
 
@@ -662,19 +689,48 @@ export default function TransportPage() {
                     </div>
 
                     <div className="mt-4 pt-3 border-t border-[var(--glass-border)] flex items-center justify-between gap-2">
-                      <div>
-                        <span className="text-[10px] text-[var(--text-muted)] block">
-                          {isBn ? "সরাসরি ফোন:" : "Direct Phone:"}
-                        </span>
-                        <span className="text-xs font-bold text-foreground">{op.phone}</span>
-                      </div>
-                      <a
-                        href={`tel:${op.phone.replace(/[^0-9+]/g, "")}`}
-                        className="px-3 py-1.5 rounded-xl bg-[#0f4a38] hover:bg-[#156b50] text-white text-xs font-bold flex items-center gap-1 shadow-sm transition-all"
-                      >
-                        <PhoneCall className="w-3 h-3" />
-                        <span>{isBn ? "কল" : "Call"}</span>
-                      </a>
+                      {op.phoneVerified === true ? (
+                        <>
+                          <div>
+                            <span className="text-[10px] text-[var(--text-muted)] block">
+                              {isBn ? "সরাসরি ফোন:" : "Direct Phone:"}
+                            </span>
+                            <span className="text-xs font-bold text-foreground">{op.phone}</span>
+                          </div>
+                          <a
+                            href={`tel:${op.phone.replace(/[^0-9+]/g, "")}`}
+                            className="px-3 py-1.5 rounded-xl bg-[#0f4a38] hover:bg-[#156b50] text-white text-xs font-bold flex items-center gap-1 shadow-sm transition-all"
+                          >
+                            <PhoneCall className="w-3 h-3" />
+                            <span>{isBn ? "কল" : "Call"}</span>
+                          </a>
+                        </>
+                      ) : (
+                        <div className="flex items-center gap-2 w-full">
+                          <a
+                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                              `${op.name} ${op.hub} Bangladesh`
+                            )}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 min-h-[34px] px-2.5 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-600 hover:text-white text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center gap-1 transition-all"
+                          >
+                            <Navigation className="w-3 h-3 shrink-0" />
+                            <span>{isBn ? "ম্যাপ" : "Map"}</span>
+                          </a>
+                          {op.portalUrl && (
+                            <a
+                              href={op.portalUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="min-h-[34px] px-2.5 py-1.5 rounded-xl bg-[var(--surface)] hover:bg-[#0f4a38] hover:text-white text-foreground border border-[var(--glass-border)] text-xs font-bold flex items-center justify-center gap-1 transition-all"
+                            >
+                              <ExternalLink className="w-3 h-3 shrink-0" />
+                              <span>{isBn ? "ওয়েবসাইট" : "Website"}</span>
+                            </a>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}

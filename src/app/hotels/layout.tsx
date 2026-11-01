@@ -4,7 +4,7 @@ import { buildRouteMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildRouteMetadata({
   title: "Hotels & Eco Resorts in Bangladesh",
   description:
-    "Discover verified hotels, eco-resorts, and guest houses across Bangladesh. Access direct phone contacts, locations, and room rates for your next journey.",
+    "Browse curated hotels, eco-lodges, cottages, and resorts across major Bangladesh travel hubs with nightly BDT rates, amenities, and Google Maps links.",
   path: "/hotels",
   image: "/og/hotels.jpg",
   imageAlt: "Hotels and Eco Resorts in Bangladesh",

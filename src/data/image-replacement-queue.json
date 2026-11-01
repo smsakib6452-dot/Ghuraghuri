@@ -289,5 +289,17 @@
     "referenceUrl": "https://www.localguidesconnect.com/t/topic/264769",
     "reviewerNote": null,
     "image": "/assets/destinations/turong-chhora.webp"
+  },
+  {
+    "slug": "dayamoyee-temple-jamalpur",
+    "name": "Dayamoyee Temple",
+    "district": "Jamalpur",
+    "status": "Missing image",
+    "flags": [
+      "missing-authentic-photo"
+    ],
+    "referenceUrl": null,
+    "reviewerNote": "no photo yet",
+    "image": null
   }
 ]

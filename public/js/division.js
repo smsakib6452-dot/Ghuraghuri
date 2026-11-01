@@ -1013,17 +1013,27 @@ const bnDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
 return String(numStr).replace(/\d/g, match => bnDigits[parseInt(match)]);
 }
 function updateUI() {
+const total = projectedFeatures.length || Object.keys(DISTRICT_MAP).length;
+const totalBn = convertToBanglaNum(total);
 const count = state.selected.length;
 const countBn = convertToBanglaNum(count.toString().padStart(2, '0'));
 const countDisplay = document.getElementById('divStatCountDisplay');
-if (countDisplay) countDisplay.textContent = `${countBn} / ১১`;
+if (countDisplay) countDisplay.textContent = `${countBn} / ${totalBn}`;
+const divPanelTitle = document.getElementById('divPanelTitle');
+if (divPanelTitle) divPanelTitle.textContent = `${totalBn}টি জেলা`;
+const divSectionDesc = document.getElementById('divSectionDesc');
+if (divSectionDesc) divSectionDesc.textContent = `${totalBn}টি জেলার মধ্য থেকে আপনার ভ্রমণের জেলাগুলো নির্বাচন করে সোশ্যাল পোস্টার তৈরি করুন।`;
+const divPosterLiveSub = document.getElementById('divPosterLiveSub');
+if (divPosterLiveSub) divPosterLiveSub.textContent = `${totalBn}টি জেলার ব্যক্তিগত ভ্রমণ মানচিত্র`;
+const divExpChipCount = document.getElementById('divExpChipCount');
+if (divExpChipCount) divExpChipCount.innerHTML = `ট্রাভেল স্কোর: <strong>${count > 0 ? countBn : '৭'} / ${totalBn} জেলা</strong>`;
 const rank = getExplorerRank(count);
 const rankTitle = document.getElementById('divRankTitle');
 const rankPercent = document.getElementById('divRankPercent');
 const rankBarFill = document.getElementById('divRankBarFill');
 if (rankTitle) rankTitle.textContent = rank.title;
 if (rankPercent) rankPercent.textContent = `${rank.percent} সম্পন্ন`;
-if (rankBarFill) rankBarFill.style.width = `${Math.min(100, Math.round((count / 11) * 100))}%`;
+if (rankBarFill) rankBarFill.style.width = `${Math.min(100, Math.round((count / total) * 100))}%`;
 const incText = document.getElementById('divInclusionText');
 if (incText) {
 incText.textContent = `${countBn}টি জেলা পোস্টারে অন্তর্ভুক্ত`;
@@ -1042,7 +1052,7 @@ liveTitle.textContent = (state.title && state.title.trim()) ? state.title : "আ
 }
 const liveCount = document.getElementById('divPosterLiveCount');
 if (liveCount) {
-liveCount.textContent = `${count.toString().padStart(2, '0')} / 11`;
+liveCount.textContent = `${count.toString().padStart(2, '0')} / ${total}`;
 }
 const liveRank = document.getElementById('divPosterLiveRank');
 if (liveRank) {

@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import destinations from "@/data/destinations.json";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, POPULAR_DESTINATIONS } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL;
@@ -80,23 +80,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((div) => ({
     url: `${baseUrl}/destinations/division/${div}`,
     changeFrequency: "weekly",
-    priority: 0.85,
+    priority: 0.7,
   }));
 
-  const destinationRoutes: MetadataRoute.Sitemap = destinations.map((dest: any) => {
-    const entry: MetadataRoute.Sitemap[number] = {
-      url: `${baseUrl}/destinations/${dest.slug}`,
-      changeFrequency: "weekly",
-      priority: (dest.rating || 0) >= 4.5 ? 0.8 : 0.6,
-    };
+  const popularSet = new Set(POPULAR_DESTINATIONS);
 
-    // Use a real per-destination date if the data has one, otherwise omit lastModified
-    if (dest.updatedAt || dest.lastModified || dest.date) {
-      entry.lastModified = new Date(dest.updatedAt || dest.lastModified || dest.date);
-    }
+  const destinationRoutes: MetadataRoute.Sitemap = destinations
+    .filter((dest: any) => !dest.needsReview)
+    .map((dest: any) => {
+      const isPopular = popularSet.has(dest.slug);
+      const entry: MetadataRoute.Sitemap[number] = {
+        url: `${baseUrl}/destinations/${dest.slug}`,
+        changeFrequency: "weekly",
+        priority: isPopular ? 0.8 : 0.6,
+      };
 
-    return entry;
-  });
+      // Use a real per-destination date if the data has one, otherwise omit lastModified
+      if (dest.updatedAt || dest.lastModified || dest.date) {
+        entry.lastModified = new Date(dest.updatedAt || dest.lastModified || dest.date);
+      }
+
+      return entry;
+    });
 
   return [...staticRoutes, ...divisionRoutes, ...destinationRoutes];
 }

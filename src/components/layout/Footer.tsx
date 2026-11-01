@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useApp } from "@/context/AppContext";
 import { Heart, ShieldCheck, Mail, Send, CheckCircle2, Sparkles, AlertCircle } from "lucide-react";
-import { TOTAL_DESTINATIONS } from "@/lib/constants";
+import { TOTAL_DESTINATIONS, TOTAL_DISTRICTS_COVERED } from "@/lib/constants";
 import { formatNumberEnBn } from "@/lib/utils";
 import { formatDigits } from "@/lib/i18n";
 import { FOOTER_CONFIG } from "@/config/footer";
@@ -115,15 +115,15 @@ export function Footer() {
             </Link>
             <p className="text-sm text-[#a3c4b6] leading-relaxed">
               {isBn
-                ? "বাংলাদেশের ৬৪ জেলার সমৃদ্ধ প্রাকৃতিক সৌন্দর্য, পাহাড়, সমুদ্র, নদী ও ঐতিহ্যকে সবার মাঝে ছড়িয়ে দিতে তৈরি করা পূর্ণাঙ্গ ডিজিটাল ট্রাভেল প্ল্যাটফর্ম।"
+                ? `বাংলাদেশের ${formatDigits(TOTAL_DISTRICTS_COVERED, true)}টি জেলার সমৃদ্ধ প্রাকৃতিক সৌন্দর্য, পাহাড়, সমুদ্র, নদী ও ঐতিহ্যকে সবার মাঝে ছড়িয়ে দিতে তৈরি করা পূর্ণাঙ্গ ডিজিটাল ট্রাভেল প্ল্যাটফর্ম।`
                 : "The open travel platform showcasing the breathtaking landscapes, heritage, and wonders of Bangladesh across all 8 divisions."}
             </p>
             <div className="flex items-center gap-2 text-xs text-[#7ea897]">
               <ShieldCheck className="w-4 h-4 text-[#2ecc71]" />
               <span>
                 {isBn
-                  ? `${formatNumberEnBn(TOTAL_DESTINATIONS, true)}+ বাছাইকৃত পর্যটন স্পট`
-                  : `${TOTAL_DESTINATIONS}+ Curated & Authentic Guides`}
+                  ? `${formatNumberEnBn(TOTAL_DESTINATIONS, true)}+ বাছাইকৃত ভ্রমণ গাইড`
+                  : `${TOTAL_DESTINATIONS}+ Curated Traveler Guides`}
               </span>
             </div>
 

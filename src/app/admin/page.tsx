@@ -139,7 +139,7 @@ export default function AdminPage() {
     setFormDivision(dest.division || "Chattogram");
     setFormDistrict(dest.district || "");
     setFormCategory(dest.category || "Hill");
-    setFormRating(dest.rating || 4.8);
+    setFormRating(dest.rating || 0);
     setFormBadge(dest.badge || "topRated");
     setFormShortDesc(dest.shortDesc || "");
     setFormDescription(dest.description || "");
@@ -189,7 +189,7 @@ export default function AdminPage() {
       district: formDistrict.trim(),
       category: formCategory,
       categories: [formCategory],
-      rating: Number(formRating) || 4.8,
+      ...(formRating > 0 ? { rating: Number(formRating) } : {}),
       reviews: 0,
       badge: formBadge,
       latitude: parseFloat(formLatitude) || 23.8103,
@@ -448,7 +448,7 @@ export default function AdminPage() {
                         <td className="py-4 px-6">
                           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#f4a340]/15 text-[#b45309] dark:text-[#f4a340] font-bold text-xs">
                             <Star className="w-3.5 h-3.5 fill-[#f4a340]" />
-                            <span>{dest.rating.toFixed(1)}</span>
+                            <span>{dest.rating != null ? dest.rating.toFixed(1) : "—"}</span>
                           </div>
                         </td>
                         <td className="py-4 px-6">

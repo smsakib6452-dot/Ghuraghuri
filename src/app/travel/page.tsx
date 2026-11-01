@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useApp } from "@/context/AppContext";
 import travelData from "@/data/travel-services.json";
 import BookingEngine from "@/components/travel/BookingEngine";
+import { formatHotelType } from "@/components/hotels/HotelsClient";
 import {
   CURATED_ITINERARIES,
   DestinationItinerary,
@@ -61,7 +62,11 @@ type HotelLine = {
   photo: string;
   phone?: string;
   whatsapp?: string;
+  phoneVerified?: boolean;
+  website?: string;
   map_query?: string;
+  ratingSource?: string;
+  ratingCheckedAt?: string;
 };
 type RestLine = {
   name: string;
@@ -74,11 +79,15 @@ type RestLine = {
   photo: string;
   phone?: string;
   whatsapp?: string;
+  phoneVerified?: boolean;
+  website?: string;
   signature_dish?: string;
   signature_dish_bn?: string;
   price_person?: string;
   price_person_bn?: string;
   map_query?: string;
+  ratingSource?: string;
+  ratingCheckedAt?: string;
 };
 type TravelServicesData = {
   hotels: Record<string, HotelLine[]>;
@@ -208,10 +217,14 @@ export default function TravelPlannerPage() {
       rating: item.rating,
       reviews: item.review_count || 0,
       price: item.price,
-      type: item.hotel_type || "Standard",
+      type: item.hotel_type || "hotel",
       photo: item.photo,
       phone: item.phone || "+8801700000000",
       whatsapp: item.whatsapp || "8801700000000",
+      phoneVerified: item.phoneVerified === true,
+      website: item.website,
+      ratingSource: item.ratingSource,
+      ratingCheckedAt: item.ratingCheckedAt,
       mapQuery: item.map_query || encodeURIComponent(`${item.name} ${item.address}`),
       hubName: placeName,
     }));
@@ -233,6 +246,10 @@ export default function TravelPlannerPage() {
       photo: item.photo || "1563379091339-03b21ab4a4f8",
       phone: item.phone || "+8801711000000",
       whatsapp: item.whatsapp || "8801711000000",
+      phoneVerified: item.phoneVerified === true,
+      website: item.website,
+      ratingSource: item.ratingSource,
+      ratingCheckedAt: item.ratingCheckedAt,
       signatureDish: isBn
         ? item.signature_dish_bn || item.signature_dish || "ঐতিহ্যবাহী দেশি খাবার"
         : item.signature_dish || "Traditional Signature Dish",
@@ -467,7 +484,7 @@ export default function TravelPlannerPage() {
               <p className="text-sm text-[var(--text-muted)] mt-1">
                 {isBn
                   ? `সকাল থেকে রাত পর্যন্ত দর্শনীয় স্থান, বিখ্যাত খাবারের দোকান ও যাতায়াতের সময়সূচি।`
-                  : `Structured morning to night timeline with authentic regional meals and transit routes.`}
+                  : `Structured morning to night timeline with curated regional meals and transit routes.`}
               </p>
             </div>
 
@@ -700,7 +717,7 @@ export default function TravelPlannerPage() {
                   color: "text-[#2ecc71]",
                 },
                 {
-                  label_en: "Food & Authentic Meals",
+                  label_en: "Regional Food & Dining",
                   label_bn: "খাবার ও ঐতিহ্যবাহী রেস্তোরাঁ",
                   val: budgetResult.breakdown.food,
                   desc_en: "3 signature regional meals + tea per day",
@@ -829,21 +846,21 @@ export default function TravelPlannerPage() {
           </div>
         </section>
 
-        {/* 5. DIRECT VERIFIED CONTACTS (Hotels & Restaurants in This Destination) */}
+        {/* 5. CURATED LOCAL DIRECTORY (Hotels & Restaurants in This Destination) */}
         <section>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0f4a38]/10 text-[#0f4a38] dark:bg-[#1f9d76]/20 dark:text-[#2ecc71] text-xs font-bold mb-2">
                 <Hotel className="w-3.5 h-3.5" />
-                <span>{isBn ? "বাছাইকৃত সেবা ও হেল্পলাইন" : "Curated Local Services"}</span>
+                <span>{isBn ? "বাছাইকৃত সেবা ও ডিরেক্টরি" : "Curated Local Services"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground">
                 {isBn ? `${currentDestDisplay}-এর বাছাইকৃত হোটেল ও রেস্তোরাঁ` : `Curated Hotels & Dining in ${destNameEn}`}
               </h2>
               <p className="text-sm text-[var(--text-muted)] mt-1">
                 {isBn
-                  ? "সরাসরি ফোন কল, হোয়াটসঅ্যাপ বা গুগল ম্যাপস লোকেশনের মাধ্যমে যোগাযোগ করুন।"
-                  : "Direct telephone, WhatsApp reservation, and Google Maps location for each spot."}
+                  ? "প্রতিটি স্থানের গুগল ম্যাপস লোকেশন, আনুমানিক খরচ এবং সরাসরি যোগাযোগের তথ্য।"
+                  : "Google Maps location, nightly rates or signature dishes, and contact directory for each spot."}
               </p>
             </div>
 
@@ -883,7 +900,7 @@ export default function TravelPlannerPage() {
                       {h.photo && h.photo.startsWith("/assets/") ? (
                         <Image
                           src={h.photo}
-                          alt={`${h.name} (${h.type}) in ${h.hubName}`}
+                          alt={`${h.name} (${formatHotelType(h.type, false)}) in ${h.hubName}`}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -891,11 +908,13 @@ export default function TravelPlannerPage() {
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-emerald-950/40 via-teal-900/30 to-slate-900/40 flex flex-col items-center justify-center p-4 text-center">
                           <Hotel className="w-10 h-10 text-emerald-400/60 mb-1" />
-                          <span className="text-[11px] font-medium text-emerald-200/80">{h.type || "Hotel"}</span>
+                          <span className="text-[11px] font-medium text-emerald-200/80">
+                            {formatHotelType(h.type, isBn)}
+                          </span>
                         </div>
                       )}
                       <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-bold bg-[#0f4a38] text-white">
-                        {h.type}
+                        {formatHotelType(h.type, isBn)}
                       </span>
                     </div>
 
@@ -904,10 +923,13 @@ export default function TravelPlannerPage() {
                         <span className="text-xs font-semibold text-[#0f4a38] dark:text-[#2ecc71]">
                           {h.hubName}
                         </span>
-                        {(h as any).ratingSource && (
+                        {h.ratingSource && h.ratingCheckedAt && (
                           <div className="flex items-center gap-1 text-xs font-bold text-[#f4a340]">
                             <Star className="w-3.5 h-3.5 fill-[#f4a340]" />
                             <span>{h.rating}</span>
+                            <span className="text-[10px] font-normal text-[var(--text-muted)]">
+                              (Rating from {h.ratingSource}, checked {h.ratingCheckedAt})
+                            </span>
                           </div>
                         )}
                       </div>
@@ -921,39 +943,64 @@ export default function TravelPlannerPage() {
                     </div>
                   </div>
 
-                  {/* Triple Action Bar */}
+                  {/* Action Bar */}
                   <div className="p-5 pt-0">
-                    <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[var(--glass-border)]">
-                      <a
-                        href={`tel:${h.phone.startsWith("+") ? h.phone : `+88${h.phone.replace(/[^0-9]/g, "")}`}`}
-                        className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] hover:text-white text-[#0f4a38] dark:text-[#2ecc71] text-xs font-bold transition-all"
-                      >
-                        <PhoneCall className="w-3.5 h-3.5" />
-                        <span>{isBn ? "কল" : "Call"}</span>
-                      </a>
-                      <a
-                        href={`https://wa.me/${h.whatsapp}?text=${encodeURIComponent(
-                          isBn
-                            ? `হ্যালো, আমি ঘুরেঘুরি থেকে ${h.name}-এর রুম বুকিং ও রেট সম্পর্কে জানতে চাচ্ছি।`
-                            : `Hello, I want to inquire about room booking at ${h.name}.`
-                        )}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-[#25D366]/15 hover:bg-[#25D366] text-[#128C7E] dark:text-[#25D366] hover:text-white text-xs font-bold transition-all"
-                      >
-                        <MessageCircle className="w-3.5 h-3.5" />
-                        <span>{isBn ? "মেসেজ" : "Chat"}</span>
-                      </a>
-                      <a
-                        href={`https://www.google.com/maps/search/?api=1&query=${h.mapQuery}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-blue-500/10 hover:bg-blue-600 hover:text-white text-blue-600 dark:text-blue-400 text-xs font-bold transition-all"
-                      >
-                        <Navigation className="w-3.5 h-3.5" />
-                        <span>{isBn ? "ম্যাপ" : "Map"}</span>
-                      </a>
-                    </div>
+                    {h.phoneVerified === true ? (
+                      <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[var(--glass-border)]">
+                        <a
+                          href={`tel:${h.phone.startsWith("+") ? h.phone : `+88${h.phone.replace(/[^0-9]/g, "")}`}`}
+                          className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] hover:text-white text-[#0f4a38] dark:text-[#2ecc71] text-xs font-bold transition-all"
+                        >
+                          <PhoneCall className="w-3.5 h-3.5" />
+                          <span>{isBn ? "কল" : "Call"}</span>
+                        </a>
+                        <a
+                          href={`https://wa.me/${h.whatsapp}?text=${encodeURIComponent(
+                            isBn
+                              ? `হ্যালো, আমি ঘুরেঘুরি থেকে ${h.name}-এর রুম বুকিং ও রেট সম্পর্কে জানতে চাচ্ছি।`
+                              : `Hello, I want to inquire about room booking at ${h.name}.`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-[#25D366]/15 hover:bg-[#25D366] text-[#128C7E] dark:text-[#25D366] hover:text-white text-xs font-bold transition-all"
+                        >
+                          <MessageCircle className="w-3.5 h-3.5" />
+                          <span>{isBn ? "মেসেজ" : "Chat"}</span>
+                        </a>
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${h.mapQuery}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-blue-500/10 hover:bg-blue-600 hover:text-white text-blue-600 dark:text-blue-400 text-xs font-bold transition-all"
+                        >
+                          <Navigation className="w-3.5 h-3.5" />
+                          <span>{isBn ? "ম্যাপ" : "Map"}</span>
+                        </a>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2 pt-3 border-t border-[var(--glass-border)]">
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${h.mapQuery}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-1.5 min-h-[38px] px-3 rounded-xl bg-blue-500/10 hover:bg-blue-600 hover:text-white text-blue-600 dark:text-blue-400 text-xs font-bold transition-all"
+                        >
+                          <Navigation className="w-3.5 h-3.5" />
+                          <span>{isBn ? "গুগল ম্যাপে দেখুন" : "View on Google Maps"}</span>
+                        </a>
+                        {h.website && (
+                          <a
+                            href={h.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-1 min-h-[38px] px-3 rounded-xl bg-[var(--surface-raised)] hover:bg-[#0f4a38] hover:text-white text-foreground border border-[var(--glass-border)] text-xs font-bold transition-all"
+                          >
+                            <ExternalLink className="w-3.5 h-3.5" />
+                            <span>{isBn ? "ওয়েবসাইট" : "Website"}</span>
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -994,10 +1041,13 @@ export default function TravelPlannerPage() {
                         <span className="text-xs font-semibold text-[#0f4a38] dark:text-[#2ecc71]">
                           {r.hubName}
                         </span>
-                        {(r as any).ratingSource && (
+                        {r.ratingSource && r.ratingCheckedAt && (
                           <div className="flex items-center gap-1 text-xs font-bold text-[#f4a340]">
                             <Star className="w-3.5 h-3.5 fill-[#f4a340]" />
                             <span>{r.rating}</span>
+                            <span className="text-[10px] font-normal text-[var(--text-muted)]">
+                              (Rating from {r.ratingSource}, checked {r.ratingCheckedAt})
+                            </span>
                           </div>
                         )}
                       </div>
@@ -1015,39 +1065,64 @@ export default function TravelPlannerPage() {
                     </div>
                   </div>
 
-                  {/* Triple Action Bar */}
+                  {/* Action Bar */}
                   <div className="p-5 pt-0">
-                    <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[var(--glass-border)]">
-                      <a
-                        href={`tel:${r.phone.startsWith("+") ? r.phone : `+88${r.phone.replace(/[^0-9]/g, "")}`}`}
-                        className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] hover:text-white text-[#0f4a38] dark:text-[#2ecc71] text-xs font-bold transition-all"
-                      >
-                        <PhoneCall className="w-3.5 h-3.5" />
-                        <span>{isBn ? "কল" : "Call"}</span>
-                      </a>
-                      <a
-                        href={`https://wa.me/${r.whatsapp}?text=${encodeURIComponent(
-                          isBn
-                            ? `হ্যালো, আমি ঘুরেঘুরি থেকে ${r.name}-এর টেবিল রিজার্ভেশন ও স্পেশাল মেন্যু সম্পর্কে জানতে চাচ্ছি।`
-                            : `Hello, I want to inquire about reservation at ${r.name}.`
-                        )}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-[#25D366]/15 hover:bg-[#25D366] text-[#128C7E] dark:text-[#25D366] hover:text-white text-xs font-bold transition-all"
-                      >
-                        <MessageCircle className="w-3.5 h-3.5" />
-                        <span>{isBn ? "মেসেজ" : "Chat"}</span>
-                      </a>
-                      <a
-                        href={`https://www.google.com/maps/search/?api=1&query=${r.mapQuery}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-blue-500/10 hover:bg-blue-600 hover:text-white text-blue-600 dark:text-blue-400 text-xs font-bold transition-all"
-                      >
-                        <Navigation className="w-3.5 h-3.5" />
-                        <span>{isBn ? "ম্যাপ" : "Map"}</span>
-                      </a>
-                    </div>
+                    {r.phoneVerified === true ? (
+                      <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[var(--glass-border)]">
+                        <a
+                          href={`tel:${r.phone.startsWith("+") ? r.phone : `+88${r.phone.replace(/[^0-9]/g, "")}`}`}
+                          className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] hover:text-white text-[#0f4a38] dark:text-[#2ecc71] text-xs font-bold transition-all"
+                        >
+                          <PhoneCall className="w-3.5 h-3.5" />
+                          <span>{isBn ? "কল" : "Call"}</span>
+                        </a>
+                        <a
+                          href={`https://wa.me/${r.whatsapp}?text=${encodeURIComponent(
+                            isBn
+                              ? `হ্যালো, আমি ঘুরেঘুরি থেকে ${r.name}-এর টেবিল রিজার্ভেশন ও স্পেশাল মেন্যু সম্পর্কে জানতে চাচ্ছি।`
+                              : `Hello, I want to inquire about reservation at ${r.name}.`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-[#25D366]/15 hover:bg-[#25D366] text-[#128C7E] dark:text-[#25D366] hover:text-white text-xs font-bold transition-all"
+                        >
+                          <MessageCircle className="w-3.5 h-3.5" />
+                          <span>{isBn ? "মেসেজ" : "Chat"}</span>
+                        </a>
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${r.mapQuery}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-1 min-h-[38px] rounded-xl bg-blue-500/10 hover:bg-blue-600 hover:text-white text-blue-600 dark:text-blue-400 text-xs font-bold transition-all"
+                        >
+                          <Navigation className="w-3.5 h-3.5" />
+                          <span>{isBn ? "ম্যাপ" : "Map"}</span>
+                        </a>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2 pt-3 border-t border-[var(--glass-border)]">
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${r.mapQuery}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-1.5 min-h-[38px] px-3 rounded-xl bg-blue-500/10 hover:bg-blue-600 hover:text-white text-blue-600 dark:text-blue-400 text-xs font-bold transition-all"
+                        >
+                          <Navigation className="w-3.5 h-3.5" />
+                          <span>{isBn ? "গুগল ম্যাপে দেখুন" : "View on Google Maps"}</span>
+                        </a>
+                        {r.website && (
+                          <a
+                            href={r.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-1 min-h-[38px] px-3 rounded-xl bg-[var(--surface-raised)] hover:bg-[#0f4a38] hover:text-white text-foreground border border-[var(--glass-border)] text-xs font-bold transition-all"
+                          >
+                            <ExternalLink className="w-3.5 h-3.5" />
+                            <span>{isBn ? "ওয়েবসাইট" : "Website"}</span>
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

@@ -53,12 +53,12 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
     : null;
 
   const descriptiveAlt = isBn
-    ? (isSameNameDistrict
-        ? `${title}, ${getDivisionBn(destination.division)}: ${destination.category}`
-        : `${title}, ${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)}: ${destination.category}`)
-    : (isSameNameDistrict
-        ? `${destination.name}, ${destination.division}: ${destination.category}`
-        : `${destination.name} in ${destination.district}, ${destination.division}: ${destination.category}`);
+    ? (isSameNameDistrict || isSameDistrictDivision
+        ? `${title}, ${getDivisionBn(destination.division)}`
+        : `${title}, ${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)}`)
+    : (isSameNameDistrict || isSameDistrictDivision
+        ? `${destination.name}, ${destination.division}`
+        : `${destination.name} in ${destination.district}, ${destination.division}`);
 
   return (
     <article className="group relative flex flex-col rounded-3xl overflow-hidden bg-[var(--surface)] border border-[var(--glass-border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5">
@@ -99,7 +99,7 @@ export function DestinationCard({ destination, priority = false }: DestinationCa
           onClick={(e) => e.stopPropagation()}
           className="absolute bottom-3.5 right-3.5 w-10 h-10 min-w-[40px] min-h-[40px] rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md text-[#f4a340] border border-white/20 transition-all shadow-md flex items-center justify-center hover:scale-105 cursor-pointer z-10"
           title={isBn ? `${title}-এর লাইভ আবহাওয়া দেখুন` : `Live weather for ${destination.name}`}
-          aria-label={isBn ? `${title}-এর লাইভ আবহাওয়া` : `Live weather for ${destination.name}`}
+          aria-label={`Live weather for ${destination.name}`}
         >
           <CloudSun className="w-5 h-5" />
         </Link>

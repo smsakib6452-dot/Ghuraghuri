@@ -80,9 +80,18 @@ export function DestinationDetailClient({
     ? `${diffLabel} ${t.difficultySuffix}`.trim()
     : "";
 
+  const isSameDistrictDivision =
+    destination.district.trim().toLowerCase() === destination.division.trim().toLowerCase();
+  const isSameNameDistrict =
+    destination.name.trim().toLowerCase() === destination.district.trim().toLowerCase();
+
   const locationText = isBn
-    ? `${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)}`
-    : `${destination.district}, ${destination.division}`;
+    ? (isSameDistrictDivision
+        ? getDistrictBn(destination.district)
+        : `${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)}`)
+    : (isSameDistrictDivision
+        ? destination.district
+        : `${destination.district}, ${destination.division}`);
 
   const aboutHeading = isBn
     ? `${title} ${t.aboutSuffix}`.trim()
@@ -118,6 +127,10 @@ export function DestinationDetailClient({
   const bestTimeText = isBn
     ? (tr?.bestTime || destination.bestTime)
     : destination.bestTime;
+
+  const bestTimeNoteText = isBn
+    ? (tr?.bestTimeNote || destination.bestTimeNote)
+    : destination.bestTimeNote;
 
   const durationText = isBn
     ? (tr?.recommendedDays
@@ -158,7 +171,7 @@ export function DestinationDetailClient({
           </Link>
           <span>/</span>
           <Link
-            href={`/destinations?division=${destination.division}`}
+            href={`/destinations/division/${destination.division.toLowerCase()}`}
             className="hover:text-foreground"
           >
             {divisionText}
@@ -175,8 +188,12 @@ export function DestinationDetailClient({
             src={imageSrc}
             alt={
               isBn
-                ? `${destination.name_bn || destination.name}, ${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)} — ${destination.category} ভ্রমণ নির্দেশিকা`
-                : `${destination.name} in ${destination.district}, ${destination.division} — ${destination.category} Travel Guide`
+                ? (isSameDistrictDivision || isSameNameDistrict
+                    ? `${destination.name_bn || destination.name}, ${getDivisionBn(destination.division)}`
+                    : `${destination.name_bn || destination.name}, ${getDistrictBn(destination.district)}, ${getDivisionBn(destination.division)}`)
+                : (isSameDistrictDivision || isSameNameDistrict
+                    ? `${destination.name}, ${destination.division}`
+                    : `${destination.name} in ${destination.district}, ${destination.division}`)
             }
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
@@ -377,12 +394,19 @@ export function DestinationDetailClient({
                 {t.tripSnapshot}
               </h3>
 
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-[var(--text-muted)] flex items-center gap-1.5">
+              <div className="flex items-start justify-between text-sm gap-3">
+                <span className="text-[var(--text-muted)] flex items-center gap-1.5 shrink-0">
                   <Calendar className="w-4 h-4 text-[#f4a340]" />
                   {t.bestTime}
                 </span>
-                <span className="font-bold text-foreground">{bestTimeText}</span>
+                <div className="text-right">
+                  <span className="font-bold text-foreground block">{bestTimeText}</span>
+                  {bestTimeNoteText && (
+                    <span className="text-xs text-[var(--text-muted)] block mt-0.5">
+                      {bestTimeNoteText}
+                    </span>
+                  )}
+                </div>
               </div>
 
               <div className="flex items-center justify-between text-sm">
@@ -487,7 +511,10 @@ export function DestinationDetailClient({
                               alt={
                                 isBn
                                   ? `${relTitle}, ${relDistrict}`
-                                  : `${rel.name} in ${rel.district}, ${rel.division}`
+                                  : (rel.district.trim().toLowerCase() === rel.division.trim().toLowerCase() ||
+                                    rel.name.trim().toLowerCase() === rel.district.trim().toLowerCase()
+                                      ? `${rel.name}, ${rel.division}`
+                                      : `${rel.name} in ${rel.district}, ${rel.division}`)
                               }
                               fill
                               sizes="56px"

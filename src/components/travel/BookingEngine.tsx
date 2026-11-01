@@ -16,27 +16,31 @@ import {
   Compass,
   PhoneCall,
   MessageCircle,
+  Navigation,
 } from "lucide-react";
 
 export const ENABLE_BOOKING_DEMO = false;
 
-export const OPERATOR_CONTACTS: Record<string, { phone: string; whatsapp?: string; portalUrl: string }> = {
-  "Green Line Paribahan": { phone: "01730-060000", whatsapp: "8801730060000", portalUrl: "https://greenlinebd.com" },
-  "Hanif Enterprise": { phone: "01713-402673", whatsapp: "8801713402673", portalUrl: "https://shohoz.com" },
-  "Shohag Elite": { phone: "01711-612433", whatsapp: "8801711612433", portalUrl: "https://shohoz.com" },
-  "Shohag Paribahan": { phone: "01711-612433", whatsapp: "8801711612433", portalUrl: "https://shohoz.com" },
-  "Desh Travels": { phone: "01762-684400", whatsapp: "8801762684400", portalUrl: "https://deshtravelsbd.com" },
-  "Shyamoli Paribahan": { phone: "01711-440498", whatsapp: "8801711440498", portalUrl: "https://shohoz.com" },
-  "Ena Transport": { phone: "01869-802728", whatsapp: "8801869802728", portalUrl: "https://shohoz.com" },
-  "Saintmartin Paribahan": { phone: "01711-300444", whatsapp: "8801711300444", portalUrl: "https://shohoz.com" },
-  "Shanti Paribahan": { phone: "01819-866405", whatsapp: "8801819866405", portalUrl: "https://shohoz.com" },
-  "Sakura Paribahan": { phone: "01711-010450", whatsapp: "8801711010450", portalUrl: "https://shohoz.com" },
-  "National Travels": { phone: "01711-418854", whatsapp: "8801711418854", portalUrl: "https://shohoz.com" },
-  "Bangladesh Railway": { phone: "131", portalUrl: "https://eticket.railway.gov.bd" },
-  "MV Manami Launch": { phone: "01711-058885", whatsapp: "8801711058885", portalUrl: "https://shohoz.com/launch" },
-  "MV Sundarban 16": { phone: "01711-058886", whatsapp: "8801711058886", portalUrl: "https://shohoz.com/launch" },
-  "Biman Bangladesh Airlines": { phone: "13636", portalUrl: "https://www.biman-airlines.com" },
-  "US-Bangla Airlines": { phone: "13605", portalUrl: "https://usbair.com" },
+export const OPERATOR_CONTACTS: Record<
+  string,
+  { phone: string; whatsapp?: string; phoneVerified?: boolean; portalUrl: string }
+> = {
+  "Green Line Paribahan": { phone: "01730-060000", whatsapp: "8801730060000", phoneVerified: false, portalUrl: "https://greenlinebd.com" },
+  "Hanif Enterprise": { phone: "01713-402673", whatsapp: "8801713402673", phoneVerified: false, portalUrl: "https://shohoz.com" },
+  "Shohag Elite": { phone: "01711-612433", whatsapp: "8801711612433", phoneVerified: false, portalUrl: "https://shohoz.com" },
+  "Shohag Paribahan": { phone: "01711-612433", whatsapp: "8801711612433", phoneVerified: false, portalUrl: "https://shohoz.com" },
+  "Desh Travels": { phone: "01762-684400", whatsapp: "8801762684400", phoneVerified: false, portalUrl: "https://deshtravelsbd.com" },
+  "Shyamoli Paribahan": { phone: "01711-440498", whatsapp: "8801711440498", phoneVerified: false, portalUrl: "https://shohoz.com" },
+  "Ena Transport": { phone: "01869-802728", whatsapp: "8801869802728", phoneVerified: false, portalUrl: "https://shohoz.com" },
+  "Saintmartin Paribahan": { phone: "01711-300444", whatsapp: "8801711300444", phoneVerified: false, portalUrl: "https://shohoz.com" },
+  "Shanti Paribahan": { phone: "01819-866405", whatsapp: "8801819866405", phoneVerified: false, portalUrl: "https://shohoz.com" },
+  "Sakura Paribahan": { phone: "01711-010450", whatsapp: "8801711010450", phoneVerified: false, portalUrl: "https://shohoz.com" },
+  "National Travels": { phone: "01711-418854", whatsapp: "8801711418854", phoneVerified: false, portalUrl: "https://shohoz.com" },
+  "Bangladesh Railway": { phone: "131", phoneVerified: false, portalUrl: "https://eticket.railway.gov.bd" },
+  "MV Manami Launch": { phone: "01711-058885", whatsapp: "8801711058885", phoneVerified: false, portalUrl: "https://shohoz.com/launch" },
+  "MV Sundarban 16": { phone: "01711-058886", whatsapp: "8801711058886", phoneVerified: false, portalUrl: "https://shohoz.com/launch" },
+  "Biman Bangladesh Airlines": { phone: "13636", phoneVerified: false, portalUrl: "https://www.biman-airlines.com" },
+  "US-Bangla Airlines": { phone: "13605", phoneVerified: false, portalUrl: "https://usbair.com" },
 };
 
 export type ScheduleItem = {
@@ -49,6 +53,8 @@ export type ScheduleItem = {
   fare: number;
   seatsLeft: number;
   rating?: number;
+  ratingSource?: string;
+  ratingCheckedAt?: string;
   lastChecked?: string;
   boarding: string[];
   dropping: string[];
@@ -83,58 +89,58 @@ export type BookingVoucher = {
 
 const SCHEDULES: Record<string, ScheduleItem[]> = {
   "dhaka-coxs-bazar": [
-    { id: "b1", type: "bus", operator: "Green Line Paribahan", coach: "Scania Multi-Axle (AC Sleeper)", depart: "08:00 AM", arrive: "05:00 PM", fare: 2200, seatsLeft: 8, rating: 4.8, boarding: ["Sayedabad", "Arambagh", "Rajarbagh"], dropping: ["Kolatali Point", "Sugandha Beach"] },
-    { id: "b2", type: "bus", operator: "Hanif Enterprise", coach: "Volvo B11R 1J (AC Executive)", depart: "09:30 AM", arrive: "06:30 PM", fare: 1600, seatsLeft: 14, rating: 4.5, boarding: ["Sayedabad", "Gabtoli", "Panthapath"], dropping: ["Jhawtola", "Kolatali"] },
-    { id: "b3", type: "bus", operator: "Shohag Elite", coach: "Scania Comfort Sleeper", depart: "08:30 PM", arrive: "05:30 AM", fare: 2400, seatsLeft: 6, rating: 4.9, boarding: ["Malibagh", "Arambagh"], dropping: ["Hotel Motel Zone", "Kolatali"] },
-    { id: "b4", type: "bus", operator: "Desh Travels", coach: "Hyundai Universe Suite (AC)", depart: "10:15 PM", arrive: "07:00 AM", fare: 1800, seatsLeft: 11, rating: 4.7, boarding: ["Arambagh", "Sayedabad"], dropping: ["Kolatali Beach", "Laboni Point"] },
-    { id: "b5", type: "bus", operator: "Shyamoli Paribahan", coach: "Hino AK1J (Economy Non-AC)", depart: "11:00 PM", arrive: "08:30 AM", fare: 900, seatsLeft: 22, rating: 4.2, boarding: ["Sayedabad", "Arambagh", "Gabtoli"], dropping: ["Cox's Bazar Central", "Jhawtola"] },
-    { id: "t1", type: "train", operator: "Bangladesh Railway", coach: "Cox's Bazar Express (814) - Snigdha AC", depart: "06:15 AM", arrive: "03:00 PM", fare: 1325, seatsLeft: 18, rating: 4.9, boarding: ["Kamalapur Railway Station", "Dhaka Airport"], dropping: ["Cox's Bazar Iconic Station"] },
-    { id: "t2", type: "train", operator: "Bangladesh Railway", coach: "Tourist Express (816) - Shovon Chair", depart: "06:15 PM", arrive: "03:20 AM", fare: 695, seatsLeft: 26, rating: 4.7, boarding: ["Kamalapur Railway Station", "Dhaka Airport"], dropping: ["Cox's Bazar Iconic Station"] },
-    { id: "t3", type: "train", operator: "Bangladesh Railway", coach: "Cox's Bazar Express (813) - AC Berth / Cabin", depart: "10:30 PM", arrive: "07:15 AM", fare: 2350, seatsLeft: 8, rating: 4.9, boarding: ["Kamalapur Railway Station", "Dhaka Airport"], dropping: ["Cox's Bazar Iconic Station"] },
-    { id: "f1", type: "flight", operator: "Biman Bangladesh Airlines", coach: "Boeing 737-800 (BG-433)", depart: "11:30 AM", arrive: "12:35 PM", fare: 4800, seatsLeft: 7, rating: 4.7, boarding: ["Hazrat Shahjalal International Airport (DAC)"], dropping: ["Cox's Bazar Airport (CXB)"] },
-    { id: "f2", type: "flight", operator: "US-Bangla Airlines", coach: "ATR 72-600 (BS-141)", depart: "02:15 PM", arrive: "03:20 PM", fare: 5200, seatsLeft: 5, rating: 4.6, boarding: ["Hazrat Shahjalal International Airport (DAC)"], dropping: ["Cox's Bazar Airport (CXB)"] }
+    { id: "b1", type: "bus", operator: "Green Line Paribahan", coach: "Scania Multi-Axle (AC Sleeper)", depart: "08:00 AM", arrive: "05:00 PM", fare: 2200, seatsLeft: 8, boarding: ["Sayedabad", "Arambagh", "Rajarbagh"], dropping: ["Kolatali Point", "Sugandha Beach"] },
+    { id: "b2", type: "bus", operator: "Hanif Enterprise", coach: "Volvo B11R 1J (AC Executive)", depart: "09:30 AM", arrive: "06:30 PM", fare: 1600, seatsLeft: 14, boarding: ["Sayedabad", "Gabtoli", "Panthapath"], dropping: ["Jhawtola", "Kolatali"] },
+    { id: "b3", type: "bus", operator: "Shohag Elite", coach: "Scania Comfort Sleeper", depart: "08:30 PM", arrive: "05:30 AM", fare: 2400, seatsLeft: 6, boarding: ["Malibagh", "Arambagh"], dropping: ["Hotel Motel Zone", "Kolatali"] },
+    { id: "b4", type: "bus", operator: "Desh Travels", coach: "Hyundai Universe Suite (AC)", depart: "10:15 PM", arrive: "07:00 AM", fare: 1800, seatsLeft: 11, boarding: ["Arambagh", "Sayedabad"], dropping: ["Kolatali Beach", "Laboni Point"] },
+    { id: "b5", type: "bus", operator: "Shyamoli Paribahan", coach: "Hino AK1J (Economy Non-AC)", depart: "11:00 PM", arrive: "08:30 AM", fare: 900, seatsLeft: 22, boarding: ["Sayedabad", "Arambagh", "Gabtoli"], dropping: ["Cox's Bazar Central", "Jhawtola"] },
+    { id: "t1", type: "train", operator: "Bangladesh Railway", coach: "Cox's Bazar Express (814) - Snigdha AC", depart: "06:15 AM", arrive: "03:00 PM", fare: 1325, seatsLeft: 18, boarding: ["Kamalapur Railway Station", "Dhaka Airport"], dropping: ["Cox's Bazar Iconic Station"] },
+    { id: "t2", type: "train", operator: "Bangladesh Railway", coach: "Tourist Express (816) - Shovon Chair", depart: "06:15 PM", arrive: "03:20 AM", fare: 695, seatsLeft: 26, boarding: ["Kamalapur Railway Station", "Dhaka Airport"], dropping: ["Cox's Bazar Iconic Station"] },
+    { id: "t3", type: "train", operator: "Bangladesh Railway", coach: "Cox's Bazar Express (813) - AC Berth / Cabin", depart: "10:30 PM", arrive: "07:15 AM", fare: 2350, seatsLeft: 8, boarding: ["Kamalapur Railway Station", "Dhaka Airport"], dropping: ["Cox's Bazar Iconic Station"] },
+    { id: "f1", type: "flight", operator: "Biman Bangladesh Airlines", coach: "Boeing 737-800 (BG-433)", depart: "11:30 AM", arrive: "12:35 PM", fare: 4800, seatsLeft: 7, boarding: ["Hazrat Shahjalal International Airport (DAC)"], dropping: ["Cox's Bazar Airport (CXB)"] },
+    { id: "f2", type: "flight", operator: "US-Bangla Airlines", coach: "ATR 72-600 (BS-141)", depart: "02:15 PM", arrive: "03:20 PM", fare: 5200, seatsLeft: 5, boarding: ["Hazrat Shahjalal International Airport (DAC)"], dropping: ["Cox's Bazar Airport (CXB)"] }
   ],
   "dhaka-chattogram": [
-    { id: "b11", type: "bus", operator: "Green Line Paribahan", coach: "Scania Multi-Axle AC", depart: "07:30 AM", arrive: "01:00 PM", fare: 1400, seatsLeft: 12, rating: 4.8, boarding: ["Rajarbagh", "Sayedabad"], dropping: ["Dampara", "GEC Circle"] },
-    { id: "b12", type: "bus", operator: "Shohag Paribahan", coach: "Mercedes-Benz AC Coach", depart: "09:00 AM", arrive: "02:30 PM", fare: 1350, seatsLeft: 10, rating: 4.7, boarding: ["Malibagh", "Arambagh"], dropping: ["Dampara", "Agrabad"] },
-    { id: "b13", type: "bus", operator: "Hanif Enterprise", coach: "Hino 1J AC Coach", depart: "11:00 AM", arrive: "04:30 PM", fare: 1100, seatsLeft: 16, rating: 4.5, boarding: ["Panthapath", "Sayedabad"], dropping: ["Alankar", "Dampara"] },
-    { id: "t11", type: "train", operator: "Bangladesh Railway", coach: "Suborno Express (702) - Snigdha AC", depart: "04:30 PM", arrive: "09:50 PM", fare: 805, seatsLeft: 15, rating: 4.9, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Chattogram Railway Station"] },
-    { id: "t12", type: "train", operator: "Bangladesh Railway", coach: "Sonar Bangla Express (788) - AC Chair", depart: "07:00 AM", arrive: "12:15 PM", fare: 805, seatsLeft: 21, rating: 4.8, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Chattogram Railway Station"] },
-    { id: "t13", type: "train", operator: "Bangladesh Railway", coach: "Turna Express (742) - AC Berth / Cabin", depart: "11:30 PM", arrive: "05:15 AM", fare: 1550, seatsLeft: 12, rating: 4.7, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Chattogram Railway Station"] },
-    { id: "t14", type: "train", operator: "Bangladesh Railway", coach: "Mahanagar Provati (704) - Shovon Chair", depart: "07:45 AM", arrive: "02:00 PM", fare: 405, seatsLeft: 35, rating: 4.4, boarding: ["Kamalapur", "Airport"], dropping: ["Chattogram Railway Station"] }
+    { id: "b11", type: "bus", operator: "Green Line Paribahan", coach: "Scania Multi-Axle AC", depart: "07:30 AM", arrive: "01:00 PM", fare: 1400, seatsLeft: 12, boarding: ["Rajarbagh", "Sayedabad"], dropping: ["Dampara", "GEC Circle"] },
+    { id: "b12", type: "bus", operator: "Shohag Paribahan", coach: "Mercedes-Benz AC Coach", depart: "09:00 AM", arrive: "02:30 PM", fare: 1350, seatsLeft: 10, boarding: ["Malibagh", "Arambagh"], dropping: ["Dampara", "Agrabad"] },
+    { id: "b13", type: "bus", operator: "Hanif Enterprise", coach: "Hino 1J AC Coach", depart: "11:00 AM", arrive: "04:30 PM", fare: 1100, seatsLeft: 16, boarding: ["Panthapath", "Sayedabad"], dropping: ["Alankar", "Dampara"] },
+    { id: "t11", type: "train", operator: "Bangladesh Railway", coach: "Suborno Express (702) - Snigdha AC", depart: "04:30 PM", arrive: "09:50 PM", fare: 805, seatsLeft: 15, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Chattogram Railway Station"] },
+    { id: "t12", type: "train", operator: "Bangladesh Railway", coach: "Sonar Bangla Express (788) - AC Chair", depart: "07:00 AM", arrive: "12:15 PM", fare: 805, seatsLeft: 21, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Chattogram Railway Station"] },
+    { id: "t13", type: "train", operator: "Bangladesh Railway", coach: "Turna Express (742) - AC Berth / Cabin", depart: "11:30 PM", arrive: "05:15 AM", fare: 1550, seatsLeft: 12, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Chattogram Railway Station"] },
+    { id: "t14", type: "train", operator: "Bangladesh Railway", coach: "Mahanagar Provati (704) - Shovon Chair", depart: "07:45 AM", arrive: "02:00 PM", fare: 405, seatsLeft: 35, boarding: ["Kamalapur", "Airport"], dropping: ["Chattogram Railway Station"] }
   ],
   "dhaka-sylhet": [
-    { id: "b21", type: "bus", operator: "Green Line Paribahan", coach: "Scania Multi-Axle AC", depart: "07:45 AM", arrive: "01:45 PM", fare: 1400, seatsLeft: 10, rating: 4.8, boarding: ["Rajarbagh", "Sayedabad"], dropping: ["Kadamtoli", "Subidbazar"] },
-    { id: "b22", type: "bus", operator: "Ena Transport", coach: "Hyundai Universe Suite AC", depart: "09:30 AM", arrive: "03:30 PM", fare: 1100, seatsLeft: 18, rating: 4.5, boarding: ["Mohakhali", "Uttara"], dropping: ["Kadamtoli", "Humayun Rashid Chattar"] },
-    { id: "t21", type: "train", operator: "Bangladesh Railway", coach: "Parabat Express (709) - Snigdha AC", depart: "06:20 AM", arrive: "01:00 PM", fare: 736, seatsLeft: 12, rating: 4.7, boarding: ["Kamalapur", "Airport"], dropping: ["Sylhet Railway Station"] },
-    { id: "t22", type: "train", operator: "Bangladesh Railway", coach: "Upaban Express (739) - Shovon Chair", depart: "08:30 PM", arrive: "03:45 AM", fare: 375, seatsLeft: 30, rating: 4.4, boarding: ["Kamalapur", "Airport"], dropping: ["Sylhet Railway Station"] },
-    { id: "t23", type: "train", operator: "Bangladesh Railway", coach: "Kalni Express (773) - AC Chair", depart: "03:00 PM", arrive: "09:30 PM", fare: 736, seatsLeft: 16, rating: 4.6, boarding: ["Kamalapur", "Airport"], dropping: ["Sylhet Railway Station"] },
-    { id: "t24", type: "train", operator: "Bangladesh Railway", coach: "Jayantika Express (717) - AC Cabin / Berth", depart: "11:15 AM", arrive: "06:50 PM", fare: 1450, seatsLeft: 9, rating: 4.8, boarding: ["Kamalapur", "Airport"], dropping: ["Sylhet Railway Station"] }
+    { id: "b21", type: "bus", operator: "Green Line Paribahan", coach: "Scania Multi-Axle AC", depart: "07:45 AM", arrive: "01:45 PM", fare: 1400, seatsLeft: 10, boarding: ["Rajarbagh", "Sayedabad"], dropping: ["Kadamtoli", "Subidbazar"] },
+    { id: "b22", type: "bus", operator: "Ena Transport", coach: "Hyundai Universe Suite AC", depart: "09:30 AM", arrive: "03:30 PM", fare: 1100, seatsLeft: 18, boarding: ["Mohakhali", "Uttara"], dropping: ["Kadamtoli", "Humayun Rashid Chattar"] },
+    { id: "t21", type: "train", operator: "Bangladesh Railway", coach: "Parabat Express (709) - Snigdha AC", depart: "06:20 AM", arrive: "01:00 PM", fare: 736, seatsLeft: 12, boarding: ["Kamalapur", "Airport"], dropping: ["Sylhet Railway Station"] },
+    { id: "t22", type: "train", operator: "Bangladesh Railway", coach: "Upaban Express (739) - Shovon Chair", depart: "08:30 PM", arrive: "03:45 AM", fare: 375, seatsLeft: 30, boarding: ["Kamalapur", "Airport"], dropping: ["Sylhet Railway Station"] },
+    { id: "t23", type: "train", operator: "Bangladesh Railway", coach: "Kalni Express (773) - AC Chair", depart: "03:00 PM", arrive: "09:30 PM", fare: 736, seatsLeft: 16, boarding: ["Kamalapur", "Airport"], dropping: ["Sylhet Railway Station"] },
+    { id: "t24", type: "train", operator: "Bangladesh Railway", coach: "Jayantika Express (717) - AC Cabin / Berth", depart: "11:15 AM", arrive: "06:50 PM", fare: 1450, seatsLeft: 9, boarding: ["Kamalapur", "Airport"], dropping: ["Sylhet Railway Station"] }
   ],
   "dhaka-sajek": [
-    { id: "b31", type: "bus", operator: "Saintmartin Paribahan", coach: "Hino 1J AC (Direct Khagrachhari)", depart: "10:30 PM", arrive: "06:30 AM", fare: 1200, seatsLeft: 14, rating: 4.7, boarding: ["Arambagh", "Sayedabad"], dropping: ["Khagrachhari (Direct Chander Gari connection)"] },
-    { id: "b32", type: "bus", operator: "Shanti Paribahan", coach: "Non-AC Hino (Direct Hill Express)", depart: "11:00 PM", arrive: "07:30 AM", fare: 750, seatsLeft: 20, rating: 4.3, boarding: ["Gabtoli", "Sayedabad"], dropping: ["Khagrachhari Bus Terminal"] },
-    { id: "b33", type: "bus", operator: "Ena Transport", coach: "Hyundai AC Coach", depart: "11:15 PM", arrive: "07:00 AM", fare: 1150, seatsLeft: 8, rating: 4.6, boarding: ["Sayedabad"], dropping: ["Khagrachhari Sadar"] }
+    { id: "b31", type: "bus", operator: "Saintmartin Paribahan", coach: "Hino 1J AC (Direct Khagrachhari)", depart: "10:30 PM", arrive: "06:30 AM", fare: 1200, seatsLeft: 14, boarding: ["Arambagh", "Sayedabad"], dropping: ["Khagrachhari (Direct Chander Gari connection)"] },
+    { id: "b32", type: "bus", operator: "Shanti Paribahan", coach: "Non-AC Hino (Direct Hill Express)", depart: "11:00 PM", arrive: "07:30 AM", fare: 750, seatsLeft: 20, boarding: ["Gabtoli", "Sayedabad"], dropping: ["Khagrachhari Bus Terminal"] },
+    { id: "b33", type: "bus", operator: "Ena Transport", coach: "Hyundai AC Coach", depart: "11:15 PM", arrive: "07:00 AM", fare: 1150, seatsLeft: 8, boarding: ["Sayedabad"], dropping: ["Khagrachhari Sadar"] }
   ],
   "dhaka-barishal": [
-    { id: "l1", type: "ferry", operator: "MV Manami Launch", coach: "VIP & Deluxe AC Cabin", depart: "08:30 PM", arrive: "05:00 AM", fare: 1800, seatsLeft: 15, rating: 4.9, boarding: ["Sadarghat Launch Terminal"], dropping: ["Barishal River Port"] },
-    { id: "l2", type: "ferry", operator: "MV Sundarban 16", coach: "Single & Double AC Cabin", depart: "09:00 PM", arrive: "05:30 AM", fare: 1500, seatsLeft: 22, rating: 4.8, boarding: ["Sadarghat Launch Terminal"], dropping: ["Barishal River Port"] },
-    { id: "b41", type: "bus", operator: "Sakura Paribahan", coach: "Hino 1J AC via Padma Bridge", depart: "08:00 AM", arrive: "11:45 AM", fare: 750, seatsLeft: 16, rating: 4.5, boarding: ["Gabtoli", "Sayedabad"], dropping: ["Nathullabad Bus Terminal"] }
+    { id: "l1", type: "ferry", operator: "MV Manami Launch", coach: "VIP & Deluxe AC Cabin", depart: "08:30 PM", arrive: "05:00 AM", fare: 1800, seatsLeft: 15, boarding: ["Sadarghat Launch Terminal"], dropping: ["Barishal River Port"] },
+    { id: "l2", type: "ferry", operator: "MV Sundarban 16", coach: "Single & Double AC Cabin", depart: "09:00 PM", arrive: "05:30 AM", fare: 1500, seatsLeft: 22, boarding: ["Sadarghat Launch Terminal"], dropping: ["Barishal River Port"] },
+    { id: "b41", type: "bus", operator: "Sakura Paribahan", coach: "Hino 1J AC via Padma Bridge", depart: "08:00 AM", arrive: "11:45 AM", fare: 750, seatsLeft: 16, boarding: ["Gabtoli", "Sayedabad"], dropping: ["Nathullabad Bus Terminal"] }
   ],
   "dhaka-rajshahi": [
-    { id: "t31", type: "train", operator: "Bangladesh Railway", coach: "Padma Express (759) - Snigdha AC", depart: "11:00 PM", arrive: "04:30 AM", fare: 805, seatsLeft: 18, rating: 4.8, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Rajshahi Railway Station"] },
-    { id: "t32", type: "train", operator: "Bangladesh Railway", coach: "Silk City Express (753) - Shovon Chair", depart: "02:40 PM", arrive: "08:35 PM", fare: 415, seatsLeft: 25, rating: 4.6, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Rajshahi Railway Station"] },
-    { id: "t33", type: "train", operator: "Bangladesh Railway", coach: "Dhumketu Express (769) - AC Berth / Cabin", depart: "06:00 AM", arrive: "11:40 AM", fare: 1450, seatsLeft: 10, rating: 4.7, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Rajshahi Railway Station"] },
-    { id: "b51", type: "bus", operator: "National Travels", coach: "Scania Multi-Axle AC", depart: "08:30 AM", arrive: "02:30 PM", fare: 1200, seatsLeft: 14, rating: 4.7, boarding: ["Gabtoli", "Kalyanpur"], dropping: ["Shiroil Bus Terminal"] }
+    { id: "t31", type: "train", operator: "Bangladesh Railway", coach: "Padma Express (759) - Snigdha AC", depart: "11:00 PM", arrive: "04:30 AM", fare: 805, seatsLeft: 18, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Rajshahi Railway Station"] },
+    { id: "t32", type: "train", operator: "Bangladesh Railway", coach: "Silk City Express (753) - Shovon Chair", depart: "02:40 PM", arrive: "08:35 PM", fare: 415, seatsLeft: 25, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Rajshahi Railway Station"] },
+    { id: "t33", type: "train", operator: "Bangladesh Railway", coach: "Dhumketu Express (769) - AC Berth / Cabin", depart: "06:00 AM", arrive: "11:40 AM", fare: 1450, seatsLeft: 10, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Rajshahi Railway Station"] },
+    { id: "b51", type: "bus", operator: "National Travels", coach: "Scania Multi-Axle AC", depart: "08:30 AM", arrive: "02:30 PM", fare: 1200, seatsLeft: 14, boarding: ["Gabtoli", "Kalyanpur"], dropping: ["Shiroil Bus Terminal"] }
   ],
   "dhaka-khulna": [
-    { id: "t41", type: "train", operator: "Bangladesh Railway", coach: "Sundarban Express (725) - Snigdha AC via Padma Bridge", depart: "08:15 AM", arrive: "03:50 PM", fare: 920, seatsLeft: 20, rating: 4.8, boarding: ["Kamalapur"], dropping: ["Khulna Railway Station"] },
-    { id: "t42", type: "train", operator: "Bangladesh Railway", coach: "Benapole Express (795) - AC Cabin", depart: "11:45 PM", arrive: "06:10 AM", fare: 1650, seatsLeft: 8, rating: 4.9, boarding: ["Kamalapur"], dropping: ["Benapole / Khulna"] },
-    { id: "t43", type: "train", operator: "Bangladesh Railway", coach: "Chitra Express (763) - Shovon Chair", depart: "07:00 PM", arrive: "02:30 AM", fare: 465, seatsLeft: 28, rating: 4.5, boarding: ["Kamalapur"], dropping: ["Khulna Railway Station"] }
+    { id: "t41", type: "train", operator: "Bangladesh Railway", coach: "Sundarban Express (725) - Snigdha AC via Padma Bridge", depart: "08:15 AM", arrive: "03:50 PM", fare: 920, seatsLeft: 20, boarding: ["Kamalapur"], dropping: ["Khulna Railway Station"] },
+    { id: "t42", type: "train", operator: "Bangladesh Railway", coach: "Benapole Express (795) - AC Cabin", depart: "11:45 PM", arrive: "06:10 AM", fare: 1650, seatsLeft: 8, boarding: ["Kamalapur"], dropping: ["Benapole / Khulna"] },
+    { id: "t43", type: "train", operator: "Bangladesh Railway", coach: "Chitra Express (763) - Shovon Chair", depart: "07:00 PM", arrive: "02:30 AM", fare: 465, seatsLeft: 28, boarding: ["Kamalapur"], dropping: ["Khulna Railway Station"] }
   ],
   "dhaka-rangpur": [
-    { id: "t51", type: "train", operator: "Bangladesh Railway", coach: "Rangpur Express (771) - Snigdha AC", depart: "09:10 AM", arrive: "07:05 PM", fare: 995, seatsLeft: 14, rating: 4.7, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Rangpur Railway Station"] },
-    { id: "t52", type: "train", operator: "Bangladesh Railway", coach: "Kurigram Express (797) - Shovon Chair", depart: "08:45 PM", arrive: "06:15 AM", fare: 510, seatsLeft: 22, rating: 4.6, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Rangpur / Kurigram Station"] }
+    { id: "t51", type: "train", operator: "Bangladesh Railway", coach: "Rangpur Express (771) - Snigdha AC", depart: "09:10 AM", arrive: "07:05 PM", fare: 995, seatsLeft: 14, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Rangpur Railway Station"] },
+    { id: "t52", type: "train", operator: "Bangladesh Railway", coach: "Kurigram Express (797) - Shovon Chair", depart: "08:45 PM", arrive: "06:15 AM", fare: 510, seatsLeft: 22, boarding: ["Kamalapur", "Dhaka Airport"], dropping: ["Rangpur / Kurigram Station"] }
   ]
 };
 
@@ -424,8 +430,8 @@ export default function BookingEngine({
             </h2>
             <p className="text-sm text-[var(--text-muted)] mt-1">
               {isBn
-                ? "কাউন্টারে সরাসরি ফোন বা মেসেজ পাঠিয়ে সময় ও আসন নিশ্চিত করুন অথবা অফিশিয়াল পোর্টালে যান।"
-                : "Confirm departure times and seat availability directly with the operator or via official portals."}
+                ? "অফিশিয়াল পোর্টাল অথবা গুগল ম্যাপস কাউন্টার লোকেশনের মাধ্যমে সময় ও আসন নিশ্চিত করুন।"
+                : "Confirm departure times and seat availability via official portals or Google Maps terminal locations."}
             </p>
           </div>
 
@@ -520,36 +526,66 @@ export default function BookingEngine({
                 </div>
 
                 <div className="flex items-center gap-2">
-                  {/* Direct Counter Phone */}
-                  <a
-                    href={`tel:${(() => {
-                      const raw = (OPERATOR_CONTACTS[item.operator]?.phone || "131").replace(/[^0-9+]/g, "");
-                      if (raw.length <= 5) return raw;
-                      return raw.startsWith("+") ? raw : `+88${raw}`;
-                    })()}`}
-                    className="min-h-[40px] px-3 py-2 rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] text-[#0f4a38] hover:text-white dark:bg-[#1f9d76]/20 dark:text-[#2ecc71] dark:hover:bg-[#1f9d76] dark:hover:text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
-                    title={isBn ? "কাউন্টারে সরাসরি ফোন করুন" : "Direct Call Counter"}
-                  >
-                    <PhoneCall className="w-3.5 h-3.5 shrink-0" />
-                    <span>{isBn ? "কাউন্টার কল" : "Call"}</span>
-                  </a>
+                  {OPERATOR_CONTACTS[item.operator]?.phoneVerified === true ? (
+                    <>
+                      {/* Direct Counter Phone */}
+                      <a
+                        href={`tel:${(() => {
+                          const raw = (OPERATOR_CONTACTS[item.operator]?.phone || "131").replace(/[^0-9+]/g, "");
+                          if (raw.length <= 5) return raw;
+                          return raw.startsWith("+") ? raw : `+88${raw}`;
+                        })()}`}
+                        className="min-h-[40px] px-3 py-2 rounded-xl bg-[#0f4a38]/10 hover:bg-[#0f4a38] text-[#0f4a38] hover:text-white dark:bg-[#1f9d76]/20 dark:text-[#2ecc71] dark:hover:bg-[#1f9d76] dark:hover:text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+                        title={isBn ? "কাউন্টারে সরাসরি ফোন করুন" : "Direct Call Counter"}
+                      >
+                        <PhoneCall className="w-3.5 h-3.5 shrink-0" />
+                        <span>{isBn ? "কাউন্টার কল" : "Call"}</span>
+                      </a>
 
-                  {/* WhatsApp Inquiry if available */}
-                  {OPERATOR_CONTACTS[item.operator]?.whatsapp && (
-                    <a
-                      href={`https://wa.me/${OPERATOR_CONTACTS[item.operator].whatsapp}?text=${encodeURIComponent(
-                        isBn
-                          ? `আসসালামু আলাইকুম, আমি ঘুরাঘুরি (Ghuraghuri) অ্যাপ থেকে ${item.operator} (${item.coach})-এর সিট বুকিং সংক্রান্ত তথ্য জানতে চাচ্ছি।`
-                          : `Hello, I found ${item.operator} on Ghuraghuri App and want to inquire about seat booking.`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="min-h-[40px] px-3 py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-600 text-emerald-700 hover:text-white dark:bg-emerald-500/25 dark:text-emerald-300 dark:hover:bg-emerald-600 dark:hover:text-white text-xs font-bold transition-all flex items-center justify-center gap-1 cursor-pointer shadow-sm"
-                      title={isBn ? "হোয়াটসঅ্যাপে মেসেজ পাঠান" : "WhatsApp Inquiry"}
-                    >
-                      <MessageCircle className="w-3.5 h-3.5 shrink-0" />
-                      <span className="hidden sm:inline">{isBn ? "মেসেজ" : "Chat"}</span>
-                    </a>
+                      {/* WhatsApp Inquiry if available */}
+                      {OPERATOR_CONTACTS[item.operator]?.whatsapp && (
+                        <a
+                          href={`https://wa.me/${OPERATOR_CONTACTS[item.operator].whatsapp}?text=${encodeURIComponent(
+                            isBn
+                              ? `আসসালামু আলাইকুম, আমি ঘুরাঘুরি (Ghuraghuri) অ্যাপ থেকে ${item.operator} (${item.coach})-এর সিট বুকিং সংক্রান্ত তথ্য জানতে চাচ্ছি।`
+                              : `Hello, I found ${item.operator} on Ghuraghuri App and want to inquire about seat booking.`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="min-h-[40px] px-3 py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-600 text-emerald-700 hover:text-white dark:bg-emerald-500/25 dark:text-emerald-300 dark:hover:bg-emerald-600 dark:hover:text-white text-xs font-bold transition-all flex items-center justify-center gap-1 cursor-pointer shadow-sm"
+                          title={isBn ? "হোয়াটসঅ্যাপে মেসেজ পাঠান" : "WhatsApp Inquiry"}
+                        >
+                          <MessageCircle className="w-3.5 h-3.5 shrink-0" />
+                          <span className="hidden sm:inline">{isBn ? "মেসেজ" : "Chat"}</span>
+                        </a>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                          `${item.operator} ${item.boarding[0] || ""} Bangladesh`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="min-h-[40px] px-3 py-2 rounded-xl bg-blue-500/10 hover:bg-blue-600 text-blue-600 hover:text-white dark:bg-blue-500/20 dark:text-blue-400 text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+                        title={isBn ? "গুগল ম্যাপসে ডিরেকশন দেখুন" : "View on Google Maps"}
+                      >
+                        <Navigation className="w-3.5 h-3.5 shrink-0" />
+                        <span>{isBn ? "ম্যাপ" : "Map"}</span>
+                      </a>
+                      {OPERATOR_CONTACTS[item.operator]?.portalUrl && (
+                        <a
+                          href={OPERATOR_CONTACTS[item.operator].portalUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="min-h-[40px] px-3 py-2 rounded-xl bg-[var(--surface)] hover:bg-[#0f4a38] hover:text-white text-foreground border border-[var(--glass-border)] text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                          <span>{isBn ? "ওয়েবসাইট" : "Website"}</span>
+                        </a>
+                      )}
+                    </>
                   )}
 
                   {/* Seat Selection Button (Demo) */}
@@ -625,18 +661,19 @@ export default function BookingEngine({
                 </span>
               </div>
               <div className="flex items-center gap-2 shrink-0">
-                {OPERATOR_CONTACTS[selectedSchedule.operator]?.phone && (
-                  <a
-                    href={`tel:${(() => {
-                      const raw = (OPERATOR_CONTACTS[selectedSchedule.operator]?.phone || "131").replace(/[^0-9+]/g, "");
-                      return raw.length <= 5 ? raw : (raw.startsWith("+") ? raw : `+88${raw}`);
-                    })()}`}
-                    className="px-3 py-1.5 rounded-xl bg-[#0f4a38] text-white hover:bg-[#156b50] font-bold text-xs inline-flex items-center gap-1.5 shadow-sm"
-                  >
-                    <PhoneCall className="w-3 h-3" />
-                    <span>{OPERATOR_CONTACTS[selectedSchedule.operator].phone}</span>
-                  </a>
-                )}
+                {OPERATOR_CONTACTS[selectedSchedule.operator]?.phoneVerified === true &&
+                  OPERATOR_CONTACTS[selectedSchedule.operator]?.phone && (
+                    <a
+                      href={`tel:${(() => {
+                        const raw = (OPERATOR_CONTACTS[selectedSchedule.operator]?.phone || "131").replace(/[^0-9+]/g, "");
+                        return raw.length <= 5 ? raw : (raw.startsWith("+") ? raw : `+88${raw}`);
+                      })()}`}
+                      className="px-3 py-1.5 rounded-xl bg-[#0f4a38] text-white hover:bg-[#156b50] font-bold text-xs inline-flex items-center gap-1.5 shadow-sm"
+                    >
+                      <PhoneCall className="w-3 h-3" />
+                      <span>{OPERATOR_CONTACTS[selectedSchedule.operator].phone}</span>
+                    </a>
+                  )}
                 {OPERATOR_CONTACTS[selectedSchedule.operator]?.portalUrl && (
                   <a
                     href={OPERATOR_CONTACTS[selectedSchedule.operator].portalUrl}

@@ -8,7 +8,7 @@ import { DestinationCard } from "@/components/destinations/DestinationCard";
 import { DestinationsFilterControls } from "@/components/destinations/DestinationsFilterControls";
 import { Compass, ChevronLeft, ChevronRight } from "lucide-react";
 import { buildRouteMetadata } from "@/lib/seo";
-import { CATEGORY_GROUPS, resolveCategoryGroup, TOTAL_DESTINATIONS } from "@/lib/constants";
+import { CATEGORY_GROUPS, resolveCategoryGroup, TOTAL_DESTINATIONS, TOTAL_DISTRICTS_COVERED, POPULAR_DESTINATIONS } from "@/lib/constants";
 
 export interface DestinationsSearchParams {
   q?: string;
@@ -80,7 +80,7 @@ export default async function DestinationsPage(props: PageProps) {
   const filtered = allDestinations
     .filter((item) => {
       if (q) {
-        const qLower = q.toLowerCase();
+        const qLower = q.normalize("NFC").toLowerCase();
         const matchName = item.name.toLowerCase().includes(qLower);
         const matchBn = item.name_bn?.toLowerCase().includes(qLower);
         const matchAlt = item.alternateNames?.some((alt) =>
@@ -111,11 +111,12 @@ export default async function DestinationsPage(props: PageProps) {
       if (sort === "name") {
         return a.name.localeCompare(b.name);
       }
-      // Most Popular sort: popularity numeric weight first, then rating, then name
-      const pA = typeof a.popularity === "number" ? a.popularity : 0;
-      const pB = typeof b.popularity === "number" ? b.popularity : 0;
-      if (pB !== pA) return pB - pA;
-      if (b.rating !== a.rating) return b.rating - a.rating;
+      // Most Popular sort: order by index in POPULAR_DESTINATIONS first, then alphabetically by name
+      const popIndexA = POPULAR_DESTINATIONS.indexOf(a.slug);
+      const popIndexB = POPULAR_DESTINATIONS.indexOf(b.slug);
+      const rankA = popIndexA !== -1 ? popIndexA : Infinity;
+      const rankB = popIndexB !== -1 ? popIndexB : Infinity;
+      if (rankA !== rankB) return rankA - rankB;
       return a.name.localeCompare(b.name);
     });
 
@@ -154,7 +155,7 @@ export default async function DestinationsPage(props: PageProps) {
                 : "Explore All Destinations"}
             </h1>
             <p className="text-xs sm:text-sm text-[var(--text-muted)] font-medium mt-1">
-              Found {totalResults} of {allDestinations.length} curated destinations across 64 districts
+              Found {totalResults} of {allDestinations.length} curated destinations across {TOTAL_DISTRICTS_COVERED} districts
               {totalPages > 1 ? ` (Page ${currentPage} of ${totalPages})` : ""}
             </p>
           </div>

@@ -667,8 +667,8 @@ if (c <= 15) return { title: "চাটগাঁইয়া যাযাবর �
 if (c <= 30) return { title: "অভিজ্ঞ বনচারী ও নাবিক ⛵", badge: "★ অভিজ্ঞ নাবিক", quote: "বাকেটলিস্টের সেরা স্পটগুলো আপনার চেনা!" };
 if (c <= 50) return { title: "পাহাড় ও ঝর্ণার রাজা 👑", badge: "★ রাজা", quote: "৮০% ভ্রমণপিপাসু থেকে আপনি এগিয়ে!" };
 if (c <= 75) return { title: "চাটগাঁর এক্সট্রিম ট্র্যাকার 🔥", badge: "★ এক্সট্রিম ট্র্যাকার", quote: "টপ ৫% অভিযাত্রীদের একজন আপনি!" };
-if (c < (total || 105)) return { title: "বাংলার মার্কো পোলো 🌍", badge: "★ মার্কো পোলো", quote: "চট্টগ্রামের প্রতিটি গিরি-সৈকত আপনার পদচিহ্নে আঁকা!" };
-return { title: "গ্র্যান্ড ট্রাভেল লেজেন্ড 🏆", badge: "★ লেজেন্ড", quote: "১০৫/১০৫ আনলকড — আপনি অপরাজেয় সুলতান!" };
+if (c < (total || 91)) return { title: "বাংলার মার্কো পোলো 🌍", badge: "★ মার্কো পোলো", quote: "চট্টগ্রামের প্রতিটি গিরি-সৈকত আপনার পদচিহ্নে আঁকা!" };
+return { title: "গ্র্যান্ড ট্রাভেল লেজেন্ড 🏆", badge: "★ লেজেন্ড", quote: `${totalBn}/${totalBn} আনলকড — আপনি অপরাজেয় সুলতান!` };
 }
 const rankObj = getPlacesRank(count);
 const rankTitle = rankObj.title;
@@ -756,6 +756,7 @@ const catFilter = document.getElementById("placesCategoryFilter");
 const chipsContainer = document.getElementById("placesCategoryChips");
 const districts = [...new Set(ctgPlaces.map(p => p.district).filter(Boolean))].sort();
 if (distFilter && distFilter.options.length <= 1) {
+if (distFilter.options[0]) distFilter.options[0].textContent = `সব জেলা (${toBanglaDigits(districts.length, 0)}টি)`;
 districts.forEach(d => {
 const opt = document.createElement("option");
 opt.value = d;
@@ -766,6 +767,7 @@ distFilter.appendChild(opt);
 }
 const categories = [...new Set(ctgPlaces.map(p => p.category).filter(Boolean))].sort();
 if (catFilter && catFilter.options.length <= 1) {
+if (catFilter.options[0]) catFilter.options[0].textContent = `সব ধরণ (${toBanglaDigits(categories.length, 0)}টি)`;
 const selOpt = document.createElement("option");
 selOpt.value = "__selected__";
 selOpt.textContent = "নির্বাচিত স্থান";
@@ -823,7 +825,7 @@ updatePlaceLabels();
 function renderPlacesList() {
 const list = document.getElementById("placesList");
 if (!list) return;
-const search = (document.getElementById("placesSearch")?.value || "").trim().toLowerCase();
+const search = (document.getElementById("placesSearch")?.value || "").normalize("NFC").trim().toLowerCase();
 const selDist = document.getElementById("placesDistrictFilter")?.value || "";
 let selCat = document.getElementById("placesCategoryFilter")?.value || "";
 const activeChip = document.querySelector("#placesCategoryChips .ctg-chip.active");

@@ -3,7 +3,7 @@
 import React from "react";
 import { useApp } from "@/context/AppContext";
 import { Compass, ShieldCheck, Heart, Globe } from "lucide-react";
-import { TOTAL_DESTINATIONS, TOTAL_DISTRICTS_OFFICIAL } from "@/lib/constants";
+import { TOTAL_DESTINATIONS, TOTAL_DISTRICTS_OFFICIAL, TOTAL_DISTRICTS_COVERED } from "@/lib/constants";
 import { formatDigits } from "@/lib/i18n";
 
 export default function AboutPage() {
@@ -39,8 +39,8 @@ export default function AboutPage() {
             {
               label: isBn ? "জেলা কভারেজ" : "Districts",
               value: isBn
-                ? `${formatDigits(TOTAL_DISTRICTS_OFFICIAL, true)}/${formatDigits(TOTAL_DISTRICTS_OFFICIAL, true)}`
-                : `${TOTAL_DISTRICTS_OFFICIAL}/${TOTAL_DISTRICTS_OFFICIAL}`,
+                ? `${formatDigits(TOTAL_DISTRICTS_COVERED, true)}/${formatDigits(TOTAL_DISTRICTS_OFFICIAL, true)}`
+                : `${TOTAL_DISTRICTS_COVERED}/${TOTAL_DISTRICTS_OFFICIAL}`,
             },
             {
               label: isBn ? "বিভাগ" : "Divisions",
@@ -78,8 +78,8 @@ export default function AboutPage() {
             </p>
             <p>
               {isBn
-                ? `আমাদের প্ল্যাটফর্মে রয়েছে ৮টি বিভাগের ৬৪টি জেলার ${formatDigits(TOTAL_DESTINATIONS, true)}টি বাছাইকৃত পর্যটন গন্তব্য, হোটেল ও খাবারের তথ্য এবং প্রাথমিক যাতায়াত রুট নির্দেশিকা।`
-                : `Our platform catalogs ${TOTAL_DESTINATIONS} curated destinations across all 64 districts in Bangladesh, providing travel itineraries, transit schedules, and regional culinary traditions.`}
+                ? `আমাদের প্ল্যাটফর্মে রয়েছে ৮টি বিভাগের ${formatDigits(TOTAL_DISTRICTS_COVERED, true)}টি জেলার ${formatDigits(TOTAL_DESTINATIONS, true)}টি বাছাইকৃত পর্যটন গন্তব্য, হোটেল ও খাবারের তথ্য এবং প্রাথমিক যাতায়াত রুট নির্দেশিকা।`
+                : `Our platform catalogs ${TOTAL_DESTINATIONS} curated destinations across all ${TOTAL_DISTRICTS_COVERED} districts in Bangladesh (${TOTAL_DISTRICTS_COVERED} of ${TOTAL_DISTRICTS_OFFICIAL} administrative districts), providing travel itineraries, transit schedules, and regional culinary traditions.`}
             </p>
           </div>
         </div>

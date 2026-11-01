@@ -285,7 +285,7 @@
                                 </div>
                                 <div class="ctg-exp-preview-chip ctg-chip-amber">
                                     <span class="ctg-chip-icon">🏆</span>
-                                    <span>ট্রাভেল স্কোর: <strong>৭ / ১১ জেলা</strong></span>
+                                    <span id="divExpChipCount">ট্রাভেল স্কোর: <strong>৭ / ১১ জেলা</strong></span>
                                 </div>
                             </div>
                             <div class="ctg-exp-body">
@@ -475,7 +475,7 @@
                                 </div>
                                 <div class="ctg-exp-preview-chip ctg-chip-emerald">
                                     <span class="ctg-chip-icon">📍</span>
-                                    <span>১৫টি উপজেলা <strong>• জোন সিলেক্টর</strong></span>
+                                    <span id="upazilaExpChipCount">১৫টি উপজেলা <strong>• জোন সিলেক্টর</strong></span>
                                 </div>
                             </div>
                             <div class="ctg-exp-body">
@@ -795,7 +795,7 @@
                                 </div>
                                 <div class="ctg-exp-preview-chip ctg-chip-cyan">
                                     <span class="ctg-chip-icon">🗺️</span>
-                                    <span id="placesExpChipCount">১০৫টি দর্শনীয় স্থান <strong>• ট্রাভেল বাকেটলিস্ট</strong></span>
+                                    <span id="placesExpChipCount">৯১টি দর্শনীয় স্থান <strong>• ট্রাভেল বাকেটলিস্ট</strong></span>
                                 </div>
                             </div>
                             <div class="ctg-exp-body">
@@ -859,7 +859,7 @@
                     <div class="ctg-section-head ctg-section-head-center ctg-reveal">
                         <span class="ctg-section-tag">MY CHATTOGRAM · EXPERIENCE 01</span>
                         <h2 class="ctg-section-title">চট্টগ্রাম বিভাগের কয়টি জেলা ঘুরেছেন?</h2>
-                        <p class="ctg-section-desc">১১টি জেলার মধ্য থেকে আপনার ভ্রমণের জেলাগুলো নির্বাচন করে সোশ্যাল পোস্টার তৈরি করুন।</p>
+                        <p class="ctg-section-desc" id="divSectionDesc">১১টি জেলার মধ্য থেকে আপনার ভ্রমণের জেলাগুলো নির্বাচন করে সোশ্যাল পোস্টার তৈরি করুন।</p>
                     </div>
 
                     <!-- Unified 3-Column Ergonomic Studio Layout -->
@@ -868,7 +868,7 @@
                         <aside class="ctg-division-panel">
                             <div class="ctg-division-panel-head">
                                 <div>
-                                    <h3 class="ctg-division-panel-title">১১টি জেলা</h3>
+                                    <h3 class="ctg-division-panel-title" id="divPanelTitle">১১টি জেলা</h3>
                                     <p class="ctg-division-panel-sub">মানচিত্র বা তালিকা থেকে নির্বাচন করুন</p>
                                 </div>
                                 <div class="ctg-div-head-actions">
@@ -950,7 +950,7 @@
                                 <div class="ctg-poster-live-header">
                                     <div class="ctg-poster-live-titles">
                                         <h2 class="ctg-poster-live-title" id="divPosterLiveTitle">আমার চট্টগ্রাম বিভাগ</h2>
-                                        <p class="ctg-poster-live-subtitle">১১টি জেলার ব্যক্তিগত ভ্রমণ মানচিত্র</p>
+                                        <p class="ctg-poster-live-subtitle" id="divPosterLiveSub">১১টি জেলার ব্যক্তিগত ভ্রমণ মানচিত্র</p>
                                     </div>
                                     <div class="ctg-poster-live-top-rating" id="divPosterLiveCard">
                                         <div class="ctg-poster-live-count" id="divPosterLiveCount">00 / 11</div>
@@ -1508,13 +1508,13 @@
                                                 <!-- Progress circle -->
                                                 <circle cx="56" cy="56" r="42" class="dial-progress-circle" id="cityDialProgressCircle" stroke-dasharray="263.89" stroke-dashoffset="263.89"></circle>
                                                 <!-- Center bold count -->
-                                                <text x="56" y="52" class="dial-main-num" id="cityPosterLiveCount">২০</text>
+                                                <text x="56" y="52" class="dial-main-num" id="cityPosterLiveCount">২১</text>
                                                 <!-- Gold percentage -->
                                                 <text x="56" y="69" class="dial-pct-label" id="cityPosterLivePct">০% ভ্রমণ</text>
                                             </svg>
                                             <div class="dial-legend">
                                                 <strong class="dial-title" id="cityPosterLiveDialTitle">চাটগাঁ ভ্রমণ</strong>
-                                                <span class="dial-stats" id="cityPosterLiveDialStats">০ ঘোরা · ২০ বাকি</span>
+                                                <span class="dial-stats" id="cityPosterLiveDialStats">০ ঘোরা · ২১ বাকি</span>
                                             </div>
                                         </div>
                                         <!-- Hidden legacy hooks for rank updates -->
@@ -1720,7 +1720,7 @@
                     <div class="ctg-section-head ctg-section-head-center ctg-reveal">
                         <span class="ctg-section-tag">MY CHATTOGRAM · EXPERIENCE 04</span>
                         <h2 class="ctg-section-title">চট্টগ্রাম বিভাগের কোথায় কোথায় গিয়েছেন?</h2>
-                        <p class="ctg-section-desc" id="placesExpSectionDesc">১০৫টি দর্শনীয় স্থানের মধ্য থেকে আপনার ঘুরে দেখা স্থানগুলো নির্বাচন করে সোশ্যাল পোস্টার তৈরি করুন।</p>
+                        <p class="ctg-section-desc" id="placesExpSectionDesc">৯১টি দর্শনীয় স্থানের মধ্য থেকে আপনার ঘুরে দেখা স্থানগুলো নির্বাচন করে সোশ্যাল পোস্টার তৈরি করুন।</p>
                     </div>
 
                     <!-- 3-Column Studio Layout -->
@@ -1731,7 +1731,7 @@
                                 <div class="ctg-div-box-head">
                                     <div>
                                         <span class="ctg-control-heading" style="margin-bottom: 2px;">স্থান নির্বাচন</span>
-                                        <span class="ctg-div-subtitle" id="placesTotalSubtitle">১০৫টি দর্শনীয় স্থান</span>
+                                        <span class="ctg-div-subtitle" id="placesTotalSubtitle">৯১টি দর্শনীয় স্থান</span>
                                     </div>
                                     <div class="ctg-div-head-actions">
                                         <button type="button" class="ctg-btn-text" id="btnSelectAllPlaces">সব বাছুন</button>
@@ -1841,10 +1841,10 @@
                                 <div class="ctg-poster-live-header">
                                     <div class="ctg-poster-live-titles">
                                         <h2 class="ctg-poster-live-title" id="placesPosterLiveTitle">আমার ঘোরা জায়গাগুলো</h2>
-                                        <p class="ctg-poster-live-subtitle" id="placesPosterLiveSubtitle">১০৫টি দর্শনীয় স্থানের ভ্রমণ মানচিত্র</p>
+                                        <p class="ctg-poster-live-subtitle" id="placesPosterLiveSubtitle">৯১টি দর্শনীয় স্থানের ভ্রমণ মানচিত্র</p>
                                     </div>
                                     <div class="ctg-poster-live-top-rating" id="placesPosterLiveCard">
-                                        <div class="ctg-poster-live-count" id="placesPosterLiveCount">০০ / ১০৫</div>
+                                        <div class="ctg-poster-live-count" id="placesPosterLiveCount">০০ / ৯১</div>
                                         <div class="ctg-poster-live-label">SPOTS EXPLORED</div>
                                         <div class="ctg-poster-live-rank" id="placesPosterLiveRank">★ নবাগত পর্যটক</div>
                                     </div>
@@ -1999,7 +1999,7 @@
                     <nav class="ctg-footer-nav" aria-label="Explore Ghuraghuri">
                         <a href="/destinations" class="ctg-ft-link">Destinations (গন্তব্য)</a>
                         <span class="ctg-ft-dot" aria-hidden="true">·</span>
-                        <a href="/transport" class="ctg-ft-link">Map (ম্যাপ ও যাতায়াত)</a>
+                        <a href="/#map" class="ctg-ft-link">Map (ম্যাপ ও যাতায়াত)</a>
                         <span class="ctg-ft-dot" aria-hidden="true">·</span>
                         <a href="/hotels" class="ctg-ft-link">Hotels (হোটেল ও রিসোর্ট)</a>
                     </nav>

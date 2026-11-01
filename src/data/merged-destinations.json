@@ -930,5 +930,101 @@
     },
     "mergedInto": "mahasthangarh",
     "mergedAt": "2026-10-31T06:46:43.542Z"
+  },
+  {
+    "id": 75,
+    "name": "Baneshwar Temple",
+    "name_bn": "বনেশ্বর মন্দির",
+    "slug": "baneshwar-temple",
+    "division": "Mymensingh",
+    "district": "Jamalpur",
+    "upazila": "",
+    "category": "Historical",
+    "categories": [
+      "Historical",
+      "Cultural"
+    ],
+    "rating": 4.2,
+    "reviews": 90,
+    "latitude": 25.122,
+    "longitude": 89.848,
+    "image": "/assets/destinations/baneshwar-temple.webp",
+    "imageLg": "/assets/destinations/baneshwar-temple.webp",
+    "gallery": [
+      "/assets/destinations/baneshwar-temple.webp"
+    ],
+    "photoId": "photo-1524492412937-b28074a5d7da",
+    "galleryIds": [
+      "photo-1524492412937-b28074a5d7da",
+      "photo-1548013146-72479768bada",
+      "photo-1474181487882-5abf3f0ba6c2"
+    ],
+    "shortDesc": "A riverside Shiva temple from the 17th century, spiritually significant for Bengali Hindus.",
+    "description": "Baneshwar Temple stands beside the Old Brahmaputra in Jamalpur's Dewanganj area, a sacred 17th-century Shiva shrine of great importance to Bengali Hindus. Its simple brick architecture contrasts with the powerful river, and the surrounding groves add a tranquil pilgrimage atmosphere. The site comes alive with devotees during the rainy-season Shiva festivals.",
+    "bestTime": "October – March",
+    "recommendedDays": "Half day",
+    "difficulty": "Easy",
+    "budget": "BDT 500 – 1,200 / day (approx)",
+    "travelType": "Pilgrims, History, Culture",
+    "activities": [
+      "Temple visit",
+      "Riverside walk",
+      "Pilgrimage atmosphere",
+      "Festival experience",
+      "Photography"
+    ],
+    "attractions": [
+      "Baneshwar Temple",
+      "Old Brahmaputra river",
+      "Dewanganj area"
+    ],
+    "tips": [
+      "A key pilgrimage site — be respectful.",
+      "Combine with Sherpur's greenery.",
+      "Best in winter."
+    ],
+    "things_to_do": [
+      "Temple visit",
+      "Riverside walk",
+      "Pilgrimage atmosphere",
+      "Festival experience",
+      "Photography"
+    ],
+    "what_to_see": [
+      "Baneshwar Temple",
+      "Old Brahmaputra river",
+      "Dewanganj area"
+    ],
+    "travel_tips": [
+      "A key pilgrimage site — be respectful.",
+      "Combine with Sherpur's greenery.",
+      "Best in winter."
+    ],
+    "transport_options": [
+      "Bus",
+      "Train",
+      "Private Car"
+    ],
+    "nearby_destinations": [],
+    "nearby_hotels": [],
+    "featured": false,
+    "popularity": "low",
+    "status": "active",
+    "tags": [],
+    "travelInfo": {
+      "from": "Dhaka",
+      "distanceKm": 160,
+      "duration": "3 – 4 hours",
+      "route": "Dhaka → Jamalpur → Dewanganj → Baneshwar",
+      "transport": [
+        "Bus",
+        "Train",
+        "Private Car"
+      ],
+      "flight": null
+    },
+    "mergedInto": "puthia-temple-complex",
+    "mergedAt": "2026-11-01T05:20:44.631Z",
+    "retiredReason": "Mislocated in Jamalpur; Shiva temple in Baneswar/Puthia is part of Puthia Temple Complex in Rajshahi, while Jamalpur's historic temple is Dayamoyee Temple."
   }
 ]

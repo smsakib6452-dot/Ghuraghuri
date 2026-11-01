@@ -333,7 +333,7 @@ function WeatherContent() {
   // Search Autocomplete Matching
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
-    const q = searchQuery.toLowerCase().trim();
+    const q = searchQuery.normalize("NFC").toLowerCase().trim();
     return allDestSpots
       .filter((d) => {
         return (
@@ -357,7 +357,7 @@ function WeatherContent() {
     }
 
     if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase().trim();
+      const q = searchQuery.normalize("NFC").toLowerCase().trim();
       list = list.filter(
         (d) =>
           d.name.toLowerCase().includes(q) ||

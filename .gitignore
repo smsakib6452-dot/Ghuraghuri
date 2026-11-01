@@ -28,6 +28,8 @@
 /backup-assets/
 /image-audit/
 /duplicates-report.csv
+/contacts-to-verify.csv
+/data-gaps.csv
 
 # debug
 npm-debug.log*
@@ -48,3 +50,4 @@ next-env.d.ts
 
 .vercel
 /backup-assets/
+/ratings-removed.csv

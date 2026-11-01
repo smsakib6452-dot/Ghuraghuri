@@ -5,7 +5,7 @@ import { AppProvider } from "@/context/AppContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/common/BackToTop";
-import { TOTAL_DESTINATIONS, SITE_URL } from "@/lib/constants";
+import { TOTAL_DESTINATIONS, SITE_URL, TOTAL_DISTRICTS_COVERED } from "@/lib/constants";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s | Ghuraghuri",
   },
   description:
-    `Explore ${TOTAL_DESTINATIONS}+ authentic destinations across 8 divisions of Bangladesh. Discover authentic local photography, cultural heritage, hill tracks, mangroves, and complete travel guides.`,
+    `Explore ${TOTAL_DESTINATIONS} curated destinations across ${TOTAL_DISTRICTS_COVERED} districts of Bangladesh with interactive maps, live weather updates, transit routes, and local travel guides.`,
   authors: [{ name: "Sakib" }],
   creator: "Sakib",
   metadataBase: new URL(SITE_URL),
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: "Ghuraghuri",
     title: "Ghuraghuri — Bangladesh Travel Explorer",
-    description: `Discover ${TOTAL_DESTINATIONS}+ authentic tourist spots, pristine beaches, hills, and heritage sites of Bangladesh.`,
+    description: `Explore ${TOTAL_DESTINATIONS} curated destinations across ${TOTAL_DISTRICTS_COVERED} districts of Bangladesh with interactive maps, live weather updates, transit routes, and local travel guides.`,
     images: [
       {
         url: `${SITE_URL}/og/home.jpg`,
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ghuraghuri — Bangladesh Travel Explorer",
-    description: `Discover ${TOTAL_DESTINATIONS}+ authentic tourist spots across Bangladesh.`,
+    description: `Explore ${TOTAL_DESTINATIONS} curated destinations across ${TOTAL_DISTRICTS_COVERED} districts of Bangladesh with interactive maps, live weather updates, transit routes, and local travel guides.`,
     images: [`${SITE_URL}/og/home.jpg`],
   },
   icons: {

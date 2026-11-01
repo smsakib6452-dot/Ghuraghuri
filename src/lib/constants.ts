@@ -13,10 +13,50 @@ export const TOTAL_DIVISIONS = generatedCounts.totalDivisions;
  * Canonical official constant used for UI stats, counters, metadata, JSON-LD, and display copy.
  */
 export const TOTAL_DISTRICTS_OFFICIAL = 64;
-export const TOTAL_DISTRICTS = TOTAL_DISTRICTS_OFFICIAL;
+export const TOTAL_DISTRICTS_COVERED = generatedCounts.totalDistricts;
+export const TOTAL_DISTRICTS = TOTAL_DISTRICTS_COVERED;
 
 // Canonical destination counts per division (computed at build-time from destinations.json)
 export const DIVISION_COUNTS: Record<string, number> = generatedCounts.divisionCounts;
+
+/**
+ * Canonical ordered popular destinations list used for:
+ * - Default "Most Popular" sort in /destinations and division pages
+ * - High-priority sitemap entries (priority: 0.8)
+ * - Homepage curated destination pools
+ */
+export const POPULAR_DESTINATIONS: string[] = [
+  "coxs-bazar",
+  "sajek-valley",
+  "sundarbans",
+  "saint-martins-island",
+  "srimangal",
+  "bandarban",
+  "rangamati",
+  "sylhet",
+  "kuakata",
+  "tanguar-haor",
+  "ratargul-swamp-forest",
+  "jaflong",
+  "bichanakandi",
+  "lalakhal",
+  "nilgiri",
+  "nilachal",
+  "boga-lake",
+  "keokradong",
+  "inani-beach",
+  "teknaf",
+  "mahasthangarh",
+  "somapura-mahavihara",
+  "lalbagh-fort",
+  "ahsan-manzil",
+  "bagerhat",
+  "kantajew-temple",
+  "puthia-temple-complex",
+  "sonargaon",
+  "mainamati",
+  "hatiya-island",
+];
 
 /**
  * 11 High-Level Destination Taxonomy Groups

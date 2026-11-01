@@ -1,3 +1,8 @@
+export interface DestinationSource {
+  title: string;
+  url: string;
+}
+
 export interface Destination {
   id: number;
   name: string;
@@ -10,34 +15,53 @@ export interface Destination {
   upazila?: string;
   category: string;
   categories: string[];
-  rating: number;
-  reviews: number;
+  rating?: number;
+  reviews?: number;
+  ratingSource?: string;
+  ratingCheckedAt?: string;
   badge?: string;
   featured?: boolean;
   popularity?: number | string;
   latitude: number;
   longitude: number;
-  image: string;
-  imageLg?: string;
+  coordsApproximate?: boolean;
+  image: string | null;
+  imageLg?: string | null;
   gallery?: string[];
+  photoId?: string | null;
+  galleryIds?: string[];
   shortDesc: string;
   description: string;
   bestTime: string;
+  bestTimeNote?: string;
   bestSeason?: string;
   recommendedDays: string;
-  difficulty: "Easy" | "Moderate" | "Challenging" | string;
+  difficulty?: "Easy" | "Moderate" | "Challenging" | string;
   budget: string;
   budgetPerDay?: string;
   travelType: string;
   activities: string[];
   attractions: string[];
   tips?: string[];
+  things_to_do?: string[];
+  what_to_see?: string[];
+  travel_tips?: string[];
+  transport_options?: string[];
+  nearby_destinations?: string[];
+  nearby_hotels?: string[];
+  status?: string;
+  tags?: string[];
   travelInfo?: {
     from?: string;
     duration?: string;
     route?: string;
     flight?: string | null;
+    distanceKm?: number;
+    transport?: string[];
   };
+  sources?: DestinationSource[];
+  factsCheckedAt?: string;
+  needsReview?: boolean;
 }
 
 export interface DivisionInfo {
@@ -59,8 +83,10 @@ export interface CategoryInfo {
 export interface Hotel {
   name: string;
   address: string;
-  rating: number;
-  reviews: number;
+  rating?: number;
+  reviews?: number;
+  ratingSource?: string;
+  ratingCheckedAt?: string;
   priceBDT: number;
   type: string;
   image?: string;
@@ -69,8 +95,10 @@ export interface Hotel {
 export interface Restaurant {
   name: string;
   address: string;
-  rating: number;
-  reviews: number;
+  rating?: number;
+  reviews?: number;
+  ratingSource?: string;
+  ratingCheckedAt?: string;
   cuisine: string;
   image?: string;
 }
@@ -80,6 +108,7 @@ export interface DestinationTranslation {
   shortDesc?: string;
   description?: string;
   bestTime?: string;
+  bestTimeNote?: string;
   recommendedDays?: string;
   budget?: string;
   travelType?: string;

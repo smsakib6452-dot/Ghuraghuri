@@ -61,6 +61,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: desc,
       images: [ogImgUrl],
     },
+    robots: destination.needsReview
+      ? {
+          index: false,
+          follow: true,
+        }
+      : undefined,
   };
 }
 
@@ -81,8 +87,6 @@ export default async function DestinationDetailPage({ params }: Props) {
     image: getDestinationImage(destination),
     latitude: destination.latitude,
     longitude: destination.longitude,
-    rating: destination.rating,
-    reviews: destination.reviews,
     category: destination.category,
     division: destination.division,
     district: destination.district,
@@ -92,14 +96,45 @@ export default async function DestinationDetailPage({ params }: Props) {
   const breadcrumbSchema = getBreadcrumbListSchema([
     { name: "Home", url: "/" },
     { name: "Destinations", url: "/destinations" },
-    { name: destination.division, url: `/destinations?division=${encodeURIComponent(destination.division)}` },
+    { name: destination.division, url: `/destinations/division/${destination.division.toLowerCase()}` },
     { name: destination.name, url: `/destinations/${destination.slug}` },
   ]);
 
-  // Nearby or related destinations
+  // Nearest 4 destinations in the same division, preferring ones that are not quarantined
+  const haversineKm = (lat1: number, lon1: number, lat2: number, lon2: number) => {
+    const R = 6371;
+    const dLat = ((lat2 - lat1) * Math.PI) / 180;
+    const dLon = ((lon2 - lon1) * Math.PI) / 180;
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos((lat1 * Math.PI) / 180) *
+        Math.cos((lat2 * Math.PI) / 180) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  };
+
   const related = destinations
     .filter((d) => d.division === destination.division && d.id !== destination.id)
-    .slice(0, 3);
+    .map((d) => ({
+      dest: d,
+      hasCleanImage: Boolean(getDestinationImage(d)),
+      distKm:
+        typeof destination.latitude === "number" &&
+        typeof destination.longitude === "number" &&
+        typeof d.latitude === "number" &&
+        typeof d.longitude === "number"
+          ? haversineKm(destination.latitude, destination.longitude, d.latitude, d.longitude)
+          : 9999,
+    }))
+    .sort((a, b) => {
+      if (a.hasCleanImage !== b.hasCleanImage) {
+        return a.hasCleanImage ? -1 : 1;
+      }
+      return a.distKm - b.distKm;
+    })
+    .slice(0, 4)
+    .map((entry) => entry.dest);
 
   const destinationTranslation = (translationsData as Record<string, DestinationTranslation>)[destination.slug] || null;
 

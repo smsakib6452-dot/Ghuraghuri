@@ -62,7 +62,7 @@ for (const group of Object.keys(CATEGORY_GROUPS)) {
 }
 
 destinations.forEach(d => {
-  const cats = [d.category, ...(d.categories || [])];
+  const cats = [d.category];
   const matchedGroups = new Set();
   cats.forEach(c => {
     const grp = CATEGORY_TO_GROUP[c];
@@ -81,6 +81,46 @@ if (divisionSum !== totalDestinations) {
   process.exit(1);
 }
 
+const OFFICIAL_DIVISION_DISTRICTS = {
+  Dhaka: ["Dhaka", "Gazipur", "Narayanganj", "Narsingdi", "Manikganj", "Munshiganj", "Tangail", "Kishoreganj", "Faridpur", "Gopalganj", "Madaripur", "Rajbari", "Shariatpur"],
+  Mymensingh: ["Mymensingh", "Jamalpur", "Netrokona", "Sherpur"],
+  Chattogram: ["Chattogram", "Cox's Bazar", "Bandarban", "Rangamati", "Khagrachhari", "Feni", "Noakhali", "Lakshmipur", "Cumilla", "Chandpur", "Brahmanbaria"],
+  Sylhet: ["Sylhet", "Moulvibazar", "Habiganj", "Sunamganj"],
+  Rajshahi: ["Rajshahi", "Natore", "Naogaon", "Chapainawabganj", "Pabna", "Sirajganj", "Bogura", "Joypurhat"],
+  Rangpur: ["Rangpur", "Dinajpur", "Gaibandha", "Kurigram", "Lalmonirhat", "Nilphamari", "Panchagarh", "Thakurgaon"],
+  Khulna: ["Khulna", "Bagerhat", "Satkhira", "Jashore", "Jhenaidah", "Magura", "Narail", "Kushtia", "Chuadanga", "Meherpur"],
+  Barishal: ["Barishal", "Barguna", "Bhola", "Jhalokathi", "Patuakhali", "Pirojpur"]
+};
+
+const DISTRICT_TO_DIVISION = {};
+for (const [divName, distList] of Object.entries(OFFICIAL_DIVISION_DISTRICTS)) {
+  for (const distName of distList) {
+    DISTRICT_TO_DIVISION[distName] = divName;
+  }
+}
+
+const districtDivisionErrors = [];
+destinations.forEach(d => {
+  const expectedDiv = DISTRICT_TO_DIVISION[d.district];
+  if (!expectedDiv) {
+    districtDivisionErrors.push(`[${d.slug}] unknown district '${d.district}' (not in official 64-district list)`);
+  } else if (d.division !== expectedDiv) {
+    districtDivisionErrors.push(`[${d.slug}] district '${d.district}' is listed under division '${d.division}', expected '${expectedDiv}'`);
+  }
+});
+
+if (districtDivisionErrors.length > 0) {
+  console.error(`\n🚨 FATAL BUILD GUARD ERROR: Official 64-district to 8-division mapping violations:`);
+  districtDivisionErrors.forEach(err => console.error(`  - ${err}`));
+  process.exit(1);
+} else {
+  console.log(`✓ Build Guard PASSED: All ${destinations.length} destinations map to valid official districts and divisions.`);
+}
+
+const allOfficialDistricts = Object.values(OFFICIAL_DIVISION_DISTRICTS).flat();
+const zeroDestinationDistricts = allOfficialDistricts.filter(d => !districtsSet.has(d));
+console.log(`[generate-data] Districts with zero destinations (${zeroDestinationDistricts.length}): ${zeroDestinationDistricts.join(', ') || 'None'}`);
+
 if (totalDistricts > 64) {
   console.error(`\n[FATAL BUILD ERROR] Found ${totalDistricts} districts (expected <= 64):`, Array.from(districtsSet));
   process.exit(1);
@@ -90,6 +130,25 @@ if (totalDestinations <= 0) {
   console.error(`\n[FATAL BUILD ERROR] destinations.json contains 0 destinations!`);
   process.exit(1);
 }
+
+// Build Guard: Destination & Service Rating Verifiability Guard
+const unverifiedRatings = [];
+
+for (const d of destinations) {
+  if ((d.rating !== undefined || d.reviews !== undefined) && (!d.ratingSource || !d.ratingCheckedAt)) {
+    unverifiedRatings.push(`[destination:${d.slug}] has rating (${d.rating}) or reviews (${d.reviews}) without ratingSource/ratingCheckedAt`);
+  }
+}
+
+if (unverifiedRatings.length > 0) {
+  console.error(`\n🚨 FATAL BUILD GUARD ERROR: Found ${unverifiedRatings.length} entries with unverified rating or reviews without ratingSource and ratingCheckedAt:`);
+  unverifiedRatings.slice(0, 20).forEach(err => console.error(`  - ${err}`));
+  if (unverifiedRatings.length > 20) console.error(`  ... and ${unverifiedRatings.length - 20} more`);
+  process.exit(1);
+} else {
+  console.log(`✓ Build Guard PASSED: All destinations are free from unverified auto-generated ratings.`);
+}
+
 
 // 5. Write generated-counts.json
 const generatedCounts = {
@@ -149,7 +208,7 @@ destinations.forEach(d => {
   }
 });
 
-const searchItems = destinations.map(d => {
+const searchItems = destinations.filter(d => !d.needsReview).map(d => {
   const autoSlug = d.name.toLowerCase().replace(/['\.]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const explicitSlug = d.slug !== autoSlug ? d.slug : "";
   const item = [
@@ -178,6 +237,8 @@ const publicSearchOutPath = path.resolve(__dirname, '../public/data/search-index
 fs.writeFileSync(searchOutPath, JSON.stringify(searchIndexData) + '\n');
 fs.writeFileSync(publicSearchOutPath, JSON.stringify(searchIndexData) + '\n');
 
+const needsReviewSlugs = destinations.filter(d => d.needsReview).map(d => d.slug);
+console.log(`[generate-data] Needs review destinations (${needsReviewSlugs.length}): ${needsReviewSlugs.join(', ')}`);
 console.log(`[generate-data] Verified and generated build-time constants:`);
 console.log(`  - Total Destinations: ${totalDestinations}`);
 console.log(`  - Divisions (${totalDivisions}): ${JSON.stringify(sortedDivisionCounts)}`);
