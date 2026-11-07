@@ -66,6 +66,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.3,
     },
+    {
+      url: `${baseUrl}/credits`,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
   ];
 
   const divisionRoutes: MetadataRoute.Sitemap = [

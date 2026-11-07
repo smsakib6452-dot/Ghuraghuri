@@ -3,6 +3,18 @@ export interface DestinationSource {
   url: string;
 }
 
+export interface ImageCredit {
+  title: string;
+  author: string;
+  authorUrl?: string;
+  license: string;
+  licenseUrl: string;
+  sourceUrl: string;
+  fileDate?: string;
+  retrievedAt: string;
+  modified: "resized and converted to WebP";
+}
+
 export interface Destination {
   id: number;
   name: string;
@@ -15,6 +27,7 @@ export interface Destination {
   upazila?: string;
   category: string;
   categories: string[];
+  imageCredit?: ImageCredit;
   rating?: number;
   reviews?: number;
   ratingSource?: string;

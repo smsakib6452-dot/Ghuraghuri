@@ -269,8 +269,43 @@ export function DestinationDetailClient({
         </div>
       </div>
 
+      {/* Photo Attribution Caption (Wikimedia Commons & Open-licensed imagery) */}
+      {destination.imageCredit && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3">
+          <p className="text-xs text-[var(--text-muted)] flex flex-wrap items-center gap-1.5">
+            <span>{isBn ? "ছবি:" : "Photo:"}</span>
+            <a
+              href={destination.imageCredit.authorUrl || destination.imageCredit.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground/80 hover:text-foreground underline decoration-[var(--text-muted)]/40 hover:decoration-foreground transition-colors"
+            >
+              {destination.imageCredit.author}
+            </a>
+            <span>·</span>
+            <a
+              href={destination.imageCredit.licenseUrl || "https://creativecommons.org/"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground/80 hover:text-foreground underline decoration-[var(--text-muted)]/40 hover:decoration-foreground transition-colors"
+            >
+              {destination.imageCredit.license}
+            </a>
+            <span>·</span>
+            <a
+              href={destination.imageCredit.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground/80 hover:text-foreground underline decoration-[var(--text-muted)]/40 hover:decoration-foreground transition-colors"
+            >
+              {isBn ? "উইকিমিডিয়া কমন্স (রিসাইজড)" : "Wikimedia Commons (resized)"}
+            </a>
+          </p>
+        </div>
+      )}
+
       {/* Content Layout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Main Content (2 Columns) */}
           <div className="lg:col-span-2 space-y-10">

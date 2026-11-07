@@ -621,11 +621,9 @@
     ],
     "latitude": 21.9497,
     "longitude": 89.1833,
-    "image": "/assets/destinations/sundarbans.webp",
-    "imageLg": "/assets/destinations/sundarbans.webp",
-    "gallery": [
-      "/assets/destinations/sundarbans.webp"
-    ],
+    "image": "/assets/destinations/sundarbans-commons.webp",
+    "imageLg": "/assets/destinations/sundarbans-commons.webp",
+    "gallery": [],
     "photoId": "photo-1505118380757-91f5f5632de0",
     "galleryIds": [
       "2m1t5yzAf5k",
@@ -701,6 +699,17 @@
         "Boat/Launch"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Sundorban.jpg",
+      "author": "কুপি বাতি",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:%E0%A6%95%E0%A7%81%E0%A6%AA%E0%A6%BF_%E0%A6%AC%E0%A6%BE%E0%A6%A4%E0%A6%BF",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sundorban.jpg",
+      "fileDate": "2022-10-07",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -915,11 +924,9 @@
     ],
     "latitude": 25.1581,
     "longitude": 92.0459,
-    "image": "/assets/destinations/jaflong.webp",
-    "imageLg": "/assets/destinations/jaflong.webp",
-    "gallery": [
-      "/assets/destinations/jaflong.webp"
-    ],
+    "image": "/assets/destinations/jaflong-commons.webp",
+    "imageLg": "/assets/destinations/jaflong-commons.webp",
+    "gallery": [],
     "photoId": "photo-1432405972618-c60b0225b8f9",
     "galleryIds": [
       "photo-1432405972618-c60b0225b8f9",
@@ -991,6 +998,16 @@
         "Microbus"
       ],
       "flight": "Fly to Sylhet, then 2 hrs by road"
+    },
+    "imageCredit": {
+      "title": "File:জাফলং, সিলেট ০১.jpg",
+      "author": "Shahadat Rahman Shemul",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%9C%E0%A6%BE%E0%A6%AB%E0%A6%B2%E0%A6%82,_%E0%A6%B8%E0%A6%BF%E0%A6%B2%E0%A7%87%E0%A6%9F_%E0%A7%A6%E0%A7%A7.jpg",
+      "fileDate": "2013-10-22",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -1008,11 +1025,9 @@
     ],
     "latitude": 24.9705,
     "longitude": 91.9878,
-    "image": "/assets/destinations/ratargul-swamp-forest.webp",
-    "imageLg": "/assets/destinations/ratargul-swamp-forest.webp",
-    "gallery": [
-      "/assets/destinations/ratargul-swamp-forest.webp"
-    ],
+    "image": "/assets/destinations/ratargul-swamp-forest-commons.webp",
+    "imageLg": "/assets/destinations/ratargul-swamp-forest-commons.webp",
+    "gallery": [],
     "photoId": "photo-1448375240586-882707db888b",
     "galleryIds": [
       "photo-1448375240586-882707db888b",
@@ -1087,7 +1102,18 @@
       "Ratargul",
       "রাতারগুল"
     ],
-    "bestTimeNote": "monsoon"
+    "bestTimeNote": "monsoon",
+    "imageCredit": {
+      "title": "File:Ratargul 04.jpg",
+      "author": "Asad Uj Jaman Shuvo",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:Ratargul_04.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ratargul_04.jpg",
+      "fileDate": "2017-09-30",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 12,
@@ -1397,11 +1423,9 @@
     ],
     "latitude": 24.9613,
     "longitude": 89.3431,
-    "image": "/assets/destinations/mahasthangarh.webp",
-    "imageLg": "/assets/destinations/mahasthangarh.webp",
-    "gallery": [
-      "/assets/destinations/mahasthangarh.webp"
-    ],
+    "image": "/assets/destinations/mahasthangarh-commons.webp",
+    "imageLg": "/assets/destinations/mahasthangarh-commons.webp",
+    "gallery": [],
     "photoId": "photo-1524492412937-b28074a5d7da",
     "galleryIds": [
       "photo-1524492412937-b28074a5d7da",
@@ -1505,7 +1529,18 @@
     "alternateNames": [
       "Mahasthangarh Heritage Park",
       "মহাস্থানগড় হেরিটেজ পার্ক"
-    ]
+    ],
+    "imageCredit": {
+      "title": "File:Jahajghata Archaeological Site, Mahasthangarh (4).jpg",
+      "author": "Dolon Prova",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Dolon_Prova",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jahajghata_Archaeological_Site,_Mahasthangarh_(4).jpg",
+      "fileDate": "2025-02-22",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 17,
@@ -1644,11 +1679,9 @@
     ],
     "latitude": 22.6747,
     "longitude": 89.7928,
-    "image": "/assets/destinations/bagerhat.webp",
-    "imageLg": "/assets/destinations/bagerhat.webp",
-    "gallery": [
-      "/assets/destinations/bagerhat.webp"
-    ],
+    "image": "/assets/destinations/bagerhat-commons.webp",
+    "imageLg": "/assets/destinations/bagerhat-commons.webp",
+    "gallery": [],
     "photoId": "photo-1548013146-72479768bada",
     "galleryIds": [
       "photo-1548013146-72479768bada",
@@ -1756,7 +1789,18 @@
         "url": "https://en.wikipedia.org/wiki/Sixty_Dome_Mosque"
       }
     ],
-    "factsCheckedAt": "2026-11-01"
+    "factsCheckedAt": "2026-11-01",
+    "imageCredit": {
+      "title": "File:City of Bagerhat,Bangladesh in 2022.01.jpg",
+      "author": "CAPTAIN RAJU",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:CAPTAIN_RAJU",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:City_of_Bagerhat,Bangladesh_in_2022.01.jpg",
+      "fileDate": "2022-03-29",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 19,
@@ -1997,11 +2041,9 @@
     ],
     "latitude": 24.6125,
     "longitude": 92.1649,
-    "image": "/assets/destinations/madhabkunda-waterfall.webp",
-    "imageLg": "/assets/destinations/madhabkunda-waterfall.webp",
-    "gallery": [
-      "/assets/destinations/madhabkunda-waterfall.webp"
-    ],
+    "image": "/assets/destinations/madhabkunda-commons.webp",
+    "imageLg": "/assets/destinations/madhabkunda-commons.webp",
+    "gallery": [],
     "photoId": "photo-1476514525535-07fb3b4ae5f1",
     "galleryIds": [
       "photo-1432405972618-c60b0225b8f9",
@@ -2081,7 +2123,18 @@
         "url": "https://en.wikipedia.org/wiki/Madhabkunda_waterfall"
       }
     ],
-    "factsCheckedAt": "2026-11-01"
+    "factsCheckedAt": "2026-11-01",
+    "imageCredit": {
+      "title": "File:2 ছুটে চলছে মাধবকুন্ডের জলরাশি.jpg",
+      "author": "Efaz3329",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:2_%E0%A6%9B%E0%A7%81%E0%A6%9F%E0%A7%87_%E0%A6%9A%E0%A6%B2%E0%A6%9B%E0%A7%87_%E0%A6%AE%E0%A6%BE%E0%A6%A7%E0%A6%AC%E0%A6%95%E0%A7%81%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A7%87%E0%A6%B0_%E0%A6%9C%E0%A6%B2%E0%A6%B0%E0%A6%BE%E0%A6%B6%E0%A6%BF.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2_%E0%A6%9B%E0%A7%81%E0%A6%9F%E0%A7%87_%E0%A6%9A%E0%A6%B2%E0%A6%9B%E0%A7%87_%E0%A6%AE%E0%A6%BE%E0%A6%A7%E0%A6%AC%E0%A6%95%E0%A7%81%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A7%87%E0%A6%B0_%E0%A6%9C%E0%A6%B2%E0%A6%B0%E0%A6%BE%E0%A6%B6%E0%A6%BF.jpg",
+      "fileDate": "2016-06-01",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 22,
@@ -2479,11 +2532,9 @@
     ],
     "latitude": 25.9371,
     "longitude": 89.513,
-    "image": "/assets/destinations/teesta-barrage.webp",
-    "imageLg": "/assets/destinations/teesta-barrage.webp",
-    "gallery": [
-      "/assets/destinations/teesta-barrage.webp"
-    ],
+    "image": "/assets/destinations/teesta-barrage-commons.webp",
+    "imageLg": "/assets/destinations/teesta-barrage-commons.webp",
+    "gallery": [],
     "photoId": "photo-1501785888041-af3ef285b470",
     "galleryIds": [
       "photo-1501785888041-af3ef285b470",
@@ -2555,6 +2606,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Teesta Barrage Bangladesh.jpg",
+      "author": "Shafiul Islam Shaikot",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:Teesta_Barrage_Bangladesh.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Teesta_Barrage_Bangladesh.jpg",
+      "fileDate": "2023-09-15",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -4500,11 +4562,9 @@
     ],
     "latitude": 23.5455,
     "longitude": 90.533,
-    "image": "/assets/destinations/mirkadim-fort.webp",
-    "imageLg": "/assets/destinations/mirkadim-fort.webp",
-    "gallery": [
-      "/assets/destinations/mirkadim-fort.webp"
-    ],
+    "image": "/assets/destinations/mirkadim-fort-commons.webp",
+    "imageLg": "/assets/destinations/mirkadim-fort-commons.webp",
+    "gallery": [],
     "photoId": "photo-1548013146-72479768bada",
     "galleryIds": [
       "photo-1548013146-72479768bada",
@@ -4591,7 +4651,18 @@
         "url": "https://en.wikipedia.org/wiki/List_of_bridges_in_Bangladesh"
       }
     ],
-    "factsCheckedAt": "2026-11-01"
+    "factsCheckedAt": "2026-11-01",
+    "imageCredit": {
+      "title": "File:মীরকাদিম এর সেতু 02.jpg",
+      "author": "Rayhan9d",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%AE%E0%A7%80%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%A6%E0%A6%BF%E0%A6%AE_%E0%A6%8F%E0%A6%B0_%E0%A6%B8%E0%A7%87%E0%A6%A4%E0%A7%81_02.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%AE%E0%A7%80%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%A6%E0%A6%BF%E0%A6%AE_%E0%A6%8F%E0%A6%B0_%E0%A6%B8%E0%A7%87%E0%A6%A4%E0%A7%81_02.jpg",
+      "fileDate": "2017-03-17",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 49,
@@ -4608,11 +4679,9 @@
     ],
     "latitude": 23.8223,
     "longitude": 90.0841,
-    "image": "/assets/destinations/baliati-palace.webp",
-    "imageLg": "/assets/destinations/baliati-palace.webp",
-    "gallery": [
-      "/assets/destinations/baliati-palace.webp"
-    ],
+    "image": "/assets/destinations/baliati-palace-commons.webp",
+    "imageLg": "/assets/destinations/baliati-palace-commons.webp",
+    "gallery": [],
     "photoId": "photo-1474181487882-5abf3f0ba6c2",
     "galleryIds": [
       "photo-1474181487882-5abf3f0ba6c2",
@@ -4684,6 +4753,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Baliati Jomidar Bari 1.jpg",
+      "author": "Tanoymym",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:Baliati_Jomidar_Bari_1.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baliati_Jomidar_Bari_1.jpg",
+      "fileDate": "2022-09-24",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -4701,11 +4781,9 @@
     ],
     "latitude": 23.1049,
     "longitude": 89.9048,
-    "image": "/assets/destinations/tungipara.webp",
-    "imageLg": "/assets/destinations/tungipara.webp",
-    "gallery": [
-      "/assets/destinations/tungipara.webp"
-    ],
+    "image": "/assets/destinations/tungipara-commons.webp",
+    "imageLg": "/assets/destinations/tungipara-commons.webp",
+    "gallery": [],
     "photoId": "photo-1548013146-72479768bada",
     "galleryIds": [
       "photo-1548013146-72479768bada",
@@ -4773,6 +4851,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Sheikh mujib home.jpg",
+      "author": "Ifteebd10",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Ifteebd10",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sheikh_mujib_home.jpg",
+      "fileDate": "2022-08-06",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -6213,11 +6302,9 @@
     ],
     "latitude": 25.097,
     "longitude": 91.905,
-    "image": "/assets/destinations/lalakhal.webp",
-    "imageLg": "/assets/destinations/lalakhal.webp",
-    "gallery": [
-      "/assets/destinations/lalakhal.webp"
-    ],
+    "image": "/assets/destinations/lalakhal-commons.webp",
+    "imageLg": "/assets/destinations/lalakhal-commons.webp",
+    "gallery": [],
     "photoId": "photo-1501785888041-af3ef285b470",
     "galleryIds": [
       "photo-1501785888041-af3ef285b470",
@@ -6291,6 +6378,17 @@
         "Private Car"
       ],
       "flight": "Fly to Sylhet (ZYL)"
+    },
+    "imageCredit": {
+      "title": "File:লালা খাল.jpg",
+      "author": "Kamrul Hasan",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%B2%E0%A6%BE%E0%A6%B2%E0%A6%BE_%E0%A6%96%E0%A6%BE%E0%A6%B2.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%B2%E0%A6%BE%E0%A6%B2%E0%A6%BE_%E0%A6%96%E0%A6%BE%E0%A6%B2.jpg",
+      "fileDate": "2016-01-01",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -6308,11 +6406,9 @@
     ],
     "latitude": 25.124,
     "longitude": 91.985,
-    "image": "/assets/destinations/bichanakandi.webp",
-    "imageLg": "/assets/destinations/bichanakandi.webp",
-    "gallery": [
-      "/assets/destinations/bichanakandi.webp"
-    ],
+    "image": "/assets/destinations/bichanakandi-commons.webp",
+    "imageLg": "/assets/destinations/bichanakandi-commons.webp",
+    "gallery": [],
     "photoId": "photo-1506744038136-46273834b3fb",
     "galleryIds": [
       "photo-1506744038136-46273834b3fb",
@@ -6386,6 +6482,17 @@
         "Private Car"
       ],
       "flight": "Fly to Sylhet (ZYL)"
+    },
+    "imageCredit": {
+      "title": "File:Bichnakandi, Sylhet.jpg",
+      "author": "Syed Sajidul Islam",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Syed07",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bichnakandi,_Sylhet.jpg",
+      "fileDate": "2015-12-13",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -6503,11 +6610,9 @@
     ],
     "latitude": 24.9,
     "longitude": 91.85,
-    "image": "/assets/destinations/lakkatura-tea-estate.webp",
-    "imageLg": "/assets/destinations/lakkatura-tea-estate.webp",
-    "gallery": [
-      "/assets/destinations/lakkatura-tea-estate.webp"
-    ],
+    "image": "/assets/destinations/lakkatura-tea-estate-commons.webp",
+    "imageLg": "/assets/destinations/lakkatura-tea-estate-commons.webp",
+    "gallery": [],
     "photoId": "photo-1500530855697-b586d89ba3ee",
     "galleryIds": [
       "photo-1500530855697-b586d89ba3ee",
@@ -6577,6 +6682,17 @@
         "Private Car"
       ],
       "flight": "Fly to Sylhet (ZYL)"
+    },
+    "imageCredit": {
+      "title": "File:Lakkatura Tea Garden (Sylhet) in 2021.05.jpg",
+      "author": "CAPTAIN RAJU",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:CAPTAIN_RAJU",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lakkatura_Tea_Garden_(Sylhet)_in_2021.05.jpg",
+      "fileDate": "2021-11-22",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -6595,11 +6711,9 @@
     ],
     "latitude": 24.316,
     "longitude": 91.828,
-    "image": "/assets/destinations/ham-ham-waterfall.webp",
-    "imageLg": "/assets/destinations/ham-ham-waterfall.webp",
-    "gallery": [
-      "/assets/destinations/ham-ham-waterfall.webp"
-    ],
+    "image": "/assets/destinations/ham-ham-waterfall-commons.webp",
+    "imageLg": "/assets/destinations/ham-ham-waterfall-commons.webp",
+    "gallery": [],
     "photoId": "photo-1476514525535-07fb3b4ae5f1",
     "galleryIds": [
       "photo-1476514525535-07fb3b4ae5f1",
@@ -6675,7 +6789,18 @@
       "Ham Ham Waterfall",
       "হুম হুম ঝরনা"
     ],
-    "bestTimeNote": "June – September: peak; October – March: clear"
+    "bestTimeNote": "June – September: peak; October – March: clear",
+    "imageCredit": {
+      "title": "File:HamHam falls sylhet.jpg",
+      "author": "Asikul Islam Himel",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:HamHam_falls_sylhet.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:HamHam_falls_sylhet.jpg",
+      "fileDate": "2017-11-06",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 71,
@@ -7795,11 +7920,9 @@
     ],
     "latitude": 23.7208,
     "longitude": 90.3984,
-    "image": "/assets/destinations/star-mosque.webp",
-    "imageLg": "/assets/destinations/star-mosque.webp",
-    "gallery": [
-      "/assets/destinations/star-mosque.webp"
-    ],
+    "image": "/assets/destinations/star-mosque-commons.webp",
+    "imageLg": "/assets/destinations/star-mosque-commons.webp",
+    "gallery": [],
     "photoId": "photo-1524492412937-b28074a5d7da",
     "galleryIds": [
       "photo-1524492412937-b28074a5d7da",
@@ -7867,6 +7990,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:SLIDE - TARA MOSQUE DHAKA-.jpg",
+      "author": "Babul abdul malek",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:SLIDE_-_TARA_MOSQUE_DHAKA-.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:SLIDE_-_TARA_MOSQUE_DHAKA-.jpg",
+      "fileDate": "2008-06-19",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -8242,11 +8376,9 @@
     ],
     "latitude": 23.906,
     "longitude": 89.12,
-    "image": "/assets/destinations/lalon-shah-shrine.webp",
-    "imageLg": "/assets/destinations/lalon-shah-shrine.webp",
-    "gallery": [
-      "/assets/destinations/lalon-shah-shrine.webp"
-    ],
+    "image": "/assets/destinations/lalon-shah-shrine-commons.webp",
+    "imageLg": "/assets/destinations/lalon-shah-shrine-commons.webp",
+    "gallery": [],
     "photoId": "photo-1474181487882-5abf3f0ba6c2",
     "galleryIds": [
       "photo-1474181487882-5abf3f0ba6c2",
@@ -8317,7 +8449,18 @@
       ],
       "flight": null
     },
-    "bestTimeNote": "February: Lalon festival"
+    "bestTimeNote": "February: Lalon festival",
+    "imageCredit": {
+      "title": "File:Shrine of Lalon Shah.jpg",
+      "author": "Zaheed Sarwer Khan",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:Shrine_of_Lalon_Shah.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shrine_of_Lalon_Shah.jpg",
+      "fileDate": "2014-02-05",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 90,
@@ -9344,11 +9487,9 @@
     ],
     "latitude": 23.8135,
     "longitude": 90.353,
-    "image": "/assets/destinations/national-botanical-garden.webp",
-    "imageLg": "/assets/destinations/national-botanical-garden.webp",
-    "gallery": [
-      "/assets/destinations/national-botanical-garden.webp"
-    ],
+    "image": "/assets/destinations/national-botanical-garden-commons.webp",
+    "imageLg": "/assets/destinations/national-botanical-garden-commons.webp",
+    "gallery": [],
     "photoId": "photo-1448375240586-882707db888b",
     "galleryIds": [
       "photo-1448375240586-882707db888b",
@@ -9420,6 +9561,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Images from Bangla WikiConnect photowalk at National Botanical Garden 59.jpg",
+      "author": "MdsShakil",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:MdsShakil",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Images_from_Bangla_WikiConnect_photowalk_at_National_Botanical_Garden_59.jpg",
+      "fileDate": "2026-07-26",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -10011,11 +10163,9 @@
     ],
     "latitude": 22.41,
     "longitude": 91.76,
-    "image": "/assets/destinations/bhatiari-lake.webp",
-    "imageLg": "/assets/destinations/bhatiari-lake.webp",
-    "gallery": [
-      "/assets/destinations/bhatiari-lake.webp"
-    ],
+    "image": "/assets/destinations/bhatiari-lake-commons.webp",
+    "imageLg": "/assets/destinations/bhatiari-lake-commons.webp",
+    "gallery": [],
     "photoId": "photo-1501785888041-af3ef285b470",
     "galleryIds": [
       "photo-1501785888041-af3ef285b470",
@@ -10090,6 +10240,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Bhatiary Lake 07.jpg",
+      "author": "Owais Al Qarni",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Owais_Al_Qarni",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bhatiary_Lake_07.jpg",
+      "fileDate": "2024-05-31",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -11072,11 +11233,9 @@
     ],
     "latitude": 22.65,
     "longitude": 92.2,
-    "image": "/assets/destinations/hanging-bridge-rangamati.webp",
-    "imageLg": "/assets/destinations/hanging-bridge-rangamati.webp",
-    "gallery": [
-      "/assets/destinations/hanging-bridge-rangamati.webp"
-    ],
+    "image": "/assets/destinations/hanging-bridge-rangamati-commons.webp",
+    "imageLg": "/assets/destinations/hanging-bridge-rangamati-commons.webp",
+    "gallery": [],
     "photoId": "photo-1524492412937-b28074a5d7da",
     "galleryIds": [
       "photo-1524492412937-b28074a5d7da",
@@ -11149,6 +11308,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Hanging Bridge, Kaptai Lake.jpg",
+      "author": "Shakhawat Hossen Shafat",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:Hanging_Bridge,_Kaptai_Lake.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hanging_Bridge,_Kaptai_Lake.jpg",
+      "fileDate": "2013-02-07",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -11166,12 +11336,9 @@
     ],
     "latitude": 22.57,
     "longitude": 92.2,
-    "image": "/assets/destinations/shuvolong-waterfall.webp",
-    "imageLg": "/assets/destinations/shuvolong-waterfall.webp",
-    "gallery": [
-      "/assets/destinations/shuvolong-waterfall.webp",
-      "assets/destinations/kaptai-lake-cruise.webp"
-    ],
+    "image": "/assets/destinations/shuvolong-waterfall-commons.webp",
+    "imageLg": "/assets/destinations/shuvolong-waterfall-commons.webp",
+    "gallery": [],
     "photoId": "photo-1519681393784-d120267933ba",
     "galleryIds": [
       "photo-1519681393784-d120267933ba",
@@ -11245,7 +11412,18 @@
     },
     "alternateNames": [
       "শুভলং ঝর্ণা ও কাপ্তাই লেক ক্রুজ"
-    ]
+    ],
+    "imageCredit": {
+      "title": "File:Rangamati Shuvolong Waterfall natural Bangladesh.jpg",
+      "author": "Manna Barua",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Manna_Barua",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rangamati_Shuvolong_Waterfall_natural_Bangladesh.jpg",
+      "fileDate": "2022-09-25",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 121,
@@ -11360,11 +11538,9 @@
     ],
     "latitude": 22.65,
     "longitude": 92.18,
-    "image": "/assets/destinations/rajban-bihar.webp",
-    "imageLg": "/assets/destinations/rajban-bihar.webp",
-    "gallery": [
-      "/assets/destinations/rajban-bihar.webp"
-    ],
+    "image": "/assets/destinations/rajban-bihar-commons.webp",
+    "imageLg": "/assets/destinations/rajban-bihar-commons.webp",
+    "gallery": [],
     "photoId": "photo-1600047509807-ba8f99d2cdde",
     "galleryIds": [
       "photo-1600047509807-ba8f99d2cdde",
@@ -11437,6 +11613,17 @@
         "Walk"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Rangamati Rajban Bihar Buddhist Temple.JPG",
+      "author": "Hasib",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Hasib",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rangamati_Rajban_Bihar_Buddhist_Temple.JPG",
+      "fileDate": "2014-04-27",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -12797,11 +12984,9 @@
     ],
     "latitude": 24.88,
     "longitude": 91.87,
-    "image": "/assets/destinations/hazrat-shah-paran-mazar.webp",
-    "imageLg": "/assets/destinations/hazrat-shah-paran-mazar.webp",
-    "gallery": [
-      "/assets/destinations/hazrat-shah-paran-mazar.webp"
-    ],
+    "image": "/assets/destinations/shah-paran-mazar-commons.webp",
+    "imageLg": "/assets/destinations/shah-paran-mazar-commons.webp",
+    "gallery": [],
     "photoId": "photo-1543783207-ec64e4d95325",
     "galleryIds": [
       "photo-1543783207-ec64e4d95325",
@@ -12872,6 +13057,17 @@
         "CNG"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Hazrat Shah Paran Mazar Sharif in 2021.02.jpg",
+      "author": "CAPTAIN RAJU",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:CAPTAIN_RAJU",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hazrat_Shah_Paran_Mazar_Sharif_in_2021.02.jpg",
+      "fileDate": "2021-11-21",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -12889,11 +13085,9 @@
     ],
     "latitude": 24.89,
     "longitude": 91.87,
-    "image": "/assets/destinations/osmani-museum-sylhet.webp",
-    "imageLg": "/assets/destinations/osmani-museum-sylhet.webp",
-    "gallery": [
-      "/assets/destinations/osmani-museum-sylhet.webp"
-    ],
+    "image": "/assets/destinations/osmani-museum-sylhet-commons.webp",
+    "imageLg": "/assets/destinations/osmani-museum-sylhet-commons.webp",
+    "gallery": [],
     "photoId": "photo-1548013146-72479768bada",
     "galleryIds": [
       "photo-1548013146-72479768bada",
@@ -12963,6 +13157,17 @@
         "CNG"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:ওসমানী জাদুঘরের প্রবেশপথ.jpg",
+      "author": "Rafi Bin Tofa",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Rafi_Bin_Tofa",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%93%E0%A6%B8%E0%A6%AE%E0%A6%BE%E0%A6%A8%E0%A7%80_%E0%A6%9C%E0%A6%BE%E0%A6%A6%E0%A7%81%E0%A6%98%E0%A6%B0%E0%A7%87%E0%A6%B0_%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%AC%E0%A7%87%E0%A6%B6%E0%A6%AA%E0%A6%A5.jpg",
+      "fileDate": "2017-11-19",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -13263,11 +13468,9 @@
     ],
     "latitude": 25.05,
     "longitude": 91.6,
-    "image": "/assets/destinations/niladri-lake-sunamganj.webp",
-    "imageLg": "/assets/destinations/niladri-lake-sunamganj.webp",
-    "gallery": [
-      "/assets/destinations/niladri-lake-sunamganj.webp"
-    ],
+    "image": "/assets/destinations/niladri-lake-sunamganj-commons.webp",
+    "imageLg": "/assets/destinations/niladri-lake-sunamganj-commons.webp",
+    "gallery": [],
     "photoId": "photo-1505142468610-359e7d316be0",
     "galleryIds": [
       "photo-1505142468610-359e7d316be0",
@@ -13338,6 +13541,17 @@
         "CNG"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:The blue lake of niladri.jpg",
+      "author": "Emonjnu",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Emonjnu",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_blue_lake_of_niladri.jpg",
+      "fileDate": "2021-09-02",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -13929,11 +14143,9 @@
     ],
     "latitude": 23.47,
     "longitude": 90.31,
-    "image": "/assets/destinations/mawa-ferry-ghat.webp",
-    "imageLg": "/assets/destinations/mawa-ferry-ghat.webp",
-    "gallery": [
-      "/assets/destinations/mawa-ferry-ghat.webp"
-    ],
+    "image": "/assets/destinations/mawa-ferry-ghat-commons.webp",
+    "imageLg": "/assets/destinations/mawa-ferry-ghat-commons.webp",
+    "gallery": [],
     "photoId": "photo-1445262102387-5fbb30a5e59d",
     "galleryIds": [
       "photo-1445262102387-5fbb30a5e59d",
@@ -14006,6 +14218,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:MawaGhat.jpg",
+      "author": "ArifHossainFC",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:ArifHossainFC",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:MawaGhat.jpg",
+      "fileDate": "2022-06-18",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -14213,11 +14436,9 @@
     ],
     "latitude": 24.04,
     "longitude": 90.4,
-    "image": "/assets/destinations/nuhash-palli.webp",
-    "imageLg": "/assets/destinations/nuhash-palli.webp",
-    "gallery": [
-      "/assets/destinations/nuhash-palli.webp"
-    ],
+    "image": "/assets/destinations/nuhash-palli-commons.webp",
+    "imageLg": "/assets/destinations/nuhash-palli-commons.webp",
+    "gallery": [],
     "photoId": "photo-1566073771259-6a8506099945",
     "galleryIds": [
       "photo-1566073771259-6a8506099945",
@@ -14287,6 +14508,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Grave of Humayun Ahmed .jpg",
+      "author": "Salim Khandoker",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Salim_Khandoker",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grave_of_Humayun_Ahmed_.jpg",
+      "fileDate": "2016-07-09",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -15325,11 +15557,9 @@
     ],
     "latitude": 24.09,
     "longitude": 90.63,
-    "image": "/assets/destinations/wari-bateshwar.webp",
-    "imageLg": "/assets/destinations/wari-bateshwar.webp",
-    "gallery": [
-      "/assets/destinations/wari-bateshwar.webp"
-    ],
+    "image": "/assets/destinations/wari-bateshwar-commons.webp",
+    "imageLg": "/assets/destinations/wari-bateshwar-commons.webp",
+    "gallery": [],
     "photoId": "photo-1448375240586-882707db888b",
     "galleryIds": [
       "photo-1448375240586-882707db888b",
@@ -15402,6 +15632,17 @@
         "CNG"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Photo of \"Wari-Bateshwar Fort-City Open Museum\" , Narsingdi.jpg",
+      "author": "Salim Khandoker",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Salim_Khandoker",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photo_of_%22Wari-Bateshwar_Fort-City_Open_Museum%22_,_Narsingdi.jpg",
+      "fileDate": "2019-08-17",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -15514,11 +15755,9 @@
     ],
     "latitude": 24.37,
     "longitude": 88.6,
-    "image": "/assets/destinations/padma-river-rajshahi.webp",
-    "imageLg": "/assets/destinations/padma-river-rajshahi.webp",
-    "gallery": [
-      "/assets/destinations/padma-river-rajshahi.webp"
-    ],
+    "image": "/assets/destinations/padma-river-rajshahi-commons.webp",
+    "imageLg": "/assets/destinations/padma-river-rajshahi-commons.webp",
+    "gallery": [],
     "photoId": "photo-1506905925346-21bda4d32df4",
     "galleryIds": [
       "photo-1506905925346-21bda4d32df4",
@@ -15592,6 +15831,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Padma river in Rajshahi Bangladesh.jpeg",
+      "author": "Roshu Bangal",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Roshu_Bangal",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Padma_river_in_Rajshahi_Bangladesh.jpeg",
+      "fileDate": "2016-04-01",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -15797,11 +16047,9 @@
     ],
     "latitude": 24.8,
     "longitude": 88.16,
-    "image": "/assets/destinations/tahkhana-complex.webp",
-    "imageLg": "/assets/destinations/tahkhana-complex.webp",
-    "gallery": [
-      "/assets/destinations/tahkhana-complex.webp"
-    ],
+    "image": "/assets/destinations/tahkhana-complex-commons.webp",
+    "imageLg": "/assets/destinations/tahkhana-complex-commons.webp",
+    "gallery": [],
     "photoId": "photo-1524492412937-b28074a5d7da",
     "galleryIds": [
       "photo-1524492412937-b28074a5d7da",
@@ -15875,6 +16123,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Tohakhana Complex PRG 8244.jpg",
+      "author": "Porag61",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Porag61",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tohakhana_Complex_PRG_8244.jpg",
+      "fileDate": "2016-09-20",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -16543,11 +16802,9 @@
     ],
     "latitude": 24.07,
     "longitude": 89.03,
-    "image": "/assets/destinations/hardinge-bridge.webp",
-    "imageLg": "/assets/destinations/hardinge-bridge.webp",
-    "gallery": [
-      "/assets/destinations/hardinge-bridge.webp"
-    ],
+    "image": "/assets/destinations/hardinge-bridge-commons.webp",
+    "imageLg": "/assets/destinations/hardinge-bridge-commons.webp",
+    "gallery": [],
     "photoId": "photo-1548013146-72479768bada",
     "galleryIds": [
       "photo-1548013146-72479768bada",
@@ -16619,6 +16876,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Hardinge 1-01.jpg",
+      "author": "Abdulmominbd",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Abdulmominbd",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hardinge_1-01.jpg",
+      "fileDate": "2019-09-03",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -17662,11 +17930,9 @@
     ],
     "latitude": 23.49,
     "longitude": 89.42,
-    "image": "/assets/destinations/magura-nabaganga.webp",
-    "imageLg": "/assets/destinations/magura-nabaganga.webp",
-    "gallery": [
-      "/assets/destinations/magura-nabaganga.webp"
-    ],
+    "image": "/assets/destinations/magura-nabaganga-commons.webp",
+    "imageLg": "/assets/destinations/magura-nabaganga-commons.webp",
+    "gallery": [],
     "photoId": "photo-1437482078695-73f5ca6c96e2",
     "galleryIds": [
       "photo-1437482078695-73f5ca6c96e2",
@@ -17735,6 +18001,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Nabaganga River.jpg",
+      "author": "Yahya",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Yahya",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nabaganga_River.jpg",
+      "fileDate": "2024-06-19",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -17752,11 +18029,9 @@
     ],
     "latitude": 23.17,
     "longitude": 89.5,
-    "image": "/assets/destinations/narail-chitra-river.webp",
-    "imageLg": "/assets/destinations/narail-chitra-river.webp",
-    "gallery": [
-      "/assets/destinations/narail-chitra-river.webp"
-    ],
+    "image": "/assets/destinations/narail-chitra-river-commons.webp",
+    "imageLg": "/assets/destinations/narail-chitra-river-commons.webp",
+    "gallery": [],
     "photoId": "photo-1445262102387-5fbb30a5e59d",
     "galleryIds": [
       "photo-1445262102387-5fbb30a5e59d",
@@ -17825,6 +18100,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Chitra Rever Narail.jpg",
+      "author": "Md. Shazidul",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:Chitra_Rever_Narail.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chitra_Rever_Narail.jpg",
+      "fileDate": "2026-06-13",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -17842,11 +18128,9 @@
     ],
     "latitude": 23.64,
     "longitude": 88.86,
-    "image": "/assets/destinations/chuadanga-heritage.webp",
-    "imageLg": "/assets/destinations/chuadanga-heritage.webp",
-    "gallery": [
-      "/assets/destinations/chuadanga-heritage.webp"
-    ],
+    "image": "/assets/destinations/chuadanga-heritage-commons.webp",
+    "imageLg": "/assets/destinations/chuadanga-heritage-commons.webp",
+    "gallery": [],
     "photoId": "photo-1561361513-2d000a50f0dc",
     "galleryIds": [
       "photo-1561361513-2d000a50f0dc",
@@ -17916,6 +18200,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:ঠাকুরপুর জামে মসজিদ.jpg",
+      "author": "Prince Jihad",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%A0%E0%A6%BE%E0%A6%95%E0%A7%81%E0%A6%B0%E0%A6%AA%E0%A7%81%E0%A6%B0_%E0%A6%9C%E0%A6%BE%E0%A6%AE%E0%A7%87_%E0%A6%AE%E0%A6%B8%E0%A6%9C%E0%A6%BF%E0%A6%A6.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%A0%E0%A6%BE%E0%A6%95%E0%A7%81%E0%A6%B0%E0%A6%AA%E0%A7%81%E0%A6%B0_%E0%A6%9C%E0%A6%BE%E0%A6%AE%E0%A7%87_%E0%A6%AE%E0%A6%B8%E0%A6%9C%E0%A6%BF%E0%A6%A6.jpg",
+      "fileDate": "2023-09-29",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -18488,11 +18783,9 @@
     ],
     "latitude": 21.85,
     "longitude": 90.05,
-    "image": "/assets/destinations/fatrar-char.webp",
-    "imageLg": "/assets/destinations/fatrar-char.webp",
-    "gallery": [
-      "/assets/destinations/fatrar-char.webp"
-    ],
+    "image": "/assets/destinations/fatrar-char-commons.webp",
+    "imageLg": "/assets/destinations/fatrar-char-commons.webp",
+    "gallery": [],
     "photoId": "photo-1506929562872-bb421503ef21",
     "galleryIds": [
       "photo-1506929562872-bb421503ef21",
@@ -18560,6 +18853,17 @@
         "Boat"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:সুনদরবন(ফাতরার চর).jpg",
+      "author": "Saiful121157",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%B8%E0%A7%81%E0%A6%A8%E0%A6%A6%E0%A6%B0%E0%A6%AC%E0%A6%A8(%E0%A6%AB%E0%A6%BE%E0%A6%A4%E0%A6%B0%E0%A6%BE%E0%A6%B0_%E0%A6%9A%E0%A6%B0).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%B8%E0%A7%81%E0%A6%A8%E0%A6%A6%E0%A6%B0%E0%A6%AC%E0%A6%A8(%E0%A6%AB%E0%A6%BE%E0%A6%A4%E0%A6%B0%E0%A6%BE%E0%A6%B0_%E0%A6%9A%E0%A6%B0).jpg",
+      "fileDate": "2018-05-23",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -18578,11 +18882,9 @@
     ],
     "latitude": 22.74,
     "longitude": 90.25,
-    "image": "/assets/destinations/swarupkathi-floating-market.webp",
-    "imageLg": "/assets/destinations/swarupkathi-floating-market.webp",
-    "gallery": [
-      "/assets/destinations/swarupkathi-floating-market.webp"
-    ],
+    "image": "/assets/destinations/swarupkathi-commons.webp",
+    "imageLg": "/assets/destinations/swarupkathi-commons.webp",
+    "gallery": [],
     "photoId": "photo-1445262102387-5fbb30a5e59d",
     "galleryIds": [
       "photo-1445262102387-5fbb30a5e59d",
@@ -18653,6 +18955,17 @@
         "Boat"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Floating markets in Barisal.jpg",
+      "author": "Kazi Asadullah Al Emran",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:Floating_markets_in_Barisal.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Floating_markets_in_Barisal.jpg",
+      "fileDate": "2016-08-26",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -19673,11 +19986,9 @@
     ],
     "latitude": 24.76,
     "longitude": 90.4,
-    "image": "/assets/destinations/zainul-abedin-museum.webp",
-    "imageLg": "/assets/destinations/zainul-abedin-museum.webp",
-    "gallery": [
-      "/assets/destinations/zainul-abedin-museum.webp"
-    ],
+    "image": "/assets/destinations/zainul-abedin-museum-commons.webp",
+    "imageLg": "/assets/destinations/zainul-abedin-museum-commons.webp",
+    "gallery": [],
     "photoId": "photo-1554907984-15263bfd63bd",
     "galleryIds": [
       "photo-1554907984-15263bfd63bd",
@@ -19748,6 +20059,17 @@
         "CNG"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:শিল্পাচার্য জয়নুল আবেদিন সংগ্রহশালা পার্ক.jpg",
+      "author": "Shariful Islam Masum",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Shariful_Islam_Masum",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%B6%E0%A6%BF%E0%A6%B2%E0%A7%8D%E0%A6%AA%E0%A6%BE%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%AF_%E0%A6%9C%E0%A6%AF%E0%A6%BC%E0%A6%A8%E0%A7%81%E0%A6%B2_%E0%A6%86%E0%A6%AC%E0%A7%87%E0%A6%A6%E0%A6%BF%E0%A6%A8_%E0%A6%B8%E0%A6%82%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%B9%E0%A6%B6%E0%A6%BE%E0%A6%B2%E0%A6%BE_%E0%A6%AA%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%95.jpg",
+      "fileDate": "2018-12-18",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -19766,11 +20088,9 @@
     ],
     "latitude": 24.75,
     "longitude": 90.4,
-    "image": "/assets/destinations/brahmaputra-river-mymensingh.webp",
-    "imageLg": "/assets/destinations/brahmaputra-river-mymensingh.webp",
-    "gallery": [
-      "/assets/destinations/brahmaputra-river-mymensingh.webp"
-    ],
+    "image": "/assets/destinations/brahmaputra-river-mymensingh-commons.webp",
+    "imageLg": "/assets/destinations/brahmaputra-river-mymensingh-commons.webp",
+    "gallery": [],
     "photoId": "photo-1445262102387-5fbb30a5e59d",
     "galleryIds": [
       "photo-1445262102387-5fbb30a5e59d",
@@ -19840,6 +20160,17 @@
         "Boat"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Scenario Of Brahmaputra River,Mymensingh 22.jpg",
+      "author": "Frameofashik",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Frameofashik",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scenario_Of_Brahmaputra_River,Mymensingh_22.jpg",
+      "fileDate": "2024-06-07",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -19857,11 +20188,9 @@
     ],
     "latitude": 25.02,
     "longitude": 90.81,
-    "image": "/assets/destinations/someshwari-river.webp",
-    "imageLg": "/assets/destinations/someshwari-river.webp",
-    "gallery": [
-      "/assets/destinations/someshwari-river.webp"
-    ],
+    "image": "/assets/destinations/someshwari-river-commons.webp",
+    "imageLg": "/assets/destinations/someshwari-river-commons.webp",
+    "gallery": [],
     "photoId": "photo-1506905925346-21bda4d32df4",
     "galleryIds": [
       "photo-1506905925346-21bda4d32df4",
@@ -19929,6 +20258,17 @@
         "CNG"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:দুর্গাপুরে সোমেশ্বরী নদী.jpg",
+      "author": "Anup Sadi",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Anup_Sadi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%A6%E0%A7%81%E0%A6%B0%E0%A7%8D%E0%A6%97%E0%A6%BE%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A7%87_%E0%A6%B8%E0%A7%8B%E0%A6%AE%E0%A7%87%E0%A6%B6%E0%A7%8D%E0%A6%AC%E0%A6%B0%E0%A7%80_%E0%A6%A8%E0%A6%A6%E0%A7%80.jpg",
+      "fileDate": "2022-02-01",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -20036,11 +20376,9 @@
     ],
     "latitude": 24.06,
     "longitude": 91.55,
-    "image": "/assets/destinations/habiganj-tea-gardens.webp",
-    "imageLg": "/assets/destinations/habiganj-tea-gardens.webp",
-    "gallery": [
-      "/assets/destinations/habiganj-tea-gardens.webp"
-    ],
+    "image": "/assets/destinations/habiganj-tea-gardens-commons.webp",
+    "imageLg": "/assets/destinations/habiganj-tea-gardens-commons.webp",
+    "gallery": [],
     "photoId": "photo-1597318181409-cf64d0b5d8a2",
     "galleryIds": [
       "photo-1597318181409-cf64d0b5d8a2",
@@ -20111,6 +20449,17 @@
         "Private Car"
       ],
       "flight": null
+    },
+    "imageCredit": {
+      "title": "File:Tea garden in Habiganj, Bangladesh.jpg",
+      "author": "Ridoybd008",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:Tea_garden_in_Habiganj,_Bangladesh.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tea_garden_in_Habiganj,_Bangladesh.jpg",
+      "fileDate": "2019-01-11",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -21117,12 +21466,21 @@
     ],
     "latitude": 22.9554,
     "longitude": 90.8415,
-    "image": "/assets/destinations/dalal-bazar-zamindar-bari.webp",
+    "image": "/assets/destinations/dalal-bazar-zamindar-bari-commons.webp",
     "shortDesc": "ঐতিহাসিক দালাল বাজার জমিদার বাড়ি ও রাজকীয় প্রাচীন স্থাপত্যশৈলী।",
-    "imageLg": "/assets/destinations/dalal-bazar-zamindar-bari.webp",
-    "gallery": [
-      "/assets/destinations/dalal-bazar-zamindar-bari.webp"
-    ]
+    "imageLg": "/assets/destinations/dalal-bazar-zamindar-bari-commons.webp",
+    "gallery": [],
+    "imageCredit": {
+      "title": "File:Dalal Bazar Jomidar Bari 02.jpg",
+      "author": "Redmin",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Redmin",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dalal_Bazar_Jomidar_Bari_02.jpg",
+      "fileDate": "2021-01-03",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 233,
@@ -21202,12 +21560,10 @@
     ],
     "latitude": 22.8465,
     "longitude": 91.4332,
-    "image": "/assets/destinations/muhuri-dam-irrigation-project.webp",
+    "image": "/assets/destinations/muhuri-dam-irrigation-project-commons.webp",
     "shortDesc": "দেশের দ্বিতীয় বৃহত্তম সেচ প্রকল্প, সুবিশাল রেগুলেটর এবং অতিথি পাখির জলকেলি।",
-    "imageLg": "/assets/destinations/muhuri-dam-irrigation-project.webp",
-    "gallery": [
-      "/assets/destinations/muhuri-dam-irrigation-project.webp"
-    ],
+    "imageLg": "/assets/destinations/muhuri-dam-irrigation-project-commons.webp",
+    "gallery": [],
     "alternateNames": [
       "Sonagazi",
       "সোনাগাজী"
@@ -21270,7 +21626,18 @@
       ],
       "flight": null
     },
-    "upazila": "Sonagazi"
+    "upazila": "Sonagazi",
+    "imageCredit": {
+      "title": "File:Feni River Closure Dam.jpg",
+      "author": "Bolideleoi",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:Feni_River_Closure_Dam.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Feni_River_Closure_Dam.jpg",
+      "fileDate": "2024-04-11",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 237,
@@ -21660,12 +22027,21 @@
     ],
     "latitude": 23.441,
     "longitude": 91.129,
-    "image": "/assets/destinations/rupban-mura-cumilla.webp",
+    "image": "/assets/destinations/rupban-mura-cumilla-commons.webp",
     "shortDesc": "ময়নামতীর লালমাই পাহাড়ের ওপর প্রাচীন বিহার ও স্তূপের প্রত্নতাত্ত্বিক নিদর্শন।",
-    "imageLg": "/assets/destinations/rupban-mura-cumilla.webp",
-    "gallery": [
-      "/assets/destinations/rupban-mura-cumilla.webp"
-    ]
+    "imageLg": "/assets/destinations/rupban-mura-cumilla-commons.webp",
+    "gallery": [],
+    "imageCredit": {
+      "title": "File:রূপবান মুড়া4.jpg",
+      "author": "Kamrul Hasan",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%B0%E0%A7%82%E0%A6%AA%E0%A6%AC%E0%A6%BE%E0%A6%A8_%E0%A6%AE%E0%A7%81%E0%A6%A1%E0%A6%BC%E0%A6%BE4.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%B0%E0%A7%82%E0%A6%AA%E0%A6%AC%E0%A6%BE%E0%A6%A8_%E0%A6%AE%E0%A7%81%E0%A6%A1%E0%A6%BC%E0%A6%BE4.jpg",
+      "fileDate": "2016-09-24",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 256,
@@ -21680,15 +22056,24 @@
     ],
     "latitude": 23.4435,
     "longitude": 91.1285,
-    "image": "/assets/destinations/itakhola-mura-cumilla.webp",
+    "image": "/assets/destinations/itakhola-mura-cumilla-commons.webp",
     "shortDesc": "পাহাড়ের চূড়ায় অবস্থিত প্রাচীন রাজকীয় স্তূপ ও সনাতন বৌদ্ধ প্রত্নক্ষেত্র।",
-    "imageLg": "/assets/destinations/itakhola-mura-cumilla.webp",
-    "gallery": [
-      "/assets/destinations/itakhola-mura-cumilla.webp"
-    ],
+    "imageLg": "/assets/destinations/itakhola-mura-cumilla-commons.webp",
+    "gallery": [],
     "alternateNames": [
       "ইতাখোলা মুড়া"
-    ]
+    ],
+    "imageCredit": {
+      "title": "File:ইটাখোলা মুড়া9.jpg",
+      "author": "Kamrul Hasan",
+      "authorUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%87%E0%A6%9F%E0%A6%BE%E0%A6%96%E0%A7%8B%E0%A6%B2%E0%A6%BE_%E0%A6%AE%E0%A7%81%E0%A6%A1%E0%A6%BC%E0%A6%BE9.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%A6%87%E0%A6%9F%E0%A6%BE%E0%A6%96%E0%A7%8B%E0%A6%B2%E0%A6%BE_%E0%A6%AE%E0%A7%81%E0%A6%A1%E0%A6%BC%E0%A6%BE9.jpg",
+      "fileDate": "2016-09-24",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 257,
@@ -21876,12 +22261,21 @@
     ],
     "latitude": 21.625,
     "longitude": 92.35,
-    "image": "/assets/destinations/damtua-waterfall.webp",
+    "image": "/assets/destinations/damtua-waterfall-commons.webp",
     "shortDesc": "গহীন অরণ্যে পাথরের প্রাচীর বেয়ে নেমে আসা আলীকদমের অনিন্দ্য সুন্দর জলপ্রপাত।",
-    "imageLg": "/assets/destinations/damtua-waterfall.webp",
-    "gallery": [
-      "/assets/destinations/damtua-waterfall.webp"
-    ]
+    "imageLg": "/assets/destinations/damtua-waterfall-commons.webp",
+    "gallery": [],
+    "imageCredit": {
+      "title": "File:Damtua Waterfall (13).jpg",
+      "author": "Masum-al-Hasan Rocky",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:RockyMasum",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Damtua_Waterfall_(13).jpg",
+      "fileDate": "2020-10-30",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 264,
@@ -22265,11 +22659,9 @@
     ],
     "latitude": 22.1895,
     "longitude": 91.8102,
-    "image": "/assets/destinations/parki-beach.webp",
-    "imageLg": "/assets/destinations/parki-beach.webp",
-    "gallery": [
-      "/assets/destinations/parki-beach.webp"
-    ],
+    "image": "/assets/destinations/parki-beach-commons.webp",
+    "imageLg": "/assets/destinations/parki-beach-commons.webp",
+    "gallery": [],
     "photoId": "parki-jhau-beach",
     "galleryIds": [
       "parki-jhau-beach"
@@ -22339,6 +22731,17 @@
         "CNG Auto-rickshaw",
         "Bus"
       ]
+    },
+    "imageCredit": {
+      "title": "File:Calm Noon at Parki Beach on a Non-Weekend 03.jpg",
+      "author": "Owais Al Qarni",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Owais_Al_Qarni",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Calm_Noon_at_Parki_Beach_on_a_Non-Weekend_03.jpg",
+      "fileDate": "2024-10-27",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
     }
   },
   {
@@ -22541,11 +22944,9 @@
     ],
     "latitude": 23.8825,
     "longitude": 90.2672,
-    "image": "/assets/destinations/jahangirnagar-university.webp",
-    "imageLg": "/assets/destinations/jahangirnagar-university.webp",
-    "gallery": [
-      "/assets/destinations/jahangirnagar-university.webp"
-    ],
+    "image": "/assets/destinations/jahangirnagar-university-commons.webp",
+    "imageLg": "/assets/destinations/jahangirnagar-university-commons.webp",
+    "gallery": [],
     "photoId": "ju-birds-lake",
     "galleryIds": [
       "ju-birds-lake"
@@ -22620,7 +23021,18 @@
         "Private Car"
       ]
     },
-    "bestTimeNote": "Migratory bird season"
+    "bestTimeNote": "Migratory bird season",
+    "imageCredit": {
+      "title": "File:Alpona on Jahangirnagar University campus (2).jpg",
+      "author": "Syed Sajidul Islam",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Syed07",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alpona_on_Jahangirnagar_University_campus_(2).jpg",
+      "fileDate": "2018-03-27",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   },
   {
     "id": 279,
@@ -24307,10 +24719,10 @@
     "categories": [
       "Religious"
     ],
-    "latitude": 24.9232,
-    "longitude": 89.9504,
-    "image": null,
-    "imageLg": null,
+    "latitude": 24.923224,
+    "longitude": 89.950313,
+    "image": "/assets/destinations/dayamoyee-temple-jamalpur-commons.webp",
+    "imageLg": "/assets/destinations/dayamoyee-temple-jamalpur-commons.webp",
     "gallery": [],
     "photoId": null,
     "galleryIds": [],
@@ -24376,9 +24788,23 @@
       {
         "title": "Beautiful Bangladesh: Dayamoyee Temple",
         "url": "https://beautifulbangladesh.gov.bd/cat/heritage/213"
+      },
+      {
+        "title": "Wikimedia Commons: Doyamoyee Temple, Jamalpur (Photo by Anup Sadi)",
+        "url": "https://commons.wikimedia.org/wiki/File:Doyamoyee_Temple,_Jamalpur_(17).jpg"
       }
     ],
     "factsCheckedAt": "2026-11-01",
-    "coordsApproximate": true
+    "imageCredit": {
+      "title": "File:Doyamoyee Temple, Jamalpur (17).jpg",
+      "author": "Anup Sadi",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Anup_Sadi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Doyamoyee_Temple,_Jamalpur_(17).jpg",
+      "fileDate": "2024-10-18",
+      "retrievedAt": "2026-11-03",
+      "modified": "resized and converted to WebP"
+    }
   }
 ]

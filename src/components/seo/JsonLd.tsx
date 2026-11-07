@@ -72,6 +72,13 @@ export function getTouristAttractionSchema(destination: {
   division: string;
   district: string;
   slug: string;
+  imageCredit?: {
+    author: string;
+    authorUrl?: string;
+    license: string;
+    licenseUrl?: string;
+    sourceUrl: string;
+  };
 }) {
   const allAltNames = Array.from(
     new Set(
@@ -107,9 +114,26 @@ export function getTouristAttractionSchema(destination: {
   };
 
   if (destination.image) {
-    schema.image = destination.image.startsWith("http")
+    const imageUrl = destination.image.startsWith("http")
       ? destination.image
       : `${SITE_URL}/${destination.image.replace(/^\/+/, "")}`;
+
+    if (destination.imageCredit) {
+      schema.image = {
+        "@type": "ImageObject",
+        contentUrl: imageUrl,
+        creator: {
+          "@type": "Person",
+          name: destination.imageCredit.author,
+          ...(destination.imageCredit.authorUrl ? { url: destination.imageCredit.authorUrl } : {}),
+        },
+        creditText: `${destination.imageCredit.author} · ${destination.imageCredit.license} · Wikimedia Commons`,
+        license: destination.imageCredit.licenseUrl || "https://creativecommons.org/",
+        acquireLicensePage: destination.imageCredit.sourceUrl,
+      };
+    } else {
+      schema.image = imageUrl;
+    }
   }
 
   return schema;

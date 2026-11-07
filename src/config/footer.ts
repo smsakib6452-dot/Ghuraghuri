@@ -38,6 +38,11 @@ export const FOOTER_CONFIG = {
       label_bn: "শর্তাবলী",
       href: "/terms",
     },
+    {
+      label: "Credits",
+      label_bn: "ছবির স্বীকৃতি",
+      href: "/credits",
+    },
   ] as FooterLegalLink[],
 
   // Social Media Links (Single Source of Truth for Footer & JSON-LD Organization.sameAs)

@@ -91,6 +91,7 @@ export default async function DestinationDetailPage({ params }: Props) {
     division: destination.division,
     district: destination.district,
     slug: destination.slug,
+    imageCredit: destination.imageCredit,
   });
 
   const breadcrumbSchema = getBreadcrumbListSchema([

@@ -373,5 +373,74 @@ if (slugErrors.length > 0) {
   console.log(`✓ Build Guard PASSED: All destination slugs across data files and component constants are valid (${activeSlugs.size} active, ${redirectSlugs.size} redirects).`);
 }
 
+// 10. Build Guard: Verify Wikimedia Commons image attribution and licensing
+console.log('\n[generate-data] Running Build Guard: Verifying Commons image attribution and licensing...');
+const ALLOWED_LICENSES = new Set([
+  'CC0', 'CC0 1.0', 'Public domain',
+  'CC BY 2.0', 'CC BY-SA 2.0',
+  'CC BY 2.5', 'CC BY-SA 2.5',
+  'CC BY 3.0', 'CC BY-SA 3.0',
+  'CC BY 4.0', 'CC BY-SA 4.0'
+]);
 
+const commonsCreditErrors = [];
+let commonsImageCount = 0;
 
+destinations.forEach(d => {
+  const isCommonsImage = (d.image && d.image.includes('-commons.webp')) || (d.imageLg && d.imageLg.includes('-commons.webp')) || !!d.imageCredit;
+  if (!isCommonsImage) return;
+
+  commonsImageCount++;
+
+  if (!d.imageCredit) {
+    commonsCreditErrors.push(`[${d.slug}] uses -commons.webp image but is missing imageCredit metadata`);
+    return;
+  }
+
+  // Verify imageCredit strings do not contain forbidden artifacts (<, >, redlink, action=edit, http://)
+  const FORBIDDEN_STRINGS = ['<', '>', 'redlink', 'action=edit', 'http://'];
+  for (const [key, val] of Object.entries(d.imageCredit)) {
+    if (typeof val === 'string') {
+      for (const forbidden of FORBIDDEN_STRINGS) {
+        if (val.includes(forbidden)) {
+          commonsCreditErrors.push(`[${d.slug}] imageCredit.${key} contains forbidden string "${forbidden}": "${val}"`);
+        }
+      }
+    }
+  }
+
+  const { author, license, licenseUrl, sourceUrl } = d.imageCredit;
+
+  if (!author || author.trim() === '' || author === 'NO AUTHOR') {
+    commonsCreditErrors.push(`[${d.slug}] invalid or missing author ('${author}')`);
+  }
+
+  if (!license || !ALLOWED_LICENSES.has(license)) {
+    commonsCreditErrors.push(`[${d.slug}] disallowed or missing license ('${license}')`);
+  }
+
+  if (!sourceUrl || !sourceUrl.startsWith('https://commons.wikimedia.org/wiki/File:')) {
+    commonsCreditErrors.push(`[${d.slug}] missing or invalid sourceUrl ('${sourceUrl}')`);
+  }
+
+  if (license !== 'Public domain' && (!licenseUrl || !licenseUrl.startsWith('http'))) {
+    commonsCreditErrors.push(`[${d.slug}] missing or invalid licenseUrl ('${licenseUrl}')`);
+  }
+
+  // Verify file existence in /public
+  if (d.image) {
+    const cleanPath = d.image.replace(/^\/+/, '');
+    const fullPath = path.resolve(__dirname, '../public', cleanPath);
+    if (!fs.existsSync(fullPath)) {
+      commonsCreditErrors.push(`[${d.slug}] image file does not exist at /public/${cleanPath}`);
+    }
+  }
+});
+
+if (commonsCreditErrors.length > 0) {
+  console.error('\n🚨 FATAL BUILD GUARD ERROR: Commons image credit integrity failures:');
+  commonsCreditErrors.forEach(err => console.error(`  - ${err}`));
+  process.exit(1);
+} else {
+  console.log(`✓ Build Guard PASSED: All ${commonsImageCount} Wikimedia Commons images have verified credits, valid licenses, and verified files in /public.`);
+}

@@ -26,6 +26,7 @@
 *.pem
 /scratch/
 /backup-assets/
+/image-sourcing/
 /image-audit/
 /duplicates-report.csv
 /contacts-to-verify.csv
@@ -50,4 +51,5 @@ next-env.d.ts
 
 .vercel
 /backup-assets/
+/image-sourcing/
 /ratings-removed.csv
